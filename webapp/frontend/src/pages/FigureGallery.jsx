@@ -73,6 +73,8 @@ export default function FigureGallery({ model, openBoundary }) {
     || Boolean(model?.comparative_dataset?.available)
     || (model?.coordinate_models || model?.models || []).length > 1;
   const [scope, setScope] = useState(() => readInitialScope(multiSpecies));
+  const visibleScope = scope === "comparative" || speciesList.some((s) => s.id === scope)
+    ? scope : "comparative";
   const [group, setGroup] = useState("all");
   const [search, setSearch] = useState("");
   const [showAll, setShowAll] = useState(false);
@@ -84,13 +86,13 @@ export default function FigureGallery({ model, openBoundary }) {
   useEffect(() => {
     if (!multiSpecies) return;
     try {
-      sessionStorage.setItem("edc.figureScope", scope);
+      sessionStorage.setItem("edc.figureScope", visibleScope);
       const url = new URL(window.location.href);
-      url.searchParams.set("figureScope", scope);
+      url.searchParams.set("figureScope", visibleScope);
       window.history.replaceState({}, "", url.toString());
     } catch { /* ignore */ }
-    setSelectedFigureScope?.(scope);
-  }, [scope, multiSpecies, setSelectedFigureScope]);
+    setSelectedFigureScope?.(visibleScope);
+  }, [visibleScope, multiSpecies, setSelectedFigureScope]);
 
   const figures = useMemo(() => {
     if (!index) return [];
@@ -104,25 +106,25 @@ export default function FigureGallery({ model, openBoundary }) {
         const isComparative = f.scope === "comparative"
           || COMPARATIVE_CATEGORY_ORDER.includes(f.category)
           || (!f.species_id && String(f.species || "").toLowerCase() === "comparative");
-        if (scope === "comparative") {
+        if (visibleScope === "comparative") {
           if (!isComparative) return false;
         } else {
           // Species-specific Scope shows that species' standalone Gallery structure
           // only — never comparative cards mixed in.
           if (isComparative) return false;
-          if (f.species_id && f.species_id !== scope) return false;
+          if (f.species_id && f.species_id !== visibleScope) return false;
         }
       }
       if (search && !`${f.title} ${f.caption} ${f.scientific_question}`
         .toLowerCase().includes(search.toLowerCase())) return false;
       return true;
     });
-  }, [index, group, search, showAll, multiSpecies, scope]);
+  }, [index, group, search, showAll, multiSpecies, visibleScope]);
 
   // Category order depends on Scope: comparative vs species-specific reading order.
   const orderedCategories = useMemo(() => {
     const present = new Set(figures.map((f) => f.category));
-    const preferred = (multiSpecies && scope === "comparative")
+    const preferred = (multiSpecies && visibleScope === "comparative")
       ? COMPARATIVE_CATEGORY_ORDER
       : CATEGORY_ORDER;
     const declared = preferred.filter((c) => present.has(c));
@@ -130,7 +132,7 @@ export default function FigureGallery({ model, openBoundary }) {
       (c) => present.has(c) && !declared.includes(c));
     const extra = [...present].filter((c) => !declared.includes(c) && !fromIndex.includes(c));
     return [...declared, ...fromIndex, ...extra];
-  }, [figures, index.categories, multiSpecies, scope]);
+  }, [figures, index.categories, multiSpecies, visibleScope]);
 
   const byGroup = useMemo(() => {
     const m = {};
@@ -153,7 +155,7 @@ export default function FigureGallery({ model, openBoundary }) {
         <div className="filters">
           <input className="search" placeholder="Search figures…" value={search} onChange={(e) => setSearch(e.target.value)} />
           {multiSpecies && (
-            <select value={scope} onChange={(e) => { setScope(e.target.value); setGroup("all"); }}
+            <select value={visibleScope} onChange={(e) => { setScope(e.target.value); setGroup("all"); }}
               title="Comparative figures or one species"
               aria-label="Figure gallery scope">
               <option value="comparative">Comparative</option>

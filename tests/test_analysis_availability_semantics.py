@@ -656,6 +656,21 @@ def test_a_dataset_load_is_applied_only_when_it_is_still_current():
     assert "payloadMatchesDataset(model, target)" in body
 
 
+def test_a_transient_model_load_is_retried_before_the_gallery_is_shown():
+    body = APP.read_text(encoding="utf-8").split("const loadInto")[1] \
+        .split("const loadDatasets")[0]
+    assert "firstModel" in body
+    assert body.count("client.datasetModel()") == 2
+    assert "signal?.aborted" in body
+
+
+def test_the_gallery_rejects_a_scope_from_another_dataset():
+    gallery = (ROOT / "webapp" / "frontend" / "src" / "pages"
+               / "FigureGallery.jsx").read_text(encoding="utf-8")
+    assert 'speciesList.some((s) => s.id === scope)' in gallery
+    assert '? scope : "comparative"' in gallery
+
+
 def test_a_superseded_dataset_load_is_aborted():
     body = APP.read_text(encoding="utf-8")
     assert "abortRef.current?.abort()" in body

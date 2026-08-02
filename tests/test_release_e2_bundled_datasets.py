@@ -96,6 +96,15 @@ def test_backend_discovers_both_bundled_datasets_without_a_live_run_root():
     assert bcl2l1["available_views"]["figure_gallery"] is True
 
 
+def test_bundled_examples_do_not_appear_as_user_owned_runs():
+    _bundled_or_skip()
+    from webapp.backend import main
+
+    run_ids = {row["run_id"] for row in main.local_runs()}
+
+    assert BCL2L1_RUN_ID not in run_ids
+
+
 def test_bundled_models_preserve_the_accepted_scientific_scope():
     _bundled_or_skip()
     from webapp.backend import main

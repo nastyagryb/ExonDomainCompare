@@ -8,7 +8,7 @@ import { getDatasetLabels } from "./labels";
 // polling effect depends on the status it last observed.
 import { POLL_INTERVAL_MS, TERMINAL_RUN_STATES } from "./runStates";
 import { isResolvedState } from "./pages/viewers/common";
-import { Badge } from "./ui";
+import { Badge, Spinner } from "./ui";
 import StartPage from "./pages/StartPage";
 import Overview from "./pages/Overview";
 import GeneExplorer from "./pages/GeneExplorer";
@@ -128,10 +128,17 @@ export default function App() {
   const loadInto = useCallback(async (target, epoch) => {
     const signal = abortRef.current?.signal;
     const client = forDataset(target, signal);
-    const [info, model] = await Promise.all([
+    const [info, firstModel] = await Promise.all([
       client.datasetStatus(target).catch(() => null),
       client.datasetModel().catch(() => null),
     ]);
+    let model = firstModel;
+    // Retry one transient model miss during backend startup.
+    if (info && (!model || !payloadMatchesDataset(model, target))) {
+      await new Promise((resolve) => setTimeout(resolve, 250));
+      if (epoch !== epochRef.current || signal?.aborted) return null;
+      model = await client.datasetModel().catch(() => null);
+    }
     // Two independent checks: the reply must belong to this load, and it must name the
     // dataset we asked about. Either alone would let a mismatched payload through.
     if (epoch !== epochRef.current) return null;
@@ -388,11 +395,20 @@ export default function App() {
             openGene={openGene} labels={labels} />
         )}
         {page === "figures" && (
-          <FigureGalleryWithSelection
-            key={`${activeId}:${refreshNonce}`}
-            model={datasetModel}
-            openBoundary={() => setPage("boundary")}
-          />
+          datasetModel ? (
+            <FigureGalleryWithSelection
+              key={`${activeId}:${refreshNonce}`}
+              model={datasetModel}
+              openBoundary={() => setPage("boundary")}
+            />
+          ) : loading ? (
+            <section className="page"><Spinner label="Loading figures…" /></section>
+          ) : (
+            <section className="page">
+              <p className="muted">Figures could not be loaded.</p>
+              <button className="btn ghost" onClick={() => refreshAll(activeId)}>Retry</button>
+            </section>
+          )
         )}
         {page === "freeze" && <FreezeViewer key={`${activeId}:${refreshNonce}`} />}
       </main>

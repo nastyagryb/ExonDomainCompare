@@ -1482,12 +1482,13 @@ def _local_run_summary(run_dir: Path) -> Dict[str, Any]:
     }
 
 
-@app.get("/api/local-runs")
-def local_runs() -> List[Dict[str, Any]]:
-    """List the deterministic union of canonical and registered legacy runs."""
+def _local_run_summaries(*, include_bundled: bool) -> List[Dict[str, Any]]:
+    """List registered runs, optionally including bundled example datasets."""
     records, collisions = discover_runs(RUNTIME_CONFIG)
     runs_out = []
     for record in records:
+        if record.kind == "bundled_example" and not include_bundled:
+            continue
         try:
             summary = _local_run_summary(record.path)
         except LegacyRunError:
@@ -1512,6 +1513,12 @@ def local_runs() -> List[Dict[str, Any]]:
             "read_only": True,
         })
     return run_labels.sort_runs(runs_out)
+
+
+@app.get("/api/local-runs")
+def local_runs() -> List[Dict[str, Any]]:
+    """List user-owned canonical and registered legacy runs."""
+    return _local_run_summaries(include_bundled=False)
 
 
 @app.get("/api/local-runs/{run_id}")
@@ -2802,7 +2809,7 @@ def list_datasets() -> Dict[str, Any]:
             },
         })
     runs_out = []
-    for s in local_runs():
+    for s in _local_run_summaries(include_bundled=True):
             if s.get("collision"):
                 continue
             core_only = bool(s.get("core_only"))
