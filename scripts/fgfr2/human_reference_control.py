@@ -42,6 +42,7 @@ FREEZE_TRUTH_TABLE = (
     "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/"
     "final_pre_interpro_truth_table.tsv"
 )
+BUNDLED_DATASET_ROOT = "datasets/fgfr2_30_species"
 
 REFERENCE_SPECIES = "homo_sapiens"
 REFERENCE_DISPLAY_NAME = "Homo sapiens"
@@ -240,8 +241,16 @@ def build(repo_root: Optional[Path] = None) -> Dict[str, Any]:
     not yield a usable reference rather than returning a degraded one.
     """
     root = Path(repo_root or _repo_root())
-    source = root / FREEZE_SOURCE_TABLE
-    truth = root / FREEZE_TRUTH_TABLE
+    def validated_path(relative: str) -> Path:
+        legacy = root / relative
+        if legacy.is_file():
+            return legacy
+        closure_relative = relative.removeprefix(
+            "results/final_30_until_interpro_prepare/")
+        return root / BUNDLED_DATASET_ROOT / closure_relative
+
+    source = validated_path(FREEZE_SOURCE_TABLE)
+    truth = validated_path(FREEZE_TRUTH_TABLE)
     if not source.is_file():
         raise ReferenceControlError(f"validated source table missing: {FREEZE_SOURCE_TABLE}")
     if not truth.is_file():
@@ -257,9 +266,9 @@ def build(repo_root: Optional[Path] = None) -> Dict[str, Any]:
     # and the freeze is read-only, so its per-row flag would give both panels the same
     # positions. The freeze's own discriminating analysis holds the truth; its
     # per-panel indices are recovered from the combined alignment it also stores.
-    freeze_disc = root / FREEZE_SOURCE_TABLE.replace(
+    freeze_disc = validated_path(FREEZE_SOURCE_TABLE.replace(
         "tables/figure6B_species_resolved_IIIb_IIIc_cassette_residue_map.tsv",
-        "MSA/final_isoform_discriminating_residues.tsv")
+        "MSA/final_isoform_discriminating_residues.tsv"))
     discriminating_by_panel: Dict[str, set] = {panel: set() for panel in PANELS}
     if freeze_disc.is_file():
         disc_rows = _read_tsv(freeze_disc)
@@ -398,7 +407,8 @@ def load(repo_root: Optional[Path] = None, *, rebuild: bool = False) -> Dict[str
     """Return the validated reference control, rebuilding it when unusable.
 
     A cached object that fails validation is never returned: the whole point of
-    the control is that a figure rendered against it is trustworthy.
+    the control is that a figure rendered against it is trustworthy. Normal reads
+    build in memory so a release checkout remains unchanged.
     """
     path = control_path(repo_root)
     if not rebuild and path.is_file():
@@ -409,8 +419,9 @@ def load(repo_root: Optional[Path] = None, *, rebuild: bool = False) -> Dict[str
         if cached and is_available(cached):
             return cached
     data = build(repo_root)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
+    if rebuild:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
     return data
 
 

@@ -23,6 +23,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "webapp" / "backend"))
 
 from shared_gene_analysis import run_availability as ra  # noqa: E402
+from exondomaincompare.contracts import write_freshness_contract  # noqa: E402
 
 REAL_RUN = ROOT / "runs" / "2026-07-29_1217_fgfr2_equus_quagga"
 FREEZE = ROOT / "results" / "final_30_until_interpro_prepare"
@@ -154,6 +155,18 @@ def test_an_upstream_rebuild_that_changed_nothing_downstream_is_not_stale(run_di
 
     stale, _ = ra.indices_are_stale(run_dir)
     assert stale is False
+
+
+def test_final_run_manifest_does_not_invalidate_current_indices(run_dir: Path):
+    write_freshness_contract(
+        run_dir, run_dir / "website_indices", generator="test")
+    setup = run_dir / "results" / "00_run_setup"
+    setup.mkdir(parents=True, exist_ok=True)
+    (setup / "post_interpro_run_manifest.json").write_text(
+        json.dumps({"status": "complete"}), encoding="utf-8")
+
+    stale, reason = ra.indices_are_stale(run_dir)
+    assert stale is False, reason
 
 
 # --------------------------------------------------------------------------- #
@@ -368,6 +381,38 @@ def test_finalize_derives_the_end_state_from_the_artefacts(tmp_path: Path, monke
     st = json.loads(rt.status_path.read_text(encoding="utf-8"))
     assert st["status"] == "results_ready"
     assert recorded["phase"] == "complete"
+
+
+def test_shared_finalizer_clears_a_superseded_roundtrip_failure(
+        complete_run: Path, monkeypatch: pytest.MonkeyPatch):
+    from shared_gene_analysis import finalize_run_status as finalizer
+
+    path = complete_run / "status.json"
+    path.write_text(json.dumps({
+        "species_count": 1,
+        "status": "failed",
+        "blocking_analyses": ["overview=stale"],
+        "cluster_roundtrip": {
+            "phase": "post_interpro_failed",
+            "reason": "indices became stale",
+        },
+    }), encoding="utf-8")
+    monkeypatch.setattr(finalizer, "evaluate_run", lambda _run: {
+        "run_id": complete_run.name,
+        "status": finalizer.RESULTS_READY,
+        "reason": "Every required view has current data.",
+        "blocking": [],
+        "cluster_outputs": "current",
+        "cluster_report": {},
+        "decided": True,
+    })
+
+    finalizer.finalize(complete_run)
+    status = json.loads(path.read_text(encoding="utf-8"))
+    assert status["status"] == "results_ready"
+    assert status["cluster_roundtrip"]["phase"] == "complete"
+    assert status["cluster_roundtrip"]["reason"] == ""
+    assert "blocking_analyses" not in status
 
 
 def test_finalize_refuses_a_run_whose_required_views_are_missing(tmp_path: Path,

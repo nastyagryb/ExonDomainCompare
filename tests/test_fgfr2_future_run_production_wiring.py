@@ -37,7 +37,9 @@ sys.path.insert(0, str(ROOT / "webapp" / "backend"))
 
 from fgfr2 import coordinate_model as cm  # noqa: E402
 from fgfr2 import gallery_catalogue as gc  # noqa: E402
+from fgfr2 import human_reference_control as hrc  # noqa: E402
 from fgfr2 import run_gallery as rg  # noqa: E402
+from plotting import figure_registration as fr  # noqa: E402
 from shared_gene_analysis import run_availability as ra  # noqa: E402
 
 REAL_RUN = ROOT / "runs" / "2026-07-29_1634_fgfr2_homo_sapiens_felis_catus"
@@ -360,6 +362,35 @@ def test_the_production_index_builder_writes_the_modern_gallery(post_cluster_run
     assert {f.get("species_id") for f in index["figures"]} >= {"homo_sapiens",
                                                                "felis_catus"}
     assert (post_cluster_run / "website_indices" / "figure_catalogue.json").is_file()
+
+
+def test_external_run_gallery_assets_are_run_relative(pre_cluster_run: Path):
+    figures = (pre_cluster_run / "results" / "13_final_pre_interpro_closure"
+               / "figures")
+    figures.mkdir(parents=True, exist_ok=True)
+    stem = "Figure_3_final_IIIb_IIIc_cassette_zoom_pre_interpro"
+    (figures / f"{stem}.png").write_bytes(b"png")
+
+    index = gc.flatten_for_gallery(_catalogue(pre_cluster_run, cluster_ready=False))
+    card = next(c for c in index["figures"]
+                if c["figure_id"] == "fgfr2_cmp_cassette_zoom")
+    expected = f"results/13_final_pre_interpro_closure/figures/{stem}.png"
+    assert card["formats"]["png"] == expected
+
+    report = fr.normalise_index(index, pre_cluster_run)
+    card = next(c for c in index["figures"]
+                if c["figure_id"] == "fgfr2_cmp_cassette_zoom")
+    assert card["status"] == "available"
+    assert not any(item["figure_id"] == card["figure_id"]
+                   for item in report["technically_missing"])
+
+
+def test_release_uses_the_bundled_validated_human_reference():
+    control = hrc.build(ROOT)
+    assert hrc.panel_sequence(control, "IIIb").find(hrc.MARKERS["IIIb"]) >= 0
+    assert hrc.panel_sequence(control, "IIIc").find(hrc.MARKERS["IIIc"]) >= 0
+    assert len(hrc.panel_residues(control, "IIIb")) == 46
+    assert len(hrc.panel_residues(control, "IIIc")) == 48
 
 
 def test_the_modern_gallery_is_not_written_for_a_non_fgfr2_run(tmp_path: Path):

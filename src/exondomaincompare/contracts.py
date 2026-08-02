@@ -86,7 +86,8 @@ _SCIENTIFIC_SOURCE_SUFFIXES = {
     ".json", ".tsv", ".csv", ".txt", ".faa", ".fasta", ".fa", ".gff3", ".yaml", ".yml",
 }
 _SCIENTIFIC_SOURCE_IGNORES = {
-    "_ncbi_datasets_cache", "website_indices", "figures", "plots", "packages",
+    "_ncbi_datasets_cache", "00_run_setup", "website_indices", "figures", "plots",
+    "packages",
 }
 
 

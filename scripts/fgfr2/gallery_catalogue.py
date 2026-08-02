@@ -61,6 +61,18 @@ _BOUNDARY_ROOT = cm.FREEZE / "16_final_thesis_analyses" \
 BOUNDARY_FIGURES = _BOUNDARY_ROOT / "figures"
 BOUNDARY_TABLES = _BOUNDARY_ROOT / "tables"
 
+
+def _asset_reference(path: Path) -> str:
+    """Return a portable repository- or run-relative asset path."""
+    resolved = Path(path).resolve()
+    for parent in resolved.parents:
+        if (parent / "run_config.json").is_file():
+            try:
+                return resolved.relative_to(parent).as_posix()
+            except ValueError:
+                break
+    return cm._rel(resolved)
+
 #: A card whose analysis needs the cluster round-trip and has not had it yet.
 PENDING_CLUSTER = "pending_cluster"
 
@@ -180,6 +192,12 @@ class Dataset:
     def boundary_tables(self) -> Path:
         return self.boundary_root / "tables"
 
+    @property
+    def website_indices(self) -> Path:
+        if self.dataset_id.startswith("run:"):
+            return self.closure.parent.parent / "website_indices"
+        return self.closure / "website_indices"
+
     def pending(self, category: str) -> str:
         """The pending note for a card in this section, or "" when none applies."""
         if self.cluster_ready or category not in POST_CLUSTER_CATEGORIES:
@@ -227,13 +245,13 @@ def run_dataset(run_dir: Path, *, cluster_ready: Optional[bool] = None) -> Datas
         architecture=architecture,
         boundary_root=boundary_root,
         tables={
-            "truth": cm._rel(closure / "final_pre_interpro_truth_table.tsv"),
-            "architecture": cm._rel(architecture / "tables"
-                                    / "exon_domain_architecture_features.tsv"),
-            "interpro": cm._rel(architecture / "tables"
-                                / "interpro_domain_features_normalized.tsv"),
-            "msa": cm._rel(closure / "MSA"
-                           / "final_fgfr2_full_length_protein_msa.aln.faa"),
+            "truth": _asset_reference(closure / "final_pre_interpro_truth_table.tsv"),
+            "architecture": _asset_reference(
+                architecture / "tables" / "exon_domain_architecture_features.tsv"),
+            "interpro": _asset_reference(
+                architecture / "tables" / "interpro_domain_features_normalized.tsv"),
+            "msa": _asset_reference(
+                closure / "MSA" / "final_fgfr2_full_length_protein_msa.aln.faa"),
         },
         cluster_ready=bool(cluster_ready),
         coordinate_model_path=(run_dir / "website_indices"
@@ -259,7 +277,7 @@ def _formats(directory: Path, stem: str) -> Dict[str, str]:
     for ext in EXPORT_FORMATS:
         path = directory / f"{stem}.{ext}"
         if path.is_file():
-            out[ext] = cm._rel(path)
+            out[ext] = _asset_reference(path)
     return out
 
 
@@ -523,7 +541,8 @@ def _comparative_cards(comparative_dir: Optional[Path],
                            "exon-boundary classes used in the species scopes. "
                            "Co-location is a positional observation.",
             renderer=_FREEZE_RENDERER,
-            source_data=[cm._rel(BOUNDARY_TABLES / "exon_domain_boundary_distances.tsv")],
+            source_data=[_asset_reference(
+                BOUNDARY_TABLES / "exon_domain_boundary_distances.tsv")],
             modes=[_mode("Figure_11_exon_domain_boundary_consistency_heatmap",
                          "Consistency matrix", BOUNDARY_FIGURES, default=True)],
         ),
@@ -540,7 +559,8 @@ def _comparative_cards(comparative_dir: Optional[Path],
                            "shape depends on the near-edge threshold stated in the "
                            "figure.",
             renderer=_FREEZE_RENDERER,
-            source_data=[cm._rel(BOUNDARY_TABLES / "exon_domain_boundary_distances.tsv")],
+            source_data=[_asset_reference(
+                BOUNDARY_TABLES / "exon_domain_boundary_distances.tsv")],
             modes=[_mode("Figure_12_boundary_distance_distribution",
                          "Distance distribution", BOUNDARY_FIGURES, default=True)],
         ),
@@ -557,8 +577,8 @@ def _comparative_cards(comparative_dir: Optional[Path],
                            "neighbour is an annotation gap in that assembly, not "
                            "evidence that the gene is absent.",
             renderer=_FREEZE_RENDERER,
-            source_data=[cm._rel(ds.closure / "website_indices"
-                                 / "synteny_locus_index.json")],
+            source_data=[_asset_reference(ds.website_indices
+                                          / "synteny_locus_index.json")],
             modes=[
                 _mode("Figure_9A_FGFR2_local_synteny_5neighbor_paper",
                       "5 neighbours", F, default=True,
@@ -584,7 +604,7 @@ def _comparative_cards(comparative_dir: Optional[Path],
     # absent figure is a stated pending state rather than a card the reader never learns
     # about. `comparative_dir` may therefore be None.
     G = "Comparative exon–domain boundaries"
-    boundary_source = ([cm._rel(ds.coordinate_model_path)]
+    boundary_source = ([_asset_reference(ds.coordinate_model_path)]
                        if ds.coordinate_model_path else [])
     cards += [
         _card(

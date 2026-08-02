@@ -165,6 +165,11 @@ def finalize(run_dir: Path, dry_run: bool = False) -> Dict[str, Any]:
                        "website_indices_status": "complete"})
         for field in _STALE_FAILURE_FIELDS:
             status.pop(field, None)
+        status.pop("blocking_analyses", None)
+        roundtrip = status.get("cluster_roundtrip")
+        if isinstance(roundtrip, dict):
+            roundtrip.update({"phase": "complete", "reason": "",
+                              "updated_at": _now()})
     else:
         status["blocking_analyses"] = report["blocking"]
     status = stamp_payload(
