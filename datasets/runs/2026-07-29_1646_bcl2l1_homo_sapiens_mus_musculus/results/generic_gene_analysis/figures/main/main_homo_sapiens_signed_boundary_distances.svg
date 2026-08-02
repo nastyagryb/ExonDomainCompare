@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="522" height="148.3" viewBox="0 0 522 148.3">
+<rect x="0" y="0" width="522" height="148.3" fill="#ffffff" stroke="none" />
+<text x="12" y="20.5" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="10.5" fill="#1c2433" text-anchor="start" font-weight="bold">BCL2L1</text>
+<text x="56.24" y="20.5" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="10.5" fill="#1c2433" text-anchor="start" font-weight="normal" font-style="italic">· Homo sapiens</text>
+<text x="12" y="32.5" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8" fill="#6B7280" text-anchor="start" font-weight="normal">NP_001304849.1 · signed distance from each internal coding-exon boundary to the nearest representative-domain edge</text>
+<text x="12" y="43.5" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="start" font-weight="normal" font-style="italic">How far, and on which side, does each exon boundary sit relative to the nearest domain edge?</text>
+<rect x="178" y="58.7" width="216" height="18.4" fill="#e3e8f0" stroke="none" stroke-width="0.5" opacity="0.9" />
+<text x="286" y="55.7" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="middle" font-weight="normal">±5 aa</text>
+<line x1="286" y1="58.7" x2="286" y2="77.1" stroke="#1c2433" stroke-width="0.7" />
+<text x="64" y="70.49" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="end" font-weight="normal">E1 → E2</text>
+<line x1="286" y1="67.9" x2="286" y2="67.9" stroke="#005B8F" stroke-width="0.7" opacity="0.75" />
+<circle cx="286" cy="67.9" r="2.8" fill="#005B8F" stroke="none" stroke-width="0.5" />
+<text x="291.8" y="70.07" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="start" font-weight="normal">0</text>
+<line x1="70" y1="82.1" x2="502" y2="82.1" stroke="#9aa4b2" stroke-width="0.7" />
+<line x1="70" y1="82.1" x2="70" y2="85.6" stroke="#9aa4b2" stroke-width="0.7" />
+<text x="70" y="92.9" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.8" fill="#6B7280" text-anchor="middle" font-weight="normal">-10</text>
+<line x1="134.8" y1="82.1" x2="134.8" y2="85.6" stroke="#9aa4b2" stroke-width="0.7" />
+<text x="134.8" y="92.9" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.8" fill="#6B7280" text-anchor="middle" font-weight="normal">-7</text>
+<line x1="178" y1="82.1" x2="178" y2="85.6" stroke="#9aa4b2" stroke-width="0.7" />
+<text x="178" y="92.9" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.8" fill="#6B7280" text-anchor="middle" font-weight="normal">-5</text>
+<line x1="242.8" y1="82.1" x2="242.8" y2="85.6" stroke="#9aa4b2" stroke-width="0.7" />
+<text x="242.8" y="92.9" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.8" fill="#6B7280" text-anchor="middle" font-weight="normal">-2</text>
+<line x1="286" y1="82.1" x2="286" y2="85.6" stroke="#9aa4b2" stroke-width="0.7" />
+<text x="286" y="92.9" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.8" fill="#6B7280" text-anchor="middle" font-weight="normal">0</text>
+<line x1="350.8" y1="82.1" x2="350.8" y2="85.6" stroke="#9aa4b2" stroke-width="0.7" />
+<text x="350.8" y="92.9" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.8" fill="#6B7280" text-anchor="middle" font-weight="normal">+3</text>
+<line x1="394" y1="82.1" x2="394" y2="85.6" stroke="#9aa4b2" stroke-width="0.7" />
+<text x="394" y="92.9" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.8" fill="#6B7280" text-anchor="middle" font-weight="normal">+5</text>
+<line x1="458.8" y1="82.1" x2="458.8" y2="85.6" stroke="#9aa4b2" stroke-width="0.7" />
+<text x="458.8" y="92.9" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.8" fill="#6B7280" text-anchor="middle" font-weight="normal">+8</text>
+<line x1="502" y1="82.1" x2="502" y2="85.6" stroke="#9aa4b2" stroke-width="0.7" />
+<text x="502" y="92.9" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.8" fill="#6B7280" text-anchor="middle" font-weight="normal">+10</text>
+<text x="286" y="103.7" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#1c2433" text-anchor="middle" font-weight="normal">Signed distance to nearest domain edge (aa) · 0 = domain edge</text>
+<rect x="70" y="111.1" width="7" height="7" fill="#005B8F" stroke="#9aa4b2" stroke-width="0.5" />
+<text x="81" y="117.1" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7" fill="#1c2433" text-anchor="start" font-weight="normal">Exact domain edge</text>
+<text x="70" y="135.3" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="start" font-weight="normal">Open marker: distance to a domain start edge · filled marker: distance to a domain end edge · negative: upstream of that edge</text>
+</svg>

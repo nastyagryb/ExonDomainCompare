@@ -1,0 +1,141 @@
+{
+  "available": true,
+  "generated_at": "2026-07-07T08:27:06+00:00",
+  "total_primary_proteins": 58,
+  "proteins_with_cassette_data": 58,
+  "proteins_with_interpro_domain_data": 58,
+  "proteins_with_tm_data": 58,
+  "n_cassette_boundaries": 116,
+  "boundary_class_counts": {
+    "aligned_to_domain_boundary": 12,
+    "near_domain_boundary": 49,
+    "within_domain": 55,
+    "between_domains": 0,
+    "review_or_missing": 0
+  },
+  "median_distance": 13.5,
+  "mean_distance": 21.29,
+  "isoform_summary": {
+    "IIIb": {
+      "n_proteins": 29,
+      "boundary_class_counts": {
+        "aligned_to_domain_boundary": 6,
+        "near_domain_boundary": 25,
+        "within_domain": 27,
+        "between_domains": 0,
+        "review_or_missing": 0
+      },
+      "median_distance": 13.0,
+      "mean_distance": 21.98
+    },
+    "IIIc": {
+      "n_proteins": 29,
+      "boundary_class_counts": {
+        "aligned_to_domain_boundary": 6,
+        "near_domain_boundary": 24,
+        "within_domain": 28,
+        "between_domains": 0,
+        "review_or_missing": 0
+      },
+      "median_distance": 13.5,
+      "mean_distance": 20.6
+    }
+  },
+  "taxon_summary": [
+    {
+      "taxon_group": "Primates",
+      "n_proteins": 11,
+      "boundary_class_counts": {
+        "aligned_to_domain_boundary": 2,
+        "near_domain_boundary": 11,
+        "within_domain": 9,
+        "between_domains": 0,
+        "review_or_missing": 0
+      },
+      "median_distance": 12.5,
+      "mean_distance": 20.0
+    },
+    {
+      "taxon_group": "Other mammals",
+      "n_proteins": 21,
+      "boundary_class_counts": {
+        "aligned_to_domain_boundary": 1,
+        "near_domain_boundary": 20,
+        "within_domain": 21,
+        "between_domains": 0,
+        "review_or_missing": 0
+      },
+      "median_distance": 15.5,
+      "mean_distance": 21.93
+    },
+    {
+      "taxon_group": "Birds",
+      "n_proteins": 6,
+      "boundary_class_counts": {
+        "aligned_to_domain_boundary": 0,
+        "near_domain_boundary": 7,
+        "within_domain": 5,
+        "between_domains": 0,
+        "review_or_missing": 0
+      },
+      "median_distance": 11.0,
+      "mean_distance": 19.33
+    },
+    {
+      "taxon_group": "Reptiles",
+      "n_proteins": 6,
+      "boundary_class_counts": {
+        "aligned_to_domain_boundary": 2,
+        "near_domain_boundary": 4,
+        "within_domain": 6,
+        "between_domains": 0,
+        "review_or_missing": 0
+      },
+      "median_distance": 22.0,
+      "mean_distance": 23.25
+    },
+    {
+      "taxon_group": "Amphibians",
+      "n_proteins": 4,
+      "boundary_class_counts": {
+        "aligned_to_domain_boundary": 2,
+        "near_domain_boundary": 2,
+        "within_domain": 4,
+        "between_domains": 0,
+        "review_or_missing": 0
+      },
+      "median_distance": 16.5,
+      "mean_distance": 21.38
+    },
+    {
+      "taxon_group": "Teleost fish",
+      "n_proteins": 10,
+      "boundary_class_counts": {
+        "aligned_to_domain_boundary": 5,
+        "near_domain_boundary": 5,
+        "within_domain": 10,
+        "between_domains": 0,
+        "review_or_missing": 0
+      },
+      "median_distance": 13.5,
+      "mean_distance": 21.35
+    }
+  ],
+  "key_interpretation": "Cassette-end boundaries are consistently aligned/near the Ig-like domain boundary, while cassette-start boundaries usually lie within the Ig-like region. This is consistent with robust exon–domain boundary identification across the primary vertebrate FGFR2 dataset.",
+  "source_files": [
+    "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/tables/exon_domain_boundary_consistency_summary.tsv",
+    "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/tables/exon_domain_boundary_distances.tsv"
+  ],
+  "figure_links": {
+    "heatmap": {
+      "png": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_11_exon_domain_boundary_consistency_heatmap.png",
+      "svg": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_11_exon_domain_boundary_consistency_heatmap.svg",
+      "pdf": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_11_exon_domain_boundary_consistency_heatmap.pdf"
+    },
+    "distance_distribution": {
+      "png": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_12_boundary_distance_distribution.png",
+      "svg": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_12_boundary_distance_distribution.svg",
+      "pdf": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_12_boundary_distance_distribution.pdf"
+    }
+  }
+}

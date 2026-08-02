@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "dataset_id": "run:2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus",
+  "analysis_id": "BCL2L1_core_only_pilot",
+  "available": false,
+  "reason": "no_event_configured",
+  "message": "No event region is configured for this gene. Core gene-level analysis is available.",
+  "event_labels": [],
+  "species": []
+}

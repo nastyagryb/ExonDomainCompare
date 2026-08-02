@@ -1,0 +1,5 @@
+species_id	scientific_name	protein_id	domain_instance_id	interpro_accession	label	instance_number	native_start	native_end	msa_start_column	msa_end_column	msa_mapping_status	order_along_protein
+homo_sapiens	Homo sapiens	NP_001304849.1	IPR003093:1-27	IPR003093	Bcl2 BH4	1	1	27	1	27	mapped	1
+homo_sapiens	Homo sapiens	NP_001304849.1	IPR046371:90-188	IPR046371	Bcl-2 BH1-3	1	90	188	90	188	mapped	2
+mus_musculus	Mus musculus	NP_001276668.1	IPR003093:1-27	IPR003093	Bcl2 BH4	1	1	27	1	27	mapped	1
+mus_musculus	Mus musculus	NP_001276668.1	IPR046371:90-188	IPR046371	Bcl-2 BH1-3	1	90	188	90	188	mapped	2

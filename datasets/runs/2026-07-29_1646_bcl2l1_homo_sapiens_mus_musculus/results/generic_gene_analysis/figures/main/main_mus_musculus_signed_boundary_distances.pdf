@@ -1,0 +1,223 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 522 148.3] /Resources << /Font << /F_bold 5 0 R /F_italic 6 0 R /F_normal 7 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 2579 >>
+stream
+1 1 1 rg
+0 0 522 148.3 re f
+0.11 0.14 0.2 rg
+BT
+/F_bold 10.5 Tf
+12 127.8 Td
+(BCL2L1) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_italic 10.5 Tf
+56.24 127.8 Td
+(∑ Mus musculus) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 8 Tf
+12 115.8 Td
+(NP_001276668.1 ∑ signed distance from each internal coding-exon boundary to the nearest representative-domain edge) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_italic 6.2 Tf
+12 104.8 Td
+(How far, and on which side, does each exon boundary sit relative to the nearest domain edge?) Tj
+ET
+0.9 0.92 0.95 rg
+0.1 0.1 0.1 RG
+0.5 w
+178 71.2 216 18.4 re
+B
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.2 Tf
+278.23 92.6 Td
+(±5 aa) Tj
+ET
+0.11 0.14 0.2 RG
+0.7 w
+[] 0 d
+286 89.6 m 286 71.2 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+36.46 77.81 Td
+(E1 -> E2) Tj
+ET
+0.25 0.52 0.67 RG
+0.7 w
+[] 0 d
+286 80.4 m 286 80.4 l S
+0 0.36 0.56 rg
+0 0 0 RG
+0.5 w
+283.2 80.4 m
+283.2 81.95 284.45 83.2 286 83.2 c
+287.55 83.2 288.8 81.95 288.8 80.4 c
+288.8 78.85 287.55 77.6 286 77.6 c
+284.45 77.6 283.2 78.85 283.2 80.4 c
+b
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.2 Tf
+291.8 78.23 Td
+(0) Tj
+ET
+0.6 0.64 0.7 RG
+0.7 w
+[] 0 d
+70 66.2 m 502 66.2 l S
+0.6 0.64 0.7 RG
+0.7 w
+[] 0 d
+70 66.2 m 70 62.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.8 Tf
+65 55.4 Td
+(-10) Tj
+ET
+0.6 0.64 0.7 RG
+0.7 w
+[] 0 d
+134.8 66.2 m 134.8 62.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.8 Tf
+131.69 55.4 Td
+(-7) Tj
+ET
+0.6 0.64 0.7 RG
+0.7 w
+[] 0 d
+178 66.2 m 178 62.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.8 Tf
+174.89 55.4 Td
+(-5) Tj
+ET
+0.6 0.64 0.7 RG
+0.7 w
+[] 0 d
+242.8 66.2 m 242.8 62.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.8 Tf
+239.69 55.4 Td
+(-2) Tj
+ET
+0.6 0.64 0.7 RG
+0.7 w
+[] 0 d
+286 66.2 m 286 62.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.8 Tf
+284.11 55.4 Td
+(0) Tj
+ET
+0.6 0.64 0.7 RG
+0.7 w
+[] 0 d
+350.8 66.2 m 350.8 62.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.8 Tf
+347.11 55.4 Td
+(+3) Tj
+ET
+0.6 0.64 0.7 RG
+0.7 w
+[] 0 d
+394 66.2 m 394 62.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.8 Tf
+390.31 55.4 Td
+(+5) Tj
+ET
+0.6 0.64 0.7 RG
+0.7 w
+[] 0 d
+458.8 66.2 m 458.8 62.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.8 Tf
+455.11 55.4 Td
+(+8) Tj
+ET
+0.6 0.64 0.7 RG
+0.7 w
+[] 0 d
+502 66.2 m 502 62.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.8 Tf
+496.42 55.4 Td
+(+10) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 7.4 Tf
+177.68 44.6 Td
+(Signed distance to nearest domain edge \(aa\) ∑ 0 = domain edge) Tj
+ET
+0 0.36 0.56 rg
+0.6 0.64 0.7 RG
+0.5 w
+70 30.2 7 7 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 7 Tf
+81 31.2 Td
+(Exact domain edge) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.2 Tf
+70 13 Td
+(Open marker: distance to a domain start edge ∑ filled marker: distance to a domain end edge ∑ negative: upstream of that edge) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000285 00000 n 
+0000002916 00000 n 
+0000003018 00000 n 
+0000003123 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+3220
+%%EOF

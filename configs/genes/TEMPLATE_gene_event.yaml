@@ -1,0 +1,78 @@
+# TEMPLATE — gene/event analysis config (NOT wired into the UI, NOT runnable).
+#
+# This is a documentation placeholder that shows the shape a FUTURE gene/event
+# analysis config would take. It is intentionally NOT registered anywhere:
+#   * the webapp does not offer it,
+#   * no pipeline reads it,
+#   * FGFR2 IIIb/IIIc remains the ONLY active, validated analysis.
+#
+# Copy this file to configs/genes/<ANALYSIS_ID>.yaml and fill it in only when a
+# second gene is actually implemented end-to-end (pipeline + adapter coverage).
+# Adding a config here does NOT make an arbitrary gene work automatically.
+schema_version: 1
+
+analysis:
+  id: EXAMPLE_GENE_EVENT            # unique id, e.g. GENEX_exonY_switch
+  display_name: Example gene event
+  description: >
+    One-line description of the comparative exon/domain event this analysis
+    studies across orthologs.
+
+gene:
+  symbol: GENEX                     # HGNC-style gene symbol
+  display_name: Example gene X
+  reference_species: homo_sapiens   # curated reference/control species
+  reference_role: human_reference_control
+
+event:
+  id: GENEX_event_region            # unique event id
+  type: mutually_exclusive_cassette # event type (see docs / existing FGFR2 config)
+  display_name: Event region
+  generic_label: event_region
+  labels:
+    - id: A                         # first mutually-exclusive/alternative label
+      display_name: A
+      marker_sequence: ""           # optional discriminating marker peptide
+      reference_role: human_A_reference
+    - id: B
+      display_name: B
+      marker_sequence: ""
+      reference_role: human_B_reference
+
+reference_control:
+  enabled: true
+  species: homo_sapiens
+  source: curated_reference
+  role: reference_control_only
+  note: >
+    Curated human reference is used only as a fixed reference/control layer and
+    is never added to the analysed species panel unless explicitly selected.
+
+views:
+  overview: true
+  gene_explorer: true
+  isoforms: true
+  evidence: true
+  event_region: true
+  exon_map: true
+  domain_architecture: true
+  boundary_relation: true
+  synteny: true
+  msa: true
+  figures: true
+  audit: true
+
+ui_labels:
+  gene_explorer: Gene Explorer
+  event_region: Event region
+  event_region_full: Event region
+  event_discriminating_columns: Discriminating columns
+  boundary_relation: Boundary Consistency
+  domain_relation_description: Event-to-domain boundary consistency
+  reference_comparison: Reference comparison
+
+canonical_outputs:
+  pre_interpro_closure: results/13_final_pre_interpro_closure
+  post_interpro: results/15_exon_domain_boundary_post_interpro
+  final_analyses: results/16_final_thesis_analyses
+  website_indices: website_indices

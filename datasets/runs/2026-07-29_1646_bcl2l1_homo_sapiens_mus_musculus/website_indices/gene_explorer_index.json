@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "dataset_id": "run:2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus",
+  "analysis_id": "BCL2L1_core_only_pilot",
+  "analysis_display_name": "BCL2L1 core-only exploratory analysis",
+  "gene": {
+    "symbol": "BCL2L1",
+    "display_name": "BCL2L1",
+    "reference_species": ""
+  },
+  "analysis_modes": {
+    "core_gene_analysis": true,
+    "event_analysis": "optional"
+  },
+  "has_event": false,
+  "event": {
+    "status": "not_configured",
+    "type": "requires_gene_specific_event_detector",
+    "labels": []
+  },
+  "selection_method": "canonical_if_available",
+  "species": [
+    "homo_sapiens",
+    "mus_musculus"
+  ],
+  "n_species": 2,
+  "n_gene_models": 22,
+  "n_proteins": 19,
+  "n_protein_isoforms": 19,
+  "n_primary_proteins": 2,
+  "primary_protein_ids": [
+    "NP_001304849.1",
+    "NP_001276668.1"
+  ],
+  "exon_map_available": true,
+  "isoforms": [
+    {
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "transcript_id": "NM_001317920.2",
+      "protein_length": 233,
+      "primary_status": "primary"
+    },
+    {
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001309168.1",
+      "transcript_id": "NM_001322239.2",
+      "protein_length": 233,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304850.1",
+      "transcript_id": "NM_001317921.2",
+      "protein_length": 233,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001309169.1",
+      "transcript_id": "NM_001322240.2",
+      "protein_length": 233,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304848.1",
+      "transcript_id": "NM_001317919.2",
+      "protein_length": 233,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001182.1",
+      "transcript_id": "NM_001191.4",
+      "protein_length": 170,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_612815.1",
+      "transcript_id": "NM_138578.3",
+      "protein_length": 233,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001411260.1",
+      "transcript_id": "NM_001424331.1",
+      "protein_length": 233,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001411261.1",
+      "transcript_id": "NM_001424332.1",
+      "protein_length": 233,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001309171.1",
+      "transcript_id": "NM_001322242.2",
+      "protein_length": 233,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "transcript_id": "NM_001289739.2",
+      "protein_length": 235,
+      "primary_status": "primary"
+    },
+    {
+      "species_id": "mus_musculus",
+      "protein_id": "NP_033873.3",
+      "transcript_id": "NM_009743.6",
+      "protein_length": 233,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001403826.1",
+      "transcript_id": "NM_001416897.1",
+      "protein_length": 233,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001403825.1",
+      "transcript_id": "NM_001416896.1",
+      "protein_length": 233,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001403827.1",
+      "transcript_id": "NM_001416898.1",
+      "protein_length": 233,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276646.1",
+      "transcript_id": "NM_001289717.2",
+      "protein_length": 233,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276645.1",
+      "transcript_id": "NM_001289716.2",
+      "protein_length": 233,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001341982.1",
+      "transcript_id": "NM_001355053.2",
+      "protein_length": 233,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001403828.1",
+      "transcript_id": "NM_001416899.1",
+      "protein_length": 233,
+      "primary_status": "alternative"
+    }
+  ],
+  "source": "core_gene_analysis",
+  "selection_rule": "refseq_curated_over_predicted",
+  "selection_rule_label": "RefSeq curated (NM/NP) over predicted (XM/XP)",
+  "primary_selection": {
+    "primary_protein_id": "NP_001304849.1",
+    "selection_rule": "refseq_curated_over_predicted",
+    "selection_source": "RefSeq curated (NM/NP)",
+    "confidence": "high",
+    "explanation": "NP_001304849.1 (NM_001317920.2) was selected as primary because it is the curated RefSeq protein (NM/NP). Predicted XP isoforms are retained as alternatives."
+  }
+}

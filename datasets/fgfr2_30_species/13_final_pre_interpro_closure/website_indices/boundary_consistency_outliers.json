@@ -1,0 +1,270 @@
+{
+  "available": true,
+  "generated_at": "2026-07-07T08:27:06+00:00",
+  "count": 13,
+  "title": "Inspection cases",
+  "note": "Cases flagged for display-coordinate confidence (reconstructed or cassette-only exon blocks). These are inspection cases, not biological failures; IIIb/IIIc labels and primary/review membership are unchanged.",
+  "source_table": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/tables/exon_domain_boundary_outliers.tsv",
+  "outliers": [
+    {
+      "species": "ambystoma_mexicanum",
+      "display_species_name": "Ambystoma Mexicanum",
+      "isoform": "IIIc",
+      "final_isoform_label": "IIIc",
+      "boundary_type": "cassette_end",
+      "boundary_aa": 380,
+      "nearest_domain_label": "Ig3",
+      "distance": 3,
+      "boundary_class": "aligned_to_domain_boundary",
+      "reason": "low-confidence / reconstructed exon-block display (native_exon_blocks_reconstructed)",
+      "interpretation": "Coding-exon blocks were rebuilt from native CDS coordinates; the validated cassette slot is unchanged. Inspection case (display confidence), not a biological failure.",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "architecture_qc_status": "architecture_supported",
+      "link_target": {
+        "species": "ambystoma_mexicanum",
+        "isoform": "IIIc",
+        "tab": "boundary"
+      }
+    },
+    {
+      "species": "canis_lupus_familiaris",
+      "display_species_name": "Canis Lupus Familiaris",
+      "isoform": "IIIb",
+      "final_isoform_label": "IIIb",
+      "boundary_type": "cassette_end",
+      "boundary_aa": 244,
+      "nearest_domain_label": "Ig2",
+      "distance": 2,
+      "boundary_class": "aligned_to_domain_boundary",
+      "reason": "low-confidence / reconstructed exon-block display (cassette_only_high_confidence)",
+      "interpretation": "Only the validated cassette slot is shown (native exon coordinates unavailable). Inspection case (display confidence), not a biological failure.",
+      "exon_block_display_status": "cassette_only_high_confidence",
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "link_target": {
+        "species": "canis_lupus_familiaris",
+        "isoform": "IIIb",
+        "tab": "boundary"
+      }
+    },
+    {
+      "species": "chrysemys_picta_bellii",
+      "display_species_name": "Chrysemys Picta Bellii",
+      "isoform": "IIIb",
+      "final_isoform_label": "IIIb",
+      "boundary_type": "cassette_end",
+      "boundary_aa": 379,
+      "nearest_domain_label": "Ig3",
+      "distance": 3,
+      "boundary_class": "aligned_to_domain_boundary",
+      "reason": "low-confidence / reconstructed exon-block display (native_exon_blocks_reconstructed)",
+      "interpretation": "Coding-exon blocks were rebuilt from native CDS coordinates; the validated cassette slot is unchanged. Inspection case (display confidence), not a biological failure.",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "architecture_qc_status": "architecture_supported",
+      "link_target": {
+        "species": "chrysemys_picta_bellii",
+        "isoform": "IIIb",
+        "tab": "boundary"
+      }
+    },
+    {
+      "species": "danio_rerio",
+      "display_species_name": "Danio Rerio",
+      "isoform": "IIIb",
+      "final_isoform_label": "IIIb",
+      "boundary_type": "cassette_end",
+      "boundary_aa": 383,
+      "nearest_domain_label": "Ig3",
+      "distance": 3,
+      "boundary_class": "aligned_to_domain_boundary",
+      "reason": "low-confidence / reconstructed exon-block display (native_exon_blocks_reconstructed)",
+      "interpretation": "Coding-exon blocks were rebuilt from native CDS coordinates; the validated cassette slot is unchanged. Inspection case (display confidence), not a biological failure.",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "link_target": {
+        "species": "danio_rerio",
+        "isoform": "IIIb",
+        "tab": "boundary"
+      }
+    },
+    {
+      "species": "gasterosteus_aculeatus",
+      "display_species_name": "Gasterosteus Aculeatus",
+      "isoform": "IIIb",
+      "final_isoform_label": "IIIb",
+      "boundary_type": "cassette_end",
+      "boundary_aa": 475,
+      "nearest_domain_label": "Ig3",
+      "distance": 10,
+      "boundary_class": "near_domain_boundary",
+      "reason": "low-confidence / reconstructed exon-block display (native_exon_blocks_reconstructed)",
+      "interpretation": "Coding-exon blocks were rebuilt from native CDS coordinates; the validated cassette slot is unchanged. Inspection case (display confidence), not a biological failure.",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "link_target": {
+        "species": "gasterosteus_aculeatus",
+        "isoform": "IIIb",
+        "tab": "boundary"
+      }
+    },
+    {
+      "species": "gorilla_gorilla_gorilla",
+      "display_species_name": "Gorilla Gorilla Gorilla",
+      "isoform": "IIIb",
+      "final_isoform_label": "IIIb",
+      "boundary_type": "cassette_end",
+      "boundary_aa": 270,
+      "nearest_domain_label": "Ig2",
+      "distance": 2,
+      "boundary_class": "aligned_to_domain_boundary",
+      "reason": "low-confidence / reconstructed exon-block display (native_exon_blocks_reconstructed)",
+      "interpretation": "Coding-exon blocks were rebuilt from native CDS coordinates; the validated cassette slot is unchanged. Inspection case (display confidence), not a biological failure.",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "link_target": {
+        "species": "gorilla_gorilla_gorilla",
+        "isoform": "IIIb",
+        "tab": "boundary"
+      }
+    },
+    {
+      "species": "meleagris_gallopavo",
+      "display_species_name": "Meleagris Gallopavo",
+      "isoform": "IIIc",
+      "final_isoform_label": "IIIc",
+      "boundary_type": "cassette_end",
+      "boundary_aa": 245,
+      "nearest_domain_label": "Ig2",
+      "distance": 7,
+      "boundary_class": "near_domain_boundary",
+      "reason": "low-confidence / reconstructed exon-block display (native_exon_blocks_reconstructed)",
+      "interpretation": "Coding-exon blocks were rebuilt from native CDS coordinates; the validated cassette slot is unchanged. Inspection case (display confidence), not a biological failure.",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "link_target": {
+        "species": "meleagris_gallopavo",
+        "isoform": "IIIc",
+        "tab": "boundary"
+      }
+    },
+    {
+      "species": "mus_musculus",
+      "display_species_name": "Mus Musculus",
+      "isoform": "IIIb",
+      "final_isoform_label": "IIIb",
+      "boundary_type": "cassette_end",
+      "boundary_aa": 393,
+      "nearest_domain_label": "TM",
+      "distance": 4,
+      "boundary_class": "near_domain_boundary",
+      "reason": "low-confidence / reconstructed exon-block display (native_exon_blocks_reconstructed)",
+      "interpretation": "Coding-exon blocks were rebuilt from native CDS coordinates; the validated cassette slot is unchanged. Inspection case (display confidence), not a biological failure.",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "link_target": {
+        "species": "mus_musculus",
+        "isoform": "IIIb",
+        "tab": "boundary"
+      }
+    },
+    {
+      "species": "oreochromis_niloticus",
+      "display_species_name": "Oreochromis Niloticus",
+      "isoform": "IIIc",
+      "final_isoform_label": "IIIc",
+      "boundary_type": "cassette_end",
+      "boundary_aa": 424,
+      "nearest_domain_label": "kinase",
+      "distance": 7,
+      "boundary_class": "near_domain_boundary",
+      "reason": "low-confidence / reconstructed exon-block display (native_exon_blocks_reconstructed)",
+      "interpretation": "Coding-exon blocks were rebuilt from native CDS coordinates; the validated cassette slot is unchanged. Inspection case (display confidence), not a biological failure.",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "link_target": {
+        "species": "oreochromis_niloticus",
+        "isoform": "IIIc",
+        "tab": "boundary"
+      }
+    },
+    {
+      "species": "oryzias_latipes",
+      "display_species_name": "Oryzias Latipes",
+      "isoform": "IIIb",
+      "final_isoform_label": "IIIb",
+      "boundary_type": "cassette_end",
+      "boundary_aa": 376,
+      "nearest_domain_label": "Ig3",
+      "distance": 3,
+      "boundary_class": "aligned_to_domain_boundary",
+      "reason": "low-confidence / reconstructed exon-block display (native_exon_blocks_reconstructed)",
+      "interpretation": "Coding-exon blocks were rebuilt from native CDS coordinates; the validated cassette slot is unchanged. Inspection case (display confidence), not a biological failure.",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "architecture_qc_status": "architecture_supported",
+      "link_target": {
+        "species": "oryzias_latipes",
+        "isoform": "IIIb",
+        "tab": "boundary"
+      }
+    },
+    {
+      "species": "pongo_abelii",
+      "display_species_name": "Pongo Abelii",
+      "isoform": "IIIc",
+      "final_isoform_label": "IIIc",
+      "boundary_type": "cassette_end",
+      "boundary_aa": 446,
+      "nearest_domain_label": "kinase",
+      "distance": 8,
+      "boundary_class": "near_domain_boundary",
+      "reason": "low-confidence / reconstructed exon-block display (native_exon_blocks_reconstructed)",
+      "interpretation": "Coding-exon blocks were rebuilt from native CDS coordinates; the validated cassette slot is unchanged. Inspection case (display confidence), not a biological failure.",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "architecture_qc_status": "architecture_supported",
+      "link_target": {
+        "species": "pongo_abelii",
+        "isoform": "IIIc",
+        "tab": "boundary"
+      }
+    },
+    {
+      "species": "takifugu_rubripes",
+      "display_species_name": "Takifugu Rubripes",
+      "isoform": "IIIb",
+      "final_isoform_label": "IIIb",
+      "boundary_type": "cassette_end",
+      "boundary_aa": 343,
+      "nearest_domain_label": "Ig3",
+      "distance": 36,
+      "boundary_class": "within_domain",
+      "reason": "low-confidence / reconstructed exon-block display (native_exon_blocks_reconstructed)",
+      "interpretation": "Coding-exon blocks were rebuilt from native CDS coordinates; the validated cassette slot is unchanged. Inspection case (display confidence), not a biological failure.",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "link_target": {
+        "species": "takifugu_rubripes",
+        "isoform": "IIIb",
+        "tab": "boundary"
+      }
+    },
+    {
+      "species": "xenopus_tropicalis",
+      "display_species_name": "Xenopus Tropicalis",
+      "isoform": "IIIb",
+      "final_isoform_label": "IIIb",
+      "boundary_type": "cassette_end",
+      "boundary_aa": 368,
+      "nearest_domain_label": "Ig3",
+      "distance": 0,
+      "boundary_class": "aligned_to_domain_boundary",
+      "reason": "low-confidence / reconstructed exon-block display (native_exon_blocks_reconstructed)",
+      "interpretation": "Coding-exon blocks were rebuilt from native CDS coordinates; the validated cassette slot is unchanged. Inspection case (display confidence), not a biological failure.",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "link_target": {
+        "species": "xenopus_tropicalis",
+        "isoform": "IIIb",
+        "tab": "boundary"
+      }
+    }
+  ]
+}

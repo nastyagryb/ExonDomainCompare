@@ -1,0 +1,189 @@
+{
+  "schema_version": 2,
+  "dataset_id": "2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus",
+  "analysis_id": "BCL2L1_core_only_pilot",
+  "gene_symbol": "BCL2L1",
+  "gene_identity": {
+    "requested_gene_symbol": "BCL2L1",
+    "display_symbol": "BCL2L1",
+    "source_symbols_by_species": {},
+    "any_symbol_differs_from_source": false,
+    "resolution_methods": [
+      "annotation_case_normalized_symbol",
+      "annotation_exact_symbol"
+    ],
+    "source_descriptions": [
+      "BCL2 like 1",
+      "BCL2-like 1"
+    ],
+    "by_species": {
+      "homo_sapiens": {
+        "requested_gene_symbol": "BCL2L1",
+        "resolved_gene_id": "598",
+        "resolved_official_symbol": "BCL2L1",
+        "resolved_display_symbol": "BCL2L1",
+        "source_description": "BCL2 like 1",
+        "resolution_method": "annotation_exact_symbol",
+        "resolution_confidence": "exact_symbol",
+        "source_provenance": {
+          "assembly_accession": "GCF_000001405.40",
+          "annotation_file": "external:NCBI/GCF_000001405.40/genomic.gff",
+          "scientific_name": "Homo sapiens",
+          "taxid": "9606"
+        },
+        "symbol_differs_from_source": false
+      },
+      "mus_musculus": {
+        "requested_gene_symbol": "BCL2L1",
+        "resolved_gene_id": "12048",
+        "resolved_official_symbol": "Bcl2l1",
+        "resolved_display_symbol": "BCL2L1",
+        "source_description": "BCL2-like 1",
+        "resolution_method": "annotation_case_normalized_symbol",
+        "resolution_confidence": "exact_symbol",
+        "source_provenance": {
+          "assembly_accession": "GCF_000001635.27",
+          "annotation_file": "external:NCBI/GCF_000001635.27/genomic.gff",
+          "scientific_name": "Mus musculus",
+          "taxid": "10090"
+        },
+        "symbol_differs_from_source": false
+      }
+    }
+  },
+  "pipeline_type": "shared_gene_pipeline",
+  "event_layer_type": "exploratory_event_evidence",
+  "event_status": "exploratory_candidates_only",
+  "event_analysis_enabled": false,
+  "support_level": "generic_gene_analysis_experimental",
+  "items": [
+    {
+      "layer_id": "gene_model",
+      "display_name": "Gene model",
+      "status": "available",
+      "source": "NCBI GFF gene model",
+      "confidence": "high",
+      "explanation": "22 gene/transcript model row(s) for BCL2L1.",
+      "source_files": [
+        "generic_gene_analysis/gene_model_summary.tsv"
+      ],
+      "linked_view": "gene_explorer",
+      "linked_figure": "generic_gene_model_overview"
+    },
+    {
+      "layer_id": "protein_isoform",
+      "display_name": "Protein isoform",
+      "status": "available",
+      "source": "Translated CDS isoforms",
+      "confidence": "high",
+      "explanation": "19 protein isoform(s); 2 selected as primary.",
+      "source_files": [
+        "generic_gene_analysis/protein_isoform_summary.tsv"
+      ],
+      "linked_view": "gene_explorer",
+      "linked_figure": "generic_gene_model_overview"
+    },
+    {
+      "layer_id": "primary_selection",
+      "display_name": "Primary selection",
+      "status": "available",
+      "source": "Documented selection hierarchy",
+      "confidence": "high",
+      "explanation": "Primary = NP_001304849.1 via refseq_curated_over_predicted.",
+      "source_files": [
+        "generic_gene_analysis/primary_selection_evidence.tsv"
+      ],
+      "linked_view": "gene_explorer",
+      "linked_figure": ""
+    },
+    {
+      "layer_id": "exon_protein_architecture",
+      "display_name": "Exon/protein architecture",
+      "status": "available",
+      "source": "GFF CDS → protein aa mapping",
+      "confidence": "high",
+      "explanation": "38 coding-exon block(s) mapped to protein coordinates.",
+      "source_files": [
+        "generic_gene_analysis/exon_protein_architecture.tsv"
+      ],
+      "linked_view": "protein_architecture",
+      "linked_figure": "generic_exon_protein_architecture_primary"
+    },
+    {
+      "layer_id": "synteny",
+      "display_name": "Synteny",
+      "status": "available",
+      "source": "Genomic neighbourhood (GFF)",
+      "confidence": "medium",
+      "explanation": "20/20 neighbours resolved.",
+      "source_files": [
+        "generic_gene_analysis/synteny_neighbourhood.tsv"
+      ],
+      "linked_view": "synteny",
+      "linked_figure": "generic_synteny_neighbourhood"
+    },
+    {
+      "layer_id": "exploratory_event",
+      "display_name": "Exploratory event evidence",
+      "status": "available",
+      "source": "Isoform-difference candidate search",
+      "confidence": "exploratory",
+      "explanation": "3 exploratory candidate cluster(s). Not validated events; no markers or event labels invented.",
+      "source_files": [
+        "generic_gene_analysis/event_region_candidate_clusters.tsv"
+      ],
+      "linked_view": "event_evidence",
+      "linked_figure": "generic_exploratory_event_candidates"
+    },
+    {
+      "layer_id": "external_uniprot",
+      "display_name": "External UniProt evidence",
+      "status": "optional",
+      "source": "UniProt alternative-sequence (optional collector)",
+      "confidence": "n/a",
+      "explanation": "Optional external evidence; collected only when enabled.",
+      "source_files": [],
+      "linked_view": "event_evidence",
+      "linked_figure": ""
+    },
+    {
+      "layer_id": "msa",
+      "display_name": "Multiple sequence alignment",
+      "status": "available",
+      "source": "MAFFT --auto (isoform-level)",
+      "confidence": "n/a",
+      "explanation": "Isoform MSA built.",
+      "source_files": [
+        "generic_gene_analysis/msa_index.tsv"
+      ],
+      "linked_view": "msa",
+      "linked_figure": ""
+    },
+    {
+      "layer_id": "domain_annotation",
+      "display_name": "Domain annotation",
+      "status": "available",
+      "source": "InterProScan / pyTMHMM",
+      "confidence": "n/a",
+      "explanation": "Domain architecture available.",
+      "source_files": [
+        "generic_gene_analysis/domain_architecture.tsv"
+      ],
+      "linked_view": "domain_architecture",
+      "linked_figure": "generic_domain_architecture"
+    },
+    {
+      "layer_id": "boundary_analysis",
+      "display_name": "Exon–domain boundary analysis",
+      "status": "available",
+      "source": "All-exon boundary distances",
+      "confidence": "n/a",
+      "explanation": "Boundary analysis available.",
+      "source_files": [
+        "generic_gene_analysis/exon_domain_boundary_analysis.tsv"
+      ],
+      "linked_view": "exon_domain_boundaries",
+      "linked_figure": "generic_exon_domain_boundary_distribution"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+# Core gene-analysis output contract (machine-readable).
+#
+# The CORE analysis is gene/event-AGNOSTIC. It applies to ANY supported
+# protein-coding gene for which gene models / proteins can be collected. It does
+# NOT depend on a configured event region (no cassette / IIIb / IIIc anywhere).
+#
+# The EVENT-specific analysis (see event_detector_contract.yaml) is OPTIONAL and
+# layers on top of core outputs only when an event region is configured/detected.
+#
+# This is a CONTRACT description only. It changes no biological logic and never
+# writes into the example freeze.
+schema_version: 1
+contract_version: 1
+
+outputs:
+  gene_model_index:
+    file: gene_model_index.tsv
+    format: tsv
+    description: One row per collected gene model (species x transcript/protein).
+    columns:
+      - {name: analysis_id, required: true}
+      - {name: gene_symbol, required: true}
+      - {name: species_id, required: true}
+      - {name: gene_id, required: false}
+      - {name: transcript_id, required: false}
+      - {name: protein_id, required: true}
+      - {name: source, required: true}
+      - {name: protein_length, required: false}
+      - {name: model_status, required: false}
+      - {name: notes, required: false}
+
+  protein_isoform_index:
+    file: protein_isoform_index.tsv
+    format: tsv
+    description: Protein isoforms per species (label optional; no event required).
+    columns:
+      - {name: species_id, required: true}
+      - {name: protein_id, required: true}
+      - {name: transcript_id, required: false}
+      - {name: isoform_label, required: false}
+      - {name: protein_length, required: false}
+      - {name: sequence_path, required: false}
+      - {name: primary_status, required: false}
+      - {name: notes, required: false}
+
+  exon_protein_map:
+    file: exon_protein_map.tsv
+    format: tsv
+    description: Exon -> protein-coordinate mapping per protein.
+    columns:
+      - {name: species_id, required: true}
+      - {name: protein_id, required: true}
+      - {name: transcript_id, required: false}
+      - {name: exon_id, required: false}
+      - {name: exon_number, required: false}
+      - {name: cds_start, required: false}
+      - {name: cds_end, required: false}
+      - {name: protein_start_aa, required: false}
+      - {name: protein_end_aa, required: false}
+      - {name: phase, required: false}
+      - {name: confidence, required: false}
+      - {name: source, required: true}
+
+  domain_features:
+    file: domain_features.tsv
+    format: tsv
+    description: Protein domain annotations (e.g. InterPro), gene-agnostic.
+    columns:
+      - {name: species_id, required: true}
+      - {name: protein_id, required: true}
+      - {name: domain_source, required: true}
+      - {name: domain_id, required: false}
+      - {name: domain_name, required: false}
+      - {name: start_aa, required: true}
+      - {name: end_aa, required: true}
+      - {name: score, required: false}
+
+  tm_features:
+    file: tm_features.tsv
+    format: tsv
+    description: Transmembrane / signal features (e.g. pyTMHMM).
+    columns:
+      - {name: species_id, required: true}
+      - {name: protein_id, required: true}
+      - {name: start_aa, required: true}
+      - {name: end_aa, required: true}
+      - {name: source, required: true}
+
+  synteny_neighbors:
+    file: synteny_neighbors.tsv
+    format: tsv
+    description: Gene-locus neighbourhood (optional; present when annotation allows).
+    columns:
+      - {name: species_id, required: true}
+      - {name: gene_symbol, required: true}
+      - {name: neighbor_symbol, required: false}
+      - {name: side, required: false}
+      - {name: order, required: false}
+      - {name: orientation, required: false}
+      - {name: classification, required: false}
+      - {name: source, required: true}
+      - {name: status, required: false}
+
+  exon_domain_boundary_distances:
+    file: exon_domain_boundary_distances.tsv
+    format: tsv
+    description: >
+      Generic all-exon boundary vs nearest domain boundary distances. This is the
+      gene-agnostic boundary analysis; it does NOT require a configured event region.
+    columns:
+      - {name: analysis_id, required: true}
+      - {name: gene_symbol, required: true}
+      - {name: species_id, required: true}
+      - {name: protein_id, required: true}
+      - {name: transcript_id, required: false}
+      - {name: exon_boundary_id, required: true}
+      - {name: boundary_position_aa, required: true}
+      - {name: nearest_domain_id, required: false}
+      - {name: nearest_domain_name, required: false}
+      - {name: nearest_domain_boundary_type, required: false}   # domain_start | domain_end
+      - {name: distance_aa, required: false}
+      - {name: category, required: false}   # exactly_aligned | near_boundary | inside_domain | outside_annotated_domain
+      - {name: source, required: true}
+
+  core_gene_report:
+    file: core_gene_report.json
+    format: json
+    description: Run-level core-analysis provenance, counts and available views.
+    fields:
+      - {name: analysis_id, required: true}
+      - {name: gene_symbol, required: true}
+      - {name: dataset_id, required: true}
+      - {name: summary, required: true}
+      - {name: inputs, required: true}
+      - {name: outputs, required: true}
+      - {name: warnings, required: true}
+      - {name: failures, required: true}
+      - {name: available_views, required: true}
+
+# Views that core analysis alone can support (no event region needed).
+core_views:
+  - overview
+  - gene_models
+  - isoforms
+  - msa                    # if an alignment exists
+  - domain_architecture    # after domain annotation
+  - synteny                # if locus annotation available
+  - exon_domain_boundaries # after domains + exon map
+
+# Boundary categories used by exon_domain_boundary_distances.category
+boundary_categories:
+  - exactly_aligned
+  - near_boundary
+  - inside_domain
+  - outside_annotated_domain
+# distance (aa) at/below which a boundary counts as "near_boundary"
+near_boundary_threshold_aa: 5

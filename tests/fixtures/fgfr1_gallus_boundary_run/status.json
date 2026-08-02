@@ -1,0 +1,10 @@
+{
+  "run_id": "2026-07-23_1100_fgfr1_gallus_core_pilot",
+  "status": "results_ready",
+  "gene_symbol": "FGFR1",
+  "species_count": 1,
+  "run_mode": "core_only_pilot",
+  "pre_interpro_status": "complete",
+  "cluster_analysis_status": "complete",
+  "post_interpro_status": "results_ready"
+}

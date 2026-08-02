@@ -1,0 +1,38 @@
+[
+  {
+    "step": 1,
+    "label": "Species registry",
+    "status": "passed",
+    "detail": "30 controlled vertebrate entries"
+  },
+  {
+    "step": 2,
+    "label": "FGFR2 model collection",
+    "status": "passed",
+    "detail": "Ensembl/NCBI models collected and compared"
+  },
+  {
+    "step": 3,
+    "label": "Transcript selection",
+    "status": "passed",
+    "detail": "reference, IIIb and IIIc roles retained"
+  },
+  {
+    "step": 4,
+    "label": "IIIb/IIIc classification",
+    "status": "passed",
+    "detail": "exon-structure evidence integrated"
+  },
+  {
+    "step": 5,
+    "label": "Protein export",
+    "status": "passed",
+    "detail": "90/90 selected proteins matched"
+  },
+  {
+    "step": 6,
+    "label": "InterProScan preparation",
+    "status": "ready",
+    "detail": "58 non-redundant protein sequences"
+  }
+]

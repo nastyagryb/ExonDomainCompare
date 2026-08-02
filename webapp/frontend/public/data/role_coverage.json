@@ -1,0 +1,302 @@
+[
+  {
+    "species": "alligator_mississippiensis",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "ambystoma_mexicanum",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "anolis_carolinensis",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "bos_taurus",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "callithrix_jacchus",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "canis_lupus_familiaris",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "Ensembl",
+    "confidence": "high"
+  },
+  {
+    "species": "chrysemys_picta_bellii",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "danio_rerio",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "equus_caballus",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "felis_catus",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "gallus_gallus",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "gasterosteus_aculeatus",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "Ensembl",
+    "confidence": "high"
+  },
+  {
+    "species": "gorilla_gorilla_gorilla",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "Ensembl",
+    "confidence": "high"
+  },
+  {
+    "species": "homo_sapiens",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "Ensembl",
+    "confidence": "high"
+  },
+  {
+    "species": "macaca_mulatta",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "meleagris_gallopavo",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "Ensembl",
+    "confidence": "high"
+  },
+  {
+    "species": "monodelphis_domestica",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "mus_musculus",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "Ensembl",
+    "confidence": "high"
+  },
+  {
+    "species": "oreochromis_niloticus",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "Ensembl",
+    "confidence": "high"
+  },
+  {
+    "species": "ornithorhynchus_anatinus",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "oryctolagus_cuniculus",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "oryzias_latipes",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "ovis_aries",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "pan_troglodytes",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "pongo_abelii",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "rattus_norvegicus",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "sus_scrofa",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "Ensembl",
+    "confidence": "high"
+  },
+  {
+    "species": "taeniopygia_guttata",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "NCBI",
+    "confidence": "high"
+  },
+  {
+    "species": "takifugu_rubripes",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "Ensembl",
+    "confidence": "high"
+  },
+  {
+    "species": "xenopus_tropicalis",
+    "clade": "Vertebrates",
+    "reference": true,
+    "IIIb": true,
+    "IIIc": true,
+    "complete": true,
+    "source": "Ensembl",
+    "confidence": "high"
+  }
+]

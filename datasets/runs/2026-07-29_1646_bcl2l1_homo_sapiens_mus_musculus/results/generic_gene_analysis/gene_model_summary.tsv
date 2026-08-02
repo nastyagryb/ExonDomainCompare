@@ -1,0 +1,23 @@
+analysis_id	gene_symbol	species_id	gene_id	transcript_id	protein_id	source	protein_length	model_status	notes
+BCL2L1_core_only_pilot	BCL2L1	homo_sapiens	gene-BCL2L1	NR_134257.1		ncbi_gff		misc_RNA	
+BCL2L1_core_only_pilot	BCL2L1	homo_sapiens	gene-BCL2L1	NM_001317920.2	NP_001304849.1	ncbi_gff	233	protein_coding	
+BCL2L1_core_only_pilot	BCL2L1	homo_sapiens	gene-BCL2L1	NM_001322239.2	NP_001309168.1	ncbi_gff	233	protein_coding	
+BCL2L1_core_only_pilot	BCL2L1	homo_sapiens	gene-BCL2L1	NM_001317921.2	NP_001304850.1	ncbi_gff	233	protein_coding	
+BCL2L1_core_only_pilot	BCL2L1	homo_sapiens	gene-BCL2L1	NM_001322240.2	NP_001309169.1	ncbi_gff	233	protein_coding	
+BCL2L1_core_only_pilot	BCL2L1	homo_sapiens	gene-BCL2L1	NM_001317919.2	NP_001304848.1	ncbi_gff	233	protein_coding	
+BCL2L1_core_only_pilot	BCL2L1	homo_sapiens	gene-BCL2L1	NM_001191.4	NP_001182.1	ncbi_gff	170	protein_coding	
+BCL2L1_core_only_pilot	BCL2L1	homo_sapiens	gene-BCL2L1	NM_138578.3	NP_612815.1	ncbi_gff	233	protein_coding	
+BCL2L1_core_only_pilot	BCL2L1	homo_sapiens	gene-BCL2L1	NM_001424331.1	NP_001411260.1	ncbi_gff	233	protein_coding	
+BCL2L1_core_only_pilot	BCL2L1	homo_sapiens	gene-BCL2L1	NM_001424332.1	NP_001411261.1	ncbi_gff	233	protein_coding	
+BCL2L1_core_only_pilot	BCL2L1	homo_sapiens	gene-BCL2L1	NM_001322242.2	NP_001309171.1	ncbi_gff	233	protein_coding	
+BCL2L1_core_only_pilot	BCL2L1	mus_musculus	gene-Bcl2l1	XR_374396.4		ncbi_gff		misc_RNA	
+BCL2L1_core_only_pilot	BCL2L1	mus_musculus	gene-Bcl2l1	NR_149254.2		ncbi_gff		misc_RNA	
+BCL2L1_core_only_pilot	BCL2L1	mus_musculus	gene-Bcl2l1	NM_001289739.2	NP_001276668.1	ncbi_gff	235	protein_coding	
+BCL2L1_core_only_pilot	BCL2L1	mus_musculus	gene-Bcl2l1	NM_009743.6	NP_033873.3	ncbi_gff	233	protein_coding	
+BCL2L1_core_only_pilot	BCL2L1	mus_musculus	gene-Bcl2l1	NM_001416897.1	NP_001403826.1	ncbi_gff	233	protein_coding	
+BCL2L1_core_only_pilot	BCL2L1	mus_musculus	gene-Bcl2l1	NM_001416896.1	NP_001403825.1	ncbi_gff	233	protein_coding	
+BCL2L1_core_only_pilot	BCL2L1	mus_musculus	gene-Bcl2l1	NM_001416898.1	NP_001403827.1	ncbi_gff	233	protein_coding	
+BCL2L1_core_only_pilot	BCL2L1	mus_musculus	gene-Bcl2l1	NM_001289717.2	NP_001276646.1	ncbi_gff	233	protein_coding	
+BCL2L1_core_only_pilot	BCL2L1	mus_musculus	gene-Bcl2l1	NM_001289716.2	NP_001276645.1	ncbi_gff	233	protein_coding	
+BCL2L1_core_only_pilot	BCL2L1	mus_musculus	gene-Bcl2l1	NM_001355053.2	NP_001341982.1	ncbi_gff	233	protein_coding	
+BCL2L1_core_only_pilot	BCL2L1	mus_musculus	gene-Bcl2l1	NM_001416899.1	NP_001403828.1	ncbi_gff	233	protein_coding	

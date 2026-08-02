@@ -1,0 +1,8 @@
+comparable_domain_group_id	interpro_accession	instance_number	label	n_species	mapping_status
+CDG1	IPR001245	1	Ser-Thr/Tyr kinase domain	30	supported
+CDG2	IPR007110	1	Ig-like domain 1	26	supported
+CDG3	IPR007110	2	Ig-like domain 3	16	supported
+CDG4	IPR013098	1	Ig-like domain 2	30	supported
+CDG5	IPR013098	2	Ig-like domain 2	11	supported
+CDG6	IPR013098	3	Ig-like domain 3	2	supported
+CDG7	IPR013151	1	Ig-like domain 1	2	supported

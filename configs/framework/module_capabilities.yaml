@@ -1,0 +1,100 @@
+# Module capability inventory (gene/event generalization layer).
+#
+# Machine-readable map of what the current framework modules are, and how
+# reusable they are for a FUTURE second gene/event. This is a DESCRIPTION only:
+# it does not make any additional gene runnable, and it does not change the
+# validated FGFR2 pipeline or the example freeze.
+#
+# scope values:
+#   gene_agnostic         - works for any gene as-is
+#   mostly_gene_agnostic  - reusable, but needs per-gene inputs/config
+#   event_type_specific   - depends on the event TYPE (e.g. mutually-exclusive cassette)
+#   fgfr2_specific        - hard-coded to FGFR2 IIIb/IIIc; not reusable as-is
+#   external_tool         - wraps an external tool; gene-agnostic by nature
+#   ui_only               - presentation layer
+#
+# reusable_for_future_genes: true | false | partial
+schema_version: 1
+
+modules:
+  species_normalization:
+    scope: gene_agnostic
+    reusable_for_future_genes: true
+    notes: Species registry / taxid resolution is independent of the gene.
+
+  run_management:
+    scope: gene_agnostic
+    reusable_for_future_genes: true
+    notes: Run folders, status model, stop/delete/refresh are gene-agnostic.
+
+  gene_config_layer:
+    scope: gene_agnostic
+    reusable_for_future_genes: true
+    notes: configs/genes/*.yaml + scripts/framework/gene_config.py.
+
+  generic_indices_adapter:
+    scope: event_type_specific
+    reusable_for_future_genes: partial
+    notes: >
+      scripts/adapters/fgfr2_to_generic_indices.py reads FGFR2 field names. A new
+      event type needs an adapter that maps its outputs to the generic schema.
+
+  interproscan:
+    scope: external_tool
+    reusable_for_future_genes: true
+    notes: Domain annotation from protein sequence; gene-agnostic.
+
+  pytmhmm:
+    scope: external_tool
+    reusable_for_future_genes: true
+    notes: TM-region prediction from protein sequence; gene-agnostic.
+
+  domain_architecture:
+    scope: mostly_gene_agnostic
+    reusable_for_future_genes: true
+    notes: Domain architecture from InterPro/TM is reusable given protein inputs.
+
+  boundary_relation:
+    scope: event_type_specific
+    reusable_for_future_genes: partial
+    notes: >
+      Boundary-consistency logic compares an event region to domain boundaries.
+      Reusable if the event region is defined; the region definition is per-event.
+
+  synteny:
+    scope: mostly_gene_agnostic
+    reusable_for_future_genes: true
+    notes: Requires the gene locus and per-species genomic annotation sources.
+
+  msa:
+    scope: mostly_gene_agnostic
+    reusable_for_future_genes: true
+    notes: Ortholog MSA is reusable given the gene's ortholog protein set.
+
+  human_reference_control:
+    scope: event_type_specific
+    reusable_for_future_genes: partial
+    notes: >
+      The curated human reference/control pattern is reusable, but the concrete
+      FGFR2 IIIb/IIIc reference residues are gene-specific.
+
+  event_region_detection:
+    scope: event_type_specific
+    reusable_for_future_genes: partial
+    notes: >
+      Detecting the event region (e.g. a mutually-exclusive cassette) depends on
+      the event type. A new gene needs its own region definition/detector.
+
+  fgfr2_IIIb_IIIc_marker_detection:
+    scope: fgfr2_specific
+    reusable_for_future_genes: false
+    notes: >
+      IIIb/IIIc discriminating-marker detection (SGINSSN / GVNTTDKEI) and the
+      IIIb/IIIc label reconciliation are specific to FGFR2 and are NOT reusable.
+
+  webapp_frontend:
+    scope: ui_only
+    reusable_for_future_genes: true
+    notes: >
+      Labels are config-driven (getDatasetLabels); the shell is gene-agnostic.
+      Draft genes are never shown as runnable.

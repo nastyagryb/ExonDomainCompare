@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="756" height="214.8" viewBox="0 0 756 214.8">
+<rect x="0" y="0" width="756" height="214.8" fill="#ffffff" stroke="none" />
+<text x="14" y="24" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="12" fill="#1c2433" text-anchor="start" font-weight="bold">BCL2L1</text>
+<text x="14" y="37" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="9" fill="#6B7280" text-anchor="start" font-weight="normal">Native-coordinate exon architecture · each primary protein on its own amino-acid axis</text>
+<text x="14" y="49" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal" font-style="italic">How long is each primary protein, and how are its coding exons and exon boundaries distributed along its own sequence?</text>
+<text x="98" y="78.88" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Homo sapiens</text>
+<text x="98" y="87.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">NP_001304849.1</text>
+<rect x="106" y="78.38" width="590.93" height="3" fill="#e3e8f0" stroke="none" stroke-width="0.6" />
+<rect x="108.54" y="72.88" width="474.26" height="14" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<rect x="585.34" y="72.88" width="111.59" height="14" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<line x1="582.8" y1="69.88" x2="582.8" y2="89.88" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="345.67" y="82.19" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E1</text>
+<text x="641.13" y="82.19" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E2</text>
+<text x="700.93" y="82.19" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">233 aa</text>
+<text x="98" y="112.88" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Mus musculus</text>
+<text x="98" y="121.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">NP_001276668.1</text>
+<rect x="106" y="112.38" width="596" height="3" fill="#e3e8f0" stroke="none" stroke-width="0.6" />
+<rect x="108.54" y="106.88" width="474.26" height="14" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<rect x="585.34" y="106.88" width="116.66" height="14" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<line x1="582.8" y1="103.88" x2="582.8" y2="123.88" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="345.67" y="116.19" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E1</text>
+<text x="643.67" y="116.19" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E2</text>
+<text x="706" y="116.19" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">235 aa</text>
+<line x1="106" y1="139.6" x2="702" y2="139.6" stroke="#9aa4b2" stroke-width="0.8" />
+<line x1="106" y1="139.6" x2="106" y2="143.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="106" y="151" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">0</text>
+<line x1="169.4" y1="139.6" x2="169.4" y2="143.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="169.4" y="151" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">25</text>
+<line x1="232.81" y1="139.6" x2="232.81" y2="143.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="232.81" y="151" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">50</text>
+<line x1="296.21" y1="139.6" x2="296.21" y2="143.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="296.21" y="151" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">75</text>
+<line x1="359.62" y1="139.6" x2="359.62" y2="143.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="359.62" y="151" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">100</text>
+<line x1="423.02" y1="139.6" x2="423.02" y2="143.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="423.02" y="151" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">125</text>
+<line x1="486.43" y1="139.6" x2="486.43" y2="143.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="486.43" y="151" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">150</text>
+<line x1="549.83" y1="139.6" x2="549.83" y2="143.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="549.83" y="151" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">175</text>
+<line x1="613.23" y1="139.6" x2="613.23" y2="143.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="613.23" y="151" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">200</text>
+<line x1="676.64" y1="139.6" x2="676.64" y2="143.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="676.64" y="151" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">225</text>
+<text x="404" y="164.4" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="middle" font-weight="normal">Amino-acid position on each species' own primary protein</text>
+<rect x="14" y="174.6" width="7" height="7" fill="#A9BED4" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="25" y="180.6" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Coding exon</text>
+<rect x="77.26" y="174.6" width="7" height="7" fill="#6B7A8C" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="88.26" y="180.6" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Exon boundary</text>
+<text x="14" y="198.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">Native coordinates are not homologous alignment coordinates: the same x position in two lanes is not the same residue. Use the MSA-aligned exon architecture for positional comparison.</text>
+</svg>

@@ -1,0 +1,10 @@
+{
+  "run_id": "2026-07-21_1436_custom_run",
+  "status": "results_ready",
+  "gene_symbol": "TP53",
+  "species_count": 1,
+  "run_mode": "core_only_pilot",
+  "pre_interpro_status": "complete",
+  "cluster_analysis_status": "complete",
+  "post_interpro_status": "results_ready"
+}

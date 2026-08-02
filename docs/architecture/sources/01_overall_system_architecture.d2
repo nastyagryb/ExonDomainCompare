@@ -1,0 +1,113 @@
+# 01 - Overall System Architecture  (ExonDomainCompare)
+# Rendered with: d2 --layout dagre
+...@_theme
+
+direction: down
+
+title: |md
+  # ExonDomainCompare - Overall System Architecture
+| { near: top-center; style: { font-size: 28; font-color: "#0F172A"; bold: true } }
+
+subtitle: |md
+  Annotation-aware comparative exon-protein analysis - one generic framework, FGFR2 as a validated specialization
+| { near: top-center; style: { font-size: 15; font-color: "#475569" } }
+
+# ================= strict downward value chain =================
+
+researcher: "Researcher" { class: person }
+
+webapp: "Web application" {
+  class: band_user
+  fe: "React frontend (Vite SPA)\nGene Explorer - Boundaries - Figures - My Runs" { class: user }
+  be: "FastAPI backend\nrun discovery - dataset resolver - JSON + file serving" { class: user }
+  fe -> be: "canonical data + files" { class: flow }
+}
+
+runcfg: "Run configuration" {
+  class: band_neutral
+  router: "Analysis router\nFGFR2 -> validated  |  other genes -> shared exploratory" { class: local }
+}
+
+local: "Generic local pipeline  (pre-cluster)" {
+  class: band_local
+  acq: "Gene / transcript / CDS models\n+ protein sequences" { class: local }
+  sel: "Primary-model selection\n+ exon-to-protein mapping" { class: local }
+  comp: "Isoform alignment - cross-species MSA\nsynteny - exploratory candidates" { class: local }
+  acq -> sel -> comp: { class: flow }
+}
+
+freeze: "Pre-cluster package\nprimary-protein FASTA freeze" { class: filedata }
+
+cluster: "LRZ Linux Cluster  (Slurm)" {
+  class: band_cluster
+  ips: "InterProScan\nTSV / GFF3 / JSON" { class: cluster }
+  tm: "pyTMHMM\ntransmembrane topology" { class: cluster }
+}
+
+post: "Post-InterPro normalization + boundary analysis" {
+  class: band_annot
+  norm: "ID normalization - species/protein ownership\nrepresentative domain / family / feature / raw / topology" { class: annot }
+  bnd: "Exon-domain boundary classification\nexact / near / inside / outside / unknown  (near <= 5 aa)" { class: annot }
+  norm -> bnd: { class: flow }
+}
+
+canon: "Canonical scientific dataset" {
+  class: band_data
+  idx: "website_indices/ (+ generic/)\nper-run JSON indices" { class: filedata }
+  model: "Canonical dataset model\nread-only adapter, versioned" { class: data }
+  idx -> model: { class: flow }
+}
+
+outputs: "Interactive exploration, figures + downloadable results" {
+  class: band_output
+  views: "Interactive scientific views\ndomain architecture - boundaries - MSA - synteny" { class: output }
+  figs: "Publication figures\nSVG / PDF / PNG" { class: output }
+  dl: "Downloadable tables\n+ provenance" { class: output }
+}
+
+# ------- external resources (participate, kept to one side) -------
+ext: "External resources + tools" {
+  class: band_neutral
+  ncbi: "NCBI Datasets\ncached genomic.gff + protein.faa" { class: external }
+  mafft: "MAFFT\nlocal alignment engine" { class: external }
+  ipr_ext: "InterProScan\ndomain signatures" { class: external }
+  tm_ext: "pyTMHMM\nTM prediction" { class: external }
+}
+
+# ===================== spine (all downward) =====================
+researcher -> webapp.fe: "launch + explore" { class: flow }
+webapp.be -> runcfg.router: "resolves workflow" { class: flow }
+runcfg.router -> local.acq: "shared exploratory run" { class: flow }
+local.comp -> freeze: "freeze primary FASTA" { class: flow }
+freeze -> cluster.ips: "submit - scp + Slurm" { class: flow }
+freeze -> cluster.tm: "submit - scp + Slurm" { class: flow }
+cluster.ips -> post.norm: "fetch InterProScan" { class: flow }
+cluster.tm -> post.norm: "fetch pyTMHMM" { class: flow }
+post.bnd -> canon.idx: "rebuild indices" { class: flow }
+canon.model -> outputs.views: "served via FastAPI, rendered in React" { class: flow }
+
+# =============== external wiring (reference edges) ===============
+ext.ncbi -> local.acq: "cached GFF + FASTA" { class: ref }
+ext.mafft -> local.comp: "alignments" { class: ref }
+ext.ipr_ext -> cluster.ips: { class: ref }
+ext.tm_ext -> cluster.tm: { class: ref }
+
+# =================== FGFR2 specialization note ==================
+fgfr2note: |md
+  **FGFR2 specialization** reuses this exact spine and adds IIIb/IIIc cassette
+  interpretation, validated evidence and cassette-aware overlays on top of the
+  shared framework.
+| { near: bottom-left; class: band_fgfr2 }
+
+legend: "Legend" {
+  near: bottom-right
+  grid-columns: 2
+  l_user: "User / frontend" { class: user }
+  l_local: "Local compute" { class: local }
+  l_cluster: "LRZ cluster" { class: cluster }
+  l_data: "Scientific data" { class: data }
+  l_annot: "Annotation / boundary" { class: annot }
+  l_out: "Outputs" { class: output }
+  l_ext: "External system" { class: external }
+  l_fgfr2: "FGFR2 specialization" { class: fgfr2 }
+}

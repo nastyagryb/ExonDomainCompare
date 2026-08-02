@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="717.48pt" height="457.4913pt" viewBox="0 0 717.48 457.4913" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-30T13:30:49.011262</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 457.4913 
+L 717.48 457.4913 
+L 717.48 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 7.2 366.1593 
+L 710.28 366.1593 
+L 710.28 49.0425 
+L 7.2 49.0425 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m662b51788e" d="M 0 0 
+L 0 3 
+" style="stroke: #444444; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m662b51788e" x="201.153103" y="366.1593" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #444444" x="201.153103" y="376.539378" transform="rotate(-0 201.153103 376.539378)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m662b51788e" x="304.319648" y="366.1593" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #444444" x="304.319648" y="376.539378" transform="rotate(-0 304.319648 376.539378)">50</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m662b51788e" x="407.486192" y="366.1593" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #444444" x="407.486192" y="376.539378" transform="rotate(-0 407.486192 376.539378)">100</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m662b51788e" x="510.652737" y="366.1593" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #444444" x="510.652737" y="376.539378" transform="rotate(-0 510.652737 376.539378)">150</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m662b51788e" x="613.819281" y="366.1593" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #444444" x="613.819281" y="376.539378" transform="rotate(-0 613.819281 376.539378)">200</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="font-size: 8.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="358.74" y="388.299691" transform="rotate(-0 358.74 388.299691)">Amino-acid position on NP_001276668.1 (aa)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2"/>
+   <g id="patch_3">
+    <path d="M 201.153103 366.1593 
+L 686.035862 366.1593 
+" style="fill: none; stroke: #444444; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 8.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="11.079062" y="74.705446" transform="rotate(-0 11.079062 74.705446)">Representative domain instances</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 8.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="11.079062" y="133.449373" transform="rotate(-0 11.079062 133.449373)">Coding exons and internal boundaries</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="11.079062" y="200.001133" transform="rotate(-0 11.079062 200.001133)">C1 · aa 189–221 · 33 aa</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="11.079062" y="211.186911" transform="rotate(-0 11.079062 211.186911)">outside annotated domains</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #6b7280" x="583.240717" y="205.560522" transform="rotate(-0 583.240717 205.560522)">nearest edge: Bcl-2 BH1-3 end at aa 188 · 1 aa away</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="11.079062" y="255.930022" transform="rotate(-0 11.079062 255.930022)">C4 · aa 227–235 · 9 aa</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="11.079062" y="267.1158" transform="rotate(-0 11.079062 267.1158)">outside annotated domains</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #6b7280" x="583.240717" y="261.489411" transform="rotate(-0 583.240717 261.489411)">nearest edge: Bcl-2 BH1-3 end at aa 188 · 39 aa away</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="11.079062" y="311.858911" transform="rotate(-0 11.079062 311.858911)">C1 · aa 191–191 · 1 aa</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="11.079062" y="323.044689" transform="rotate(-0 11.079062 323.044689)">outside annotated domains</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #6b7280" x="583.240717" y="317.4183" transform="rotate(-0 583.240717 317.4183)">nearest edge: Bcl-2 BH1-3 end at aa 188 · 3 aa away</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 8.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="11.079062" y="177.476186" transform="rotate(-0 11.079062 177.476186)">Exploratory candidate regions</text>
+   </g>
+   <g id="text_19">
+    <text style="font-style: italic; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="7.2" y="45.6265" transform="rotate(-0 7.2 45.6265)">Do the exploratory candidate regions fall inside annotated domains or between them? Exploratory candidate regions only — Biological validation: not validated. A positional overlap with a domain is an observation, not a functional claim.</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 9px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="7.2" y="35.05125" transform="rotate(-0 7.2 35.05125)">Mus musculus · NP_001276668.1 · 3 candidate region(s) · 2 representative domain instance(s) · domains resolved by instance, not by accession</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="7.2" y="448.8753" transform="rotate(-0 7.2 448.8753)">Source: InterProScan representative domain instances + GFF CDS coding exons · run 2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus</text>
+   </g>
+   <g id="text_22">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="7.2" y="16.0425" transform="rotate(-0 7.2 16.0425)">BCL2L1 — exploratory candidates in their domain context</text>
+   </g>
+   <g id="patch_4">
+    <path d="M 203.216434 82.040544 
+L 256.863037 82.040544 
+L 256.863037 63.024722 
+L 203.216434 63.024722 
+z
+" clip-path="url(#p8facd88541)" style="fill: #0072b2; stroke: #1a1a1a; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 386.852883 82.040544 
+L 589.05931 82.040544 
+L 589.05931 63.024722 
+L 386.852883 63.024722 
+z
+" clip-path="url(#p8facd88541)" style="fill: #009e73; stroke: #1a1a1a; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 203.216434 138.864296 
+L 589.05931 138.864296 
+L 589.05931 123.651638 
+L 203.216434 123.651638 
+z
+" clip-path="url(#p8facd88541)" style="fill: #e6ebf2; stroke: #1a1a1a; stroke-width: 0.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 591.122641 138.864296 
+L 686.035862 138.864296 
+L 686.035862 123.651638 
+L 591.122641 123.651638 
+z
+" clip-path="url(#p8facd88541)" style="fill: #c3cddb; stroke: #1a1a1a; stroke-width: 0.4; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 591.122641 203.965522 
+L 589.05931 203.965522 
+" clip-path="url(#p8facd88541)" style="fill: none; stroke-dasharray: 2,1.2; stroke-dashoffset: 0; stroke: #8a5008; stroke-width: 0.8"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 669.529215 259.894411 
+L 589.05931 259.894411 
+" clip-path="url(#p8facd88541)" style="fill: none; stroke-dasharray: 2,1.2; stroke-dashoffset: 0; stroke: #8a5008; stroke-width: 0.8"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 595.249303 315.8233 
+L 589.05931 315.8233 
+" clip-path="url(#p8facd88541)" style="fill: none; stroke-dasharray: 2,1.2; stroke-dashoffset: 0; stroke: #8a5008; stroke-width: 0.8"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 591.122641 213.473433 
+L 657.14923 213.473433 
+L 657.14923 194.457611 
+L 591.122641 194.457611 
+z
+" clip-path="url(#p8facd88541)" style="fill: #f2b705; stroke: #8a5008; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 669.529215 269.402322 
+L 686.035862 269.402322 
+L 686.035862 250.3865 
+L 669.529215 250.3865 
+z
+" clip-path="url(#p8facd88541)" style="fill: #f2b705; stroke: #8a5008; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 595.249303 325.331211 
+L 597.312634 325.331211 
+L 597.312634 306.315389 
+L 595.249303 306.315389 
+z
+" clip-path="url(#p8facd88541)" style="fill: #f2b705; stroke: #8a5008; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="legend_1">
+    <g id="patch_11">
+     <path d="M 13.95 412.306956 
+L 22.2 412.306956 
+L 22.2 407.056956 
+L 13.95 407.056956 
+z
+" style="fill: #0072b2"/>
+    </g>
+    <g id="text_23">
+     <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="25.95" y="412.306956" transform="rotate(-0 25.95 412.306956)">Bcl2 BH4 · aa 1–27</text>
+    </g>
+    <g id="patch_12">
+     <path d="M 13.95 423.000316 
+L 22.2 423.000316 
+L 22.2 417.750316 
+L 13.95 417.750316 
+z
+" style="fill: #009e73"/>
+    </g>
+    <g id="text_24">
+     <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="25.95" y="423.000316" transform="rotate(-0 25.95 423.000316)">Bcl-2 BH1-3 · aa 90–188</text>
+    </g>
+    <g id="patch_13">
+     <path d="M 13.95 433.711253 
+L 22.2 433.711253 
+L 22.2 428.461253 
+L 13.95 428.461253 
+z
+" style="fill: #c3cddb"/>
+    </g>
+    <g id="text_25">
+     <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="25.95" y="433.711253" transform="rotate(-0 25.95 433.711253)">coding exon</text>
+    </g>
+    <g id="line2d_9">
+     <path d="M 117.828516 409.681956 
+L 121.953516 409.681956 
+L 126.078516 409.681956 
+" style="fill: none; stroke: #44546a; stroke-width: 0.9; stroke-linecap: square"/>
+    </g>
+    <g id="text_26">
+     <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="129.828516" y="412.306956" transform="rotate(-0 129.828516 412.306956)">internal coding-exon boundary</text>
+    </g>
+    <g id="patch_14">
+     <path d="M 117.828516 423.113987 
+L 126.078516 423.113987 
+L 126.078516 417.863987 
+L 117.828516 417.863987 
+z
+" style="fill: #f2b705"/>
+    </g>
+    <g id="text_27">
+     <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="129.828516" y="423.113987" transform="rotate(-0 129.828516 423.113987)">exploratory candidate region · Biological validation: not validated</text>
+    </g>
+    <g id="line2d_10">
+     <defs>
+      <path id="mecdc2faf15" d="M -0 4.242641 
+L 4.242641 0 
+L 0 -4.242641 
+L -4.242641 -0 
+z
+" style="stroke: #1a1a1a; stroke-width: 0.6; stroke-linejoin: miter"/>
+     </defs>
+     <g>
+      <use xlink:href="#mecdc2faf15" x="121.953516" y="431.296019" style="fill: #1a1a1a; stroke: #1a1a1a; stroke-width: 0.6; stroke-linejoin: miter"/>
+     </g>
+    </g>
+    <g id="text_28">
+     <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="129.828516" y="433.921019" transform="rotate(-0 129.828516 433.921019)">nearest representative-domain edge</text>
+    </g>
+   </g>
+   <g id="line2d_11">
+    <path d="M 589.05931 145.519833 
+L 589.05931 116.9961 
+" clip-path="url(#p8facd88541)" style="fill: none; stroke: #44546a; stroke-width: 0.9; stroke-linecap: square"/>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="ma9adda124b" d="M -0 2.828427 
+L 2.828427 0 
+L 0 -2.828427 
+L -2.828427 -0 
+z
+" style="stroke: #1a1a1a"/>
+    </defs>
+    <g clip-path="url(#p8facd88541)">
+     <use xlink:href="#ma9adda124b" x="589.05931" y="203.965522" style="fill: #1a1a1a; stroke: #1a1a1a"/>
+    </g>
+   </g>
+   <g id="PathCollection_2">
+    <g clip-path="url(#p8facd88541)">
+     <use xlink:href="#ma9adda124b" x="589.05931" y="259.894411" style="fill: #1a1a1a; stroke: #1a1a1a"/>
+    </g>
+   </g>
+   <g id="PathCollection_3">
+    <g clip-path="url(#p8facd88541)">
+     <use xlink:href="#ma9adda124b" x="589.05931" y="315.8233" style="fill: #1a1a1a; stroke: #1a1a1a"/>
+    </g>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="230.039736" y="74.161133" transform="rotate(-0 230.039736 74.161133)">Bcl2</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="487.956097" y="74.161133" transform="rotate(-0 487.956097 74.161133)">Bcl-2</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p8facd88541">
+   <rect x="7.2" y="49.0425" width="703.08" height="317.1168"/>
+  </clipPath>
+ </defs>
+</svg>

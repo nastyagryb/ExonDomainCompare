@@ -1,0 +1,10 @@
+scope	level	n_proteins	n_cassette_boundaries	aligned_to_domain_boundary	near_domain_boundary	within_domain	between_domains	review_or_missing	median_distance_to_nearest_domain_boundary	mean_distance_to_nearest_domain_boundary	total_primary_proteins	proteins_with_cassette_boundary_data	proteins_with_interpro_domain_data	proteins_with_tm_data
+overall	all_primary	58	116	12	49	55	0	0	13.5	21.29	58	58	58	58
+isoform	IIIb	29	58	6	25	27	0	0	13.0	21.98				
+isoform	IIIc	29	58	6	24	28	0	0	13.5	20.6				
+taxon_group	Primates	11	22	2	11	9	0	0	12.5	20				
+taxon_group	Other mammals	21	42	1	20	21	0	0	15.5	21.93				
+taxon_group	Birds	6	12	0	7	5	0	0	11.0	19.33				
+taxon_group	Reptiles	6	12	2	4	6	0	0	22.0	23.25				
+taxon_group	Amphibians	4	8	2	2	4	0	0	16.5	21.38				
+taxon_group	Teleost fish	10	20	5	5	10	0	0	13.5	21.35				

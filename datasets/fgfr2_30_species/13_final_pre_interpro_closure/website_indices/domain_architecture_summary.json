@@ -1,0 +1,80 @@
+{
+  "available": true,
+  "generated_at": "2026-07-07T08:27:06+00:00",
+  "step": "15_exon_domain_boundary_post_interpro",
+  "tm_layer": "pyTMHMM (InterProScan did not annotate transmembrane helices)",
+  "proteins_annotated": 58,
+  "with_interpro_hits": 58,
+  "with_kinase": 58,
+  "with_tm_pytmhmm": 58,
+  "with_signal_region_supported": 35,
+  "qc_status_counts": {
+    "architecture_supported": 31,
+    "architecture_supported_with_minor_flags": 27
+  },
+  "supported": 31,
+  "minor_flags": 27,
+  "review_warnings": 0,
+  "coordinate_artifact_cases_resolved": 3,
+  "review_cases_audited": 3,
+  "review_all_coordinate_artifacts": true,
+  "review_cases": [
+    {
+      "species": "canis_lupus_familiaris",
+      "display_species_name": "Canis Lupus Familiaris",
+      "isoform": "IIIb",
+      "final_display_status": "cassette_only_high_confidence",
+      "reconstruction_success": "false",
+      "exceeds_protein_length": "false",
+      "final_interpretation": "original exon/cassette coords came from resolver transcript ENSCAFT00845034672 (not final NP_001003336.1); no local native CDS coordinates for the final RefSeq protein; misleading template exon blocks hidden; only validated cassette shown"
+    },
+    {
+      "species": "gorilla_gorilla_gorilla",
+      "display_species_name": "Gorilla Gorilla Gorilla",
+      "isoform": "IIIb",
+      "final_display_status": "native_exon_blocks_reconstructed",
+      "reconstruction_success": "true",
+      "exceeds_protein_length": "false",
+      "final_interpretation": "original exon/cassette coords came from resolver transcript ENSGGOT00000051097 (not final ENSGGOT00000059958); native D3 cassette exon = CDS rank 9 (AA 343-398); displayed cassette uses validated reference coordinate; coding-exon blocks reconstructed from native local CDS features; cassette slot from validated reference coordinate"
+    },
+    {
+      "species": "xenopus_tropicalis",
+      "display_species_name": "Xenopus Tropicalis",
+      "isoform": "IIIb",
+      "final_display_status": "native_exon_blocks_reconstructed",
+      "reconstruction_success": "true",
+      "exceeds_protein_length": "false",
+      "final_interpretation": "original exon/cassette coords came from resolver transcript ENSXETT00000071733 (not final ENSXETT00000078335); coding-exon blocks reconstructed from native local CDS features; cassette slot from validated reference coordinate"
+    }
+  ],
+  "resolved_coordinate_artifacts": [
+    {
+      "species": "canis_lupus_familiaris",
+      "display_species_name": "Canis Lupus Familiaris",
+      "isoform": "IIIb",
+      "final_display_status": "cassette_only_high_confidence",
+      "reconstruction_success": "false",
+      "exceeds_protein_length": "false",
+      "final_interpretation": "original exon/cassette coords came from resolver transcript ENSCAFT00845034672 (not final NP_001003336.1); no local native CDS coordinates for the final RefSeq protein; misleading template exon blocks hidden; only validated cassette shown"
+    },
+    {
+      "species": "gorilla_gorilla_gorilla",
+      "display_species_name": "Gorilla Gorilla Gorilla",
+      "isoform": "IIIb",
+      "final_display_status": "native_exon_blocks_reconstructed",
+      "reconstruction_success": "true",
+      "exceeds_protein_length": "false",
+      "final_interpretation": "original exon/cassette coords came from resolver transcript ENSGGOT00000051097 (not final ENSGGOT00000059958); native D3 cassette exon = CDS rank 9 (AA 343-398); displayed cassette uses validated reference coordinate; coding-exon blocks reconstructed from native local CDS features; cassette slot from validated reference coordinate"
+    },
+    {
+      "species": "xenopus_tropicalis",
+      "display_species_name": "Xenopus Tropicalis",
+      "isoform": "IIIb",
+      "final_display_status": "native_exon_blocks_reconstructed",
+      "reconstruction_success": "true",
+      "exceeds_protein_length": "false",
+      "final_interpretation": "original exon/cassette coords came from resolver transcript ENSXETT00000071733 (not final ENSXETT00000078335); coding-exon blocks reconstructed from native local CDS features; cassette slot from validated reference coordinate"
+    }
+  ],
+  "report": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/reports/post_interpro_exon_domain_architecture_summary.md"
+}

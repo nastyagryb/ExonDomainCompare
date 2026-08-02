@@ -1,0 +1,87 @@
+case_id	case_type	comparable_boundary_group_id	summary
+tentative_mapping:CBG3	tentative_mapping	CBG3	Tentative alignment mapping
+single_species_observation:CBG3	single_species_observation	CBG3	Observation missing in at least one species
+different_boundary_classes:CBG15	different_boundary_classes	CBG15	Different boundary classes
+single_species_observation:CBG15	single_species_observation	CBG15	Observation missing in at least one species
+inconsistent_domain_instance:CBG15	inconsistent_domain_instance	CBG15	Boundary assigned to different domain families
+different_boundary_classes:CBG16	different_boundary_classes	CBG16	Different boundary classes
+single_species_observation:CBG16	single_species_observation	CBG16	Observation missing in at least one species
+inconsistent_domain_instance:CBG16	inconsistent_domain_instance	CBG16	Boundary assigned to different domain families
+single_species_observation:CBG17	single_species_observation	CBG17	Observation missing in at least one species
+single_species_observation:CBG18	single_species_observation	CBG18	Observation missing in at least one species
+single_species_observation:CBG19	single_species_observation	CBG19	Observation missing in at least one species
+single_species_observation:CBG20	single_species_observation	CBG20	Observation missing in at least one species
+inconsistent_domain_instance:CBG20	inconsistent_domain_instance	CBG20	Boundary assigned to different domain families
+different_boundary_classes:CBG21	different_boundary_classes	CBG21	Different boundary classes
+single_species_observation:CBG21	single_species_observation	CBG21	Observation missing in at least one species
+inconsistent_domain_instance:CBG21	inconsistent_domain_instance	CBG21	Boundary assigned to different domain families
+single_species_observation:CBG22	single_species_observation	CBG22	Observation missing in at least one species
+single_species_observation:CBG23	single_species_observation	CBG23	Observation missing in at least one species
+single_species_observation:CBG24	single_species_observation	CBG24	Observation missing in at least one species
+single_species_observation:CBG25	single_species_observation	CBG25	Observation missing in at least one species
+single_species_observation:CBG26	single_species_observation	CBG26	Observation missing in at least one species
+single_species_observation:CBG27	single_species_observation	CBG27	Observation missing in at least one species
+single_species_observation:CBG28	single_species_observation	CBG28	Observation missing in at least one species
+single_species_observation:CBG29	single_species_observation	CBG29	Observation missing in at least one species
+different_boundary_classes:CBG30	different_boundary_classes	CBG30	Different boundary classes
+single_species_observation:CBG30	single_species_observation	CBG30	Observation missing in at least one species
+single_species_observation:CBG31	single_species_observation	CBG31	Observation missing in at least one species
+inconsistent_domain_instance:CBG31	inconsistent_domain_instance	CBG31	Boundary assigned to different domain families
+tentative_mapping:CBG35	tentative_mapping	CBG35	Tentative alignment mapping
+single_species_observation:CBG35	single_species_observation	CBG35	Observation missing in at least one species
+different_boundary_classes:CBG38	different_boundary_classes	CBG38	Different boundary classes
+tentative_mapping:CBG38	tentative_mapping	CBG38	Tentative alignment mapping
+single_species_observation:CBG38	single_species_observation	CBG38	Observation missing in at least one species
+different_boundary_classes:CBG42	different_boundary_classes	CBG42	Different boundary classes
+single_species_observation:CBG42	single_species_observation	CBG42	Observation missing in at least one species
+inconsistent_domain_instance:CBG42	inconsistent_domain_instance	CBG42	Boundary assigned to different domain families
+single_species_observation:CBG43	single_species_observation	CBG43	Observation missing in at least one species
+single_species_observation:CBG44	single_species_observation	CBG44	Observation missing in at least one species
+single_species_observation:CBG45	single_species_observation	CBG45	Observation missing in at least one species
+single_species_observation:CBG46	single_species_observation	CBG46	Observation missing in at least one species
+single_species_observation:CBG47	single_species_observation	CBG47	Observation missing in at least one species
+single_species_observation:CBG48	single_species_observation	CBG48	Observation missing in at least one species
+single_species_observation:CBG49	single_species_observation	CBG49	Observation missing in at least one species
+single_species_observation:CBG50	single_species_observation	CBG50	Observation missing in at least one species
+single_species_observation:CBG51	single_species_observation	CBG51	Observation missing in at least one species
+single_species_observation:CBG52	single_species_observation	CBG52	Observation missing in at least one species
+tentative_mapping:CBG62	tentative_mapping	CBG62	Tentative alignment mapping
+single_species_observation:CBG62	single_species_observation	CBG62	Observation missing in at least one species
+tentative_mapping:CBG72	tentative_mapping	CBG72	Tentative alignment mapping
+single_species_observation:CBG72	single_species_observation	CBG72	Observation missing in at least one species
+different_boundary_classes:CBG74	different_boundary_classes	CBG74	Different boundary classes
+single_species_observation:CBG74	single_species_observation	CBG74	Observation missing in at least one species
+inconsistent_domain_instance:CBG74	inconsistent_domain_instance	CBG74	Boundary assigned to different domain families
+single_species_observation:CBG75	single_species_observation	CBG75	Observation missing in at least one species
+single_species_observation:CBG76	single_species_observation	CBG76	Observation missing in at least one species
+single_species_observation:CBG77	single_species_observation	CBG77	Observation missing in at least one species
+single_species_observation:CBG78	single_species_observation	CBG78	Observation missing in at least one species
+single_species_observation:CBG79	single_species_observation	CBG79	Observation missing in at least one species
+single_species_observation:CBG80	single_species_observation	CBG80	Observation missing in at least one species
+single_species_observation:CBG81	single_species_observation	CBG81	Observation missing in at least one species
+single_species_observation:CBG82	single_species_observation	CBG82	Observation missing in at least one species
+tentative_mapping:CBG84	tentative_mapping	CBG84	Tentative alignment mapping
+single_species_observation:CBG84	single_species_observation	CBG84	Observation missing in at least one species
+inconsistent_domain_instance:CBG84	inconsistent_domain_instance	CBG84	Boundary assigned to different domain families
+large_distance_difference:CBG91	large_distance_difference	CBG91	Large cross-species distance difference
+tentative_mapping:CBG91	tentative_mapping	CBG91	Tentative alignment mapping
+single_species_observation:CBG91	single_species_observation	CBG91	Observation missing in at least one species
+tentative_mapping:CBG97	tentative_mapping	CBG97	Tentative alignment mapping
+single_species_observation:CBG97	single_species_observation	CBG97	Observation missing in at least one species
+inconsistent_domain_instance:CBG97	inconsistent_domain_instance	CBG97	Boundary assigned to different domain families
+tentative_mapping:CBG101	tentative_mapping	CBG101	Tentative alignment mapping
+single_species_observation:CBG101	single_species_observation	CBG101	Observation missing in at least one species
+tentative_mapping:CBG102	tentative_mapping	CBG102	Tentative alignment mapping
+single_species_observation:CBG102	single_species_observation	CBG102	Observation missing in at least one species
+inconsistent_domain_instance:CBG102	inconsistent_domain_instance	CBG102	Boundary assigned to different domain families
+tentative_mapping:CBG105	tentative_mapping	CBG105	Tentative alignment mapping
+single_species_observation:CBG105	single_species_observation	CBG105	Observation missing in at least one species
+tentative_mapping:CBG107	tentative_mapping	CBG107	Tentative alignment mapping
+single_species_observation:CBG107	single_species_observation	CBG107	Observation missing in at least one species
+tentative_mapping:CBG109	tentative_mapping	CBG109	Tentative alignment mapping
+single_species_observation:CBG109	single_species_observation	CBG109	Observation missing in at least one species
+different_boundary_classes:CBG113	different_boundary_classes	CBG113	Different boundary classes
+tentative_mapping:CBG113	tentative_mapping	CBG113	Tentative alignment mapping
+single_species_observation:CBG113	single_species_observation	CBG113	Observation missing in at least one species
+tentative_mapping:CBG123	tentative_mapping	CBG123	Tentative alignment mapping
+single_species_observation:CBG123	single_species_observation	CBG123	Observation missing in at least one species

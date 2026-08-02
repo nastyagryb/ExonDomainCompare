@@ -1,0 +1,296 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 756 214.8] /Resources << /Font << /F_bold 5 0 R /F_normal 6 0 R /F_italic 7 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 3495 >>
+stream
+1 1 1 rg
+0 0 756 214.8 re f
+0.11 0.14 0.2 rg
+BT
+/F_bold 12 Tf
+14 190.8 Td
+(BCL2L1) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 9 Tf
+14 177.8 Td
+(Native-coordinate exon architecture ∑ each primary protein on its own amino-acid axis) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_italic 6.6 Tf
+14 165.8 Td
+(How long is each primary protein, and how are its coding exons and exon boundaries distributed along its own sequence?) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_italic 8.2 Tf
+45.36 135.92 Td
+(Homo sapiens) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.6 Tf
+46.98 127.32 Td
+(NP_001304849.1) Tj
+ET
+0.89 0.91 0.94 rg
+0 0 0 RG
+0.6 w
+106 133.42 590.93 3 re
+B
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+108.54 127.92 474.26 14 re
+B
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+585.34 127.92 111.59 14 re
+B
+0.42 0.48 0.55 RG
+0.6 w
+[] 0 d
+582.8 144.92 m 582.8 124.92 l S
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+341.59 132.61 Td
+(E1) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+637.05 132.61 Td
+(E2) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.6 Tf
+700.93 132.61 Td
+(233 aa) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_italic 8.2 Tf
+43.88 101.92 Td
+(Mus musculus) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.6 Tf
+46.98 93.32 Td
+(NP_001276668.1) Tj
+ET
+0.89 0.91 0.94 rg
+0 0 0 RG
+0.6 w
+106 99.42 596 3 re
+B
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+108.54 93.92 474.26 14 re
+B
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+585.34 93.92 116.66 14 re
+B
+0.42 0.48 0.55 RG
+0.6 w
+[] 0 d
+582.8 110.92 m 582.8 90.92 l S
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+341.59 98.61 Td
+(E1) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+639.59 98.61 Td
+(E2) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.6 Tf
+706 98.61 Td
+(235 aa) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+106 75.2 m 702 75.2 l S
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+106 75.2 m 106 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+103.94 63.8 Td
+(0) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+169.4 75.2 m 169.4 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+165.29 63.8 Td
+(25) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+232.81 75.2 m 232.81 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+228.7 63.8 Td
+(50) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+296.21 75.2 m 296.21 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+292.1 63.8 Td
+(75) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+359.62 75.2 m 359.62 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+353.45 63.8 Td
+(100) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+423.02 75.2 m 423.02 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+416.85 63.8 Td
+(125) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+486.43 75.2 m 486.43 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+480.26 63.8 Td
+(150) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+549.83 75.2 m 549.83 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+543.66 63.8 Td
+(175) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+613.23 75.2 m 613.23 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+607.06 63.8 Td
+(200) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+676.64 75.2 m 676.64 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+670.47 63.8 Td
+(225) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 8.2 Tf
+294.9 50.4 Td
+(Amino-acid position on each species' own primary protein) Tj
+ET
+0.66 0.75 0.83 rg
+0.6 0.64 0.7 RG
+0.6 w
+14 33.2 7 7 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 7.6 Tf
+25 34.2 Td
+(Coding exon) Tj
+ET
+0.42 0.48 0.55 rg
+0.6 0.64 0.7 RG
+0.6 w
+77.26 33.2 7 7 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 7.6 Tf
+88.26 34.2 Td
+(Exon boundary) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.6 Tf
+14 16 Td
+(Native coordinates are not homologous alignment coordinates: the same x position in two lanes is not the same residue. Use the MSA-aligned exon architecture for positional comparison.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000285 00000 n 
+0000003832 00000 n 
+0000003934 00000 n 
+0000004031 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+4136
+%%EOF

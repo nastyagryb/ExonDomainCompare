@@ -1,0 +1,122 @@
+species	slot_x	side	rank	normalized_symbol	raw_symbol	orthology_group	identity_method	identity_status	broad_homology_percent_identity	broad_homology_query_coverage	strand	synteny_validation_class	final_claim_status_after_rescue
+homo_sapiens	-5	upstream	5	PLEKHA1	PLEKHA1	PLEKHA1	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+homo_sapiens	-4	upstream	4	BTBD16	BTBD16	BTBD16	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+homo_sapiens	-3	upstream	3	TACC2	TACC2	TACC2	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+homo_sapiens	-2	upstream	2	NSMCE4A	NSMCE4A	NSMCE4A	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags
+homo_sapiens	-1	upstream	1	ATE1	ATE1	ATE1	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags
+homo_sapiens	0	fgfr2	0	FGFR2	FGFR2	FGFR2	anchor	anchor			-	synteny_strong	primary_claim_supported_with_minor_flags
+homo_sapiens	1	downstream	1	WDR11	WDR11	WDR11	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+homo_sapiens	2	downstream	2	PLPP4	PLPP4	PLPP4	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+homo_sapiens	3	downstream	3	SEC23IP	SEC23IP	SEC23IP	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+homo_sapiens	4	downstream	4	MCMBP	MCMBP	MCMBP	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags
+homo_sapiens	5	downstream	5	INPP5F	INPP5F	INPP5F	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+pan_troglodytes	-5	upstream	5	PLEKHA1	PLEKHA1	PLEKHA1	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+pan_troglodytes	-4	upstream	4	BTBD16	BTBD16	BTBD16	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+pan_troglodytes	-3	upstream	3	TACC2	TACC2	TACC2	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+pan_troglodytes	-2	upstream	2	NSMCE4A	NSMCE4A	NSMCE4A	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags
+pan_troglodytes	-1	upstream	1	ATE1	ATE1	ATE1	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags
+pan_troglodytes	0	fgfr2	0	FGFR2	FGFR2	FGFR2	anchor	anchor			-	synteny_strong	primary_claim_supported_with_minor_flags
+pan_troglodytes	1	downstream	1	WDR11	WDR11	WDR11	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+pan_troglodytes	2	downstream	2	PLPP4	PLPP4	PLPP4	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+pan_troglodytes	3	downstream	3	SEC23IP	SEC23IP	SEC23IP	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+pan_troglodytes	4	downstream	4	MCMBP	MCMBP	MCMBP	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags
+pan_troglodytes	5	downstream	5	INPP5F	INPP5F	INPP5F	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+gorilla_gorilla_gorilla	-5	upstream	5	PLEKHA1	PLEKHA1	PLEKHA1	exact_symbol_match	ortholog_supported			+	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+gorilla_gorilla_gorilla	-4	upstream	4	BTBD16	BTBD16	BTBD16	exact_symbol_match	ortholog_supported			+	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+gorilla_gorilla_gorilla	-3	upstream	3	TACC2	TACC2	TACC2	exact_symbol_match	ortholog_supported			+	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+gorilla_gorilla_gorilla	-2	upstream	2	NSMCE4A	NSMCE4A	NSMCE4A	exact_symbol_match	ortholog_supported			-	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+gorilla_gorilla_gorilla	-1	upstream	1	ATE1	ATE1	ATE1	exact_symbol_match	ortholog_supported			-	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+gorilla_gorilla_gorilla	0	fgfr2	0	FGFR2	FGFR2	FGFR2	anchor	anchor			-	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+gorilla_gorilla_gorilla	1	downstream	1	RPS2	LOC101151121		broad_proteome_best_hit	broad_homology_named	94.9	1.0	+	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+gorilla_gorilla_gorilla	2	downstream	2	WDR11	WDR11	WDR11	exact_symbol_match	ortholog_supported			+	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+gorilla_gorilla_gorilla	3	downstream	3	CCDC187	LOC134759250		broad_proteome_weak_best_hit	broad_homology_named	73.3	0.117	+	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+gorilla_gorilla_gorilla	4	downstream	4	PLPP4	PLPP4	PLPP4	exact_symbol_match	ortholog_supported			+	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+gorilla_gorilla_gorilla	5	downstream	5	SEC23IP	SEC23IP	SEC23IP	exact_symbol_match	ortholog_supported			+	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+pongo_abelii	-5	upstream	5	BTBD16	BTBD16	BTBD16	exact_symbol_match	ortholog_supported			+	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags;supplement_review
+pongo_abelii	-4	upstream	4	TACC2	TACC2	TACC2	exact_symbol_match	ortholog_supported			+	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags;supplement_review
+pongo_abelii	-3	upstream	3	NSMCE4A	NSMCE4A	NSMCE4A	exact_symbol_match	ortholog_supported			-	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags;supplement_review
+pongo_abelii	-2	upstream	2	ATE1	ATE1	ATE1	exact_symbol_match	ortholog_supported			-	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags;supplement_review
+pongo_abelii	-1	upstream	1	RPS15A	LOC100433801		broad_proteome_best_hit	broad_homology_named	83.9	0.975	+	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags;supplement_review
+pongo_abelii	0	fgfr2	0	FGFR2	FGFR2	FGFR2	anchor	anchor			-	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags;supplement_review
+pongo_abelii	1	downstream	1	WDR11	WDR11	WDR11	exact_symbol_match	ortholog_supported			+	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags;supplement_review
+pongo_abelii	2	downstream	2	PLPP4	PLPP4	PLPP4	exact_symbol_match	ortholog_supported			+	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags;supplement_review
+pongo_abelii	3	downstream	3	EEF1A1	LOC100461776		broad_proteome_best_hit	broad_homology_named	83.3	0.916	-	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags;supplement_review
+pongo_abelii	4	downstream	4	SEC23IP	SEC23IP	SEC23IP	exact_symbol_match	ortholog_supported			+	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags;supplement_review
+pongo_abelii	5	downstream	5	MCMBP	MCMBP	MCMBP	exact_symbol_match	ortholog_supported			-	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags;supplement_review
+macaca_mulatta	-5	upstream	5	PLEKHA1	PLEKHA1	PLEKHA1	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+macaca_mulatta	-4	upstream	4	BTBD16	BTBD16	BTBD16	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+macaca_mulatta	-3	upstream	3	TACC2	TACC2	TACC2	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+macaca_mulatta	-2	upstream	2	NSMCE4A	NSMCE4A	NSMCE4A	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags
+macaca_mulatta	-1	upstream	1	ATE1	ATE1	ATE1	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags
+macaca_mulatta	0	fgfr2	0	FGFR2	FGFR2	FGFR2	anchor	anchor			-	synteny_strong	primary_claim_supported_with_minor_flags
+macaca_mulatta	1	downstream	1	WDR11	WDR11	WDR11	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+macaca_mulatta	2	downstream	2	PLPP4	PLPP4	PLPP4	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+macaca_mulatta	3	downstream	3	SEC23IP	SEC23IP	SEC23IP	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+macaca_mulatta	4	downstream	4	MCMBP	MCMBP	MCMBP	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags
+macaca_mulatta	5	downstream	5	INPP5F	INPP5F	INPP5F	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+mus_musculus	-5	upstream	5	BTBD16	Btbd16	BTBD16	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+mus_musculus	-4	upstream	4	TACC2	Tacc2	TACC2	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+mus_musculus	-3	upstream	3	NSMCE4A	Nsmce4a	NSMCE4A	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags
+mus_musculus	-2	upstream	2	Gm4275	Gm4275		exact_symbol_match	symbol_supported_only			+	synteny_strong	primary_claim_supported_with_minor_flags
+mus_musculus	-1	upstream	1	ATE1	Ate1	ATE1	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags
+mus_musculus	0	fgfr2	0	FGFR2	FGFR2	FGFR2	anchor	anchor			-	synteny_strong	primary_claim_supported_with_minor_flags
+mus_musculus	1	downstream	1	WDR11	Wdr11	WDR11	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+mus_musculus	2	downstream	2	PLPP4	Plpp4	PLPP4	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+mus_musculus	3	downstream	3	SEC23IP	Sec23ip	SEC23IP	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+mus_musculus	4	downstream	4	MCMBP	Mcmbp	MCMBP	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags
+mus_musculus	5	downstream	5	INPP5F	Inpp5f	INPP5F	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+canis_lupus_familiaris	-5	upstream	5	BTBD16	BTBD16	BTBD16	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags;supplement_review
+canis_lupus_familiaris	-4	upstream	4	TACC2	TACC2	TACC2	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags;supplement_review
+canis_lupus_familiaris	-3	upstream	3	NSMCE4A	NSMCE4A	NSMCE4A	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags;supplement_review
+canis_lupus_familiaris	-2	upstream	2	LOC119866605	LOC119866605		raw_annotation_only	raw_id_only			+	synteny_strong	primary_claim_supported_with_minor_flags;supplement_review
+canis_lupus_familiaris	-1	upstream	1	ATE1	ATE1	ATE1	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags;supplement_review
+canis_lupus_familiaris	0	fgfr2	0	FGFR2	FGFR2	FGFR2	anchor	anchor			-	synteny_strong	primary_claim_supported_with_minor_flags;supplement_review
+canis_lupus_familiaris	1	downstream	1	WDR11	WDR11	WDR11	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags;supplement_review
+canis_lupus_familiaris	2	downstream	2	PLPP4	PLPP4	PLPP4	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags;supplement_review
+canis_lupus_familiaris	3	downstream	3	SEC23IP	SEC23IP	SEC23IP	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags;supplement_review
+canis_lupus_familiaris	4	downstream	4	MCMBP	MCMBP	MCMBP	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags;supplement_review
+canis_lupus_familiaris	5	downstream	5	INPP5F	INPP5F	INPP5F	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags;supplement_review
+bos_taurus	-5	upstream	5	BTBD16	BTBD16	BTBD16	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+bos_taurus	-4	upstream	4	TACC2	TACC2	TACC2	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+bos_taurus	-3	upstream	3	NSMCE4A	NSMCE4A	NSMCE4A	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags
+bos_taurus	-2	upstream	2	ATE1OS	ATE1OS		exact_symbol_match	symbol_supported_only			+	synteny_strong	primary_claim_supported_with_minor_flags
+bos_taurus	-1	upstream	1	ATE1	ATE1	ATE1	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags
+bos_taurus	0	fgfr2	0	FGFR2	FGFR2	FGFR2	anchor	anchor			-	synteny_strong	primary_claim_supported_with_minor_flags
+bos_taurus	1	downstream	1	WDR11	WDR11	WDR11	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+bos_taurus	2	downstream	2	PLPP4	PLPP4	PLPP4	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+bos_taurus	3	downstream	3	SEC23IP	SEC23IP	SEC23IP	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+bos_taurus	4	downstream	4	MCMBP	MCMBP	MCMBP	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags
+bos_taurus	5	downstream	5	INPP5F	INPP5F	INPP5F	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+gallus_gallus	-5	upstream	5	PLEKHA1	PLEKHA1	PLEKHA1	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+gallus_gallus	-4	upstream	4	LYPD3	LOC121111178		broad_proteome_weak_best_hit	broad_homology_named	27.0	0.712	+	synteny_strong	primary_claim_supported_with_minor_flags
+gallus_gallus	-3	upstream	3	TACC2	TACC2	TACC2	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+gallus_gallus	-2	upstream	2	NSMCE4A	NSMCE4A	NSMCE4A	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags
+gallus_gallus	-1	upstream	1	ATE1	ATE1	ATE1	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags
+gallus_gallus	0	fgfr2	0	FGFR2	FGFR2	FGFR2	anchor	anchor			-	synteny_strong	primary_claim_supported_with_minor_flags
+gallus_gallus	1	downstream	1	WDR11	WDR11	WDR11	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+gallus_gallus	2	downstream	2	PLPP4	PLPP4	PLPP4	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+gallus_gallus	3	downstream	3	SEC23IP	SEC23IP	SEC23IP	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+gallus_gallus	4	downstream	4	MCMBP	MCMBP	MCMBP	exact_symbol_match	ortholog_supported			-	synteny_strong	primary_claim_supported_with_minor_flags
+gallus_gallus	5	downstream	5	INPP5F	INPP5F	INPP5F	exact_symbol_match	ortholog_supported			+	synteny_strong	primary_claim_supported_with_minor_flags
+xenopus_tropicalis	-5	upstream	5	PLEKHA1	plekha1	PLEKHA1	exact_symbol_match	ortholog_supported			-	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+xenopus_tropicalis	-4	upstream	4	SLURP1	LOC101730888		broad_proteome_weak_best_hit	broad_homology_named	33.0	0.669	-	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+xenopus_tropicalis	-3	upstream	3	TACC2	tacc2	TACC2	exact_symbol_match	ortholog_supported			-	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+xenopus_tropicalis	-2	upstream	2	NSMCE4A	nsmce4a	NSMCE4A	exact_symbol_match	ortholog_supported			+	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+xenopus_tropicalis	-1	upstream	1	ATE1	ate1	ATE1	exact_symbol_match	ortholog_supported			+	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+xenopus_tropicalis	0	fgfr2	0	FGFR2	FGFR2	FGFR2	anchor	anchor			+	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+xenopus_tropicalis	1	downstream	1	WDR11	wdr11	WDR11	exact_symbol_match	ortholog_supported			-	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+xenopus_tropicalis	2	downstream	2	PLPP4	plpp4	PLPP4	exact_symbol_match	ortholog_supported			-	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+xenopus_tropicalis	3	downstream	3	SGSM1	LOC101733728		broad_proteome_weak_best_hit	broad_homology_named	27.4	0.057	+	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+xenopus_tropicalis	4	downstream	4	oat	oat		exact_symbol_match	symbol_supported_only			+	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+xenopus_tropicalis	5	downstream	5	PKN2	LOC101733213		broad_proteome_best_hit	broad_homology_named	38.6	0.407	-	synteny_supported_with_minor_rearrangement	primary_claim_supported_with_minor_flags
+danio_rerio	-5	upstream	5	slc29a1a	slc29a1a		exact_symbol_match	symbol_supported_only			-	synteny_partial_blast_supported	primary_claim_supported_with_minor_flags
+danio_rerio	-4	upstream	4	CCDC177	LOC141377073		broad_proteome_best_hit	broad_homology_named	53.6	0.176	-	synteny_partial_blast_supported	primary_claim_supported_with_minor_flags
+danio_rerio	-3	upstream	3	SLC39A9	LOC571446		broad_proteome_best_hit	broad_homology_named	51.3	1.01	+	synteny_partial_blast_supported	primary_claim_supported_with_minor_flags
+danio_rerio	-2	upstream	2	tmem63ba	tmem63ba		exact_symbol_match	symbol_supported_only			+	synteny_partial_blast_supported	primary_claim_supported_with_minor_flags
+danio_rerio	-1	upstream	1	ATE1	ate1	ATE1	exact_symbol_match	ortholog_supported			-	synteny_partial_blast_supported	primary_claim_supported_with_minor_flags
+danio_rerio	0	fgfr2	0	FGFR2	FGFR2	FGFR2	anchor	anchor			-	synteny_partial_blast_supported	primary_claim_supported_with_minor_flags
+danio_rerio	1	downstream	1	DNAAF2	LOC141377070		broad_proteome_weak_best_hit	broad_homology_named	27.8	0.28	+	synteny_partial_blast_supported	primary_claim_supported_with_minor_flags
+danio_rerio	2	downstream	2	ftr69	ftr69		exact_symbol_match	symbol_supported_only			-	synteny_partial_blast_supported	primary_claim_supported_with_minor_flags
+danio_rerio	3	downstream	3	ftr70	ftr70		exact_symbol_match	symbol_supported_only			-	synteny_partial_blast_supported	primary_claim_supported_with_minor_flags
+danio_rerio	4	downstream	4	marcksl1a	marcksl1a		exact_symbol_match	symbol_supported_only			+	synteny_partial_blast_supported	primary_claim_supported_with_minor_flags
+danio_rerio	5	downstream	5	bsdc1	bsdc1		exact_symbol_match	symbol_supported_only			+	synteny_partial_blast_supported	primary_claim_supported_with_minor_flags

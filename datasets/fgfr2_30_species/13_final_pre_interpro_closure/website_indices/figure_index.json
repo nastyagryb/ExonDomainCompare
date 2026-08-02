@@ -1,0 +1,1387 @@
+{
+  "groups": [
+    "Framework",
+    "Sequence & MSA",
+    "Synteny",
+    "Domain & exon-boundary",
+    "Boundary consistency",
+    "Supplement"
+  ],
+  "figures": [
+    {
+      "id": "Figure_1_framework_overview",
+      "title": "Figure 1 — Framework overview",
+      "number": "1",
+      "group": "Framework",
+      "kind": "main",
+      "caption": "Annotation-aware framework overview (pre-InterPro).",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_1_framework_overview.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_1_framework_overview.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_1_framework_overview.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_1_framework_overview.png",
+      "source_table": ""
+    },
+    {
+      "id": "Figure_2_final_exon_to_protein_architecture_pre_interpro",
+      "title": "Figure 2 — Final exon to protein architecture",
+      "number": "2",
+      "group": "Framework",
+      "kind": "main",
+      "caption": "Final exon-to-protein architecture tracks (no fake domains).",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_2_final_exon_to_protein_architecture_pre_interpro.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_2_final_exon_to_protein_architecture_pre_interpro.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_2_final_exon_to_protein_architecture_pre_interpro.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_2_final_exon_to_protein_architecture_pre_interpro.png",
+      "source_table": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/tables/figure2_final_exon_to_protein_architecture_pre_interpro.tsv"
+    },
+    {
+      "id": "Figure_3_final_IIIb_IIIc_cassette_zoom_pre_interpro",
+      "title": "Figure 3 — Final IIIb IIIc cassette zoom",
+      "number": "3",
+      "group": "Framework",
+      "kind": "main",
+      "caption": "IIIb/IIIc cassette zoom (pre-InterPro).",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_3_final_IIIb_IIIc_cassette_zoom_pre_interpro.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_3_final_IIIb_IIIc_cassette_zoom_pre_interpro.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_3_final_IIIb_IIIc_cassette_zoom_pre_interpro.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_3_final_IIIb_IIIc_cassette_zoom_pre_interpro.png",
+      "source_table": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/tables/figure3_final_IIIb_IIIc_cassette_zoom_pre_interpro.tsv"
+    },
+    {
+      "id": "Figure_3B_IIIb_IIIc_cassette_amino_acid_motif_map",
+      "title": "Figure 3B — IIIb IIIc cassette amino acid motif map",
+      "number": "3B",
+      "group": "Framework",
+      "kind": "main",
+      "caption": "IIIb/IIIc cassette amino-acid motif map (final post-rescue consensus): human IIIb/IIIc reference and major-residue rows with one-letter codes, residue-property colouring, and highlighted isoform-discriminating positions. Descriptive properties only; no functional/ligand claims.",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_3B_IIIb_IIIc_cassette_amino_acid_motif_map.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_3B_IIIb_IIIc_cassette_amino_acid_motif_map.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_3B_IIIb_IIIc_cassette_amino_acid_motif_map.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_3B_IIIb_IIIc_cassette_amino_acid_motif_map.png",
+      "source_table": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/tables/figure3B_IIIb_IIIc_cassette_amino_acid_motif_map.tsv"
+    },
+    {
+      "id": "Figure_3C_exon_to_protein_cassette_coordinate_map",
+      "title": "Figure 3C — Exon to protein cassette coordinate map",
+      "number": "3C",
+      "group": "Framework",
+      "kind": "main",
+      "caption": "Exon/CDS-to-protein cassette coordinate map: exon/CDS blocks on the protein amino-acid axis with the IIIb/IIIc cassette block and boundary ticks per species/isoform.",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_3C_exon_to_protein_cassette_coordinate_map.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_3C_exon_to_protein_cassette_coordinate_map.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_3C_exon_to_protein_cassette_coordinate_map.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_3C_exon_to_protein_cassette_coordinate_map.png",
+      "source_table": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/tables/figure3C_exon_to_protein_cassette_coordinate_map.tsv"
+    },
+    {
+      "id": "Figure_4_label_reconciliation_and_rescue_summary",
+      "title": "Figure 4 — Label reconciliation and rescue summary",
+      "number": "4",
+      "group": "Framework",
+      "kind": "main",
+      "caption": "Label reconciliation and rescue summary (positive framing): final claim composition and annotation-aware outcomes; corrected and rescued rows are shown as gains, only true unresolved rows as review.",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_4_label_reconciliation_and_rescue_summary.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_4_label_reconciliation_and_rescue_summary.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_4_label_reconciliation_and_rescue_summary.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_4_label_reconciliation_and_rescue_summary.png",
+      "source_table": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/tables/figure4_label_reconciliation_and_rescue_summary.tsv"
+    },
+    {
+      "id": "Figure_5_full_length_FGFR2_MSA_integrity_paper",
+      "title": "Figure 5 — Full length FGFR2 MSA integrity",
+      "number": "5",
+      "group": "Sequence & MSA",
+      "kind": "main",
+      "caption": "Full-length FGFR2 MSA integrity QC.",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_5_full_length_FGFR2_MSA_integrity_paper.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_5_full_length_FGFR2_MSA_integrity_paper.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_5_full_length_FGFR2_MSA_integrity_paper.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_5_full_length_FGFR2_MSA_integrity_paper.png",
+      "source_table": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/tables/figure5_full_length_FGFR2_MSA_integrity_paper.tsv"
+    },
+    {
+      "id": "Figure_6_human_referenced_IIIb_IIIc_residue_agreement",
+      "title": "Figure 6 — Human referenced IIIb IIIc residue agreement",
+      "number": "6",
+      "group": "Sequence & MSA",
+      "kind": "main",
+      "caption": "Human-referenced IIIb/IIIc residue agreement (primary cassettes).",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_6_human_referenced_IIIb_IIIc_residue_agreement.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_6_human_referenced_IIIb_IIIc_residue_agreement.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_6_human_referenced_IIIb_IIIc_residue_agreement.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_6_human_referenced_IIIb_IIIc_residue_agreement.png",
+      "source_table": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/tables/figure6_human_referenced_IIIb_IIIc_residue_agreement.tsv"
+    },
+    {
+      "id": "Figure_6B_species_resolved_IIIb_IIIc_cassette_residue_map",
+      "title": "Figure 6B — Species resolved IIIb IIIc cassette residue map",
+      "number": "6B",
+      "group": "Sequence & MSA",
+      "kind": "main",
+      "caption": "",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_6B_species_resolved_IIIb_IIIc_cassette_residue_map.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_6B_species_resolved_IIIb_IIIc_cassette_residue_map.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_6B_species_resolved_IIIb_IIIc_cassette_residue_map.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_6B_species_resolved_IIIb_IIIc_cassette_residue_map.png",
+      "source_table": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/tables/figure6B_species_resolved_IIIb_IIIc_cassette_residue_map.tsv"
+    },
+    {
+      "id": "Figure_7_isoform_discriminating_residues",
+      "title": "Figure 7 — Isoform discriminating residues",
+      "number": "7",
+      "group": "Sequence & MSA",
+      "kind": "main",
+      "caption": "Isoform-discriminating residues.",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_7_isoform_discriminating_residues.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_7_isoform_discriminating_residues.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_7_isoform_discriminating_residues.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_7_isoform_discriminating_residues.png",
+      "source_table": ""
+    },
+    {
+      "id": "Figure_8_final_framework_evidence_stack",
+      "title": "Figure 8 — Final framework evidence stack",
+      "number": "8",
+      "group": "Framework",
+      "kind": "main",
+      "caption": "Integrated framework evidence stack.",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_8_final_framework_evidence_stack.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_8_final_framework_evidence_stack.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_8_final_framework_evidence_stack.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_8_final_framework_evidence_stack.png",
+      "source_table": ""
+    },
+    {
+      "id": "Figure_9_FGFR2_local_synteny_neighborhood",
+      "title": "Figure 9 — FGFR2 local synteny neighborhood",
+      "number": "9",
+      "group": "Synteny",
+      "kind": "main",
+      "caption": "",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_9_FGFR2_local_synteny_neighborhood.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_9_FGFR2_local_synteny_neighborhood.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_9_FGFR2_local_synteny_neighborhood.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_9_FGFR2_local_synteny_neighborhood.png",
+      "source_table": ""
+    },
+    {
+      "id": "Figure_9A_FGFR2_local_synteny_5neighbor_paper",
+      "title": "Figure 9A — FGFR2 local synteny 5neighbor",
+      "number": "9A",
+      "group": "Synteny",
+      "kind": "main",
+      "caption": "FGFR2 local synteny map (5 neighbors per side).",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_9A_FGFR2_local_synteny_5neighbor_paper.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_9A_FGFR2_local_synteny_5neighbor_paper.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_9A_FGFR2_local_synteny_5neighbor_paper.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_9A_FGFR2_local_synteny_5neighbor_paper.png",
+      "source_table": ""
+    },
+    {
+      "id": "Figure_9B_FGFR2_5neighbor_conservation_matrix_paper",
+      "title": "Figure 9B — FGFR2 5neighbor conservation matrix",
+      "number": "9B",
+      "group": "Synteny",
+      "kind": "main",
+      "caption": "5-neighbor conservation matrix.",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_9B_FGFR2_5neighbor_conservation_matrix_paper.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_9B_FGFR2_5neighbor_conservation_matrix_paper.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_9B_FGFR2_5neighbor_conservation_matrix_paper.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_9B_FGFR2_5neighbor_conservation_matrix_paper.png",
+      "source_table": ""
+    },
+    {
+      "id": "Figure_9C_FGFR2_synteny_review_cases_paper",
+      "title": "Figure 9C — FGFR2 synteny review cases",
+      "number": "9C",
+      "group": "Synteny",
+      "kind": "main",
+      "caption": "Synteny review-case panels (unresolved/supplement only).",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_9C_FGFR2_synteny_review_cases_paper.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_9C_FGFR2_synteny_review_cases_paper.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_9C_FGFR2_synteny_review_cases_paper.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_9C_FGFR2_synteny_review_cases_paper.png",
+      "source_table": ""
+    },
+    {
+      "id": "Figure_10_all_species_FGFR2_exon_domain_architecture_primary",
+      "title": "Figure 10 — All species · FGFR2 exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "main",
+      "caption": "Post-InterProScan exon–domain architecture: InterProScan domains, pyTMHMM transmembrane helix, numbered coding exons and the IIIb/IIIc cassette slot. Labels come from the final truth table; pyTMHMM is the TM layer. Interactive view: Gene Explorer → Domain architecture.",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10_all_species_FGFR2_exon_domain_architecture_primary.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10_all_species_FGFR2_exon_domain_architecture_primary.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10_all_species_FGFR2_exon_domain_architecture_primary.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10_all_species_FGFR2_exon_domain_architecture_primary.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "Figure_10A_IIIb_exon_domain_architecture_primary",
+      "title": "Figure 10A — IIIb · exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "main",
+      "caption": "Post-InterProScan exon–domain architecture: InterProScan domains, pyTMHMM transmembrane helix, numbered coding exons and the IIIb/IIIc cassette slot. Labels come from the final truth table; pyTMHMM is the TM layer. Interactive view: Gene Explorer → Domain architecture.",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10A_IIIb_exon_domain_architecture_primary.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10A_IIIb_exon_domain_architecture_primary.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10A_IIIb_exon_domain_architecture_primary.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10A_IIIb_exon_domain_architecture_primary.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "Figure_10B_IIIc_exon_domain_architecture_primary",
+      "title": "Figure 10B — IIIc · exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "main",
+      "caption": "Post-InterProScan exon–domain architecture: InterProScan domains, pyTMHMM transmembrane helix, numbered coding exons and the IIIb/IIIc cassette slot. Labels come from the final truth table; pyTMHMM is the TM layer. Interactive view: Gene Explorer → Domain architecture.",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10B_IIIc_exon_domain_architecture_primary.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10B_IIIc_exon_domain_architecture_primary.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10B_IIIc_exon_domain_architecture_primary.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10B_IIIc_exon_domain_architecture_primary.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "Figure_10C_mammals_exon_domain_architecture_primary",
+      "title": "Figure 10C — Mammals · exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "main",
+      "caption": "Post-InterProScan exon–domain architecture: InterProScan domains, pyTMHMM transmembrane helix, numbered coding exons and the IIIb/IIIc cassette slot. Labels come from the final truth table; pyTMHMM is the TM layer. Interactive view: Gene Explorer → Domain architecture.",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10C_mammals_exon_domain_architecture_primary.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10C_mammals_exon_domain_architecture_primary.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10C_mammals_exon_domain_architecture_primary.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10C_mammals_exon_domain_architecture_primary.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "Figure_10D_nonmammals_exon_domain_architecture_primary",
+      "title": "Figure 10D — Non-mammals · exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "main",
+      "caption": "Post-InterProScan exon–domain architecture: InterProScan domains, pyTMHMM transmembrane helix, numbered coding exons and the IIIb/IIIc cassette slot. Labels come from the final truth table; pyTMHMM is the TM layer. Interactive view: Gene Explorer → Domain architecture.",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10D_nonmammals_exon_domain_architecture_primary.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10D_nonmammals_exon_domain_architecture_primary.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10D_nonmammals_exon_domain_architecture_primary.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10D_nonmammals_exon_domain_architecture_primary.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "Figure_11_exon_domain_boundary_consistency_heatmap",
+      "title": "Figure 11 — FGFR2 IIIb/IIIc exon–domain boundary consistency",
+      "number": "11",
+      "group": "Boundary consistency",
+      "kind": "main",
+      "caption": "Cassette start/end boundary class (aligned / near / within / between / missing) relative to the nearest protein-domain boundary, per species and isoform. Rows are ordered taxonomically. Static thesis figure — the interactive Boundary Consistency explorer is the primary view.",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_11_exon_domain_boundary_consistency_heatmap.png",
+        "svg": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_11_exon_domain_boundary_consistency_heatmap.svg",
+        "pdf": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_11_exon_domain_boundary_consistency_heatmap.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_11_exon_domain_boundary_consistency_heatmap.png",
+      "source_table": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/tables/exon_domain_boundary_distances.tsv"
+    },
+    {
+      "id": "Figure_12_boundary_distance_distribution",
+      "title": "Figure 12 — Cassette boundary distance to nearest domain boundary",
+      "number": "12",
+      "group": "Boundary consistency",
+      "kind": "main",
+      "caption": "Distribution of the absolute distance from cassette start/end boundaries to the nearest protein-domain boundary, by isoform. Static thesis figure — the interactive Boundary Consistency explorer is the primary view.",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_12_boundary_distance_distribution.png",
+        "svg": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_12_boundary_distance_distribution.svg",
+        "pdf": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_12_boundary_distance_distribution.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_12_boundary_distance_distribution.png",
+      "source_table": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/tables/exon_domain_boundary_distances.tsv"
+    },
+    {
+      "id": "Figure_Final_Framework_Evidence_Stack",
+      "title": "Final Framework Evidence Stack",
+      "number": "",
+      "group": "Framework",
+      "kind": "main",
+      "caption": "",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_Final_Framework_Evidence_Stack.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_Final_Framework_Evidence_Stack.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_Final_Framework_Evidence_Stack.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Figure_Final_Framework_Evidence_Stack.png",
+      "source_table": ""
+    },
+    {
+      "id": "alligator_mississippiensis_IIIb_exon_domain_architecture",
+      "title": "Alligator mississippiensis IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/alligator_mississippiensis_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/alligator_mississippiensis_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/alligator_mississippiensis_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/alligator_mississippiensis_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "alligator_mississippiensis_IIIc_exon_domain_architecture",
+      "title": "Alligator mississippiensis IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/alligator_mississippiensis_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/alligator_mississippiensis_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/alligator_mississippiensis_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/alligator_mississippiensis_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "ambystoma_mexicanum_IIIb_exon_domain_architecture",
+      "title": "Ambystoma mexicanum IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ambystoma_mexicanum_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ambystoma_mexicanum_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ambystoma_mexicanum_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ambystoma_mexicanum_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "ambystoma_mexicanum_IIIc_exon_domain_architecture",
+      "title": "Ambystoma mexicanum IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ambystoma_mexicanum_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ambystoma_mexicanum_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ambystoma_mexicanum_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ambystoma_mexicanum_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "anolis_carolinensis_IIIb_exon_domain_architecture",
+      "title": "Anolis carolinensis IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/anolis_carolinensis_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/anolis_carolinensis_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/anolis_carolinensis_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/anolis_carolinensis_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "anolis_carolinensis_IIIc_exon_domain_architecture",
+      "title": "Anolis carolinensis IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/anolis_carolinensis_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/anolis_carolinensis_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/anolis_carolinensis_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/anolis_carolinensis_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "bos_taurus_IIIb_exon_domain_architecture",
+      "title": "Bos taurus IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/bos_taurus_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/bos_taurus_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/bos_taurus_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/bos_taurus_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "bos_taurus_IIIc_exon_domain_architecture",
+      "title": "Bos taurus IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/bos_taurus_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/bos_taurus_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/bos_taurus_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/bos_taurus_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "callithrix_jacchus_IIIb_exon_domain_architecture",
+      "title": "Callithrix jacchus IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/callithrix_jacchus_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/callithrix_jacchus_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/callithrix_jacchus_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/callithrix_jacchus_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "callithrix_jacchus_IIIc_exon_domain_architecture",
+      "title": "Callithrix jacchus IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/callithrix_jacchus_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/callithrix_jacchus_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/callithrix_jacchus_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/callithrix_jacchus_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "canis_lupus_familiaris_IIIb_exon_domain_architecture",
+      "title": "Canis lupus familiaris IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/canis_lupus_familiaris_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/canis_lupus_familiaris_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/canis_lupus_familiaris_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/canis_lupus_familiaris_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "chrysemys_picta_bellii_IIIb_exon_domain_architecture",
+      "title": "Chrysemys picta bellii IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/chrysemys_picta_bellii_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/chrysemys_picta_bellii_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/chrysemys_picta_bellii_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/chrysemys_picta_bellii_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "chrysemys_picta_bellii_IIIc_exon_domain_architecture",
+      "title": "Chrysemys picta bellii IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/chrysemys_picta_bellii_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/chrysemys_picta_bellii_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/chrysemys_picta_bellii_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/chrysemys_picta_bellii_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "danio_rerio_IIIb_exon_domain_architecture",
+      "title": "Danio rerio IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/danio_rerio_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/danio_rerio_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/danio_rerio_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/danio_rerio_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "danio_rerio_IIIc_exon_domain_architecture",
+      "title": "Danio rerio IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/danio_rerio_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/danio_rerio_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/danio_rerio_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/danio_rerio_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "equus_caballus_IIIb_exon_domain_architecture",
+      "title": "Equus caballus IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/equus_caballus_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/equus_caballus_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/equus_caballus_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/equus_caballus_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "equus_caballus_IIIc_exon_domain_architecture",
+      "title": "Equus caballus IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/equus_caballus_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/equus_caballus_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/equus_caballus_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/equus_caballus_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "felis_catus_IIIb_exon_domain_architecture",
+      "title": "Felis catus IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/felis_catus_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/felis_catus_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/felis_catus_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/felis_catus_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "felis_catus_IIIc_exon_domain_architecture",
+      "title": "Felis catus IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/felis_catus_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/felis_catus_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/felis_catus_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/felis_catus_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "gallus_gallus_IIIb_exon_domain_architecture",
+      "title": "Gallus gallus IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gallus_gallus_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gallus_gallus_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gallus_gallus_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gallus_gallus_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "gallus_gallus_IIIc_exon_domain_architecture",
+      "title": "Gallus gallus IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gallus_gallus_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gallus_gallus_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gallus_gallus_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gallus_gallus_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "gasterosteus_aculeatus_IIIb_exon_domain_architecture",
+      "title": "Gasterosteus aculeatus IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gasterosteus_aculeatus_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gasterosteus_aculeatus_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gasterosteus_aculeatus_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gasterosteus_aculeatus_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "gasterosteus_aculeatus_IIIc_exon_domain_architecture",
+      "title": "Gasterosteus aculeatus IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gasterosteus_aculeatus_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gasterosteus_aculeatus_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gasterosteus_aculeatus_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gasterosteus_aculeatus_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "gorilla_gorilla_gorilla_IIIb_exon_domain_architecture",
+      "title": "Gorilla gorilla gorilla IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gorilla_gorilla_gorilla_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gorilla_gorilla_gorilla_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gorilla_gorilla_gorilla_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gorilla_gorilla_gorilla_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "gorilla_gorilla_gorilla_IIIc_exon_domain_architecture",
+      "title": "Gorilla gorilla gorilla IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gorilla_gorilla_gorilla_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gorilla_gorilla_gorilla_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gorilla_gorilla_gorilla_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gorilla_gorilla_gorilla_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "homo_sapiens_IIIb_exon_domain_architecture",
+      "title": "Homo sapiens IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/homo_sapiens_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/homo_sapiens_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/homo_sapiens_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/homo_sapiens_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "homo_sapiens_IIIc_exon_domain_architecture",
+      "title": "Homo sapiens IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/homo_sapiens_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/homo_sapiens_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/homo_sapiens_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/homo_sapiens_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "macaca_mulatta_IIIb_exon_domain_architecture",
+      "title": "Macaca mulatta IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/macaca_mulatta_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/macaca_mulatta_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/macaca_mulatta_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/macaca_mulatta_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "macaca_mulatta_IIIc_exon_domain_architecture",
+      "title": "Macaca mulatta IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/macaca_mulatta_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/macaca_mulatta_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/macaca_mulatta_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/macaca_mulatta_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "meleagris_gallopavo_IIIb_exon_domain_architecture",
+      "title": "Meleagris gallopavo IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/meleagris_gallopavo_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/meleagris_gallopavo_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/meleagris_gallopavo_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/meleagris_gallopavo_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "meleagris_gallopavo_IIIc_exon_domain_architecture",
+      "title": "Meleagris gallopavo IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/meleagris_gallopavo_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/meleagris_gallopavo_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/meleagris_gallopavo_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/meleagris_gallopavo_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "monodelphis_domestica_IIIb_exon_domain_architecture",
+      "title": "Monodelphis domestica IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/monodelphis_domestica_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/monodelphis_domestica_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/monodelphis_domestica_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/monodelphis_domestica_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "monodelphis_domestica_IIIc_exon_domain_architecture",
+      "title": "Monodelphis domestica IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/monodelphis_domestica_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/monodelphis_domestica_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/monodelphis_domestica_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/monodelphis_domestica_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "mus_musculus_IIIb_exon_domain_architecture",
+      "title": "Mus musculus IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/mus_musculus_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/mus_musculus_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/mus_musculus_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/mus_musculus_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "mus_musculus_IIIc_exon_domain_architecture",
+      "title": "Mus musculus IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/mus_musculus_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/mus_musculus_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/mus_musculus_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/mus_musculus_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "oreochromis_niloticus_IIIb_exon_domain_architecture",
+      "title": "Oreochromis niloticus IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oreochromis_niloticus_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oreochromis_niloticus_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oreochromis_niloticus_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oreochromis_niloticus_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "oreochromis_niloticus_IIIc_exon_domain_architecture",
+      "title": "Oreochromis niloticus IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oreochromis_niloticus_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oreochromis_niloticus_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oreochromis_niloticus_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oreochromis_niloticus_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "ornithorhynchus_anatinus_IIIb_exon_domain_architecture",
+      "title": "Ornithorhynchus anatinus IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ornithorhynchus_anatinus_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ornithorhynchus_anatinus_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ornithorhynchus_anatinus_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ornithorhynchus_anatinus_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "ornithorhynchus_anatinus_IIIc_exon_domain_architecture",
+      "title": "Ornithorhynchus anatinus IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ornithorhynchus_anatinus_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ornithorhynchus_anatinus_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ornithorhynchus_anatinus_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ornithorhynchus_anatinus_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "oryctolagus_cuniculus_IIIb_exon_domain_architecture",
+      "title": "Oryctolagus cuniculus IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryctolagus_cuniculus_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryctolagus_cuniculus_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryctolagus_cuniculus_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryctolagus_cuniculus_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "oryctolagus_cuniculus_IIIc_exon_domain_architecture",
+      "title": "Oryctolagus cuniculus IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryctolagus_cuniculus_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryctolagus_cuniculus_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryctolagus_cuniculus_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryctolagus_cuniculus_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "oryzias_latipes_IIIb_exon_domain_architecture",
+      "title": "Oryzias latipes IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryzias_latipes_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryzias_latipes_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryzias_latipes_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryzias_latipes_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "oryzias_latipes_IIIc_exon_domain_architecture",
+      "title": "Oryzias latipes IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryzias_latipes_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryzias_latipes_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryzias_latipes_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryzias_latipes_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "ovis_aries_IIIb_exon_domain_architecture",
+      "title": "Ovis aries IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ovis_aries_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ovis_aries_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ovis_aries_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ovis_aries_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "ovis_aries_IIIc_exon_domain_architecture",
+      "title": "Ovis aries IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ovis_aries_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ovis_aries_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ovis_aries_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ovis_aries_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "pan_troglodytes_IIIb_exon_domain_architecture",
+      "title": "Pan troglodytes IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/pan_troglodytes_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/pan_troglodytes_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/pan_troglodytes_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/pan_troglodytes_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "pan_troglodytes_IIIc_exon_domain_architecture",
+      "title": "Pan troglodytes IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/pan_troglodytes_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/pan_troglodytes_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/pan_troglodytes_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/pan_troglodytes_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "pongo_abelii_IIIc_exon_domain_architecture",
+      "title": "Pongo abelii IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/pongo_abelii_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/pongo_abelii_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/pongo_abelii_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/pongo_abelii_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "rattus_norvegicus_IIIb_exon_domain_architecture",
+      "title": "Rattus norvegicus IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/rattus_norvegicus_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/rattus_norvegicus_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/rattus_norvegicus_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/rattus_norvegicus_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "rattus_norvegicus_IIIc_exon_domain_architecture",
+      "title": "Rattus norvegicus IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/rattus_norvegicus_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/rattus_norvegicus_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/rattus_norvegicus_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/rattus_norvegicus_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "sus_scrofa_IIIb_exon_domain_architecture",
+      "title": "Sus scrofa IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/sus_scrofa_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/sus_scrofa_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/sus_scrofa_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/sus_scrofa_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "sus_scrofa_IIIc_exon_domain_architecture",
+      "title": "Sus scrofa IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/sus_scrofa_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/sus_scrofa_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/sus_scrofa_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/sus_scrofa_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "taeniopygia_guttata_IIIb_exon_domain_architecture",
+      "title": "Taeniopygia guttata IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/taeniopygia_guttata_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/taeniopygia_guttata_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/taeniopygia_guttata_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/taeniopygia_guttata_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "taeniopygia_guttata_IIIc_exon_domain_architecture",
+      "title": "Taeniopygia guttata IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/taeniopygia_guttata_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/taeniopygia_guttata_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/taeniopygia_guttata_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/taeniopygia_guttata_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "takifugu_rubripes_IIIb_exon_domain_architecture",
+      "title": "Takifugu rubripes IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/takifugu_rubripes_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/takifugu_rubripes_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/takifugu_rubripes_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/takifugu_rubripes_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "takifugu_rubripes_IIIc_exon_domain_architecture",
+      "title": "Takifugu rubripes IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/takifugu_rubripes_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/takifugu_rubripes_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/takifugu_rubripes_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/takifugu_rubripes_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "xenopus_tropicalis_IIIb_exon_domain_architecture",
+      "title": "Xenopus tropicalis IIIb — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/xenopus_tropicalis_IIIb_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/xenopus_tropicalis_IIIb_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/xenopus_tropicalis_IIIb_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/xenopus_tropicalis_IIIb_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "xenopus_tropicalis_IIIc_exon_domain_architecture",
+      "title": "Xenopus tropicalis IIIc — exon–domain architecture",
+      "number": "10",
+      "group": "Domain & exon-boundary",
+      "kind": "supplement",
+      "caption": "Per-protein exon–domain architecture (InterProScan domains, pyTMHMM TM, numbered coding exons, IIIb/IIIc cassette slot).",
+      "formats": {
+        "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/xenopus_tropicalis_IIIc_exon_domain_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/xenopus_tropicalis_IIIc_exon_domain_architecture.svg",
+        "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/xenopus_tropicalis_IIIc_exon_domain_architecture.pdf"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/xenopus_tropicalis_IIIc_exon_domain_architecture.png",
+      "source_table": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv"
+    },
+    {
+      "id": "Supplement_all_species_cassette_zoom",
+      "title": "Supplement — All species cassette zoom",
+      "number": "",
+      "group": "Supplement",
+      "kind": "supplement",
+      "caption": "10-neighbor all-species synteny context.",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_all_species_cassette_zoom.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_all_species_cassette_zoom.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_all_species_cassette_zoom.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_all_species_cassette_zoom.png",
+      "source_table": ""
+    },
+    {
+      "id": "Supplement_all_species_exon_protein_architecture",
+      "title": "Supplement — All species exon protein architecture",
+      "number": "",
+      "group": "Supplement",
+      "kind": "supplement",
+      "caption": "10-neighbor all-species synteny context.",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_all_species_exon_protein_architecture.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_all_species_exon_protein_architecture.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_all_species_exon_protein_architecture.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_all_species_exon_protein_architecture.png",
+      "source_table": ""
+    },
+    {
+      "id": "Supplement_Figure_FGFR2_local_synteny_10neighbor_all_species",
+      "title": "Supplement — FGFR2 local synteny 10neighbor all species",
+      "number": "",
+      "group": "Supplement",
+      "kind": "supplement",
+      "caption": "10-neighbor all-species synteny context.",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_Figure_FGFR2_local_synteny_10neighbor_all_species.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_Figure_FGFR2_local_synteny_10neighbor_all_species.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_Figure_FGFR2_local_synteny_10neighbor_all_species.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_Figure_FGFR2_local_synteny_10neighbor_all_species.png",
+      "source_table": ""
+    },
+    {
+      "id": "Supplement_full_length_MSA_QC_histograms",
+      "title": "Supplement — Full length MSA QC histograms",
+      "number": "",
+      "group": "Supplement",
+      "kind": "supplement",
+      "caption": "10-neighbor all-species synteny context.",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_full_length_MSA_QC_histograms.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_full_length_MSA_QC_histograms.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_full_length_MSA_QC_histograms.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_full_length_MSA_QC_histograms.png",
+      "source_table": ""
+    },
+    {
+      "id": "Supplement_full_length_MSA_outliers",
+      "title": "Supplement — Full length MSA outliers",
+      "number": "",
+      "group": "Supplement",
+      "kind": "supplement",
+      "caption": "10-neighbor all-species synteny context.",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_full_length_MSA_outliers.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_full_length_MSA_outliers.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_full_length_MSA_outliers.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_full_length_MSA_outliers.png",
+      "source_table": ""
+    },
+    {
+      "id": "Supplement_Figure_6_residue_agreement_review_cases",
+      "title": "Supplement — Residue agreement review cases",
+      "number": "",
+      "group": "Supplement",
+      "kind": "supplement",
+      "caption": "10-neighbor all-species synteny context.",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_Figure_6_residue_agreement_review_cases.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_Figure_6_residue_agreement_review_cases.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_Figure_6_residue_agreement_review_cases.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_Figure_6_residue_agreement_review_cases.png",
+      "source_table": ""
+    },
+    {
+      "id": "Supplement_review_cases_pre_interpro",
+      "title": "Supplement — Review cases",
+      "number": "",
+      "group": "Supplement",
+      "kind": "supplement",
+      "caption": "10-neighbor all-species synteny context.",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_review_cases_pre_interpro.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_review_cases_pre_interpro.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_review_cases_pre_interpro.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_review_cases_pre_interpro.png",
+      "source_table": ""
+    },
+    {
+      "id": "Supplement_Figure_6B_review_rows_cassette_residue_map",
+      "title": "Supplement — Review rows cassette residue map",
+      "number": "",
+      "group": "Supplement",
+      "kind": "supplement",
+      "caption": "10-neighbor all-species synteny context.",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_Figure_6B_review_rows_cassette_residue_map.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_Figure_6B_review_rows_cassette_residue_map.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_Figure_6B_review_rows_cassette_residue_map.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_Figure_6B_review_rows_cassette_residue_map.png",
+      "source_table": ""
+    },
+    {
+      "id": "Supplement_review_unresolved_case_panels",
+      "title": "Supplement — Review unresolved case panels",
+      "number": "",
+      "group": "Supplement",
+      "kind": "supplement",
+      "caption": "10-neighbor all-species synteny context.",
+      "formats": {
+        "pdf": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_review_unresolved_case_panels.pdf",
+        "png": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_review_unresolved_case_panels.png",
+        "svg": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_review_unresolved_case_panels.svg"
+      },
+      "thumbnail": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/figures/Supplement_review_unresolved_case_panels.png",
+      "source_table": ""
+    }
+  ],
+  "curated_ids": [
+    "Figure_1_framework_overview",
+    "Figure_2_final_exon_to_protein_architecture_pre_interpro",
+    "Figure_3_final_IIIb_IIIc_cassette_zoom_pre_interpro",
+    "Figure_3B_IIIb_IIIc_cassette_amino_acid_motif_map",
+    "Figure_3C_exon_to_protein_cassette_coordinate_map",
+    "Figure_4_label_reconciliation_and_rescue_summary",
+    "Figure_5_full_length_FGFR2_MSA_integrity_paper",
+    "Figure_6_human_referenced_IIIb_IIIc_residue_agreement",
+    "Figure_6B_species_resolved_IIIb_IIIc_cassette_residue_map",
+    "Figure_7_isoform_discriminating_residues",
+    "Figure_8_final_framework_evidence_stack",
+    "Figure_9_FGFR2_local_synteny_neighborhood",
+    "Figure_9A_FGFR2_local_synteny_5neighbor_paper",
+    "Figure_9B_FGFR2_5neighbor_conservation_matrix_paper",
+    "Figure_9C_FGFR2_synteny_review_cases_paper",
+    "Figure_10_all_species_FGFR2_exon_domain_architecture_primary",
+    "Figure_10A_IIIb_exon_domain_architecture_primary",
+    "Figure_10B_IIIc_exon_domain_architecture_primary",
+    "Figure_10C_mammals_exon_domain_architecture_primary",
+    "Figure_10D_nonmammals_exon_domain_architecture_primary",
+    "Figure_11_exon_domain_boundary_consistency_heatmap",
+    "Figure_12_boundary_distance_distribution",
+    "Figure_Final_Framework_Evidence_Stack"
+  ]
+}

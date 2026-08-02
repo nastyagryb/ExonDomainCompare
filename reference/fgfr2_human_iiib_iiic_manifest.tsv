@@ -1,0 +1,3 @@
+isoform	refseq_transcript	refseq_protein	reference_fasta	expected_event	notes
+IIIb	NM_022970.3	NP_075259.4	references/fgfr2_iii_segments/human_FGFR2_IIIb_segment.fasta	includes_IIIb_specific_exon	Human FGFR2-IIIb (epithelial, KGFR). IIIb-specific exon (human exon 8). Calibrated D3 IIIb cassette segment used as the IIIb scoring reference. Header must label this segment IIIb.
+IIIc	NM_000141.4	NP_000132.3	references/fgfr2_iii_segments/human_FGFR2_IIIc_segment.fasta	includes_IIIc_specific_exon	Human FGFR2-IIIc (mesenchymal). IIIc-specific exon (human exon 9). Calibrated D3 IIIc cassette segment used as the IIIc scoring reference. Header must label this segment IIIc.

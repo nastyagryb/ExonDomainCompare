@@ -1,0 +1,63 @@
+# DRAFT — TPM1 (NOT runnable). Second illustrative draft to show that the config
+# shape generalises beyond the FGFR family. TPM1 (tropomyosin 1) has extensively
+# characterised mutually-exclusive exon usage, which is why it is a reasonable
+# future candidate — but, as with any new gene, its event region and markers must
+# be defined by a gene-specific detector before analysis. No markers are invented here.
+#
+# Intentionally marked non-runnable and NOT wired into the UI.
+schema_version: 1
+status: draft_not_runnable
+runnable: false
+
+analysis:
+  id: TPM1_draft
+  display_name: TPM1 (draft — not runnable)
+  description: >
+    Draft placeholder for a future TPM1 mutually-exclusive-exon analysis. Event
+    region and discriminating markers are not yet defined.
+
+gene:
+  symbol: TPM1
+  display_name: Tropomyosin 1
+  reference_species: homo_sapiens
+  reference_role: human_reference_control
+
+# Core gene-level analysis is possible in principle; the event-specific analysis
+# is optional and NOT configured yet (no curated event region / detector).
+analysis_modes:
+  core_gene_analysis: true
+  event_analysis: optional     # configured | auto | user_defined | disabled | optional
+
+event:
+  status: not_configured
+  id: TPM1_event_undefined
+  type: requires_gene_specific_event_detector
+  display_name: (event region not defined)
+  generic_label: event_region
+  labels: []
+
+reference_control:
+  enabled: true
+  species: homo_sapiens
+  source: curated_reference
+  role: reference_control_only
+  note: >
+    A curated human reference/control would be used only as a fixed reference.
+    Not yet defined for TPM1.
+
+views:
+  overview: true
+  gene_explorer: true
+  domain_architecture: true
+  synteny: true
+
+ui_labels:
+  gene_explorer: Gene Explorer
+  event_region: Event region
+  boundary_relation: Boundary Consistency
+
+notes:
+  feasibility: requires_gene_specific_event_detector
+  next_step: >
+    Define the TPM1 mutually-exclusive-exon event region and curate discriminating
+    markers, then run the feasibility probe again.

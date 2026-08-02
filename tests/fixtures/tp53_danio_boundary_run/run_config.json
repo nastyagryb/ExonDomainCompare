@@ -1,0 +1,19 @@
+{
+  "run_id": "2026-07-21_1436_custom_run",
+  "gene_symbol": "TP53",
+  "species_count": 1,
+  "species_ids": [
+    "danio_rerio"
+  ],
+  "species_taxids": {
+    "danio_rerio": "7955"
+  },
+  "species_scientific_names": {
+    "danio_rerio": "Danio rerio"
+  },
+  "workflow": "shared_exploratory",
+  "run_mode": "core_only_pilot",
+  "experimental": true,
+  "run_dir": "tests/fixtures/tp53_danio_boundary_run",
+  "results_dir": "tests/fixtures/tp53_danio_boundary_run/results"
+}

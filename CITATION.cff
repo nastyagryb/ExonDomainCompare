@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use ExonDomainCompare, please cite this software."
+title: "ExonDomainCompare"
+type: software
+authors:
+  - family-names: "Gryb"
+    given-names: "Anastasiya"
+version: "0.2.0"
+license: "MIT"
+repository-code: "https://github.com/nastyagryb/ExonDomainCompare"
+abstract: >-
+  Comparative analysis of exon structure, protein isoforms, domain annotations
+  and exon-domain boundaries across species.

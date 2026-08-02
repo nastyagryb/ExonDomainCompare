@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+pydantic
+pyyaml
+# Data & Downloads package builder: the comparative Excel workbook sheet writer.
+openpyxl>=3.1,<4

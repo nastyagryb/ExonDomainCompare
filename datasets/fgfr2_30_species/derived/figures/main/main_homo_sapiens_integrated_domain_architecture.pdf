@@ -1,0 +1,630 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 756 260.7] /Resources << /Font << /F_bold 5 0 R /F_italic 6 0 R /F_normal 7 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 7842 >>
+stream
+1 1 1 rg
+0 0 756 260.7 re f
+0.11 0.14 0.2 rg
+BT
+/F_bold 12 Tf
+14 236.7 Td
+(FGFR2 IIIc) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_italic 12 Tf
+78.07 236.7 Td
+(∑ Homo sapiens) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 9 Tf
+14 223.7 Td
+(Primary protein ENSP00000351276 ∑ transcript ENST00000358487 ∑ 821 aa ∑ 4 representative domain instances) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_italic 6.6 Tf
+14 211.7 Td
+(How do annotated domains, membrane topology and coding exons align along the primary protein?) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_bold 8.2 Tf
+10.13 183.23 Td
+(Representative domains) Tj
+ET
+0 0.45 0.7 rg
+1 1 1 RG
+0.6 w
+143.33 179.1 50 14 re
+B
+0.34 0.71 0.91 rg
+1 1 1 RG
+0.6 w
+238.79 179.1 59.09 14 re
+B
+0.23 0.49 0.63 rg
+1 1 1 RG
+0.6 w
+310.77 179.1 61.37 14 re
+B
+0.46 0.44 0.7 rg
+1 1 1 RG
+0.6 w
+440.32 179.1 253.04 14 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 8.2 Tf
+21.61 159.23 Td
+(Family / superfamily) Tj
+ET
+0.73 0.75 0.78 rg
+1 1 1 RG
+0.6 w
+115.3 158.1 612.91 8 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 8.2 Tf
+26.94 137.23 Td
+(Membrane topology) Tj
+ET
+0.8 0.47 0.65 rg
+0.11 0.14 0.2 RG
+0.6 w
+392.59 135.6 17.43 9 re
+B
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.6 Tf
+414.01 137.72 Td
+(TM helix ∑ aa 374ñ396) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 8.2 Tf
+50.06 112.73 Td
+(Coding exons) Tj
+ET
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+110 110.6 41.67 12 re
+B
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+151.67 110.6 27.27 12 re
+B
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+178.19 110.6 35.61 12 re
+B
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+213.04 110.6 18.18 12 re
+B
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+231.22 110.6 31.06 12 re
+B
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+262.28 110.6 48.49 12 re
+B
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+310.01 110.6 28.79 12 re
+B
+0.9 0.62 0 rg
+0.54 0.29 0 RG
+1.1 w
+338.04 110.6 31.82 12 re
+B
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+369.1 110.6 38.64 12 re
+B
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+407.74 110.6 51.52 12 re
+B
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+458.5 110.6 37.88 12 re
+B
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+496.38 110.6 48.49 12 re
+B
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+544.11 110.6 31.82 12 re
+B
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+575.93 110.6 43.18 12 re
+B
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+618.36 110.6 20.46 12 re
+B
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+638.06 110.6 68.19 12 re
+B
+0.66 0.75 0.83 rg
+0.48 0.58 0.68 RG
+0.6 w
+705.48 110.6 26.52 12 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+126.75 114.22 Td
+(E1) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+161.23 114.22 Td
+(E2) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+191.91 114.22 Td
+(E3) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+218.05 114.22 Td
+(E4) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+242.67 114.22 Td
+(E5) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+282.44 114.22 Td
+(E6) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+320.32 114.22 Td
+(E7) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+349.87 114.22 Td
+(E8) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+384.34 114.22 Td
+(E9) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+427.59 114.22 Td
+(E10) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+471.53 114.22 Td
+(E11) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+514.72 114.22 Td
+(E12) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+554.11 114.22 Td
+(E13) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+591.61 114.22 Td
+(E14) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+622.68 114.22 Td
+(E15) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+666.24 114.22 Td
+(E16) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.6 Tf
+712.83 114.22 Td
+(E17) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 8.2 Tf
+38.42 99.23 Td
+(Exon boundaries) Tj
+ET
+0.4 0.44 0.5 RG
+0.6 w
+[] 0 d
+151.67 104.6 m 151.67 99.6 l S
+0.4 0.44 0.5 RG
+0.6 w
+[] 0 d
+178.94 104.6 m 178.94 99.6 l S
+0.4 0.44 0.5 RG
+0.6 w
+[] 0 d
+213.79 104.6 m 213.79 99.6 l S
+0.4 0.44 0.5 RG
+0.6 w
+[] 0 d
+231.22 104.6 m 231.22 99.6 l S
+0.4 0.44 0.5 RG
+0.6 w
+[] 0 d
+262.28 104.6 m 262.28 99.6 l S
+0.4 0.44 0.5 RG
+0.6 w
+[] 0 d
+310.77 104.6 m 310.77 99.6 l S
+0.4 0.44 0.5 RG
+0.6 w
+[] 0 d
+338.8 104.6 m 338.8 99.6 l S
+0.4 0.44 0.5 RG
+0.6 w
+[] 0 d
+369.86 104.6 m 369.86 99.6 l S
+0.4 0.44 0.5 RG
+0.6 w
+[] 0 d
+407.74 104.6 m 407.74 99.6 l S
+0.4 0.44 0.5 RG
+0.6 w
+[] 0 d
+459.26 104.6 m 459.26 99.6 l S
+0.4 0.44 0.5 RG
+0.6 w
+[] 0 d
+496.38 104.6 m 496.38 99.6 l S
+0.4 0.44 0.5 RG
+0.6 w
+[] 0 d
+544.87 104.6 m 544.87 99.6 l S
+0.4 0.44 0.5 RG
+0.6 w
+[] 0 d
+575.93 104.6 m 575.93 99.6 l S
+0.4 0.44 0.5 RG
+0.6 w
+[] 0 d
+619.12 104.6 m 619.12 99.6 l S
+0.4 0.44 0.5 RG
+0.6 w
+[] 0 d
+638.81 104.6 m 638.81 99.6 l S
+0.4 0.44 0.5 RG
+0.6 w
+[] 0 d
+706.24 104.6 m 706.24 99.6 l S
+0.11 0.14 0.2 rg
+BT
+/F_normal 8.2 Tf
+41.86 82.73 Td
+(Validated event) Tj
+ET
+0.9 0.62 0 rg
+0.54 0.29 0 RG
+1.1 w
+338.04 81.6 31.82 8 re
+B
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.6 Tf
+373.86 83.22 Td
+(IIIc cassette ∑ aa 302ñ343) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+110 71.6 m 732 71.6 l S
+0.72 0.75 0.79 RG
+0.6 w
+[] 0 d
+147.12 71.6 m 147.12 69.6 l S
+0.72 0.75 0.79 RG
+0.6 w
+[] 0 d
+222.88 71.6 m 222.88 69.6 l S
+0.72 0.75 0.79 RG
+0.6 w
+[] 0 d
+298.65 71.6 m 298.65 69.6 l S
+0.72 0.75 0.79 RG
+0.6 w
+[] 0 d
+374.41 71.6 m 374.41 69.6 l S
+0.72 0.75 0.79 RG
+0.6 w
+[] 0 d
+450.17 71.6 m 450.17 69.6 l S
+0.72 0.75 0.79 RG
+0.6 w
+[] 0 d
+525.93 71.6 m 525.93 69.6 l S
+0.72 0.75 0.79 RG
+0.6 w
+[] 0 d
+601.69 71.6 m 601.69 69.6 l S
+0.72 0.75 0.79 RG
+0.6 w
+[] 0 d
+677.45 71.6 m 677.45 69.6 l S
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+110 71.6 m 110 68.1 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+107.94 59.7 Td
+(1) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+731.24 71.6 m 731.24 68.1 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+725.07 59.7 Td
+(821) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+185 71.6 m 185 68.1 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+178.83 59.7 Td
+(100) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+260.76 71.6 m 260.76 68.1 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+254.59 59.7 Td
+(200) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+336.53 71.6 m 336.53 68.1 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+330.36 59.7 Td
+(300) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+412.29 71.6 m 412.29 68.1 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+406.12 59.7 Td
+(400) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+488.05 71.6 m 488.05 68.1 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+481.88 59.7 Td
+(500) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+563.81 71.6 m 563.81 68.1 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+557.64 59.7 Td
+(600) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+639.57 71.6 m 639.57 68.1 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+633.4 59.7 Td
+(700) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+715.33 71.6 m 715.33 68.1 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+709.16 59.7 Td
+(800) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 8.2 Tf
+367.09 47.3 Td
+(Primary protein position \(aa\)) Tj
+ET
+0 0.45 0.7 rg
+0.6 0.64 0.7 RG
+0.6 w
+110 34.7 7 7 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 7.6 Tf
+121 35.7 Td
+(Ig-like domain 1 ∑ aa 45ñ110) Tj
+ET
+0.34 0.71 0.91 rg
+0.6 0.64 0.7 RG
+0.6 w
+232.13 34.7 7 7 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 7.6 Tf
+243.13 35.7 Td
+(Ig-like domain 2 ∑ aa 171ñ248) Tj
+ET
+0.23 0.49 0.63 rg
+0.6 0.64 0.7 RG
+0.6 w
+358.48 34.7 7 7 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 7.6 Tf
+369.48 35.7 Td
+(Ig-like domain 3 ∑ aa 266ñ346) Tj
+ET
+0.46 0.44 0.7 rg
+0.6 0.64 0.7 RG
+0.6 w
+484.83 34.7 7 7 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 7.6 Tf
+495.83 35.7 Td
+(Ser-Thr/Tyr kinase domain ∑ aa 437ñ770) Tj
+ET
+0.73 0.75 0.78 rg
+0.6 0.64 0.7 RG
+0.6 w
+110 22.6 7 7 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 7.6 Tf
+121 23.6 Td
+(Family / homologous superfamily) Tj
+ET
+0.8 0.47 0.65 rg
+0.6 0.64 0.7 RG
+0.6 w
+247.28 22.6 7 7 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 7.6 Tf
+258.28 23.6 Td
+(Predicted TM helix \(pyTMHMM\)) Tj
+ET
+0.66 0.75 0.83 rg
+0.6 0.64 0.7 RG
+0.6 w
+380.91 22.6 7 7 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 7.6 Tf
+391.91 23.6 Td
+(Coding exon) Tj
+ET
+0.9 0.62 0 rg
+0.6 0.64 0.7 RG
+0.6 w
+444.17 22.6 7 7 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 7.6 Tf
+455.17 23.6 Td
+(IIIb/IIIc mutually exclusive cassette exon \(established, not a candidate\)) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000285 00000 n 
+0000008179 00000 n 
+0000008281 00000 n 
+0000008386 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+8483
+%%EOF

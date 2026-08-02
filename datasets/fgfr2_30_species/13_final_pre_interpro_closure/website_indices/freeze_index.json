@@ -1,0 +1,71 @@
+{
+  "run_mode_label": "full clean run",
+  "run_mode": {
+    "run_id": "20260623T102528Z",
+    "full_clean_run_completed": true,
+    "used_cached_v3_outputs": false,
+    "used_cached_msa_outputs": false,
+    "species_list_resolved": "reference/Species_list_final_30.txt",
+    "species_list_status": "resolved"
+  },
+  "checksum_count": 111,
+  "checksum_gate": "pass",
+  "cards": [
+    {
+      "key": "primary_fasta",
+      "title": "Primary InterPro FASTA",
+      "role": "Recommended main InterProScan input — final primary-ready sequences.",
+      "available": true,
+      "sequences": 58,
+      "name": "final_pre_interpro_proteins_primary.faa",
+      "path": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/freeze/final_pre_interpro_proteins_primary.faa",
+      "size_bytes": 58817,
+      "size_human": "57.4 KB"
+    },
+    {
+      "key": "review_fasta",
+      "title": "Review-included FASTA",
+      "role": "Optional / supplementary input — adds supplement/review cases; not equal main evidence.",
+      "available": true,
+      "sequences": 60,
+      "name": "final_pre_interpro_proteins_all_review_included.faa",
+      "path": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/freeze/final_pre_interpro_proteins_all_review_included.faa",
+      "size_bytes": 60692,
+      "size_human": "59.3 KB"
+    },
+    {
+      "key": "manifest",
+      "title": "Sequence manifest",
+      "role": "Per-sequence provenance + readiness",
+      "available": true,
+      "sequences": null,
+      "name": "final_pre_interpro_sequence_manifest.tsv",
+      "path": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/freeze/final_pre_interpro_sequence_manifest.tsv",
+      "size_bytes": 15826,
+      "size_human": "15.5 KB"
+    },
+    {
+      "key": "checksums",
+      "title": "Checksums",
+      "role": "Integrity of frozen artefacts",
+      "available": true,
+      "sequences": null,
+      "name": "final_pre_interpro_file_checksums.tsv",
+      "path": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/freeze/final_pre_interpro_file_checksums.tsv",
+      "size_bytes": 14093,
+      "size_human": "13.8 KB"
+    }
+  ],
+  "interpro_policy": {
+    "primary_count": 58,
+    "review_included_count": 60,
+    "primary_role": "main recommended input",
+    "review_role": "optional / supplementary input",
+    "notes": [
+      "Primary FASTA contains the 58 final primary-ready sequences and is the recommended main InterProScan analysis.",
+      "Review-included FASTA (60 sequences) adds supplement/review cases and should not be treated as equal main evidence.",
+      "InterProScan annotates protein domains; it does not validate IIIb/IIIc final claim status.",
+      "Excluding the two review rows from the primary set is by design, not an error."
+    ]
+  }
+}

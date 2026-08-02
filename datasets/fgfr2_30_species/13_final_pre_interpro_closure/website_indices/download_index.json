@@ -1,0 +1,110 @@
+[
+  {
+    "group": "Freeze",
+    "label": "Primary protein FASTA (InterPro input)",
+    "format": "faa",
+    "name": "final_pre_interpro_proteins_primary.faa",
+    "path": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/freeze/final_pre_interpro_proteins_primary.faa",
+    "size_bytes": 58817,
+    "size_human": "57.4 KB"
+  },
+  {
+    "group": "Freeze",
+    "label": "Review-included protein FASTA",
+    "format": "faa",
+    "name": "final_pre_interpro_proteins_all_review_included.faa",
+    "path": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/freeze/final_pre_interpro_proteins_all_review_included.faa",
+    "size_bytes": 60692,
+    "size_human": "59.3 KB"
+  },
+  {
+    "group": "Freeze",
+    "label": "Sequence manifest (TSV)",
+    "format": "tsv",
+    "name": "final_pre_interpro_sequence_manifest.tsv",
+    "path": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/freeze/final_pre_interpro_sequence_manifest.tsv",
+    "size_bytes": 15826,
+    "size_human": "15.5 KB"
+  },
+  {
+    "group": "Freeze",
+    "label": "File checksums",
+    "format": "tsv",
+    "name": "final_pre_interpro_file_checksums.tsv",
+    "path": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/freeze/final_pre_interpro_file_checksums.tsv",
+    "size_bytes": 14093,
+    "size_human": "13.8 KB"
+  },
+  {
+    "group": "Tables",
+    "label": "Final truth table",
+    "format": "tsv",
+    "name": "final_pre_interpro_truth_table.tsv",
+    "path": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/final_pre_interpro_truth_table.tsv",
+    "size_bytes": 42875,
+    "size_human": "41.9 KB"
+  },
+  {
+    "group": "Tables",
+    "label": "Evidence stack",
+    "format": "tsv",
+    "name": "figure_final_framework_evidence_stack.tsv",
+    "path": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/tables/figure_final_framework_evidence_stack.tsv",
+    "size_bytes": 24752,
+    "size_human": "24.2 KB"
+  },
+  {
+    "group": "Tables",
+    "label": "Review-case explanations",
+    "format": "tsv",
+    "name": "final_review_case_explanation.tsv",
+    "path": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/tables/final_review_case_explanation.tsv",
+    "size_bytes": 2461,
+    "size_human": "2.4 KB"
+  },
+  {
+    "group": "Reports",
+    "label": "QC report",
+    "format": "md",
+    "name": "final_pre_interpro_QC_report.md",
+    "path": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/reports/final_pre_interpro_QC_report.md",
+    "size_bytes": 1327,
+    "size_human": "1.3 KB"
+  },
+  {
+    "group": "Reports",
+    "label": "Results summary",
+    "format": "md",
+    "name": "final_pre_interpro_results_summary.md",
+    "path": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/reports/final_pre_interpro_results_summary.md",
+    "size_bytes": 1920,
+    "size_human": "1.9 KB"
+  },
+  {
+    "group": "Reports",
+    "label": "Methods summary",
+    "format": "md",
+    "name": "final_pre_interpro_methods_summary.md",
+    "path": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/reports/final_pre_interpro_methods_summary.md",
+    "size_bytes": 728,
+    "size_human": "728 B"
+  },
+  {
+    "group": "Reports",
+    "label": "Figure captions",
+    "format": "md",
+    "name": "final_pre_interpro_figure_captions.md",
+    "path": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/reports/final_pre_interpro_figure_captions.md",
+    "size_bytes": 1594,
+    "size_human": "1.6 KB"
+  },
+  {
+    "group": "Gate",
+    "label": "Cross-table consistency gate",
+    "format": "tsv",
+    "name": "final_pre_interpro_cross_table_consistency_gate.tsv",
+    "path": "results/final_30_until_interpro_prepare/13_final_pre_interpro_closure/gates/final_pre_interpro_cross_table_consistency_gate.tsv",
+    "size_bytes": 2061,
+    "size_human": "2.0 KB"
+  }
+]

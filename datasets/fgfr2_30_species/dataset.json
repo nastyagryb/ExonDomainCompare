@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "example",
+  "release_id": "fgfr2_30_species",
+  "gene_symbol": "FGFR2",
+  "species_count": 30,
+  "pipeline_type": "validated_event_pipeline",
+  "support_level": "validated_event_analysis",
+  "event": "FGFR2 IIIb/IIIc mutually exclusive cassette",
+  "read_only": true,
+  "source_record": "results/final_30_until_interpro_prepare",
+  "distribution": "compact website projection",
+  "omitted": [
+    "raw NCBI caches",
+    "mutable logs",
+    "temporary files",
+    "full working tree"
+  ]
+}

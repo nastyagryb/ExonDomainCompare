@@ -1,0 +1,32 @@
+[
+  {
+    "label": "Selected transcripts",
+    "type": "TSV",
+    "path": "results/final_30_until_interpro_prepare/05_selection_with_isoforms/selected_transcripts.tsv"
+  },
+  {
+    "label": "Protein export report",
+    "type": "TSV",
+    "path": "results/final_30_until_interpro_prepare/06_protein_export/protein_export_report.tsv"
+  },
+  {
+    "label": "Protein export warnings",
+    "type": "TSV",
+    "path": "results/final_30_until_interpro_prepare/06_protein_export/protein_export_warnings.tsv"
+  },
+  {
+    "label": "InterProScan unique FASTA",
+    "type": "FASTA",
+    "path": "results/final_30_until_interpro_prepare/07_interpro_prepare/fgfr2_interpro_clean_unique.fasta"
+  },
+  {
+    "label": "InterPro ID mapping",
+    "type": "TSV",
+    "path": "results/final_30_until_interpro_prepare/07_interpro_prepare/fgfr2_interpro_id_mapping.tsv"
+  },
+  {
+    "label": "QC phylogenetic figures",
+    "type": "PDF/PNG",
+    "path": "results/final_30_until_interpro_prepare/08_qc_phylo_plots/figures"
+  }
+]

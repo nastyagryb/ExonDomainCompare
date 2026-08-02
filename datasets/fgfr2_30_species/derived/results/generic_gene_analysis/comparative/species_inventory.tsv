@@ -1,0 +1,31 @@
+species_id	scientific_name	taxonomic_group	clade	protein_id	transcript_id	protein_length	n_exons	n_domains	n_boundaries	n_transcript_models	analysis_status	domain_status	boundary_status
+ambystoma_mexicanum	Ambystoma mexicanum	Amphibians	amphibian	XP_069468056.1	XM_069611955.1	838	17	4	16	0	available	available	available
+xenopus_tropicalis	Xenopus tropicalis	Amphibians	amphibian	ENSXETP00000069725	ENSXETT00000071733	910	17	4	16	0	available	available	available
+gallus_gallus	Gallus gallus	Birds	bird	NP_990650.2	NM_205319.4	842	17	4	16	0	available	available	available
+meleagris_gallopavo	Meleagris gallopavo	Birds	bird	ENSMGAP00000031571	ENSMGAT00000021846	627	11	3	10	0	available	available	available
+taeniopygia_guttata	Taeniopygia guttata	Birds	bird	XP_072787409.1	XM_072931308.1	890	18	4	17	0	available	available	available
+bos_taurus	Bos taurus	Other mammals	mammal	XP_059737724.1	XM_059881741.1	840	17	4	16	0	available	available	available
+canis_lupus_familiaris	Canis lupus familiaris	Other mammals	mammal	NP_001003336.1	NP_001003336.1	707	1	3	0	0	available	available	pending
+equus_caballus	Equus caballus	Other mammals	mammal	XP_014588430.1	XM_014732944.3	886	18	4	17	0	available	available	available
+felis_catus	Felis catus	Other mammals	mammal	XP_044896695.1	XM_045040760.1	840	17	4	16	0	available	available	available
+monodelphis_domestica	Monodelphis domestica	Other mammals	mammal	XP_056659242.1	XM_056803264.1	839	17	4	16	0	available	available	available
+mus_musculus	Mus musculus	Other mammals	mammal	ENSMUSP00000112430	ENSMUST00000122054	840	17	4	16	0	available	available	available
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	Other mammals	mammal	XP_028936644.1	XM_029080811.2	839	17	4	16	0	available	available	available
+oryctolagus_cuniculus	Oryctolagus cuniculus	Other mammals	mammal	XP_069913096.1	XM_070056995.1	840	17	4	16	0	available	available	available
+ovis_aries	Ovis aries	Other mammals	mammal	XP_060260490.1	XM_060404507.1	840	17	4	16	0	available	available	available
+rattus_norvegicus	Rattus norvegicus	Other mammals	mammal	XP_063137149.1	XM_063281079.1	840	17	4	16	0	available	available	available
+sus_scrofa	Sus scrofa	Other mammals	mammal	XP_084849197.1	XM_084993071.1	840	17	4	16	0	available	available	available
+callithrix_jacchus	Callithrix jacchus	Primates	mammal	XP_078202765.1	XM_078346639.1	840	17	4	16	0	available	available	available
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	Primates	mammal	XP_004050253.1	XP_004050253.1	723	15	3	14	0	available	available	available
+homo_sapiens	Homo sapiens	Primates	mammal	ENSP00000351276	ENST00000358487	821	17	4	16	0	available	available	available
+macaca_mulatta	Macaca mulatta	Primates	mammal	XP_077803775.1	XM_077947649.1	838	17	4	16	0	available	available	available
+pan_troglodytes	Pan troglodytes	Primates	mammal	XP_054516514.1	XM_054660539.2	840	17	4	16	0	available	available	available
+pongo_abelii	Pongo abelii	Primates	mammal	XP_024108704.1	XM_024252936	838	17	4	16	0	available	available	available
+alligator_mississippiensis	Alligator mississippiensis	Reptiles	reptile	XP_006266188.1	XM_006266126.4	868	18	4	17	0	available	available	available
+anolis_carolinensis	Anolis carolinensis	Reptiles	reptile	XP_062832081.1	XM_062976011.1	873	18	4	17	0	available	available	available
+chrysemys_picta_bellii	Chrysemys picta bellii	Reptiles	reptile	XP_065408413.1	XM_065552341.1	840	17	4	16	0	available	available	available
+danio_rerio	Danio rerio	Teleost fish	fish	XP_068081038.1	XM_068224937.2	840	17	4	16	0	available	available	available
+gasterosteus_aculeatus	Gasterosteus aculeatus	Teleost fish	fish	ENSGACP00000061458	ENSGACT00000067656	917	18	4	17	0	available	available	available
+oreochromis_niloticus	Oreochromis niloticus	Teleost fish	fish	ENSONIP00000063320	ENSONIT00000047381	812	17	4	16	0	available	available	available
+oryzias_latipes	Oryzias latipes	Teleost fish	fish	XP_078787744.1	XM_078931618.1	832	17	4	16	0	available	available	available
+takifugu_rubripes	Takifugu rubripes	Teleost fish	fish	ENSTRUP00000045145	ENSTRUT00000045297	838	17	4	16	0	available	available	available

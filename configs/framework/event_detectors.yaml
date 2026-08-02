@@ -1,0 +1,40 @@
+# Event-detector registry.
+#
+# Maps event detectors to analyses and records their status. A gene/event is only
+# RUNNABLE when a `supported` detector is registered for its analysis_id AND that
+# detector can produce the contract outputs (see event_detector_contract.yaml).
+#
+# Description only: registering a `planned` detector does not make any gene run.
+schema_version: 1
+contract_version: 1
+
+detectors:
+  fgfr2_iiib_iiic:
+    analysis_id: FGFR2_IIIb_IIIc
+    event_type: mutually_exclusive_cassette
+    status: supported
+    implementation: legacy_fgfr2_adapter
+    adapter: scripts/adapters/fgfr2_event_detector_adapter.py
+    contract_version: 1
+    notes: >
+      Existing validated FGFR2 IIIb/IIIc logic projected into generic
+      event-detector contract outputs. No biological logic is changed.
+
+  generic_marker_based_cassette:
+    analysis_id: null
+    event_type: mutually_exclusive_cassette
+    status: planned
+    implementation: not_implemented
+    contract_version: 1
+    notes: >
+      Future generic detector for mutually-exclusive cassettes driven by curated
+      discriminating markers. Not implemented; no gene is runnable through it.
+
+  generic_alt_exon:
+    analysis_id: null
+    event_type: alternative_exon
+    status: planned
+    implementation: not_implemented
+    contract_version: 1
+    notes: >
+      Future generic detector for simple alternative-exon events. Not implemented.

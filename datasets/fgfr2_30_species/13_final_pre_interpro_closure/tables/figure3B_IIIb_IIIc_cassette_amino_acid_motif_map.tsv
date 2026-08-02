@@ -1,0 +1,70 @@
+human_reference_residue_index	MSA_column	human_IIIb_aa_one_letter	human_IIIc_aa_one_letter	human_IIIb_aa_three_letter	human_IIIc_aa_three_letter	IIIb_major_aa	IIIc_major_aa	IIIb_residue_property_class	IIIc_residue_property_class	substitution_class_IIIb_vs_IIIc	position_class	is_isoform_discriminating	is_shared_conserved	discriminating_score	informative_column	gap_rich_excluded_from_main_plot	uses_final_isoform_label
+1	1	H	A	His	Ala	H	A	positive	hydrophobic	nonconservative	isoform_discriminating_conserved	true	false	0.75	true	false	true
+2	2	S	A	Ser	Ala	S	A	polar	hydrophobic	conservative	isoform_discriminating_conserved	true	false	1.0	true	false	true
+3	3	G	G	Gly	Gly	G	G	special_case	special_case	identical	shared_conserved	false	true	0.0	true	false	true
+4	4	I	V	Ile	Val	I	V	hydrophobic	hydrophobic	conservative	isoform_discriminating_conserved	true	false	1.0	true	false	true
+5	5	N	N	Asn	Asn	N	N	polar	polar	identical	shared_conserved	false	true	0.0	true	false	true
+6	6	S	T	Ser	Thr	S	T	polar	polar	conservative	isoform_discriminating_conserved	true	false	1.0	true	false	true
+7	7	S	T	Ser	Thr	S	T	polar	polar	conservative	isoform_discriminating_conserved	true	false	1.0	true	false	true
+8	8	N	D	Asn	Asp	N	D	polar	negative	conservative	isoform_discriminating_conserved	true	false	0.8333	true	false	true
+9	9		K	gap	Lys		K	gap	positive	gap	IIIc_specific_conserved	true	false	0.0	false	true	true
+10	10		E	gap	Glu		E	gap	negative	gap	IIIc_specific_conserved	true	false	0.0	false	true	true
+9	11	A	I	Ala	Ile	A	I	hydrophobic	hydrophobic	nonconservative	isoform_discriminating_conserved	true	false	0.7917	true	false	true
+10	12	E	E	Glu	Glu	E	E	negative	negative	identical	shared_conserved	false	true	0.0	true	false	true
+11	13	V	V	Val	Val	V	V	hydrophobic	hydrophobic	identical	shared_conserved	false	true	0.0	true	false	true
+12	14	L	L	Leu	Leu	L	L	hydrophobic	hydrophobic	identical	shared_conserved	false	true	0.0	true	false	true
+13	15	A	Y	Ala	Tyr	A	Y	hydrophobic	aromatic	nonconservative	variable	false	false	0.5	true	false	true
+14	16	L	I	Leu	Ile	L	I	hydrophobic	hydrophobic	conservative	isoform_discriminating_conserved	true	false	0.7917	true	false	true
+15	17	F	R	Phe	Arg	F	R	aromatic	positive	nonconservative	variable	false	false	0.5	true	false	true
+16	18	N	N	Asn	Asn	N	N	polar	polar	identical	shared_conserved	false	true	0.0	true	false	true
+17	19	V	V	Val	Val	V	V	hydrophobic	hydrophobic	identical	shared_conserved	false	true	0.0	true	false	true
+18	20	T	T	Thr	Thr	T	T	polar	polar	identical	shared_conserved	false	true	0.0	true	false	true
+19	21	E	F	Glu	Phe	E	F	negative	aromatic	nonconservative	isoform_discriminating_conserved	true	false	0.9583	true	false	true
+20	22	A	E	Ala	Glu	A	E	hydrophobic	negative	nonconservative	variable	false	false	0.6667	true	false	true
+21	23	D	D	Asp	Asp	D	D	negative	negative	identical	shared_conserved	false	true	0.0	true	false	true
+22	24	A	A	Ala	Ala	A	A	hydrophobic	hydrophobic	identical	shared_conserved	false	true	0.0	true	false	true
+23	25	G	G	Gly	Gly	G	G	special_case	special_case	identical	shared_conserved	false	true	0.0	true	false	true
+24	26	E	E	Glu	Glu	E	E	negative	negative	identical	shared_conserved	false	true	0.0	true	false	true
+25	27	Y	Y	Tyr	Tyr	Y	Y	aromatic	aromatic	identical	shared_conserved	false	true	0.0	true	false	true
+26	28	I	T	Ile	Thr	I	T	hydrophobic	polar	nonconservative	isoform_discriminating_conserved	true	false	0.875	true	false	true
+27	29	C	C	Cys	Cys	C	C	special_case	special_case	identical	shared_conserved	false	true	0.0	true	false	true
+28	30	K	L	Lys	Leu	K	L	positive	hydrophobic	nonconservative	isoform_discriminating_conserved	true	false	1.0	true	false	true
+29	31	V	A	Val	Ala	V	A	hydrophobic	hydrophobic	semi_conservative	isoform_discriminating_conserved	true	false	0.9583	true	false	true
+30	32	S	G	Ser	Gly	S	G	polar	special_case	semi_conservative	isoform_discriminating_conserved	true	false	1.0	true	false	true
+	33			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+	34			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+	35			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+	36			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+	37			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+	38			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+	39			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+	40			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+	41			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+	42			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+	43			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+	44			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+31	45	N	N	Asn	Asn	N	N	polar	polar	identical	shared_conserved	false	true	0.0	true	false	true
+32	46	Y	S	Tyr	Ser	Y	S	aromatic	polar	nonconservative	isoform_discriminating_conserved	true	false	1.0	true	false	true
+33	47	I	I	Ile	Ile	I	I	hydrophobic	hydrophobic	identical	shared_conserved	false	true	0.0	true	false	true
+34	48	G	G	Gly	Gly	G	G	special_case	special_case	identical	shared_conserved	false	true	0.0	true	false	true
+35	49	Q	I	Gln	Ile	E	I	polar	hydrophobic	nonconservative	variable	false	false	0.5	true	false	true
+36	50	A	S	Ala	Ser	A	S	hydrophobic	polar	conservative	isoform_discriminating_conserved	true	false	0.9583	true	false	true
+37	51	N	F	Asn	Phe	N	F	polar	aromatic	nonconservative	isoform_discriminating_conserved	true	false	0.8333	true	false	true
+38	52	Q	H	Gln	His	Q	H	polar	positive	conservative	isoform_discriminating_conserved	true	false	0.9583	true	false	true
+39	53	S	S	Ser	Ser	S	S	polar	polar	identical	variable	false	false	0.0	true	false	true
+40	54	A	A	Ala	Ala	A	A	hydrophobic	hydrophobic	identical	shared_conserved	false	true	0.0	true	false	true
+41	55	W	W	Trp	Trp	W	W	aromatic	aromatic	identical	shared_conserved	false	true	0.0	true	false	true
+42	56	L	L	Leu	Leu	L	L	hydrophobic	hydrophobic	identical	shared_conserved	false	true	0.0	true	false	true
+43	57	T	T	Thr	Thr	T	T	polar	polar	identical	shared_conserved	false	true	0.0	true	false	true
+44	58	V	V	Val	Val	V	V	hydrophobic	hydrophobic	identical	shared_conserved	false	true	0.0	true	false	true
+45	59	L	L	Leu	Leu	L	L	hydrophobic	hydrophobic	identical	shared_conserved	false	true	0.0	true	false	true
+	60			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+	61			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+	62			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+	63			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+	64			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+	65			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+	66			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+	67			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+	68			gap	gap			gap	gap	gap	gap_rich_review	false	false	0.0	false	true	true
+46	69	P	P	Pro	Pro	P	P	special_case	special_case	identical	shared_conserved	false	true	0.0	true	false	true

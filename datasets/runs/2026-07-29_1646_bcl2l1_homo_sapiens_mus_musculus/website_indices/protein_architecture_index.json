@@ -1,0 +1,828 @@
+{
+  "schema_version": 2,
+  "status": "available",
+  "stage": "post_cluster",
+  "scientific_question": "Which protein-level features occur along the amino-acid sequence?",
+  "domain_annotation_status": "available",
+  "message": "",
+  "gene_symbol": "BCL2L1",
+  "n_species": 2,
+  "species": [
+    {
+      "species_id": "homo_sapiens",
+      "display_species_name": "Homo sapiens",
+      "proteins": [
+        {
+          "protein_id": "NP_001304849.1",
+          "transcript_id": "NM_001317920.2",
+          "length_aa": 233,
+          "is_primary": true,
+          "exon_boundaries": [
+            188,
+            233
+          ],
+          "candidate_overlays": [
+            {
+              "candidate_id": "BCL2L1:homo_sapiens:indel:126-188",
+              "start_aa": 126,
+              "end_aa": 188,
+              "status": "exploratory_not_validated"
+            }
+          ],
+          "domains": [
+            {
+              "source": "PFAM,PROSITE_PROFILES,SMART",
+              "signature_accession": "IPR003093",
+              "description": "Bcl2_BH4",
+              "start_aa": 1,
+              "end_aa": 27,
+              "score": "",
+              "interpro_accession": "IPR003093",
+              "interpro_description": "Bcl2_BH4",
+              "feature_type": "domain"
+            },
+            {
+              "source": "PFAM,SMART",
+              "signature_accession": "IPR046371",
+              "description": "Bcl-2_BH1-3",
+              "start_aa": 90,
+              "end_aa": 188,
+              "score": "",
+              "interpro_accession": "IPR046371",
+              "interpro_description": "Bcl-2_BH1-3",
+              "feature_type": "domain"
+            },
+            {
+              "source": "PRINTS",
+              "signature_accession": "IPR013279",
+              "description": "Apop_reg_BclX",
+              "start_aa": 1,
+              "end_aa": 129,
+              "score": "",
+              "interpro_accession": "IPR013279",
+              "interpro_description": "Apop_reg_BclX",
+              "feature_type": "family"
+            },
+            {
+              "source": "GENE3D,SUPERFAMILY",
+              "signature_accession": "IPR036834",
+              "description": "Bcl-2-like_sf",
+              "start_aa": 1,
+              "end_aa": 209,
+              "score": "",
+              "interpro_accession": "IPR036834",
+              "interpro_description": "Bcl-2-like_sf",
+              "feature_type": "family"
+            },
+            {
+              "source": "NCBIFAM",
+              "signature_accession": "IPR004725",
+              "description": "Bcl2/BclX",
+              "start_aa": 1,
+              "end_aa": 233,
+              "score": "",
+              "interpro_accession": "IPR004725",
+              "interpro_description": "Bcl2/BclX",
+              "feature_type": "family"
+            },
+            {
+              "source": "CDD,PANTHER,PRINTS",
+              "signature_accession": "IPR026298",
+              "description": "Bcl-2_fam",
+              "start_aa": 2,
+              "end_aa": 211,
+              "score": "",
+              "interpro_accession": "IPR026298",
+              "interpro_description": "Bcl-2_fam",
+              "feature_type": "family"
+            },
+            {
+              "source": "PROSITE_PROFILES",
+              "signature_accession": "IPR002475",
+              "description": "Bcl2-like",
+              "start_aa": 90,
+              "end_aa": 190,
+              "score": "",
+              "interpro_accession": "IPR002475",
+              "interpro_description": "Bcl2-like",
+              "feature_type": "family"
+            },
+            {
+              "source": "PROSITE_PATTERNS",
+              "signature_accession": "IPR020731",
+              "description": "Bcl2_BH4_motif_CS",
+              "start_aa": 4,
+              "end_aa": 24,
+              "score": "",
+              "interpro_accession": "IPR020731",
+              "interpro_description": "Bcl2_BH4_motif_CS",
+              "feature_type": "feature"
+            },
+            {
+              "source": "MOBIDB_LITE",
+              "signature_accession": "",
+              "description": "disorder_prediction",
+              "start_aa": 28,
+              "end_aa": 71,
+              "score": "",
+              "interpro_accession": "",
+              "interpro_description": "disorder_prediction",
+              "feature_type": "feature"
+            },
+            {
+              "source": "PROSITE_PATTERNS",
+              "signature_accession": "IPR020728",
+              "description": "Bcl2_BH3_motif_CS",
+              "start_aa": 86,
+              "end_aa": 100,
+              "score": "",
+              "interpro_accession": "IPR020728",
+              "interpro_description": "Bcl2_BH3_motif_CS",
+              "feature_type": "feature"
+            },
+            {
+              "source": "PROSITE_PATTERNS",
+              "signature_accession": "IPR020717",
+              "description": "Bcl2_BH1_motif_CS",
+              "start_aa": 130,
+              "end_aa": 148,
+              "score": "",
+              "interpro_accession": "IPR020717",
+              "interpro_description": "Bcl2_BH1_motif_CS",
+              "feature_type": "feature"
+            },
+            {
+              "source": "PROSITE_PATTERNS",
+              "signature_accession": "IPR020726",
+              "description": "Bcl2_BH2_motif_CS",
+              "start_aa": 181,
+              "end_aa": 192,
+              "score": "",
+              "interpro_accession": "IPR020726",
+              "interpro_description": "Bcl2_BH2_motif_CS",
+              "feature_type": "feature"
+            }
+          ],
+          "tm_regions": [
+            {
+              "start_aa": 214,
+              "end_aa": 233,
+              "source": "pytmhmm",
+              "topology": "transmembrane"
+            }
+          ]
+        },
+        {
+          "protein_id": "NP_001309168.1",
+          "transcript_id": "NM_001322239.2",
+          "length_aa": 233,
+          "is_primary": false,
+          "exon_boundaries": [
+            188,
+            233
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_001304850.1",
+          "transcript_id": "NM_001317921.2",
+          "length_aa": 233,
+          "is_primary": false,
+          "exon_boundaries": [
+            188,
+            233
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_001309169.1",
+          "transcript_id": "NM_001322240.2",
+          "length_aa": 233,
+          "is_primary": false,
+          "exon_boundaries": [
+            188,
+            233
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_001304848.1",
+          "transcript_id": "NM_001317919.2",
+          "length_aa": 233,
+          "is_primary": false,
+          "exon_boundaries": [
+            188,
+            233
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_001182.1",
+          "transcript_id": "NM_001191.4",
+          "length_aa": 170,
+          "is_primary": false,
+          "exon_boundaries": [
+            125,
+            170
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_612815.1",
+          "transcript_id": "NM_138578.3",
+          "length_aa": 233,
+          "is_primary": false,
+          "exon_boundaries": [
+            188,
+            233
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_001411260.1",
+          "transcript_id": "NM_001424331.1",
+          "length_aa": 233,
+          "is_primary": false,
+          "exon_boundaries": [
+            188,
+            233
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_001411261.1",
+          "transcript_id": "NM_001424332.1",
+          "length_aa": 233,
+          "is_primary": false,
+          "exon_boundaries": [
+            188,
+            233
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_001309171.1",
+          "transcript_id": "NM_001322242.2",
+          "length_aa": 233,
+          "is_primary": false,
+          "exon_boundaries": [
+            188,
+            233
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        }
+      ]
+    },
+    {
+      "species_id": "mus_musculus",
+      "display_species_name": "Mus musculus",
+      "proteins": [
+        {
+          "protein_id": "NP_001276668.1",
+          "transcript_id": "NM_001289739.2",
+          "length_aa": 235,
+          "is_primary": true,
+          "exon_boundaries": [
+            188,
+            235
+          ],
+          "candidate_overlays": [
+            {
+              "candidate_id": "BCL2L1:mus_musculus:indel:189-221",
+              "start_aa": 189,
+              "end_aa": 221,
+              "status": "exploratory_not_validated"
+            },
+            {
+              "candidate_id": "BCL2L1:mus_musculus:substitution:227-235",
+              "start_aa": 227,
+              "end_aa": 235,
+              "status": "exploratory_not_validated"
+            },
+            {
+              "candidate_id": "BCL2L1:mus_musculus:substitution:191-191",
+              "start_aa": 191,
+              "end_aa": 191,
+              "status": "exploratory_not_validated"
+            }
+          ],
+          "domains": [
+            {
+              "source": "PFAM,PROSITE_PROFILES,SMART",
+              "signature_accession": "IPR003093",
+              "description": "Bcl2_BH4",
+              "start_aa": 1,
+              "end_aa": 27,
+              "score": "",
+              "interpro_accession": "IPR003093",
+              "interpro_description": "Bcl2_BH4",
+              "feature_type": "domain"
+            },
+            {
+              "source": "PFAM,SMART",
+              "signature_accession": "IPR046371",
+              "description": "Bcl-2_BH1-3",
+              "start_aa": 90,
+              "end_aa": 188,
+              "score": "",
+              "interpro_accession": "IPR046371",
+              "interpro_description": "Bcl-2_BH1-3",
+              "feature_type": "domain"
+            },
+            {
+              "source": "PRINTS",
+              "signature_accession": "IPR013279",
+              "description": "Apop_reg_BclX",
+              "start_aa": 1,
+              "end_aa": 129,
+              "score": "",
+              "interpro_accession": "IPR013279",
+              "interpro_description": "Apop_reg_BclX",
+              "feature_type": "family"
+            },
+            {
+              "source": "GENE3D,SUPERFAMILY",
+              "signature_accession": "IPR036834",
+              "description": "Bcl-2-like_sf",
+              "start_aa": 1,
+              "end_aa": 191,
+              "score": "",
+              "interpro_accession": "IPR036834",
+              "interpro_description": "Bcl-2-like_sf",
+              "feature_type": "family"
+            },
+            {
+              "source": "CDD,PANTHER,PRINTS",
+              "signature_accession": "IPR026298",
+              "description": "Bcl-2_fam",
+              "start_aa": 2,
+              "end_aa": 209,
+              "score": "",
+              "interpro_accession": "IPR026298",
+              "interpro_description": "Bcl-2_fam",
+              "feature_type": "family"
+            },
+            {
+              "source": "PROSITE_PROFILES",
+              "signature_accession": "IPR002475",
+              "description": "Bcl2-like",
+              "start_aa": 90,
+              "end_aa": 190,
+              "score": "",
+              "interpro_accession": "IPR002475",
+              "interpro_description": "Bcl2-like",
+              "feature_type": "family"
+            },
+            {
+              "source": "PROSITE_PATTERNS",
+              "signature_accession": "IPR020731",
+              "description": "Bcl2_BH4_motif_CS",
+              "start_aa": 4,
+              "end_aa": 24,
+              "score": "",
+              "interpro_accession": "IPR020731",
+              "interpro_description": "Bcl2_BH4_motif_CS",
+              "feature_type": "feature"
+            },
+            {
+              "source": "MOBIDB_LITE",
+              "signature_accession": "",
+              "description": "disorder_prediction",
+              "start_aa": 27,
+              "end_aa": 73,
+              "score": "",
+              "interpro_accession": "",
+              "interpro_description": "disorder_prediction",
+              "feature_type": "feature"
+            },
+            {
+              "source": "PROSITE_PATTERNS",
+              "signature_accession": "IPR020728",
+              "description": "Bcl2_BH3_motif_CS",
+              "start_aa": 86,
+              "end_aa": 100,
+              "score": "",
+              "interpro_accession": "IPR020728",
+              "interpro_description": "Bcl2_BH3_motif_CS",
+              "feature_type": "feature"
+            },
+            {
+              "source": "PROSITE_PATTERNS",
+              "signature_accession": "IPR020717",
+              "description": "Bcl2_BH1_motif_CS",
+              "start_aa": 130,
+              "end_aa": 148,
+              "score": "",
+              "interpro_accession": "IPR020717",
+              "interpro_description": "Bcl2_BH1_motif_CS",
+              "feature_type": "feature"
+            }
+          ],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_033873.3",
+          "transcript_id": "NM_009743.6",
+          "length_aa": 233,
+          "is_primary": false,
+          "exon_boundaries": [
+            188,
+            233
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_001403826.1",
+          "transcript_id": "NM_001416897.1",
+          "length_aa": 233,
+          "is_primary": false,
+          "exon_boundaries": [
+            188,
+            233
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_001403825.1",
+          "transcript_id": "NM_001416896.1",
+          "length_aa": 233,
+          "is_primary": false,
+          "exon_boundaries": [
+            188,
+            233
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_001403827.1",
+          "transcript_id": "NM_001416898.1",
+          "length_aa": 233,
+          "is_primary": false,
+          "exon_boundaries": [
+            188,
+            233
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_001276646.1",
+          "transcript_id": "NM_001289717.2",
+          "length_aa": 233,
+          "is_primary": false,
+          "exon_boundaries": [
+            188,
+            233
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_001276645.1",
+          "transcript_id": "NM_001289716.2",
+          "length_aa": 233,
+          "is_primary": false,
+          "exon_boundaries": [
+            188,
+            233
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_001341982.1",
+          "transcript_id": "NM_001355053.2",
+          "length_aa": 233,
+          "is_primary": false,
+          "exon_boundaries": [
+            188,
+            233
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_001403828.1",
+          "transcript_id": "NM_001416899.1",
+          "length_aa": 233,
+          "is_primary": false,
+          "exon_boundaries": [
+            188,
+            233
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        }
+      ]
+    }
+  ],
+  "generated_at": "2026-07-30T11:05:00.898214+00:00",
+  "proteins": [
+    {
+      "protein_id": "NP_001304849.1",
+      "transcript_id": "NM_001317920.2",
+      "length_aa": 233,
+      "is_primary": true,
+      "exon_boundaries": [
+        188,
+        233
+      ],
+      "candidate_overlays": [
+        {
+          "candidate_id": "BCL2L1:homo_sapiens:indel:126-188",
+          "start_aa": 126,
+          "end_aa": 188,
+          "status": "exploratory_not_validated"
+        }
+      ],
+      "domains": [
+        {
+          "source": "PFAM,PROSITE_PROFILES,SMART",
+          "signature_accession": "IPR003093",
+          "description": "Bcl2_BH4",
+          "start_aa": 1,
+          "end_aa": 27,
+          "score": "",
+          "interpro_accession": "IPR003093",
+          "interpro_description": "Bcl2_BH4",
+          "feature_type": "domain"
+        },
+        {
+          "source": "PFAM,SMART",
+          "signature_accession": "IPR046371",
+          "description": "Bcl-2_BH1-3",
+          "start_aa": 90,
+          "end_aa": 188,
+          "score": "",
+          "interpro_accession": "IPR046371",
+          "interpro_description": "Bcl-2_BH1-3",
+          "feature_type": "domain"
+        },
+        {
+          "source": "PRINTS",
+          "signature_accession": "IPR013279",
+          "description": "Apop_reg_BclX",
+          "start_aa": 1,
+          "end_aa": 129,
+          "score": "",
+          "interpro_accession": "IPR013279",
+          "interpro_description": "Apop_reg_BclX",
+          "feature_type": "family"
+        },
+        {
+          "source": "GENE3D,SUPERFAMILY",
+          "signature_accession": "IPR036834",
+          "description": "Bcl-2-like_sf",
+          "start_aa": 1,
+          "end_aa": 209,
+          "score": "",
+          "interpro_accession": "IPR036834",
+          "interpro_description": "Bcl-2-like_sf",
+          "feature_type": "family"
+        },
+        {
+          "source": "NCBIFAM",
+          "signature_accession": "IPR004725",
+          "description": "Bcl2/BclX",
+          "start_aa": 1,
+          "end_aa": 233,
+          "score": "",
+          "interpro_accession": "IPR004725",
+          "interpro_description": "Bcl2/BclX",
+          "feature_type": "family"
+        },
+        {
+          "source": "CDD,PANTHER,PRINTS",
+          "signature_accession": "IPR026298",
+          "description": "Bcl-2_fam",
+          "start_aa": 2,
+          "end_aa": 211,
+          "score": "",
+          "interpro_accession": "IPR026298",
+          "interpro_description": "Bcl-2_fam",
+          "feature_type": "family"
+        },
+        {
+          "source": "PROSITE_PROFILES",
+          "signature_accession": "IPR002475",
+          "description": "Bcl2-like",
+          "start_aa": 90,
+          "end_aa": 190,
+          "score": "",
+          "interpro_accession": "IPR002475",
+          "interpro_description": "Bcl2-like",
+          "feature_type": "family"
+        },
+        {
+          "source": "PROSITE_PATTERNS",
+          "signature_accession": "IPR020731",
+          "description": "Bcl2_BH4_motif_CS",
+          "start_aa": 4,
+          "end_aa": 24,
+          "score": "",
+          "interpro_accession": "IPR020731",
+          "interpro_description": "Bcl2_BH4_motif_CS",
+          "feature_type": "feature"
+        },
+        {
+          "source": "MOBIDB_LITE",
+          "signature_accession": "",
+          "description": "disorder_prediction",
+          "start_aa": 28,
+          "end_aa": 71,
+          "score": "",
+          "interpro_accession": "",
+          "interpro_description": "disorder_prediction",
+          "feature_type": "feature"
+        },
+        {
+          "source": "PROSITE_PATTERNS",
+          "signature_accession": "IPR020728",
+          "description": "Bcl2_BH3_motif_CS",
+          "start_aa": 86,
+          "end_aa": 100,
+          "score": "",
+          "interpro_accession": "IPR020728",
+          "interpro_description": "Bcl2_BH3_motif_CS",
+          "feature_type": "feature"
+        },
+        {
+          "source": "PROSITE_PATTERNS",
+          "signature_accession": "IPR020717",
+          "description": "Bcl2_BH1_motif_CS",
+          "start_aa": 130,
+          "end_aa": 148,
+          "score": "",
+          "interpro_accession": "IPR020717",
+          "interpro_description": "Bcl2_BH1_motif_CS",
+          "feature_type": "feature"
+        },
+        {
+          "source": "PROSITE_PATTERNS",
+          "signature_accession": "IPR020726",
+          "description": "Bcl2_BH2_motif_CS",
+          "start_aa": 181,
+          "end_aa": 192,
+          "score": "",
+          "interpro_accession": "IPR020726",
+          "interpro_description": "Bcl2_BH2_motif_CS",
+          "feature_type": "feature"
+        }
+      ],
+      "tm_regions": [
+        {
+          "start_aa": 214,
+          "end_aa": 233,
+          "source": "pytmhmm",
+          "topology": "transmembrane"
+        }
+      ]
+    },
+    {
+      "protein_id": "NP_001309168.1",
+      "transcript_id": "NM_001322239.2",
+      "length_aa": 233,
+      "is_primary": false,
+      "exon_boundaries": [
+        188,
+        233
+      ],
+      "candidate_overlays": [],
+      "domains": [],
+      "tm_regions": []
+    },
+    {
+      "protein_id": "NP_001304850.1",
+      "transcript_id": "NM_001317921.2",
+      "length_aa": 233,
+      "is_primary": false,
+      "exon_boundaries": [
+        188,
+        233
+      ],
+      "candidate_overlays": [],
+      "domains": [],
+      "tm_regions": []
+    },
+    {
+      "protein_id": "NP_001309169.1",
+      "transcript_id": "NM_001322240.2",
+      "length_aa": 233,
+      "is_primary": false,
+      "exon_boundaries": [
+        188,
+        233
+      ],
+      "candidate_overlays": [],
+      "domains": [],
+      "tm_regions": []
+    },
+    {
+      "protein_id": "NP_001304848.1",
+      "transcript_id": "NM_001317919.2",
+      "length_aa": 233,
+      "is_primary": false,
+      "exon_boundaries": [
+        188,
+        233
+      ],
+      "candidate_overlays": [],
+      "domains": [],
+      "tm_regions": []
+    },
+    {
+      "protein_id": "NP_001182.1",
+      "transcript_id": "NM_001191.4",
+      "length_aa": 170,
+      "is_primary": false,
+      "exon_boundaries": [
+        125,
+        170
+      ],
+      "candidate_overlays": [],
+      "domains": [],
+      "tm_regions": []
+    },
+    {
+      "protein_id": "NP_612815.1",
+      "transcript_id": "NM_138578.3",
+      "length_aa": 233,
+      "is_primary": false,
+      "exon_boundaries": [
+        188,
+        233
+      ],
+      "candidate_overlays": [],
+      "domains": [],
+      "tm_regions": []
+    },
+    {
+      "protein_id": "NP_001411260.1",
+      "transcript_id": "NM_001424331.1",
+      "length_aa": 233,
+      "is_primary": false,
+      "exon_boundaries": [
+        188,
+        233
+      ],
+      "candidate_overlays": [],
+      "domains": [],
+      "tm_regions": []
+    },
+    {
+      "protein_id": "NP_001411261.1",
+      "transcript_id": "NM_001424332.1",
+      "length_aa": 233,
+      "is_primary": false,
+      "exon_boundaries": [
+        188,
+        233
+      ],
+      "candidate_overlays": [],
+      "domains": [],
+      "tm_regions": []
+    },
+    {
+      "protein_id": "NP_001309171.1",
+      "transcript_id": "NM_001322242.2",
+      "length_aa": 233,
+      "is_primary": false,
+      "exon_boundaries": [
+        188,
+        233
+      ],
+      "candidate_overlays": [],
+      "domains": [],
+      "tm_regions": []
+    }
+  ]
+}

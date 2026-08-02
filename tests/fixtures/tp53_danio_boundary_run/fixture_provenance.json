@@ -1,0 +1,23 @@
+{
+  "fixture_type": "boundary_dashboard_core_tables",
+  "source_run_id": "2026-07-21_1436_custom_run",
+  "gene_symbol": "TP53",
+  "species_ids": [
+    "danio_rerio"
+  ],
+  "generated_by": "tests/fixtures/build_boundary_fixtures.py",
+  "source_file_sha256": {
+    "results/core_gene_analysis/exon_protein_map.tsv": "e1d7af76b7f8526c8f3f493cce682ee4d6570c55e0c70e76cefc757160500fd0",
+    "results/core_gene_analysis/domain_features.tsv": "e7d0be630e00c400161876b4a51643732bb4682af1974fd49582711105ff4472",
+    "results/core_gene_analysis/interpro_annotations.tsv": "4c726bff62e1ff3a3eb0514f68ffa58019f960925c0f43f94063523907800c6f",
+    "results/core_gene_analysis/tm_features.tsv": "217d6d8c4d16642730fa175ffe068335a1e6c743067f5d5b838600bc9a5063f6",
+    "results/core_gene_analysis/exon_domain_boundary_distances.tsv": "6a3728d197ad856432b64c062bccb094ac5f5ff56684c93980aed45e177bd93f",
+    "results/core_gene_analysis/event_candidate_regions.tsv": "8ca69565c2db59915d12f893cc1449910d6798e117a19408ba7199b709cb364e",
+    "results/core_gene_analysis/primary_selection_evidence.tsv": "fbc2ba3bb0ce9b02f8d50ee99c2d97607b437909faa8c6e6fd04e7c2eb65ab99",
+    "results/core_gene_analysis/protein_isoform_index.tsv": "a18f76fc132bc2168f9dbd40d11112e6bd92eed4ccc8f96813543212a550bbfb",
+    "results/core_gene_analysis/proteins_primary.faa": "d39a9d64dbfdf04b17b93a94dc767833f9d7cc72392294fd98534cb71ef7a581",
+    "results/01_species_registry/species_registry.tsv": "81e2bcf2a7ec290f6edbfb62659b077f05f31e7fbfb05068da62fae34ce129d6",
+    "website_indices/coordinate_track_index.json": "reduced_from:3e127f9b94fdc18233ce06de2f63c725dc29b83ee38af36ea6d51fd9ae6ad049"
+  },
+  "note": "Core tables copied verbatim; no scientific value is modified."
+}

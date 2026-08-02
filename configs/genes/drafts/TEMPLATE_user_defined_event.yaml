@@ -1,0 +1,73 @@
+# TEMPLATE — USER-DEFINED EVENT REGION (design/preview; NOT yet a runnable analysis).
+#
+# This template documents how a user will be able to define their OWN event
+# region for a gene, without a gene-specific event detector. It shows the schema
+# the framework already accepts (see scripts/framework/gene_config.py); the full
+# interactive UI for entering these values is planned, not implemented yet.
+#
+# A user-defined event = "I believe protein <reference_protein> has an
+# isoform-specific region between aa <region_start_aa> and <region_end_aa>, and I
+# want to compare isoform_A vs isoform_B around it." This is treated as a
+# user-supplied hypothesis, NOT a validated event. FGFR2 IIIb/IIIc remains the
+# only validated event-specific analysis.
+schema_version: 1
+status: draft_not_runnable      # user-defined events are not runnable yet
+runnable: false
+
+analysis:
+  id: EXAMPLE_user_defined_event
+  display_name: Example gene (user-defined event — preview)
+  description: >
+    Preview of a user-defined isoform-specific region. The framework schema
+    accepts these fields today; the runner/UI for user-defined events is planned.
+
+gene:
+  symbol: EXAMPLE
+  display_name: Example gene
+  reference_species: homo_sapiens
+
+analysis_modes:
+  core_gene_analysis: true
+  event_analysis: user_defined   # configured | auto | user_defined | disabled | optional
+
+event:
+  status: user_defined
+  type: isoform_specific_region
+  # The protein the coordinates below refer to (a specific isoform/accession).
+  reference_protein: XP_000000000.0
+  # Inclusive 1-based amino-acid coordinates of the user-hypothesised region.
+  region_start_aa: 100
+  region_end_aa: 160
+  generic_label: event_region
+  # Two isoform labels the user wants to compare around the region. Optional
+  # marker_sequence lets the user pin the region by sequence instead of coords.
+  labels:
+    - id: isoform_A
+      display_name: Isoform A (region included)
+      reference_role: included
+    - id: isoform_B
+      display_name: Isoform B (region skipped)
+      reference_role: skipped
+
+reference_control:
+  enabled: false
+  role: reference_control_only
+
+views:
+  overview: true
+  gene_explorer: true
+  isoforms: true
+  domain_architecture: true
+  exon_domain_boundaries: true
+  synteny: true
+  # event_region becomes available once user-defined events are fully supported.
+  event_region: false
+  boundary_relation: false
+
+notes:
+  support_level: draft_not_runnable
+  planned: >
+    When user-defined events are implemented, supplying reference_protein +
+    region_start_aa + region_end_aa will make the feasibility probe report
+    event_user_defined_possible and enable an exploratory event-region view,
+    clearly labelled as user-defined (not validated).

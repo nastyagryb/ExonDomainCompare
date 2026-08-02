@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "exondomaincompare"
+version = "0.2.0"
+description = "Comparative exon, isoform, domain and boundary analysis"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+authors = [
+  {name = "Anastasiya Gryb"}
+]
+license = "MIT"
+dependencies = [
+  "biopython==1.87",
+  "fastapi==0.136.3",
+  "matplotlib==3.10.9",
+  "numpy==2.4.5",
+  "openpyxl==3.1.5",
+  "pandas==3.0.3",
+  "pillow==12.2.0",
+  "platformdirs==4.3.7",
+  "pydantic==2.13.4",
+  "PyYAML==6.0.3",
+  "requests==2.34.2",
+  "uvicorn==0.47.0"
+]
+
+[project.optional-dependencies]
+test = ["pytest==9.0.3", "httpx==0.28.1"]
+render = ["reportlab==5.0.0", "svglib==2.0.2", "cairosvg>=2.7"]
+synteny = ["dna-features-viewer==3.1.5", "pygenomeviz==1.7.0"]
+
+[project.scripts]
+exondomain-config = "exondomaincompare.config_cli:main"
+edc = "exondomaincompare.cli:main"
+
+[project.urls]
+Repository = "https://github.com/nastyagryb/ExonDomainCompare"
+
+[tool.setuptools.packages.find]
+where = ["src", "."]
+include = ["exondomaincompare*", "scripts*", "webapp*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "scripts"]

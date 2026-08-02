@@ -1,0 +1,19 @@
+{
+  "run_id": "2026-07-23_1100_fgfr1_gallus_core_pilot",
+  "gene_symbol": "FGFR1",
+  "species_count": 1,
+  "species_ids": [
+    "gallus_gallus"
+  ],
+  "species_taxids": {
+    "gallus_gallus": "9031"
+  },
+  "species_scientific_names": {
+    "gallus_gallus": "Gallus gallus"
+  },
+  "workflow": "shared_exploratory",
+  "run_mode": "core_only_pilot",
+  "experimental": true,
+  "run_dir": "tests/fixtures/fgfr1_gallus_boundary_run",
+  "results_dir": "tests/fixtures/fgfr1_gallus_boundary_run/results"
+}

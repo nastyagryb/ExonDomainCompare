@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "dataset_id": "run:2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus",
+  "analysis_id": "BCL2L1_core_only_pilot",
+  "has_event": false,
+  "available_views": {
+    "overview": true,
+    "gene_explorer": true,
+    "gene_models": true,
+    "domain_architecture": true,
+    "exon_domain_boundaries": true,
+    "synteny": true,
+    "figure_gallery": true,
+    "event_region": false,
+    "boundary_relation": false
+  }
+}

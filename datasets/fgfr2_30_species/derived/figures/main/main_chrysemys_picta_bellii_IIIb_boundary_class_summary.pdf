@@ -1,0 +1,209 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 252 139.7] /Resources << /Font << /F_bold 5 0 R /F_italic 6 0 R /F_normal 7 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 2303 >>
+stream
+1 1 1 rg
+0 0 252 139.7 re f
+0.11 0.14 0.2 rg
+BT
+/F_bold 8.5 Tf
+8 123.2 Td
+(FGFR2 IIIb) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_italic 8.5 Tf
+54.55 123.2 Td
+(∑ Chrysemys picta bellii) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.8 Tf
+8 112.4 Td
+(XP_023965681.1 ∑ 16 internal coding-exon boundaries) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_italic 5.5 Tf
+8 102.6 Td
+(How are exon boundaries distributed across domain-relation classes?) Tj
+ET
+0.89 0.91 0.94 RG
+0.4 w
+[] 0 d
+137.17 87.1 m 137.17 44.5 l S
+0.89 0.91 0.94 RG
+0.4 w
+[] 0 d
+164.11 87.1 m 164.11 44.5 l S
+0.89 0.91 0.94 RG
+0.4 w
+[] 0 d
+204.53 87.1 m 204.53 44.5 l S
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.2 Tf
+39.92 77.83 Td
+(Near domain edge) Tj
+ET
+0 0.45 0.7 rg
+0 0 0 RG
+0.4 w
+96.76 76.9 40.41 8.2 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 5.5 Tf
+141.17 77.83 Td
+(3 \(19%\)) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.2 Tf
+51.7 63.63 Td
+(Inside domain) Tj
+ET
+0 0.62 0.45 rg
+0 0 0 RG
+0.4 w
+96.76 62.7 121.24 8.2 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 5.5 Tf
+222 63.63 Td
+(9 \(56%\)) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.2 Tf
+14 49.43 Td
+(Outside annotated domains) Tj
+ET
+0.84 0.37 0 rg
+0 0 0 RG
+0.4 w
+96.76 48.5 53.89 8.2 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 5.5 Tf
+154.64 49.43 Td
+(4 \(25%\)) Tj
+ET
+0.6 0.64 0.7 RG
+0.6 w
+[] 0 d
+96.76 44.5 m 218 44.5 l S
+0.72 0.75 0.79 RG
+0.4 w
+[] 0 d
+110.23 44.5 m 110.23 42.5 l S
+0.72 0.75 0.79 RG
+0.4 w
+[] 0 d
+123.7 44.5 m 123.7 42.5 l S
+0.72 0.75 0.79 RG
+0.4 w
+[] 0 d
+150.64 44.5 m 150.64 42.5 l S
+0.72 0.75 0.79 RG
+0.4 w
+[] 0 d
+177.59 44.5 m 177.59 42.5 l S
+0.72 0.75 0.79 RG
+0.4 w
+[] 0 d
+191.06 44.5 m 191.06 42.5 l S
+0.72 0.75 0.79 RG
+0.4 w
+[] 0 d
+218 44.5 m 218 42.5 l S
+0.6 0.64 0.7 RG
+0.6 w
+[] 0 d
+96.76 44.5 m 96.76 41 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 5.8 Tf
+95.15 34.7 Td
+(0) Tj
+ET
+0.6 0.64 0.7 RG
+0.6 w
+[] 0 d
+137.17 44.5 m 137.17 41 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 5.8 Tf
+135.56 34.7 Td
+(3) Tj
+ET
+0.6 0.64 0.7 RG
+0.6 w
+[] 0 d
+164.11 44.5 m 164.11 41 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 5.8 Tf
+162.5 34.7 Td
+(5) Tj
+ET
+0.6 0.64 0.7 RG
+0.6 w
+[] 0 d
+204.53 44.5 m 204.53 41 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 5.8 Tf
+202.92 34.7 Td
+(8) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 6.2 Tf
+107.1 25.5 Td
+(Number of internal exon boundaries) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 5.5 Tf
+8 17.5 Td
+(Near-domain-edge threshold: 5 aa ∑ classes are mutually exclusive) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000285 00000 n 
+0000002640 00000 n 
+0000002742 00000 n 
+0000002847 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+2944
+%%EOF

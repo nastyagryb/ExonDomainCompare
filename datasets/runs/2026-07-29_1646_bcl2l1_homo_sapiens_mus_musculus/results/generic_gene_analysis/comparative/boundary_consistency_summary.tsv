@@ -1,0 +1,2 @@
+comparable_boundary_group_id	n_species_observed	mapping_coverage	exact_near_proportion	raw_signed_distances	cross_species_difference	distance_range	dominant_class	domain_annotation_availability	mapping_confidence_distribution
+CBG1	1.0	1.0		{'species_id': 'homo_sapiens', 'signed_distance': 0, 'boundary_class': 'exact_domain_edge', 'domain_annotation_available': True},{'species_id': 'mus_musculus', 'signed_distance': 0, 'boundary_class': 'exact_domain_edge', 'domain_annotation_available': True}		[0, 0]	exact_domain_edge		"{""min"": 1.0, ""max"": 1.0}"

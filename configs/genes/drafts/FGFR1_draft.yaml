@@ -1,0 +1,66 @@
+# DRAFT — FGFR1 (NOT runnable). Documentation of how a future gene config would
+# look. FGFR1 is a plausible second-gene candidate (close FGFR2 paralog with a
+# comparable IIIb/IIIc-type alternative-splicing region), but its event region
+# and discriminating markers are NOT configured here — they require a
+# gene-specific event detector and curated markers first.
+#
+# This file is intentionally marked non-runnable and is NOT wired into the UI.
+schema_version: 1
+status: draft_not_runnable
+runnable: false
+
+analysis:
+  id: FGFR1_draft
+  display_name: FGFR1 (draft — not runnable)
+  description: >
+    Draft placeholder for a future FGFR1 alternative-splicing analysis. Event
+    region and discriminating markers are not yet defined.
+
+gene:
+  symbol: FGFR1
+  display_name: Fibroblast growth factor receptor 1
+  reference_species: homo_sapiens
+  reference_role: human_reference_control
+
+# Core gene-level analysis is possible in principle (gene models, domains,
+# synteny, all-exon boundary distances). The event-specific analysis is optional
+# and NOT configured: FGFR1 has no curated event region / detector yet.
+analysis_modes:
+  core_gene_analysis: true
+  event_analysis: optional     # configured | auto | user_defined | disabled | optional
+
+event:
+  # Event region is not defined yet: FGFR1 needs its own event detector before
+  # event-specific views can be shown. Do NOT invent markers.
+  status: not_configured
+  id: FGFR1_event_undefined
+  type: requires_gene_specific_event_detector
+  display_name: (event region not defined)
+  generic_label: event_region
+  labels: []
+
+reference_control:
+  enabled: true
+  species: homo_sapiens
+  source: curated_reference
+  role: reference_control_only
+  note: >
+    A curated human reference/control would be used only as a fixed reference,
+    never added to the analysed species panel. Not yet defined for FGFR1.
+
+views:
+  overview: true
+  gene_explorer: true
+  domain_architecture: true
+  synteny: true
+
+ui_labels:
+  gene_explorer: Gene Explorer
+  event_region: Event region
+  boundary_relation: Boundary Consistency
+
+notes:
+  feasibility: requires_gene_specific_event_detector
+  next_step: >
+    Define the FGFR1 event region (e.g. the mutually-exclusive exon pair) and
+    implement/curate discriminating markers, then run the feasibility probe again.

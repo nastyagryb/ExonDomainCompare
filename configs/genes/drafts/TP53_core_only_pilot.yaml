@@ -1,0 +1,71 @@
+# CORE-ONLY PILOT — TP53 (experimental, NOT a validated event analysis).
+#
+# Purpose: a second, independent generic validation gene. It proves the shared
+# framework handles an arbitrary well-annotated multi-isoform gene WITHOUT a
+# configured event region — using exactly the same generic pipeline as every
+# other non-FGFR2 gene. It declares NO event region and NO markers; there is no
+# IIIb/IIIc-style biology here and none is invented.
+#
+# Experimental: never presented as a normal, validated runnable analysis.
+# FGFR2 IIIb/IIIc remains the only validated event-specific analysis.
+schema_version: 1
+status: core_only_pilot
+runnable: experimental   # experimental => NOT a normal runnable choice
+
+analysis:
+  id: TP53_core_only_pilot
+  display_name: TP53 (core-only pilot — experimental)
+  description: >
+    Core-only proof of concept for an arbitrary multi-isoform gene without a
+    configured event region. Produces generic gene/domain/synteny/exon-boundary
+    results only; no event-specific (cassette-style) analysis is defined or claimed.
+
+gene:
+  symbol: TP53
+  display_name: Tumor protein p53
+  reference_species: homo_sapiens
+  reference_role: human_reference_control
+
+# Core gene analysis enabled; event analysis explicitly optional + not configured.
+analysis_modes:
+  core_gene_analysis: true
+  event_analysis: optional     # configured | auto | user_defined | disabled | optional
+
+event:
+  # No event region configured. Do NOT invent markers or an event type.
+  status: not_configured
+  generic_label: event_region
+  labels: []
+
+reference_control:
+  enabled: false
+  species: homo_sapiens
+  role: reference_control_only
+  note: >
+    No event-specific reference/control is used in core-only mode. A curated
+    reference could be added later only if an event region is defined.
+
+# Only core, gene-agnostic views. No event_region / boundary_relation (event).
+views:
+  overview: true
+  gene_explorer: true
+  isoforms: true
+  domain_architecture: true
+  exon_domain_boundaries: true
+  synteny: true
+  # event-specific views intentionally omitted / disabled
+  event_region: false
+  boundary_relation: false
+
+ui_labels:
+  gene_explorer: Gene Explorer
+  boundary_relation: Exon–Domain Boundaries
+
+notes:
+  support_level: core_only_pilot
+  what_this_proves: >
+    The generic framework (indices, views, boundary geometry, isoform alignment,
+    exploratory candidates) works for an arbitrary gene with no configured event
+    region — identical code path to every other non-FGFR2 gene.
+  still_needed_for_full_run: >
+    Real cluster InterProScan/pyTMHMM for domain/TM/boundary evidence.

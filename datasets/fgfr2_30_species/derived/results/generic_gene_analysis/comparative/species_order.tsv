@@ -1,0 +1,31 @@
+species_id	scientific_name	common_name	ncbi_taxonomy_id	taxonomic_lineage	major_clade	display_order	tree_tip_id	ordering_method
+homo_sapiens	Homo sapiens	human	9606	Eukaryota; Metazoa; Chordata; Vertebrata; Mammalia	mammal	0		taxonomic
+pan_troglodytes	Pan troglodytes	chimpanzee	9598	Eukaryota; Metazoa; Chordata; Vertebrata; Mammalia	mammal	1		taxonomic
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	gorilla	9595	Eukaryota; Metazoa; Chordata; Vertebrata; Mammalia	mammal	2		taxonomic
+pongo_abelii	Pongo abelii	orangutan	9601	Eukaryota; Metazoa; Chordata; Vertebrata; Mammalia	mammal	3		taxonomic
+macaca_mulatta	Macaca mulatta	rhesus macaque	9544	Eukaryota; Metazoa; Chordata; Vertebrata; Mammalia	mammal	4		taxonomic
+callithrix_jacchus	Callithrix jacchus	marmoset	9483	Eukaryota; Metazoa; Chordata; Vertebrata; Mammalia	mammal	5		taxonomic
+mus_musculus	Mus musculus	mouse	10090	Eukaryota; Metazoa; Chordata; Vertebrata; Mammalia	mammal	6		taxonomic
+rattus_norvegicus	Rattus norvegicus	rat	10116	Eukaryota; Metazoa; Chordata; Vertebrata; Mammalia	mammal	7		taxonomic
+oryctolagus_cuniculus	Oryctolagus cuniculus	rabbit	9986	Eukaryota; Metazoa; Chordata; Vertebrata; Mammalia	mammal	8		taxonomic
+canis_lupus_familiaris	Canis lupus familiaris	dog	9615	Eukaryota; Metazoa; Chordata; Vertebrata; Mammalia	mammal	9		taxonomic
+felis_catus	Felis catus	cat	9685	Eukaryota; Metazoa; Chordata; Vertebrata; Mammalia	mammal	10		taxonomic
+bos_taurus	Bos taurus	cow	9913	Eukaryota; Metazoa; Chordata; Vertebrata; Mammalia	mammal	11		taxonomic
+sus_scrofa	Sus scrofa	pig	9823	Eukaryota; Metazoa; Chordata; Vertebrata; Mammalia	mammal	12		taxonomic
+equus_caballus	Equus caballus	horse	9796	Eukaryota; Metazoa; Chordata; Vertebrata; Mammalia	mammal	13		taxonomic
+ovis_aries	Ovis aries	sheep	9940	Eukaryota; Metazoa; Chordata; Vertebrata; Mammalia	mammal	14		taxonomic
+monodelphis_domestica	Monodelphis domestica	opossum	13616	Eukaryota; Metazoa; Chordata; Vertebrata; Mammalia	mammal	15		taxonomic
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	platypus	9258	Eukaryota; Metazoa; Chordata; Vertebrata; Mammalia	mammal	16		taxonomic
+gallus_gallus	Gallus gallus	chicken	9031	Eukaryota; Metazoa; Chordata; Vertebrata; Aves	bird	17		taxonomic
+meleagris_gallopavo	Meleagris gallopavo	turkey	9103	Eukaryota; Metazoa; Chordata; Vertebrata; Aves	bird	18		taxonomic
+taeniopygia_guttata	Taeniopygia guttata	zebra finch	59729	Eukaryota; Metazoa; Chordata; Vertebrata; Aves	bird	19		taxonomic
+anolis_carolinensis	Anolis carolinensis	green anole	28377	Eukaryota; Metazoa; Chordata; Vertebrata; Reptilia	reptile	20		taxonomic
+alligator_mississippiensis	Alligator mississippiensis	alligator	8496	Eukaryota; Metazoa; Chordata; Vertebrata; Reptilia	reptile	21		taxonomic
+chrysemys_picta_bellii	Chrysemys picta bellii	painted turtle	8479	Eukaryota; Metazoa; Chordata; Vertebrata; Reptilia	reptile	22		taxonomic
+xenopus_tropicalis	Xenopus tropicalis	frog	8364	Eukaryota; Metazoa; Chordata; Vertebrata; Amphibia	amphibian	23		taxonomic
+ambystoma_mexicanum	Ambystoma mexicanum	axolotl	8296	Eukaryota; Metazoa; Chordata; Vertebrata; Amphibia	amphibian	24		taxonomic
+danio_rerio	Danio rerio	zebrafish	7955	Eukaryota; Metazoa; Chordata; Vertebrata; Actinopterygii	fish	25		taxonomic
+oryzias_latipes	Oryzias latipes	medaka	8090	Eukaryota; Metazoa; Chordata; Vertebrata; Actinopterygii	fish	26		taxonomic
+gasterosteus_aculeatus	Gasterosteus aculeatus	stickleback	69293	Eukaryota; Metazoa; Chordata; Vertebrata; Actinopterygii	fish	27		taxonomic
+takifugu_rubripes	Takifugu rubripes	fugu	31033	Eukaryota; Metazoa; Chordata; Vertebrata; Actinopterygii	fish	28		taxonomic
+oreochromis_niloticus	Oreochromis niloticus	tilapia	8128	Eukaryota; Metazoa; Chordata; Vertebrata; Actinopterygii	fish	29		taxonomic

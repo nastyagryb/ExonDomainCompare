@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="756" height="232.8" viewBox="0 0 756 232.8">
+<rect x="0" y="0" width="756" height="232.8" fill="#ffffff" stroke="none" />
+<text x="14" y="24" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="12" fill="#1c2433" text-anchor="start" font-weight="bold">BCL2L1</text>
+<text x="14" y="37" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="9" fill="#6B7280" text-anchor="start" font-weight="normal">Comparative domain architecture · MSA-aligned coordinates</text>
+<text x="14" y="49" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal" font-style="italic">Which representative domain instances and membrane segments does each primary protein carry, and do they occupy comparable positions?</text>
+<text x="98" y="80.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Homo sapiens</text>
+<text x="98" y="89.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">NP_001304849.1</text>
+<rect x="106" y="79.44" width="596" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="108.39" y="72.44" width="62.23" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="321.42" y="72.44" width="234.57" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<text x="139.51" y="83.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Bcl2 BH4</text>
+<text x="438.71" y="83.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Bcl-2 BH1-3</text>
+<line x1="555.99" y1="69.44" x2="555.99" y2="71.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="670.88" y1="69.44" x2="670.88" y2="71.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="98" y="124.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Mus musculus</text>
+<text x="98" y="133.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">NP_001276668.1</text>
+<rect x="106" y="123.44" width="596" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="108.39" y="116.44" width="62.23" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="321.42" y="116.44" width="234.57" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<text x="139.51" y="127.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Bcl2 BH4</text>
+<text x="438.71" y="127.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Bcl-2 BH1-3</text>
+<line x1="555.99" y1="113.44" x2="555.99" y2="115.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="113.44" x2="702" y2="115.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="106" y1="157.6" x2="702" y2="157.6" stroke="#9aa4b2" stroke-width="0.8" />
+<line x1="106" y1="157.6" x2="106" y2="161.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="106" y="169" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">0</text>
+<line x1="165.84" y1="157.6" x2="165.84" y2="161.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="165.84" y="169" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">25</text>
+<line x1="225.68" y1="157.6" x2="225.68" y2="161.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="225.68" y="169" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">50</text>
+<line x1="285.52" y1="157.6" x2="285.52" y2="161.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="285.52" y="169" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">75</text>
+<line x1="345.36" y1="157.6" x2="345.36" y2="161.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="345.36" y="169" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">100</text>
+<line x1="405.2" y1="157.6" x2="405.2" y2="161.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="405.2" y="169" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">125</text>
+<line x1="465.04" y1="157.6" x2="465.04" y2="161.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="465.04" y="169" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">150</text>
+<line x1="524.88" y1="157.6" x2="524.88" y2="161.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="524.88" y="169" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">175</text>
+<line x1="584.71" y1="157.6" x2="584.71" y2="161.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="584.71" y="169" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">200</text>
+<line x1="644.55" y1="157.6" x2="644.55" y2="161.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="644.55" y="169" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">225</text>
+<text x="404" y="182.4" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="middle" font-weight="normal">MSA column of the cross-species primary-protein alignment</text>
+<rect x="14" y="192.6" width="7" height="7" fill="#0072B2" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="25" y="198.6" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Bcl2 BH4</text>
+<rect x="67.85" y="192.6" width="7" height="7" fill="#56B4E9" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="78.85" y="198.6" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Bcl-2 BH1-3</text>
+<rect x="131.39" y="192.6" width="7" height="7" fill="#6B7A8C" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="142.39" y="198.6" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Exon boundary</text>
+<text x="14" y="216.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">Repeated domains of one accession stay separate instances, identified by instance number and aligned interval.</text>
+</svg>

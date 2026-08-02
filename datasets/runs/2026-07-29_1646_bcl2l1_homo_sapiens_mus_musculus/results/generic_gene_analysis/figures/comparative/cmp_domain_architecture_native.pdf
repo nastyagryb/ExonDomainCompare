@@ -1,0 +1,319 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 756 232.8] /Resources << /Font << /F_bold 5 0 R /F_normal 6 0 R /F_italic 7 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 3731 >>
+stream
+1 1 1 rg
+0 0 756 232.8 re f
+0.11 0.14 0.2 rg
+BT
+/F_bold 12 Tf
+14 208.8 Td
+(BCL2L1) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 9 Tf
+14 195.8 Td
+(Comparative domain architecture ∑ native amino-acid coordinates) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_italic 6.6 Tf
+14 183.8 Td
+(Which representative domain instances and membrane segments does each primary protein carry, and do they occupy comparable positions?) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_italic 8.2 Tf
+45.36 152.36 Td
+(Homo sapiens) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.6 Tf
+46.98 143.76 Td
+(NP_001304849.1) Tj
+ET
+0.63 0.67 0.71 rg
+0.45 0.45 0.45 RG
+0.6 w
+106 149.36 590.93 4 re
+B
+0 0.45 0.7 rg
+0.11 0.14 0.2 RG
+0.6 w
+108.54 142.36 65.94 18 re
+B
+0.34 0.71 0.91 rg
+0.11 0.14 0.2 RG
+0.6 w
+334.26 142.36 248.54 18 re
+B
+1 1 1 rg
+BT
+/F_bold 6.6 Tf
+127.25 149.05 Td
+(Bcl2 BH4) Tj
+ET
+1 1 1 rg
+BT
+/F_bold 6.6 Tf
+440.06 149.05 Td
+(Bcl-2 BH1-3) Tj
+ET
+0.8 0.47 0.65 rg
+0 0 0 RG
+0.6 w
+648.74 137.36 48.19 4 re
+B
+0.42 0.48 0.55 RG
+0.6 w
+[] 0 d
+582.8 163.36 m 582.8 160.86 l S
+0.42 0.48 0.55 RG
+0.6 w
+[] 0 d
+696.93 163.36 m 696.93 160.86 l S
+0.11 0.14 0.2 rg
+BT
+/F_italic 8.2 Tf
+43.88 108.36 Td
+(Mus musculus) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.6 Tf
+46.98 99.76 Td
+(NP_001276668.1) Tj
+ET
+0.63 0.67 0.71 rg
+0.45 0.45 0.45 RG
+0.6 w
+106 105.36 596 4 re
+B
+0 0.45 0.7 rg
+0.11 0.14 0.2 RG
+0.6 w
+108.54 98.36 65.94 18 re
+B
+0.34 0.71 0.91 rg
+0.11 0.14 0.2 RG
+0.6 w
+334.26 98.36 248.54 18 re
+B
+1 1 1 rg
+BT
+/F_bold 6.6 Tf
+127.25 105.05 Td
+(Bcl2 BH4) Tj
+ET
+1 1 1 rg
+BT
+/F_bold 6.6 Tf
+440.06 105.05 Td
+(Bcl-2 BH1-3) Tj
+ET
+0.42 0.48 0.55 RG
+0.6 w
+[] 0 d
+582.8 119.36 m 582.8 116.86 l S
+0.42 0.48 0.55 RG
+0.6 w
+[] 0 d
+702 119.36 m 702 116.86 l S
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+106 75.2 m 702 75.2 l S
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+106 75.2 m 106 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+103.94 63.8 Td
+(0) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+169.4 75.2 m 169.4 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+165.29 63.8 Td
+(25) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+232.81 75.2 m 232.81 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+228.7 63.8 Td
+(50) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+296.21 75.2 m 296.21 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+292.1 63.8 Td
+(75) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+359.62 75.2 m 359.62 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+353.45 63.8 Td
+(100) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+423.02 75.2 m 423.02 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+416.85 63.8 Td
+(125) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+486.43 75.2 m 486.43 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+480.26 63.8 Td
+(150) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+549.83 75.2 m 549.83 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+543.66 63.8 Td
+(175) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+613.23 75.2 m 613.23 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+607.06 63.8 Td
+(200) Tj
+ET
+0.6 0.64 0.7 RG
+0.8 w
+[] 0 d
+676.64 75.2 m 676.64 71.7 l S
+0.42 0.45 0.5 rg
+BT
+/F_normal 7.4 Tf
+670.47 63.8 Td
+(225) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_normal 8.2 Tf
+294.9 50.4 Td
+(Amino-acid position on each species' own primary protein) Tj
+ET
+0 0.45 0.7 rg
+0.6 0.64 0.7 RG
+0.6 w
+14 33.2 7 7 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 7.6 Tf
+25 34.2 Td
+(Bcl2 BH4) Tj
+ET
+0.34 0.71 0.91 rg
+0.6 0.64 0.7 RG
+0.6 w
+67.85 33.2 7 7 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 7.6 Tf
+78.85 34.2 Td
+(Bcl-2 BH1-3) Tj
+ET
+0.8 0.47 0.65 rg
+0.6 0.64 0.7 RG
+0.6 w
+131.39 33.2 7 7 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 7.6 Tf
+142.39 34.2 Td
+(Transmembrane helix) Tj
+ET
+0.42 0.48 0.55 rg
+0.6 0.64 0.7 RG
+0.6 w
+227.4 33.2 7 7 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 7.6 Tf
+238.4 34.2 Td
+(Exon boundary) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.6 Tf
+14 16 Td
+(Native coordinates are species-specific; the MSA-aligned panel shows the same instances on a common alignment axis.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000285 00000 n 
+0000004068 00000 n 
+0000004170 00000 n 
+0000004267 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+4372
+%%EOF

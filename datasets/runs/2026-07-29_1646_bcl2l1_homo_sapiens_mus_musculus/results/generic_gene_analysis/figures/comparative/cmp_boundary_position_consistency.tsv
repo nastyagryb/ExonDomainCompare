@@ -1,0 +1,2 @@
+comparable_boundary_group_id	mapping_method	mapping_status	mapping_confidence	msa_column	n_species_mapped	species_ids	species_coverage	cross_species_difference	distance_range_min	distance_range_max	dominant_class	classes_differ	domain_annotation_available_in_all	primary_statistic
+CBG1	msa_aligned_position	supported_comparable	1	188	2	homo_sapiens,mus_musculus	1	0	0	0	exact_domain_edge	false	true	raw_pair

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="762.12pt" height="296.6089pt" viewBox="0 0 762.12 296.6089" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-30T13:30:44.288202</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 296.6089 
+L 762.12 296.6089 
+L 762.12 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 7.2 211.94602 
+L 754.92 211.94602 
+L 754.92 146.74858 
+L 7.2 146.74858 
+z
+" clip-path="url(#p75eff68ce5)" style="fill: #f6f8fa; stroke: #f6f8fa; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 7.2 126.56842 
+L 754.92 126.56842 
+" clip-path="url(#p75eff68ce5)" style="fill: none; stroke: #d2d9e6; stroke-width: 0.8; stroke-linecap: square"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 8.69544 211.94602 
+L 11.68632 211.94602 
+L 11.68632 146.74858 
+L 8.69544 146.74858 
+z
+" clip-path="url(#p75eff68ce5)" style="fill: #f2b705"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 425.9232 192.54202 
+L 504.4338 192.54202 
+L 504.4338 166.15258 
+L 425.9232 166.15258 
+z
+" clip-path="url(#p75eff68ce5)" style="fill: #f2b705; opacity: 0.35"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="13.18176" y="117.47282" transform="rotate(-0 13.18176 117.47282)">Rank</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="49.07232" y="117.47282" transform="rotate(-0 49.07232 117.47282)">Candidate</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #6b7280" transform="translate(108.1422 109.87752)">Interval</text>
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #6b7280" transform="translate(108.1422 117.47282)">(aa)</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #6b7280" transform="translate(185.15736 109.79552)">Length</text>
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #6b7280" transform="translate(185.15736 117.47282)">(aa)</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #6b7280" transform="translate(246.4704 109.94097)">Affected</text>
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #6b7280" transform="translate(246.4704 117.47282)">isoforms</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #6b7280" transform="translate(328.7196 109.85897)">Supporting</text>
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #6b7280" transform="translate(328.7196 117.47282)">comparisons</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #6b7280" transform="translate(425.9232 109.94097)">Evidence</text>
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #6b7280" transform="translate(425.9232 117.47282)">score</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #6b7280" transform="translate(530.604 109.83872)">Evidence</text>
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #6b7280" transform="translate(530.604 117.39082)">strength</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #6b7280" transform="translate(627.8076 109.85897)">Biological</text>
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #6b7280" transform="translate(627.8076 117.47282)">validation</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="13.18176" y="180.9758" transform="rotate(-0 13.18176 180.9758)">1</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="49.07232" y="180.9758" transform="rotate(-0 49.07232 180.9758)">C1</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="108.1422" y="180.9758" transform="rotate(-0 108.1422 180.9758)">126–188</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="185.15736" y="180.9758" transform="rotate(-0 185.15736 180.9758)">63</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="246.4704" y="180.9758" transform="rotate(-0 246.4704 180.9758)">2 of 10</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="328.7196" y="180.9758" transform="rotate(-0 328.7196 180.9758)">9</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="428.91408" y="180.9758" transform="rotate(-0 428.91408 180.9758)">80</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="530.604" y="180.9423" transform="rotate(-0 530.604 180.9423)">high</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8a5008" x="627.8076" y="180.9758" transform="rotate(-0 627.8076 180.9758)">not validated</text>
+   </g>
+   <g id="text_19">
+    <text style="font-style: italic; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="7.2" y="55.7085" transform="rotate(-0 7.2 55.7085)">score is a measure of support, not a validation.</text>
+   </g>
+   <g id="text_20">
+    <text style="font-style: italic; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="7.2" y="45.6265" transform="rotate(-0 7.2 45.6265)">Which isoform-difference regions carry the most transparent support? Exploratory candidate regions only — Biological validation: not validated. The evidence score summarises isoform support, exon-boundary agreement, alignment support and domain context; a</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 9px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="7.2" y="35.05125" transform="rotate(-0 7.2 35.05125)">Homo sapiens · NP_001304849.1 · 1 exploratory candidate region(s) · amino-acid intervals on the primary protein · ranked by evidence score</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="7.2" y="288.0369" transform="rotate(-0 7.2 288.0369)">Source: protein-isoform difference scan + exon/protein boundary check · run 2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus</text>
+   </g>
+   <g id="text_23">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="7.2" y="16.0425" transform="rotate(-0 7.2 16.0425)">BCL2L1 — exploratory candidate ranking</text>
+   </g>
+   <g id="legend_1">
+    <g id="patch_5">
+     <path d="M 13.95 263.468556 
+L 22.2 263.468556 
+L 22.2 258.218556 
+L 13.95 258.218556 
+z
+" style="fill: #f2b705"/>
+    </g>
+    <g id="text_24">
+     <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="25.95" y="263.468556" transform="rotate(-0 25.95 263.468556)">exploratory candidate region · Biological validation: not validated</text>
+    </g>
+    <g id="patch_6">
+     <path d="M 13.95 274.275588 
+L 22.2 274.275588 
+L 22.2 269.025588 
+L 13.95 269.025588 
+z
+" style="fill: #dcc58a"/>
+    </g>
+    <g id="text_25">
+     <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="25.95" y="274.275588" transform="rotate(-0 25.95 274.275588)">evidence score relative to the highest-scoring candidate</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p75eff68ce5">
+   <rect x="7.2" y="59.0425" width="747.72" height="186.2784"/>
+  </clipPath>
+ </defs>
+</svg>

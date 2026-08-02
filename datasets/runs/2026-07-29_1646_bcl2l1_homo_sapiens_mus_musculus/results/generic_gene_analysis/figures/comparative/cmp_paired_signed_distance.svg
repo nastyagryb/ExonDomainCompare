@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="756" height="190" viewBox="0 0 756 190">
+<rect x="0" y="0" width="756" height="190" fill="#ffffff" stroke="none" />
+<text x="14" y="24" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="12" fill="#1c2433" text-anchor="start" font-weight="bold">BCL2L1</text>
+<text x="14" y="37" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="9" fill="#6B7280" text-anchor="start" font-weight="normal">Signed distance from each comparable exon–domain boundary to the nearest representative-domain edge, per species</text>
+<text x="14" y="49" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal" font-style="italic">Do the species place the same comparable boundary at the same distance, and on the same side, of the nearest domain edge?</text>
+<rect x="233.5" y="64.6" width="327" height="24" fill="#e3e8f0" stroke="none" stroke-width="0.6" opacity="0.9" />
+<text x="397" y="61.6" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="middle" font-weight="normal">±5 aa</text>
+<line x1="397" y1="64.6" x2="397" y2="88.6" stroke="#1c2433" stroke-width="0.8" />
+<text x="64" y="79.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 1</text>
+<line x1="397" y1="73.6" x2="397" y2="79.6" stroke="#4A5568" stroke-width="0.8" opacity="0.8" />
+<circle cx="397" cy="73.6" r="3.2" fill="#005B8F" stroke="none" stroke-width="0.6" />
+<circle cx="397" cy="79.6" r="3.2" fill="#005B8F" stroke="none" stroke-width="0.6" />
+<line x1="70" y1="95.6" x2="724" y2="95.6" stroke="#9aa4b2" stroke-width="0.8" />
+<line x1="70" y1="95.6" x2="70" y2="99.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="70" y="107" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">-10</text>
+<line x1="168.1" y1="95.6" x2="168.1" y2="99.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="168.1" y="107" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">-7</text>
+<line x1="233.5" y1="95.6" x2="233.5" y2="99.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="233.5" y="107" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">-5</text>
+<line x1="331.6" y1="95.6" x2="331.6" y2="99.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="331.6" y="107" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">-2</text>
+<line x1="397" y1="95.6" x2="397" y2="99.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="397" y="107" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">0</text>
+<line x1="495.1" y1="95.6" x2="495.1" y2="99.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="495.1" y="107" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">+3</text>
+<line x1="560.5" y1="95.6" x2="560.5" y2="99.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="560.5" y="107" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">+5</text>
+<line x1="658.6" y1="95.6" x2="658.6" y2="99.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="658.6" y="107" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">+8</text>
+<line x1="724" y1="95.6" x2="724" y2="99.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="724" y="107" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">+10</text>
+<text x="397" y="118.4" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="middle" font-weight="normal">Signed distance to nearest representative-domain edge (aa) · 0 = domain edge</text>
+<rect x="70" y="126.6" width="7" height="7" fill="#005B8F" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="81" y="132.6" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Exact domain edge</text>
+<text x="70" y="153.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">Marker lane per species</text>
+<circle cx="181" cy="150.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="189" y="153.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">upper · </text>
+<text x="215.4" y="153.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Homo sapiens</text>
+<circle cx="281.64" cy="150.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="289.64" y="153.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lower · </text>
+<text x="316.04" y="153.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Mus musculus</text>
+<text x="70" y="165.4" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">Solid connector: supported cross-species mapping · dotted connector: tentative mapping, equivalence not established</text>
+<text x="70" y="175" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">Open marker: distance to a domain start edge · filled marker: to a domain end edge · negative: upstream of that edge</text>
+</svg>

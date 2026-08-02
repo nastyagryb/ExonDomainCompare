@@ -1,0 +1,16 @@
+{
+  "data_status": "loaded from pipeline JSON",
+  "gene": "FGFR2",
+  "species_count": 30,
+  "status": "InterProScan-ready FASTA generated",
+  "primary_role_coverage": "30/30",
+  "protein_export": "90/90",
+  "unique_sequences": 58,
+  "duplicates_collapsed": 32,
+  "reference_count": 30,
+  "iiib_count": 30,
+  "iiic_count": 30,
+  "selected_primary_rows": 90,
+  "warning_rows": 0,
+  "last_export_utc": "2026-06-03T20:51:50+00:00"
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "default_dataset": "example",
+  "datasets": [
+    {
+      "id": "example",
+      "path": "fgfr2_30_species",
+      "read_only": true
+    },
+    {
+      "id": "run:2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus",
+      "read_only": true
+    }
+  ]
+}

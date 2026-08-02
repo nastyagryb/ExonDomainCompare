@@ -1,0 +1,3 @@
+species_id	scientific_name	primary_protein_id	n_protein_models	n_curated_models	n_predicted_models	primary_protein_length	protein_length_min	protein_length_max	n_variable_alignment_blocks	n_exploratory_candidates	max_difference_from_primary_aa
+homo_sapiens	Homo sapiens	NP_001304849.1	10	10		233	170	233		1	63
+mus_musculus	Mus musculus	NP_001276668.1	9	9		235	233	235		4	2

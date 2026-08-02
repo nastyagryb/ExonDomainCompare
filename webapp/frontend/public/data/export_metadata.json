@@ -1,0 +1,9 @@
+{
+  "script_name": "export_website_data_v2.py",
+  "run_datetime_utc": "2026-06-03T20:51:50+00:00",
+  "root": "results/final_30_until_interpro_prepare",
+  "outdir": "webapp/frontend/public/data",
+  "selected_rows": 180,
+  "primary_transcript_rows": 90,
+  "species_rows": 30
+}

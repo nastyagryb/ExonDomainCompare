@@ -1,0 +1,1 @@
+BCL2L1 (Mus musculus), primary protein NP_001276668.1 — coding-exon identity of 9 protein model(s) relative to the primary model (all protein models). Coordinates: protein 1-based amino-acid positions on NP_001276668.1. Annotation source: NCBI RefSeq GFF CDS features compared on genomic CDS intervals. Descriptive annotation summary; no event is claimed as validated.

@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="756" height="900" viewBox="0 0 756 900">
+<rect x="0" y="0" width="756" height="900" fill="#ffffff" stroke="none" />
+<text x="14" y="24" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="12" fill="#1c2433" text-anchor="start" font-weight="bold">FGFR2</text>
+<text x="14" y="37" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="9" fill="#6B7280" text-anchor="start" font-weight="normal">Signed distance from each comparable exon–domain boundary to the nearest representative-domain edge, per species</text>
+<text x="14" y="49" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal" font-style="italic">Do the species place the same comparable boundary at the same distance, and on the same side, of the nearest domain edge?</text>
+<rect x="387.38" y="64.6" width="19.24" height="9366" fill="#e3e8f0" stroke="none" stroke-width="0.6" opacity="0.9" />
+<text x="397" y="61.6" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="middle" font-weight="normal">±5 aa</text>
+<line x1="397" y1="64.6" x2="397" y2="9430.6" stroke="#1c2433" stroke-width="0.8" />
+<text x="64" y="160.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 3</text>
+<line x1="448.94" y1="157.6" x2="450.86" y2="157.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="449.9" y1="107.2" x2="449.9" y2="208" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="448.94" cy="145.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="450.86" cy="235.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<text x="64" y="340.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 15</text>
+<rect x="381.61" y="290.8" width="0.2" height="93.6" fill="#e3e8f0" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="381.61" y1="287.2" x2="381.61" y2="388" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="381.61" cy="385.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="381.61" cy="391.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="381.61" cy="331.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="381.61" cy="277.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="381.61" cy="397.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="381.61" cy="367.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="381.61" cy="301.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="381.61" cy="271.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="381.61" cy="403.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="381.61" cy="295.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="381.61" cy="379.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="379.69" cy="343.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="371.99" cy="361.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="381.61" cy="307.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="381.61" cy="409.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="381.61" cy="265.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="381.61" cy="253.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="381.61" cy="283.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="393.15" cy="259.6" r="3.2" fill="#ffffff" stroke="#0072B2" stroke-width="1.3" />
+<circle cx="370.07" cy="289.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="377.76" cy="373.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="377.76" cy="355.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<text x="64" y="520.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 16</text>
+<rect x="425.85" y="470.8" width="3.85" height="93.6" fill="#e3e8f0" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="428.74" y1="467.2" x2="428.74" y2="568" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="427.78" cy="565.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="427.78" cy="571.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="427.78" cy="511.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="427.78" cy="457.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="577.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="547.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="481.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="451.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="583.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="475.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="559.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="402.77" cy="523.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="412.39" cy="541.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="487.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="589.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="422.01" cy="445.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="433.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="463.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="398.92" cy="439.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="422.01" cy="469.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="425.85" cy="553.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="425.85" cy="535.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<text x="64" y="700.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 17</text>
+<rect x="360.45" y="650.8" width="0.2" height="93.6" fill="#e3e8f0" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="360.45" y1="647.2" x2="360.45" y2="748" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="360.45" cy="745.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="360.45" cy="751.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="360.45" cy="691.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="360.45" cy="637.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="360.45" cy="757.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="360.45" cy="727.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="360.45" cy="661.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="360.45" cy="631.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="360.45" cy="763.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="360.45" cy="655.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="360.45" cy="739.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="360.45" cy="703.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="360.45" cy="721.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="360.45" cy="667.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="360.45" cy="769.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="360.45" cy="625.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="360.45" cy="613.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="360.45" cy="643.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="360.45" cy="619.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="362.38" cy="649.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="360.45" cy="733.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="362.38" cy="715.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<text x="64" y="880.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 18</text>
+<rect x="468.17" y="830.8" width="0.2" height="93.6" fill="#e3e8f0" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="468.17" y1="827.2" x2="468.17" y2="928" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="468.17" cy="925.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="931.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="871.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="817.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="937.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="907.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="841.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="811.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="943.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="835.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="919.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="883.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="901.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="847.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="949.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="805.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="793.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="823.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="799.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="470.09" cy="829.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="913.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="470.09" cy="895.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<text x="64" y="1060.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 19</text>
+<rect x="400.85" y="1010.8" width="0.2" height="93.6" fill="#e3e8f0" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="400.85" y1="1007.2" x2="400.85" y2="1108" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="400.85" cy="1105.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="1111.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="1051.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="997.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="1117.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="1087.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="1021.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="991.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="1123.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="1015.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="1099.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="1063.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="1081.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="1027.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="1129.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="985.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="973.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="1003.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="979.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="1009.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="1093.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="400.85" cy="1075.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<text x="64" y="1240.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 20</text>
+<rect x="314.77" y="1190.8" width="18.75" height="93.6" fill="#e3e8f0" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="333.52" y1="1187.2" x2="333.52" y2="1288" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="333.52" cy="1285.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="333.52" cy="1291.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="333.52" cy="1231.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="333.52" cy="1177.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="333.52" cy="1297.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="333.52" cy="1267.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="333.52" cy="1201.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="333.52" cy="1171.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="333.52" cy="1303.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="333.52" cy="1195.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="333.52" cy="1279.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="333.52" cy="1243.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="333.52" cy="1261.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="333.52" cy="1207.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="333.52" cy="1309.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="308.52" cy="1165.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="308.52" cy="1153.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="333.52" cy="1183.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="308.52" cy="1159.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="308.52" cy="1189.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="308.52" cy="1273.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="308.52" cy="1255.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<text x="64" y="1420.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 21</text>
+<rect x="429.7" y="1370.8" width="0.2" height="93.6" fill="#e3e8f0" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="429.7" y1="1367.2" x2="429.7" y2="1468" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="429.7" cy="1465.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="1411.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="1357.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="1477.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="1447.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="1381.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="1351.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="1483.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="1375.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="1459.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="1423.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="1441.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="1387.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="429.7" cy="1489.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="404.69" cy="1333.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="402.77" cy="1339.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<text x="64" y="1600.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 22</text>
+<rect x="385.46" y="1550.8" width="0.2" height="93.6" fill="#e3e8f0" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="385.46" y1="1547.2" x2="385.46" y2="1648" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="385.46" cy="1645.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="385.46" cy="1537.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="385.46" cy="1657.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="385.46" cy="1531.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="385.46" cy="1663.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="385.46" cy="1639.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="385.46" cy="1669.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<text x="64" y="1780.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 23</text>
+<rect x="481.64" y="1730.8" width="0.2" height="93.6" fill="#e3e8f0" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="481.64" y1="1727.2" x2="481.64" y2="1828" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="481.64" cy="1825.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="481.64" cy="1771.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="481.64" cy="1717.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="481.64" cy="1837.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="481.64" cy="1807.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="481.64" cy="1741.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="481.64" cy="1711.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="481.64" cy="1843.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="481.64" cy="1735.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="481.64" cy="1819.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="481.64" cy="1783.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="481.64" cy="1801.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="481.64" cy="1747.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="481.64" cy="1849.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="481.64" cy="1693.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<text x="64" y="1960.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 24</text>
+<rect x="560.5" y="1910.8" width="0.2" height="93.6" fill="#e3e8f0" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="560.5" y1="1907.2" x2="560.5" y2="2008" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="560.5" cy="2005.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="560.5" cy="1951.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="560.5" cy="1897.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="560.5" cy="2017.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="560.5" cy="1987.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="560.5" cy="1921.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="560.5" cy="1891.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="560.5" cy="2023.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="560.5" cy="1915.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="560.5" cy="1999.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="560.5" cy="1963.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="560.5" cy="1981.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="560.5" cy="1927.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="560.5" cy="2029.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="560.5" cy="1873.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<text x="64" y="2140.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 25</text>
+<rect x="631.67" y="2090.8" width="0.2" height="93.6" fill="#e3e8f0" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="631.67" y1="2087.2" x2="631.67" y2="2188" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="631.67" cy="2185.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="631.67" cy="2131.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="631.67" cy="2077.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="631.67" cy="2197.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="631.67" cy="2167.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="631.67" cy="2101.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="631.67" cy="2071.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="631.67" cy="2203.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="631.67" cy="2095.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="631.67" cy="2179.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="631.67" cy="2143.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="631.67" cy="2161.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="631.67" cy="2107.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="631.67" cy="2209.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="631.67" cy="2053.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<text x="64" y="2320.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 26</text>
+<rect x="112.32" y="2270.8" width="0.2" height="93.6" fill="#e3e8f0" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="112.32" y1="2267.2" x2="112.32" y2="2368" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="112.32" cy="2365.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="112.32" cy="2311.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="112.32" cy="2257.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="112.32" cy="2377.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="112.32" cy="2347.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="112.32" cy="2281.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="112.32" cy="2251.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="129.63" cy="2383.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="112.32" cy="2275.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="112.32" cy="2359.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="112.32" cy="2323.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="112.32" cy="2341.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="112.32" cy="2287.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="112.32" cy="2389.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="112.32" cy="2233.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<text x="64" y="2500.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 27</text>
+<rect x="191.18" y="2450.8" width="0.2" height="93.6" fill="#e3e8f0" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="191.18" y1="2447.2" x2="191.18" y2="2548" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="191.18" cy="2545.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="191.18" cy="2491.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="191.18" cy="2437.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="191.18" cy="2557.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="191.18" cy="2527.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="191.18" cy="2461.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="191.18" cy="2431.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="208.49" cy="2563.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="191.18" cy="2455.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="191.18" cy="2539.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="191.18" cy="2503.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="191.18" cy="2521.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="191.18" cy="2467.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="191.18" cy="2569.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="191.18" cy="2413.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<text x="64" y="2680.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 28</text>
+<rect x="237.35" y="2630.8" width="0.2" height="93.6" fill="#e3e8f0" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="237.35" y1="2627.2" x2="237.35" y2="2728" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="237.35" cy="2725.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="237.35" cy="2671.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="237.35" cy="2617.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="237.35" cy="2737.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="237.35" cy="2707.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="237.35" cy="2641.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="237.35" cy="2611.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="254.66" cy="2743.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="237.35" cy="2635.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="237.35" cy="2719.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="237.35" cy="2683.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="237.35" cy="2701.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="237.35" cy="2647.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="237.35" cy="2749.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="237.35" cy="2593.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<text x="64" y="2860.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 29</text>
+<rect x="325.83" y="2810.8" width="0.2" height="93.6" fill="#e3e8f0" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="325.83" y1="2807.2" x2="325.83" y2="2908" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="325.83" cy="2905.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="325.83" cy="2839.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="325.83" cy="2851.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="325.83" cy="2797.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="325.83" cy="2917.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="325.83" cy="2887.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="325.83" cy="2821.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="325.83" cy="2791.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="343.14" cy="2923.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="325.83" cy="2815.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="325.83" cy="2899.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="325.83" cy="2863.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="325.83" cy="2881.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="325.83" cy="2827.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="325.83" cy="2929.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="325.83" cy="2773.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<text x="64" y="3040.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 30</text>
+<rect x="393.15" y="2990.8" width="0.2" height="93.6" fill="#e3e8f0" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="393.15" y1="2987.2" x2="393.15" y2="3088" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="393.15" cy="3085.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="393.15" cy="3031.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="393.15" cy="2977.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="393.15" cy="3049.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="393.15" cy="3097.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="393.15" cy="3067.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="393.15" cy="3001.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="393.15" cy="2971.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="410.46" cy="3103.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="393.15" cy="2995.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="393.15" cy="3079.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="393.15" cy="3043.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="393.15" cy="3061.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="393.15" cy="3007.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="393.15" cy="3109.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="393.15" cy="2953.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<text x="64" y="3220.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 31</text>
+<line x1="358.53" y1="3217.6" x2="379.69" y2="3217.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="369.11" y1="3167.2" x2="369.11" y2="3268" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="358.53" cy="3199.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="379.69" cy="3229.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<text x="64" y="3400.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 35</text>
+<line x1="456.63" y1="3397.6" x2="460.48" y2="3397.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="458.55" y1="3347.2" x2="458.55" y2="3448" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="456.63" cy="3379.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="460.48" cy="3397.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<text x="64" y="3580.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 38</text>
+<line x1="404.69" y1="3577.6" x2="408.54" y2="3577.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="406.62" y1="3527.2" x2="406.62" y2="3628" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="404.69" cy="3559.6" r="3.2" fill="#ffffff" stroke="#0072B2" stroke-width="1.3" />
+<circle cx="406.62" cy="3589.6" r="3.2" fill="#ffffff" stroke="#0072B2" stroke-width="1.3" />
+<circle cx="408.54" cy="3661.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<text x="64" y="3760.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 42</text>
+<line x1="402.77" y1="3757.6" x2="427.78" y2="3757.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="402.77" y1="3707.2" x2="402.77" y2="3808" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="427.78" cy="3811.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="402.77" cy="3685.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="402.77" cy="3775.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<text x="64" y="3940.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 43</text>
+<line x1="377.76" y1="3937.6" x2="383.54" y2="3937.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="381.61" y1="3887.2" x2="381.61" y2="3988" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="381.61" cy="3991.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="377.76" cy="3883.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="381.61" cy="3973.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="383.54" cy="3955.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<text x="64" y="4120.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 44</text>
+<rect x="479.71" y="4070.8" width="0.2" height="93.6" fill="#e3e8f0" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="479.71" y1="4067.2" x2="479.71" y2="4168" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="479.71" cy="4171.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="479.71" cy="4045.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="479.71" cy="4201.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="479.71" cy="4039.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="473.94" cy="4135.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<text x="64" y="4300.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 45</text>
+<line x1="552.81" y1="4297.6" x2="558.58" y2="4297.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="558.58" y1="4247.2" x2="558.58" y2="4348" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="558.58" cy="4351.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="558.58" cy="4225.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="558.58" cy="4219.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="552.81" cy="4315.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<text x="64" y="4480.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 46</text>
+<line x1="623.98" y1="4477.6" x2="629.75" y2="4477.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="629.75" y1="4427.2" x2="629.75" y2="4528" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="629.75" cy="4531.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="629.75" cy="4405.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="629.75" cy="4399.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="623.98" cy="4495.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<text x="64" y="4660.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 47</text>
+<line x1="110.39" y1="4657.6" x2="110.39" y2="4657.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="110.39" y1="4607.2" x2="110.39" y2="4708" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="110.39" cy="4711.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="110.39" cy="4585.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="110.39" cy="4579.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="110.39" cy="4675.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<text x="64" y="4840.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 48</text>
+<line x1="189.26" y1="4837.6" x2="189.26" y2="4837.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="189.26" y1="4787.2" x2="189.26" y2="4888" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="189.26" cy="4891.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="189.26" cy="4765.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="189.26" cy="4759.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="189.26" cy="4855.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<text x="64" y="5020.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 49</text>
+<line x1="235.42" y1="5017.6" x2="235.42" y2="5017.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="235.42" y1="4967.2" x2="235.42" y2="5068" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="235.42" cy="5071.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="235.42" cy="4945.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="235.42" cy="4939.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="235.42" cy="5035.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<text x="64" y="5200.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 50</text>
+<line x1="323.91" y1="5197.6" x2="323.91" y2="5197.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="323.91" y1="5147.2" x2="323.91" y2="5248" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="323.91" cy="5251.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="323.91" cy="5125.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="323.91" cy="5119.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="323.91" cy="5215.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<text x="64" y="5380.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 51</text>
+<line x1="391.23" y1="5377.6" x2="391.23" y2="5377.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="391.23" y1="5327.2" x2="391.23" y2="5428" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="391.23" cy="5431.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="391.23" cy="5305.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="391.23" cy="5299.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="391.23" cy="5395.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<text x="64" y="5560.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 52</text>
+<rect x="383.54" y="5510.8" width="0.2" height="93.6" fill="#e3e8f0" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="383.54" y1="5507.2" x2="383.54" y2="5608" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="383.54" cy="5551.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="383.54" cy="5587.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="383.54" cy="5521.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="383.54" cy="5515.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="383.54" cy="5563.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="383.54" cy="5581.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="383.54" cy="5527.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="383.54" cy="5485.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="383.54" cy="5473.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="383.54" cy="5479.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<text x="64" y="5740.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 62</text>
+<line x1="171.95" y1="5737.6" x2="173.87" y2="5737.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="172.91" y1="5687.2" x2="172.91" y2="5788" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="171.95" cy="5749.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="173.87" cy="5821.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<text x="64" y="5920.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 72</text>
+<line x1="214.26" y1="5917.6" x2="216.19" y2="5917.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="215.23" y1="5867.2" x2="215.23" y2="5968" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="216.19" cy="5989.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="214.26" cy="5845.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<text x="64" y="6100.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 74</text>
+<line x1="398.92" y1="6097.6" x2="423.93" y2="6097.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="398.92" y1="6047.2" x2="398.92" y2="6148" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="423.93" cy="6043.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="398.92" cy="6049.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="398.92" cy="6133.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<text x="64" y="6280.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 75</text>
+<line x1="468.17" y1="6277.6" x2="475.86" y2="6277.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="472.02" y1="6227.2" x2="472.02" y2="6328" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="475.86" cy="6223.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="468.17" cy="6229.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="472.02" cy="6313.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<text x="64" y="6460.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 76</text>
+<line x1="547.04" y1="6457.6" x2="554.73" y2="6457.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="550.88" y1="6407.2" x2="550.88" y2="6508" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="554.73" cy="6403.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="547.04" cy="6409.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="550.88" cy="6493.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<text x="64" y="6640.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 77</text>
+<line x1="618.21" y1="6637.6" x2="625.9" y2="6637.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="622.05" y1="6587.2" x2="622.05" y2="6688" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="625.9" cy="6583.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="618.21" cy="6589.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="622.05" cy="6673.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<text x="64" y="6820.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 78</text>
+<line x1="106.55" y1="6817.6" x2="106.55" y2="6817.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="106.55" y1="6767.2" x2="106.55" y2="6868" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="106.55" cy="6763.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="106.55" cy="6769.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="106.55" cy="6853.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<text x="64" y="7000.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 79</text>
+<line x1="185.41" y1="6997.6" x2="185.41" y2="6997.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="185.41" y1="6947.2" x2="185.41" y2="7048" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="185.41" cy="6943.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="185.41" cy="6949.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="185.41" cy="7033.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<text x="64" y="7180.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 80</text>
+<line x1="231.58" y1="7177.6" x2="231.58" y2="7177.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="231.58" y1="7127.2" x2="231.58" y2="7228" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="231.58" cy="7123.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="231.58" cy="7129.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="231.58" cy="7213.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<text x="64" y="7360.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 81</text>
+<line x1="320.06" y1="7357.6" x2="320.06" y2="7357.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="320.06" y1="7307.2" x2="320.06" y2="7408" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="320.06" cy="7303.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="320.06" cy="7309.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="320.06" cy="7393.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<text x="64" y="7540.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 82</text>
+<line x1="387.38" y1="7537.6" x2="387.38" y2="7537.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="387.38" y1="7487.2" x2="387.38" y2="7588" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="387.38" cy="7483.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="387.38" cy="7489.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<circle cx="387.38" cy="7573.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<text x="64" y="7720.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 84</text>
+<line x1="433.55" y1="7717.6" x2="448.94" y2="7717.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="441.24" y1="7667.2" x2="441.24" y2="7768" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="448.94" cy="7729.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="433.55" cy="7801.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<text x="64" y="7900.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 91</text>
+<line x1="85.39" y1="7897.6" x2="179.64" y2="7897.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="87.31" y1="7847.2" x2="87.31" y2="7948" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="87.31" cy="7879.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="179.64" cy="7897.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="85.39" cy="7981.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<text x="64" y="8080.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 97</text>
+<line x1="385.46" y1="8077.6" x2="412.39" y2="8077.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="398.92" y1="8027.2" x2="398.92" y2="8128" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="385.46" cy="8161.6" r="3.2" fill="#ffffff" stroke="#D55E00" stroke-width="1.3" />
+<circle cx="412.39" cy="8053.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<text x="64" y="8260.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 101</text>
+<line x1="373.92" y1="8257.6" x2="375.84" y2="8257.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="374.88" y1="8207.2" x2="374.88" y2="8308" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="375.84" cy="8341.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="373.92" cy="8233.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<text x="64" y="8440.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 102</text>
+<line x1="466.25" y1="8437.6" x2="470.09" y2="8437.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="468.17" y1="8387.2" x2="468.17" y2="8488" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="466.25" cy="8425.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="470.09" cy="8413.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<text x="64" y="8620.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 105</text>
+<line x1="433.55" y1="8617.6" x2="435.47" y2="8617.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="434.51" y1="8567.2" x2="434.51" y2="8668" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="435.47" cy="8617.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="433.55" cy="8593.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<text x="64" y="8800.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 107</text>
+<line x1="591.28" y1="8797.6" x2="600.89" y2="8797.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="596.09" y1="8747.2" x2="596.09" y2="8848" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="600.89" cy="8881.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<circle cx="591.28" cy="8773.6" r="3.2" fill="#ffffff" stroke="#009E73" stroke-width="1.3" />
+<text x="64" y="8980.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 109</text>
+<line x1="208.49" y1="8977.6" x2="223.88" y2="8977.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="216.19" y1="8927.2" x2="216.19" y2="9028" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="208.49" cy="8965.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="223.88" cy="8953.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<text x="64" y="9160.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 113</text>
+<line x1="406.62" y1="9157.6" x2="414.31" y2="9157.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="410.46" y1="9107.2" x2="410.46" y2="9208" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="414.31" cy="9169.6" r="3.2" fill="#D55E00" stroke="none" stroke-width="0.6" />
+<circle cx="406.62" cy="9235.6" r="3.2" fill="#0072B2" stroke="none" stroke-width="0.6" />
+<text x="64" y="9340.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 123</text>
+<line x1="164.25" y1="9337.6" x2="166.18" y2="9337.6" stroke="#9aa4b2" stroke-width="0.6" opacity="0.9" />
+<line x1="165.21" y1="9287.2" x2="165.21" y2="9388" stroke="#1c2433" stroke-width="0.8" />
+<circle cx="166.18" cy="9319.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<circle cx="164.25" cy="9415.6" r="3.2" fill="#009E73" stroke="none" stroke-width="0.6" />
+<line x1="70" y1="9437.6" x2="724" y2="9437.6" stroke="#9aa4b2" stroke-width="0.8" />
+<line x1="108.47" y1="9437.6" x2="108.47" y2="9441.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="108.47" y="9449" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">-150</text>
+<line x1="204.65" y1="9437.6" x2="204.65" y2="9441.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="204.65" y="9449" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">-100</text>
+<line x1="300.82" y1="9437.6" x2="300.82" y2="9441.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="300.82" y="9449" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">-50</text>
+<line x1="397" y1="9437.6" x2="397" y2="9441.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="397" y="9449" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">0</text>
+<line x1="493.18" y1="9437.6" x2="493.18" y2="9441.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="493.18" y="9449" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">+50</text>
+<line x1="589.35" y1="9437.6" x2="589.35" y2="9441.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="589.35" y="9449" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">+100</text>
+<line x1="685.53" y1="9437.6" x2="685.53" y2="9441.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="685.53" y="9449" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">+150</text>
+<text x="397" y="9460.4" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="middle" font-weight="normal">Signed distance to nearest representative-domain edge (aa) · 0 = domain edge</text>
+<rect x="70" y="9468.6" width="7" height="7" fill="#D55E00" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="81" y="9474.6" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Outside annotated domains</text>
+<rect x="185.09" y="9468.6" width="7" height="7" fill="#0072B2" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="196.09" y="9474.6" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Near domain edge</text>
+<rect x="268.41" y="9468.6" width="7" height="7" fill="#009E73" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="279.41" y="9474.6" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Inside domain</text>
+<text x="70" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">Marker lane per species</text>
+<circle cx="181" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="189" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">upper · </text>
+<text x="215.4" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Alligator mississippiensis</text>
+<circle cx="329.69" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="337.69" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 2 · </text>
+<text x="367.39" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Ambystoma mexicanum</text>
+<circle cx="457.78" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="465.78" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 3 · </text>
+<text x="495.48" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Anolis carolinensis</text>
+<circle cx="585.88" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="593.88" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 4 · </text>
+<text x="623.58" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Bos taurus</text>
+<circle cx="683.09" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="691.09" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 5 · </text>
+<text x="720.79" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Callithrix jacchus</text>
+<circle cx="807.75" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="815.75" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 6 · </text>
+<text x="845.45" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Chrysemys picta bellii</text>
+<circle cx="946.14" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="954.14" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 7 · </text>
+<text x="983.84" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Danio rerio</text>
+<circle cx="1046.78" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="1054.78" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 8 · </text>
+<text x="1084.48" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Equus caballus</text>
+<circle cx="1157.72" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="1165.72" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 9 · </text>
+<text x="1195.42" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Felis catus</text>
+<circle cx="1258.36" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="1266.36" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 10 · </text>
+<text x="1299.36" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Gallus gallus</text>
+<circle cx="1369.3" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="1377.3" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 11 · </text>
+<text x="1410.3" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Gasterosteus aculeatus</text>
+<circle cx="1511.12" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="1519.12" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 12 · </text>
+<text x="1552.12" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Gorilla gorilla gorilla</text>
+<circle cx="1656.38" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="1664.38" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 13 · </text>
+<text x="1697.38" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Homo sapiens</text>
+<circle cx="1763.88" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="1771.88" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 14 · </text>
+<text x="1804.88" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Macaca mulatta</text>
+<circle cx="1878.25" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="1886.25" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 15 · </text>
+<text x="1919.25" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Meleagris gallopavo</text>
+<circle cx="2009.78" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="2017.78" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 16 · </text>
+<text x="2050.78" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Monodelphis domestica</text>
+<circle cx="2148.17" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="2156.17" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 17 · </text>
+<text x="2189.17" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Mus musculus</text>
+<circle cx="2255.67" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="2263.67" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 18 · </text>
+<text x="2296.67" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Oreochromis niloticus</text>
+<circle cx="2394.06" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="2402.06" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 19 · </text>
+<text x="2435.06" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Ornithorhynchus anatinus</text>
+<circle cx="2542.75" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="2550.75" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 20 · </text>
+<text x="2583.75" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Oryctolagus cuniculus</text>
+<circle cx="2681.14" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="2689.14" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 21 · </text>
+<text x="2722.14" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Oryzias latipes</text>
+<circle cx="2798.94" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="2806.94" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 22 · </text>
+<text x="2839.94" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Ovis aries</text>
+<circle cx="2899.58" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="2907.58" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 23 · </text>
+<text x="2940.58" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Pan troglodytes</text>
+<circle cx="3017.38" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="3025.38" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 24 · </text>
+<text x="3058.38" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Pongo abelii</text>
+<circle cx="3124.89" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="3132.89" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 25 · </text>
+<text x="3165.89" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Rattus norvegicus</text>
+<circle cx="3249.55" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="3257.55" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 26 · </text>
+<text x="3290.55" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Sus scrofa</text>
+<circle cx="3350.19" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="3358.19" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 27 · </text>
+<text x="3391.19" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Taeniopygia guttata</text>
+<circle cx="3481.72" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="3489.72" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lane 28 · </text>
+<text x="3522.72" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Takifugu rubripes</text>
+<circle cx="3606.38" cy="9492.8" r="3.2" fill="#ffffff" stroke="#1c2433" stroke-width="0.6" />
+<text x="3614.38" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">lower · </text>
+<text x="3640.78" y="9495.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="start" font-weight="normal">Xenopus tropicalis</text>
+<text x="70" y="9507.4" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">Bar: observed range · vertical tick: median · raw observations always shown</text>
+<text x="70" y="9517" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">Open marker: distance to a domain start edge · filled marker: to a domain end edge · negative: upstream of that edge</text>
+</svg>

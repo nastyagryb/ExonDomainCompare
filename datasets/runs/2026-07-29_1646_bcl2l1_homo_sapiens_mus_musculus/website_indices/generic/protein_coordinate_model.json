@@ -1,0 +1,4614 @@
+{
+  "schema_version": 1,
+  "model_type": "ProteinCoordinateModelIndex",
+  "run_id": "2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus",
+  "gene_symbol": "BCL2L1",
+  "coordinate_system": "protein_1_based_inclusive",
+  "species_scope": [
+    "homo_sapiens",
+    "mus_musculus"
+  ],
+  "n_models": 2,
+  "models": [
+    {
+      "schema_version": 1,
+      "species_id": "homo_sapiens",
+      "scientific_name": "Homo sapiens",
+      "gene_symbol": "BCL2L1",
+      "model_id": "bcl2l1:homo_sapiens:primary",
+      "model_role": "primary_reference",
+      "is_primary_reference": true,
+      "protein_id": "NP_001304849.1",
+      "transcript_id": "NM_001317920.2",
+      "protein_length": 233,
+      "coordinate_system": "protein_1_based_inclusive",
+      "status": "available",
+      "pending_info": null,
+      "tm_analysis": {
+        "performed": true,
+        "tm_region_count": 1,
+        "pending": false,
+        "message": null
+      },
+      "near_edge_threshold_aa": 5,
+      "exons": [
+        {
+          "id": "NP_001304849.1:cds1",
+          "label": "E1",
+          "start": 1,
+          "end": 188,
+          "source": "ncbi_gff",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/exon_protein_map.tsv",
+          "status": "gff_cds_derived",
+          "tooltip": {
+            "exon_number": 1,
+            "exon_id": "NP_001304849.1:cds1",
+            "transcript_id": "NM_001317920.2",
+            "cds_start": 31721655,
+            "cds_end": 31722218,
+            "phase": 0,
+            "protein_aa": [
+              1,
+              188
+            ],
+            "shared_exon_group": "SEG_6016c4901f",
+            "genomic_start": 31721655,
+            "genomic_end": 31722218,
+            "strand": "-1"
+          }
+        },
+        {
+          "id": "NP_001304849.1:cds2",
+          "label": "E2",
+          "start": 189,
+          "end": 233,
+          "source": "ncbi_gff",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/exon_protein_map.tsv",
+          "status": "gff_cds_derived",
+          "tooltip": {
+            "exon_number": 2,
+            "exon_id": "NP_001304849.1:cds2",
+            "transcript_id": "NM_001317920.2",
+            "cds_start": 31665949,
+            "cds_end": 31666086,
+            "phase": 0,
+            "protein_aa": [
+              189,
+              233
+            ],
+            "shared_exon_group": "SEG_ea3e0facc6",
+            "genomic_start": 31665949,
+            "genomic_end": 31666086,
+            "strand": "-1"
+          }
+        }
+      ],
+      "exon_boundaries": [
+        {
+          "id": "NP_001304849.1:cds1_end",
+          "boundary_id": "NP_001304849.1:cds1_end",
+          "nearest_domain_instance_id": "IPR046371:90-188",
+          "nearest_domain_instance_number": 1,
+          "label": "E1 → E2",
+          "start": 188,
+          "end": 188,
+          "protein_position": 188,
+          "boundary_position_aa": 188,
+          "exon_boundary_id": "NP_001304849.1:cds1_end",
+          "left_exon_id": "NP_001304849.1:cds1",
+          "left_exon_label": "E1",
+          "right_exon_id": "NP_001304849.1:cds2",
+          "right_exon_label": "E2",
+          "nearest_domain_id": "NP_001304849.1:IPR046371:90-188",
+          "nearest_domain_accession": "IPR046371",
+          "nearest_domain_label": "Bcl-2_BH1-3",
+          "nearest_domain_short_label": "Bcl-2 BH1-3",
+          "nearest_domain_full_label": "Bcl-2 BH1-3 · aa 90–188",
+          "nearest_domain_name": "Bcl-2_BH1-3",
+          "nearest_domain_start": 90,
+          "nearest_domain_end": 188,
+          "nearest_edge_type": "end",
+          "nearest_edge": "end",
+          "nearest_edge_position": 188,
+          "signed_distance": 0,
+          "signed_distance_aa": 0,
+          "absolute_distance": 0,
+          "absolute_distance_aa": 0,
+          "boundary_class": "exact_domain_edge",
+          "class": "exact_domain_edge",
+          "category": "exact_domain_edge",
+          "near_threshold": 5,
+          "near_edge_threshold_aa": 5,
+          "mapping_status": "mapped",
+          "domain_layer": "representative_domain",
+          "source": "core_post_interpro",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/exon_domain_boundary_distances.tsv",
+          "status": "exact_domain_edge",
+          "tooltip": {
+            "adjacent_exon_transition": "E1 → E2",
+            "protein_position": 188,
+            "nearest_domain": "Bcl-2 BH1-3 · aa 90–188",
+            "nearest_domain_instance_id": "IPR046371:90-188",
+            "nearest_edge": "end",
+            "signed_distance": 0,
+            "absolute_distance": 0,
+            "class": "exact_domain_edge",
+            "mapping_status": "mapped",
+            "transcript_id": "NM_001317920.2",
+            "source": "core_post_interpro"
+          },
+          "msa_column": 188,
+          "msa_mapping_status": "mapped"
+        }
+      ],
+      "representative_domains": [
+        {
+          "id": "NP_001304849.1:IPR003093:1-27",
+          "domain_instance_id": "IPR003093:1-27",
+          "label": "Bcl2_BH4",
+          "short_label": "Bcl2 BH4",
+          "full_label": "Bcl2 BH4 · aa 1–27",
+          "instance_number": 1,
+          "n_instances_of_accession": 1,
+          "display_order": 1,
+          "start": 1,
+          "end": 27,
+          "feature_type": "representative_domain",
+          "interpro_accession": "IPR003093",
+          "supporting_interpro": [
+            "IPR003093"
+          ],
+          "member_signatures": [
+            {
+              "signature_accession": "PF02180",
+              "signature_name": "BH4",
+              "member_database": "PFAM",
+              "interpro_accession": "IPR003093",
+              "start": 1,
+              "end": 26,
+              "score_or_evalue": "2.4e-11"
+            },
+            {
+              "signature_accession": "SM00265",
+              "signature_name": "bh4_2",
+              "member_database": "SMART",
+              "interpro_accession": "IPR003093",
+              "start": 1,
+              "end": 27,
+              "score_or_evalue": "1.1e-12"
+            },
+            {
+              "signature_accession": "PS50063",
+              "signature_name": "BH4_2",
+              "member_database": "PROSITE_PROFILES",
+              "interpro_accession": "IPR003093",
+              "start": 5,
+              "end": 24,
+              "score_or_evalue": null
+            }
+          ],
+          "source": "InterProScan",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/domain_features.tsv",
+          "status": "representative_domain",
+          "tooltip": {
+            "interpro_accession": "IPR003093",
+            "domain_instance_id": "IPR003093:1-27",
+            "instance_number": 1,
+            "interpro_type": "DOMAIN",
+            "member_databases": "PFAM,PROSITE_PROFILES,SMART",
+            "n_signatures": 3,
+            "representative_signature": "PF02180",
+            "score_or_evalue": "1.1e-12"
+          }
+        },
+        {
+          "id": "NP_001304849.1:IPR046371:90-188",
+          "domain_instance_id": "IPR046371:90-188",
+          "label": "Bcl-2_BH1-3",
+          "short_label": "Bcl-2 BH1-3",
+          "full_label": "Bcl-2 BH1-3 · aa 90–188",
+          "instance_number": 1,
+          "n_instances_of_accession": 1,
+          "display_order": 2,
+          "start": 90,
+          "end": 188,
+          "feature_type": "representative_domain",
+          "interpro_accession": "IPR046371",
+          "supporting_interpro": [
+            "IPR046371"
+          ],
+          "member_signatures": [
+            {
+              "signature_accession": "PF00452",
+              "signature_name": "Bcl-2",
+              "member_database": "PFAM",
+              "interpro_accession": "IPR046371",
+              "start": 90,
+              "end": 188,
+              "score_or_evalue": "5.3e-30"
+            },
+            {
+              "signature_accession": "SM00337",
+              "signature_name": "bclneu2",
+              "member_database": "SMART",
+              "interpro_accession": "IPR046371",
+              "start": 90,
+              "end": 188,
+              "score_or_evalue": "3.2e-50"
+            }
+          ],
+          "source": "InterProScan",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/domain_features.tsv",
+          "status": "representative_domain",
+          "tooltip": {
+            "interpro_accession": "IPR046371",
+            "domain_instance_id": "IPR046371:90-188",
+            "instance_number": 1,
+            "interpro_type": "DOMAIN",
+            "member_databases": "PFAM,SMART",
+            "n_signatures": 2,
+            "representative_signature": "PF00452",
+            "score_or_evalue": "3.2e-50"
+          }
+        }
+      ],
+      "families_superfamilies": [
+        {
+          "id": "NP_001304849.1:family_superfamily:IPR004725:1-233",
+          "label": "Bcl2/BclX",
+          "start": 1,
+          "end": 233,
+          "feature_type": "family_superfamily",
+          "source": "NCBIFAM",
+          "interpro_accession": "IPR004725",
+          "signature_accession": "TIGR00865",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR004725",
+            "interpro_name": "Bcl2/BclX",
+            "interpro_type": "FAMILY",
+            "signature_accession": "TIGR00865",
+            "signature_name": "bcl-2",
+            "member_database": "NCBIFAM",
+            "score_or_evalue": "2.2e-94",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:family_superfamily:IPR036834:1-209",
+          "label": "Bcl-2-like_sf",
+          "start": 1,
+          "end": 209,
+          "feature_type": "family_superfamily",
+          "source": "GENE3D",
+          "interpro_accession": "IPR036834",
+          "signature_accession": "G3DSA:1.10.437.10",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR036834",
+            "interpro_name": "Bcl-2-like_sf",
+            "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+            "signature_accession": "G3DSA:1.10.437.10",
+            "signature_name": null,
+            "member_database": "GENE3D",
+            "score_or_evalue": "1.7e-86",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:family_superfamily:IPR036834:1-207",
+          "label": "Bcl-2-like_sf",
+          "start": 1,
+          "end": 207,
+          "feature_type": "family_superfamily",
+          "source": "SUPERFAMILY",
+          "interpro_accession": "IPR036834",
+          "signature_accession": "SSF56854",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR036834",
+            "interpro_name": "Bcl-2-like_sf",
+            "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+            "signature_accession": "SSF56854",
+            "signature_name": "Bcl-2 inhibitors of programmed cell death",
+            "member_database": "SUPERFAMILY",
+            "score_or_evalue": "3.66e-68",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:family_superfamily:IPR013279:1-16",
+          "label": "Apop_reg_BclX",
+          "start": 1,
+          "end": 16,
+          "feature_type": "family_superfamily",
+          "source": "PRINTS",
+          "interpro_accession": "IPR013279",
+          "signature_accession": "PR01864",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR013279",
+            "interpro_name": "Apop_reg_BclX",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PR01864",
+            "signature_name": "APOPREGBCLX",
+            "member_database": "PRINTS",
+            "score_or_evalue": "1.2e-41",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:family_superfamily:IPR026298:2-211",
+          "label": "Bcl-2_fam",
+          "start": 2,
+          "end": 211,
+          "feature_type": "family_superfamily",
+          "source": "PANTHER",
+          "interpro_accession": "IPR026298",
+          "signature_accession": "PTHR11256",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR026298",
+            "interpro_name": "Bcl-2_fam",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PTHR11256",
+            "signature_name": "BCL-2 RELATED",
+            "member_database": "PANTHER",
+            "score_or_evalue": "1.4e-52",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:family_superfamily:IPR013279:17-32",
+          "label": "Apop_reg_BclX",
+          "start": 17,
+          "end": 32,
+          "feature_type": "family_superfamily",
+          "source": "PRINTS",
+          "interpro_accession": "IPR013279",
+          "signature_accession": "PR01864",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR013279",
+            "interpro_name": "Apop_reg_BclX",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PR01864",
+            "signature_name": "APOPREGBCLX",
+            "member_database": "PRINTS",
+            "score_or_evalue": "1.2e-41",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:family_superfamily:IPR013279:80-96",
+          "label": "Apop_reg_BclX",
+          "start": 80,
+          "end": 96,
+          "feature_type": "family_superfamily",
+          "source": "PRINTS",
+          "interpro_accession": "IPR013279",
+          "signature_accession": "PR01864",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR013279",
+            "interpro_name": "Apop_reg_BclX",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PR01864",
+            "signature_name": "APOPREGBCLX",
+            "member_database": "PRINTS",
+            "score_or_evalue": "1.2e-41",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:family_superfamily:IPR026298:81-194",
+          "label": "Bcl-2_fam",
+          "start": 81,
+          "end": 194,
+          "feature_type": "family_superfamily",
+          "source": "CDD",
+          "interpro_accession": "IPR026298",
+          "signature_accession": "cd06845",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR026298",
+            "interpro_name": "Bcl-2_fam",
+            "interpro_type": "FAMILY",
+            "signature_accession": "cd06845",
+            "signature_name": "Bcl-2_like",
+            "member_database": "CDD",
+            "score_or_evalue": "6.56327e-51",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:family_superfamily:IPR013279:99-110",
+          "label": "Apop_reg_BclX",
+          "start": 99,
+          "end": 110,
+          "feature_type": "family_superfamily",
+          "source": "PRINTS",
+          "interpro_accession": "IPR013279",
+          "signature_accession": "PR01864",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR013279",
+            "interpro_name": "Apop_reg_BclX",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PR01864",
+            "signature_name": "APOPREGBCLX",
+            "member_database": "PRINTS",
+            "score_or_evalue": "1.2e-41",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:family_superfamily:IPR013279:118-129",
+          "label": "Apop_reg_BclX",
+          "start": 118,
+          "end": 129,
+          "feature_type": "family_superfamily",
+          "source": "PRINTS",
+          "interpro_accession": "IPR013279",
+          "signature_accession": "PR01864",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR013279",
+            "interpro_name": "Apop_reg_BclX",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PR01864",
+            "signature_name": "APOPREGBCLX",
+            "member_database": "PRINTS",
+            "score_or_evalue": "1.2e-41",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:family_superfamily:IPR026298:123-135",
+          "label": "Bcl-2_fam",
+          "start": 123,
+          "end": 135,
+          "feature_type": "family_superfamily",
+          "source": "PRINTS",
+          "interpro_accession": "IPR026298",
+          "signature_accession": "PR01862",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR026298",
+            "interpro_name": "Bcl-2_fam",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PR01862",
+            "signature_name": "BCL2FAMILY",
+            "member_database": "PRINTS",
+            "score_or_evalue": "8.8e-27",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:family_superfamily:IPR026298:136-164",
+          "label": "Bcl-2_fam",
+          "start": 136,
+          "end": 164,
+          "feature_type": "family_superfamily",
+          "source": "PRINTS",
+          "interpro_accession": "IPR026298",
+          "signature_accession": "PR01862",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR026298",
+            "interpro_name": "Bcl-2_fam",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PR01862",
+            "signature_name": "BCL2FAMILY",
+            "member_database": "PRINTS",
+            "score_or_evalue": "8.8e-27",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:family_superfamily:IPR026298:165-189",
+          "label": "Bcl-2_fam",
+          "start": 165,
+          "end": 189,
+          "feature_type": "family_superfamily",
+          "source": "PRINTS",
+          "interpro_accession": "IPR026298",
+          "signature_accession": "PR01862",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR026298",
+            "interpro_name": "Bcl-2_fam",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PR01862",
+            "signature_name": "BCL2FAMILY",
+            "member_database": "PRINTS",
+            "score_or_evalue": "8.8e-27",
+            "is_integrated": true
+          }
+        }
+      ],
+      "member_signatures": [
+        {
+          "id": "NP_001304849.1:member_signature:IPR003093:1-26",
+          "label": "Bcl2_BH4",
+          "start": 1,
+          "end": 26,
+          "feature_type": "member_signature",
+          "source": "PFAM",
+          "interpro_accession": "IPR003093",
+          "signature_accession": "PF02180",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "domain",
+          "tooltip": {
+            "interpro_accession": "IPR003093",
+            "interpro_name": "Bcl2_BH4",
+            "interpro_type": "DOMAIN",
+            "signature_accession": "PF02180",
+            "signature_name": "BH4",
+            "member_database": "PFAM",
+            "score_or_evalue": "2.4e-11",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:member_signature:G3DSA:1.10.437.10:FF:000003:1-209",
+          "label": "Bcl-2-like protein 1",
+          "start": 1,
+          "end": 209,
+          "feature_type": "member_signature",
+          "source": "FUNFAM",
+          "interpro_accession": null,
+          "signature_accession": "G3DSA:1.10.437.10:FF:000003",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "raw",
+          "tooltip": {
+            "interpro_accession": null,
+            "interpro_name": null,
+            "interpro_type": null,
+            "signature_accession": "G3DSA:1.10.437.10:FF:000003",
+            "signature_name": "Bcl-2-like protein 1",
+            "member_database": "FUNFAM",
+            "score_or_evalue": "5.2e-127",
+            "is_integrated": false
+          }
+        },
+        {
+          "id": "NP_001304849.1:member_signature:IPR003093:1-27",
+          "label": "Bcl2_BH4",
+          "start": 1,
+          "end": 27,
+          "feature_type": "member_signature",
+          "source": "SMART",
+          "interpro_accession": "IPR003093",
+          "signature_accession": "SM00265",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "domain",
+          "tooltip": {
+            "interpro_accession": "IPR003093",
+            "interpro_name": "Bcl2_BH4",
+            "interpro_type": "DOMAIN",
+            "signature_accession": "SM00265",
+            "signature_name": "bh4_2",
+            "member_database": "SMART",
+            "score_or_evalue": "1.1e-12",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:member_signature:IPR046371:90-188",
+          "label": "Bcl-2_BH1-3",
+          "start": 90,
+          "end": 188,
+          "feature_type": "member_signature",
+          "source": "SMART",
+          "interpro_accession": "IPR046371",
+          "signature_accession": "SM00337",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "domain",
+          "tooltip": {
+            "interpro_accession": "IPR046371",
+            "interpro_name": "Bcl-2_BH1-3",
+            "interpro_type": "DOMAIN",
+            "signature_accession": "SM00337",
+            "signature_name": "bclneu2",
+            "member_database": "SMART",
+            "score_or_evalue": "3.2e-50",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:member_signature:IPR046371:90-188",
+          "label": "Bcl-2_BH1-3",
+          "start": 90,
+          "end": 188,
+          "feature_type": "member_signature",
+          "source": "PFAM",
+          "interpro_accession": "IPR046371",
+          "signature_accession": "PF00452",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "domain",
+          "tooltip": {
+            "interpro_accession": "IPR046371",
+            "interpro_name": "Bcl-2_BH1-3",
+            "interpro_type": "DOMAIN",
+            "signature_accession": "PF00452",
+            "signature_name": "Bcl-2",
+            "member_database": "PFAM",
+            "score_or_evalue": "5.3e-30",
+            "is_integrated": true
+          }
+        }
+      ],
+      "functional_sites": [
+        {
+          "id": "NP_001304849.1:functional_site:IPR020731:4-24",
+          "label": "Bcl2_BH4_motif_CS",
+          "start": 4,
+          "end": 24,
+          "feature_type": "functional_site",
+          "source": "PROSITE_PATTERNS",
+          "interpro_accession": "IPR020731",
+          "signature_accession": "PS01260",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "feature",
+          "tooltip": {
+            "interpro_accession": "IPR020731",
+            "interpro_name": "Bcl2_BH4_motif_CS",
+            "interpro_type": "CONSERVED_SITE",
+            "signature_accession": "PS01260",
+            "signature_name": "BH4_1",
+            "member_database": "PROSITE_PATTERNS",
+            "score_or_evalue": null,
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:functional_site:IPR003093:5-24",
+          "label": "Bcl2_BH4",
+          "start": 5,
+          "end": 24,
+          "feature_type": "functional_site",
+          "source": "PROSITE_PROFILES",
+          "interpro_accession": "IPR003093",
+          "signature_accession": "PS50063",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "domain",
+          "tooltip": {
+            "interpro_accession": "IPR003093",
+            "interpro_name": "Bcl2_BH4",
+            "interpro_type": "DOMAIN",
+            "signature_accession": "PS50063",
+            "signature_name": "BH4_2",
+            "member_database": "PROSITE_PROFILES",
+            "score_or_evalue": null,
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:functional_site:IPR020728:86-100",
+          "label": "Bcl2_BH3_motif_CS",
+          "start": 86,
+          "end": 100,
+          "feature_type": "functional_site",
+          "source": "PROSITE_PATTERNS",
+          "interpro_accession": "IPR020728",
+          "signature_accession": "PS01259",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "feature",
+          "tooltip": {
+            "interpro_accession": "IPR020728",
+            "interpro_name": "Bcl2_BH3_motif_CS",
+            "interpro_type": "CONSERVED_SITE",
+            "signature_accession": "PS01259",
+            "signature_name": "BH3",
+            "member_database": "PROSITE_PATTERNS",
+            "score_or_evalue": null,
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:functional_site:IPR002475:90-190",
+          "label": "Bcl2-like",
+          "start": 90,
+          "end": 190,
+          "feature_type": "functional_site",
+          "source": "PROSITE_PROFILES",
+          "interpro_accession": "IPR002475",
+          "signature_accession": "PS50062",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR002475",
+            "interpro_name": "Bcl2-like",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PS50062",
+            "signature_name": "BCL2_FAMILY",
+            "member_database": "PROSITE_PROFILES",
+            "score_or_evalue": null,
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:functional_site:IPR020717:130-148",
+          "label": "Bcl2_BH1_motif_CS",
+          "start": 130,
+          "end": 148,
+          "feature_type": "functional_site",
+          "source": "PROSITE_PATTERNS",
+          "interpro_accession": "IPR020717",
+          "signature_accession": "PS01080",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "feature",
+          "tooltip": {
+            "interpro_accession": "IPR020717",
+            "interpro_name": "Bcl2_BH1_motif_CS",
+            "interpro_type": "CONSERVED_SITE",
+            "signature_accession": "PS01080",
+            "signature_name": "BH1",
+            "member_database": "PROSITE_PATTERNS",
+            "score_or_evalue": null,
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001304849.1:functional_site:IPR020726:181-192",
+          "label": "Bcl2_BH2_motif_CS",
+          "start": 181,
+          "end": 192,
+          "feature_type": "functional_site",
+          "source": "PROSITE_PATTERNS",
+          "interpro_accession": "IPR020726",
+          "signature_accession": "PS01258",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "feature",
+          "tooltip": {
+            "interpro_accession": "IPR020726",
+            "interpro_name": "Bcl2_BH2_motif_CS",
+            "interpro_type": "CONSERVED_SITE",
+            "signature_accession": "PS01258",
+            "signature_name": "BH2",
+            "member_database": "PROSITE_PATTERNS",
+            "score_or_evalue": null,
+            "is_integrated": true
+          }
+        }
+      ],
+      "disorder_regions": [
+        {
+          "id": "NP_001304849.1:disorder_region:mobidb-lite:28-71",
+          "label": "disorder_prediction",
+          "start": 28,
+          "end": 71,
+          "feature_type": "disorder_region",
+          "source": "MOBIDB_LITE",
+          "interpro_accession": null,
+          "signature_accession": "mobidb-lite",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "feature",
+          "tooltip": {
+            "interpro_accession": null,
+            "interpro_name": null,
+            "interpro_type": null,
+            "signature_accession": "mobidb-lite",
+            "signature_name": "disorder_prediction",
+            "member_database": "MOBIDB_LITE",
+            "score_or_evalue": null,
+            "is_integrated": false
+          }
+        }
+      ],
+      "tm_regions": [
+        {
+          "id": "NP_001304849.1:TM1",
+          "label": "TM1",
+          "start": 214,
+          "end": 233,
+          "source": "pytmhmm",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/tm_features.tsv",
+          "status": "tm_region",
+          "tooltip": {
+            "topology": "transmembrane"
+          }
+        }
+      ],
+      "candidate_regions": [
+        {
+          "id": "C1",
+          "display_cluster_id": "C1",
+          "label": "C1 · aa 126–188",
+          "start": 126,
+          "end": 188,
+          "length_aa": 63,
+          "source": "isoform_difference_scan",
+          "source_file": "results/core_gene_analysis/event_candidate_regions.tsv",
+          "status": "exploratory",
+          "candidate_type": "deletion",
+          "evidence": "isoform_sequence_diff",
+          "alignment_block": "deletion:isoform_sequence_diff",
+          "confidence": "medium",
+          "member_candidate_ids": [
+            "homo_sapiens:NP_001304849.1|NP_001182.1:126-188:deletion"
+          ],
+          "n_member_candidates": 1,
+          "n_comparisons": 1,
+          "n_supporting_isoforms": 1,
+          "supporting_isoforms": [
+            "NP_001182.1"
+          ],
+          "affected_proteins": [
+            "NP_001182.1",
+            "NP_001304849.1"
+          ],
+          "display_rank": 1,
+          "display_lane": 0,
+          "is_top_ranked": true,
+          "tooltip": {
+            "display_cluster_id": "C1",
+            "candidate_type": "deletion",
+            "evidence": "isoform_sequence_diff",
+            "alignment_block": "deletion:isoform_sequence_diff",
+            "confidence": "medium",
+            "n_member_candidates": 1,
+            "n_comparisons": 1,
+            "n_supporting_isoforms": 1,
+            "member_candidate_ids": [
+              "homo_sapiens:NP_001304849.1|NP_001182.1:126-188:deletion"
+            ],
+            "affected_proteins": [
+              "NP_001182.1",
+              "NP_001304849.1"
+            ],
+            "display_rank": 1,
+            "display_lane": 0
+          },
+          "display_lane_count": 1,
+          "default_display_lanes": 3,
+          "off_primary_axis_candidates": 8
+        }
+      ],
+      "transcript_models": [
+        {
+          "protein_id": "NP_001304849.1",
+          "transcript_id": "NM_001317920.2",
+          "protein_length": 233,
+          "curation_status": "curated",
+          "is_primary": true,
+          "role": "primary",
+          "exon_count": 2,
+          "blocks": [
+            {
+              "id": "NP_001304849.1:cds1",
+              "label": "E1",
+              "start": 1,
+              "end": 188,
+              "exon_number": 1,
+              "transcript_exon_number": 1,
+              "transcript_id": "NM_001317920.2",
+              "shared_exon_group_id": "SEG_6016c4901f",
+              "genomic_start": 31721655,
+              "genomic_end": 31722218,
+              "cds_start": 31721655,
+              "cds_end": 31722218,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            },
+            {
+              "id": "NP_001304849.1:cds2",
+              "label": "E2",
+              "start": 189,
+              "end": 233,
+              "exon_number": 2,
+              "transcript_exon_number": 2,
+              "transcript_id": "NM_001317920.2",
+              "shared_exon_group_id": "SEG_ea3e0facc6",
+              "genomic_start": 31665949,
+              "genomic_end": 31666086,
+              "cds_start": 31665949,
+              "cds_end": 31666086,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            }
+          ]
+        },
+        {
+          "protein_id": "NP_001309168.1",
+          "transcript_id": "NM_001322239.2",
+          "protein_length": 233,
+          "curation_status": "curated",
+          "is_primary": false,
+          "role": "alternative",
+          "exon_count": 2,
+          "blocks": [
+            {
+              "id": "NP_001309168.1:cds1",
+              "label": "E1",
+              "start": 1,
+              "end": 188,
+              "exon_number": 1,
+              "transcript_exon_number": 1,
+              "transcript_id": "NM_001322239.2",
+              "shared_exon_group_id": "SEG_6016c4901f",
+              "genomic_start": 31721655,
+              "genomic_end": 31722218,
+              "cds_start": 31721655,
+              "cds_end": 31722218,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            },
+            {
+              "id": "NP_001309168.1:cds2",
+              "label": "E2",
+              "start": 189,
+              "end": 233,
+              "exon_number": 2,
+              "transcript_exon_number": 2,
+              "transcript_id": "NM_001322239.2",
+              "shared_exon_group_id": "SEG_ea3e0facc6",
+              "genomic_start": 31665949,
+              "genomic_end": 31666086,
+              "cds_start": 31665949,
+              "cds_end": 31666086,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            }
+          ]
+        },
+        {
+          "protein_id": "NP_001304850.1",
+          "transcript_id": "NM_001317921.2",
+          "protein_length": 233,
+          "curation_status": "curated",
+          "is_primary": false,
+          "role": "alternative",
+          "exon_count": 2,
+          "blocks": [
+            {
+              "id": "NP_001304850.1:cds1",
+              "label": "E1",
+              "start": 1,
+              "end": 188,
+              "exon_number": 1,
+              "transcript_exon_number": 1,
+              "transcript_id": "NM_001317921.2",
+              "shared_exon_group_id": "SEG_6016c4901f",
+              "genomic_start": 31721655,
+              "genomic_end": 31722218,
+              "cds_start": 31721655,
+              "cds_end": 31722218,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            },
+            {
+              "id": "NP_001304850.1:cds2",
+              "label": "E2",
+              "start": 189,
+              "end": 233,
+              "exon_number": 2,
+              "transcript_exon_number": 2,
+              "transcript_id": "NM_001317921.2",
+              "shared_exon_group_id": "SEG_ea3e0facc6",
+              "genomic_start": 31665949,
+              "genomic_end": 31666086,
+              "cds_start": 31665949,
+              "cds_end": 31666086,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            }
+          ]
+        },
+        {
+          "protein_id": "NP_001309169.1",
+          "transcript_id": "NM_001322240.2",
+          "protein_length": 233,
+          "curation_status": "curated",
+          "is_primary": false,
+          "role": "alternative",
+          "exon_count": 2,
+          "blocks": [
+            {
+              "id": "NP_001309169.1:cds1",
+              "label": "E1",
+              "start": 1,
+              "end": 188,
+              "exon_number": 1,
+              "transcript_exon_number": 1,
+              "transcript_id": "NM_001322240.2",
+              "shared_exon_group_id": "SEG_6016c4901f",
+              "genomic_start": 31721655,
+              "genomic_end": 31722218,
+              "cds_start": 31721655,
+              "cds_end": 31722218,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            },
+            {
+              "id": "NP_001309169.1:cds2",
+              "label": "E2",
+              "start": 189,
+              "end": 233,
+              "exon_number": 2,
+              "transcript_exon_number": 2,
+              "transcript_id": "NM_001322240.2",
+              "shared_exon_group_id": "SEG_ea3e0facc6",
+              "genomic_start": 31665949,
+              "genomic_end": 31666086,
+              "cds_start": 31665949,
+              "cds_end": 31666086,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            }
+          ]
+        },
+        {
+          "protein_id": "NP_001304848.1",
+          "transcript_id": "NM_001317919.2",
+          "protein_length": 233,
+          "curation_status": "curated",
+          "is_primary": false,
+          "role": "alternative",
+          "exon_count": 2,
+          "blocks": [
+            {
+              "id": "NP_001304848.1:cds1",
+              "label": "E1",
+              "start": 1,
+              "end": 188,
+              "exon_number": 1,
+              "transcript_exon_number": 1,
+              "transcript_id": "NM_001317919.2",
+              "shared_exon_group_id": "SEG_6016c4901f",
+              "genomic_start": 31721655,
+              "genomic_end": 31722218,
+              "cds_start": 31721655,
+              "cds_end": 31722218,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            },
+            {
+              "id": "NP_001304848.1:cds2",
+              "label": "E2",
+              "start": 189,
+              "end": 233,
+              "exon_number": 2,
+              "transcript_exon_number": 2,
+              "transcript_id": "NM_001317919.2",
+              "shared_exon_group_id": "SEG_ea3e0facc6",
+              "genomic_start": 31665949,
+              "genomic_end": 31666086,
+              "cds_start": 31665949,
+              "cds_end": 31666086,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            }
+          ]
+        },
+        {
+          "protein_id": "NP_001182.1",
+          "transcript_id": "NM_001191.4",
+          "protein_length": 170,
+          "curation_status": "curated",
+          "is_primary": false,
+          "role": "alternative",
+          "exon_count": 2,
+          "blocks": [
+            {
+              "id": "NP_001182.1:cds1",
+              "label": "E1",
+              "start": 1,
+              "end": 125,
+              "exon_number": 1,
+              "transcript_exon_number": 1,
+              "transcript_id": "NM_001191.4",
+              "shared_exon_group_id": "SEG_cf9f8dad30",
+              "genomic_start": 31721844,
+              "genomic_end": 31722218,
+              "cds_start": 31721844,
+              "cds_end": 31722218,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            },
+            {
+              "id": "NP_001182.1:cds2",
+              "label": "E2",
+              "start": 126,
+              "end": 170,
+              "exon_number": 2,
+              "transcript_exon_number": 2,
+              "transcript_id": "NM_001191.4",
+              "shared_exon_group_id": "SEG_ea3e0facc6",
+              "genomic_start": 31665949,
+              "genomic_end": 31666086,
+              "cds_start": 31665949,
+              "cds_end": 31666086,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            }
+          ]
+        },
+        {
+          "protein_id": "NP_612815.1",
+          "transcript_id": "NM_138578.3",
+          "protein_length": 233,
+          "curation_status": "curated",
+          "is_primary": false,
+          "role": "alternative",
+          "exon_count": 2,
+          "blocks": [
+            {
+              "id": "NP_612815.1:cds1",
+              "label": "E1",
+              "start": 1,
+              "end": 188,
+              "exon_number": 1,
+              "transcript_exon_number": 1,
+              "transcript_id": "NM_138578.3",
+              "shared_exon_group_id": "SEG_6016c4901f",
+              "genomic_start": 31721655,
+              "genomic_end": 31722218,
+              "cds_start": 31721655,
+              "cds_end": 31722218,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            },
+            {
+              "id": "NP_612815.1:cds2",
+              "label": "E2",
+              "start": 189,
+              "end": 233,
+              "exon_number": 2,
+              "transcript_exon_number": 2,
+              "transcript_id": "NM_138578.3",
+              "shared_exon_group_id": "SEG_ea3e0facc6",
+              "genomic_start": 31665949,
+              "genomic_end": 31666086,
+              "cds_start": 31665949,
+              "cds_end": 31666086,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            }
+          ]
+        },
+        {
+          "protein_id": "NP_001411260.1",
+          "transcript_id": "NM_001424331.1",
+          "protein_length": 233,
+          "curation_status": "curated",
+          "is_primary": false,
+          "role": "alternative",
+          "exon_count": 2,
+          "blocks": [
+            {
+              "id": "NP_001411260.1:cds1",
+              "label": "E1",
+              "start": 1,
+              "end": 188,
+              "exon_number": 1,
+              "transcript_exon_number": 1,
+              "transcript_id": "NM_001424331.1",
+              "shared_exon_group_id": "SEG_6016c4901f",
+              "genomic_start": 31721655,
+              "genomic_end": 31722218,
+              "cds_start": 31721655,
+              "cds_end": 31722218,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            },
+            {
+              "id": "NP_001411260.1:cds2",
+              "label": "E2",
+              "start": 189,
+              "end": 233,
+              "exon_number": 2,
+              "transcript_exon_number": 2,
+              "transcript_id": "NM_001424331.1",
+              "shared_exon_group_id": "SEG_ea3e0facc6",
+              "genomic_start": 31665949,
+              "genomic_end": 31666086,
+              "cds_start": 31665949,
+              "cds_end": 31666086,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            }
+          ]
+        },
+        {
+          "protein_id": "NP_001411261.1",
+          "transcript_id": "NM_001424332.1",
+          "protein_length": 233,
+          "curation_status": "curated",
+          "is_primary": false,
+          "role": "alternative",
+          "exon_count": 2,
+          "blocks": [
+            {
+              "id": "NP_001411261.1:cds1",
+              "label": "E1",
+              "start": 1,
+              "end": 188,
+              "exon_number": 1,
+              "transcript_exon_number": 1,
+              "transcript_id": "NM_001424332.1",
+              "shared_exon_group_id": "SEG_6016c4901f",
+              "genomic_start": 31721655,
+              "genomic_end": 31722218,
+              "cds_start": 31721655,
+              "cds_end": 31722218,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            },
+            {
+              "id": "NP_001411261.1:cds2",
+              "label": "E2",
+              "start": 189,
+              "end": 233,
+              "exon_number": 2,
+              "transcript_exon_number": 2,
+              "transcript_id": "NM_001424332.1",
+              "shared_exon_group_id": "SEG_ea3e0facc6",
+              "genomic_start": 31665949,
+              "genomic_end": 31666086,
+              "cds_start": 31665949,
+              "cds_end": 31666086,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            }
+          ]
+        },
+        {
+          "protein_id": "NP_001309171.1",
+          "transcript_id": "NM_001322242.2",
+          "protein_length": 233,
+          "curation_status": "curated",
+          "is_primary": false,
+          "role": "alternative",
+          "exon_count": 2,
+          "blocks": [
+            {
+              "id": "NP_001309171.1:cds1",
+              "label": "E1",
+              "start": 1,
+              "end": 188,
+              "exon_number": 1,
+              "transcript_exon_number": 1,
+              "transcript_id": "NM_001322242.2",
+              "shared_exon_group_id": "SEG_6016c4901f",
+              "genomic_start": 31721655,
+              "genomic_end": 31722218,
+              "cds_start": 31721655,
+              "cds_end": 31722218,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            },
+            {
+              "id": "NP_001309171.1:cds2",
+              "label": "E2",
+              "start": 189,
+              "end": 233,
+              "exon_number": 2,
+              "transcript_exon_number": 2,
+              "transcript_id": "NM_001322242.2",
+              "shared_exon_group_id": "SEG_ea3e0facc6",
+              "genomic_start": 31665949,
+              "genomic_end": 31666086,
+              "cds_start": 31665949,
+              "cds_end": 31666086,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            }
+          ]
+        }
+      ],
+      "n_transcript_models": 10,
+      "alignment_mapping": {
+        "species_id": "homo_sapiens",
+        "protein_id": "NP_001304849.1",
+        "aligned_protein_id": "NP_001304849.1",
+        "protein_matches_alignment": true,
+        "boundaries_total": 1,
+        "boundaries_mapped": 1,
+        "mapping_status": "available"
+      },
+      "provenance": {
+        "run_id": "2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus",
+        "gene_symbol": "BCL2L1",
+        "species_id": "homo_sapiens",
+        "coordinate_system": "protein_1_based_inclusive",
+        "generated_by": "scripts/shared_gene_analysis/protein_coordinate_model.py",
+        "generated_at": "2026-07-30T11:05:00.905712+00:00",
+        "source_files": {
+          "exon_protein_map": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/exon_protein_map.tsv",
+          "domain_features": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/domain_features.tsv",
+          "interpro_annotations": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "tm_features": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/tm_features.tsv",
+          "exon_domain_boundary_distances": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/exon_domain_boundary_distances.tsv"
+        },
+        "clade": "mammal",
+        "taxonomic_group": "Other mammals",
+        "primary_protein_source": "primary_selection_evidence.tsv",
+        "protein_length_source": "proteins_primary.faa"
+      }
+    },
+    {
+      "schema_version": 1,
+      "species_id": "mus_musculus",
+      "scientific_name": "Mus musculus",
+      "gene_symbol": "BCL2L1",
+      "model_id": "bcl2l1:mus_musculus:primary",
+      "model_role": "primary_reference",
+      "is_primary_reference": true,
+      "protein_id": "NP_001276668.1",
+      "transcript_id": "NM_001289739.2",
+      "protein_length": 235,
+      "coordinate_system": "protein_1_based_inclusive",
+      "status": "available",
+      "pending_info": null,
+      "tm_analysis": {
+        "performed": true,
+        "tm_region_count": 0,
+        "pending": false,
+        "message": "No transmembrane region predicted by pyTMHMM"
+      },
+      "near_edge_threshold_aa": 5,
+      "exons": [
+        {
+          "id": "NP_001276668.1:cds1",
+          "label": "E1",
+          "start": 1,
+          "end": 188,
+          "source": "ncbi_gff",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/exon_protein_map.tsv",
+          "status": "gff_cds_derived",
+          "tooltip": {
+            "exon_number": 1,
+            "exon_id": "NP_001276668.1:cds1",
+            "transcript_id": "NM_001289739.2",
+            "cds_start": 152671347,
+            "cds_end": 152671910,
+            "phase": 0,
+            "protein_aa": [
+              1,
+              188
+            ],
+            "shared_exon_group": "SEG_ceb8abc0bf",
+            "genomic_start": 152671347,
+            "genomic_end": 152671910,
+            "strand": "-1"
+          }
+        },
+        {
+          "id": "NP_001276668.1:cds2",
+          "label": "E2",
+          "start": 189,
+          "end": 235,
+          "source": "ncbi_gff",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/exon_protein_map.tsv",
+          "status": "gff_cds_derived",
+          "tooltip": {
+            "exon_number": 2,
+            "exon_id": "NP_001276668.1:cds2",
+            "transcript_id": "NM_001289739.2",
+            "cds_start": 152609237,
+            "cds_end": 152609379,
+            "phase": 0,
+            "protein_aa": [
+              189,
+              235
+            ],
+            "shared_exon_group": "SEG_4a5131cfbb",
+            "genomic_start": 152609237,
+            "genomic_end": 152609379,
+            "strand": "-1"
+          }
+        }
+      ],
+      "exon_boundaries": [
+        {
+          "id": "NP_001276668.1:cds1_end",
+          "boundary_id": "NP_001276668.1:cds1_end",
+          "nearest_domain_instance_id": "IPR046371:90-188",
+          "nearest_domain_instance_number": 1,
+          "label": "E1 → E2",
+          "start": 188,
+          "end": 188,
+          "protein_position": 188,
+          "boundary_position_aa": 188,
+          "exon_boundary_id": "NP_001276668.1:cds1_end",
+          "left_exon_id": "NP_001276668.1:cds1",
+          "left_exon_label": "E1",
+          "right_exon_id": "NP_001276668.1:cds2",
+          "right_exon_label": "E2",
+          "nearest_domain_id": "NP_001276668.1:IPR046371:90-188",
+          "nearest_domain_accession": "IPR046371",
+          "nearest_domain_label": "Bcl-2_BH1-3",
+          "nearest_domain_short_label": "Bcl-2 BH1-3",
+          "nearest_domain_full_label": "Bcl-2 BH1-3 · aa 90–188",
+          "nearest_domain_name": "Bcl-2_BH1-3",
+          "nearest_domain_start": 90,
+          "nearest_domain_end": 188,
+          "nearest_edge_type": "end",
+          "nearest_edge": "end",
+          "nearest_edge_position": 188,
+          "signed_distance": 0,
+          "signed_distance_aa": 0,
+          "absolute_distance": 0,
+          "absolute_distance_aa": 0,
+          "boundary_class": "exact_domain_edge",
+          "class": "exact_domain_edge",
+          "category": "exact_domain_edge",
+          "near_threshold": 5,
+          "near_edge_threshold_aa": 5,
+          "mapping_status": "mapped",
+          "domain_layer": "representative_domain",
+          "source": "core_post_interpro",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/exon_domain_boundary_distances.tsv",
+          "status": "exact_domain_edge",
+          "tooltip": {
+            "adjacent_exon_transition": "E1 → E2",
+            "protein_position": 188,
+            "nearest_domain": "Bcl-2 BH1-3 · aa 90–188",
+            "nearest_domain_instance_id": "IPR046371:90-188",
+            "nearest_edge": "end",
+            "signed_distance": 0,
+            "absolute_distance": 0,
+            "class": "exact_domain_edge",
+            "mapping_status": "mapped",
+            "transcript_id": "NM_001289739.2",
+            "source": "core_post_interpro"
+          },
+          "msa_column": 188,
+          "msa_mapping_status": "mapped"
+        }
+      ],
+      "representative_domains": [
+        {
+          "id": "NP_001276668.1:IPR003093:1-27",
+          "domain_instance_id": "IPR003093:1-27",
+          "label": "Bcl2_BH4",
+          "short_label": "Bcl2 BH4",
+          "full_label": "Bcl2 BH4 · aa 1–27",
+          "instance_number": 1,
+          "n_instances_of_accession": 1,
+          "display_order": 1,
+          "start": 1,
+          "end": 27,
+          "feature_type": "representative_domain",
+          "interpro_accession": "IPR003093",
+          "supporting_interpro": [
+            "IPR003093"
+          ],
+          "member_signatures": [
+            {
+              "signature_accession": "PF02180",
+              "signature_name": "BH4",
+              "member_database": "PFAM",
+              "interpro_accession": "IPR003093",
+              "start": 1,
+              "end": 26,
+              "score_or_evalue": "2.4e-11"
+            },
+            {
+              "signature_accession": "SM00265",
+              "signature_name": "bh4_2",
+              "member_database": "SMART",
+              "interpro_accession": "IPR003093",
+              "start": 1,
+              "end": 27,
+              "score_or_evalue": "1.1e-12"
+            },
+            {
+              "signature_accession": "PS50063",
+              "signature_name": "BH4_2",
+              "member_database": "PROSITE_PROFILES",
+              "interpro_accession": "IPR003093",
+              "start": 5,
+              "end": 24,
+              "score_or_evalue": null
+            }
+          ],
+          "source": "InterProScan",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/domain_features.tsv",
+          "status": "representative_domain",
+          "tooltip": {
+            "interpro_accession": "IPR003093",
+            "domain_instance_id": "IPR003093:1-27",
+            "instance_number": 1,
+            "interpro_type": "DOMAIN",
+            "member_databases": "PFAM,PROSITE_PROFILES,SMART",
+            "n_signatures": 3,
+            "representative_signature": "PF02180",
+            "score_or_evalue": "1.1e-12"
+          }
+        },
+        {
+          "id": "NP_001276668.1:IPR046371:90-188",
+          "domain_instance_id": "IPR046371:90-188",
+          "label": "Bcl-2_BH1-3",
+          "short_label": "Bcl-2 BH1-3",
+          "full_label": "Bcl-2 BH1-3 · aa 90–188",
+          "instance_number": 1,
+          "n_instances_of_accession": 1,
+          "display_order": 2,
+          "start": 90,
+          "end": 188,
+          "feature_type": "representative_domain",
+          "interpro_accession": "IPR046371",
+          "supporting_interpro": [
+            "IPR046371"
+          ],
+          "member_signatures": [
+            {
+              "signature_accession": "PF00452",
+              "signature_name": "Bcl-2",
+              "member_database": "PFAM",
+              "interpro_accession": "IPR046371",
+              "start": 90,
+              "end": 188,
+              "score_or_evalue": "4.7e-30"
+            },
+            {
+              "signature_accession": "SM00337",
+              "signature_name": "bclneu2",
+              "member_database": "SMART",
+              "interpro_accession": "IPR046371",
+              "start": 90,
+              "end": 188,
+              "score_or_evalue": "2.3e-50"
+            }
+          ],
+          "source": "InterProScan",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/domain_features.tsv",
+          "status": "representative_domain",
+          "tooltip": {
+            "interpro_accession": "IPR046371",
+            "domain_instance_id": "IPR046371:90-188",
+            "instance_number": 1,
+            "interpro_type": "DOMAIN",
+            "member_databases": "PFAM,SMART",
+            "n_signatures": 2,
+            "representative_signature": "PF00452",
+            "score_or_evalue": "2.3e-50"
+          }
+        }
+      ],
+      "families_superfamilies": [
+        {
+          "id": "NP_001276668.1:family_superfamily:IPR013279:1-16",
+          "label": "Apop_reg_BclX",
+          "start": 1,
+          "end": 16,
+          "feature_type": "family_superfamily",
+          "source": "PRINTS",
+          "interpro_accession": "IPR013279",
+          "signature_accession": "PR01864",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR013279",
+            "interpro_name": "Apop_reg_BclX",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PR01864",
+            "signature_name": "APOPREGBCLX",
+            "member_database": "PRINTS",
+            "score_or_evalue": "1.3e-41",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001276668.1:family_superfamily:IPR036834:1-191",
+          "label": "Bcl-2-like_sf",
+          "start": 1,
+          "end": 191,
+          "feature_type": "family_superfamily",
+          "source": "GENE3D",
+          "interpro_accession": "IPR036834",
+          "signature_accession": "G3DSA:1.10.437.10",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR036834",
+            "interpro_name": "Bcl-2-like_sf",
+            "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+            "signature_accession": "G3DSA:1.10.437.10",
+            "signature_name": null,
+            "member_database": "GENE3D",
+            "score_or_evalue": "3.7e-79",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001276668.1:family_superfamily:IPR036834:1-189",
+          "label": "Bcl-2-like_sf",
+          "start": 1,
+          "end": 189,
+          "feature_type": "family_superfamily",
+          "source": "SUPERFAMILY",
+          "interpro_accession": "IPR036834",
+          "signature_accession": "SSF56854",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR036834",
+            "interpro_name": "Bcl-2-like_sf",
+            "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+            "signature_accession": "SSF56854",
+            "signature_name": "Bcl-2 inhibitors of programmed cell death",
+            "member_database": "SUPERFAMILY",
+            "score_or_evalue": "1.14e-63",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001276668.1:family_superfamily:IPR026298:2-209",
+          "label": "Bcl-2_fam",
+          "start": 2,
+          "end": 209,
+          "feature_type": "family_superfamily",
+          "source": "PANTHER",
+          "interpro_accession": "IPR026298",
+          "signature_accession": "PTHR11256",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR026298",
+            "interpro_name": "Bcl-2_fam",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PTHR11256",
+            "signature_name": "BCL-2 RELATED",
+            "member_database": "PANTHER",
+            "score_or_evalue": "8.7e-50",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001276668.1:family_superfamily:IPR013279:17-32",
+          "label": "Apop_reg_BclX",
+          "start": 17,
+          "end": 32,
+          "feature_type": "family_superfamily",
+          "source": "PRINTS",
+          "interpro_accession": "IPR013279",
+          "signature_accession": "PR01864",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR013279",
+            "interpro_name": "Apop_reg_BclX",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PR01864",
+            "signature_name": "APOPREGBCLX",
+            "member_database": "PRINTS",
+            "score_or_evalue": "1.3e-41",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001276668.1:family_superfamily:IPR013279:80-96",
+          "label": "Apop_reg_BclX",
+          "start": 80,
+          "end": 96,
+          "feature_type": "family_superfamily",
+          "source": "PRINTS",
+          "interpro_accession": "IPR013279",
+          "signature_accession": "PR01864",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR013279",
+            "interpro_name": "Apop_reg_BclX",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PR01864",
+            "signature_name": "APOPREGBCLX",
+            "member_database": "PRINTS",
+            "score_or_evalue": "1.3e-41",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001276668.1:family_superfamily:IPR026298:81-188",
+          "label": "Bcl-2_fam",
+          "start": 81,
+          "end": 188,
+          "feature_type": "family_superfamily",
+          "source": "CDD",
+          "interpro_accession": "IPR026298",
+          "signature_accession": "cd06845",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR026298",
+            "interpro_name": "Bcl-2_fam",
+            "interpro_type": "FAMILY",
+            "signature_accession": "cd06845",
+            "signature_name": "Bcl-2_like",
+            "member_database": "CDD",
+            "score_or_evalue": "1.00778e-48",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001276668.1:family_superfamily:IPR013279:99-110",
+          "label": "Apop_reg_BclX",
+          "start": 99,
+          "end": 110,
+          "feature_type": "family_superfamily",
+          "source": "PRINTS",
+          "interpro_accession": "IPR013279",
+          "signature_accession": "PR01864",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR013279",
+            "interpro_name": "Apop_reg_BclX",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PR01864",
+            "signature_name": "APOPREGBCLX",
+            "member_database": "PRINTS",
+            "score_or_evalue": "1.3e-41",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001276668.1:family_superfamily:IPR013279:118-129",
+          "label": "Apop_reg_BclX",
+          "start": 118,
+          "end": 129,
+          "feature_type": "family_superfamily",
+          "source": "PRINTS",
+          "interpro_accession": "IPR013279",
+          "signature_accession": "PR01864",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR013279",
+            "interpro_name": "Apop_reg_BclX",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PR01864",
+            "signature_name": "APOPREGBCLX",
+            "member_database": "PRINTS",
+            "score_or_evalue": "1.3e-41",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001276668.1:family_superfamily:IPR026298:123-135",
+          "label": "Bcl-2_fam",
+          "start": 123,
+          "end": 135,
+          "feature_type": "family_superfamily",
+          "source": "PRINTS",
+          "interpro_accession": "IPR026298",
+          "signature_accession": "PR01862",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR026298",
+            "interpro_name": "Bcl-2_fam",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PR01862",
+            "signature_name": "BCL2FAMILY",
+            "member_database": "PRINTS",
+            "score_or_evalue": "3.2e-26",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001276668.1:family_superfamily:IPR026298:136-164",
+          "label": "Bcl-2_fam",
+          "start": 136,
+          "end": 164,
+          "feature_type": "family_superfamily",
+          "source": "PRINTS",
+          "interpro_accession": "IPR026298",
+          "signature_accession": "PR01862",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR026298",
+            "interpro_name": "Bcl-2_fam",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PR01862",
+            "signature_name": "BCL2FAMILY",
+            "member_database": "PRINTS",
+            "score_or_evalue": "3.2e-26",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001276668.1:family_superfamily:IPR026298:165-189",
+          "label": "Bcl-2_fam",
+          "start": 165,
+          "end": 189,
+          "feature_type": "family_superfamily",
+          "source": "PRINTS",
+          "interpro_accession": "IPR026298",
+          "signature_accession": "PR01862",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR026298",
+            "interpro_name": "Bcl-2_fam",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PR01862",
+            "signature_name": "BCL2FAMILY",
+            "member_database": "PRINTS",
+            "score_or_evalue": "3.2e-26",
+            "is_integrated": true
+          }
+        }
+      ],
+      "member_signatures": [
+        {
+          "id": "NP_001276668.1:member_signature:IPR003093:1-26",
+          "label": "Bcl2_BH4",
+          "start": 1,
+          "end": 26,
+          "feature_type": "member_signature",
+          "source": "PFAM",
+          "interpro_accession": "IPR003093",
+          "signature_accession": "PF02180",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "domain",
+          "tooltip": {
+            "interpro_accession": "IPR003093",
+            "interpro_name": "Bcl2_BH4",
+            "interpro_type": "DOMAIN",
+            "signature_accession": "PF02180",
+            "signature_name": "BH4",
+            "member_database": "PFAM",
+            "score_or_evalue": "2.4e-11",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001276668.1:member_signature:G3DSA:1.10.437.10:FF:000003:1-192",
+          "label": "Bcl-2-like protein 1",
+          "start": 1,
+          "end": 192,
+          "feature_type": "member_signature",
+          "source": "FUNFAM",
+          "interpro_accession": null,
+          "signature_accession": "G3DSA:1.10.437.10:FF:000003",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "raw",
+          "tooltip": {
+            "interpro_accession": null,
+            "interpro_name": null,
+            "interpro_type": null,
+            "signature_accession": "G3DSA:1.10.437.10:FF:000003",
+            "signature_name": "Bcl-2-like protein 1",
+            "member_database": "FUNFAM",
+            "score_or_evalue": "5.4e-114",
+            "is_integrated": false
+          }
+        },
+        {
+          "id": "NP_001276668.1:member_signature:IPR003093:1-27",
+          "label": "Bcl2_BH4",
+          "start": 1,
+          "end": 27,
+          "feature_type": "member_signature",
+          "source": "SMART",
+          "interpro_accession": "IPR003093",
+          "signature_accession": "SM00265",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "domain",
+          "tooltip": {
+            "interpro_accession": "IPR003093",
+            "interpro_name": "Bcl2_BH4",
+            "interpro_type": "DOMAIN",
+            "signature_accession": "SM00265",
+            "signature_name": "bh4_2",
+            "member_database": "SMART",
+            "score_or_evalue": "1.1e-12",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001276668.1:member_signature:IPR046371:90-188",
+          "label": "Bcl-2_BH1-3",
+          "start": 90,
+          "end": 188,
+          "feature_type": "member_signature",
+          "source": "SMART",
+          "interpro_accession": "IPR046371",
+          "signature_accession": "SM00337",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "domain",
+          "tooltip": {
+            "interpro_accession": "IPR046371",
+            "interpro_name": "Bcl-2_BH1-3",
+            "interpro_type": "DOMAIN",
+            "signature_accession": "SM00337",
+            "signature_name": "bclneu2",
+            "member_database": "SMART",
+            "score_or_evalue": "2.3e-50",
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001276668.1:member_signature:IPR046371:90-188",
+          "label": "Bcl-2_BH1-3",
+          "start": 90,
+          "end": 188,
+          "feature_type": "member_signature",
+          "source": "PFAM",
+          "interpro_accession": "IPR046371",
+          "signature_accession": "PF00452",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "domain",
+          "tooltip": {
+            "interpro_accession": "IPR046371",
+            "interpro_name": "Bcl-2_BH1-3",
+            "interpro_type": "DOMAIN",
+            "signature_accession": "PF00452",
+            "signature_name": "Bcl-2",
+            "member_database": "PFAM",
+            "score_or_evalue": "4.7e-30",
+            "is_integrated": true
+          }
+        }
+      ],
+      "functional_sites": [
+        {
+          "id": "NP_001276668.1:functional_site:IPR020731:4-24",
+          "label": "Bcl2_BH4_motif_CS",
+          "start": 4,
+          "end": 24,
+          "feature_type": "functional_site",
+          "source": "PROSITE_PATTERNS",
+          "interpro_accession": "IPR020731",
+          "signature_accession": "PS01260",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "feature",
+          "tooltip": {
+            "interpro_accession": "IPR020731",
+            "interpro_name": "Bcl2_BH4_motif_CS",
+            "interpro_type": "CONSERVED_SITE",
+            "signature_accession": "PS01260",
+            "signature_name": "BH4_1",
+            "member_database": "PROSITE_PATTERNS",
+            "score_or_evalue": null,
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001276668.1:functional_site:IPR003093:5-24",
+          "label": "Bcl2_BH4",
+          "start": 5,
+          "end": 24,
+          "feature_type": "functional_site",
+          "source": "PROSITE_PROFILES",
+          "interpro_accession": "IPR003093",
+          "signature_accession": "PS50063",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "domain",
+          "tooltip": {
+            "interpro_accession": "IPR003093",
+            "interpro_name": "Bcl2_BH4",
+            "interpro_type": "DOMAIN",
+            "signature_accession": "PS50063",
+            "signature_name": "BH4_2",
+            "member_database": "PROSITE_PROFILES",
+            "score_or_evalue": null,
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001276668.1:functional_site:IPR020728:86-100",
+          "label": "Bcl2_BH3_motif_CS",
+          "start": 86,
+          "end": 100,
+          "feature_type": "functional_site",
+          "source": "PROSITE_PATTERNS",
+          "interpro_accession": "IPR020728",
+          "signature_accession": "PS01259",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "feature",
+          "tooltip": {
+            "interpro_accession": "IPR020728",
+            "interpro_name": "Bcl2_BH3_motif_CS",
+            "interpro_type": "CONSERVED_SITE",
+            "signature_accession": "PS01259",
+            "signature_name": "BH3",
+            "member_database": "PROSITE_PATTERNS",
+            "score_or_evalue": null,
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001276668.1:functional_site:IPR002475:90-190",
+          "label": "Bcl2-like",
+          "start": 90,
+          "end": 190,
+          "feature_type": "functional_site",
+          "source": "PROSITE_PROFILES",
+          "interpro_accession": "IPR002475",
+          "signature_accession": "PS50062",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "family",
+          "tooltip": {
+            "interpro_accession": "IPR002475",
+            "interpro_name": "Bcl2-like",
+            "interpro_type": "FAMILY",
+            "signature_accession": "PS50062",
+            "signature_name": "BCL2_FAMILY",
+            "member_database": "PROSITE_PROFILES",
+            "score_or_evalue": null,
+            "is_integrated": true
+          }
+        },
+        {
+          "id": "NP_001276668.1:functional_site:IPR020717:130-148",
+          "label": "Bcl2_BH1_motif_CS",
+          "start": 130,
+          "end": 148,
+          "feature_type": "functional_site",
+          "source": "PROSITE_PATTERNS",
+          "interpro_accession": "IPR020717",
+          "signature_accession": "PS01080",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "feature",
+          "tooltip": {
+            "interpro_accession": "IPR020717",
+            "interpro_name": "Bcl2_BH1_motif_CS",
+            "interpro_type": "CONSERVED_SITE",
+            "signature_accession": "PS01080",
+            "signature_name": "BH1",
+            "member_database": "PROSITE_PATTERNS",
+            "score_or_evalue": null,
+            "is_integrated": true
+          }
+        }
+      ],
+      "disorder_regions": [
+        {
+          "id": "NP_001276668.1:disorder_region:mobidb-lite:27-73",
+          "label": "disorder_prediction",
+          "start": 27,
+          "end": 73,
+          "feature_type": "disorder_region",
+          "source": "MOBIDB_LITE",
+          "interpro_accession": null,
+          "signature_accession": "mobidb-lite",
+          "source_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "status": "feature",
+          "tooltip": {
+            "interpro_accession": null,
+            "interpro_name": null,
+            "interpro_type": null,
+            "signature_accession": "mobidb-lite",
+            "signature_name": "disorder_prediction",
+            "member_database": "MOBIDB_LITE",
+            "score_or_evalue": null,
+            "is_integrated": false
+          }
+        }
+      ],
+      "tm_regions": [],
+      "candidate_regions": [
+        {
+          "id": "C1",
+          "display_cluster_id": "C1",
+          "label": "C1 · aa 191–191",
+          "start": 191,
+          "end": 191,
+          "length_aa": 1,
+          "source": "isoform_difference_scan",
+          "source_file": "results/core_gene_analysis/event_candidate_regions.tsv",
+          "status": "exploratory",
+          "candidate_type": "substitution_block",
+          "evidence": "isoform_sequence_diff",
+          "alignment_block": "substitution_block:isoform_sequence_diff",
+          "confidence": "low",
+          "member_candidate_ids": [
+            "mus_musculus:NP_001276668.1|NP_001276645.1:191-191:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_001276646.1:191-191:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_001341982.1:191-191:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_001403825.1:191-191:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_001403826.1:191-191:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_001403827.1:191-191:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_001403828.1:191-191:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_033873.3:191-191:substitution_block"
+          ],
+          "n_member_candidates": 8,
+          "n_comparisons": 8,
+          "n_supporting_isoforms": 8,
+          "supporting_isoforms": [
+            "NP_001276645.1",
+            "NP_001276646.1",
+            "NP_001341982.1",
+            "NP_001403825.1",
+            "NP_001403826.1",
+            "NP_001403827.1",
+            "NP_001403828.1",
+            "NP_033873.3"
+          ],
+          "affected_proteins": [
+            "NP_001276645.1",
+            "NP_001276646.1",
+            "NP_001276668.1",
+            "NP_001341982.1",
+            "NP_001403825.1",
+            "NP_001403826.1",
+            "NP_001403827.1",
+            "NP_001403828.1",
+            "NP_033873.3"
+          ],
+          "display_rank": 4,
+          "display_lane": 2,
+          "is_top_ranked": true,
+          "tooltip": {
+            "display_cluster_id": "C1",
+            "candidate_type": "substitution_block",
+            "evidence": "isoform_sequence_diff",
+            "alignment_block": "substitution_block:isoform_sequence_diff",
+            "confidence": "low",
+            "n_member_candidates": 8,
+            "n_comparisons": 8,
+            "n_supporting_isoforms": 8,
+            "member_candidate_ids": [
+              "mus_musculus:NP_001276668.1|NP_001276645.1:191-191:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_001276646.1:191-191:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_001341982.1:191-191:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_001403825.1:191-191:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_001403826.1:191-191:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_001403827.1:191-191:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_001403828.1:191-191:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_033873.3:191-191:substitution_block"
+            ],
+            "affected_proteins": [
+              "NP_001276645.1",
+              "NP_001276646.1",
+              "NP_001276668.1",
+              "NP_001341982.1",
+              "NP_001403825.1",
+              "NP_001403826.1",
+              "NP_001403827.1",
+              "NP_001403828.1",
+              "NP_033873.3"
+            ],
+            "display_rank": 4,
+            "display_lane": 2
+          },
+          "display_lane_count": 3,
+          "default_display_lanes": 3,
+          "off_primary_axis_candidates": 8
+        },
+        {
+          "id": "C2",
+          "display_cluster_id": "C2",
+          "label": "C2 · aa 193–216",
+          "start": 193,
+          "end": 216,
+          "length_aa": 24,
+          "source": "isoform_difference_scan",
+          "source_file": "results/core_gene_analysis/event_candidate_regions.tsv",
+          "status": "exploratory",
+          "candidate_type": "deletion",
+          "evidence": "isoform_sequence_diff",
+          "alignment_block": "deletion:isoform_sequence_diff",
+          "confidence": "medium",
+          "member_candidate_ids": [
+            "mus_musculus:NP_001276668.1|NP_001276645.1:193-216:deletion",
+            "mus_musculus:NP_001276668.1|NP_001276646.1:193-216:deletion",
+            "mus_musculus:NP_001276668.1|NP_001341982.1:193-216:deletion",
+            "mus_musculus:NP_001276668.1|NP_001403825.1:193-216:deletion",
+            "mus_musculus:NP_001276668.1|NP_001403826.1:193-216:deletion",
+            "mus_musculus:NP_001276668.1|NP_001403827.1:193-216:deletion",
+            "mus_musculus:NP_001276668.1|NP_001403828.1:193-216:deletion",
+            "mus_musculus:NP_001276668.1|NP_033873.3:193-216:deletion"
+          ],
+          "n_member_candidates": 8,
+          "n_comparisons": 8,
+          "n_supporting_isoforms": 8,
+          "supporting_isoforms": [
+            "NP_001276645.1",
+            "NP_001276646.1",
+            "NP_001341982.1",
+            "NP_001403825.1",
+            "NP_001403826.1",
+            "NP_001403827.1",
+            "NP_001403828.1",
+            "NP_033873.3"
+          ],
+          "affected_proteins": [
+            "NP_001276645.1",
+            "NP_001276646.1",
+            "NP_001276668.1",
+            "NP_001341982.1",
+            "NP_001403825.1",
+            "NP_001403826.1",
+            "NP_001403827.1",
+            "NP_001403828.1",
+            "NP_033873.3"
+          ],
+          "display_rank": 1,
+          "display_lane": 0,
+          "is_top_ranked": true,
+          "tooltip": {
+            "display_cluster_id": "C2",
+            "candidate_type": "deletion",
+            "evidence": "isoform_sequence_diff",
+            "alignment_block": "deletion:isoform_sequence_diff",
+            "confidence": "medium",
+            "n_member_candidates": 8,
+            "n_comparisons": 8,
+            "n_supporting_isoforms": 8,
+            "member_candidate_ids": [
+              "mus_musculus:NP_001276668.1|NP_001276645.1:193-216:deletion",
+              "mus_musculus:NP_001276668.1|NP_001276646.1:193-216:deletion",
+              "mus_musculus:NP_001276668.1|NP_001341982.1:193-216:deletion",
+              "mus_musculus:NP_001276668.1|NP_001403825.1:193-216:deletion",
+              "mus_musculus:NP_001276668.1|NP_001403826.1:193-216:deletion",
+              "mus_musculus:NP_001276668.1|NP_001403827.1:193-216:deletion",
+              "mus_musculus:NP_001276668.1|NP_001403828.1:193-216:deletion",
+              "mus_musculus:NP_001276668.1|NP_033873.3:193-216:deletion"
+            ],
+            "affected_proteins": [
+              "NP_001276645.1",
+              "NP_001276646.1",
+              "NP_001276668.1",
+              "NP_001341982.1",
+              "NP_001403825.1",
+              "NP_001403826.1",
+              "NP_001403827.1",
+              "NP_001403828.1",
+              "NP_033873.3"
+            ],
+            "display_rank": 1,
+            "display_lane": 0
+          },
+          "display_lane_count": 3,
+          "default_display_lanes": 3,
+          "off_primary_axis_candidates": 8
+        },
+        {
+          "id": "C3",
+          "display_cluster_id": "C3",
+          "label": "C3 · aa 219–225",
+          "start": 219,
+          "end": 225,
+          "length_aa": 7,
+          "source": "isoform_difference_scan",
+          "source_file": "results/core_gene_analysis/event_candidate_regions.tsv",
+          "status": "exploratory",
+          "candidate_type": "substitution_block",
+          "evidence": "isoform_sequence_diff",
+          "alignment_block": "substitution_block:isoform_sequence_diff",
+          "confidence": "medium",
+          "member_candidate_ids": [
+            "mus_musculus:NP_001276668.1|NP_001276645.1:219-225:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_001276646.1:219-225:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_001341982.1:219-225:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_001403825.1:219-225:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_001403826.1:219-225:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_001403827.1:219-225:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_001403828.1:219-225:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_033873.3:219-225:substitution_block"
+          ],
+          "n_member_candidates": 8,
+          "n_comparisons": 8,
+          "n_supporting_isoforms": 8,
+          "supporting_isoforms": [
+            "NP_001276645.1",
+            "NP_001276646.1",
+            "NP_001341982.1",
+            "NP_001403825.1",
+            "NP_001403826.1",
+            "NP_001403827.1",
+            "NP_001403828.1",
+            "NP_033873.3"
+          ],
+          "affected_proteins": [
+            "NP_001276645.1",
+            "NP_001276646.1",
+            "NP_001276668.1",
+            "NP_001341982.1",
+            "NP_001403825.1",
+            "NP_001403826.1",
+            "NP_001403827.1",
+            "NP_001403828.1",
+            "NP_033873.3"
+          ],
+          "display_rank": 3,
+          "display_lane": 1,
+          "is_top_ranked": true,
+          "tooltip": {
+            "display_cluster_id": "C3",
+            "candidate_type": "substitution_block",
+            "evidence": "isoform_sequence_diff",
+            "alignment_block": "substitution_block:isoform_sequence_diff",
+            "confidence": "medium",
+            "n_member_candidates": 8,
+            "n_comparisons": 8,
+            "n_supporting_isoforms": 8,
+            "member_candidate_ids": [
+              "mus_musculus:NP_001276668.1|NP_001276645.1:219-225:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_001276646.1:219-225:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_001341982.1:219-225:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_001403825.1:219-225:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_001403826.1:219-225:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_001403827.1:219-225:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_001403828.1:219-225:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_033873.3:219-225:substitution_block"
+            ],
+            "affected_proteins": [
+              "NP_001276645.1",
+              "NP_001276646.1",
+              "NP_001276668.1",
+              "NP_001341982.1",
+              "NP_001403825.1",
+              "NP_001403826.1",
+              "NP_001403827.1",
+              "NP_001403828.1",
+              "NP_033873.3"
+            ],
+            "display_rank": 3,
+            "display_lane": 1
+          },
+          "display_lane_count": 3,
+          "default_display_lanes": 3,
+          "off_primary_axis_candidates": 8
+        },
+        {
+          "id": "C4",
+          "display_cluster_id": "C4",
+          "label": "C4 · aa 227–235",
+          "start": 227,
+          "end": 235,
+          "length_aa": 9,
+          "source": "isoform_difference_scan",
+          "source_file": "results/core_gene_analysis/event_candidate_regions.tsv",
+          "status": "exploratory",
+          "candidate_type": "substitution_block",
+          "evidence": "isoform_sequence_diff",
+          "alignment_block": "substitution_block:isoform_sequence_diff",
+          "confidence": "medium",
+          "member_candidate_ids": [
+            "mus_musculus:NP_001276668.1|NP_001276645.1:227-235:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_001276646.1:227-235:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_001341982.1:227-235:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_001403825.1:227-235:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_001403826.1:227-235:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_001403827.1:227-235:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_001403828.1:227-235:substitution_block",
+            "mus_musculus:NP_001276668.1|NP_033873.3:227-235:substitution_block"
+          ],
+          "n_member_candidates": 8,
+          "n_comparisons": 8,
+          "n_supporting_isoforms": 8,
+          "supporting_isoforms": [
+            "NP_001276645.1",
+            "NP_001276646.1",
+            "NP_001341982.1",
+            "NP_001403825.1",
+            "NP_001403826.1",
+            "NP_001403827.1",
+            "NP_001403828.1",
+            "NP_033873.3"
+          ],
+          "affected_proteins": [
+            "NP_001276645.1",
+            "NP_001276646.1",
+            "NP_001276668.1",
+            "NP_001341982.1",
+            "NP_001403825.1",
+            "NP_001403826.1",
+            "NP_001403827.1",
+            "NP_001403828.1",
+            "NP_033873.3"
+          ],
+          "display_rank": 2,
+          "display_lane": 0,
+          "is_top_ranked": true,
+          "tooltip": {
+            "display_cluster_id": "C4",
+            "candidate_type": "substitution_block",
+            "evidence": "isoform_sequence_diff",
+            "alignment_block": "substitution_block:isoform_sequence_diff",
+            "confidence": "medium",
+            "n_member_candidates": 8,
+            "n_comparisons": 8,
+            "n_supporting_isoforms": 8,
+            "member_candidate_ids": [
+              "mus_musculus:NP_001276668.1|NP_001276645.1:227-235:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_001276646.1:227-235:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_001341982.1:227-235:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_001403825.1:227-235:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_001403826.1:227-235:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_001403827.1:227-235:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_001403828.1:227-235:substitution_block",
+              "mus_musculus:NP_001276668.1|NP_033873.3:227-235:substitution_block"
+            ],
+            "affected_proteins": [
+              "NP_001276645.1",
+              "NP_001276646.1",
+              "NP_001276668.1",
+              "NP_001341982.1",
+              "NP_001403825.1",
+              "NP_001403826.1",
+              "NP_001403827.1",
+              "NP_001403828.1",
+              "NP_033873.3"
+            ],
+            "display_rank": 2,
+            "display_lane": 0
+          },
+          "display_lane_count": 3,
+          "default_display_lanes": 3,
+          "off_primary_axis_candidates": 8
+        }
+      ],
+      "transcript_models": [
+        {
+          "protein_id": "NP_001276668.1",
+          "transcript_id": "NM_001289739.2",
+          "protein_length": 235,
+          "curation_status": "curated",
+          "is_primary": true,
+          "role": "primary",
+          "exon_count": 2,
+          "blocks": [
+            {
+              "id": "NP_001276668.1:cds1",
+              "label": "E1",
+              "start": 1,
+              "end": 188,
+              "exon_number": 1,
+              "transcript_exon_number": 1,
+              "transcript_id": "NM_001289739.2",
+              "shared_exon_group_id": "SEG_ceb8abc0bf",
+              "genomic_start": 152671347,
+              "genomic_end": 152671910,
+              "cds_start": 152671347,
+              "cds_end": 152671910,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            },
+            {
+              "id": "NP_001276668.1:cds2",
+              "label": "E2",
+              "start": 189,
+              "end": 235,
+              "exon_number": 2,
+              "transcript_exon_number": 2,
+              "transcript_id": "NM_001289739.2",
+              "shared_exon_group_id": "SEG_4a5131cfbb",
+              "genomic_start": 152609237,
+              "genomic_end": 152609379,
+              "cds_start": 152609237,
+              "cds_end": 152609379,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            }
+          ]
+        },
+        {
+          "protein_id": "NP_033873.3",
+          "transcript_id": "NM_009743.6",
+          "protein_length": 233,
+          "curation_status": "curated",
+          "is_primary": false,
+          "role": "alternative",
+          "exon_count": 2,
+          "blocks": [
+            {
+              "id": "NP_033873.3:cds1",
+              "label": "E1",
+              "start": 1,
+              "end": 188,
+              "exon_number": 1,
+              "transcript_exon_number": 1,
+              "transcript_id": "NM_009743.6",
+              "shared_exon_group_id": "SEG_ceb8abc0bf",
+              "genomic_start": 152671347,
+              "genomic_end": 152671910,
+              "cds_start": 152671347,
+              "cds_end": 152671910,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            },
+            {
+              "id": "NP_033873.3:cds2",
+              "label": "E2",
+              "start": 189,
+              "end": 233,
+              "exon_number": 2,
+              "transcript_exon_number": 2,
+              "transcript_id": "NM_009743.6",
+              "shared_exon_group_id": "SEG_aeea944123",
+              "genomic_start": 152624065,
+              "genomic_end": 152624202,
+              "cds_start": 152624065,
+              "cds_end": 152624202,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            }
+          ]
+        },
+        {
+          "protein_id": "NP_001403826.1",
+          "transcript_id": "NM_001416897.1",
+          "protein_length": 233,
+          "curation_status": "curated",
+          "is_primary": false,
+          "role": "alternative",
+          "exon_count": 2,
+          "blocks": [
+            {
+              "id": "NP_001403826.1:cds1",
+              "label": "E1",
+              "start": 1,
+              "end": 188,
+              "exon_number": 1,
+              "transcript_exon_number": 1,
+              "transcript_id": "NM_001416897.1",
+              "shared_exon_group_id": "SEG_ceb8abc0bf",
+              "genomic_start": 152671347,
+              "genomic_end": 152671910,
+              "cds_start": 152671347,
+              "cds_end": 152671910,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            },
+            {
+              "id": "NP_001403826.1:cds2",
+              "label": "E2",
+              "start": 189,
+              "end": 233,
+              "exon_number": 2,
+              "transcript_exon_number": 2,
+              "transcript_id": "NM_001416897.1",
+              "shared_exon_group_id": "SEG_aeea944123",
+              "genomic_start": 152624065,
+              "genomic_end": 152624202,
+              "cds_start": 152624065,
+              "cds_end": 152624202,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            }
+          ]
+        },
+        {
+          "protein_id": "NP_001403825.1",
+          "transcript_id": "NM_001416896.1",
+          "protein_length": 233,
+          "curation_status": "curated",
+          "is_primary": false,
+          "role": "alternative",
+          "exon_count": 2,
+          "blocks": [
+            {
+              "id": "NP_001403825.1:cds1",
+              "label": "E1",
+              "start": 1,
+              "end": 188,
+              "exon_number": 1,
+              "transcript_exon_number": 1,
+              "transcript_id": "NM_001416896.1",
+              "shared_exon_group_id": "SEG_ceb8abc0bf",
+              "genomic_start": 152671347,
+              "genomic_end": 152671910,
+              "cds_start": 152671347,
+              "cds_end": 152671910,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            },
+            {
+              "id": "NP_001403825.1:cds2",
+              "label": "E2",
+              "start": 189,
+              "end": 233,
+              "exon_number": 2,
+              "transcript_exon_number": 2,
+              "transcript_id": "NM_001416896.1",
+              "shared_exon_group_id": "SEG_aeea944123",
+              "genomic_start": 152624065,
+              "genomic_end": 152624202,
+              "cds_start": 152624065,
+              "cds_end": 152624202,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            }
+          ]
+        },
+        {
+          "protein_id": "NP_001403827.1",
+          "transcript_id": "NM_001416898.1",
+          "protein_length": 233,
+          "curation_status": "curated",
+          "is_primary": false,
+          "role": "alternative",
+          "exon_count": 2,
+          "blocks": [
+            {
+              "id": "NP_001403827.1:cds1",
+              "label": "E1",
+              "start": 1,
+              "end": 188,
+              "exon_number": 1,
+              "transcript_exon_number": 1,
+              "transcript_id": "NM_001416898.1",
+              "shared_exon_group_id": "SEG_ceb8abc0bf",
+              "genomic_start": 152671347,
+              "genomic_end": 152671910,
+              "cds_start": 152671347,
+              "cds_end": 152671910,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            },
+            {
+              "id": "NP_001403827.1:cds2",
+              "label": "E2",
+              "start": 189,
+              "end": 233,
+              "exon_number": 2,
+              "transcript_exon_number": 2,
+              "transcript_id": "NM_001416898.1",
+              "shared_exon_group_id": "SEG_aeea944123",
+              "genomic_start": 152624065,
+              "genomic_end": 152624202,
+              "cds_start": 152624065,
+              "cds_end": 152624202,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            }
+          ]
+        },
+        {
+          "protein_id": "NP_001276646.1",
+          "transcript_id": "NM_001289717.2",
+          "protein_length": 233,
+          "curation_status": "curated",
+          "is_primary": false,
+          "role": "alternative",
+          "exon_count": 2,
+          "blocks": [
+            {
+              "id": "NP_001276646.1:cds1",
+              "label": "E1",
+              "start": 1,
+              "end": 188,
+              "exon_number": 1,
+              "transcript_exon_number": 1,
+              "transcript_id": "NM_001289717.2",
+              "shared_exon_group_id": "SEG_ceb8abc0bf",
+              "genomic_start": 152671347,
+              "genomic_end": 152671910,
+              "cds_start": 152671347,
+              "cds_end": 152671910,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            },
+            {
+              "id": "NP_001276646.1:cds2",
+              "label": "E2",
+              "start": 189,
+              "end": 233,
+              "exon_number": 2,
+              "transcript_exon_number": 2,
+              "transcript_id": "NM_001289717.2",
+              "shared_exon_group_id": "SEG_aeea944123",
+              "genomic_start": 152624065,
+              "genomic_end": 152624202,
+              "cds_start": 152624065,
+              "cds_end": 152624202,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            }
+          ]
+        },
+        {
+          "protein_id": "NP_001276645.1",
+          "transcript_id": "NM_001289716.2",
+          "protein_length": 233,
+          "curation_status": "curated",
+          "is_primary": false,
+          "role": "alternative",
+          "exon_count": 2,
+          "blocks": [
+            {
+              "id": "NP_001276645.1:cds1",
+              "label": "E1",
+              "start": 1,
+              "end": 188,
+              "exon_number": 1,
+              "transcript_exon_number": 1,
+              "transcript_id": "NM_001289716.2",
+              "shared_exon_group_id": "SEG_ceb8abc0bf",
+              "genomic_start": 152671347,
+              "genomic_end": 152671910,
+              "cds_start": 152671347,
+              "cds_end": 152671910,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            },
+            {
+              "id": "NP_001276645.1:cds2",
+              "label": "E2",
+              "start": 189,
+              "end": 233,
+              "exon_number": 2,
+              "transcript_exon_number": 2,
+              "transcript_id": "NM_001289716.2",
+              "shared_exon_group_id": "SEG_aeea944123",
+              "genomic_start": 152624065,
+              "genomic_end": 152624202,
+              "cds_start": 152624065,
+              "cds_end": 152624202,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            }
+          ]
+        },
+        {
+          "protein_id": "NP_001341982.1",
+          "transcript_id": "NM_001355053.2",
+          "protein_length": 233,
+          "curation_status": "curated",
+          "is_primary": false,
+          "role": "alternative",
+          "exon_count": 2,
+          "blocks": [
+            {
+              "id": "NP_001341982.1:cds1",
+              "label": "E1",
+              "start": 1,
+              "end": 188,
+              "exon_number": 1,
+              "transcript_exon_number": 1,
+              "transcript_id": "NM_001355053.2",
+              "shared_exon_group_id": "SEG_ceb8abc0bf",
+              "genomic_start": 152671347,
+              "genomic_end": 152671910,
+              "cds_start": 152671347,
+              "cds_end": 152671910,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            },
+            {
+              "id": "NP_001341982.1:cds2",
+              "label": "E2",
+              "start": 189,
+              "end": 233,
+              "exon_number": 2,
+              "transcript_exon_number": 2,
+              "transcript_id": "NM_001355053.2",
+              "shared_exon_group_id": "SEG_aeea944123",
+              "genomic_start": 152624065,
+              "genomic_end": 152624202,
+              "cds_start": 152624065,
+              "cds_end": 152624202,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            }
+          ]
+        },
+        {
+          "protein_id": "NP_001403828.1",
+          "transcript_id": "NM_001416899.1",
+          "protein_length": 233,
+          "curation_status": "curated",
+          "is_primary": false,
+          "role": "alternative",
+          "exon_count": 2,
+          "blocks": [
+            {
+              "id": "NP_001403828.1:cds1",
+              "label": "E1",
+              "start": 1,
+              "end": 188,
+              "exon_number": 1,
+              "transcript_exon_number": 1,
+              "transcript_id": "NM_001416899.1",
+              "shared_exon_group_id": "SEG_ceb8abc0bf",
+              "genomic_start": 152671347,
+              "genomic_end": 152671910,
+              "cds_start": 152671347,
+              "cds_end": 152671910,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            },
+            {
+              "id": "NP_001403828.1:cds2",
+              "label": "E2",
+              "start": 189,
+              "end": 233,
+              "exon_number": 2,
+              "transcript_exon_number": 2,
+              "transcript_id": "NM_001416899.1",
+              "shared_exon_group_id": "SEG_aeea944123",
+              "genomic_start": 152624065,
+              "genomic_end": 152624202,
+              "cds_start": 152624065,
+              "cds_end": 152624202,
+              "phase": "0",
+              "strand": "-1",
+              "source": "ncbi_gff"
+            }
+          ]
+        }
+      ],
+      "n_transcript_models": 9,
+      "alignment_mapping": {
+        "species_id": "mus_musculus",
+        "protein_id": "NP_001276668.1",
+        "aligned_protein_id": "NP_001276668.1",
+        "protein_matches_alignment": true,
+        "boundaries_total": 1,
+        "boundaries_mapped": 1,
+        "mapping_status": "available"
+      },
+      "provenance": {
+        "run_id": "2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus",
+        "gene_symbol": "BCL2L1",
+        "species_id": "mus_musculus",
+        "coordinate_system": "protein_1_based_inclusive",
+        "generated_by": "scripts/shared_gene_analysis/protein_coordinate_model.py",
+        "generated_at": "2026-07-30T11:05:00.906660+00:00",
+        "source_files": {
+          "exon_protein_map": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/exon_protein_map.tsv",
+          "domain_features": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/domain_features.tsv",
+          "interpro_annotations": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/interpro_annotations.tsv",
+          "tm_features": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/tm_features.tsv",
+          "exon_domain_boundary_distances": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/core_gene_analysis/exon_domain_boundary_distances.tsv"
+        },
+        "clade": "mammal",
+        "taxonomic_group": "Other mammals",
+        "primary_protein_source": "primary_selection_evidence.tsv",
+        "protein_length_source": "proteins_primary.faa"
+      }
+    }
+  ],
+  "msa_coordinate_map": {
+    "available": true,
+    "reason": "Cross-species primary-protein alignment; one primary per species. A shared column means the residues were aligned, not that they are functionally equivalent.",
+    "alignment_file": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/msa/primaries_msa.aln.faa",
+    "n_columns": 249,
+    "n_species": 2,
+    "species": [
+      {
+        "species_id": "homo_sapiens",
+        "protein_id": "NP_001304849.1",
+        "protein_length": 233,
+        "n_gap_columns": 16
+      },
+      {
+        "species_id": "mus_musculus",
+        "protein_id": "NP_001276668.1",
+        "protein_length": 235,
+        "n_gap_columns": 14
+      }
+    ]
+  },
+  "msa_boundary_mapping": {
+    "homo_sapiens": {
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "aligned_protein_id": "NP_001304849.1",
+      "protein_matches_alignment": true,
+      "boundaries_total": 1,
+      "boundaries_mapped": 1,
+      "mapping_status": "available"
+    },
+    "mus_musculus": {
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "aligned_protein_id": "NP_001276668.1",
+      "protein_matches_alignment": true,
+      "boundaries_total": 1,
+      "boundaries_mapped": 1,
+      "mapping_status": "available"
+    }
+  },
+  "boundary_dashboard": {
+    "schema_version": 1,
+    "page_mode": "generic_multi_species_results_ready",
+    "gene_symbol": "BCL2L1",
+    "run_id": "2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus",
+    "coordinate_system": "protein_1_based_inclusive",
+    "near_edge_threshold_aa": 5,
+    "species_available": [
+      "homo_sapiens",
+      "mus_musculus"
+    ],
+    "generated_by": "scripts/shared_gene_analysis/boundary_dashboard.py",
+    "single_species": {
+      "header": {
+        "gene": "BCL2L1",
+        "scientific_name": "Homo sapiens",
+        "species_id": "homo_sapiens",
+        "protein_id": "NP_001304849.1",
+        "transcript_id": "NM_001317920.2",
+        "protein_length": 233,
+        "n_coding_exons": 2,
+        "n_internal_boundaries": 1,
+        "representative_domain_source": "representative InterPro domains",
+        "near_edge_threshold_aa": 5,
+        "analysis_stage": "results ready",
+        "status_badge": "results_ready",
+        "run_id": "2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus"
+      },
+      "summary": {
+        "total": 1,
+        "exact_domain_edge": 1,
+        "near_domain_edge": 0,
+        "inside_domain": 0,
+        "outside_annotated_domains": 0,
+        "unavailable_or_uncertain": 0
+      },
+      "inspection_cases": [
+        {
+          "case_id": "candidate_associated:NP_001304849.1:cds1_end",
+          "kind": "candidate_associated",
+          "label": "Candidate-associated boundary",
+          "boundary_id": "NP_001304849.1:cds1_end",
+          "boundary_label": "E1 → E2",
+          "protein_position": 188,
+          "detail": "Falls within exploratory candidate C1 (aa 126–188)."
+        }
+      ],
+      "caption": {
+        "text": "Exon–domain boundary analysis of Homo sapiens BCL2L1. Internal coding-exon boundaries were projected onto amino-acid coordinates of NP_001304849.1 and classified relative to representative InterPro domains using a near-edge threshold of 5 amino acids (protein_1_based_inclusive). Classifications describe positional overlap only and do not by themselves imply a functional effect.",
+        "fields": {
+          "gene": "BCL2L1",
+          "species_scope": "single_species",
+          "selected_primary_protein": "NP_001304849.1",
+          "domain_annotation_source": "representative InterPro domains",
+          "near_edge_threshold_aa": 5,
+          "coordinate_system": "protein_1_based_inclusive",
+          "analysis_status": "available",
+          "analysis_stage": "results ready"
+        }
+      }
+    },
+    "multi_species": {
+      "available": true,
+      "n_species": 2,
+      "species_rows": [
+        {
+          "species_id": "homo_sapiens",
+          "scientific_name": "Homo sapiens",
+          "taxonomic_group": "Other mammals",
+          "primary_protein": "NP_001304849.1",
+          "transcript": "NM_001317920.2",
+          "protein_length": 233,
+          "analysis_status": "available"
+        },
+        {
+          "species_id": "mus_musculus",
+          "scientific_name": "Mus musculus",
+          "taxonomic_group": "Other mammals",
+          "primary_protein": "NP_001276668.1",
+          "transcript": "NM_001289739.2",
+          "protein_length": 235,
+          "analysis_status": "available"
+        }
+      ],
+      "comparable_boundary_groups": [
+        {
+          "comparable_boundary_group_id": "CBG1",
+          "label": "Comparable boundary group 1",
+          "mapping_method": "msa_aligned_position",
+          "mapping_status": "supported_comparable",
+          "confidence": 1.0,
+          "n_species": 2,
+          "species_coverage": "homo_sapiens,mus_musculus",
+          "msa_column": 188,
+          "shared_exon_group": null,
+          "domain_relative_context": null,
+          "per_species_native_positions": [
+            {
+              "species_id": "homo_sapiens",
+              "scientific_name": "Homo sapiens",
+              "taxonomic_group": "Other mammals",
+              "protein_id": "NP_001304849.1",
+              "transcript_id": "NM_001317920.2",
+              "boundary_id": "NP_001304849.1:cds1_end",
+              "exon_transition": "E1 → E2",
+              "left_exon_id": "NP_001304849.1:cds1",
+              "right_exon_id": "NP_001304849.1:cds2",
+              "left_exon_label": "E1",
+              "right_exon_label": "E2",
+              "native_position": 188,
+              "msa_column": 188,
+              "msa_mapping_status": "mapped",
+              "nearest_domain_instance_id": "IPR046371:90-188",
+              "nearest_domain_accession": "IPR046371",
+              "nearest_domain_label": "Bcl-2 BH1-3",
+              "nearest_domain_full_label": "Bcl-2 BH1-3 · aa 90–188",
+              "nearest_domain_start": 90,
+              "nearest_domain_end": 188,
+              "nearest_edge": "end",
+              "nearest_edge_position": 188,
+              "signed_distance": 0,
+              "absolute_distance": 0,
+              "boundary_class": "exact_domain_edge",
+              "domain_annotation_available": true,
+              "mapping_method": "msa_aligned_position",
+              "mapping_status": "supported_comparable",
+              "mapping_confidence": 1.0,
+              "species_coverage": 1.0
+            },
+            {
+              "species_id": "mus_musculus",
+              "scientific_name": "Mus musculus",
+              "taxonomic_group": "Other mammals",
+              "protein_id": "NP_001276668.1",
+              "transcript_id": "NM_001289739.2",
+              "boundary_id": "NP_001276668.1:cds1_end",
+              "exon_transition": "E1 → E2",
+              "left_exon_id": "NP_001276668.1:cds1",
+              "right_exon_id": "NP_001276668.1:cds2",
+              "left_exon_label": "E1",
+              "right_exon_label": "E2",
+              "native_position": 188,
+              "msa_column": 188,
+              "msa_mapping_status": "mapped",
+              "nearest_domain_instance_id": "IPR046371:90-188",
+              "nearest_domain_accession": "IPR046371",
+              "nearest_domain_label": "Bcl-2 BH1-3",
+              "nearest_domain_full_label": "Bcl-2 BH1-3 · aa 90–188",
+              "nearest_domain_start": 90,
+              "nearest_domain_end": 188,
+              "nearest_edge": "end",
+              "nearest_edge_position": 188,
+              "signed_distance": 0,
+              "absolute_distance": 0,
+              "boundary_class": "exact_domain_edge",
+              "domain_annotation_available": true,
+              "mapping_method": "msa_aligned_position",
+              "mapping_status": "supported_comparable",
+              "mapping_confidence": 1.0,
+              "species_coverage": 1.0
+            }
+          ],
+          "supporting_evidence": {
+            "msa_column": 188
+          }
+        }
+      ],
+      "mapping_methods": [
+        "shared_exon_group",
+        "msa_aligned_position",
+        "conserved_local_alignment",
+        "domain_relative_context",
+        "exon_rank"
+      ],
+      "boundary_matrix": [
+        {
+          "species_id": "homo_sapiens",
+          "scientific_name": "Homo sapiens",
+          "taxonomic_group": "Other mammals",
+          "protein_id": "NP_001304849.1",
+          "analysis_status": "available",
+          "cells": [
+            {
+              "comparable_boundary_group_id": "CBG1",
+              "state": "exact_domain_edge",
+              "observed": true,
+              "native_position": 188,
+              "signed_distance": 0,
+              "absolute_distance": 0,
+              "mapping_status": "supported_comparable",
+              "mapping_method": "msa_aligned_position",
+              "mapping_confidence": 1.0,
+              "observation": {
+                "species_id": "homo_sapiens",
+                "scientific_name": "Homo sapiens",
+                "taxonomic_group": "Other mammals",
+                "protein_id": "NP_001304849.1",
+                "transcript_id": "NM_001317920.2",
+                "boundary_id": "NP_001304849.1:cds1_end",
+                "exon_transition": "E1 → E2",
+                "left_exon_id": "NP_001304849.1:cds1",
+                "right_exon_id": "NP_001304849.1:cds2",
+                "left_exon_label": "E1",
+                "right_exon_label": "E2",
+                "native_position": 188,
+                "msa_column": 188,
+                "msa_mapping_status": "mapped",
+                "nearest_domain_instance_id": "IPR046371:90-188",
+                "nearest_domain_accession": "IPR046371",
+                "nearest_domain_label": "Bcl-2 BH1-3",
+                "nearest_domain_full_label": "Bcl-2 BH1-3 · aa 90–188",
+                "nearest_domain_start": 90,
+                "nearest_domain_end": 188,
+                "nearest_edge": "end",
+                "nearest_edge_position": 188,
+                "signed_distance": 0,
+                "absolute_distance": 0,
+                "boundary_class": "exact_domain_edge",
+                "domain_annotation_available": true,
+                "mapping_method": "msa_aligned_position",
+                "mapping_status": "supported_comparable",
+                "mapping_confidence": 1.0,
+                "species_coverage": 1.0
+              }
+            }
+          ]
+        },
+        {
+          "species_id": "mus_musculus",
+          "scientific_name": "Mus musculus",
+          "taxonomic_group": "Other mammals",
+          "protein_id": "NP_001276668.1",
+          "analysis_status": "available",
+          "cells": [
+            {
+              "comparable_boundary_group_id": "CBG1",
+              "state": "exact_domain_edge",
+              "observed": true,
+              "native_position": 188,
+              "signed_distance": 0,
+              "absolute_distance": 0,
+              "mapping_status": "supported_comparable",
+              "mapping_method": "msa_aligned_position",
+              "mapping_confidence": 1.0,
+              "observation": {
+                "species_id": "mus_musculus",
+                "scientific_name": "Mus musculus",
+                "taxonomic_group": "Other mammals",
+                "protein_id": "NP_001276668.1",
+                "transcript_id": "NM_001289739.2",
+                "boundary_id": "NP_001276668.1:cds1_end",
+                "exon_transition": "E1 → E2",
+                "left_exon_id": "NP_001276668.1:cds1",
+                "right_exon_id": "NP_001276668.1:cds2",
+                "left_exon_label": "E1",
+                "right_exon_label": "E2",
+                "native_position": 188,
+                "msa_column": 188,
+                "msa_mapping_status": "mapped",
+                "nearest_domain_instance_id": "IPR046371:90-188",
+                "nearest_domain_accession": "IPR046371",
+                "nearest_domain_label": "Bcl-2 BH1-3",
+                "nearest_domain_full_label": "Bcl-2 BH1-3 · aa 90–188",
+                "nearest_domain_start": 90,
+                "nearest_domain_end": 188,
+                "nearest_edge": "end",
+                "nearest_edge_position": 188,
+                "signed_distance": 0,
+                "absolute_distance": 0,
+                "boundary_class": "exact_domain_edge",
+                "domain_annotation_available": true,
+                "mapping_method": "msa_aligned_position",
+                "mapping_status": "supported_comparable",
+                "mapping_confidence": 1.0,
+                "species_coverage": 1.0
+              }
+            }
+          ]
+        }
+      ],
+      "distance_statistics": [
+        {
+          "comparable_boundary_group_id": "CBG1",
+          "species_coverage": 1.0,
+          "species_with_mapped_boundary": 2,
+          "n_species_available": 2,
+          "mapping_coverage": 1.0,
+          "exact_or_near_proportion": 1.0,
+          "raw_signed_distances": [
+            {
+              "species_id": "homo_sapiens",
+              "signed_distance": 0,
+              "boundary_class": "exact_domain_edge",
+              "domain_annotation_available": true
+            },
+            {
+              "species_id": "mus_musculus",
+              "signed_distance": 0,
+              "boundary_class": "exact_domain_edge",
+              "domain_annotation_available": true
+            }
+          ],
+          "cross_species_difference": 0,
+          "distance_range": [
+            0,
+            0
+          ],
+          "median_signed_distance": 0.0,
+          "distance_spread": 0,
+          "primary_statistic": "raw_pair",
+          "dominant_class": "exact_domain_edge",
+          "classes_differ": false,
+          "domain_annotation_available_in_all": true,
+          "mapping_confidence": 1.0,
+          "mapping_confidence_distribution": {
+            "min": 1.0,
+            "max": 1.0
+          },
+          "mapping_status": "supported_comparable",
+          "metric_label": "Boundary-position consistency"
+        }
+      ],
+      "inspection_cases": [],
+      "filter_options": {
+        "species": [
+          {
+            "species_id": "homo_sapiens",
+            "scientific_name": "Homo sapiens",
+            "taxonomic_group": "Other mammals"
+          },
+          {
+            "species_id": "mus_musculus",
+            "scientific_name": "Mus musculus",
+            "taxonomic_group": "Other mammals"
+          }
+        ],
+        "taxonomic_groups": [
+          "Other mammals"
+        ],
+        "boundary_classes": [
+          "exact_domain_edge"
+        ],
+        "representative_domain_groups": [
+          {
+            "interpro_accession": "IPR046371",
+            "label": "Bcl-2 BH1-3"
+          }
+        ],
+        "mapping_statuses": [
+          "supported_comparable"
+        ],
+        "edges": [
+          "end"
+        ],
+        "inspection_case_types": []
+      },
+      "near_edge_band_aa": [
+        -5,
+        5
+      ]
+    }
+  },
+  "publication_figures": [
+    {
+      "group": "Exon structure",
+      "kind": "transcript_exon_structure",
+      "title": "BCL2L1 · Transcript structure and translated protein product",
+      "format": "svg",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_transcript_and_protein_structure.svg"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_exon_structure",
+      "title": "BCL2L1 · Transcript structure and translated protein product",
+      "format": "pdf",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_transcript_and_protein_structure.pdf"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_exon_structure",
+      "title": "BCL2L1 · Transcript structure and translated protein product",
+      "format": "png",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_transcript_and_protein_structure.png"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_exon_structure",
+      "title": "BCL2L1 · Transcript structure and translated protein product",
+      "format": "tsv",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_transcript_and_protein_structure.tsv"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_model_comparison",
+      "title": "BCL2L1 · Transcript-model comparison (all protein models)",
+      "format": "svg",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_all.svg"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_model_comparison",
+      "title": "BCL2L1 · Transcript-model comparison (all protein models)",
+      "format": "pdf",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_all.pdf"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_model_comparison",
+      "title": "BCL2L1 · Transcript-model comparison (all protein models)",
+      "format": "png",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_all.png"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_model_comparison",
+      "title": "BCL2L1 · Transcript-model comparison (all protein models)",
+      "format": "tsv",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_all.tsv"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_model_comparison_differences",
+      "title": "BCL2L1 · Transcript-model comparison (differences from the primary model)",
+      "format": "svg",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_differences.svg"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_model_comparison_differences",
+      "title": "BCL2L1 · Transcript-model comparison (differences from the primary model)",
+      "format": "pdf",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_differences.pdf"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_model_comparison_differences",
+      "title": "BCL2L1 · Transcript-model comparison (differences from the primary model)",
+      "format": "png",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_differences.png"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_model_comparison_differences",
+      "title": "BCL2L1 · Transcript-model comparison (differences from the primary model)",
+      "format": "tsv",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_differences.tsv"
+    },
+    {
+      "group": "Genomic context",
+      "kind": "local_gene_neighbourhood",
+      "title": "BCL2L1 · Local genomic neighbourhood",
+      "format": "svg",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_local_gene_neighbourhood.svg"
+    },
+    {
+      "group": "Genomic context",
+      "kind": "local_gene_neighbourhood",
+      "title": "BCL2L1 · Local genomic neighbourhood",
+      "format": "pdf",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_local_gene_neighbourhood.pdf"
+    },
+    {
+      "group": "Genomic context",
+      "kind": "local_gene_neighbourhood",
+      "title": "BCL2L1 · Local genomic neighbourhood",
+      "format": "png",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_local_gene_neighbourhood.png"
+    },
+    {
+      "group": "Genomic context",
+      "kind": "local_gene_neighbourhood",
+      "title": "BCL2L1 · Local genomic neighbourhood",
+      "format": "tsv",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_local_gene_neighbourhood.tsv"
+    },
+    {
+      "group": "Exploratory candidates",
+      "kind": "exploratory_candidate_ranking",
+      "title": "BCL2L1 · Exploratory candidate ranking",
+      "format": "svg",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_exploratory_candidate_ranking.svg"
+    },
+    {
+      "group": "Exploratory candidates",
+      "kind": "exploratory_candidate_ranking",
+      "title": "BCL2L1 · Exploratory candidate ranking",
+      "format": "pdf",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_exploratory_candidate_ranking.pdf"
+    },
+    {
+      "group": "Exploratory candidates",
+      "kind": "exploratory_candidate_ranking",
+      "title": "BCL2L1 · Exploratory candidate ranking",
+      "format": "png",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_exploratory_candidate_ranking.png"
+    },
+    {
+      "group": "Exploratory candidates",
+      "kind": "exploratory_candidate_ranking",
+      "title": "BCL2L1 · Exploratory candidate ranking",
+      "format": "tsv",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_exploratory_candidate_ranking.tsv"
+    },
+    {
+      "group": "Exploratory candidates",
+      "kind": "generic_candidate_domain_context",
+      "title": "BCL2L1 · Exploratory candidates in their domain context",
+      "format": "svg",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_candidate_domain_context.svg"
+    },
+    {
+      "group": "Exploratory candidates",
+      "kind": "generic_candidate_domain_context",
+      "title": "BCL2L1 · Exploratory candidates in their domain context",
+      "format": "pdf",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_candidate_domain_context.pdf"
+    },
+    {
+      "group": "Exploratory candidates",
+      "kind": "generic_candidate_domain_context",
+      "title": "BCL2L1 · Exploratory candidates in their domain context",
+      "format": "png",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_candidate_domain_context.png"
+    },
+    {
+      "group": "Exploratory candidates",
+      "kind": "generic_candidate_domain_context",
+      "title": "BCL2L1 · Exploratory candidates in their domain context",
+      "format": "tsv",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_candidate_domain_context.tsv"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_exon_structure",
+      "title": "BCL2L1 · Transcript structure and translated protein product",
+      "format": "svg",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_transcript_and_protein_structure.svg"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_exon_structure",
+      "title": "BCL2L1 · Transcript structure and translated protein product",
+      "format": "pdf",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_transcript_and_protein_structure.pdf"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_exon_structure",
+      "title": "BCL2L1 · Transcript structure and translated protein product",
+      "format": "png",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_transcript_and_protein_structure.png"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_exon_structure",
+      "title": "BCL2L1 · Transcript structure and translated protein product",
+      "format": "tsv",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_transcript_and_protein_structure.tsv"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_model_comparison",
+      "title": "BCL2L1 · Transcript-model comparison (all protein models)",
+      "format": "svg",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_all.svg"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_model_comparison",
+      "title": "BCL2L1 · Transcript-model comparison (all protein models)",
+      "format": "pdf",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_all.pdf"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_model_comparison",
+      "title": "BCL2L1 · Transcript-model comparison (all protein models)",
+      "format": "png",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_all.png"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_model_comparison",
+      "title": "BCL2L1 · Transcript-model comparison (all protein models)",
+      "format": "tsv",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_all.tsv"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_model_comparison_differences",
+      "title": "BCL2L1 · Transcript-model comparison (differences from the primary model)",
+      "format": "svg",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_differences.svg"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_model_comparison_differences",
+      "title": "BCL2L1 · Transcript-model comparison (differences from the primary model)",
+      "format": "pdf",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_differences.pdf"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_model_comparison_differences",
+      "title": "BCL2L1 · Transcript-model comparison (differences from the primary model)",
+      "format": "png",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_differences.png"
+    },
+    {
+      "group": "Exon structure",
+      "kind": "transcript_model_comparison_differences",
+      "title": "BCL2L1 · Transcript-model comparison (differences from the primary model)",
+      "format": "tsv",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_differences.tsv"
+    },
+    {
+      "group": "Genomic context",
+      "kind": "local_gene_neighbourhood",
+      "title": "BCL2L1 · Local genomic neighbourhood",
+      "format": "svg",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_local_gene_neighbourhood.svg"
+    },
+    {
+      "group": "Genomic context",
+      "kind": "local_gene_neighbourhood",
+      "title": "BCL2L1 · Local genomic neighbourhood",
+      "format": "pdf",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_local_gene_neighbourhood.pdf"
+    },
+    {
+      "group": "Genomic context",
+      "kind": "local_gene_neighbourhood",
+      "title": "BCL2L1 · Local genomic neighbourhood",
+      "format": "png",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_local_gene_neighbourhood.png"
+    },
+    {
+      "group": "Genomic context",
+      "kind": "local_gene_neighbourhood",
+      "title": "BCL2L1 · Local genomic neighbourhood",
+      "format": "tsv",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_local_gene_neighbourhood.tsv"
+    },
+    {
+      "group": "Exploratory candidates",
+      "kind": "exploratory_candidate_ranking",
+      "title": "BCL2L1 · Exploratory candidate ranking",
+      "format": "svg",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_exploratory_candidate_ranking.svg"
+    },
+    {
+      "group": "Exploratory candidates",
+      "kind": "exploratory_candidate_ranking",
+      "title": "BCL2L1 · Exploratory candidate ranking",
+      "format": "pdf",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_exploratory_candidate_ranking.pdf"
+    },
+    {
+      "group": "Exploratory candidates",
+      "kind": "exploratory_candidate_ranking",
+      "title": "BCL2L1 · Exploratory candidate ranking",
+      "format": "png",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_exploratory_candidate_ranking.png"
+    },
+    {
+      "group": "Exploratory candidates",
+      "kind": "exploratory_candidate_ranking",
+      "title": "BCL2L1 · Exploratory candidate ranking",
+      "format": "tsv",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_exploratory_candidate_ranking.tsv"
+    },
+    {
+      "group": "Exploratory candidates",
+      "kind": "generic_candidate_domain_context",
+      "title": "BCL2L1 · Exploratory candidates in their domain context",
+      "format": "svg",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_candidate_domain_context.svg"
+    },
+    {
+      "group": "Exploratory candidates",
+      "kind": "generic_candidate_domain_context",
+      "title": "BCL2L1 · Exploratory candidates in their domain context",
+      "format": "pdf",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_candidate_domain_context.pdf"
+    },
+    {
+      "group": "Exploratory candidates",
+      "kind": "generic_candidate_domain_context",
+      "title": "BCL2L1 · Exploratory candidates in their domain context",
+      "format": "png",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_candidate_domain_context.png"
+    },
+    {
+      "group": "Exploratory candidates",
+      "kind": "generic_candidate_domain_context",
+      "title": "BCL2L1 · Exploratory candidates in their domain context",
+      "format": "tsv",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_candidate_domain_context.tsv"
+    },
+    {
+      "group": "main_figures",
+      "kind": "primary_exon_projection",
+      "title": "Primary exon-to-protein projection",
+      "format": "svg",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_primary_exon_projection.svg"
+    },
+    {
+      "group": "main_figures",
+      "kind": "primary_exon_projection",
+      "title": "Primary exon-to-protein projection",
+      "format": "pdf",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_primary_exon_projection.pdf"
+    },
+    {
+      "group": "main_figures",
+      "kind": "primary_exon_projection",
+      "title": "Primary exon-to-protein projection",
+      "format": "png",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_primary_exon_projection.png"
+    },
+    {
+      "group": "main_figures",
+      "kind": "primary_exon_projection",
+      "title": "Primary exon-to-protein projection",
+      "format": "tsv",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_primary_exon_projection.tsv"
+    },
+    {
+      "group": "main_figures",
+      "kind": "integrated_domain_architecture",
+      "title": "Integrated domain architecture",
+      "format": "svg",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_integrated_domain_architecture.svg"
+    },
+    {
+      "group": "main_figures",
+      "kind": "integrated_domain_architecture",
+      "title": "Integrated domain architecture",
+      "format": "pdf",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_integrated_domain_architecture.pdf"
+    },
+    {
+      "group": "main_figures",
+      "kind": "integrated_domain_architecture",
+      "title": "Integrated domain architecture",
+      "format": "png",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_integrated_domain_architecture.png"
+    },
+    {
+      "group": "main_figures",
+      "kind": "integrated_domain_architecture",
+      "title": "Integrated domain architecture",
+      "format": "tsv",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_integrated_domain_architecture.tsv"
+    },
+    {
+      "group": "main_figures",
+      "kind": "boundary_on_architecture",
+      "title": "Exon boundaries on the domain architecture",
+      "format": "svg",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_on_architecture.svg"
+    },
+    {
+      "group": "main_figures",
+      "kind": "boundary_on_architecture",
+      "title": "Exon boundaries on the domain architecture",
+      "format": "pdf",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_on_architecture.pdf"
+    },
+    {
+      "group": "main_figures",
+      "kind": "boundary_on_architecture",
+      "title": "Exon boundaries on the domain architecture",
+      "format": "png",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_on_architecture.png"
+    },
+    {
+      "group": "main_figures",
+      "kind": "boundary_on_architecture",
+      "title": "Exon boundaries on the domain architecture",
+      "format": "tsv",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_on_architecture.tsv"
+    },
+    {
+      "group": "main_figures",
+      "kind": "signed_boundary_distances",
+      "title": "Signed boundary distances to the nearest domain edge",
+      "format": "svg",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_signed_boundary_distances.svg"
+    },
+    {
+      "group": "main_figures",
+      "kind": "signed_boundary_distances",
+      "title": "Signed boundary distances to the nearest domain edge",
+      "format": "pdf",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_signed_boundary_distances.pdf"
+    },
+    {
+      "group": "main_figures",
+      "kind": "signed_boundary_distances",
+      "title": "Signed boundary distances to the nearest domain edge",
+      "format": "png",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_signed_boundary_distances.png"
+    },
+    {
+      "group": "main_figures",
+      "kind": "signed_boundary_distances",
+      "title": "Signed boundary distances to the nearest domain edge",
+      "format": "tsv",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_signed_boundary_distances.tsv"
+    },
+    {
+      "group": "main_figures",
+      "kind": "boundary_class_summary",
+      "title": "Boundary-class summary",
+      "format": "svg",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_class_summary.svg"
+    },
+    {
+      "group": "main_figures",
+      "kind": "boundary_class_summary",
+      "title": "Boundary-class summary",
+      "format": "pdf",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_class_summary.pdf"
+    },
+    {
+      "group": "main_figures",
+      "kind": "boundary_class_summary",
+      "title": "Boundary-class summary",
+      "format": "png",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_class_summary.png"
+    },
+    {
+      "group": "main_figures",
+      "kind": "boundary_class_summary",
+      "title": "Boundary-class summary",
+      "format": "tsv",
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_class_summary.tsv"
+    },
+    {
+      "group": "main_figures",
+      "kind": "primary_exon_projection",
+      "title": "Primary exon-to-protein projection",
+      "format": "svg",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_primary_exon_projection.svg"
+    },
+    {
+      "group": "main_figures",
+      "kind": "primary_exon_projection",
+      "title": "Primary exon-to-protein projection",
+      "format": "pdf",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_primary_exon_projection.pdf"
+    },
+    {
+      "group": "main_figures",
+      "kind": "primary_exon_projection",
+      "title": "Primary exon-to-protein projection",
+      "format": "png",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_primary_exon_projection.png"
+    },
+    {
+      "group": "main_figures",
+      "kind": "primary_exon_projection",
+      "title": "Primary exon-to-protein projection",
+      "format": "tsv",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_primary_exon_projection.tsv"
+    },
+    {
+      "group": "main_figures",
+      "kind": "integrated_domain_architecture",
+      "title": "Integrated domain architecture",
+      "format": "svg",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_integrated_domain_architecture.svg"
+    },
+    {
+      "group": "main_figures",
+      "kind": "integrated_domain_architecture",
+      "title": "Integrated domain architecture",
+      "format": "pdf",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_integrated_domain_architecture.pdf"
+    },
+    {
+      "group": "main_figures",
+      "kind": "integrated_domain_architecture",
+      "title": "Integrated domain architecture",
+      "format": "png",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_integrated_domain_architecture.png"
+    },
+    {
+      "group": "main_figures",
+      "kind": "integrated_domain_architecture",
+      "title": "Integrated domain architecture",
+      "format": "tsv",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_integrated_domain_architecture.tsv"
+    },
+    {
+      "group": "main_figures",
+      "kind": "boundary_on_architecture",
+      "title": "Exon boundaries on the domain architecture",
+      "format": "svg",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_on_architecture.svg"
+    },
+    {
+      "group": "main_figures",
+      "kind": "boundary_on_architecture",
+      "title": "Exon boundaries on the domain architecture",
+      "format": "pdf",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_on_architecture.pdf"
+    },
+    {
+      "group": "main_figures",
+      "kind": "boundary_on_architecture",
+      "title": "Exon boundaries on the domain architecture",
+      "format": "png",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_on_architecture.png"
+    },
+    {
+      "group": "main_figures",
+      "kind": "boundary_on_architecture",
+      "title": "Exon boundaries on the domain architecture",
+      "format": "tsv",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_on_architecture.tsv"
+    },
+    {
+      "group": "main_figures",
+      "kind": "signed_boundary_distances",
+      "title": "Signed boundary distances to the nearest domain edge",
+      "format": "svg",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_signed_boundary_distances.svg"
+    },
+    {
+      "group": "main_figures",
+      "kind": "signed_boundary_distances",
+      "title": "Signed boundary distances to the nearest domain edge",
+      "format": "pdf",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_signed_boundary_distances.pdf"
+    },
+    {
+      "group": "main_figures",
+      "kind": "signed_boundary_distances",
+      "title": "Signed boundary distances to the nearest domain edge",
+      "format": "png",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_signed_boundary_distances.png"
+    },
+    {
+      "group": "main_figures",
+      "kind": "signed_boundary_distances",
+      "title": "Signed boundary distances to the nearest domain edge",
+      "format": "tsv",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_signed_boundary_distances.tsv"
+    },
+    {
+      "group": "main_figures",
+      "kind": "boundary_class_summary",
+      "title": "Boundary-class summary",
+      "format": "svg",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_class_summary.svg"
+    },
+    {
+      "group": "main_figures",
+      "kind": "boundary_class_summary",
+      "title": "Boundary-class summary",
+      "format": "pdf",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_class_summary.pdf"
+    },
+    {
+      "group": "main_figures",
+      "kind": "boundary_class_summary",
+      "title": "Boundary-class summary",
+      "format": "png",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_class_summary.png"
+    },
+    {
+      "group": "main_figures",
+      "kind": "boundary_class_summary",
+      "title": "Boundary-class summary",
+      "format": "tsv",
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_class_summary.tsv"
+    },
+    {
+      "group": "Domain architecture",
+      "kind": "domain_arch_homo_sapiens_member_signature_supplement",
+      "title": "Member-database signature supplement",
+      "format": "svg",
+      "species_id": "homo_sapiens",
+      "scientific_name": "Homo sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/domain_architecture/domain_arch_homo_sapiens_member_signature_supplement.svg"
+    },
+    {
+      "group": "Domain architecture",
+      "kind": "domain_arch_homo_sapiens_member_signature_supplement",
+      "title": "Member-database signature supplement",
+      "format": "pdf",
+      "species_id": "homo_sapiens",
+      "scientific_name": "Homo sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/domain_architecture/domain_arch_homo_sapiens_member_signature_supplement.pdf"
+    },
+    {
+      "group": "Domain architecture",
+      "kind": "domain_arch_homo_sapiens_member_signature_supplement",
+      "title": "Member-database signature supplement",
+      "format": "png",
+      "species_id": "homo_sapiens",
+      "scientific_name": "Homo sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/domain_architecture/domain_arch_homo_sapiens_member_signature_supplement.png"
+    },
+    {
+      "group": "Domain architecture",
+      "kind": "domain_arch_homo_sapiens_member_signature_supplement",
+      "title": "Member-database signature supplement",
+      "format": "tsv",
+      "species_id": "homo_sapiens",
+      "scientific_name": "Homo sapiens",
+      "protein_id": "NP_001304849.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/domain_architecture/domain_arch_homo_sapiens_member_signature_supplement.tsv"
+    },
+    {
+      "group": "Domain architecture",
+      "kind": "domain_arch_mus_musculus_member_signature_supplement",
+      "title": "Member-database signature supplement",
+      "format": "svg",
+      "species_id": "mus_musculus",
+      "scientific_name": "Mus musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/domain_architecture/domain_arch_mus_musculus_member_signature_supplement.svg"
+    },
+    {
+      "group": "Domain architecture",
+      "kind": "domain_arch_mus_musculus_member_signature_supplement",
+      "title": "Member-database signature supplement",
+      "format": "pdf",
+      "species_id": "mus_musculus",
+      "scientific_name": "Mus musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/domain_architecture/domain_arch_mus_musculus_member_signature_supplement.pdf"
+    },
+    {
+      "group": "Domain architecture",
+      "kind": "domain_arch_mus_musculus_member_signature_supplement",
+      "title": "Member-database signature supplement",
+      "format": "png",
+      "species_id": "mus_musculus",
+      "scientific_name": "Mus musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/domain_architecture/domain_arch_mus_musculus_member_signature_supplement.png"
+    },
+    {
+      "group": "Domain architecture",
+      "kind": "domain_arch_mus_musculus_member_signature_supplement",
+      "title": "Member-database signature supplement",
+      "format": "tsv",
+      "species_id": "mus_musculus",
+      "scientific_name": "Mus musculus",
+      "protein_id": "NP_001276668.1",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/domain_architecture/domain_arch_mus_musculus_member_signature_supplement.tsv"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_msa_aligned_exon_architecture",
+      "title": "MSA-aligned exon architecture",
+      "format": "svg",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_msa_aligned_exon_architecture.svg"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_msa_aligned_exon_architecture",
+      "title": "MSA-aligned exon architecture",
+      "format": "pdf",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_msa_aligned_exon_architecture.pdf"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_msa_aligned_exon_architecture",
+      "title": "MSA-aligned exon architecture",
+      "format": "png",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_msa_aligned_exon_architecture.png"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_msa_aligned_exon_architecture",
+      "title": "MSA-aligned exon architecture",
+      "format": "tsv",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_msa_aligned_exon_architecture.tsv"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_native_exon_architecture",
+      "title": "Native-coordinate exon architecture comparison",
+      "format": "svg",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_native_exon_architecture.svg"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_native_exon_architecture",
+      "title": "Native-coordinate exon architecture comparison",
+      "format": "pdf",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_native_exon_architecture.pdf"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_native_exon_architecture",
+      "title": "Native-coordinate exon architecture comparison",
+      "format": "png",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_native_exon_architecture.png"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_native_exon_architecture",
+      "title": "Native-coordinate exon architecture comparison",
+      "format": "tsv",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_native_exon_architecture.tsv"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_primary_msa_overview",
+      "title": "Cross-species primary-protein MSA overview",
+      "format": "svg",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_primary_msa_overview.svg"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_primary_msa_overview",
+      "title": "Cross-species primary-protein MSA overview",
+      "format": "pdf",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_primary_msa_overview.pdf"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_primary_msa_overview",
+      "title": "Cross-species primary-protein MSA overview",
+      "format": "png",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_primary_msa_overview.png"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_primary_msa_overview",
+      "title": "Cross-species primary-protein MSA overview",
+      "format": "tsv",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_primary_msa_overview.tsv"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_domain_architecture_native",
+      "title": "Comparative domain architecture (native coordinates)",
+      "format": "svg",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_native.svg"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_domain_architecture_native",
+      "title": "Comparative domain architecture (native coordinates)",
+      "format": "pdf",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_native.pdf"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_domain_architecture_native",
+      "title": "Comparative domain architecture (native coordinates)",
+      "format": "png",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_native.png"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_domain_architecture_native",
+      "title": "Comparative domain architecture (native coordinates)",
+      "format": "tsv",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_native.tsv"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_domain_architecture_msa",
+      "title": "Comparative domain architecture (MSA-aligned coordinates)",
+      "format": "svg",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_msa.svg"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_domain_architecture_msa",
+      "title": "Comparative domain architecture (MSA-aligned coordinates)",
+      "format": "pdf",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_msa.pdf"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_domain_architecture_msa",
+      "title": "Comparative domain architecture (MSA-aligned coordinates)",
+      "format": "png",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_msa.png"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_domain_architecture_msa",
+      "title": "Comparative domain architecture (MSA-aligned coordinates)",
+      "format": "tsv",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_msa.tsv"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_exon_domain_architecture_native",
+      "title": "Exon and domain architecture per species (native coordinates)",
+      "format": "svg",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_native.svg"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_exon_domain_architecture_native",
+      "title": "Exon and domain architecture per species (native coordinates)",
+      "format": "pdf",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_native.pdf"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_exon_domain_architecture_native",
+      "title": "Exon and domain architecture per species (native coordinates)",
+      "format": "png",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_native.png"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_exon_domain_architecture_native",
+      "title": "Exon and domain architecture per species (native coordinates)",
+      "format": "tsv",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_native.tsv"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_exon_domain_architecture_msa",
+      "title": "Exon and domain architecture per species (MSA-aligned coordinates)",
+      "format": "svg",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_msa.svg"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_exon_domain_architecture_msa",
+      "title": "Exon and domain architecture per species (MSA-aligned coordinates)",
+      "format": "pdf",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_msa.pdf"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_exon_domain_architecture_msa",
+      "title": "Exon and domain architecture per species (MSA-aligned coordinates)",
+      "format": "png",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_msa.png"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_exon_domain_architecture_msa",
+      "title": "Exon and domain architecture per species (MSA-aligned coordinates)",
+      "format": "tsv",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_msa.tsv"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_domain_annotation_matrix",
+      "title": "Domain annotation matrix",
+      "format": "svg",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_domain_annotation_matrix.svg"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_domain_annotation_matrix",
+      "title": "Domain annotation matrix",
+      "format": "pdf",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_domain_annotation_matrix.pdf"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_domain_annotation_matrix",
+      "title": "Domain annotation matrix",
+      "format": "png",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_domain_annotation_matrix.png"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_domain_annotation_matrix",
+      "title": "Domain annotation matrix",
+      "format": "tsv",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_domain_annotation_matrix.tsv"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_isoform_diversity",
+      "title": "Comparative isoform diversity",
+      "format": "svg",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_isoform_diversity.svg"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_isoform_diversity",
+      "title": "Comparative isoform diversity",
+      "format": "pdf",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_isoform_diversity.pdf"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_isoform_diversity",
+      "title": "Comparative isoform diversity",
+      "format": "png",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_isoform_diversity.png"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_isoform_diversity",
+      "title": "Comparative isoform diversity",
+      "format": "tsv",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_isoform_diversity.tsv"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_comparative_synteny",
+      "title": "Comparative local genomic context",
+      "format": "svg",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_comparative_synteny.svg"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_comparative_synteny",
+      "title": "Comparative local genomic context",
+      "format": "pdf",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_comparative_synteny.pdf"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_comparative_synteny",
+      "title": "Comparative local genomic context",
+      "format": "png",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_comparative_synteny.png"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_comparative_synteny",
+      "title": "Comparative local genomic context",
+      "format": "tsv",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_comparative_synteny.tsv"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_synteny_neighbour_conservation",
+      "title": "Neighbour conservation across species",
+      "format": "svg",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_synteny_neighbour_conservation.svg"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_synteny_neighbour_conservation",
+      "title": "Neighbour conservation across species",
+      "format": "pdf",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_synteny_neighbour_conservation.pdf"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_synteny_neighbour_conservation",
+      "title": "Neighbour conservation across species",
+      "format": "png",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_synteny_neighbour_conservation.png"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_synteny_neighbour_conservation",
+      "title": "Neighbour conservation across species",
+      "format": "tsv",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_synteny_neighbour_conservation.tsv"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_boundary_matrix",
+      "title": "Comparative exon–domain boundary matrix",
+      "format": "svg",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_boundary_matrix.svg"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_boundary_matrix",
+      "title": "Comparative exon–domain boundary matrix",
+      "format": "pdf",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_boundary_matrix.pdf"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_boundary_matrix",
+      "title": "Comparative exon–domain boundary matrix",
+      "format": "png",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_boundary_matrix.png"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_boundary_matrix",
+      "title": "Comparative exon–domain boundary matrix",
+      "format": "tsv",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_boundary_matrix.tsv"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_paired_signed_distance",
+      "title": "Paired signed-distance plot",
+      "format": "svg",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_paired_signed_distance.svg"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_paired_signed_distance",
+      "title": "Paired signed-distance plot",
+      "format": "pdf",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_paired_signed_distance.pdf"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_paired_signed_distance",
+      "title": "Paired signed-distance plot",
+      "format": "png",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_paired_signed_distance.png"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_paired_signed_distance",
+      "title": "Paired signed-distance plot",
+      "format": "tsv",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_paired_signed_distance.tsv"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_boundary_position_consistency",
+      "title": "Boundary-position consistency",
+      "format": "svg",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_boundary_position_consistency.svg"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_boundary_position_consistency",
+      "title": "Boundary-position consistency",
+      "format": "pdf",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_boundary_position_consistency.pdf"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_boundary_position_consistency",
+      "title": "Boundary-position consistency",
+      "format": "png",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_boundary_position_consistency.png"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_boundary_position_consistency",
+      "title": "Boundary-position consistency",
+      "format": "tsv",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_boundary_position_consistency.tsv"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_local_boundary_architecture",
+      "title": "Comparative local boundary architecture",
+      "format": "svg",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_local_boundary_architecture.svg"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_local_boundary_architecture",
+      "title": "Comparative local boundary architecture",
+      "format": "pdf",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_local_boundary_architecture.pdf"
+    },
+    {
+      "group": "comparative_figures",
+      "kind": "cmp_local_boundary_architecture",
+      "title": "Comparative local boundary architecture",
+      "format": "png",
+      "scope": "comparative",
+      "path": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/results/generic_gene_analysis/figures/comparative/cmp_local_boundary_architecture.png"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="522" height="334.3" viewBox="0 0 522 334.3">
+<rect x="0" y="0" width="522" height="334.3" fill="#ffffff" stroke="none" />
+<text x="12" y="20.5" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="10.5" fill="#1c2433" text-anchor="start" font-weight="bold">FGFR2 IIIb</text>
+<text x="68.56" y="20.5" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="10.5" fill="#1c2433" text-anchor="start" font-weight="normal" font-style="italic">· Homo sapiens</text>
+<text x="12" y="32.5" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8" fill="#6B7280" text-anchor="start" font-weight="normal">ENSP00000813085 · signed distance from each internal coding-exon boundary to the nearest representative-domain edge</text>
+<text x="12" y="43.5" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="start" font-weight="normal" font-style="italic">How far, and on which side, does each exon boundary sit relative to the nearest domain edge?</text>
+<rect x="304.98" y="58.7" width="11.94" height="204.4" fill="#e3e8f0" stroke="none" stroke-width="0.5" opacity="0.9" />
+<text x="310.95" y="55.7" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="middle" font-weight="normal">±5 aa</text>
+<line x1="310.95" y1="58.7" x2="310.95" y2="263.1" stroke="#1c2433" stroke-width="0.7" />
+<text x="113.9" y="70.49" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="end" font-weight="normal">ENSP00000813085:E1_E2</text>
+<line x1="310.95" y1="67.9" x2="322.89" y2="67.9" stroke="#009E73" stroke-width="0.7" opacity="0.75" />
+<circle cx="322.89" cy="67.9" r="2.8" fill="#ffffff" stroke="#009E73" stroke-width="1.1" />
+<text x="328.69" y="70.07" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="start" font-weight="normal">+10</text>
+<text x="113.9" y="82.89" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="end" font-weight="normal">ENSP00000813085:E2_E3</text>
+<line x1="310.95" y1="80.3" x2="288.26" y2="80.3" stroke="#009E73" stroke-width="0.7" opacity="0.75" />
+<circle cx="288.26" cy="80.3" r="2.8" fill="#009E73" stroke="none" stroke-width="0.5" />
+<text x="282.46" y="82.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="end" font-weight="normal">-19</text>
+<text x="113.9" y="95.29" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="end" font-weight="normal">ENSP00000813085:E3_E4</text>
+<line x1="310.95" y1="92.7" x2="343.19" y2="92.7" stroke="#D55E00" stroke-width="0.7" opacity="0.75" />
+<circle cx="343.19" cy="92.7" r="2.8" fill="#D55E00" stroke="none" stroke-width="0.5" />
+<text x="348.99" y="94.87" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="start" font-weight="normal">+27</text>
+<text x="113.9" y="107.69" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="end" font-weight="normal">ENSP00000813085:E4_E5</text>
+<line x1="310.95" y1="105.1" x2="297.82" y2="105.1" stroke="#D55E00" stroke-width="0.7" opacity="0.75" />
+<circle cx="297.82" cy="105.1" r="2.8" fill="#ffffff" stroke="#D55E00" stroke-width="1.1" />
+<text x="292.02" y="107.27" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="end" font-weight="normal">-11</text>
+<text x="113.9" y="120.09" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="end" font-weight="normal">ENSP00000813085:E5_E6</text>
+<line x1="310.95" y1="117.5" x2="346.77" y2="117.5" stroke="#009E73" stroke-width="0.7" opacity="0.75" />
+<circle cx="346.77" cy="117.5" r="2.8" fill="#ffffff" stroke="#009E73" stroke-width="1.1" />
+<text x="352.57" y="119.67" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="start" font-weight="normal">+30</text>
+<text x="113.9" y="132.49" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="end" font-weight="normal">ENSP00000813085:E6_E7</text>
+<line x1="310.95" y1="129.9" x2="313.34" y2="129.9" stroke="#0072B2" stroke-width="0.7" opacity="0.75" />
+<circle cx="313.34" cy="129.9" r="2.8" fill="#ffffff" stroke="#0072B2" stroke-width="1.1" />
+<text x="319.14" y="132.07" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="start" font-weight="normal">+2</text>
+<text x="113.9" y="144.89" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="end" font-weight="normal">ENSP00000813085:E7_E8</text>
+<line x1="310.95" y1="142.3" x2="357.52" y2="142.3" stroke="#009E73" stroke-width="0.7" opacity="0.75" />
+<circle cx="357.52" cy="142.3" r="2.8" fill="#ffffff" stroke="#009E73" stroke-width="1.1" />
+<text x="363.32" y="144.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="start" font-weight="normal">+39</text>
+<text x="113.9" y="157.29" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="end" font-weight="normal">ENSP00000813085:E8_E9</text>
+<line x1="310.95" y1="154.7" x2="294.23" y2="154.7" stroke="#009E73" stroke-width="0.7" opacity="0.75" />
+<circle cx="294.23" cy="154.7" r="2.8" fill="#009E73" stroke="none" stroke-width="0.5" />
+<text x="288.43" y="156.87" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="end" font-weight="normal">-14</text>
+<text x="113.9" y="169.69" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="end" font-weight="normal">ENSP00000813085:E9_E10</text>
+<line x1="310.95" y1="167.1" x2="353.94" y2="167.1" stroke="#D55E00" stroke-width="0.7" opacity="0.75" />
+<circle cx="353.94" cy="167.1" r="2.8" fill="#D55E00" stroke="none" stroke-width="0.5" />
+<text x="359.74" y="169.27" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="start" font-weight="normal">+36</text>
+<text x="113.9" y="182.09" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="end" font-weight="normal">ENSP00000813085:E10_E11</text>
+<line x1="310.95" y1="179.5" x2="338.41" y2="179.5" stroke="#009E73" stroke-width="0.7" opacity="0.75" />
+<circle cx="338.41" cy="179.5" r="2.8" fill="#ffffff" stroke="#009E73" stroke-width="1.1" />
+<text x="344.21" y="181.67" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="start" font-weight="normal">+23</text>
+<text x="113.9" y="194.49" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="end" font-weight="normal">ENSP00000813085:E11_E12</text>
+<line x1="310.95" y1="191.9" x2="395.73" y2="191.9" stroke="#009E73" stroke-width="0.7" opacity="0.75" />
+<circle cx="395.73" cy="191.9" r="2.8" fill="#ffffff" stroke="#009E73" stroke-width="1.1" />
+<text x="401.53" y="194.07" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="start" font-weight="normal">+71</text>
+<text x="113.9" y="206.89" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="end" font-weight="normal">ENSP00000813085:E12_E13</text>
+<line x1="310.95" y1="204.3" x2="472.15" y2="204.3" stroke="#009E73" stroke-width="0.7" opacity="0.75" />
+<circle cx="472.15" cy="204.3" r="2.8" fill="#ffffff" stroke="#009E73" stroke-width="1.1" />
+<text x="477.95" y="206.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="start" font-weight="normal">+135</text>
+<text x="113.9" y="219.29" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="end" font-weight="normal">ENSP00000813085:E13_E14</text>
+<line x1="310.95" y1="216.7" x2="123.48" y2="216.7" stroke="#009E73" stroke-width="0.7" opacity="0.75" />
+<circle cx="123.48" cy="216.7" r="2.8" fill="#009E73" stroke="none" stroke-width="0.5" />
+<text x="129.28" y="218.87" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="start" font-weight="normal">-157</text>
+<text x="113.9" y="231.69" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="end" font-weight="normal">ENSP00000813085:E14_E15</text>
+<line x1="310.95" y1="229.1" x2="191.55" y2="229.1" stroke="#009E73" stroke-width="0.7" opacity="0.75" />
+<circle cx="191.55" cy="229.1" r="2.8" fill="#009E73" stroke="none" stroke-width="0.5" />
+<text x="185.75" y="231.27" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="end" font-weight="normal">-100</text>
+<text x="113.9" y="244.09" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="end" font-weight="normal">ENSP00000813085:E15_E16</text>
+<line x1="310.95" y1="241.5" x2="222.59" y2="241.5" stroke="#009E73" stroke-width="0.7" opacity="0.75" />
+<circle cx="222.59" cy="241.5" r="2.8" fill="#009E73" stroke="none" stroke-width="0.5" />
+<text x="216.79" y="243.67" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="end" font-weight="normal">-74</text>
+<text x="113.9" y="256.49" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="end" font-weight="normal">ENSP00000813085:E16_E17</text>
+<line x1="310.95" y1="253.9" x2="328.86" y2="253.9" stroke="#D55E00" stroke-width="0.7" opacity="0.75" />
+<circle cx="328.86" cy="253.9" r="2.8" fill="#D55E00" stroke="none" stroke-width="0.5" />
+<text x="334.66" y="256.07" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="start" font-weight="normal">+15</text>
+<line x1="119.9" y1="268.1" x2="502" y2="268.1" stroke="#9aa4b2" stroke-width="0.7" />
+<line x1="131.84" y1="268.1" x2="131.84" y2="271.6" stroke="#9aa4b2" stroke-width="0.7" />
+<text x="131.84" y="278.9" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.8" fill="#6B7280" text-anchor="middle" font-weight="normal">-150</text>
+<line x1="191.55" y1="268.1" x2="191.55" y2="271.6" stroke="#9aa4b2" stroke-width="0.7" />
+<text x="191.55" y="278.9" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.8" fill="#6B7280" text-anchor="middle" font-weight="normal">-100</text>
+<line x1="251.25" y1="268.1" x2="251.25" y2="271.6" stroke="#9aa4b2" stroke-width="0.7" />
+<text x="251.25" y="278.9" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.8" fill="#6B7280" text-anchor="middle" font-weight="normal">-50</text>
+<line x1="310.95" y1="268.1" x2="310.95" y2="271.6" stroke="#9aa4b2" stroke-width="0.7" />
+<text x="310.95" y="278.9" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.8" fill="#6B7280" text-anchor="middle" font-weight="normal">0</text>
+<line x1="370.65" y1="268.1" x2="370.65" y2="271.6" stroke="#9aa4b2" stroke-width="0.7" />
+<text x="370.65" y="278.9" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.8" fill="#6B7280" text-anchor="middle" font-weight="normal">+50</text>
+<line x1="430.36" y1="268.1" x2="430.36" y2="271.6" stroke="#9aa4b2" stroke-width="0.7" />
+<text x="430.36" y="278.9" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.8" fill="#6B7280" text-anchor="middle" font-weight="normal">+100</text>
+<line x1="490.06" y1="268.1" x2="490.06" y2="271.6" stroke="#9aa4b2" stroke-width="0.7" />
+<text x="490.06" y="278.9" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.8" fill="#6B7280" text-anchor="middle" font-weight="normal">+150</text>
+<text x="310.95" y="289.7" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#1c2433" text-anchor="middle" font-weight="normal">Signed distance to nearest domain edge (aa) · 0 = domain edge</text>
+<rect x="119.9" y="297.1" width="7" height="7" fill="#009E73" stroke="#9aa4b2" stroke-width="0.5" />
+<text x="130.9" y="303.1" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7" fill="#1c2433" text-anchor="start" font-weight="normal">Inside domain</text>
+<rect x="185" y="297.1" width="7" height="7" fill="#D55E00" stroke="#9aa4b2" stroke-width="0.5" />
+<text x="196" y="303.1" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7" fill="#1c2433" text-anchor="start" font-weight="normal">Outside annotated domains</text>
+<rect x="292.66" y="297.1" width="7" height="7" fill="#0072B2" stroke="#9aa4b2" stroke-width="0.5" />
+<text x="303.66" y="303.1" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7" fill="#1c2433" text-anchor="start" font-weight="normal">Near domain edge</text>
+<text x="119.9" y="321.3" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#6B7280" text-anchor="start" font-weight="normal">Open marker: distance to a domain start edge · filled marker: distance to a domain end edge · negative: upstream of that edge</text>
+</svg>

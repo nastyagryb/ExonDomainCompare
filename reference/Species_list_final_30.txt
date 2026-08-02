@@ -1,0 +1,30 @@
+Homo sapiens
+Pan troglodytes
+Gorilla gorilla gorilla
+Pongo abelii
+Macaca mulatta
+Callithrix jacchus
+Mus musculus
+Rattus norvegicus
+Oryctolagus cuniculus
+Canis lupus familiaris
+Felis catus
+Bos taurus
+Sus scrofa
+Equus caballus
+Ovis aries
+Monodelphis domestica
+Ornithorhynchus anatinus
+Gallus gallus
+Meleagris gallopavo
+Taeniopygia guttata
+Anolis carolinensis
+Alligator mississippiensis
+Chrysemys picta bellii
+Xenopus tropicalis
+Ambystoma mexicanum
+Danio rerio
+Oryzias latipes
+Gasterosteus aculeatus
+Takifugu rubripes
+Oreochromis niloticus

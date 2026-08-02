@@ -1,0 +1,3 @@
+species_id	scientific_name	taxonomic_group	clade	protein_id	transcript_id	protein_length	n_exons	n_domains	n_boundaries	n_transcript_models	analysis_status	domain_status	boundary_status
+homo_sapiens	Homo sapiens	Other mammals	mammal	NP_001304849.1	NM_001317920.2	233	2	2	1	10	available	available	available
+mus_musculus	Mus musculus	Other mammals	mammal	NP_001276668.1	NM_001289739.2	235	2	2	1	9	available	available	available

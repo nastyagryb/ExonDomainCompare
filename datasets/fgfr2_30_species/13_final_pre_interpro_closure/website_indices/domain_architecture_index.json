@@ -1,0 +1,829 @@
+{
+  "available": true,
+  "generated_at": "2026-07-07T08:27:06+00:00",
+  "step": "15_exon_domain_boundary_post_interpro",
+  "tm_layer": "pyTMHMM",
+  "label_source": "final_pre_interpro_truth_table.tsv",
+  "counts": {
+    "proteins": 58,
+    "species": 30,
+    "iiib": 29,
+    "iiic": 29
+  },
+  "ui_rules": {
+    "interactive_from_tables": true,
+    "static_figures_are_downloadable_previews": true,
+    "labels_from_truth_table": true,
+    "tm_layer_is_pytmhmm": true,
+    "qc_warnings_visible_not_exaggerated": true
+  },
+  "species": [
+    {
+      "species": "alligator_mississippiensis",
+      "display_species_name": "Alligator Mississippiensis",
+      "taxon_group": "Reptiles",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_059586053.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/alligator_mississippiensis_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_006266188.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/alligator_mississippiensis_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "ambystoma_mexicanum",
+      "display_species_name": "Ambystoma Mexicanum",
+      "taxon_group": "Amphibians",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_069468054.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ambystoma_mexicanum_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_069468056.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ambystoma_mexicanum_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "anolis_carolinensis",
+      "display_species_name": "Anolis Carolinensis",
+      "taxon_group": "Reptiles",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_062832082.1",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/anolis_carolinensis_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_062832081.1",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/anolis_carolinensis_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "bos_taurus",
+      "display_species_name": "Bos Taurus",
+      "taxon_group": "Other mammals",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_059737723.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/bos_taurus_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_059737724.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/bos_taurus_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "callithrix_jacchus",
+      "display_species_name": "Callithrix Jacchus",
+      "taxon_group": "Primates",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_078202760.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/callithrix_jacchus_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_078202765.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/callithrix_jacchus_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "canis_lupus_familiaris",
+      "display_species_name": "Canis Lupus Familiaris",
+      "taxon_group": "Other mammals",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "NP_001003336.1",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": true,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/canis_lupus_familiaris_IIIb_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "chrysemys_picta_bellii",
+      "display_species_name": "Chrysemys Picta Bellii",
+      "taxon_group": "Reptiles",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_023965681.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/chrysemys_picta_bellii_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_065408413.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/chrysemys_picta_bellii_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "danio_rerio",
+      "display_species_name": "Danio Rerio",
+      "taxon_group": "Teleost fish",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_068081039.1",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/danio_rerio_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_068081038.1",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/danio_rerio_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "equus_caballus",
+      "display_species_name": "Equus Caballus",
+      "taxon_group": "Other mammals",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_014588429.1",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/equus_caballus_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_014588430.1",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/equus_caballus_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "felis_catus",
+      "display_species_name": "Felis Catus",
+      "taxon_group": "Other mammals",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_044896694.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/felis_catus_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_044896695.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/felis_catus_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "gallus_gallus",
+      "display_species_name": "Gallus Gallus",
+      "taxon_group": "Birds",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_046798696.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gallus_gallus_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "NP_990650.2",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gallus_gallus_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "gasterosteus_aculeatus",
+      "display_species_name": "Gasterosteus Aculeatus",
+      "taxon_group": "Teleost fish",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "ENSGACP00000047216",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gasterosteus_aculeatus_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "ENSGACP00000061458",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gasterosteus_aculeatus_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "gorilla_gorilla_gorilla",
+      "display_species_name": "Gorilla Gorilla Gorilla",
+      "taxon_group": "Primates",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "ENSGGOP00000051435",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": true,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gorilla_gorilla_gorilla_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_004050253.1",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/gorilla_gorilla_gorilla_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "homo_sapiens",
+      "display_species_name": "Homo Sapiens",
+      "taxon_group": "Primates",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "ENSP00000813085",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/homo_sapiens_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "ENSP00000351276",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/homo_sapiens_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "macaca_mulatta",
+      "display_species_name": "Macaca Mulatta",
+      "taxon_group": "Primates",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_015003815.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/macaca_mulatta_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_077803775.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/macaca_mulatta_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "meleagris_gallopavo",
+      "display_species_name": "Meleagris Gallopavo",
+      "taxon_group": "Birds",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "ENSMGAP00000031353",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/meleagris_gallopavo_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "ENSMGAP00000031571",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/meleagris_gallopavo_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "monodelphis_domestica",
+      "display_species_name": "Monodelphis Domestica",
+      "taxon_group": "Other mammals",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_056659239.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/monodelphis_domestica_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_056659242.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/monodelphis_domestica_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "mus_musculus",
+      "display_species_name": "Mus Musculus",
+      "taxon_group": "Other mammals",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "ENSMUSP00000113180",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/mus_musculus_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "ENSMUSP00000112430",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/mus_musculus_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "oreochromis_niloticus",
+      "display_species_name": "Oreochromis Niloticus",
+      "taxon_group": "Teleost fish",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "ENSONIP00000060910",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oreochromis_niloticus_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "ENSONIP00000063320",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oreochromis_niloticus_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "ornithorhynchus_anatinus",
+      "display_species_name": "Ornithorhynchus Anatinus",
+      "taxon_group": "Other mammals",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_028936643.1",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ornithorhynchus_anatinus_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_028936644.1",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ornithorhynchus_anatinus_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "oryctolagus_cuniculus",
+      "display_species_name": "Oryctolagus Cuniculus",
+      "taxon_group": "Other mammals",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_069913100.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryctolagus_cuniculus_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_069913096.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryctolagus_cuniculus_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "oryzias_latipes",
+      "display_species_name": "Oryzias Latipes",
+      "taxon_group": "Teleost fish",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_011483055.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryzias_latipes_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_078787744.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/oryzias_latipes_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "ovis_aries",
+      "display_species_name": "Ovis Aries",
+      "taxon_group": "Other mammals",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_060260488.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ovis_aries_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_060260490.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/ovis_aries_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "pan_troglodytes",
+      "display_species_name": "Pan Troglodytes",
+      "taxon_group": "Primates",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_054516513.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/pan_troglodytes_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_054516514.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/pan_troglodytes_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "pongo_abelii",
+      "display_species_name": "Pongo Abelii",
+      "taxon_group": "Primates",
+      "isoforms": {
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_024108704.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/pongo_abelii_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "rattus_norvegicus",
+      "display_species_name": "Rattus Norvegicus",
+      "taxon_group": "Other mammals",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_063137148.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/rattus_norvegicus_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_063137149.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/rattus_norvegicus_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "sus_scrofa",
+      "display_species_name": "Sus Scrofa",
+      "taxon_group": "Other mammals",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_084849194.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/sus_scrofa_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_084849197.1",
+          "final_qc_status": "architecture_supported",
+          "display_qc_status": "architecture_supported",
+          "display_qc_class": "accepted",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/sus_scrofa_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "taeniopygia_guttata",
+      "display_species_name": "Taeniopygia Guttata",
+      "taxon_group": "Birds",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "XP_072787408.1",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/taeniopygia_guttata_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "XP_072787409.1",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/taeniopygia_guttata_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "takifugu_rubripes",
+      "display_species_name": "Takifugu Rubripes",
+      "taxon_group": "Teleost fish",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "ENSTRUP00000045146",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/takifugu_rubripes_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "ENSTRUP00000045145",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/takifugu_rubripes_IIIc_exon_domain_architecture.png"
+        }
+      }
+    },
+    {
+      "species": "xenopus_tropicalis",
+      "display_species_name": "Xenopus Tropicalis",
+      "taxon_group": "Amphibians",
+      "isoforms": {
+        "IIIb": {
+          "final_isoform_label": "IIIb",
+          "protein_id": "ENSXETP00000087394",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": true,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/xenopus_tropicalis_IIIb_exon_domain_architecture.png"
+        },
+        "IIIc": {
+          "final_isoform_label": "IIIc",
+          "protein_id": "ENSXETP00000069725",
+          "final_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_status": "architecture_supported_with_minor_flags",
+          "display_qc_class": "minor",
+          "audited": false,
+          "figure_png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/per_species/xenopus_tropicalis_IIIc_exon_domain_architecture.png"
+        }
+      }
+    }
+  ],
+  "overview_figures": [
+    {
+      "id": "Figure_10_all_species_FGFR2_exon_domain_architecture_primary",
+      "title": "All species — FGFR2 exon–domain architecture",
+      "group": "all_species",
+      "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10_all_species_FGFR2_exon_domain_architecture_primary.png",
+      "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10_all_species_FGFR2_exon_domain_architecture_primary.pdf",
+      "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10_all_species_FGFR2_exon_domain_architecture_primary.svg"
+    },
+    {
+      "id": "Figure_10A_IIIb_exon_domain_architecture_primary",
+      "title": "IIIb isoforms — exon–domain architecture",
+      "group": "iiib",
+      "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10A_IIIb_exon_domain_architecture_primary.png",
+      "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10A_IIIb_exon_domain_architecture_primary.pdf",
+      "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10A_IIIb_exon_domain_architecture_primary.svg"
+    },
+    {
+      "id": "Figure_10B_IIIc_exon_domain_architecture_primary",
+      "title": "IIIc isoforms — exon–domain architecture",
+      "group": "iiic",
+      "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10B_IIIc_exon_domain_architecture_primary.png",
+      "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10B_IIIc_exon_domain_architecture_primary.pdf",
+      "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10B_IIIc_exon_domain_architecture_primary.svg"
+    },
+    {
+      "id": "Figure_10C_mammals_exon_domain_architecture_primary",
+      "title": "Mammals — exon–domain architecture",
+      "group": "mammals",
+      "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10C_mammals_exon_domain_architecture_primary.png",
+      "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10C_mammals_exon_domain_architecture_primary.pdf",
+      "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10C_mammals_exon_domain_architecture_primary.svg"
+    },
+    {
+      "id": "Figure_10D_nonmammals_exon_domain_architecture_primary",
+      "title": "Non-mammals — exon–domain architecture",
+      "group": "nonmammals",
+      "png": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10D_nonmammals_exon_domain_architecture_primary.png",
+      "pdf": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10D_nonmammals_exon_domain_architecture_primary.pdf",
+      "svg": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/figures/overview/Figure_10D_nonmammals_exon_domain_architecture_primary.svg"
+    }
+  ],
+  "tables": [
+    {
+      "name": "interpro_domain_features_normalized.tsv",
+      "path": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/interpro_domain_features_normalized.tsv",
+      "description": "InterProScan domain matches (normalized, AA coordinates)."
+    },
+    {
+      "name": "pytmhmm_tm_features_normalized.tsv",
+      "path": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/pytmhmm_tm_features_normalized.tsv",
+      "description": "pyTMHMM transmembrane predictions (receptor TM + N-terminal anchors)."
+    },
+    {
+      "name": "exon_domain_architecture_features.tsv",
+      "path": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv",
+      "description": "Representative domains, TM, numbered coding exons and cassette slots per protein."
+    },
+    {
+      "name": "fgfr2_domain_architecture_qc.tsv",
+      "path": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/fgfr2_domain_architecture_qc.tsv",
+      "description": "Per-protein architecture QC (domain order, cassette position, TM agreement)."
+    },
+    {
+      "name": "post_interpro_qc_review_case_audit.tsv",
+      "path": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/post_interpro_qc_review_case_audit.tsv",
+      "description": "Audit of the review_unusual_domain_order cases."
+    },
+    {
+      "name": "exon_block_coordinate_reconstruction_audit.tsv",
+      "path": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/tables/exon_block_coordinate_reconstruction_audit.tsv",
+      "description": "Native exon-block reconstruction audit for the coordinate-artifact cases (canis/gorilla/xenopus IIIb)."
+    }
+  ],
+  "report": "results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/reports/post_interpro_exon_domain_architecture_summary.md"
+}

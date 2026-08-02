@@ -1,0 +1,6 @@
+member_database	signature_accession	signature_name	start_aa	end_aa	length_aa	interpro_accession	interpro_entry_name	integration_status
+PFAM	PF02180	BH4	1	26	26	IPR003093	Bcl2_BH4	integrated
+PFAM	PF00452	Bcl-2	90	188	99	IPR046371	Bcl-2_BH1-3	integrated
+SMART	SM00265	bh4_2	1	27	27	IPR003093	Bcl2_BH4	integrated
+SMART	SM00337	bclneu2	90	188	99	IPR046371	Bcl-2_BH1-3	integrated
+FUNFAM	G3DSA:1.10.437.10:FF:000003	Bcl-2-like protein 1	1	209	209			not integrated

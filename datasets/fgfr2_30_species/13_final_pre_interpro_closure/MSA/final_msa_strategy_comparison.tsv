@@ -1,0 +1,7 @@
+msa_name	strategy	n_sequences	aligned_length	mean_gap_fraction	boundary_projection_agreement_with_auto	informative_columns	gap_rich_columns	recommended_for_main_figures	strategy_warning
+IIIb_cassette	mafft_auto	30	48	0.05	1.0	46	2	false	kept as reproducibility/sensitivity alignment
+IIIb_cassette	mafft_linsi	30	48	0.05	1.0	46	2	true	
+IIIc_cassette	mafft_auto	30	66	0.2677	1.0	48	18	false	kept as reproducibility/sensitivity alignment
+IIIc_cassette	mafft_linsi	30	66	0.2677	1.0	48	18	true	
+IIIb_IIIc_combined_cassette	mafft_auto	60	69	0.3193	1.0	46	23	false	kept as reproducibility/sensitivity alignment
+IIIb_IIIc_combined_cassette	mafft_linsi	60	69	0.3193	1.0	46	23	true	

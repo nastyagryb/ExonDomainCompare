@@ -1,0 +1,74 @@
+# 05 - C4 Container Diagram  (ExonDomainCompare)
+# Rendered with: d2 --layout dagre
+...@_theme
+
+direction: down
+
+title: |md
+  # C4 Container View
+| { near: top-center; style: { font-size: 26; font-color: "#0F172A"; bold: true } }
+
+subtitle: |md
+  Containers, responsibilities and principal data exchanged (scientific-computing adaptation of C4)
+| { near: top-center; style: { font-size: 14; font-color: "#475569" } }
+
+person: "Researcher\n[Person]\nRuns analyses and interprets\nexon-domain evidence" { class: person }
+
+sys: "ExonDomainCompare  [Software System]" {
+  class: band_neutral
+
+  spa: "Web frontend\n[Container: React / Vite SPA]\nInteractive scientific exploration" { class: user }
+  api: "Backend API\n[Container: Python / FastAPI]\nRun discovery, dataset resolution,\nJSON + file serving" { class: user }
+  orch: "Local pipeline / orchestrator\n[Container: Python]\nModels, selection, mapping, alignment,\nsynteny, candidates, indices" { class: local }
+  annot: "Annotation + boundary layer\n[Container: Python]\nNormalizes InterProScan/pyTMHMM,\nbuilds representative domains + boundaries" { class: annot }
+  cluster: "Cluster workflow\n[Container: Python + SSH/Slurm]\nSubmit, poll, fetch" { class: cluster }
+  figs: "Figure / report generator\n[Container: Python plotting API]\nSVG / PDF / PNG + tables" { class: local }
+  store: "Run-directory storage\n[Container: filesystem]\nruns/<RUN_ID>/ + website_indices" { class: store }
+}
+
+# ------- external systems -------
+ncbi: "NCBI Datasets\n[External]" { class: external }
+ensembl: "Ensembl\n[External]" { class: external }
+lrz: "LRZ Linux Cluster / Slurm\n[External]" { class: external }
+ipr: "InterProScan\n[External tool]" { class: external }
+tm: "pyTMHMM\n[External tool]" { class: external }
+mafft: "MAFFT\n[External tool]" { class: external }
+
+# ================= relationships (purpose : data) =================
+person -> sys.spa: "explores runs, launches analyses\n[HTTPS]" { class: flow }
+sys.spa -> sys.api: "requests canonical run data + result files\n[JSON / HTTP]" { class: flow }
+sys.api -> sys.store: "reads canonical indices + serves files\n[JSON / files]" { class: flow }
+sys.api -> sys.orch: "resolves workflow + launches runs\n[process]" { class: flow }
+
+sys.orch -> sys.store: "writes structured run artifacts\n[TSV / JSON / FASTA]" { class: flow }
+sys.orch -> ncbi: "reads cached gene, transcript, CDS + protein records\n[GFF / FASTA]" { class: ref }
+sys.orch -> mafft: "aligns isoforms + primaries\n[FASTA -> alignment]" { class: ref }
+
+sys.cluster -> lrz: "submits + monitors jobs\n[SSH / scp / squeue]" { class: flow }
+sys.cluster -> ipr: "annotates primary-protein FASTA\n[FASTA -> TSV/GFF3/JSON]" { class: ref }
+sys.cluster -> tm: "predicts transmembrane topology\n[FASTA -> summary]" { class: ref }
+sys.orch -> sys.cluster: "freezes primary FASTA + triggers round trip" { class: flow }
+sys.cluster -> sys.store: "writes fetched cluster outputs" { class: flow }
+
+sys.annot -> sys.store: "reads cluster outputs, writes normalized\ndomains + boundary rows + indices" { class: flow }
+sys.store -> sys.annot: "InterProScan + pyTMHMM outputs" { class: ref }
+sys.figs -> sys.store: "writes figures + report tables" { class: flow }
+
+# ------- FGFR2 specialization note -------
+fgfr2: |md
+  **FGFR2 specialization** additionally uses **Ensembl** (dual-source
+  collection) and adds cassette classification, validated evidence and
+  cassette-aware indices - all on the same containers.
+| { near: bottom-left; class: band_fgfr2 }
+sys.orch -> ensembl: "FGFR2 dual-source collection only\n[cDNA / protein]" { class: spec }
+
+legend: "Legend" {
+  near: bottom-right
+  grid-columns: 2
+  l_person: "Person" { class: user }
+  l_local: "Compute container" { class: local }
+  l_annot: "Annotation container" { class: annot }
+  l_cluster: "Cluster container" { class: cluster }
+  l_store: "Storage container" { class: store }
+  l_ext: "External system" { class: external }
+}

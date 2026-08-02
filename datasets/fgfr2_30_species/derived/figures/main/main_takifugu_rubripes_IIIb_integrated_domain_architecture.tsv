@@ -1,0 +1,7 @@
+track	domain_instance_id	label	interpro_accession	instance_number	start_aa	end_aa	source
+representative_domain	IPR007110:71-132	Ig-like domain 1 · aa 71–132	IPR007110	1	71	132	interproscan
+representative_domain	IPR013098:192-270	Ig-like domain 2 · aa 192–270	IPR013098	1	192	270	interproscan
+representative_domain	IPR013098:285-379	Ig-like domain 3 · aa 285–379	IPR013098	2	285	379	interproscan
+representative_domain	IPR001245:454-785	Ser-Thr/Tyr kinase domain · aa 454–785	IPR001245	1	454	785	interproscan
+family_superfamily		FGFR family fingerprint	IPR013098		34	831	interproscan
+tm_region		TM			393	415	pytmhmm

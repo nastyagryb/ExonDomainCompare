@@ -1,0 +1,211 @@
+species_id	scientific_name	comparable_domain_group_id	interpro_accession	label	state	domain_instance_id	native_start	native_end	msa_start_column	msa_end_column
+homo_sapiens	Homo sapiens	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:437-770	437	770	678	1011
+pan_troglodytes	Pan troglodytes	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:456-789	456	789	678	1011
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:339-672	339	672	678	1011
+pongo_abelii	Pongo abelii	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:454-787	454	787	678	1011
+macaca_mulatta	Macaca mulatta	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:454-787	454	787	678	1011
+callithrix_jacchus	Callithrix jacchus	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:456-789	456	789	678	1011
+mus_musculus	Mus musculus	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:456-789	456	789	678	1011
+rattus_norvegicus	Rattus norvegicus	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:456-789	456	789	678	1011
+oryctolagus_cuniculus	Oryctolagus cuniculus	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:456-789	456	789	678	1011
+canis_lupus_familiaris	Canis lupus familiaris	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:323-656	323	656	678	1011
+felis_catus	Felis catus	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:456-789	456	789	678	1011
+bos_taurus	Bos taurus	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:456-789	456	789	678	1011
+sus_scrofa	Sus scrofa	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:456-780	456	780	678	1002
+equus_caballus	Equus caballus	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:506-839	506	839	678	1011
+ovis_aries	Ovis aries	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:456-789	456	789	678	1011
+monodelphis_domestica	Monodelphis domestica	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:455-788	455	788	678	1011
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:455-788	455	788	678	1011
+gallus_gallus	Gallus gallus	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:458-791	458	791	678	1011
+meleagris_gallopavo	Meleagris gallopavo	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:341-627	341	627	678	1091
+taeniopygia_guttata	Taeniopygia guttata	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:506-839	506	839	678	1011
+anolis_carolinensis	Anolis carolinensis	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:489-822	489	822	678	1011
+alligator_mississippiensis	Alligator mississippiensis	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:458-791	458	791	678	1011
+chrysemys_picta_bellii	Chrysemys picta bellii	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:456-789	456	789	678	1011
+xenopus_tropicalis	Xenopus tropicalis	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:524-857	524	857	678	1011
+ambystoma_mexicanum	Ambystoma mexicanum	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:454-787	454	787	678	1011
+danio_rerio	Danio rerio	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:460-789	460	789	678	1011
+oryzias_latipes	Oryzias latipes	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:450-781	450	781	676	1011
+gasterosteus_aculeatus	Gasterosteus aculeatus	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:561-882	561	882	677	1002
+takifugu_rubripes	Takifugu rubripes	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:456-787	456	787	676	1011
+oreochromis_niloticus	Oreochromis niloticus	CDG1	IPR001245	Ser-Thr/Tyr kinase domain	detected	IPR001245:431-761	431	761	677	1011
+homo_sapiens	Homo sapiens	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:45-110	45	110	275	340
+pan_troglodytes	Pan troglodytes	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:64-129	64	129	275	340
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:170-250	170	250	502	582
+pongo_abelii	Pongo abelii	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:64-129	64	129	275	340
+macaca_mulatta	Macaca mulatta	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:64-129	64	129	275	340
+callithrix_jacchus	Callithrix jacchus	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:64-129	64	129	275	340
+mus_musculus	Mus musculus	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:64-128	64	128	275	339
+rattus_norvegicus	Rattus norvegicus	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:64-128	64	128	275	339
+oryctolagus_cuniculus	Oryctolagus cuniculus	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:64-128	64	128	275	339
+canis_lupus_familiaris	Canis lupus familiaris	CDG2	IPR007110	Ig-like domain 1	not detected					
+felis_catus	Felis catus	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:65-129	65	129	275	339
+bos_taurus	Bos taurus	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:64-128	64	128	275	339
+sus_scrofa	Sus scrofa	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:64-128	64	128	275	339
+equus_caballus	Equus caballus	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:114-178	114	178	275	339
+ovis_aries	Ovis aries	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:64-128	64	128	275	339
+monodelphis_domestica	Monodelphis domestica	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:284-364	284	364	502	582
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:284-364	284	364	502	582
+gallus_gallus	Gallus gallus	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:67-131	67	131	275	339
+meleagris_gallopavo	Meleagris gallopavo	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:171-252	171	252	501	582
+taeniopygia_guttata	Taeniopygia guttata	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:115-179	115	179	275	339
+anolis_carolinensis	Anolis carolinensis	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:102-166	102	166	275	343
+alligator_mississippiensis	Alligator mississippiensis	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:67-131	67	131	275	339
+chrysemys_picta_bellii	Chrysemys picta bellii	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:67-129	67	129	275	339
+xenopus_tropicalis	Xenopus tropicalis	CDG2	IPR007110	Ig-like domain 1	not detected					
+ambystoma_mexicanum	Ambystoma mexicanum	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:58-144	58	144	269	355
+danio_rerio	Danio rerio	CDG2	IPR007110	Ig-like domain 1	not detected					
+oryzias_latipes	Oryzias latipes	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:67-128	67	128	277	338
+gasterosteus_aculeatus	Gasterosteus aculeatus	CDG2	IPR007110	Ig-like domain 1	not detected					
+takifugu_rubripes	Takifugu rubripes	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:71-132	71	132	277	338
+oreochromis_niloticus	Oreochromis niloticus	CDG2	IPR007110	Ig-like domain 1	detected	IPR007110:49-110	49	110	277	338
+homo_sapiens	Homo sapiens	CDG3	IPR007110	Ig-like domain 3	detected	IPR007110:266-346	266	346	502	582
+pan_troglodytes	Pan troglodytes	CDG3	IPR007110	Ig-like domain 3	detected	IPR007110:285-365	285	365	502	582
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	CDG3	IPR007110	Ig-like domain 3	not detected					
+pongo_abelii	Pongo abelii	CDG3	IPR007110	Ig-like domain 3	detected	IPR007110:285-365	285	365	502	582
+macaca_mulatta	Macaca mulatta	CDG3	IPR007110	Ig-like domain 3	detected	IPR007110:285-365	285	365	502	582
+callithrix_jacchus	Callithrix jacchus	CDG3	IPR007110	Ig-like domain 3	detected	IPR007110:285-365	285	365	502	582
+mus_musculus	Mus musculus	CDG3	IPR007110	Ig-like domain 3	detected	IPR007110:285-365	285	365	502	582
+rattus_norvegicus	Rattus norvegicus	CDG3	IPR007110	Ig-like domain 3	detected	IPR007110:285-365	285	365	502	582
+oryctolagus_cuniculus	Oryctolagus cuniculus	CDG3	IPR007110	Ig-like domain 3	detected	IPR007110:285-365	285	365	502	582
+canis_lupus_familiaris	Canis lupus familiaris	CDG3	IPR007110	Ig-like domain 3	not detected					
+felis_catus	Felis catus	CDG3	IPR007110	Ig-like domain 3	detected	IPR007110:285-365	285	365	502	582
+bos_taurus	Bos taurus	CDG3	IPR007110	Ig-like domain 3	detected	IPR007110:285-365	285	365	502	582
+sus_scrofa	Sus scrofa	CDG3	IPR007110	Ig-like domain 3	detected	IPR007110:285-365	285	365	502	582
+equus_caballus	Equus caballus	CDG3	IPR007110	Ig-like domain 3	detected	IPR007110:335-415	335	415	502	582
+ovis_aries	Ovis aries	CDG3	IPR007110	Ig-like domain 3	detected	IPR007110:285-365	285	365	502	582
+monodelphis_domestica	Monodelphis domestica	CDG3	IPR007110	Ig-like domain 3	not detected					
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	CDG3	IPR007110	Ig-like domain 3	not detected					
+gallus_gallus	Gallus gallus	CDG3	IPR007110	Ig-like domain 3	detected	IPR007110:286-367	286	367	501	582
+meleagris_gallopavo	Meleagris gallopavo	CDG3	IPR007110	Ig-like domain 3	not detected					
+taeniopygia_guttata	Taeniopygia guttata	CDG3	IPR007110	Ig-like domain 3	detected	IPR007110:334-415	334	415	501	582
+anolis_carolinensis	Anolis carolinensis	CDG3	IPR007110	Ig-like domain 3	not detected					
+alligator_mississippiensis	Alligator mississippiensis	CDG3	IPR007110	Ig-like domain 3	not detected					
+chrysemys_picta_bellii	Chrysemys picta bellii	CDG3	IPR007110	Ig-like domain 3	detected	IPR007110:284-365	284	365	501	582
+xenopus_tropicalis	Xenopus tropicalis	CDG3	IPR007110	Ig-like domain 3	not detected					
+ambystoma_mexicanum	Ambystoma mexicanum	CDG3	IPR007110	Ig-like domain 3	not detected					
+danio_rerio	Danio rerio	CDG3	IPR007110	Ig-like domain 3	not detected					
+oryzias_latipes	Oryzias latipes	CDG3	IPR007110	Ig-like domain 3	not detected					
+gasterosteus_aculeatus	Gasterosteus aculeatus	CDG3	IPR007110	Ig-like domain 3	not detected					
+takifugu_rubripes	Takifugu rubripes	CDG3	IPR007110	Ig-like domain 3	not detected					
+oreochromis_niloticus	Oreochromis niloticus	CDG3	IPR007110	Ig-like domain 3	not detected					
+homo_sapiens	Homo sapiens	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:171-248	171	248	407	484
+pan_troglodytes	Pan troglodytes	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:190-267	190	267	407	484
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:75-152	75	152	407	484
+pongo_abelii	Pongo abelii	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:190-267	190	267	407	484
+macaca_mulatta	Macaca mulatta	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:190-267	190	267	407	484
+callithrix_jacchus	Callithrix jacchus	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:190-267	190	267	407	484
+mus_musculus	Mus musculus	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:190-267	190	267	407	484
+rattus_norvegicus	Rattus norvegicus	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:190-267	190	267	407	484
+oryctolagus_cuniculus	Oryctolagus cuniculus	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:190-267	190	267	407	484
+canis_lupus_familiaris	Canis lupus familiaris	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:56-133	56	133	407	484
+felis_catus	Felis catus	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:190-267	190	267	407	484
+bos_taurus	Bos taurus	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:190-267	190	267	407	484
+sus_scrofa	Sus scrofa	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:190-267	190	267	407	484
+equus_caballus	Equus caballus	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:240-317	240	317	407	484
+ovis_aries	Ovis aries	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:190-267	190	267	407	484
+monodelphis_domestica	Monodelphis domestica	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:65-142	65	142	276	353
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:189-266	189	266	407	484
+gallus_gallus	Gallus gallus	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:192-269	192	269	407	484
+meleagris_gallopavo	Meleagris gallopavo	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:77-154	77	154	407	484
+taeniopygia_guttata	Taeniopygia guttata	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:240-317	240	317	407	484
+anolis_carolinensis	Anolis carolinensis	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:223-300	223	300	407	484
+alligator_mississippiensis	Alligator mississippiensis	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:192-269	192	269	407	484
+chrysemys_picta_bellii	Chrysemys picta bellii	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:190-267	190	267	407	484
+xenopus_tropicalis	Xenopus tropicalis	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:257-335	257	335	406	484
+ambystoma_mexicanum	Ambystoma mexicanum	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:189-266	189	266	407	484
+danio_rerio	Danio rerio	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:75-137	75	137	281	343
+oryzias_latipes	Oryzias latipes	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:187-264	187	264	407	484
+gasterosteus_aculeatus	Gasterosteus aculeatus	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:74-168	74	168	172	266
+takifugu_rubripes	Takifugu rubripes	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:192-270	192	270	406	484
+oreochromis_niloticus	Oreochromis niloticus	CDG4	IPR013098	Ig-like domain 2	detected	IPR013098:168-246	168	246	406	484
+homo_sapiens	Homo sapiens	CDG5	IPR013098	Ig-like domain 2	not detected					
+pan_troglodytes	Pan troglodytes	CDG5	IPR013098	Ig-like domain 2	not detected					
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	CDG5	IPR013098	Ig-like domain 2	not detected					
+pongo_abelii	Pongo abelii	CDG5	IPR013098	Ig-like domain 2	not detected					
+macaca_mulatta	Macaca mulatta	CDG5	IPR013098	Ig-like domain 2	not detected					
+callithrix_jacchus	Callithrix jacchus	CDG5	IPR013098	Ig-like domain 2	not detected					
+mus_musculus	Mus musculus	CDG5	IPR013098	Ig-like domain 2	not detected					
+rattus_norvegicus	Rattus norvegicus	CDG5	IPR013098	Ig-like domain 2	not detected					
+oryctolagus_cuniculus	Oryctolagus cuniculus	CDG5	IPR013098	Ig-like domain 2	not detected					
+canis_lupus_familiaris	Canis lupus familiaris	CDG5	IPR013098	Ig-like domain 2	detected	IPR013098:150-242	150	242	501	595
+felis_catus	Felis catus	CDG5	IPR013098	Ig-like domain 2	not detected					
+bos_taurus	Bos taurus	CDG5	IPR013098	Ig-like domain 2	not detected					
+sus_scrofa	Sus scrofa	CDG5	IPR013098	Ig-like domain 2	not detected					
+equus_caballus	Equus caballus	CDG5	IPR013098	Ig-like domain 2	not detected					
+ovis_aries	Ovis aries	CDG5	IPR013098	Ig-like domain 2	not detected					
+monodelphis_domestica	Monodelphis domestica	CDG5	IPR013098	Ig-like domain 2	detected	IPR013098:189-266	189	266	407	484
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	CDG5	IPR013098	Ig-like domain 2	not detected					
+gallus_gallus	Gallus gallus	CDG5	IPR013098	Ig-like domain 2	not detected					
+meleagris_gallopavo	Meleagris gallopavo	CDG5	IPR013098	Ig-like domain 2	not detected					
+taeniopygia_guttata	Taeniopygia guttata	CDG5	IPR013098	Ig-like domain 2	not detected					
+anolis_carolinensis	Anolis carolinensis	CDG5	IPR013098	Ig-like domain 2	detected	IPR013098:315-411	315	411	499	595
+alligator_mississippiensis	Alligator mississippiensis	CDG5	IPR013098	Ig-like domain 2	detected	IPR013098:284-380	284	380	499	595
+chrysemys_picta_bellii	Chrysemys picta bellii	CDG5	IPR013098	Ig-like domain 2	not detected					
+xenopus_tropicalis	Xenopus tropicalis	CDG5	IPR013098	Ig-like domain 2	detected	IPR013098:350-446	350	446	499	595
+ambystoma_mexicanum	Ambystoma mexicanum	CDG5	IPR013098	Ig-like domain 2	detected	IPR013098:281-377	281	377	499	595
+danio_rerio	Danio rerio	CDG5	IPR013098	Ig-like domain 2	detected	IPR013098:193-271	193	271	406	484
+oryzias_latipes	Oryzias latipes	CDG5	IPR013098	Ig-like domain 2	detected	IPR013098:279-375	279	375	499	595
+gasterosteus_aculeatus	Gasterosteus aculeatus	CDG5	IPR013098	Ig-like domain 2	detected	IPR013098:299-376	299	376	407	484
+takifugu_rubripes	Takifugu rubripes	CDG5	IPR013098	Ig-like domain 2	detected	IPR013098:285-381	285	381	499	595
+oreochromis_niloticus	Oreochromis niloticus	CDG5	IPR013098	Ig-like domain 2	detected	IPR013098:261-357	261	357	499	595
+homo_sapiens	Homo sapiens	CDG6	IPR013098	Ig-like domain 3	not detected					
+pan_troglodytes	Pan troglodytes	CDG6	IPR013098	Ig-like domain 3	not detected					
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	CDG6	IPR013098	Ig-like domain 3	not detected					
+pongo_abelii	Pongo abelii	CDG6	IPR013098	Ig-like domain 3	not detected					
+macaca_mulatta	Macaca mulatta	CDG6	IPR013098	Ig-like domain 3	not detected					
+callithrix_jacchus	Callithrix jacchus	CDG6	IPR013098	Ig-like domain 3	not detected					
+mus_musculus	Mus musculus	CDG6	IPR013098	Ig-like domain 3	not detected					
+rattus_norvegicus	Rattus norvegicus	CDG6	IPR013098	Ig-like domain 3	not detected					
+oryctolagus_cuniculus	Oryctolagus cuniculus	CDG6	IPR013098	Ig-like domain 3	not detected					
+canis_lupus_familiaris	Canis lupus familiaris	CDG6	IPR013098	Ig-like domain 3	not detected					
+felis_catus	Felis catus	CDG6	IPR013098	Ig-like domain 3	not detected					
+bos_taurus	Bos taurus	CDG6	IPR013098	Ig-like domain 3	not detected					
+sus_scrofa	Sus scrofa	CDG6	IPR013098	Ig-like domain 3	not detected					
+equus_caballus	Equus caballus	CDG6	IPR013098	Ig-like domain 3	not detected					
+ovis_aries	Ovis aries	CDG6	IPR013098	Ig-like domain 3	not detected					
+monodelphis_domestica	Monodelphis domestica	CDG6	IPR013098	Ig-like domain 3	not detected					
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	CDG6	IPR013098	Ig-like domain 3	not detected					
+gallus_gallus	Gallus gallus	CDG6	IPR013098	Ig-like domain 3	not detected					
+meleagris_gallopavo	Meleagris gallopavo	CDG6	IPR013098	Ig-like domain 3	not detected					
+taeniopygia_guttata	Taeniopygia guttata	CDG6	IPR013098	Ig-like domain 3	not detected					
+anolis_carolinensis	Anolis carolinensis	CDG6	IPR013098	Ig-like domain 3	not detected					
+alligator_mississippiensis	Alligator mississippiensis	CDG6	IPR013098	Ig-like domain 3	not detected					
+chrysemys_picta_bellii	Chrysemys picta bellii	CDG6	IPR013098	Ig-like domain 3	not detected					
+xenopus_tropicalis	Xenopus tropicalis	CDG6	IPR013098	Ig-like domain 3	not detected					
+ambystoma_mexicanum	Ambystoma mexicanum	CDG6	IPR013098	Ig-like domain 3	not detected					
+danio_rerio	Danio rerio	CDG6	IPR013098	Ig-like domain 3	detected	IPR013098:286-382	286	382	499	595
+oryzias_latipes	Oryzias latipes	CDG6	IPR013098	Ig-like domain 3	not detected					
+gasterosteus_aculeatus	Gasterosteus aculeatus	CDG6	IPR013098	Ig-like domain 3	detected	IPR013098:391-487	391	487	499	595
+takifugu_rubripes	Takifugu rubripes	CDG6	IPR013098	Ig-like domain 3	not detected					
+oreochromis_niloticus	Oreochromis niloticus	CDG6	IPR013098	Ig-like domain 3	not detected					
+homo_sapiens	Homo sapiens	CDG7	IPR013151	Ig-like domain 1	not detected					
+pan_troglodytes	Pan troglodytes	CDG7	IPR013151	Ig-like domain 1	not detected					
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	CDG7	IPR013151	Ig-like domain 1	not detected					
+pongo_abelii	Pongo abelii	CDG7	IPR013151	Ig-like domain 1	not detected					
+macaca_mulatta	Macaca mulatta	CDG7	IPR013151	Ig-like domain 1	not detected					
+callithrix_jacchus	Callithrix jacchus	CDG7	IPR013151	Ig-like domain 1	not detected					
+mus_musculus	Mus musculus	CDG7	IPR013151	Ig-like domain 1	not detected					
+rattus_norvegicus	Rattus norvegicus	CDG7	IPR013151	Ig-like domain 1	not detected					
+oryctolagus_cuniculus	Oryctolagus cuniculus	CDG7	IPR013151	Ig-like domain 1	not detected					
+canis_lupus_familiaris	Canis lupus familiaris	CDG7	IPR013151	Ig-like domain 1	not detected					
+felis_catus	Felis catus	CDG7	IPR013151	Ig-like domain 1	not detected					
+bos_taurus	Bos taurus	CDG7	IPR013151	Ig-like domain 1	not detected					
+sus_scrofa	Sus scrofa	CDG7	IPR013151	Ig-like domain 1	not detected					
+equus_caballus	Equus caballus	CDG7	IPR013151	Ig-like domain 1	not detected					
+ovis_aries	Ovis aries	CDG7	IPR013151	Ig-like domain 1	not detected					
+monodelphis_domestica	Monodelphis domestica	CDG7	IPR013151	Ig-like domain 1	not detected					
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	CDG7	IPR013151	Ig-like domain 1	detected	IPR013151:69-137	69	137	280	348
+gallus_gallus	Gallus gallus	CDG7	IPR013151	Ig-like domain 1	not detected					
+meleagris_gallopavo	Meleagris gallopavo	CDG7	IPR013151	Ig-like domain 1	not detected					
+taeniopygia_guttata	Taeniopygia guttata	CDG7	IPR013151	Ig-like domain 1	not detected					
+anolis_carolinensis	Anolis carolinensis	CDG7	IPR013151	Ig-like domain 1	not detected					
+alligator_mississippiensis	Alligator mississippiensis	CDG7	IPR013151	Ig-like domain 1	not detected					
+chrysemys_picta_bellii	Chrysemys picta bellii	CDG7	IPR013151	Ig-like domain 1	not detected					
+xenopus_tropicalis	Xenopus tropicalis	CDG7	IPR013151	Ig-like domain 1	detected	IPR013151:144-205	144	205	282	347
+ambystoma_mexicanum	Ambystoma mexicanum	CDG7	IPR013151	Ig-like domain 1	not detected					
+danio_rerio	Danio rerio	CDG7	IPR013151	Ig-like domain 1	not detected					
+oryzias_latipes	Oryzias latipes	CDG7	IPR013151	Ig-like domain 1	not detected					
+gasterosteus_aculeatus	Gasterosteus aculeatus	CDG7	IPR013151	Ig-like domain 1	not detected					
+takifugu_rubripes	Takifugu rubripes	CDG7	IPR013151	Ig-like domain 1	not detected					
+oreochromis_niloticus	Oreochromis niloticus	CDG7	IPR013151	Ig-like domain 1	not detected					

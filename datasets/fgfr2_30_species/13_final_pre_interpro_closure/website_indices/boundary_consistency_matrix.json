@@ -1,0 +1,2307 @@
+{
+  "available": true,
+  "generated_at": "2026-07-07T08:27:06+00:00",
+  "columns": [
+    {
+      "key": "cassette_start",
+      "label": "Cassette start"
+    },
+    {
+      "key": "cassette_end",
+      "label": "Cassette end"
+    }
+  ],
+  "boundary_classes": {
+    "aligned_to_domain_boundary": {
+      "label": "Aligned",
+      "color": "#1B7837",
+      "tooltip": "Boundary coincides with a protein-domain boundary (0-3 aa)."
+    },
+    "near_domain_boundary": {
+      "label": "Near boundary",
+      "color": "#A6DBA0",
+      "tooltip": "Boundary is close to a protein-domain boundary (4-15 aa)."
+    },
+    "within_domain": {
+      "label": "Within domain",
+      "color": "#FDB863",
+      "tooltip": "Boundary lies inside a protein domain (>15 aa from its edges)."
+    },
+    "between_domains": {
+      "label": "Between domains",
+      "color": "#B2ABD2",
+      "tooltip": "Boundary lies in a linker region between two domains."
+    },
+    "review_or_missing": {
+      "label": "Missing / review",
+      "color": "#D9D9D9",
+      "tooltip": "No cassette / domain coordinate available for this protein."
+    }
+  },
+  "row_order": "taxonomic",
+  "source_table": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/tables/exon_domain_boundary_distances.tsv",
+  "rows": [
+    {
+      "species": "homo_sapiens",
+      "display_species_name": "Homo Sapiens",
+      "isoform": "IIIb",
+      "taxon_group": "Primates",
+      "display_label": "Homo Sapiens · IIIb",
+      "protein_id": "ENSP00000813085",
+      "transcript_id": "ENST00001142305",
+      "protein_length": 822,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 9 (IIIb cassette)",
+          "boundary_aa": 343,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 263,
+          "nearest_domain_end_aa": 357,
+          "distance_to_nearest_domain_boundary": 14,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 9 (IIIb cassette)",
+          "boundary_aa": 393,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 375,
+          "nearest_domain_end_aa": 397,
+          "distance_to_nearest_domain_boundary": 4,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "homo_sapiens",
+      "display_species_name": "Homo Sapiens",
+      "isoform": "IIIc",
+      "taxon_group": "Primates",
+      "display_label": "Homo Sapiens · IIIc",
+      "protein_id": "ENSP00000351276",
+      "transcript_id": "ENST00000358487",
+      "protein_length": 821,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "minor_length_clamped",
+      "source_coordinate_status": "clamp_to_protein_length_with_minor_flag",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 8 (IIIc cassette)",
+          "boundary_aa": 302,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 266,
+          "nearest_domain_end_aa": 346,
+          "distance_to_nearest_domain_boundary": 36,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 8 (IIIc cassette)",
+          "boundary_aa": 343,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 266,
+          "nearest_domain_end_aa": 346,
+          "distance_to_nearest_domain_boundary": 3,
+          "boundary_class": "aligned_to_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "pan_troglodytes",
+      "display_species_name": "Pan Troglodytes",
+      "isoform": "IIIb",
+      "taxon_group": "Primates",
+      "display_label": "Pan Troglodytes · IIIb",
+      "protein_id": "XP_054516513.1",
+      "transcript_id": "XM_054660538.2",
+      "protein_length": 841,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 381,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 5,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "pan_troglodytes",
+      "display_species_name": "Pan Troglodytes",
+      "isoform": "IIIc",
+      "taxon_group": "Primates",
+      "display_label": "Pan Troglodytes · IIIc",
+      "protein_id": "XP_054516514.1",
+      "transcript_id": "XM_054660539.2",
+      "protein_length": 840,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "minor_length_clamped",
+      "source_coordinate_status": "clamp_to_protein_length_with_minor_flag",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 285,
+          "nearest_domain_end_aa": 365,
+          "distance_to_nearest_domain_boundary": 32,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 382,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 393,
+          "nearest_domain_end_aa": 415,
+          "distance_to_nearest_domain_boundary": 11,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "gorilla_gorilla_gorilla",
+      "display_species_name": "Gorilla Gorilla Gorilla",
+      "isoform": "IIIb",
+      "taxon_group": "Primates",
+      "display_label": "Gorilla Gorilla Gorilla · IIIb",
+      "protein_id": "ENSGGOP00000051435",
+      "transcript_id": "ENSGGOT00000059958",
+      "protein_length": 670,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "IIIb cassette (validated reference)",
+          "boundary_aa": 225,
+          "nearest_domain_label": "Ig2",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 174,
+          "nearest_domain_end_aa": 268,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "IIIb cassette (validated reference)",
+          "boundary_aa": 270,
+          "nearest_domain_label": "Ig2",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 174,
+          "nearest_domain_end_aa": 268,
+          "distance_to_nearest_domain_boundary": 2,
+          "boundary_class": "aligned_to_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "gorilla_gorilla_gorilla",
+      "display_species_name": "Gorilla Gorilla Gorilla",
+      "isoform": "IIIc",
+      "taxon_group": "Primates",
+      "display_label": "Gorilla Gorilla Gorilla · IIIc",
+      "protein_id": "XP_004050253.1",
+      "transcript_id": "XP_004050253.1",
+      "protein_length": 723,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 6 (IIIc cassette)",
+          "boundary_aa": 202,
+          "nearest_domain_label": "Ig2",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 170,
+          "nearest_domain_end_aa": 250,
+          "distance_to_nearest_domain_boundary": 32,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 6 (IIIc cassette)",
+          "boundary_aa": 265,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 278,
+          "nearest_domain_end_aa": 300,
+          "distance_to_nearest_domain_boundary": 13,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "pongo_abelii",
+      "display_species_name": "Pongo Abelii",
+      "isoform": "IIIc",
+      "taxon_group": "Primates",
+      "display_label": "Pongo Abelii · IIIc",
+      "protein_id": "XP_024108704.1",
+      "transcript_id": "XM_024252936",
+      "protein_length": 838,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "source_coordinate_status": "reconstruct_from_native_cds",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 8 (CDS8)",
+          "boundary_aa": 381,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 393,
+          "nearest_domain_end_aa": 415,
+          "distance_to_nearest_domain_boundary": 12,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 8 (CDS8)",
+          "boundary_aa": 446,
+          "nearest_domain_label": "kinase",
+          "nearest_domain_class": "kinase",
+          "nearest_domain_start_aa": 454,
+          "nearest_domain_end_aa": 787,
+          "distance_to_nearest_domain_boundary": 8,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "macaca_mulatta",
+      "display_species_name": "Macaca Mulatta",
+      "isoform": "IIIb",
+      "taxon_group": "Primates",
+      "display_label": "Macaca Mulatta · IIIb",
+      "protein_id": "XP_015003815.1",
+      "transcript_id": "XM_015148329.3",
+      "protein_length": 839,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 381,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 5,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "macaca_mulatta",
+      "display_species_name": "Macaca Mulatta",
+      "isoform": "IIIc",
+      "taxon_group": "Primates",
+      "display_label": "Macaca Mulatta · IIIc",
+      "protein_id": "XP_077803775.1",
+      "transcript_id": "XM_077947649.1",
+      "protein_length": 838,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "minor_length_clamped",
+      "source_coordinate_status": "clamp_to_protein_length_with_minor_flag",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 285,
+          "nearest_domain_end_aa": 365,
+          "distance_to_nearest_domain_boundary": 32,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 382,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 393,
+          "nearest_domain_end_aa": 415,
+          "distance_to_nearest_domain_boundary": 11,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "callithrix_jacchus",
+      "display_species_name": "Callithrix Jacchus",
+      "isoform": "IIIb",
+      "taxon_group": "Primates",
+      "display_label": "Callithrix Jacchus · IIIb",
+      "protein_id": "XP_078202760.1",
+      "transcript_id": "XM_078346634.1",
+      "protein_length": 841,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 381,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 5,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "callithrix_jacchus",
+      "display_species_name": "Callithrix Jacchus",
+      "isoform": "IIIc",
+      "taxon_group": "Primates",
+      "display_label": "Callithrix Jacchus · IIIc",
+      "protein_id": "XP_078202765.1",
+      "transcript_id": "XM_078346639.1",
+      "protein_length": 840,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "minor_length_clamped",
+      "source_coordinate_status": "clamp_to_protein_length_with_minor_flag",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 285,
+          "nearest_domain_end_aa": 365,
+          "distance_to_nearest_domain_boundary": 32,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 382,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 393,
+          "nearest_domain_end_aa": 415,
+          "distance_to_nearest_domain_boundary": 11,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "mus_musculus",
+      "display_species_name": "Mus Musculus",
+      "isoform": "IIIb",
+      "taxon_group": "Other mammals",
+      "display_label": "Mus Musculus · IIIb",
+      "protein_id": "ENSMUSP00000113180",
+      "transcript_id": "ENSMUST00000117691",
+      "protein_length": 822,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "source_coordinate_status": "reconstruct_from_native_cds",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 9 (CDS9)",
+          "boundary_aa": 343,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 263,
+          "nearest_domain_end_aa": 357,
+          "distance_to_nearest_domain_boundary": 14,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 9 (CDS9)",
+          "boundary_aa": 393,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 375,
+          "nearest_domain_end_aa": 397,
+          "distance_to_nearest_domain_boundary": 4,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "mus_musculus",
+      "display_species_name": "Mus Musculus",
+      "isoform": "IIIc",
+      "taxon_group": "Other mammals",
+      "display_label": "Mus Musculus · IIIc",
+      "protein_id": "ENSMUSP00000112430",
+      "transcript_id": "ENSMUST00000122054",
+      "protein_length": 840,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 8 (IIIc cassette)",
+          "boundary_aa": 302,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 285,
+          "nearest_domain_end_aa": 365,
+          "distance_to_nearest_domain_boundary": 17,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 8 (IIIc cassette)",
+          "boundary_aa": 343,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 285,
+          "nearest_domain_end_aa": 365,
+          "distance_to_nearest_domain_boundary": 22,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "rattus_norvegicus",
+      "display_species_name": "Rattus Norvegicus",
+      "isoform": "IIIb",
+      "taxon_group": "Other mammals",
+      "display_label": "Rattus Norvegicus · IIIb",
+      "protein_id": "XP_063137148.1",
+      "transcript_id": "XM_063281078.1",
+      "protein_length": 841,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 381,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 5,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "rattus_norvegicus",
+      "display_species_name": "Rattus Norvegicus",
+      "isoform": "IIIc",
+      "taxon_group": "Other mammals",
+      "display_label": "Rattus Norvegicus · IIIc",
+      "protein_id": "XP_063137149.1",
+      "transcript_id": "XM_063281079.1",
+      "protein_length": 840,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "minor_length_clamped",
+      "source_coordinate_status": "clamp_to_protein_length_with_minor_flag",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 285,
+          "nearest_domain_end_aa": 365,
+          "distance_to_nearest_domain_boundary": 32,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 382,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 393,
+          "nearest_domain_end_aa": 415,
+          "distance_to_nearest_domain_boundary": 11,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "oryctolagus_cuniculus",
+      "display_species_name": "Oryctolagus Cuniculus",
+      "isoform": "IIIb",
+      "taxon_group": "Other mammals",
+      "display_label": "Oryctolagus Cuniculus · IIIb",
+      "protein_id": "XP_069913100.1",
+      "transcript_id": "XM_070056999.1",
+      "protein_length": 841,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 381,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 5,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "oryctolagus_cuniculus",
+      "display_species_name": "Oryctolagus Cuniculus",
+      "isoform": "IIIc",
+      "taxon_group": "Other mammals",
+      "display_label": "Oryctolagus Cuniculus · IIIc",
+      "protein_id": "XP_069913096.1",
+      "transcript_id": "XM_070056995.1",
+      "protein_length": 840,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "minor_length_clamped",
+      "source_coordinate_status": "clamp_to_protein_length_with_minor_flag",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 285,
+          "nearest_domain_end_aa": 365,
+          "distance_to_nearest_domain_boundary": 32,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 382,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 393,
+          "nearest_domain_end_aa": 415,
+          "distance_to_nearest_domain_boundary": 11,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "canis_lupus_familiaris",
+      "display_species_name": "Canis Lupus Familiaris",
+      "isoform": "IIIb",
+      "taxon_group": "Other mammals",
+      "display_label": "Canis Lupus Familiaris · IIIb",
+      "protein_id": "NP_001003336.1",
+      "transcript_id": "NP_001003336.1",
+      "protein_length": 707,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "cassette_only_high_confidence",
+      "source_coordinate_status": "cassette_only_high_confidence",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "IIIb cassette (validated reference)",
+          "boundary_aa": 199,
+          "nearest_domain_label": "Ig2",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 150,
+          "nearest_domain_end_aa": 242,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "IIIb cassette (validated reference)",
+          "boundary_aa": 244,
+          "nearest_domain_label": "Ig2",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 150,
+          "nearest_domain_end_aa": 242,
+          "distance_to_nearest_domain_boundary": 2,
+          "boundary_class": "aligned_to_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "felis_catus",
+      "display_species_name": "Felis Catus",
+      "isoform": "IIIb",
+      "taxon_group": "Other mammals",
+      "display_label": "Felis Catus · IIIb",
+      "protein_id": "XP_044896694.1",
+      "transcript_id": "XM_045040759.1",
+      "protein_length": 841,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 381,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 5,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "felis_catus",
+      "display_species_name": "Felis Catus",
+      "isoform": "IIIc",
+      "taxon_group": "Other mammals",
+      "display_label": "Felis Catus · IIIc",
+      "protein_id": "XP_044896695.1",
+      "transcript_id": "XM_045040760.1",
+      "protein_length": 840,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "minor_length_clamped",
+      "source_coordinate_status": "clamp_to_protein_length_with_minor_flag",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 285,
+          "nearest_domain_end_aa": 365,
+          "distance_to_nearest_domain_boundary": 32,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 382,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 393,
+          "nearest_domain_end_aa": 415,
+          "distance_to_nearest_domain_boundary": 11,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "bos_taurus",
+      "display_species_name": "Bos Taurus",
+      "isoform": "IIIb",
+      "taxon_group": "Other mammals",
+      "display_label": "Bos Taurus · IIIb",
+      "protein_id": "XP_059737723.1",
+      "transcript_id": "XM_059881740.1",
+      "protein_length": 841,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 381,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 5,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "bos_taurus",
+      "display_species_name": "Bos Taurus",
+      "isoform": "IIIc",
+      "taxon_group": "Other mammals",
+      "display_label": "Bos Taurus · IIIc",
+      "protein_id": "XP_059737724.1",
+      "transcript_id": "XM_059881741.1",
+      "protein_length": 840,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "minor_length_clamped",
+      "source_coordinate_status": "clamp_to_protein_length_with_minor_flag",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 285,
+          "nearest_domain_end_aa": 365,
+          "distance_to_nearest_domain_boundary": 32,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 382,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 393,
+          "nearest_domain_end_aa": 415,
+          "distance_to_nearest_domain_boundary": 11,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "sus_scrofa",
+      "display_species_name": "Sus Scrofa",
+      "isoform": "IIIb",
+      "taxon_group": "Other mammals",
+      "display_label": "Sus Scrofa · IIIb",
+      "protein_id": "XP_084849194.1",
+      "transcript_id": "XM_084993068.1",
+      "protein_length": 841,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 381,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 5,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "sus_scrofa",
+      "display_species_name": "Sus Scrofa",
+      "isoform": "IIIc",
+      "taxon_group": "Other mammals",
+      "display_label": "Sus Scrofa · IIIc",
+      "protein_id": "XP_084849197.1",
+      "transcript_id": "XM_084993071.1",
+      "protein_length": 840,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "minor_length_clamped",
+      "source_coordinate_status": "clamp_to_protein_length_with_minor_flag",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 285,
+          "nearest_domain_end_aa": 365,
+          "distance_to_nearest_domain_boundary": 32,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 382,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 393,
+          "nearest_domain_end_aa": 415,
+          "distance_to_nearest_domain_boundary": 11,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "equus_caballus",
+      "display_species_name": "Equus Caballus",
+      "isoform": "IIIb",
+      "taxon_group": "Other mammals",
+      "display_label": "Equus Caballus · IIIb",
+      "protein_id": "XP_014588429.1",
+      "transcript_id": "XM_014732943.3",
+      "protein_length": 887,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 8 (IIIb cassette)",
+          "boundary_aa": 383,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 332,
+          "nearest_domain_end_aa": 426,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 8 (IIIb cassette)",
+          "boundary_aa": 431,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 332,
+          "nearest_domain_end_aa": 426,
+          "distance_to_nearest_domain_boundary": 5,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "equus_caballus",
+      "display_species_name": "Equus Caballus",
+      "isoform": "IIIc",
+      "taxon_group": "Other mammals",
+      "display_label": "Equus Caballus · IIIc",
+      "protein_id": "XP_014588430.1",
+      "transcript_id": "XM_014732944.3",
+      "protein_length": 886,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "minor_length_clamped",
+      "source_coordinate_status": "clamp_to_protein_length_with_minor_flag",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 8 (IIIc cassette)",
+          "boundary_aa": 383,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 335,
+          "nearest_domain_end_aa": 415,
+          "distance_to_nearest_domain_boundary": 32,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 8 (IIIc cassette)",
+          "boundary_aa": 432,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 443,
+          "nearest_domain_end_aa": 465,
+          "distance_to_nearest_domain_boundary": 11,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "ovis_aries",
+      "display_species_name": "Ovis Aries",
+      "isoform": "IIIb",
+      "taxon_group": "Other mammals",
+      "display_label": "Ovis Aries · IIIb",
+      "protein_id": "XP_060260488.1",
+      "transcript_id": "XM_060404505.1",
+      "protein_length": 841,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 381,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 5,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "ovis_aries",
+      "display_species_name": "Ovis Aries",
+      "isoform": "IIIc",
+      "taxon_group": "Other mammals",
+      "display_label": "Ovis Aries · IIIc",
+      "protein_id": "XP_060260490.1",
+      "transcript_id": "XM_060404507.1",
+      "protein_length": 840,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "minor_length_clamped",
+      "source_coordinate_status": "clamp_to_protein_length_with_minor_flag",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 285,
+          "nearest_domain_end_aa": 365,
+          "distance_to_nearest_domain_boundary": 32,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 382,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 393,
+          "nearest_domain_end_aa": 415,
+          "distance_to_nearest_domain_boundary": 11,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "monodelphis_domestica",
+      "display_species_name": "Monodelphis Domestica",
+      "isoform": "IIIb",
+      "taxon_group": "Other mammals",
+      "display_label": "Monodelphis Domestica · IIIb",
+      "protein_id": "XP_056659239.1",
+      "transcript_id": "XM_056803261.1",
+      "protein_length": 840,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 332,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 281,
+          "nearest_domain_end_aa": 375,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 380,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 281,
+          "nearest_domain_end_aa": 375,
+          "distance_to_nearest_domain_boundary": 5,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "monodelphis_domestica",
+      "display_species_name": "Monodelphis Domestica",
+      "isoform": "IIIc",
+      "taxon_group": "Other mammals",
+      "display_label": "Monodelphis Domestica · IIIc",
+      "protein_id": "XP_056659242.1",
+      "transcript_id": "XM_056803264.1",
+      "protein_length": 839,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "minor_length_clamped",
+      "source_coordinate_status": "clamp_to_protein_length_with_minor_flag",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 332,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 284,
+          "nearest_domain_end_aa": 364,
+          "distance_to_nearest_domain_boundary": 32,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 381,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 392,
+          "nearest_domain_end_aa": 414,
+          "distance_to_nearest_domain_boundary": 11,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "ornithorhynchus_anatinus",
+      "display_species_name": "Ornithorhynchus Anatinus",
+      "isoform": "IIIb",
+      "taxon_group": "Other mammals",
+      "display_label": "Ornithorhynchus Anatinus · IIIb",
+      "protein_id": "XP_028936643.1",
+      "transcript_id": "XM_029080810.2",
+      "protein_length": 840,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 332,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 281,
+          "nearest_domain_end_aa": 375,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 380,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 281,
+          "nearest_domain_end_aa": 375,
+          "distance_to_nearest_domain_boundary": 5,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "ornithorhynchus_anatinus",
+      "display_species_name": "Ornithorhynchus Anatinus",
+      "isoform": "IIIc",
+      "taxon_group": "Other mammals",
+      "display_label": "Ornithorhynchus Anatinus · IIIc",
+      "protein_id": "XP_028936644.1",
+      "transcript_id": "XM_029080811.2",
+      "protein_length": 839,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "minor_length_clamped",
+      "source_coordinate_status": "clamp_to_protein_length_with_minor_flag",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 332,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 284,
+          "nearest_domain_end_aa": 364,
+          "distance_to_nearest_domain_boundary": 32,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 381,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 392,
+          "nearest_domain_end_aa": 414,
+          "distance_to_nearest_domain_boundary": 11,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "gallus_gallus",
+      "display_species_name": "Gallus Gallus",
+      "isoform": "IIIb",
+      "taxon_group": "Birds",
+      "display_label": "Gallus Gallus · IIIb",
+      "protein_id": "XP_046798696.1",
+      "transcript_id": "XM_046942740.1",
+      "protein_length": 843,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 335,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 284,
+          "nearest_domain_end_aa": 378,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 383,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 284,
+          "nearest_domain_end_aa": 378,
+          "distance_to_nearest_domain_boundary": 5,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "gallus_gallus",
+      "display_species_name": "Gallus Gallus",
+      "isoform": "IIIc",
+      "taxon_group": "Birds",
+      "display_label": "Gallus Gallus · IIIc",
+      "protein_id": "NP_990650.2",
+      "transcript_id": "NM_205319.4",
+      "protein_length": 842,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "minor_length_clamped",
+      "source_coordinate_status": "clamp_to_protein_length_with_minor_flag",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 335,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 286,
+          "nearest_domain_end_aa": 367,
+          "distance_to_nearest_domain_boundary": 32,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 384,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 395,
+          "nearest_domain_end_aa": 417,
+          "distance_to_nearest_domain_boundary": 11,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "meleagris_gallopavo",
+      "display_species_name": "Meleagris Gallopavo",
+      "isoform": "IIIb",
+      "taxon_group": "Birds",
+      "display_label": "Meleagris Gallopavo · IIIb",
+      "protein_id": "ENSMGAP00000031353",
+      "transcript_id": "ENSMGAT00000037037",
+      "protein_length": 631,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 5 (IIIb cassette)",
+          "boundary_aa": 245,
+          "nearest_domain_label": "Ig2",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 157,
+          "nearest_domain_end_aa": 251,
+          "distance_to_nearest_domain_boundary": 6,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 5 (IIIb cassette)",
+          "boundary_aa": 295,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 269,
+          "nearest_domain_end_aa": 291,
+          "distance_to_nearest_domain_boundary": 4,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "meleagris_gallopavo",
+      "display_species_name": "Meleagris Gallopavo",
+      "isoform": "IIIc",
+      "taxon_group": "Birds",
+      "display_label": "Meleagris Gallopavo · IIIc",
+      "protein_id": "ENSMGAP00000031571",
+      "transcript_id": "ENSMGAT00000021846",
+      "protein_length": 627,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "source_coordinate_status": "reconstruct_from_native_cds",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 4 (CDS4)",
+          "boundary_aa": 204,
+          "nearest_domain_label": "Ig2",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 171,
+          "nearest_domain_end_aa": 252,
+          "distance_to_nearest_domain_boundary": 33,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 4 (CDS4)",
+          "boundary_aa": 245,
+          "nearest_domain_label": "Ig2",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 171,
+          "nearest_domain_end_aa": 252,
+          "distance_to_nearest_domain_boundary": 7,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "taeniopygia_guttata",
+      "display_species_name": "Taeniopygia Guttata",
+      "isoform": "IIIb",
+      "taxon_group": "Birds",
+      "display_label": "Taeniopygia Guttata · IIIb",
+      "protein_id": "XP_072787408.1",
+      "transcript_id": "XM_072931307.1",
+      "protein_length": 891,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 8 (IIIb cassette)",
+          "boundary_aa": 383,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 332,
+          "nearest_domain_end_aa": 426,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 8 (IIIb cassette)",
+          "boundary_aa": 431,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 332,
+          "nearest_domain_end_aa": 426,
+          "distance_to_nearest_domain_boundary": 5,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "taeniopygia_guttata",
+      "display_species_name": "Taeniopygia Guttata",
+      "isoform": "IIIc",
+      "taxon_group": "Birds",
+      "display_label": "Taeniopygia Guttata · IIIc",
+      "protein_id": "XP_072787409.1",
+      "transcript_id": "XM_072931308.1",
+      "protein_length": 890,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "minor_length_clamped",
+      "source_coordinate_status": "clamp_to_protein_length_with_minor_flag",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 8 (IIIc cassette)",
+          "boundary_aa": 383,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 334,
+          "nearest_domain_end_aa": 415,
+          "distance_to_nearest_domain_boundary": 32,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 8 (IIIc cassette)",
+          "boundary_aa": 432,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 443,
+          "nearest_domain_end_aa": 465,
+          "distance_to_nearest_domain_boundary": 11,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "anolis_carolinensis",
+      "display_species_name": "Anolis Carolinensis",
+      "isoform": "IIIb",
+      "taxon_group": "Reptiles",
+      "display_label": "Anolis Carolinensis · IIIb",
+      "protein_id": "XP_062832082.1",
+      "transcript_id": "XM_062976012.1",
+      "protein_length": 873,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "minor_length_clamped",
+      "source_coordinate_status": "clamp_to_protein_length_with_minor_flag",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 8 (IIIb cassette)",
+          "boundary_aa": 366,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 315,
+          "nearest_domain_end_aa": 396,
+          "distance_to_nearest_domain_boundary": 30,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 8 (IIIb cassette)",
+          "boundary_aa": 414,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 426,
+          "nearest_domain_end_aa": 448,
+          "distance_to_nearest_domain_boundary": 12,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "anolis_carolinensis",
+      "display_species_name": "Anolis Carolinensis",
+      "isoform": "IIIc",
+      "taxon_group": "Reptiles",
+      "display_label": "Anolis Carolinensis · IIIc",
+      "protein_id": "XP_062832081.1",
+      "transcript_id": "XM_062976011.1",
+      "protein_length": 873,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "minor_length_clamped",
+      "source_coordinate_status": "clamp_to_protein_length_with_minor_flag",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 8 (IIIc cassette)",
+          "boundary_aa": 366,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 315,
+          "nearest_domain_end_aa": 411,
+          "distance_to_nearest_domain_boundary": 45,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 8 (IIIc cassette)",
+          "boundary_aa": 414,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 315,
+          "nearest_domain_end_aa": 411,
+          "distance_to_nearest_domain_boundary": 3,
+          "boundary_class": "aligned_to_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "alligator_mississippiensis",
+      "display_species_name": "Alligator Mississippiensis",
+      "isoform": "IIIb",
+      "taxon_group": "Reptiles",
+      "display_label": "Alligator Mississippiensis · IIIb",
+      "protein_id": "XP_059586053.1",
+      "transcript_id": "XM_059730070.1",
+      "protein_length": 869,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 335,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 284,
+          "nearest_domain_end_aa": 378,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 383,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 284,
+          "nearest_domain_end_aa": 378,
+          "distance_to_nearest_domain_boundary": 5,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "alligator_mississippiensis",
+      "display_species_name": "Alligator Mississippiensis",
+      "isoform": "IIIc",
+      "taxon_group": "Reptiles",
+      "display_label": "Alligator Mississippiensis · IIIc",
+      "protein_id": "XP_006266188.1",
+      "transcript_id": "XM_006266126.4",
+      "protein_length": 868,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "minor_length_clamped",
+      "source_coordinate_status": "clamp_to_protein_length_with_minor_flag",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 335,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 284,
+          "nearest_domain_end_aa": 380,
+          "distance_to_nearest_domain_boundary": 45,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 384,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 284,
+          "nearest_domain_end_aa": 380,
+          "distance_to_nearest_domain_boundary": 4,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "chrysemys_picta_bellii",
+      "display_species_name": "Chrysemys Picta Bellii",
+      "isoform": "IIIb",
+      "taxon_group": "Reptiles",
+      "display_label": "Chrysemys Picta Bellii · IIIb",
+      "protein_id": "XP_023965681.1",
+      "transcript_id": "XM_024109913.3",
+      "protein_length": 838,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "source_coordinate_status": "reconstruct_from_native_cds",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (CDS7)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (CDS7)",
+          "boundary_aa": 379,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 282,
+          "nearest_domain_end_aa": 376,
+          "distance_to_nearest_domain_boundary": 3,
+          "boundary_class": "aligned_to_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "chrysemys_picta_bellii",
+      "display_species_name": "Chrysemys Picta Bellii",
+      "isoform": "IIIc",
+      "taxon_group": "Reptiles",
+      "display_label": "Chrysemys Picta Bellii · IIIc",
+      "protein_id": "XP_065408413.1",
+      "transcript_id": "XM_065552341.1",
+      "protein_length": 840,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 333,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 284,
+          "nearest_domain_end_aa": 365,
+          "distance_to_nearest_domain_boundary": 32,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 379,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 284,
+          "nearest_domain_end_aa": 365,
+          "distance_to_nearest_domain_boundary": 14,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "xenopus_tropicalis",
+      "display_species_name": "Xenopus Tropicalis",
+      "isoform": "IIIb",
+      "taxon_group": "Amphibians",
+      "display_label": "Xenopus Tropicalis · IIIb",
+      "protein_id": "ENSXETP00000087394",
+      "transcript_id": "ENSXETT00000078335",
+      "protein_length": 832,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "IIIb cassette (validated reference)",
+          "boundary_aa": 326,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 274,
+          "nearest_domain_end_aa": 368,
+          "distance_to_nearest_domain_boundary": 42,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "IIIb cassette (validated reference)",
+          "boundary_aa": 368,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 274,
+          "nearest_domain_end_aa": 368,
+          "distance_to_nearest_domain_boundary": 0,
+          "boundary_class": "aligned_to_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "xenopus_tropicalis",
+      "display_species_name": "Xenopus Tropicalis",
+      "isoform": "IIIc",
+      "taxon_group": "Amphibians",
+      "display_label": "Xenopus Tropicalis · IIIc",
+      "protein_id": "ENSXETP00000069725",
+      "transcript_id": "ENSXETT00000071733",
+      "protein_length": 910,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 325,
+          "nearest_domain_label": "Ig2",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 257,
+          "nearest_domain_end_aa": 335,
+          "distance_to_nearest_domain_boundary": 10,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 373,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 350,
+          "nearest_domain_end_aa": 446,
+          "distance_to_nearest_domain_boundary": 23,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "ambystoma_mexicanum",
+      "display_species_name": "Ambystoma Mexicanum",
+      "isoform": "IIIb",
+      "taxon_group": "Amphibians",
+      "display_label": "Ambystoma Mexicanum · IIIb",
+      "protein_id": "XP_069468054.1",
+      "transcript_id": "XM_069611953.1",
+      "protein_length": 840,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 332,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 281,
+          "nearest_domain_end_aa": 375,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 380,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 281,
+          "nearest_domain_end_aa": 375,
+          "distance_to_nearest_domain_boundary": 5,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "ambystoma_mexicanum",
+      "display_species_name": "Ambystoma Mexicanum",
+      "isoform": "IIIc",
+      "taxon_group": "Amphibians",
+      "display_label": "Ambystoma Mexicanum · IIIc",
+      "protein_id": "XP_069468056.1",
+      "transcript_id": "XM_069611955.1",
+      "protein_length": 838,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "source_coordinate_status": "reconstruct_from_native_cds",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (CDS7)",
+          "boundary_aa": 332,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 281,
+          "nearest_domain_end_aa": 377,
+          "distance_to_nearest_domain_boundary": 45,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (CDS7)",
+          "boundary_aa": 380,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 281,
+          "nearest_domain_end_aa": 377,
+          "distance_to_nearest_domain_boundary": 3,
+          "boundary_class": "aligned_to_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "danio_rerio",
+      "display_species_name": "Danio Rerio",
+      "isoform": "IIIb",
+      "taxon_group": "Teleost fish",
+      "display_label": "Danio Rerio · IIIb",
+      "protein_id": "XP_068081039.1",
+      "transcript_id": "XM_068224938.2",
+      "protein_length": 838,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "source_coordinate_status": "reconstruct_from_native_cds",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (CDS7)",
+          "boundary_aa": 337,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 286,
+          "nearest_domain_end_aa": 380,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (CDS7)",
+          "boundary_aa": 383,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 286,
+          "nearest_domain_end_aa": 380,
+          "distance_to_nearest_domain_boundary": 3,
+          "boundary_class": "aligned_to_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "danio_rerio",
+      "display_species_name": "Danio Rerio",
+      "isoform": "IIIc",
+      "taxon_group": "Teleost fish",
+      "display_label": "Danio Rerio · IIIc",
+      "protein_id": "XP_068081038.1",
+      "transcript_id": "XM_068224937.2",
+      "protein_length": 840,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 337,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 286,
+          "nearest_domain_end_aa": 382,
+          "distance_to_nearest_domain_boundary": 45,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 383,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 286,
+          "nearest_domain_end_aa": 382,
+          "distance_to_nearest_domain_boundary": 1,
+          "boundary_class": "aligned_to_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "oryzias_latipes",
+      "display_species_name": "Oryzias Latipes",
+      "isoform": "IIIb",
+      "taxon_group": "Teleost fish",
+      "display_label": "Oryzias Latipes · IIIb",
+      "protein_id": "XP_011483055.1",
+      "transcript_id": "XM_011484753.4",
+      "protein_length": 830,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "source_coordinate_status": "reconstruct_from_native_cds",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (CDS7)",
+          "boundary_aa": 330,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 279,
+          "nearest_domain_end_aa": 373,
+          "distance_to_nearest_domain_boundary": 43,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (CDS7)",
+          "boundary_aa": 376,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 279,
+          "nearest_domain_end_aa": 373,
+          "distance_to_nearest_domain_boundary": 3,
+          "boundary_class": "aligned_to_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "oryzias_latipes",
+      "display_species_name": "Oryzias Latipes",
+      "isoform": "IIIc",
+      "taxon_group": "Teleost fish",
+      "display_label": "Oryzias Latipes · IIIc",
+      "protein_id": "XP_078787744.1",
+      "transcript_id": "XM_078931618.1",
+      "protein_length": 832,
+      "architecture_qc_status": "architecture_supported",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 330,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 279,
+          "nearest_domain_end_aa": 375,
+          "distance_to_nearest_domain_boundary": 45,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIc cassette)",
+          "boundary_aa": 376,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 279,
+          "nearest_domain_end_aa": 375,
+          "distance_to_nearest_domain_boundary": 1,
+          "boundary_class": "aligned_to_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "gasterosteus_aculeatus",
+      "display_species_name": "Gasterosteus Aculeatus",
+      "isoform": "IIIb",
+      "taxon_group": "Teleost fish",
+      "display_label": "Gasterosteus Aculeatus · IIIb",
+      "protein_id": "ENSGACP00000047216",
+      "transcript_id": "ENSGACT00000078064",
+      "protein_length": 915,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "source_coordinate_status": "reconstruct_from_native_cds",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 10 (CDS10)",
+          "boundary_aa": 429,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 391,
+          "nearest_domain_end_aa": 485,
+          "distance_to_nearest_domain_boundary": 38,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 10 (CDS10)",
+          "boundary_aa": 475,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 391,
+          "nearest_domain_end_aa": 485,
+          "distance_to_nearest_domain_boundary": 10,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "gasterosteus_aculeatus",
+      "display_species_name": "Gasterosteus Aculeatus",
+      "isoform": "IIIc",
+      "taxon_group": "Teleost fish",
+      "display_label": "Gasterosteus Aculeatus · IIIc",
+      "protein_id": "ENSGACP00000061458",
+      "transcript_id": "ENSGACT00000067656",
+      "protein_length": 917,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 4 (IIIc cassette)",
+          "boundary_aa": 136,
+          "nearest_domain_label": "Ig1",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 74,
+          "nearest_domain_end_aa": 168,
+          "distance_to_nearest_domain_boundary": 32,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 4 (IIIc cassette)",
+          "boundary_aa": 176,
+          "nearest_domain_label": "Ig1",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 74,
+          "nearest_domain_end_aa": 168,
+          "distance_to_nearest_domain_boundary": 8,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "takifugu_rubripes",
+      "display_species_name": "Takifugu Rubripes",
+      "isoform": "IIIb",
+      "taxon_group": "Teleost fish",
+      "display_label": "Takifugu Rubripes · IIIb",
+      "protein_id": "ENSTRUP00000045146",
+      "transcript_id": "ENSTRUT00000045298",
+      "protein_length": 836,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "source_coordinate_status": "reconstruct_from_native_cds",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 8 (CDS8)",
+          "boundary_aa": 302,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 285,
+          "nearest_domain_end_aa": 379,
+          "distance_to_nearest_domain_boundary": 17,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 8 (CDS8)",
+          "boundary_aa": 343,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 285,
+          "nearest_domain_end_aa": 379,
+          "distance_to_nearest_domain_boundary": 36,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "takifugu_rubripes",
+      "display_species_name": "Takifugu Rubripes",
+      "isoform": "IIIc",
+      "taxon_group": "Teleost fish",
+      "display_label": "Takifugu Rubripes · IIIc",
+      "protein_id": "ENSTRUP00000045145",
+      "transcript_id": "ENSTRUT00000045297",
+      "protein_length": 838,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 9 (IIIc cassette)",
+          "boundary_aa": 343,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 285,
+          "nearest_domain_end_aa": 381,
+          "distance_to_nearest_domain_boundary": 38,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 9 (IIIc cassette)",
+          "boundary_aa": 389,
+          "nearest_domain_label": "TM",
+          "nearest_domain_class": "TM",
+          "nearest_domain_start_aa": 395,
+          "nearest_domain_end_aa": 417,
+          "distance_to_nearest_domain_boundary": 6,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "oreochromis_niloticus",
+      "display_species_name": "Oreochromis Niloticus",
+      "isoform": "IIIb",
+      "taxon_group": "Teleost fish",
+      "display_label": "Oreochromis Niloticus · IIIb",
+      "protein_id": "ENSONIP00000060910",
+      "transcript_id": "ENSONIT00000055812",
+      "protein_length": 865,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "figure3C_native",
+      "source_coordinate_status": "keep",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 312,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 316,
+          "nearest_domain_end_aa": 410,
+          "distance_to_nearest_domain_boundary": 4,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 7 (IIIb cassette)",
+          "boundary_aa": 360,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 316,
+          "nearest_domain_end_aa": 410,
+          "distance_to_nearest_domain_boundary": 44,
+          "boundary_class": "within_domain",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    },
+    {
+      "species": "oreochromis_niloticus",
+      "display_species_name": "Oreochromis Niloticus",
+      "isoform": "IIIc",
+      "taxon_group": "Teleost fish",
+      "display_label": "Oreochromis Niloticus · IIIc",
+      "protein_id": "ENSONIP00000063320",
+      "transcript_id": "ENSONIT00000047381",
+      "protein_length": 812,
+      "architecture_qc_status": "architecture_supported_with_minor_flags",
+      "exon_block_display_status": "native_exon_blocks_reconstructed",
+      "source_coordinate_status": "reconstruct_from_native_cds",
+      "cells": [
+        {
+          "boundary_type": "cassette_start",
+          "boundary_label": "exon 8 (CDS8)",
+          "boundary_aa": 360,
+          "nearest_domain_label": "Ig3",
+          "nearest_domain_class": "Ig-like",
+          "nearest_domain_start_aa": 261,
+          "nearest_domain_end_aa": 357,
+          "distance_to_nearest_domain_boundary": 3,
+          "boundary_class": "aligned_to_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        },
+        {
+          "boundary_type": "cassette_end",
+          "boundary_label": "exon 8 (CDS8)",
+          "boundary_aa": 424,
+          "nearest_domain_label": "kinase",
+          "nearest_domain_class": "kinase",
+          "nearest_domain_start_aa": 431,
+          "nearest_domain_end_aa": 761,
+          "distance_to_nearest_domain_boundary": 7,
+          "boundary_class": "near_domain_boundary",
+          "notes": "cassette boundary (primary thesis metric)"
+        }
+      ]
+    }
+  ]
+}

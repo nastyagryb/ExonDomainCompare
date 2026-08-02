@@ -1,0 +1,2 @@
+species_id	protein_id	start_aa	end_aa	source	topology
+homo_sapiens	NP_001304849.1	214	233	pytmhmm	transmembrane

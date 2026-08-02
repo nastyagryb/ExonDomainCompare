@@ -1,0 +1,204 @@
+{
+  "checks": [
+    {
+      "check": "final_tables_agree_with_truth_table",
+      "scope": "post_rescue_truth",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "no_upstream_label_as_biological_truth",
+      "scope": "truth_table",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "no_stale_recommended_use_overrides_post_rescue",
+      "scope": "species_qc_master",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "figure6_review_rows_flagged",
+      "scope": "figure6",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "human_mouse_controls_pass",
+      "scope": "controls",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "gorilla_canis_pongo_rescue_status_consistent",
+      "scope": "rescued_controls",
+      "status": "pass",
+      "detail": "gorilla/canis IIIb + pongo IIIc primary; canis IIIc + pongo IIIb supplement"
+    },
+    {
+      "check": "synteny_msa_propagated_to_master",
+      "scope": "species_qc_master",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "fasta_md5_checksums_match_truth",
+      "scope": "freeze",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "figure_tables_from_current_run_with_sync_cols",
+      "scope": "figure_tables",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "deprecated_outputs_not_used_in_closure_figures",
+      "scope": "figure_sources",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "rescued_validated_not_flagged_as_problem",
+      "scope": "truth_table",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "primary_final_isoform_equals_validated",
+      "scope": "truth_table",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "figure_input_tables_exist",
+      "scope": "figure_tables",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "no_primary_row_visually_flagged_review",
+      "scope": "figure_tables",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "rescued_validated_not_review_styled_in_figures",
+      "scope": "figure_tables",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "canis_IIIc_pongo_IIIb_supplement_in_figures",
+      "scope": "figure_tables",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "gorilla_consistent_in_figure_tables",
+      "scope": "figure_tables",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "figure6_uses_final_truth_not_stale_review",
+      "scope": "figure6",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "figure2_3_use_post_rescue_not_stale",
+      "scope": "figure_tables",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "figure5_real_msa_integrity_not_histogram",
+      "scope": "figure5",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "figure8_labels_present",
+      "scope": "figure8",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "review_cases_pongo_IIIb_canis_IIIc_explained",
+      "scope": "review_explanation",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "no_row_rescued_and_unresolved",
+      "scope": "review_explanation",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "figure3B_motif_map_present_informative",
+      "scope": "figure3B",
+      "status": "pass",
+      "detail": "discriminating positions=19"
+    },
+    {
+      "check": "figure3C_exon_to_protein_map_present",
+      "scope": "figure3C",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "rescued_validated_not_review_in_3C_4",
+      "scope": "figure_tables",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "figure4_positive_not_exaggerated",
+      "scope": "figure4",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "species_list_path_resolved",
+      "scope": "run_mode",
+      "status": "pass",
+      "detail": "resolved: reference/Species_list_final_30.txt"
+    },
+    {
+      "check": "figure6B_present_final_labels_no_review_in_main",
+      "scope": "figure6B",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "figure3B_motif_map_kept",
+      "scope": "figure3B",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "evidence_stack_no_unused_columns",
+      "scope": "figure8",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "post_rescue_cross_table_gate",
+      "scope": "module12",
+      "status": "pass",
+      "detail": "ok"
+    },
+    {
+      "check": "synteny_validation_gate",
+      "scope": "synteny",
+      "status": "pass",
+      "detail": "ok"
+    }
+  ],
+  "hard_fail": false,
+  "timestamp": "2026-06-23T11:18:24Z"
+}

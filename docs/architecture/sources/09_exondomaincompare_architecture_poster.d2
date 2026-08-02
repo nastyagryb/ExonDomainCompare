@@ -1,0 +1,79 @@
+# 09 - ExonDomainCompare Architecture Poster  (A3 landscape)
+# Rendered with: d2 --layout dagre
+# Root grid fills column-major here: declaration order is
+#   [Q, Modes, Pipe, Out]  ->  TL=Q(1) TR=Pipe(2) BL=Modes(3) BR=Out(4)
+...@_theme
+
+grid-columns: 2
+grid-gap: 90
+
+title: |md
+  # ExonDomainCompare - Architecture Overview
+  ### One generic annotation-aware exon-protein framework, FGFR2 as a validated specialization
+| { near: top-center; style: { font-size: 28; font-color: "#0F172A"; bold: true } }
+
+# =========================== ZONE 1 (TL) - scientific question ===========================
+zoneQ: "1 - Scientific question" {
+  class: band_neutral
+  q: |md
+    **Are protein-domain edges encoded at exon boundaries,
+    and is that relationship conserved across species?**
+
+    ExonDomainCompare collects transcripts and proteins for a gene across
+    one or many vertebrate species, selects primary models, maps exons to
+    protein coordinates, annotates domains and topology, and measures how
+    coding-exon boundaries relate to representative domain edges.
+  | { class: data }
+  inputs: "Inputs: gene symbol + species list (>= 1 species)" { class: local }
+  scope: "Single-species and multi-species use the same pipeline" { class: note }
+  q -> inputs: { class: ref }
+  inputs -> scope: { class: ref }
+}
+
+# =========================== ZONE 3 (BL) - generic vs FGFR2 ===========================
+zoneModes: "3 - Generic framework vs FGFR2 specialization" {
+  class: band_neutral
+  base2: "Shared generic foundation\nacquisition - selection - mapping - alignment -\nsynteny - annotation - boundaries - canonical dataset" { class: local }
+  gen2: "Generic exploratory mode\nIsoform Alignment - Candidate Evidence -\ngeneric domain + boundary interpretation" { class: generic }
+  fg2: "FGFR2 validated use case\nIIIb / IIIc cassette - validated evidence -\ncassette-aware overlays + story" { class: fgfr2 }
+  base2 -> gen2: "same modules" { class: flow }
+  base2 -> fg2: "+ accent layers" { class: spec }
+}
+
+# =========================== ZONE 2 (TR) - end-to-end pipeline ===========================
+zonePipe: "2 - End-to-end pipeline" {
+  class: band_neutral
+  direction: right
+  p1: "Input" { class: user }
+  p2: "Local pipeline\nmodels - selection - mapping -\nalignment - synteny - candidates" { class: local }
+  p3: "Pre-cluster\nprimary FASTA freeze" { class: filedata }
+  p4: "LRZ cluster\nInterProScan + pyTMHMM" { class: cluster }
+  p5: "Post-InterPro\nnormalize - layers - boundaries" { class: annot }
+  p6: "Canonical dataset\nwebsite indices" { class: data }
+  p1 -> p2 -> p3 -> p4 -> p5 -> p6: { class: flow }
+}
+
+# =========================== ZONE 4 (BR) - interactive outputs ===========================
+zoneOut: "4 - Interactive outputs" {
+  class: band_neutral
+  grid-columns: 2
+  o1: "Domain Architecture\nrepresentative domains + families + topology" { class: output }
+  o2: "Exon-Domain Boundaries\nexact / near / inside / outside / unknown" { class: output }
+  o3: "Isoform Alignment + cross-species MSA" { class: output }
+  o4: "Synteny neighbourhood" { class: output }
+  o5: "Figure Gallery (SVG / PDF / PNG)" { class: output }
+  o6: "Downloadable tables + provenance" { class: output }
+}
+
+legend: "Legend" {
+  near: bottom-center
+  grid-rows: 1
+  l_user: "User" { class: user }
+  l_local: "Local compute" { class: local }
+  l_cluster: "LRZ cluster" { class: cluster }
+  l_annot: "Annotation" { class: annot }
+  l_data: "Scientific data" { class: data }
+  l_generic: "Generic mode" { class: generic }
+  l_out: "Outputs" { class: output }
+  l_fgfr2: "FGFR2" { class: fgfr2 }
+}

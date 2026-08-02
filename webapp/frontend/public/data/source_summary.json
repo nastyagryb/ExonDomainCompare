@@ -1,0 +1,17 @@
+[
+  {
+    "role": "reference",
+    "Ensembl": 10,
+    "NCBI": 20
+  },
+  {
+    "role": "IIIb",
+    "Ensembl": 10,
+    "NCBI": 20
+  },
+  {
+    "role": "IIIc",
+    "Ensembl": 10,
+    "NCBI": 20
+  }
+]

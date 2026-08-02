@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="701.64pt" height="370.467553pt" viewBox="0 0 701.64 370.467553" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-06-23T13:17:14.136438</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 370.467553 
+L 701.64 370.467553 
+L 701.64 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 344.0925 98.402824 
+L 370.1331 98.402824 
+L 382.3875 88.975985 
+L 370.1331 79.549147 
+L 344.0925 79.549147 
+z
+" clip-path="url(#p7e119b4a55)" style="fill: #1a1a1a; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="363.24" y="109.977949" transform="rotate(-0 363.24 109.977949)">FGFR2</text>
+   </g>
+   <g id="patch_3">
+    <path d="M 292.3425 98.402824 
+L 318.3831 98.402824 
+L 330.6375 88.975985 
+L 318.3831 79.549147 
+L 292.3425 79.549147 
+z
+" clip-path="url(#p7e119b4a55)" style="fill: #009e73; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="311.49" y="109.977949" transform="rotate(-0 311.49 109.977949)">ATE1</text>
+   </g>
+   <g id="patch_4">
+    <path d="M 240.5925 98.402824 
+L 266.6331 98.402824 
+L 278.8875 88.975985 
+L 266.6331 79.549147 
+L 240.5925 79.549147 
+z
+" clip-path="url(#p7e119b4a55)" style="fill: #aa4499; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="259.74" y="109.977949" transform="rotate(-0 259.74 109.977949)">NSMCE4A</text>
+   </g>
+   <g id="patch_5">
+    <path d="M 227.1375 98.402824 
+L 201.0969 98.402824 
+L 188.8425 88.975985 
+L 201.0969 79.549147 
+L 227.1375 79.549147 
+z
+" clip-path="url(#p7e119b4a55)" style="fill: #117777; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="207.99" y="109.977949" transform="rotate(-0 207.99 109.977949)">TACC2</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 175.3875 98.402824 
+L 149.3469 98.402824 
+L 137.0925 88.975985 
+L 149.3469 79.549147 
+L 175.3875 79.549147 
+z
+" clip-path="url(#p7e119b4a55)" style="fill: #56b4e9; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="156.24" y="109.977949" transform="rotate(-0 156.24 109.977949)">BTBD16</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 123.6375 98.402824 
+L 97.5969 98.402824 
+L 85.3425 88.975985 
+L 97.5969 79.549147 
+L 123.6375 79.549147 
+z
+" clip-path="url(#p7e119b4a55)" style="fill: #88ccee; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="104.49" y="109.977949" transform="rotate(-0 104.49 109.977949)">PLEKHA1</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 434.1375 98.402824 
+L 408.0969 98.402824 
+L 395.8425 88.975985 
+L 408.0969 79.549147 
+L 434.1375 79.549147 
+z
+" clip-path="url(#p7e119b4a55)" style="fill: #9aa0a6; opacity: 0.85; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="414.99" y="109.977949" transform="rotate(-0 414.99 109.977949)">RPS2?</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 485.8875 98.402824 
+L 459.8469 98.402824 
+L 447.5925 88.975985 
+L 459.8469 79.549147 
+L 485.8875 79.549147 
+z
+" clip-path="url(#p7e119b4a55)" style="fill: #774411; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="466.74" y="109.977949" transform="rotate(-0 466.74 109.977949)">WDR11</text>
+   </g>
+   <g id="patch_10">
+    <path d="M 537.6375 98.402824 
+L 511.5969 98.402824 
+L 499.3425 88.975985 
+L 511.5969 79.549147 
+L 537.6375 79.549147 
+z
+" clip-path="url(#p7e119b4a55)" style="fill: #c9cdd2; opacity: 0.85; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #6b7280" x="518.49" y="109.977949" transform="rotate(-0 518.49 109.977949)">LOC?</text>
+   </g>
+   <g id="patch_11">
+    <path d="M 589.3875 98.402824 
+L 563.3469 98.402824 
+L 551.0925 88.975985 
+L 563.3469 79.549147 
+L 589.3875 79.549147 
+z
+" clip-path="url(#p7e119b4a55)" style="fill: #999933; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="570.24" y="109.977949" transform="rotate(-0 570.24 109.977949)">PLPP4</text>
+   </g>
+   <g id="patch_12">
+    <path d="M 641.1375 98.402824 
+L 615.0969 98.402824 
+L 602.8425 88.975985 
+L 615.0969 79.549147 
+L 641.1375 79.549147 
+z
+" clip-path="url(#p7e119b4a55)" style="fill: #ddcc77; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="621.99" y="109.977949" transform="rotate(-0 621.99 109.977949)">SEC23IP</text>
+   </g>
+   <g id="text_12">
+    <text style="font-style: italic; font-weight: 700; font-size: 10px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="57.915" y="62.580838" transform="rotate(-0 57.915 62.580838)">Gorilla gorilla gorilla</text>
+   </g>
+   <g id="patch_13">
+    <path d="M 61.02 121.404309 
+L 153.135 121.404309 
+Q 157.275 121.404309 157.275 118.387721 
+L 157.275 112.354544 
+Q 157.275 109.337956 153.135 109.337956 
+L 61.02 109.337956 
+Q 56.88 109.337956 56.88 112.354544 
+L 56.88 118.387721 
+Q 56.88 121.404309 61.02 121.404309 
+z
+" clip-path="url(#p7e119b4a55)" style="fill: #1b6ca8; opacity: 0.16"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 167.1075 121.404309 
+L 259.2225 121.404309 
+Q 263.3625 121.404309 263.3625 118.387721 
+L 263.3625 112.354544 
+Q 263.3625 109.337956 259.2225 109.337956 
+L 167.1075 109.337956 
+Q 162.9675 109.337956 162.9675 112.354544 
+L 162.9675 118.387721 
+Q 162.9675 121.404309 167.1075 121.404309 
+z
+" clip-path="url(#p7e119b4a55)" style="fill: #1b6ca8; opacity: 0.16"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 299.07 121.404309 
+L 391.185 121.404309 
+Q 395.325 121.404309 395.325 118.387721 
+L 395.325 112.354544 
+Q 395.325 109.337956 391.185 109.337956 
+L 299.07 109.337956 
+Q 294.93 109.337956 294.93 112.354544 
+L 294.93 118.387721 
+Q 294.93 121.404309 299.07 121.404309 
+z
+" clip-path="url(#p7e119b4a55)" style="fill: #1b6ca8; opacity: 0.16"/>
+   </g>
+   <g id="text_13">
+    <text style="font-style: italic; font-size: 8.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="57.915" y="144.258982" transform="rotate(-0 57.915 144.258982)">Gorilla gorilla gorilla FGFR2 is retained as a primary locus after sequence rescue and local synteny support.</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 6.6px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1b6ca8" x="63.09" y="117.050523" transform="rotate(-0 63.09 117.050523)">sequence rescue</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 6.6px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1b6ca8" x="169.1775" y="117.015976" transform="rotate(-0 169.1775 117.015976)">synteny: supported_with_minor_rearrangement</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 6.6px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1b6ca8" x="301.14" y="117.030929" transform="rotate(-0 301.14 117.030929)">primary</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_16">
+    <path d="M 344.0925 207 
+L 370.1331 207 
+L 382.3875 197.573162 
+L 370.1331 188.146324 
+L 344.0925 188.146324 
+z
+" clip-path="url(#p1d6d2a173f)" style="fill: #1a1a1a; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="363.24" y="218.575125" transform="rotate(-0 363.24 218.575125)">FGFR2</text>
+   </g>
+   <g id="patch_17">
+    <path d="M 292.3425 207 
+L 318.3831 207 
+L 330.6375 197.573162 
+L 318.3831 188.146324 
+L 292.3425 188.146324 
+z
+" clip-path="url(#p1d6d2a173f)" style="fill: #009e73; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="311.49" y="218.575125" transform="rotate(-0 311.49 218.575125)">ATE1</text>
+   </g>
+   <g id="patch_18">
+    <path d="M 278.8875 207 
+L 252.8469 207 
+L 240.5925 197.573162 
+L 252.8469 188.146324 
+L 278.8875 188.146324 
+z
+" clip-path="url(#p1d6d2a173f)" style="fill: #c9cdd2; opacity: 0.85; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #6b7280" x="259.74" y="218.575125" transform="rotate(-0 259.74 218.575125)">LOC?</text>
+   </g>
+   <g id="patch_19">
+    <path d="M 188.8425 207 
+L 214.8831 207 
+L 227.1375 197.573162 
+L 214.8831 188.146324 
+L 188.8425 188.146324 
+z
+" clip-path="url(#p1d6d2a173f)" style="fill: #aa4499; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="207.99" y="218.575125" transform="rotate(-0 207.99 218.575125)">NSMCE4A</text>
+   </g>
+   <g id="patch_20">
+    <path d="M 175.3875 207 
+L 149.3469 207 
+L 137.0925 197.573162 
+L 149.3469 188.146324 
+L 175.3875 188.146324 
+z
+" clip-path="url(#p1d6d2a173f)" style="fill: #117777; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="156.24" y="218.575125" transform="rotate(-0 156.24 218.575125)">TACC2</text>
+   </g>
+   <g id="patch_21">
+    <path d="M 123.6375 207 
+L 97.5969 207 
+L 85.3425 197.573162 
+L 97.5969 188.146324 
+L 123.6375 188.146324 
+z
+" clip-path="url(#p1d6d2a173f)" style="fill: #56b4e9; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="104.49" y="218.575125" transform="rotate(-0 104.49 218.575125)">BTBD16</text>
+   </g>
+   <g id="patch_22">
+    <path d="M 434.1375 207 
+L 408.0969 207 
+L 395.8425 197.573162 
+L 408.0969 188.146324 
+L 434.1375 188.146324 
+z
+" clip-path="url(#p1d6d2a173f)" style="fill: #774411; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="414.99" y="218.575125" transform="rotate(-0 414.99 218.575125)">WDR11</text>
+   </g>
+   <g id="patch_23">
+    <path d="M 485.8875 207 
+L 459.8469 207 
+L 447.5925 197.573162 
+L 459.8469 188.146324 
+L 485.8875 188.146324 
+z
+" clip-path="url(#p1d6d2a173f)" style="fill: #999933; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="466.74" y="218.575125" transform="rotate(-0 466.74 218.575125)">PLPP4</text>
+   </g>
+   <g id="patch_24">
+    <path d="M 537.6375 207 
+L 511.5969 207 
+L 499.3425 197.573162 
+L 511.5969 188.146324 
+L 537.6375 188.146324 
+z
+" clip-path="url(#p1d6d2a173f)" style="fill: #ddcc77; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="518.49" y="218.575125" transform="rotate(-0 518.49 218.575125)">SEC23IP</text>
+   </g>
+   <g id="patch_25">
+    <path d="M 551.0925 207 
+L 577.1331 207 
+L 589.3875 197.573162 
+L 577.1331 188.146324 
+L 551.0925 188.146324 
+z
+" clip-path="url(#p1d6d2a173f)" style="fill: #332288; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="570.24" y="218.575125" transform="rotate(-0 570.24 218.575125)">MCMBP</text>
+   </g>
+   <g id="patch_26">
+    <path d="M 641.1375 207 
+L 615.0969 207 
+L 602.8425 197.573162 
+L 615.0969 188.146324 
+L 641.1375 188.146324 
+z
+" clip-path="url(#p1d6d2a173f)" style="fill: #44aa99; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="621.99" y="218.575125" transform="rotate(-0 621.99 218.575125)">INPP5F</text>
+   </g>
+   <g id="text_28">
+    <text style="font-style: italic; font-weight: 700; font-size: 10px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="57.915" y="171.178015" transform="rotate(-0 57.915 171.178015)">Canis lupus familiaris</text>
+   </g>
+   <g id="patch_27">
+    <path d="M 61.02 230.001485 
+L 153.135 230.001485 
+Q 157.275 230.001485 157.275 226.984897 
+L 157.275 220.951721 
+Q 157.275 217.935132 153.135 217.935132 
+L 61.02 217.935132 
+Q 56.88 217.935132 56.88 220.951721 
+L 56.88 226.984897 
+Q 56.88 230.001485 61.02 230.001485 
+z
+" clip-path="url(#p1d6d2a173f)" style="fill: #1b6ca8; opacity: 0.16"/>
+   </g>
+   <g id="patch_28">
+    <path d="M 167.1075 230.001485 
+L 259.2225 230.001485 
+Q 263.3625 230.001485 263.3625 226.984897 
+L 263.3625 220.951721 
+Q 263.3625 217.935132 259.2225 217.935132 
+L 167.1075 217.935132 
+Q 162.9675 217.935132 162.9675 220.951721 
+L 162.9675 226.984897 
+Q 162.9675 230.001485 167.1075 230.001485 
+z
+" clip-path="url(#p1d6d2a173f)" style="fill: #1b6ca8; opacity: 0.16"/>
+   </g>
+   <g id="patch_29">
+    <path d="M 299.07 230.001485 
+L 391.185 230.001485 
+Q 395.325 230.001485 395.325 226.984897 
+L 395.325 220.951721 
+Q 395.325 217.935132 391.185 217.935132 
+L 299.07 217.935132 
+Q 294.93 217.935132 294.93 220.951721 
+L 294.93 226.984897 
+Q 294.93 230.001485 299.07 230.001485 
+z
+" clip-path="url(#p1d6d2a173f)" style="fill: #1b6ca8; opacity: 0.16"/>
+   </g>
+   <g id="patch_30">
+    <path d="M 61.02 248.855162 
+L 153.135 248.855162 
+Q 157.275 248.855162 157.275 245.838574 
+L 157.275 239.805397 
+Q 157.275 236.788809 153.135 236.788809 
+L 61.02 236.788809 
+Q 56.88 236.788809 56.88 239.805397 
+L 56.88 245.838574 
+Q 56.88 248.855162 61.02 248.855162 
+z
+" clip-path="url(#p1d6d2a173f)" style="fill: #d55e00; opacity: 0.16"/>
+   </g>
+   <g id="text_29">
+    <text style="font-style: italic; font-size: 8.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="57.915" y="252.856158" transform="rotate(-0 57.915 252.856158)">Canis lupus familiaris FGFR2 is retained as a primary locus after sequence rescue and local synteny support.</text>
+   </g>
+   <g id="text_30">
+    <text style="font-weight: 700; font-size: 6.6px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1b6ca8" x="63.09" y="225.647699" transform="rotate(-0 63.09 225.647699)">sequence rescue</text>
+   </g>
+   <g id="text_31">
+    <text style="font-weight: 700; font-size: 6.6px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1b6ca8" x="169.1775" y="225.563137" transform="rotate(-0 169.1775 225.563137)">synteny: strong</text>
+   </g>
+   <g id="text_32">
+    <text style="font-weight: 700; font-size: 6.6px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1b6ca8" x="301.14" y="225.628106" transform="rotate(-0 301.14 225.628106)">primary</text>
+   </g>
+   <g id="text_33">
+    <text style="font-weight: 700; font-size: 6.6px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #d55e00" x="63.09" y="244.50911" transform="rotate(-0 63.09 244.50911)">unresolved: no source-compatible validated candidate</text>
+   </g>
+  </g>
+  <g id="axes_3">
+   <g id="patch_31">
+    <path d="M 344.0925 315.597176 
+L 370.1331 315.597176 
+L 382.3875 306.170338 
+L 370.1331 296.7435 
+L 344.0925 296.7435 
+z
+" clip-path="url(#p8db4815a93)" style="fill: #1a1a1a; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_34">
+    <text style="font-weight: 700; font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="363.24" y="327.172301" transform="rotate(-0 363.24 327.172301)">FGFR2</text>
+   </g>
+   <g id="patch_32">
+    <path d="M 330.6375 315.597176 
+L 304.5969 315.597176 
+L 292.3425 306.170338 
+L 304.5969 296.7435 
+L 330.6375 296.7435 
+z
+" clip-path="url(#p8db4815a93)" style="fill: #9aa0a6; opacity: 0.85; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="311.49" y="327.172301" transform="rotate(-0 311.49 327.172301)">RPS15A?</text>
+   </g>
+   <g id="patch_33">
+    <path d="M 240.5925 315.597176 
+L 266.6331 315.597176 
+L 278.8875 306.170338 
+L 266.6331 296.7435 
+L 240.5925 296.7435 
+z
+" clip-path="url(#p8db4815a93)" style="fill: #009e73; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="259.74" y="327.172301" transform="rotate(-0 259.74 327.172301)">ATE1</text>
+   </g>
+   <g id="patch_34">
+    <path d="M 188.8425 315.597176 
+L 214.8831 315.597176 
+L 227.1375 306.170338 
+L 214.8831 296.7435 
+L 188.8425 296.7435 
+z
+" clip-path="url(#p8db4815a93)" style="fill: #aa4499; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_37">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="207.99" y="327.172301" transform="rotate(-0 207.99 327.172301)">NSMCE4A</text>
+   </g>
+   <g id="patch_35">
+    <path d="M 175.3875 315.597176 
+L 149.3469 315.597176 
+L 137.0925 306.170338 
+L 149.3469 296.7435 
+L 175.3875 296.7435 
+z
+" clip-path="url(#p8db4815a93)" style="fill: #117777; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_38">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="156.24" y="327.172301" transform="rotate(-0 156.24 327.172301)">TACC2</text>
+   </g>
+   <g id="patch_36">
+    <path d="M 123.6375 315.597176 
+L 97.5969 315.597176 
+L 85.3425 306.170338 
+L 97.5969 296.7435 
+L 123.6375 296.7435 
+z
+" clip-path="url(#p8db4815a93)" style="fill: #56b4e9; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="104.49" y="327.172301" transform="rotate(-0 104.49 327.172301)">BTBD16</text>
+   </g>
+   <g id="patch_37">
+    <path d="M 434.1375 315.597176 
+L 408.0969 315.597176 
+L 395.8425 306.170338 
+L 408.0969 296.7435 
+L 434.1375 296.7435 
+z
+" clip-path="url(#p8db4815a93)" style="fill: #774411; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_40">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="414.99" y="327.172301" transform="rotate(-0 414.99 327.172301)">WDR11</text>
+   </g>
+   <g id="patch_38">
+    <path d="M 485.8875 315.597176 
+L 459.8469 315.597176 
+L 447.5925 306.170338 
+L 459.8469 296.7435 
+L 485.8875 296.7435 
+z
+" clip-path="url(#p8db4815a93)" style="fill: #999933; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_41">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="466.74" y="327.172301" transform="rotate(-0 466.74 327.172301)">PLPP4</text>
+   </g>
+   <g id="patch_39">
+    <path d="M 499.3425 315.597176 
+L 525.3831 315.597176 
+L 537.6375 306.170338 
+L 525.3831 296.7435 
+L 499.3425 296.7435 
+z
+" clip-path="url(#p8db4815a93)" style="fill: #e69f00; opacity: 0.85; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_42">
+    <text style="font-style: italic; font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="518.49" y="327.238676" transform="rotate(-0 518.49 327.238676)">paralog?</text>
+   </g>
+   <g id="patch_40">
+    <path d="M 589.3875 315.597176 
+L 563.3469 315.597176 
+L 551.0925 306.170338 
+L 563.3469 296.7435 
+L 589.3875 296.7435 
+z
+" clip-path="url(#p8db4815a93)" style="fill: #ddcc77; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_43">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="570.24" y="327.172301" transform="rotate(-0 570.24 327.172301)">SEC23IP</text>
+   </g>
+   <g id="patch_41">
+    <path d="M 602.8425 315.597176 
+L 628.8831 315.597176 
+L 641.1375 306.170338 
+L 628.8831 296.7435 
+L 602.8425 296.7435 
+z
+" clip-path="url(#p8db4815a93)" style="fill: #332288; stroke: #1a1a1a; stroke-width: 0.6"/>
+   </g>
+   <g id="text_44">
+    <text style="font-size: 7.2px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="621.99" y="327.172301" transform="rotate(-0 621.99 327.172301)">MCMBP</text>
+   </g>
+   <g id="text_45">
+    <text style="font-style: italic; font-weight: 700; font-size: 10px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="57.915" y="279.775191" transform="rotate(-0 57.915 279.775191)">Pongo abelii</text>
+   </g>
+   <g id="patch_42">
+    <path d="M 61.02 338.598662 
+L 153.135 338.598662 
+Q 157.275 338.598662 157.275 335.582074 
+L 157.275 329.548897 
+Q 157.275 326.532309 153.135 326.532309 
+L 61.02 326.532309 
+Q 56.88 326.532309 56.88 329.548897 
+L 56.88 335.582074 
+Q 56.88 338.598662 61.02 338.598662 
+z
+" clip-path="url(#p8db4815a93)" style="fill: #9aa0a6; opacity: 0.16"/>
+   </g>
+   <g id="patch_43">
+    <path d="M 167.1075 338.598662 
+L 259.2225 338.598662 
+Q 263.3625 338.598662 263.3625 335.582074 
+L 263.3625 329.548897 
+Q 263.3625 326.532309 259.2225 326.532309 
+L 167.1075 326.532309 
+Q 162.9675 326.532309 162.9675 329.548897 
+L 162.9675 335.582074 
+Q 162.9675 338.598662 167.1075 338.598662 
+z
+" clip-path="url(#p8db4815a93)" style="fill: #1b6ca8; opacity: 0.16"/>
+   </g>
+   <g id="patch_44">
+    <path d="M 299.07 338.598662 
+L 391.185 338.598662 
+Q 395.325 338.598662 395.325 335.582074 
+L 395.325 329.548897 
+Q 395.325 326.532309 391.185 326.532309 
+L 299.07 326.532309 
+Q 294.93 326.532309 294.93 329.548897 
+L 294.93 335.582074 
+Q 294.93 338.598662 299.07 338.598662 
+z
+" clip-path="url(#p8db4815a93)" style="fill: #1b6ca8; opacity: 0.16"/>
+   </g>
+   <g id="patch_45">
+    <path d="M 61.02 357.452338 
+L 153.135 357.452338 
+Q 157.275 357.452338 157.275 354.43575 
+L 157.275 348.402574 
+Q 157.275 345.385985 153.135 345.385985 
+L 61.02 345.385985 
+Q 56.88 345.385985 56.88 348.402574 
+L 56.88 354.43575 
+Q 56.88 357.452338 61.02 357.452338 
+z
+" clip-path="url(#p8db4815a93)" style="fill: #d55e00; opacity: 0.16"/>
+   </g>
+   <g id="text_46">
+    <text style="font-style: italic; font-size: 8.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="57.915" y="361.386928" transform="rotate(-0 57.915 361.386928)">Pongo abelii remains supplement/review; local synteny (supported_with_minor_rearrangement) is reported but does not relabel IIIb/IIIc.</text>
+   </g>
+   <g id="text_47">
+    <text style="font-weight: 700; font-size: 6.6px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #9aa0a6" x="63.09" y="334.244876" transform="rotate(-0 63.09 334.244876)">sequence rescue</text>
+   </g>
+   <g id="text_48">
+    <text style="font-weight: 700; font-size: 6.6px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1b6ca8" x="169.1775" y="334.210329" transform="rotate(-0 169.1775 334.210329)">synteny: supported_with_minor_rearrangement</text>
+   </g>
+   <g id="text_49">
+    <text style="font-weight: 700; font-size: 6.6px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1b6ca8" x="301.14" y="334.225282" transform="rotate(-0 301.14 334.225282)">primary</text>
+   </g>
+   <g id="text_50">
+    <text style="font-weight: 700; font-size: 6.6px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #d55e00" x="63.09" y="353.106287" transform="rotate(-0 63.09 353.106287)">unresolved: no source-compatible validated candidate</text>
+   </g>
+  </g>
+  <g id="text_51">
+   <text style="font-weight: 700; font-size: 12px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="7.2" y="16.0425" transform="rotate(-0 7.2 16.0425)">FGFR2 synteny rescue-case cards</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p7e119b4a55">
+   <rect x="52.74" y="53.154" width="641.7" height="90.497647"/>
+  </clipPath>
+  <clipPath id="p1d6d2a173f">
+   <rect x="52.74" y="161.751176" width="641.7" height="90.497647"/>
+  </clipPath>
+  <clipPath id="p8db4815a93">
+   <rect x="52.74" y="270.348353" width="641.7" height="90.497647"/>
+  </clipPath>
+ </defs>
+</svg>

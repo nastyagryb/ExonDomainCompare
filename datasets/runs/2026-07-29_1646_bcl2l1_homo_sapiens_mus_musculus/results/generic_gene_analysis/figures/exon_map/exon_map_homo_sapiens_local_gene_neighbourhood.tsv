@@ -1,0 +1,12 @@
+position_in_figure	side	order_from_target	locus_symbol	locus_kind	transcription_direction	annotation_source
+1	upstream	5	TTLL9	annotated_neighbour	+	ncbi_gff
+2	upstream	4	DUSP15	annotated_neighbour	-	ncbi_gff
+3	upstream	3	FOXS1	annotated_neighbour	-	ncbi_gff
+4	upstream	2	MYLK2	annotated_neighbour	+	ncbi_gff
+5	upstream	1	TPX2	annotated_neighbour	+	ncbi_gff
+6	target	0	BCL2L1	target	-	ncbi_gff
+7	downstream	1	COX4I2	annotated_neighbour	+	ncbi_gff
+8	downstream	2	ID1	annotated_neighbour	+	ncbi_gff
+9	downstream	3	MCTS2	annotated_neighbour	+	ncbi_gff
+10	downstream	4	HM13	annotated_neighbour	+	ncbi_gff
+11	downstream	5	REM1	annotated_neighbour	+	ncbi_gff

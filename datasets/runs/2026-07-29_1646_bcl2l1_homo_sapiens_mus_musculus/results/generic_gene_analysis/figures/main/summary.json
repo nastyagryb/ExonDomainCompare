@@ -1,0 +1,105 @@
+{
+  "gene": "BCL2L1",
+  "species": "Mus musculus",
+  "primary": "NP_001276668.1",
+  "transcript": "NM_001289739.2",
+  "n_rows": 9,
+  "n_columns": 249,
+  "tool": "MAFFT",
+  "candidate": "C1",
+  "n_candidates": 2,
+  "protein_ids": [
+    "NP_001276668.1",
+    "NP_001276645.1",
+    "NP_001276646.1",
+    "NP_001341982.1",
+    "NP_001403825.1",
+    "NP_001403826.1",
+    "NP_001403827.1",
+    "NP_001403828.1",
+    "NP_033873.3"
+  ],
+  "identities": {
+    "NP_001276668.1": 100,
+    "NP_001276645.1": 90,
+    "NP_001276646.1": 90,
+    "NP_001341982.1": 90,
+    "NP_001403825.1": 90,
+    "NP_001403826.1": 90,
+    "NP_001403827.1": 90,
+    "NP_001403828.1": 90,
+    "NP_033873.3": 90
+  },
+  "curation": {
+    "NP_001276668.1": "curated",
+    "NP_001276645.1": "curated",
+    "NP_001276646.1": "curated",
+    "NP_001341982.1": "curated",
+    "NP_001403825.1": "curated",
+    "NP_001403826.1": "curated",
+    "NP_001403827.1": "curated",
+    "NP_001403828.1": "curated",
+    "NP_033873.3": "curated"
+  },
+  "wrapped": {
+    "colsPerBlock": 80,
+    "nBlocks": 4,
+    "nPages": 1,
+    "blocksPerPage": 4,
+    "pageCapacity": 5,
+    "n_pages_written": 1
+  },
+  "n_exons": 2,
+  "figures": [
+    "full_isoform_alignment",
+    "wrapped_alignment",
+    "candidate_alignment_detail"
+  ],
+  "candidate_columns": [
+    198,
+    198
+  ],
+  "candidate_aa": [
+    191,
+    191
+  ],
+  "affected": [
+    "NP_001276645.1",
+    "NP_001276646.1",
+    "NP_001341982.1",
+    "NP_001403825.1",
+    "NP_001403826.1",
+    "NP_001403827.1",
+    "NP_001403828.1",
+    "NP_033873.3"
+  ],
+  "unaffected": [],
+  "render": [
+    {
+      "name": "full_isoform_alignment",
+      "stem": "main_mus_musculus_full_isoform_alignment",
+      "width": 756,
+      "height": 519.7000000000002,
+      "marks": 733,
+      "warnings": []
+    },
+    {
+      "name": "wrapped_alignment_p1",
+      "stem": "main_mus_musculus_wrapped_alignment_p1",
+      "width": 756,
+      "height": 648.9,
+      "marks": 4947,
+      "warnings": []
+    },
+    {
+      "name": "candidate_alignment_detail",
+      "stem": "main_mus_musculus_candidate_alignment_detail",
+      "width": 756,
+      "height": 295.9000000000001,
+      "marks": 550,
+      "warnings": []
+    }
+  ],
+  "species_id": "mus_musculus",
+  "gallery_stems": true
+}

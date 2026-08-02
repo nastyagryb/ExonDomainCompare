@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="252" height="125.5" viewBox="0 0 252 125.5">
+<rect x="0" y="0" width="252" height="125.5" fill="#ffffff" stroke="none" />
+<text x="8" y="16.5" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.5" fill="#1c2433" text-anchor="start" font-weight="bold">FGFR2 IIIb</text>
+<text x="54.55" y="16.5" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.5" fill="#1c2433" text-anchor="start" font-weight="normal" font-style="italic">· Gasterosteus aculeatus</text>
+<text x="8" y="27.3" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.8" fill="#6B7280" text-anchor="start" font-weight="normal">ENSGACP00000047216 · 17 internal coding-exon boundaries</text>
+<text x="8" y="37.1" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="5.5" fill="#6B7280" text-anchor="start" font-weight="normal" font-style="italic">How are exon boundaries distributed across domain-relation classes?</text>
+<line x1="147.27" y1="52.6" x2="147.27" y2="81" stroke="#e3e8f0" stroke-width="0.4" />
+<line x1="197.79" y1="52.6" x2="197.79" y2="81" stroke="#e3e8f0" stroke-width="0.4" />
+<text x="90.76" y="61.87" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#1c2433" text-anchor="end" font-weight="normal">Inside domain</text>
+<rect x="96.76" y="54.6" width="121.24" height="8.2" fill="#009E73" stroke="none" stroke-width="0.4" />
+<text x="222" y="61.87" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="5.5" fill="#1c2433" text-anchor="start" font-weight="normal">12 (71%)</text>
+<text x="90.76" y="76.07" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#1c2433" text-anchor="end" font-weight="normal">Outside annotated domains</text>
+<rect x="96.76" y="68.8" width="50.52" height="8.2" fill="#D55E00" stroke="none" stroke-width="0.4" />
+<text x="151.27" y="76.07" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="5.5" fill="#1c2433" text-anchor="start" font-weight="normal">5 (29%)</text>
+<line x1="96.76" y1="81" x2="218" y2="81" stroke="#9aa4b2" stroke-width="0.6" />
+<line x1="127.07" y1="81" x2="127.07" y2="83" stroke="#9aa4b2" stroke-width="0.4" opacity="0.7" />
+<line x1="177.59" y1="81" x2="177.59" y2="83" stroke="#9aa4b2" stroke-width="0.4" opacity="0.7" />
+<line x1="96.76" y1="81" x2="96.76" y2="84.5" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="96.76" y="90.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="5.8" fill="#6B7280" text-anchor="middle" font-weight="normal">0</text>
+<line x1="147.27" y1="81" x2="147.27" y2="84.5" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="147.27" y="90.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="5.8" fill="#6B7280" text-anchor="middle" font-weight="normal">5</text>
+<line x1="197.79" y1="81" x2="197.79" y2="84.5" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="197.79" y="90.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="5.8" fill="#6B7280" text-anchor="middle" font-weight="normal">10</text>
+<text x="157.38" y="100" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.2" fill="#1c2433" text-anchor="middle" font-weight="normal">Number of internal exon boundaries</text>
+<text x="8" y="108" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="5.5" fill="#6B7280" text-anchor="start" font-weight="normal">Near-domain-edge threshold: 5 aa · classes are mutually exclusive</text>
+</svg>

@@ -1,0 +1,10 @@
+protein_id	transcript_id	is_primary	curation_status	protein_length	alignment_columns	identity_to_primary_pct	gap_columns	differing_columns	candidate_id	candidate_alignment_columns	candidate_identity_pct	candidate_role
+NP_001276668.1	NM_001289739.2	true	curated	235	249	100	14	0	C1	198-198	100	reference
+NP_001276645.1	NM_001289716.2	false	curated	233	249	90	16	22	C1	198-198	0	affected
+NP_001276646.1	NM_001289717.2	false	curated	233	249	90	16	22	C1	198-198	0	affected
+NP_001341982.1	NM_001355053.2	false	curated	233	249	90	16	22	C1	198-198	0	affected
+NP_001403825.1	NM_001416896.1	false	curated	233	249	90	16	22	C1	198-198	0	affected
+NP_001403826.1	NM_001416897.1	false	curated	233	249	90	16	22	C1	198-198	0	affected
+NP_001403827.1	NM_001416898.1	false	curated	233	249	90	16	22	C1	198-198	0	affected
+NP_001403828.1	NM_001416899.1	false	curated	233	249	90	16	22	C1	198-198	0	affected
+NP_033873.3	NM_009743.6	false	curated	233	249	90	16	22	C1	198-198	0	affected

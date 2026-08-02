@@ -1,0 +1,71 @@
+# CORE-ONLY PILOT — TPM1 (experimental, NOT a validated event analysis).
+#
+# Purpose: prove that the framework can handle a gene WITHOUT a configured event
+# region. This config enables ONLY the generic core gene-level analysis (gene
+# models, domains, synteny, all-exon exon-domain boundaries). It intentionally
+# declares NO event region and NO markers — there is no IIIb/IIIc-style biology
+# here, and none is invented.
+#
+# It is experimental and must never be presented as a normal, validated runnable
+# analysis. FGFR2 IIIb/IIIc remains the only validated event-specific analysis.
+schema_version: 1
+status: core_only_pilot
+runnable: experimental   # experimental => NOT a normal runnable choice
+
+analysis:
+  id: TPM1_core_only_pilot
+  display_name: TPM1 (core-only pilot — experimental)
+  description: >
+    Core-only proof of concept for a gene without a configured event region.
+    Produces generic gene/domain/synteny/exon-boundary results only; no
+    event-specific (cassette-style) analysis is defined or claimed.
+
+gene:
+  symbol: TPM1
+  display_name: Tropomyosin 1
+  reference_species: homo_sapiens
+  reference_role: human_reference_control
+
+# Core gene analysis enabled; event analysis explicitly optional + not configured.
+analysis_modes:
+  core_gene_analysis: true
+  event_analysis: optional     # configured | auto | user_defined | disabled | optional
+
+event:
+  # No event region configured. Do NOT invent markers or an event type.
+  status: not_configured
+  generic_label: event_region
+  labels: []
+
+reference_control:
+  enabled: false
+  species: homo_sapiens
+  role: reference_control_only
+  note: >
+    No event-specific reference/control is used in core-only mode. A curated
+    reference could be added later only if an event region is defined.
+
+# Only core, gene-agnostic views. No event_region / boundary_relation (event).
+views:
+  overview: true
+  gene_explorer: true
+  isoforms: true
+  domain_architecture: true
+  exon_domain_boundaries: true
+  synteny: true
+  # event-specific views intentionally omitted / disabled
+  event_region: false
+  boundary_relation: false
+
+ui_labels:
+  gene_explorer: Gene Explorer
+  boundary_relation: Exon–Domain Boundaries
+
+notes:
+  support_level: core_only_pilot
+  what_this_proves: >
+    The core layer (indices, views, boundary geometry) works for a gene with no
+    configured event region.
+  still_needed_for_full_run: >
+    Safe non-FGFR2 gene-model collection (ortholog protein/transcript retrieval),
+    an event detector if event-specific views are ever wanted, and validation.

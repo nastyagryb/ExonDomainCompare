@@ -1,0 +1,63 @@
+schema_version = "1.0"
+active_local_profile = "default"
+active_lrz_profile = "lrz"
+
+[local_profiles.default]
+runs_root = ""
+data_dir = ""
+config_dir = ""
+cache_dir = ""
+logs_dir = ""
+temp_dir = ""
+packages_dir = ""
+datasets_dir = ""
+registry_dir = ""
+python = "python"
+node = "node"
+npm = "npm"
+datasets = "datasets"
+mafft = "mafft"
+ssh = "ssh"
+scp = "scp"
+rsync = "rsync"
+diamond = "diamond"
+blastp = "blastp"
+makeblastdb = "makeblastdb"
+d2 = "d2"
+typst = "typst"
+rsvg_convert = "rsvg-convert"
+
+[lrz_profiles.lrz]
+user = ""
+host = ""
+remote_root = ""
+remote_work_dir = ""
+remote_temp_dir = ""
+account = ""
+partition = ""
+scheduler_submit = "sbatch"
+scheduler_status = "squeue"
+scheduler_accounting = "sacct"
+ssh_options = []
+scp_options = []
+rsync_options = []
+poll_minutes = 2.0
+max_hours = 12.0
+managed_tool_root = ""
+
+[lrz_profiles.lrz.interproscan]
+launcher = ""
+module = ""
+environment = ""
+time = "08:00:00"
+cpus = 4
+memory = "24G"
+
+[lrz_profiles.lrz.pytmhmm]
+launcher = "pyTMHMM"
+module = ""
+environment = ""
+python = "python"
+time = "02:00:00"
+cpus = 1
+memory = "8G"

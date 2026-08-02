@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="756" height="260.7" viewBox="0 0 756 260.7">
+<rect x="0" y="0" width="756" height="260.7" fill="#ffffff" stroke="none" />
+<text x="14" y="24" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="12" fill="#1c2433" text-anchor="start" font-weight="bold">FGFR2 IIIc</text>
+<text x="78.07" y="24" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="12" fill="#1c2433" text-anchor="start" font-weight="normal" font-style="italic">· Homo sapiens</text>
+<text x="14" y="37" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="9" fill="#6B7280" text-anchor="start" font-weight="normal">Primary protein ENSP00000351276 · transcript ENST00000358487 · 821 aa · 4 representative domain instances</text>
+<text x="14" y="49" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal" font-style="italic">How do annotated domains, membrane topology and coding exons align along the primary protein?</text>
+<text x="100" y="77.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="bold">Representative domains</text>
+<rect x="143.33" y="67.6" width="50" height="14" fill="#0072B2" stroke="#ffffff" stroke-width="0.6" />
+<rect x="238.79" y="67.6" width="59.09" height="14" fill="#56B4E9" stroke="#ffffff" stroke-width="0.6" />
+<rect x="310.77" y="67.6" width="61.37" height="14" fill="#3B7EA1" stroke="#ffffff" stroke-width="0.6" />
+<rect x="440.32" y="67.6" width="253.04" height="14" fill="#7570B3" stroke="#ffffff" stroke-width="0.6" />
+<text x="100" y="101.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal">Family / superfamily</text>
+<rect x="115.3" y="94.6" width="612.91" height="8" fill="#B9C0C8" stroke="#ffffff" stroke-width="0.6" />
+<text x="100" y="123.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal">Membrane topology</text>
+<rect x="392.59" y="116.1" width="17.43" height="9" fill="#CC79A7" stroke="#1c2433" stroke-width="0.6" />
+<text x="414.01" y="122.98" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">TM helix · aa 374–396</text>
+<text x="100" y="147.97" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal">Coding exons</text>
+<rect x="110" y="138.1" width="41.67" height="12" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<rect x="151.67" y="138.1" width="27.27" height="12" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<rect x="178.19" y="138.1" width="35.61" height="12" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<rect x="213.04" y="138.1" width="18.18" height="12" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<rect x="231.22" y="138.1" width="31.06" height="12" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<rect x="262.28" y="138.1" width="48.49" height="12" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<rect x="310.01" y="138.1" width="28.79" height="12" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<rect x="338.04" y="138.1" width="31.82" height="12" fill="#E69F00" stroke="#8A4A00" stroke-width="1.1" />
+<rect x="369.1" y="138.1" width="38.64" height="12" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<rect x="407.74" y="138.1" width="51.52" height="12" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<rect x="458.5" y="138.1" width="37.88" height="12" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<rect x="496.38" y="138.1" width="48.49" height="12" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<rect x="544.11" y="138.1" width="31.82" height="12" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<rect x="575.93" y="138.1" width="43.18" height="12" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<rect x="618.36" y="138.1" width="20.46" height="12" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<rect x="638.06" y="138.1" width="68.19" height="12" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<rect x="705.48" y="138.1" width="26.52" height="12" fill="#A9BED4" stroke="#7B93AE" stroke-width="0.6" />
+<text x="130.83" y="146.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E1</text>
+<text x="165.31" y="146.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E2</text>
+<text x="195.99" y="146.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E3</text>
+<text x="222.13" y="146.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E4</text>
+<text x="246.75" y="146.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E5</text>
+<text x="286.52" y="146.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E6</text>
+<text x="324.4" y="146.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E7</text>
+<text x="353.95" y="146.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E8</text>
+<text x="388.42" y="146.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E9</text>
+<text x="433.5" y="146.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E10</text>
+<text x="477.44" y="146.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E11</text>
+<text x="520.63" y="146.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E12</text>
+<text x="560.02" y="146.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E13</text>
+<text x="597.52" y="146.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E14</text>
+<text x="628.59" y="146.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E15</text>
+<text x="672.15" y="146.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E16</text>
+<text x="718.74" y="146.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">E17</text>
+<text x="100" y="161.47" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal">Exon boundaries</text>
+<line x1="151.67" y1="156.1" x2="151.67" y2="161.1" stroke="#4A5568" stroke-width="0.6" opacity="0.85" />
+<line x1="178.94" y1="156.1" x2="178.94" y2="161.1" stroke="#4A5568" stroke-width="0.6" opacity="0.85" />
+<line x1="213.79" y1="156.1" x2="213.79" y2="161.1" stroke="#4A5568" stroke-width="0.6" opacity="0.85" />
+<line x1="231.22" y1="156.1" x2="231.22" y2="161.1" stroke="#4A5568" stroke-width="0.6" opacity="0.85" />
+<line x1="262.28" y1="156.1" x2="262.28" y2="161.1" stroke="#4A5568" stroke-width="0.6" opacity="0.85" />
+<line x1="310.77" y1="156.1" x2="310.77" y2="161.1" stroke="#4A5568" stroke-width="0.6" opacity="0.85" />
+<line x1="338.8" y1="156.1" x2="338.8" y2="161.1" stroke="#4A5568" stroke-width="0.6" opacity="0.85" />
+<line x1="369.86" y1="156.1" x2="369.86" y2="161.1" stroke="#4A5568" stroke-width="0.6" opacity="0.85" />
+<line x1="407.74" y1="156.1" x2="407.74" y2="161.1" stroke="#4A5568" stroke-width="0.6" opacity="0.85" />
+<line x1="459.26" y1="156.1" x2="459.26" y2="161.1" stroke="#4A5568" stroke-width="0.6" opacity="0.85" />
+<line x1="496.38" y1="156.1" x2="496.38" y2="161.1" stroke="#4A5568" stroke-width="0.6" opacity="0.85" />
+<line x1="544.87" y1="156.1" x2="544.87" y2="161.1" stroke="#4A5568" stroke-width="0.6" opacity="0.85" />
+<line x1="575.93" y1="156.1" x2="575.93" y2="161.1" stroke="#4A5568" stroke-width="0.6" opacity="0.85" />
+<line x1="619.12" y1="156.1" x2="619.12" y2="161.1" stroke="#4A5568" stroke-width="0.6" opacity="0.85" />
+<line x1="638.81" y1="156.1" x2="638.81" y2="161.1" stroke="#4A5568" stroke-width="0.6" opacity="0.85" />
+<line x1="706.24" y1="156.1" x2="706.24" y2="161.1" stroke="#4A5568" stroke-width="0.6" opacity="0.85" />
+<text x="100" y="177.97" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal">Validated event</text>
+<rect x="338.04" y="171.1" width="31.82" height="8" fill="#E69F00" stroke="#8A4A00" stroke-width="1.1" />
+<text x="373.86" y="177.48" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">IIIc cassette · aa 302–343</text>
+<line x1="110" y1="189.1" x2="732" y2="189.1" stroke="#9aa4b2" stroke-width="0.8" />
+<line x1="147.12" y1="189.1" x2="147.12" y2="191.1" stroke="#9aa4b2" stroke-width="0.6" opacity="0.7" />
+<line x1="222.88" y1="189.1" x2="222.88" y2="191.1" stroke="#9aa4b2" stroke-width="0.6" opacity="0.7" />
+<line x1="298.65" y1="189.1" x2="298.65" y2="191.1" stroke="#9aa4b2" stroke-width="0.6" opacity="0.7" />
+<line x1="374.41" y1="189.1" x2="374.41" y2="191.1" stroke="#9aa4b2" stroke-width="0.6" opacity="0.7" />
+<line x1="450.17" y1="189.1" x2="450.17" y2="191.1" stroke="#9aa4b2" stroke-width="0.6" opacity="0.7" />
+<line x1="525.93" y1="189.1" x2="525.93" y2="191.1" stroke="#9aa4b2" stroke-width="0.6" opacity="0.7" />
+<line x1="601.69" y1="189.1" x2="601.69" y2="191.1" stroke="#9aa4b2" stroke-width="0.6" opacity="0.7" />
+<line x1="677.45" y1="189.1" x2="677.45" y2="191.1" stroke="#9aa4b2" stroke-width="0.6" opacity="0.7" />
+<line x1="110" y1="189.1" x2="110" y2="192.6" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="110" y="201" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">1</text>
+<line x1="731.24" y1="189.1" x2="731.24" y2="192.6" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="731.24" y="201" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">821</text>
+<line x1="185" y1="189.1" x2="185" y2="192.6" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="185" y="201" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">100</text>
+<line x1="260.76" y1="189.1" x2="260.76" y2="192.6" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="260.76" y="201" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">200</text>
+<line x1="336.53" y1="189.1" x2="336.53" y2="192.6" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="336.53" y="201" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">300</text>
+<line x1="412.29" y1="189.1" x2="412.29" y2="192.6" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="412.29" y="201" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">400</text>
+<line x1="488.05" y1="189.1" x2="488.05" y2="192.6" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="488.05" y="201" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">500</text>
+<line x1="563.81" y1="189.1" x2="563.81" y2="192.6" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="563.81" y="201" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">600</text>
+<line x1="639.57" y1="189.1" x2="639.57" y2="192.6" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="639.57" y="201" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">700</text>
+<line x1="715.33" y1="189.1" x2="715.33" y2="192.6" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="715.33" y="201" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">800</text>
+<text x="421" y="213.4" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="middle" font-weight="normal">Primary protein position (aa)</text>
+<rect x="110" y="219" width="7" height="7" fill="#0072B2" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="121" y="225" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Ig-like domain 1 · aa 45–110</text>
+<rect x="232.13" y="219" width="7" height="7" fill="#56B4E9" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="243.13" y="225" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Ig-like domain 2 · aa 171–248</text>
+<rect x="358.48" y="219" width="7" height="7" fill="#3B7EA1" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="369.48" y="225" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Ig-like domain 3 · aa 266–346</text>
+<rect x="484.83" y="219" width="7" height="7" fill="#7570B3" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="495.83" y="225" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Ser-Thr/Tyr kinase domain · aa 437–770</text>
+<rect x="110" y="231.1" width="7" height="7" fill="#B9C0C8" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="121" y="237.1" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Family / homologous superfamily</text>
+<rect x="247.28" y="231.1" width="7" height="7" fill="#CC79A7" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="258.28" y="237.1" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Predicted TM helix (pyTMHMM)</text>
+<rect x="380.91" y="231.1" width="7" height="7" fill="#A9BED4" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="391.91" y="237.1" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Coding exon</text>
+<rect x="444.17" y="231.1" width="7" height="7" fill="#E69F00" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="455.17" y="237.1" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">IIIb/IIIc mutually exclusive cassette exon (established, not a candidate)</text>
+</svg>

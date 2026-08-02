@@ -1,0 +1,17 @@
+transition	boundary_position_aa	left_exon	right_exon	nearest_domain_instance_id	nearest_domain_accession	nearest_domain_label	nearest_domain_start	nearest_domain_end	nearest_edge	nearest_edge_position	signed_distance_aa	absolute_distance_aa	boundary_class
+E1 → E2	56	E1	E2	IPR007110:64-129	IPR007110	Ig1	64	129	start	64	-8	8	outside_annotated_domains
+E2 → E3	145	E2	E3	IPR007110:64-129	IPR007110	Ig1	64	129	end	129	16	16	outside_annotated_domains
+E3 → E4	171	E3	E4	IPR013098:190-267	IPR013098	Ig2	190	267	start	190	-19	19	outside_annotated_domains
+E4 → E5	227	E4	E5	IPR013098:190-267	IPR013098	Ig2	190	267	start	190	37	37	inside_domain
+E5 → E6	269	E5	E6	IPR013098:190-267	IPR013098	Ig2	190	267	end	267	2	2	near_domain_edge
+E6 → E7	332	E6	E7	IPR007110:285-365	IPR007110	Ig3	285	365	end	365	-33	33	inside_domain
+E7 → E8	381	E7	E8	IPR007110:285-365	IPR007110	Ig3	285	365	end	365	16	16	outside_annotated_domains
+E8 → E9	446	E8	E9	IPR001245:454-787	IPR001245	kinase	454	787	start	454	-8	8	outside_annotated_domains
+E9 → E10	497	E9	E10	IPR001245:454-787	IPR001245	kinase	454	787	start	454	43	43	inside_domain
+E10 → E11	538	E10	E11	IPR001245:454-787	IPR001245	kinase	454	787	start	454	84	84	inside_domain
+E11 → E12	575	E11	E12	IPR001245:454-787	IPR001245	kinase	454	787	start	454	121	121	inside_domain
+E12 → E13	638	E12	E13	IPR001245:454-787	IPR001245	kinase	454	787	end	787	-149	149	inside_domain
+E13 → E14	679	E13	E14	IPR001245:454-787	IPR001245	kinase	454	787	end	787	-108	108	inside_domain
+E14 → E15	703	E14	E15	IPR001245:454-787	IPR001245	kinase	454	787	end	787	-84	84	inside_domain
+E15 → E16	749	E15	E16	IPR001245:454-787	IPR001245	kinase	454	787	end	787	-38	38	inside_domain
+E16 → E17	784	E16	E17	IPR001245:454-787	IPR001245	kinase	454	787	end	787	-3	3	near_domain_edge

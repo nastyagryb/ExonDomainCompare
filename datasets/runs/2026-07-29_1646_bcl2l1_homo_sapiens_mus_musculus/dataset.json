@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "run:2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus",
+  "release_id": "bcl2l1_human_mouse",
+  "run_id": "2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus",
+  "gene_symbol": "BCL2L1",
+  "species": [
+    "Homo sapiens",
+    "Mus musculus"
+  ],
+  "species_count": 2,
+  "pipeline_type": "shared_gene_pipeline",
+  "support_level": "generic_gene_analysis_experimental",
+  "scientific_semantics": "exploratory_not_validated",
+  "read_only": true,
+  "source_record": "runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus",
+  "distribution": "sanitized website projection",
+  "omitted": [
+    "raw NCBI caches",
+    "logs",
+    "SSH and Slurm state",
+    "private paths"
+  ]
+}

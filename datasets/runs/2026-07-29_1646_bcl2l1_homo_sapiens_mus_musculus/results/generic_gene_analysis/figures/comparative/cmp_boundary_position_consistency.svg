@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="756" height="195.2" viewBox="0 0 756 195.2">
+<rect x="0" y="0" width="756" height="195.2" fill="#ffffff" stroke="none" />
+<text x="14" y="24" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="12" fill="#1c2433" text-anchor="start" font-weight="bold">BCL2L1</text>
+<text x="14" y="37" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="9" fill="#6B7280" text-anchor="start" font-weight="normal">Boundary-position consistency · raw observations, cross-species difference and mapping status</text>
+<text x="14" y="49" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal" font-style="italic">For each comparable boundary, where does each species place it relative to the nearest domain edge, how far apart are those placements, and how well supported is the comparison?</text>
+<text x="224.56" y="72.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="bold">A · raw signed distance per species (aa)</text>
+<text x="493.36" y="72.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="bold">B · cross-species difference (aa)</text>
+<text x="674.8" y="72.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="bold">C · class · confidence · coverage</text>
+<rect x="147.28" y="76.2" width="154.56" height="20.2" fill="#e3e8f0" stroke="none" stroke-width="0.6" opacity="0.85" />
+<line x1="224.56" y1="76.2" x2="224.56" y2="96.4" stroke="#1c2433" stroke-width="0.8" />
+<text x="64" y="89.17" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#6B7280" text-anchor="end" font-weight="normal">CBG 1</text>
+<line x1="224.56" y1="86.3" x2="224.56" y2="86.3" stroke="#4A5568" stroke-width="0.8" opacity="0.85" />
+<circle cx="224.56" cy="83.3" r="2.88" fill="#005B8F" stroke="none" stroke-width="0.6" />
+<circle cx="224.56" cy="89.3" r="2.88" fill="#005B8F" stroke="none" stroke-width="0.6" />
+<rect x="399.28" y="82.41" width="0.6" height="7.78" fill="#4A5568" stroke="none" stroke-width="0.6" opacity="0.85" />
+<text x="402.88" y="88.61" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">0</text>
+<rect x="609.1" y="82.8" width="7" height="7" fill="#117733" stroke="none" stroke-width="0.6" />
+<rect x="620.6" y="83.3" width="53.76" height="6" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="620.6" y="83.3" width="53.76" height="6" fill="#56B4E9" stroke="none" stroke-width="0.6" />
+<text x="742" y="88.61" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">2/2</text>
+<line x1="70" y1="102.4" x2="379.12" y2="102.4" stroke="#9aa4b2" stroke-width="0.8" />
+<line x1="70" y1="102.4" x2="70" y2="105.4" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="70" y="113.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">-10</text>
+<line x1="147.28" y1="102.4" x2="147.28" y2="105.4" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="147.28" y="113.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">-5</text>
+<line x1="224.56" y1="102.4" x2="224.56" y2="105.4" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="224.56" y="113.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">0</text>
+<line x1="301.84" y1="102.4" x2="301.84" y2="105.4" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="301.84" y="113.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">+5</text>
+<line x1="379.12" y1="102.4" x2="379.12" y2="105.4" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="379.12" y="113.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">+10</text>
+<line x1="399.28" y1="102.4" x2="587.44" y2="102.4" stroke="#9aa4b2" stroke-width="0.8" />
+<line x1="399.28" y1="102.4" x2="399.28" y2="105.4" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="399.28" y="113.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">0</text>
+<line x1="474.54" y1="102.4" x2="474.54" y2="105.4" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="474.54" y="113.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">2</text>
+<line x1="549.81" y1="102.4" x2="549.81" y2="105.4" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="549.81" y="113.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">4</text>
+<text x="224.56" y="127.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="middle" font-weight="normal">0 = nearest representative-domain edge</text>
+<text x="493.36" y="127.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="middle" font-weight="normal">absolute difference</text>
+<rect x="14" y="135.8" width="7" height="7" fill="#005B8F" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="25" y="141.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Exact domain edge</text>
+<text x="14" y="160" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">Panel A — upper lane: H. sapiens · lower lane: M. musculus</text>
+<text x="14" y="169.6" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">Panel A: open marker = distance to a domain start edge, filled = end edge; solid connector = supported mapping, dotted = tentative. Panel C: filled square = all species agree on the boundary class; bar = mapping confidence; text = species observed / analysed.</text>
+<text x="14" y="179.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">A small difference is evidence of a consistent boundary position, not of evolutionary conservation.</text>
+</svg>

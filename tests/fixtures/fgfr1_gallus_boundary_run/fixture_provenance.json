@@ -1,0 +1,23 @@
+{
+  "fixture_type": "boundary_dashboard_core_tables",
+  "source_run_id": "2026-07-23_1100_fgfr1_gallus_core_pilot",
+  "gene_symbol": "FGFR1",
+  "species_ids": [
+    "gallus_gallus"
+  ],
+  "generated_by": "tests/fixtures/build_boundary_fixtures.py",
+  "source_file_sha256": {
+    "results/core_gene_analysis/exon_protein_map.tsv": "90fdf3d748a47a3b265d909d461eebfd06bdaedb5bfe949fb39477da21b080b3",
+    "results/core_gene_analysis/domain_features.tsv": "05c56c2ece55021e3a1a8d6fba5e6aeadf13033bcc09e1951aeab67495de7c9d",
+    "results/core_gene_analysis/interpro_annotations.tsv": "f7fe2dae8b3a2d081595ee03484b4f59606a0bab655ab450301d0f6bbdcd33ab",
+    "results/core_gene_analysis/tm_features.tsv": "86bbfc84381f15eccfcde684681d0f0748cd1c0596bd2456acc4523180992465",
+    "results/core_gene_analysis/exon_domain_boundary_distances.tsv": "0252a33893e38b689b4bed81072359aa03f963e9ac77fb4e4aa29989dc89e1c5",
+    "results/core_gene_analysis/event_candidate_regions.tsv": "c4bbadfc70423463d9f2d29295d236db1452f7021eeb8bd2fcfa9b2f31a4ee89",
+    "results/core_gene_analysis/primary_selection_evidence.tsv": "2545eefe9af71dba752726f507d5e7547d7ae21dcd6608522fbfed9ebcc2348f",
+    "results/core_gene_analysis/protein_isoform_index.tsv": "b0b439bb04aafb1c81730573e0e3dde532cb32cbca1a131b3714b2784f89e0a7",
+    "results/core_gene_analysis/proteins_primary.faa": "812bee79fb07ffae7fc27b053cab87a528b3a02d6045f40e8da999f529608452",
+    "results/01_species_registry/species_registry.tsv": "60bdff404a8bbb18f677d829611e141fc057304a029b7c18e31d7d7790841260",
+    "website_indices/coordinate_track_index.json": "reduced_from:4489b444bb9cb0e3bbf515c2593d94be7b557283f2d8003893bbc63d77244572"
+  },
+  "note": "Core tables copied verbatim; no scientific value is modified."
+}

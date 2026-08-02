@@ -1,0 +1,20 @@
+transcript_id	protein_id	species_id	annotation_source	curation_status	protein_length	exon_count	selected_primary	alternative_model_type
+NM_001317920.2	NP_001304849.1	homo_sapiens	RefSeq curated (NM/NP)	curated	233	2	true	
+NM_001322239.2	NP_001309168.1	homo_sapiens	RefSeq curated (NM/NP)	curated	233	2	false	alternative_protein_model
+NM_001317921.2	NP_001304850.1	homo_sapiens	RefSeq curated (NM/NP)	curated	233	2	false	alternative_protein_model
+NM_001322240.2	NP_001309169.1	homo_sapiens	RefSeq curated (NM/NP)	curated	233	2	false	alternative_protein_model
+NM_001317919.2	NP_001304848.1	homo_sapiens	RefSeq curated (NM/NP)	curated	233	2	false	alternative_protein_model
+NM_001191.4	NP_001182.1	homo_sapiens	RefSeq curated (NM/NP)	curated	170	2	false	alternative_protein_model
+NM_138578.3	NP_612815.1	homo_sapiens	RefSeq curated (NM/NP)	curated	233	2	false	alternative_protein_model
+NM_001424331.1	NP_001411260.1	homo_sapiens	RefSeq curated (NM/NP)	curated	233	2	false	alternative_protein_model
+NM_001424332.1	NP_001411261.1	homo_sapiens	RefSeq curated (NM/NP)	curated	233	2	false	alternative_protein_model
+NM_001322242.2	NP_001309171.1	homo_sapiens	RefSeq curated (NM/NP)	curated	233	2	false	alternative_protein_model
+NM_001289739.2	NP_001276668.1	mus_musculus	RefSeq curated (NM/NP)	curated	235	2	true	
+NM_009743.6	NP_033873.3	mus_musculus	RefSeq curated (NM/NP)	curated	233	2	false	alternative_protein_model
+NM_001416897.1	NP_001403826.1	mus_musculus	RefSeq curated (NM/NP)	curated	233	2	false	alternative_protein_model
+NM_001416896.1	NP_001403825.1	mus_musculus	RefSeq curated (NM/NP)	curated	233	2	false	alternative_protein_model
+NM_001416898.1	NP_001403827.1	mus_musculus	RefSeq curated (NM/NP)	curated	233	2	false	alternative_protein_model
+NM_001289717.2	NP_001276646.1	mus_musculus	RefSeq curated (NM/NP)	curated	233	2	false	alternative_protein_model
+NM_001289716.2	NP_001276645.1	mus_musculus	RefSeq curated (NM/NP)	curated	233	2	false	alternative_protein_model
+NM_001355053.2	NP_001341982.1	mus_musculus	RefSeq curated (NM/NP)	curated	233	2	false	alternative_protein_model
+NM_001416899.1	NP_001403828.1	mus_musculus	RefSeq curated (NM/NP)	curated	233	2	false	alternative_protein_model

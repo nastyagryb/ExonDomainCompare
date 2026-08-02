@@ -1,0 +1,2 @@
+rank	candidate_id	candidate_label	aa_start	aa_end	length_aa	n_affected_isoforms	affected_isoforms	supporting_comparisons	evidence_score	evidence_strength	biological_validation
+1	BCL2L1:homo_sapiens:indel:126-188	C1	126	188	63	2	NP_001182.1;NP_001304849.1	9	80	high	not validated

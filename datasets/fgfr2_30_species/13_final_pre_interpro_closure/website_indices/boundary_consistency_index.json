@@ -1,0 +1,73 @@
+{
+  "available": true,
+  "created_at": "2026-07-07T08:27:06+00:00",
+  "title": "Boundary Consistency Explorer",
+  "step": "16_final_thesis_analyses/exon_domain_boundary_consistency",
+  "source_tables": [
+    "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/tables/exon_domain_boundary_distances.tsv",
+    "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/tables/exon_domain_boundary_consistency_summary.tsv",
+    "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/tables/exon_domain_boundary_outliers.tsv"
+  ],
+  "source_figures": {
+    "heatmap": {
+      "png": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_11_exon_domain_boundary_consistency_heatmap.png",
+      "svg": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_11_exon_domain_boundary_consistency_heatmap.svg",
+      "pdf": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_11_exon_domain_boundary_consistency_heatmap.pdf"
+    },
+    "distance_distribution": {
+      "png": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_12_boundary_distance_distribution.png",
+      "svg": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_12_boundary_distance_distribution.svg",
+      "pdf": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/figures/Figure_12_boundary_distance_distribution.pdf"
+    }
+  },
+  "report": "results/final_30_until_interpro_prepare/16_final_thesis_analyses/exon_domain_boundary_consistency/reports/exon_domain_boundary_consistency_report.md",
+  "endpoints": {
+    "summary": "/api/runs/current/boundary-consistency/summary",
+    "matrix": "/api/runs/current/boundary-consistency/matrix",
+    "outliers": "/api/runs/current/boundary-consistency/outliers",
+    "index": "/api/runs/current/boundary-consistency"
+  },
+  "boundary_classes": {
+    "aligned_to_domain_boundary": {
+      "label": "Aligned",
+      "color": "#1B7837",
+      "tooltip": "Boundary coincides with a protein-domain boundary (0-3 aa)."
+    },
+    "near_domain_boundary": {
+      "label": "Near boundary",
+      "color": "#A6DBA0",
+      "tooltip": "Boundary is close to a protein-domain boundary (4-15 aa)."
+    },
+    "within_domain": {
+      "label": "Within domain",
+      "color": "#FDB863",
+      "tooltip": "Boundary lies inside a protein domain (>15 aa from its edges)."
+    },
+    "between_domains": {
+      "label": "Between domains",
+      "color": "#B2ABD2",
+      "tooltip": "Boundary lies in a linker region between two domains."
+    },
+    "review_or_missing": {
+      "label": "Missing / review",
+      "color": "#D9D9D9",
+      "tooltip": "No cassette / domain coordinate available for this protein."
+    }
+  },
+  "boundary_class_order": [
+    "aligned_to_domain_boundary",
+    "near_domain_boundary",
+    "within_domain",
+    "between_domains",
+    "review_or_missing"
+  ],
+  "ui_copy": {
+    "outlier_section_title": "Inspection cases",
+    "outlier_semantics": "inspection, not biological failure",
+    "thresholds": {
+      "aligned_to_domain_boundary": "0-3 aa",
+      "near_domain_boundary": "4-15 aa"
+    },
+    "key_interpretation": "Cassette-end boundaries are consistently near Ig-like domain boundaries, while cassette-start boundaries are usually located within the Ig-like region."
+  }
+}

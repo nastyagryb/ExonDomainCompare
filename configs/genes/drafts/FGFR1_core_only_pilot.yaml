@@ -1,0 +1,69 @@
+# CORE-ONLY PILOT — FGFR1 (experimental, NOT a validated event analysis).
+#
+# First REAL core-only live proof of concept: a gene-level analysis WITHOUT a
+# configured event region. This enables ONLY the generic core layer (gene
+# models, domains, synteny, all-exon exon-domain boundaries). There is NO
+# IIIb/IIIc / cassette biology here and none is invented.
+#
+# FGFR2 IIIb/IIIc remains the only validated event-specific analysis. This config
+# is experimental and must never be presented as a normal, validated runnable
+# analysis.
+schema_version: 1
+status: core_only_pilot
+runnable: experimental   # experimental => NOT a normal runnable choice
+
+analysis:
+  id: FGFR1_core_only_pilot
+  display_name: FGFR1 (core-only pilot — experimental)
+  description: >
+    Core-only live proof of concept for FGFR1 without a configured event region.
+    Produces generic gene/domain/synteny/exon-boundary results only; no
+    event-specific (cassette-style) analysis is defined or claimed.
+
+gene:
+  symbol: FGFR1
+  display_name: Fibroblast growth factor receptor 1
+  reference_species: homo_sapiens
+  reference_role: human_reference_control
+
+# Core gene analysis enabled; event analysis explicitly optional + not configured.
+analysis_modes:
+  core_gene_analysis: true
+  event_analysis: optional     # configured | auto | user_defined | disabled | optional
+
+event:
+  # No event region configured. Do NOT invent markers or an event type.
+  status: not_configured
+  generic_label: event_region
+  labels: []
+
+reference_control:
+  enabled: false
+  species: homo_sapiens
+  role: reference_control_only
+  note: >
+    No event-specific reference/control is used in core-only mode.
+
+# Only core, gene-agnostic views. No event_region / boundary_relation (event).
+views:
+  overview: true
+  gene_explorer: true
+  isoforms: true
+  domain_architecture: true
+  exon_domain_boundaries: true
+  synteny: true
+  event_region: false
+  boundary_relation: false
+
+ui_labels:
+  gene_explorer: Gene Explorer
+  boundary_relation: Exon–Domain Boundaries
+
+notes:
+  support_level: core_only_pilot
+  what_this_proves: >
+    The core layer runs on a real, non-FGFR2 gene (FGFR1) for one species using
+    the gene-agnostic model collection, domain, synteny and boundary machinery.
+  still_needed_for_full_run: >
+    Live cluster InterProScan/pyTMHMM execution for domain/TM features, broader
+    multi-species collection, and validation before any non-experimental use.

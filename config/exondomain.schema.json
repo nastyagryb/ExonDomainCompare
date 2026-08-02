@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://exondomaincompare.local/schema/config-1.0.json",
+  "title": "ExonDomainCompare configuration",
+  "type": "object",
+  "required": ["schema_version", "active_local_profile", "active_lrz_profile", "local_profiles", "lrz_profiles"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "active_local_profile": {"type": "string", "minLength": 1},
+    "active_lrz_profile": {"type": "string", "minLength": 1},
+    "local_profiles": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "runs_root": {"type": "string"},
+          "data_dir": {"type": "string"},
+          "config_dir": {"type": "string"},
+          "cache_dir": {"type": "string"},
+          "logs_dir": {"type": "string"},
+          "temp_dir": {"type": "string"},
+          "packages_dir": {"type": "string"},
+          "datasets_dir": {"type": "string"},
+          "registry_dir": {"type": "string"},
+          "python": {"type": "string"},
+          "node": {"type": "string"},
+          "npm": {"type": "string"},
+          "datasets": {"type": "string"},
+          "mafft": {"type": "string"},
+          "ssh": {"type": "string"},
+          "scp": {"type": "string"},
+          "rsync": {"type": "string"}
+        }
+      }
+    },
+    "lrz_profiles": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["user", "host", "remote_root"],
+        "properties": {
+          "user": {"type": "string"},
+          "host": {"type": "string"},
+          "remote_root": {"type": "string"},
+          "remote_work_dir": {"type": "string"},
+          "remote_temp_dir": {"type": "string"},
+          "managed_tool_root": {"type": "string"},
+          "account": {"type": "string"},
+          "partition": {"type": "string"},
+          "scheduler_submit": {"type": "string"},
+          "scheduler_status": {"type": "string"},
+          "scheduler_accounting": {"type": "string"},
+          "ssh_options": {"type": "array", "items": {"type": "string"}},
+          "scp_options": {"type": "array", "items": {"type": "string"}},
+          "rsync_options": {"type": "array", "items": {"type": "string"}},
+          "poll_minutes": {"type": "number", "minimum": 0.5},
+          "max_hours": {"type": "number", "exclusiveMinimum": 0},
+          "interproscan": {"type": "object"},
+          "pytmhmm": {"type": "object"}
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

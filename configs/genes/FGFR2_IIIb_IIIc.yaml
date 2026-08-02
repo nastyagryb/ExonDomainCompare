@@ -1,0 +1,84 @@
+# FGFR2 IIIb/IIIc — canonical gene/event analysis configuration.
+#
+# This file describes the validated FGFR2 case study in a gene/event-agnostic
+# way. It is a DESCRIPTION layer only: it does not change the FGFR2 pipeline or
+# any biological logic, and it never modifies the validated example freeze at
+# results/final_30_until_interpro_prepare/.
+#
+# FGFR2 IIIb/IIIc is the only active, validated analysis. Future genes may be
+# added later as additional configs of the same shape (see configs/genes/README.md).
+schema_version: 1
+
+analysis:
+  id: FGFR2_IIIb_IIIc
+  display_name: FGFR2 IIIb/IIIc cassette
+  description: >
+    Annotation-aware comparative exon-domain analysis of the mutually exclusive
+    FGFR2 IIIb/IIIc cassette region across vertebrate orthologs.
+
+gene:
+  symbol: FGFR2
+  display_name: Fibroblast growth factor receptor 2
+  reference_species: homo_sapiens
+  reference_role: human_reference_control
+
+# Analysis modes: core gene-level analysis always runs; the event-specific
+# analysis runs because FGFR2 has a configured event region (IIIb/IIIc).
+analysis_modes:
+  core_gene_analysis: true
+  event_analysis: configured   # configured | auto | user_defined | disabled | optional
+
+event:
+  status: configured
+  id: FGFR2_IIIb_IIIc_cassette
+  type: mutually_exclusive_cassette
+  display_name: IIIb/IIIc cassette
+  generic_label: event_region
+  labels:
+    - id: IIIb
+      display_name: IIIb
+      marker_sequence: SGINSSN
+      reference_role: human_IIIb_reference
+    - id: IIIc
+      display_name: IIIc
+      marker_sequence: GVNTTDKEI
+      reference_role: human_IIIc_reference
+
+reference_control:
+  enabled: true
+  species: homo_sapiens
+  source: validated_example_dataset
+  role: reference_control_only
+  note: >
+    Curated human FGFR2 IIIb/IIIc is used as a fixed reference/control layer
+    for comparison and orientation. It is not added to analysed custom species
+    unless explicitly selected.
+
+views:
+  overview: true
+  gene_explorer: true
+  isoforms: true
+  evidence: true
+  event_region: true
+  exon_map: true
+  domain_architecture: true
+  boundary_relation: true
+  synteny: true
+  msa: true
+  figures: true
+  audit: true
+
+ui_labels:
+  gene_explorer: Gene Explorer
+  event_region: Cassette
+  event_region_full: IIIb/IIIc cassette
+  event_discriminating_columns: IIIb/IIIc-discriminating columns
+  boundary_relation: Boundary Consistency
+  domain_relation_description: Cassette-to-domain boundary consistency
+  reference_comparison: Human comparison
+
+canonical_outputs:
+  pre_interpro_closure: results/13_final_pre_interpro_closure
+  post_interpro: results/15_exon_domain_boundary_post_interpro
+  final_analyses: results/16_final_thesis_analyses
+  website_indices: website_indices

@@ -1,0 +1,36 @@
+# Auto-generated generic gene config — no manual editing required.
+# gene: BCL2L1
+# generated_at: 2026-07-29T14:46:24.314545+00:00
+# generated_by: run_core_gene_analysis.py
+schema_version: 1
+status: core_only_pilot
+runnable: experimental
+analysis:
+  id: BCL2L1_core_only_pilot
+  display_name: BCL2L1 core-only exploratory analysis
+  description: 'Generic exploratory analysis for BCL2L1: gene-level comparative exon–protein
+    mapping and post-InterPro domain/boundary analysis. No validated event region
+    is configured.'
+gene:
+  symbol: BCL2L1
+  display_name: BCL2L1
+  reference_species: ''
+analysis_modes:
+  core_gene_analysis: true
+  event_analysis: optional
+event:
+  status: not_configured
+  type: requires_gene_specific_event_detector
+  labels: []
+reference_control:
+  enabled: false
+views: {}
+ui_labels: {}
+canonical_outputs: {}
+provenance:
+  generated: true
+  generated_by: run_core_gene_analysis.py
+  generated_at: '2026-07-29T14:46:24.314545+00:00'
+  source: dynamic_generic_run_creation
+  note: Auto-generated generic core-only config. No gene-specific YAML was required
+    or edited. Only FGFR2 uses a hand-authored validated config.

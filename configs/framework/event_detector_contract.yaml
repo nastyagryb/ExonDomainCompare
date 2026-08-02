@@ -1,0 +1,101 @@
+# Event-detector output contract (machine-readable).
+#
+# Any gene/event detector — the existing FGFR2 IIIb/IIIc logic wrapped as an
+# adapter, or a future gene-specific detector — must produce these outputs. The
+# generic website-index adapter and all downstream views read ONLY these files,
+# so they never need to know a gene's internal biology.
+#
+# This is a CONTRACT description only. It does not change FGFR2 logic and never
+# writes into the example freeze.
+schema_version: 1
+contract_version: 1
+
+# Free-text values ("*" style) are allowed unless an `enum` is given. Columns are
+# required unless marked required: false.
+outputs:
+  event_isoform_candidates:
+    file: event_isoform_candidates.tsv
+    format: tsv
+    description: One row per (species, event label) candidate protein/isoform.
+    columns:
+      - {name: analysis_id, required: true}
+      - {name: gene_symbol, required: true}
+      - {name: species_id, required: true}
+      - {name: event_id, required: true}
+      - {name: event_label, required: true}
+      - {name: protein_id, required: true}
+      - {name: transcript_id, required: false}
+      - {name: gene_id, required: false}
+      - {name: sequence_id, required: false}
+      - {name: protein_length, required: false}
+      - {name: candidate_status, required: true}
+      - {name: evidence_level, required: false}
+      - {name: source, required: true}
+      - {name: notes, required: false}
+
+  event_region_coordinates:
+    file: event_region_coordinates.tsv
+    format: tsv
+    description: Native protein-coordinate span of the event region per candidate.
+    columns:
+      - {name: analysis_id, required: true}
+      - {name: gene_symbol, required: true}
+      - {name: species_id, required: true}
+      - {name: event_id, required: true}
+      - {name: event_label, required: true}
+      - {name: protein_id, required: true}
+      - {name: region_start_aa, required: false}
+      - {name: region_end_aa, required: false}
+      - {name: region_length_aa, required: false}
+      - {name: coordinate_basis, required: true}
+      - {name: coordinate_confidence, required: false}
+      - {name: source_table, required: false}
+      - {name: notes, required: false}
+
+  event_label_evidence:
+    file: event_label_evidence.tsv
+    format: tsv
+    description: Per (species, event label) marker / label evidence and validation.
+    columns:
+      - {name: analysis_id, required: true}
+      - {name: gene_symbol, required: true}
+      - {name: species_id, required: true}
+      - {name: event_id, required: true}
+      - {name: event_label, required: true}
+      - {name: protein_id, required: true}
+      - {name: marker_sequence, required: false}
+      - {name: marker_status, required: false}
+      - {name: sequence_evidence, required: false}
+      - {name: reference_similarity, required: false}
+      - {name: validated_label, required: true}
+      - {name: confidence, required: false}
+      - {name: source, required: true}
+      - {name: notes, required: false}
+
+  event_detector_report:
+    file: event_detector_report.json
+    format: json
+    description: Run-level detector provenance and counts.
+    fields:
+      - {name: detector_name, required: true}
+      - {name: detector_version, required: true}
+      - {name: contract_version, required: true}
+      - {name: analysis_id, required: true}
+      - {name: gene_config, required: true}
+      - {name: dataset_id, required: true}
+      - {name: input_files, required: true}
+      - {name: output_files, required: true}
+      - {name: n_species, required: true}
+      - {name: n_candidate_proteins, required: true}
+      - {name: n_accepted_primary_proteins, required: true}
+      - {name: warnings, required: true}
+      - {name: failures, required: true}
+      - {name: reference_control_used, required: true}
+
+# What the generic layer can build from these outputs:
+enables:
+  - event_region_view          # cassette / event region
+  - domain_architecture        # via protein ids + external annotation
+  - boundary_relation          # event region vs domain boundaries
+  - synteny_context            # gene locus neighbourhood
+  - generic_website_indices

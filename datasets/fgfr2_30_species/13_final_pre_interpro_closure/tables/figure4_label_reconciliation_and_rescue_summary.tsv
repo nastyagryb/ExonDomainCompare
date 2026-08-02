@@ -1,0 +1,10 @@
+category	count	group	description
+labels_consistent_with_upstream	0	positive	upstream IIIb/IIIc label already consistent with sequence evidence
+labels_corrected_and_accepted	58	positive	label corrected by sequence evidence and accepted as primary
+rescued_and_validated	2	positive	external validated candidate recovered, accepted as primary
+confirmed_after_exhaustive_screen	56	positive	current candidate confirmed after exhaustive screen, primary
+primary_ready_total	58	positive	primary or primary-with-minor-flags (InterPro-ready)
+primary_claim_supported	0	positive	primary claim supported
+primary_claim_supported_with_minor_flags	58	positive	primary with minor flags (still accepted)
+supplement_review_only	2	review	true review: no source-compatible validated candidate
+excluded_or_unresolved	0	review	excluded / non-recoverable

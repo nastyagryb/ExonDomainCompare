@@ -1,0 +1,67 @@
+{
+  "analysis_id": "BCL2L1_core_only_pilot",
+  "gene_symbol": "BCL2L1",
+  "dataset_id": "run:2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus",
+  "adapter": "core_gene_runner",
+  "contract_version": 1,
+  "event_analysis_mode": "optional",
+  "has_event": false,
+  "generated_at": "2026-07-29T14:48:05.167812+00:00",
+  "selection_method": "canonical_if_available",
+  "summary": {
+    "n_species": 2,
+    "n_transcripts": 22,
+    "n_protein_coding": 19,
+    "n_primary_proteins": 2,
+    "n_exon_boundaries": 2,
+    "n_domain_features": 4,
+    "n_tm_features": 1,
+    "n_synteny_neighbors": 20,
+    "n_representative_domains": 4,
+    "n_interpro_annotations_raw": 48
+  },
+  "species_ids": [
+    "homo_sapiens",
+    "mus_musculus"
+  ],
+  "inputs": [
+    {
+      "species_id": "homo_sapiens",
+      "assembly_accession": "GCF_000001405.40",
+      "genomic_gff": "external:NCBI/GCF_000001405.40/genomic.gff",
+      "protein_faa": "external:NCBI/GCF_000001405.40/protein.faa",
+      "source_run": "2026-07-29_1634_fgfr2_homo_sapiens_felis_catus",
+      "taxid": "9606"
+    },
+    {
+      "species_id": "mus_musculus",
+      "assembly_accession": "GCF_000001635.27",
+      "genomic_gff": "external:NCBI/GCF_000001635.27/genomic.gff",
+      "protein_faa": "external:NCBI/GCF_000001635.27/protein.faa",
+      "source_run": "final_30_until_interpro_prepare",
+      "taxid": "10090"
+    }
+  ],
+  "outputs": [
+    "gene_model_index.tsv",
+    "protein_isoform_index.tsv",
+    "exon_protein_map.tsv",
+    "domain_features.tsv",
+    "tm_features.tsv",
+    "synteny_neighbors.tsv",
+    "synteny_target.tsv",
+    "exon_domain_boundary_distances.tsv",
+    "core_gene_report.json"
+  ],
+  "synteny_reason": "",
+  "exon_map_reason": "",
+  "fasta_reason": "",
+  "selection_rule_applied": "canonical",
+  "domain_status": "complete",
+  "warnings": [],
+  "failures": [],
+  "note": "Core-only experimental pilot. Domain/TM/boundary features require the cluster InterProScan/pyTMHMM step. No event-specific analysis.",
+  "tm_status": "valid",
+  "post_cluster_qc": "results/15_domain_architecture/post_cluster_qc.json",
+  "post_interpro_generated_at": "2026-07-29T17:58:44.694569+00:00"
+}

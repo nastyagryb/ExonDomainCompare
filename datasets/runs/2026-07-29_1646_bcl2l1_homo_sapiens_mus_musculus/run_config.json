@@ -1,0 +1,127 @@
+{
+  "run_id": "2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus",
+  "run_name": "",
+  "case_study": "BCL2L1_core_only_pilot",
+  "gene_symbol": "BCL2L1",
+  "analysis_id": "BCL2L1_core_only_pilot",
+  "event_id": "",
+  "event_type": "requires_gene_specific_event_detector",
+  "event_status": "not_configured",
+  "has_event": false,
+  "support_level": "core_only_pilot",
+  "experimental": true,
+  "gene_config": "run:gene_config.yaml",
+  "species_count": 2,
+  "species_ids": [
+    "homo_sapiens",
+    "mus_musculus"
+  ],
+  "species_taxids": {
+    "homo_sapiens": "9606",
+    "mus_musculus": "10090"
+  },
+  "species_scientific_names": {
+    "homo_sapiens": "Homo sapiens",
+    "mus_musculus": "Mus musculus"
+  },
+  "gene_identity_by_species": {
+    "homo_sapiens": {
+      "requested_gene_symbol": "BCL2L1",
+      "resolved_gene_id": "598",
+      "resolved_official_symbol": "BCL2L1",
+      "resolved_display_symbol": "BCL2L1",
+      "source_description": "BCL2 like 1",
+      "resolution_method": "annotation_exact_symbol",
+      "resolution_confidence": "exact_symbol",
+      "source_provenance": {
+        "assembly_accession": "GCF_000001405.40",
+        "annotation_file": "external:NCBI/GCF_000001405.40/genomic.gff",
+        "scientific_name": "Homo sapiens",
+        "taxid": "9606"
+      },
+      "symbol_differs_from_source": false
+    },
+    "mus_musculus": {
+      "requested_gene_symbol": "BCL2L1",
+      "resolved_gene_id": "12048",
+      "resolved_official_symbol": "Bcl2l1",
+      "resolved_display_symbol": "BCL2L1",
+      "source_description": "BCL2-like 1",
+      "resolution_method": "annotation_case_normalized_symbol",
+      "resolution_confidence": "exact_symbol",
+      "source_provenance": {
+        "assembly_accession": "GCF_000001635.27",
+        "annotation_file": "external:NCBI/GCF_000001635.27/genomic.gff",
+        "scientific_name": "Mus musculus",
+        "taxid": "10090"
+      },
+      "symbol_differs_from_source": false
+    }
+  },
+  "gene_identity": {
+    "requested_gene_symbol": "BCL2L1",
+    "display_symbol": "BCL2L1",
+    "source_symbols_by_species": {},
+    "any_symbol_differs_from_source": false,
+    "resolution_methods": [
+      "annotation_case_normalized_symbol",
+      "annotation_exact_symbol"
+    ],
+    "source_descriptions": [
+      "BCL2 like 1",
+      "BCL2-like 1"
+    ]
+  },
+  "species_list_path": "run:species_list.txt",
+  "run_dir": "run:.",
+  "results_dir": "run:results",
+  "website_indices_dir": "run:website_indices",
+  "created_at": "2026-07-29T14:48:05.169176+00:00",
+  "created_by": "run_core_gene_analysis.py",
+  "run_mode": "core_only_pilot",
+  "workflow": "shared_exploratory",
+  "workflow_mode": "shared_exploratory",
+  "event_layer": "exploratory",
+  "generated_config": true,
+  "config_provenance": {
+    "generated": true,
+    "generated_by": "run_core_gene_analysis.py",
+    "generated_at": "2026-07-29T14:46:24.314545+00:00",
+    "source": "dynamic_generic_run_creation",
+    "note": "Auto-generated generic core-only config. No gene-specific YAML was required or edited. Only FGFR2 uses a hand-authored validated config."
+  },
+  "primary_model_selection_policy": "canonical_if_available",
+  "cluster_annotation_scope": "primary_isoforms",
+  "cluster_mode": "external_manual",
+  "cluster_input_fasta": "run:results/core_gene_analysis/proteins_primary.faa",
+  "primary_fasta_path": "run:results/core_gene_analysis/proteins_primary.faa",
+  "primary_fasta_count": 2,
+  "selection_method": "canonical_if_available",
+  "input_mode": "auto",
+  "user_files": {
+    "gff": "external:NCBI/GCF_000001405.40/genomic.gff",
+    "protein_faa": "external:NCBI/GCF_000001405.40/protein.faa",
+    "genome_fasta": ""
+  },
+  "annotation_provenance": {
+    "species_id": "homo_sapiens",
+    "assembly_accession": "GCF_000001405.40",
+    "genomic_gff": "external:NCBI/GCF_000001405.40/genomic.gff",
+    "protein_faa": "external:NCBI/GCF_000001405.40/protein.faa",
+    "source_run": "2026-07-29_1634_fgfr2_homo_sapiens_felis_catus",
+    "taxid": "9606"
+  },
+  "human_reference": {},
+  "notes": "Experimental core-only pilot (no event region). Not a validated analysis.",
+  "analysis_family": "generic",
+  "gallery_schema_version": 3,
+  "explorer_schema_version": 3,
+  "figure_renderer_version": 3,
+  "production_template": "BCL2L1 Homo sapiens + Mus musculus",
+  "analysis_family_routed_by": "canonical_gene_symbol",
+  "read_only": true,
+  "release_projection": {
+    "status": "bundled_read_only_example",
+    "scientific_semantics": "exploratory_not_validated"
+  }
+}
