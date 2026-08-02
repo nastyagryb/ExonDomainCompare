@@ -412,6 +412,10 @@ def test_shared_finalizer_clears_a_superseded_roundtrip_failure(
     assert status["status"] == "results_ready"
     assert status["cluster_roundtrip"]["phase"] == "complete"
     assert status["cluster_roundtrip"]["reason"] == ""
+    assert status["cluster_analysis_status"] == "complete"
+    assert status["interproscan_status"] == "complete"
+    assert status["pytmhmm_status"] == "complete"
+    assert status["next_actions"] == []
     assert "blocking_analyses" not in status
 
 

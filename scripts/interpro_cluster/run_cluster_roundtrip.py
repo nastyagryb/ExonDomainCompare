@@ -379,9 +379,12 @@ class Roundtrip:
         st.update({
             "cluster_analysis_status": "complete",
             "cluster_fetch_status": "complete",
+            "interproscan_status": "complete",
+            "pytmhmm_status": "complete",
             "post_interpro_status": "complete",
             "status": scientific_status,
             "next_action": "open_results",
+            "next_actions": [],
             "explorable": True,
             "current_step": scientific_status,
             "readiness_reason": reason,

@@ -126,6 +126,15 @@ export default function RunWorkflowPage({ activeId, onExploreDataset, onDatasets
         config: ref.config, status: ref.status,
         model: ref.status_model, files: ref.files,
       });
+      if (ref.summary) {
+        setRuns((prev) => {
+          const next = sortNewestFirst(prev.map((run) => (
+            run.run_id === runId ? { ...run, ...ref.summary } : run
+          )));
+          runsRef.current = next;
+          return next;
+        });
+      }
       if (cmds) setCommands(cmds);
       onDatasetsChanged?.();
       return ref;

@@ -710,6 +710,14 @@ def test_the_selected_run_is_polled_until_it_is_stable():
         "polling must cover every non-terminal state, not only the local running ones"
 
 
+def test_a_detail_refresh_updates_the_matching_run_card():
+    body = WORKFLOW.read_text(encoding="utf-8").split("const loadDetail")[1] \
+        .split("useEffect(() => { loadRuns();")[0]
+    assert "ref.summary" in body
+    assert "run.run_id === runId" in body
+    assert "runsRef.current = next" in body
+
+
 def test_a_resolved_analysis_loses_its_pending_navigation_badge():
     body = APP.read_text(encoding="utf-8")
     assert 'isResolvedAnalysis(datasetModel, "boundary_analysis")' in body

@@ -162,7 +162,12 @@ def finalize(run_dir: Path, dry_run: bool = False) -> Dict[str, Any]:
         # contradict the state the run is now published with.
         status.update({"pre_interpro_status": "complete",
                        "post_interpro_status": "complete",
-                       "website_indices_status": "complete"})
+                       "website_indices_status": "complete",
+                       "cluster_analysis_status": "complete",
+                       "cluster_fetch_status": "complete",
+                       "interproscan_status": "complete",
+                       "pytmhmm_status": "complete",
+                       "next_actions": []})
         for field in _STALE_FAILURE_FIELDS:
             status.pop(field, None)
         status.pop("blocking_analyses", None)
