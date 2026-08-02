@@ -36,6 +36,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "webapp" / "backend"))
 
 from fgfr2 import coordinate_model as cm  # noqa: E402
+from fgfr2 import comparative_bridge as cb  # noqa: E402
 from fgfr2 import gallery_catalogue as gc  # noqa: E402
 from fgfr2 import human_reference_control as hrc  # noqa: E402
 from fgfr2 import run_gallery as rg  # noqa: E402
@@ -391,6 +392,21 @@ def test_release_uses_the_bundled_validated_human_reference():
     assert hrc.panel_sequence(control, "IIIc").find(hrc.MARKERS["IIIc"]) >= 0
     assert len(hrc.panel_residues(control, "IIIb")) == 46
     assert len(hrc.panel_residues(control, "IIIc")) == 48
+
+
+def test_comparative_bridge_reads_a_run_own_alignment(pre_cluster_run: Path):
+    model_index = cm.build_index(sources=cm.run_sources(pre_cluster_run))
+    source = (pre_cluster_run / "results" / "13_final_pre_interpro_closure"
+              / "MSA" / "final_fgfr2_full_length_protein_msa.aln.faa")
+    output = pre_cluster_run / "derived" / "primaries_msa.aln.faa"
+
+    cb.write_reference_alignment(model_index, source, output)
+
+    text = output.read_text(encoding="utf-8")
+    assert "FGFR2|homo_sapiens" in text
+    assert "FGFR2|felis_catus" in text
+    assert str(pre_cluster_run) not in cm._rel(source)
+    assert cm._rel(source).startswith("results/")
 
 
 def test_the_modern_gallery_is_not_written_for_a_non_fgfr2_run(tmp_path: Path):

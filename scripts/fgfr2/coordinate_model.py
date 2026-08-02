@@ -109,8 +109,15 @@ def _int(value: Any) -> Optional[int]:
 
 
 def _rel(path: Path) -> str:
+    resolved = Path(path).resolve()
+    for parent in resolved.parents:
+        if (parent / "run_config.json").is_file():
+            try:
+                return resolved.relative_to(parent).as_posix()
+            except ValueError:
+                break
     try:
-        return str(Path(path).resolve().relative_to(ROOT))
+        return str(resolved.relative_to(ROOT))
     except ValueError:
         return Path(path).name
 

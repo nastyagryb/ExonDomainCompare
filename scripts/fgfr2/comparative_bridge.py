@@ -35,7 +35,8 @@ from shared_gene_analysis.msa_coordinates import read_aligned_fasta  # noqa: E40
 DERIVED = ROOT / "results" / "derived" / "example"
 
 
-def write_reference_alignment(model_index: Dict[str, Any], out_path: Path) -> Path:
+def write_reference_alignment(model_index: Dict[str, Any], source_path: Path,
+                              out_path: Path) -> Path:
     """The full-length alignment restricted to each species' reference protein.
 
     Headers are rewritten to ``<protein_id> <gene>|<species_id>``, the form the
@@ -51,7 +52,7 @@ def write_reference_alignment(model_index: Dict[str, Any], out_path: Path) -> Pa
                  for m in cm.primary_reference_models(model_index)}
     out_path.parent.mkdir(parents=True, exist_ok=True)
     kept: List[Tuple[str, str]] = []
-    for header, seq in read_aligned_fasta(cm.FULL_MSA):
+    for header, seq in read_aligned_fasta(source_path):
         parts = [p for p in header.split("|") if p]
         if len(parts) < 3:
             continue
@@ -78,8 +79,19 @@ def build(derived: Path = DERIVED) -> Dict[str, Any]:
     index_path = derived / "website_indices" / "protein_coordinate_model.json"
     model_index = json.loads(index_path.read_text(encoding="utf-8"))
 
+    run_alignment = (derived / "results" / "13_final_pre_interpro_closure" / "MSA"
+                     / "final_fgfr2_full_length_protein_msa.aln.faa")
+    bundled_alignment = (ROOT / "datasets" / "fgfr2_30_species"
+                         / "13_final_pre_interpro_closure" / "MSA"
+                         / "final_fgfr2_full_length_protein_msa.aln.faa")
+    source_alignment = next((path for path in
+                             (run_alignment, cm.FULL_MSA, bundled_alignment)
+                             if path.is_file()), None)
+    if source_alignment is None:
+        raise FileNotFoundError("full-length FGFR2 alignment is unavailable")
+
     alignment = write_reference_alignment(
-        model_index,
+        model_index, source_alignment,
         derived / "results" / "generic_gene_analysis" / "msa" / "primaries_msa.aln.faa")
 
     reference_models = cm.primary_reference_models(model_index)
