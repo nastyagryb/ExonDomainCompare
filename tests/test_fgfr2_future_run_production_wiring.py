@@ -213,6 +213,7 @@ def status_model(pre_cluster_run: Path, monkeypatch: pytest.MonkeyPatch) -> dict
     root = pre_cluster_run.parents[1]
     monkeypatch.setattr(backend, "PROJECT_ROOT", root)
     monkeypatch.setattr(backend, "LOCAL_RUNS_ROOT", root / "runs")
+    monkeypatch.setattr(backend.shutil, "which", lambda _name: None)
     return backend.derive_status_model(pre_cluster_run)
 
 

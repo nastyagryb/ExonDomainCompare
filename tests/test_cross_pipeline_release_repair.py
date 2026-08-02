@@ -97,14 +97,15 @@ def test_symbol_and_sign_round_trip():
 def test_no_production_code_compares_a_raw_strand_value():
     """The normaliser is the only place that may decide what a strand means."""
     import re
-    import subprocess
     pattern = r"strand[a-z_]*\s*[=!]=\s*[\"']?-1?[\"']?"
-    out = subprocess.run(
-        ["rg", "-n", pattern, "--glob", "*.py", "--glob", "!**/strand.py",
-         str(SCRIPTS)],
-        capture_output=True, text=True)
-    offenders = [ln for ln in out.stdout.splitlines()
-                 if ln and not re.search(r":\s*#", ln)]
+    offenders = []
+    for path in SCRIPTS.rglob("*.py"):
+        if path.name == "strand.py":
+            continue
+        for line_number, line in enumerate(
+                path.read_text(encoding="utf-8").splitlines(), start=1):
+            if re.search(pattern, line) and not line.lstrip().startswith("#"):
+                offenders.append(f"{path}:{line_number}:{line}")
     assert not offenders, "raw strand comparison outside the normaliser:\n" + \
         "\n".join(offenders)
 
