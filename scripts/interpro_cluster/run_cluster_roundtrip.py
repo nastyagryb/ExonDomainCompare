@@ -50,7 +50,12 @@ from ssh_common import configure  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from framework.data_contract import stamp_payload  # noqa: E402
 from framework.local_registry import resolve_run_record  # noqa: E402
-from framework.portable_config import CONTROL_PATH_ENV, RuntimeConfig, load_config  # noqa: E402
+from framework.portable_config import (  # noqa: E402
+    CONTROL_PATH_ENV,
+    ConfigurationError,
+    RuntimeConfig,
+    load_config,
+)
 
 RUNTIME_CONFIG = load_config(repository_root=Path(__file__).resolve().parents[2])
 REPO = RUNTIME_CONFIG.repository_root
@@ -60,6 +65,18 @@ CHECK = CLUSTER_DIR / "check_cluster_analysis.py"
 FETCH = CLUSTER_DIR / "fetch_cluster_analysis.py"
 POST = REPO / "scripts" / "run_post_interpro_for_run.py"
 CORE_POST = REPO / "scripts" / "framework" / "run_core_gene_analysis.py"
+
+
+def _require_cluster_profile(config: RuntimeConfig) -> None:
+    """Stop before SSH when the one-time cluster setup is incomplete."""
+    try:
+        config.require_cluster()
+    except ConfigurationError as exc:
+        raise SystemExit(
+            "Cluster profile is not ready: "
+            f"{exc}\nConfigure it once with 'edc cluster configure', then run "
+            "'edc cluster doctor --redact-paths'."
+        ) from None
 
 
 def now_iso() -> str:
@@ -550,6 +567,8 @@ def main(argv: Optional[List[str]] = None) -> None:
         rt.log(f"Re-deriving end state for run {args.run_id} (finalize only)")
         rt.finalize()
         return
+
+    _require_cluster_profile(RUNTIME_CONFIG)
 
     for s in (SUBMIT, CHECK, FETCH):
         if not s.exists():

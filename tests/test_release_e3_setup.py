@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import os
 import subprocess
+import sys
 from dataclasses import replace
 from pathlib import Path
 
@@ -32,6 +33,26 @@ from exondomaincompare.runs.registry import _normalize
 
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def test_roundtrip_stops_before_ssh_when_cluster_setup_is_missing():
+    cluster_scripts = ROOT / "scripts" / "interpro_cluster"
+    if str(cluster_scripts) not in sys.path:
+        sys.path.insert(0, str(cluster_scripts))
+    import run_cluster_roundtrip
+
+    class MissingProfile:
+        @staticmethod
+        def require_cluster():
+            raise ConfigurationError("missing profile fields: user, host")
+
+    with pytest.raises(SystemExit, match="edc cluster configure"):
+        run_cluster_roundtrip._require_cluster_profile(MissingProfile())
+
+    source = (cluster_scripts / "run_cluster_roundtrip.py").read_text(encoding="utf-8")
+    main = source.split("def main(", 1)[1]
+    assert main.index("_require_cluster_profile(RUNTIME_CONFIG)") \
+        < main.index("rt.open_ssh_master()")
 
 
 def _config(tmp_path: Path) -> RuntimeConfig:
