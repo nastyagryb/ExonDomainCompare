@@ -27,7 +27,7 @@ PUBLIC_FILE_SUFFIXES = {
     ".svg", ".tsv", ".txt", ".yaml", ".yml", ".zip",
 }
 FORBIDDEN_TEXT = (
-    "/Users/", "/home/", "/dss/", "/gpfs/",
+    "/Users/", "/home/", "/private/", "/dss/", "/gpfs/",
 )
 IGNORED_PARTS = {".DS_Store", "__pycache__"}
 
@@ -131,7 +131,7 @@ def sanitize_json_files(root: Path, source_repo: Path) -> None:
 
 
 def sanitize_text_files(root: Path, source_repo: Path) -> None:
-    absolute = re.compile(r"/(?:Users|home|dss|gpfs)/[^\t\r\n <>'\"]+")
+    absolute = re.compile(r"/(?:Users|home|private|dss|gpfs)/[^\t\r\n <>'\"]+")
     source_prefix = source_repo.as_posix().rstrip("/") + "/"
 
     def replace(match: re.Match[str]) -> str:
@@ -364,6 +364,8 @@ def project_exploratory(source_repo: Path, source: Path, datasets_root: Path) ->
     (public / "run_config.json").write_text(
         json.dumps(config, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     repair_exploratory_figure_sources(target)
+    sanitize_json_files(target, source)
+    sanitize_text_files(target, source)
     sanitize_json_files(target, source_repo)
     sanitize_text_files(target, source_repo)
     (target / "DATASET.md").write_text(

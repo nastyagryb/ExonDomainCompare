@@ -82,6 +82,19 @@ def test_bundled_dataset_semantics_and_private_state_are_explicit():
     assert "cluster_status_detail" not in status
 
 
+def test_bundled_datasets_do_not_expose_local_machine_paths():
+    _bundled_or_skip()
+    forbidden = ("/Users/", "/home/", "/private/", "/dss/", "/gpfs/")
+
+    for path in DATASETS.rglob("*"):
+        if path.is_file() and path.suffix.lower() in {
+            ".csv", ".faa", ".fasta", ".fa", ".gff", ".gff3", ".json",
+            ".md", ".svg", ".tsv", ".txt", ".yaml", ".yml",
+        }:
+            text = path.read_text(encoding="utf-8", errors="replace")
+            assert not any(token in text for token in forbidden), path
+
+
 def test_backend_discovers_both_bundled_datasets_without_a_live_run_root():
     _bundled_or_skip()
     from webapp.backend import main

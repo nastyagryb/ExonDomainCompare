@@ -11,7 +11,7 @@
       "status": "accepted",
       "confidence": "high",
       "explanation": "9 transcript/gene-model record(s) collected for PTPN11 in homo_sapiens, mus_musculus, rattus_norvegicus.",
-      "file": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/core_gene_analysis/gene_model_index.tsv"
+      "file": "results/core_gene_analysis/gene_model_index.tsv"
     },
     {
       "id": "protein_isoform",
@@ -20,7 +20,7 @@
       "status": "accepted",
       "confidence": "high",
       "explanation": "9 protein-coding isoform(s) (lengths 460–597 aa).",
-      "file": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/core_gene_analysis/protein_isoform_index.tsv"
+      "file": "results/core_gene_analysis/protein_isoform_index.tsv"
     },
     {
       "id": "primary_selection",
@@ -31,7 +31,7 @@
       "explanation": "NP_001317366.1 (NM_001330437.2) was selected as primary because it is the curated RefSeq protein (NM/NP). Predicted XP isoforms are retained as alternatives.",
       "rule": "refseq_curated_over_predicted",
       "rule_label": "RefSeq curated (NM/NP) over predicted (XM/XP)",
-      "file": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/core_gene_analysis/primary_selection_evidence.tsv"
+      "file": "results/core_gene_analysis/primary_selection_evidence.tsv"
     },
     {
       "id": "synteny",
@@ -40,7 +40,7 @@
       "status": "accepted",
       "confidence": "medium",
       "explanation": "30 synteny neighbour(s) resolved around the target locus.",
-      "file": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/core_gene_analysis/synteny_neighbors.tsv"
+      "file": "results/core_gene_analysis/synteny_neighbors.tsv"
     },
     {
       "id": "exploratory_event",
@@ -49,7 +49,7 @@
       "status": "exploratory",
       "confidence": "exploratory",
       "explanation": "5 candidate cluster(s) from 22 isoform-difference comparison(s). Exploratory only — not validated event regions.",
-      "file": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/core_gene_analysis/event_region_candidate_clusters.tsv"
+      "file": "results/core_gene_analysis/event_region_candidate_clusters.tsv"
     },
     {
       "id": "external_uniprot",
@@ -67,7 +67,7 @@
       "status": "available",
       "confidence": "high",
       "explanation": "Domain architecture available.",
-      "file": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/core_gene_analysis/domain_features.tsv"
+      "file": "results/core_gene_analysis/domain_features.tsv"
     }
   ]
 }

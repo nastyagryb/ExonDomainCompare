@@ -31,9 +31,9 @@
       "svg_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_msa_aligned_exon_architecture.svg",
       "pdf_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_msa_aligned_exon_architecture.pdf",
       "table_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_msa_aligned_exon_architecture.tsv",
-      "source_table": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/msa_aligned_exons.tsv",
+      "source_table": "results/generic_gene_analysis/comparative/msa_aligned_exons.tsv",
       "source_files": [
-        "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/msa_aligned_exons.tsv"
+        "results/generic_gene_analysis/comparative/msa_aligned_exons.tsv"
       ],
       "error": "",
       "analysis_family": "generic",
@@ -80,9 +80,9 @@
       "svg_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_native_exon_architecture.svg",
       "pdf_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_native_exon_architecture.pdf",
       "table_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_native_exon_architecture.tsv",
-      "source_table": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/msa_aligned_exons.tsv",
+      "source_table": "results/generic_gene_analysis/comparative/msa_aligned_exons.tsv",
       "source_files": [
-        "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/msa_aligned_exons.tsv"
+        "results/generic_gene_analysis/comparative/msa_aligned_exons.tsv"
       ],
       "error": "",
       "analysis_family": "generic",
@@ -129,9 +129,9 @@
       "svg_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_primary_msa_overview.svg",
       "pdf_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_primary_msa_overview.pdf",
       "table_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_primary_msa_overview.tsv",
-      "source_table": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/pairwise_identity.tsv",
+      "source_table": "results/generic_gene_analysis/comparative/pairwise_identity.tsv",
       "source_files": [
-        "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/pairwise_identity.tsv"
+        "results/generic_gene_analysis/comparative/pairwise_identity.tsv"
       ],
       "error": "",
       "analysis_family": "generic",
@@ -178,9 +178,9 @@
       "svg_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_msa.svg",
       "pdf_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_msa.pdf",
       "table_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_msa.tsv",
-      "source_table": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/msa_aligned_domains.tsv",
+      "source_table": "results/generic_gene_analysis/comparative/msa_aligned_domains.tsv",
       "source_files": [
-        "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/msa_aligned_domains.tsv"
+        "results/generic_gene_analysis/comparative/msa_aligned_domains.tsv"
       ],
       "error": "",
       "analysis_family": "generic",
@@ -227,9 +227,9 @@
       "svg_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_native.svg",
       "pdf_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_native.pdf",
       "table_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_native.tsv",
-      "source_table": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/msa_aligned_domains.tsv",
+      "source_table": "results/generic_gene_analysis/comparative/msa_aligned_domains.tsv",
       "source_files": [
-        "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/msa_aligned_domains.tsv"
+        "results/generic_gene_analysis/comparative/msa_aligned_domains.tsv"
       ],
       "error": "",
       "analysis_family": "generic",
@@ -276,9 +276,9 @@
       "svg_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_native.svg",
       "pdf_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_native.pdf",
       "table_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_native.tsv",
-      "source_table": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/msa_aligned_domains.tsv",
+      "source_table": "results/generic_gene_analysis/comparative/msa_aligned_domains.tsv",
       "source_files": [
-        "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/msa_aligned_domains.tsv"
+        "results/generic_gene_analysis/comparative/msa_aligned_domains.tsv"
       ],
       "error": "",
       "analysis_family": "generic",
@@ -325,9 +325,9 @@
       "svg_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_msa.svg",
       "pdf_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_msa.pdf",
       "table_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_msa.tsv",
-      "source_table": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/msa_aligned_domains.tsv",
+      "source_table": "results/generic_gene_analysis/comparative/msa_aligned_domains.tsv",
       "source_files": [
-        "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/msa_aligned_domains.tsv"
+        "results/generic_gene_analysis/comparative/msa_aligned_domains.tsv"
       ],
       "error": "",
       "analysis_family": "generic",
@@ -374,9 +374,9 @@
       "svg_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_domain_annotation_matrix.svg",
       "pdf_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_domain_annotation_matrix.pdf",
       "table_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_domain_annotation_matrix.tsv",
-      "source_table": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/domain_annotation_matrix.tsv",
+      "source_table": "results/generic_gene_analysis/comparative/domain_annotation_matrix.tsv",
       "source_files": [
-        "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/domain_annotation_matrix.tsv"
+        "results/generic_gene_analysis/comparative/domain_annotation_matrix.tsv"
       ],
       "error": "",
       "analysis_family": "generic",
@@ -423,9 +423,9 @@
       "svg_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_boundary_matrix.svg",
       "pdf_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_boundary_matrix.pdf",
       "table_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_boundary_matrix.tsv",
-      "source_table": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/exon_domain_boundaries_long.tsv",
+      "source_table": "results/generic_gene_analysis/comparative/exon_domain_boundaries_long.tsv",
       "source_files": [
-        "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/exon_domain_boundaries_long.tsv"
+        "results/generic_gene_analysis/comparative/exon_domain_boundaries_long.tsv"
       ],
       "error": "",
       "analysis_family": "generic",
@@ -472,9 +472,9 @@
       "svg_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_paired_signed_distance.svg",
       "pdf_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_paired_signed_distance.pdf",
       "table_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_paired_signed_distance.tsv",
-      "source_table": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/exon_domain_boundaries_long.tsv",
+      "source_table": "results/generic_gene_analysis/comparative/exon_domain_boundaries_long.tsv",
       "source_files": [
-        "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/exon_domain_boundaries_long.tsv"
+        "results/generic_gene_analysis/comparative/exon_domain_boundaries_long.tsv"
       ],
       "error": "",
       "analysis_family": "generic",
@@ -521,9 +521,9 @@
       "svg_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_boundary_position_consistency.svg",
       "pdf_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_boundary_position_consistency.pdf",
       "table_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_boundary_position_consistency.tsv",
-      "source_table": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/boundary_consistency_summary.tsv",
+      "source_table": "results/generic_gene_analysis/comparative/boundary_consistency_summary.tsv",
       "source_files": [
-        "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/boundary_consistency_summary.tsv"
+        "results/generic_gene_analysis/comparative/boundary_consistency_summary.tsv"
       ],
       "error": "",
       "analysis_family": "generic",
@@ -570,9 +570,9 @@
       "svg_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_local_boundary_architecture.svg",
       "pdf_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_local_boundary_architecture.pdf",
       "table_url": "",
-      "source_table": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/exon_domain_boundaries_long.tsv",
+      "source_table": "results/generic_gene_analysis/comparative/exon_domain_boundaries_long.tsv",
       "source_files": [
-        "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/exon_domain_boundaries_long.tsv"
+        "results/generic_gene_analysis/comparative/exon_domain_boundaries_long.tsv"
       ],
       "error": "",
       "analysis_family": "generic",
@@ -618,9 +618,9 @@
       "svg_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_comparative_synteny.svg",
       "pdf_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_comparative_synteny.pdf",
       "table_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_comparative_synteny.tsv",
-      "source_table": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/comparative_synteny.tsv",
+      "source_table": "results/generic_gene_analysis/comparative/comparative_synteny.tsv",
       "source_files": [
-        "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/comparative_synteny.tsv"
+        "results/generic_gene_analysis/comparative/comparative_synteny.tsv"
       ],
       "error": "",
       "analysis_family": "generic",
@@ -667,9 +667,9 @@
       "svg_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_synteny_neighbour_conservation.svg",
       "pdf_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_synteny_neighbour_conservation.pdf",
       "table_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_synteny_neighbour_conservation.tsv",
-      "source_table": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/comparative_synteny.tsv",
+      "source_table": "results/generic_gene_analysis/comparative/comparative_synteny.tsv",
       "source_files": [
-        "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/comparative_synteny.tsv"
+        "results/generic_gene_analysis/comparative/comparative_synteny.tsv"
       ],
       "error": "",
       "analysis_family": "generic",
@@ -716,9 +716,9 @@
       "svg_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_isoform_diversity.svg",
       "pdf_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_isoform_diversity.pdf",
       "table_url": "/api/runs/2026-08-02_1910_ptpn11_3species/files?path=results/generic_gene_analysis/figures/comparative/cmp_isoform_diversity.tsv",
-      "source_table": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/isoform_diversity.tsv",
+      "source_table": "results/generic_gene_analysis/comparative/isoform_diversity.tsv",
       "source_files": [
-        "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/isoform_diversity.tsv"
+        "results/generic_gene_analysis/comparative/isoform_diversity.tsv"
       ],
       "error": "",
       "analysis_family": "generic",

@@ -2,7 +2,7 @@
   "interproscan": {
     "status": "valid",
     "files": [
-      "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/14_interproscan/primary/output/input.fasta.tsv"
+      "results/14_interproscan/primary/output/input.fasta.tsv"
     ],
     "valid_lines": 113,
     "malformed_lines": 0,
@@ -11,11 +11,11 @@
   "pytmhmm": {
     "status": "valid",
     "files": [
-      "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/15_exon_domain_boundary_post_interpro/pytmhmm_primary/output/NP_035332.1.summary",
-      "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/15_exon_domain_boundary_post_interpro/pytmhmm_primary/output/NP_001317366.1.summary",
-      "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/15_exon_domain_boundary_post_interpro/pytmhmm_primary/output/pytmhmm_transmembrane_hits.tsv",
-      "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/15_exon_domain_boundary_post_interpro/pytmhmm_primary/output/NP_001171064.1.summary",
-      "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/15_exon_domain_boundary_post_interpro/pytmhmm_primary/output/pytmhmm_summary_all.tsv"
+      "results/15_exon_domain_boundary_post_interpro/pytmhmm_primary/output/NP_035332.1.summary",
+      "results/15_exon_domain_boundary_post_interpro/pytmhmm_primary/output/NP_001317366.1.summary",
+      "results/15_exon_domain_boundary_post_interpro/pytmhmm_primary/output/pytmhmm_transmembrane_hits.tsv",
+      "results/15_exon_domain_boundary_post_interpro/pytmhmm_primary/output/NP_001171064.1.summary",
+      "results/15_exon_domain_boundary_post_interpro/pytmhmm_primary/output/pytmhmm_summary_all.tsv"
     ],
     "reason": "Valid pyTMHMM output contains no TM segment."
   },

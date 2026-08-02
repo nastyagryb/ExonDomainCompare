@@ -15104,7 +15104,7 @@
       "title": "PTPN11 · Transcript structure and translated protein product",
       "format": "svg",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_transcript_and_protein_structure.svg"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_transcript_and_protein_structure.svg"
     },
     {
       "group": "Exon structure",
@@ -15112,7 +15112,7 @@
       "title": "PTPN11 · Transcript structure and translated protein product",
       "format": "pdf",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_transcript_and_protein_structure.pdf"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_transcript_and_protein_structure.pdf"
     },
     {
       "group": "Exon structure",
@@ -15120,7 +15120,7 @@
       "title": "PTPN11 · Transcript structure and translated protein product",
       "format": "png",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_transcript_and_protein_structure.png"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_transcript_and_protein_structure.png"
     },
     {
       "group": "Exon structure",
@@ -15128,7 +15128,7 @@
       "title": "PTPN11 · Transcript structure and translated protein product",
       "format": "tsv",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_transcript_and_protein_structure.tsv"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_transcript_and_protein_structure.tsv"
     },
     {
       "group": "Exon structure",
@@ -15136,7 +15136,7 @@
       "title": "PTPN11 · Transcript-model comparison (all protein models)",
       "format": "svg",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_all.svg"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_all.svg"
     },
     {
       "group": "Exon structure",
@@ -15144,7 +15144,7 @@
       "title": "PTPN11 · Transcript-model comparison (all protein models)",
       "format": "pdf",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_all.pdf"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_all.pdf"
     },
     {
       "group": "Exon structure",
@@ -15152,7 +15152,7 @@
       "title": "PTPN11 · Transcript-model comparison (all protein models)",
       "format": "png",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_all.png"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_all.png"
     },
     {
       "group": "Exon structure",
@@ -15160,7 +15160,7 @@
       "title": "PTPN11 · Transcript-model comparison (all protein models)",
       "format": "tsv",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_all.tsv"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_all.tsv"
     },
     {
       "group": "Exon structure",
@@ -15168,7 +15168,7 @@
       "title": "PTPN11 · Transcript-model comparison (differences from the primary model)",
       "format": "svg",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_differences.svg"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_differences.svg"
     },
     {
       "group": "Exon structure",
@@ -15176,7 +15176,7 @@
       "title": "PTPN11 · Transcript-model comparison (differences from the primary model)",
       "format": "pdf",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_differences.pdf"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_differences.pdf"
     },
     {
       "group": "Exon structure",
@@ -15184,7 +15184,7 @@
       "title": "PTPN11 · Transcript-model comparison (differences from the primary model)",
       "format": "png",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_differences.png"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_differences.png"
     },
     {
       "group": "Exon structure",
@@ -15192,7 +15192,7 @@
       "title": "PTPN11 · Transcript-model comparison (differences from the primary model)",
       "format": "tsv",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_differences.tsv"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_model_comparison_differences.tsv"
     },
     {
       "group": "Genomic context",
@@ -15200,7 +15200,7 @@
       "title": "PTPN11 · Local genomic neighbourhood",
       "format": "svg",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_local_gene_neighbourhood.svg"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_local_gene_neighbourhood.svg"
     },
     {
       "group": "Genomic context",
@@ -15208,7 +15208,7 @@
       "title": "PTPN11 · Local genomic neighbourhood",
       "format": "pdf",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_local_gene_neighbourhood.pdf"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_local_gene_neighbourhood.pdf"
     },
     {
       "group": "Genomic context",
@@ -15216,7 +15216,7 @@
       "title": "PTPN11 · Local genomic neighbourhood",
       "format": "png",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_local_gene_neighbourhood.png"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_local_gene_neighbourhood.png"
     },
     {
       "group": "Genomic context",
@@ -15224,7 +15224,7 @@
       "title": "PTPN11 · Local genomic neighbourhood",
       "format": "tsv",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_local_gene_neighbourhood.tsv"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_local_gene_neighbourhood.tsv"
     },
     {
       "group": "Exploratory candidates",
@@ -15232,7 +15232,7 @@
       "title": "PTPN11 · Exploratory candidate ranking",
       "format": "svg",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_exploratory_candidate_ranking.svg"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_exploratory_candidate_ranking.svg"
     },
     {
       "group": "Exploratory candidates",
@@ -15240,7 +15240,7 @@
       "title": "PTPN11 · Exploratory candidate ranking",
       "format": "pdf",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_exploratory_candidate_ranking.pdf"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_exploratory_candidate_ranking.pdf"
     },
     {
       "group": "Exploratory candidates",
@@ -15248,7 +15248,7 @@
       "title": "PTPN11 · Exploratory candidate ranking",
       "format": "png",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_exploratory_candidate_ranking.png"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_exploratory_candidate_ranking.png"
     },
     {
       "group": "Exploratory candidates",
@@ -15256,7 +15256,7 @@
       "title": "PTPN11 · Exploratory candidate ranking",
       "format": "tsv",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_exploratory_candidate_ranking.tsv"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_exploratory_candidate_ranking.tsv"
     },
     {
       "group": "Exploratory candidates",
@@ -15264,7 +15264,7 @@
       "title": "PTPN11 · Exploratory candidates in their domain context",
       "format": "svg",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_candidate_domain_context.svg"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_candidate_domain_context.svg"
     },
     {
       "group": "Exploratory candidates",
@@ -15272,7 +15272,7 @@
       "title": "PTPN11 · Exploratory candidates in their domain context",
       "format": "pdf",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_candidate_domain_context.pdf"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_candidate_domain_context.pdf"
     },
     {
       "group": "Exploratory candidates",
@@ -15280,7 +15280,7 @@
       "title": "PTPN11 · Exploratory candidates in their domain context",
       "format": "png",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_candidate_domain_context.png"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_candidate_domain_context.png"
     },
     {
       "group": "Exploratory candidates",
@@ -15288,7 +15288,7 @@
       "title": "PTPN11 · Exploratory candidates in their domain context",
       "format": "tsv",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_candidate_domain_context.tsv"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_homo_sapiens_candidate_domain_context.tsv"
     },
     {
       "group": "Exon structure",
@@ -15296,7 +15296,7 @@
       "title": "PTPN11 · Transcript structure and translated protein product",
       "format": "svg",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_transcript_and_protein_structure.svg"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_transcript_and_protein_structure.svg"
     },
     {
       "group": "Exon structure",
@@ -15304,7 +15304,7 @@
       "title": "PTPN11 · Transcript structure and translated protein product",
       "format": "pdf",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_transcript_and_protein_structure.pdf"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_transcript_and_protein_structure.pdf"
     },
     {
       "group": "Exon structure",
@@ -15312,7 +15312,7 @@
       "title": "PTPN11 · Transcript structure and translated protein product",
       "format": "png",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_transcript_and_protein_structure.png"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_transcript_and_protein_structure.png"
     },
     {
       "group": "Exon structure",
@@ -15320,7 +15320,7 @@
       "title": "PTPN11 · Transcript structure and translated protein product",
       "format": "tsv",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_transcript_and_protein_structure.tsv"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_transcript_and_protein_structure.tsv"
     },
     {
       "group": "Exon structure",
@@ -15328,7 +15328,7 @@
       "title": "PTPN11 · Transcript-model comparison (all protein models)",
       "format": "svg",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_all.svg"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_all.svg"
     },
     {
       "group": "Exon structure",
@@ -15336,7 +15336,7 @@
       "title": "PTPN11 · Transcript-model comparison (all protein models)",
       "format": "pdf",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_all.pdf"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_all.pdf"
     },
     {
       "group": "Exon structure",
@@ -15344,7 +15344,7 @@
       "title": "PTPN11 · Transcript-model comparison (all protein models)",
       "format": "png",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_all.png"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_all.png"
     },
     {
       "group": "Exon structure",
@@ -15352,7 +15352,7 @@
       "title": "PTPN11 · Transcript-model comparison (all protein models)",
       "format": "tsv",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_all.tsv"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_all.tsv"
     },
     {
       "group": "Exon structure",
@@ -15360,7 +15360,7 @@
       "title": "PTPN11 · Transcript-model comparison (differences from the primary model)",
       "format": "svg",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_differences.svg"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_differences.svg"
     },
     {
       "group": "Exon structure",
@@ -15368,7 +15368,7 @@
       "title": "PTPN11 · Transcript-model comparison (differences from the primary model)",
       "format": "pdf",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_differences.pdf"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_differences.pdf"
     },
     {
       "group": "Exon structure",
@@ -15376,7 +15376,7 @@
       "title": "PTPN11 · Transcript-model comparison (differences from the primary model)",
       "format": "png",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_differences.png"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_differences.png"
     },
     {
       "group": "Exon structure",
@@ -15384,7 +15384,7 @@
       "title": "PTPN11 · Transcript-model comparison (differences from the primary model)",
       "format": "tsv",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_differences.tsv"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_model_comparison_differences.tsv"
     },
     {
       "group": "Genomic context",
@@ -15392,7 +15392,7 @@
       "title": "PTPN11 · Local genomic neighbourhood",
       "format": "svg",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_local_gene_neighbourhood.svg"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_local_gene_neighbourhood.svg"
     },
     {
       "group": "Genomic context",
@@ -15400,7 +15400,7 @@
       "title": "PTPN11 · Local genomic neighbourhood",
       "format": "pdf",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_local_gene_neighbourhood.pdf"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_local_gene_neighbourhood.pdf"
     },
     {
       "group": "Genomic context",
@@ -15408,7 +15408,7 @@
       "title": "PTPN11 · Local genomic neighbourhood",
       "format": "png",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_local_gene_neighbourhood.png"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_local_gene_neighbourhood.png"
     },
     {
       "group": "Genomic context",
@@ -15416,7 +15416,7 @@
       "title": "PTPN11 · Local genomic neighbourhood",
       "format": "tsv",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_local_gene_neighbourhood.tsv"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_local_gene_neighbourhood.tsv"
     },
     {
       "group": "Exploratory candidates",
@@ -15424,7 +15424,7 @@
       "title": "PTPN11 · Exploratory candidate ranking",
       "format": "svg",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_exploratory_candidate_ranking.svg"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_exploratory_candidate_ranking.svg"
     },
     {
       "group": "Exploratory candidates",
@@ -15432,7 +15432,7 @@
       "title": "PTPN11 · Exploratory candidate ranking",
       "format": "pdf",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_exploratory_candidate_ranking.pdf"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_exploratory_candidate_ranking.pdf"
     },
     {
       "group": "Exploratory candidates",
@@ -15440,7 +15440,7 @@
       "title": "PTPN11 · Exploratory candidate ranking",
       "format": "png",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_exploratory_candidate_ranking.png"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_exploratory_candidate_ranking.png"
     },
     {
       "group": "Exploratory candidates",
@@ -15448,7 +15448,7 @@
       "title": "PTPN11 · Exploratory candidate ranking",
       "format": "tsv",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_exploratory_candidate_ranking.tsv"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_exploratory_candidate_ranking.tsv"
     },
     {
       "group": "Exploratory candidates",
@@ -15456,7 +15456,7 @@
       "title": "PTPN11 · Exploratory candidates in their domain context",
       "format": "svg",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_candidate_domain_context.svg"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_candidate_domain_context.svg"
     },
     {
       "group": "Exploratory candidates",
@@ -15464,7 +15464,7 @@
       "title": "PTPN11 · Exploratory candidates in their domain context",
       "format": "pdf",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_candidate_domain_context.pdf"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_candidate_domain_context.pdf"
     },
     {
       "group": "Exploratory candidates",
@@ -15472,7 +15472,7 @@
       "title": "PTPN11 · Exploratory candidates in their domain context",
       "format": "png",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_candidate_domain_context.png"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_candidate_domain_context.png"
     },
     {
       "group": "Exploratory candidates",
@@ -15480,7 +15480,7 @@
       "title": "PTPN11 · Exploratory candidates in their domain context",
       "format": "tsv",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_candidate_domain_context.tsv"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_mus_musculus_candidate_domain_context.tsv"
     },
     {
       "group": "Exon structure",
@@ -15488,7 +15488,7 @@
       "title": "PTPN11 · Transcript structure and translated protein product",
       "format": "svg",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_transcript_and_protein_structure.svg"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_transcript_and_protein_structure.svg"
     },
     {
       "group": "Exon structure",
@@ -15496,7 +15496,7 @@
       "title": "PTPN11 · Transcript structure and translated protein product",
       "format": "pdf",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_transcript_and_protein_structure.pdf"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_transcript_and_protein_structure.pdf"
     },
     {
       "group": "Exon structure",
@@ -15504,7 +15504,7 @@
       "title": "PTPN11 · Transcript structure and translated protein product",
       "format": "png",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_transcript_and_protein_structure.png"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_transcript_and_protein_structure.png"
     },
     {
       "group": "Exon structure",
@@ -15512,7 +15512,7 @@
       "title": "PTPN11 · Transcript structure and translated protein product",
       "format": "tsv",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_transcript_and_protein_structure.tsv"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_transcript_and_protein_structure.tsv"
     },
     {
       "group": "Exon structure",
@@ -15520,7 +15520,7 @@
       "title": "PTPN11 · Transcript-model comparison (all protein models)",
       "format": "svg",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_model_comparison_all.svg"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_model_comparison_all.svg"
     },
     {
       "group": "Exon structure",
@@ -15528,7 +15528,7 @@
       "title": "PTPN11 · Transcript-model comparison (all protein models)",
       "format": "pdf",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_model_comparison_all.pdf"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_model_comparison_all.pdf"
     },
     {
       "group": "Exon structure",
@@ -15536,7 +15536,7 @@
       "title": "PTPN11 · Transcript-model comparison (all protein models)",
       "format": "png",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_model_comparison_all.png"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_model_comparison_all.png"
     },
     {
       "group": "Exon structure",
@@ -15544,7 +15544,7 @@
       "title": "PTPN11 · Transcript-model comparison (all protein models)",
       "format": "tsv",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_model_comparison_all.tsv"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_model_comparison_all.tsv"
     },
     {
       "group": "Exon structure",
@@ -15552,7 +15552,7 @@
       "title": "PTPN11 · Transcript-model comparison (differences from the primary model)",
       "format": "svg",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_model_comparison_differences.svg"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_model_comparison_differences.svg"
     },
     {
       "group": "Exon structure",
@@ -15560,7 +15560,7 @@
       "title": "PTPN11 · Transcript-model comparison (differences from the primary model)",
       "format": "pdf",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_model_comparison_differences.pdf"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_model_comparison_differences.pdf"
     },
     {
       "group": "Exon structure",
@@ -15568,7 +15568,7 @@
       "title": "PTPN11 · Transcript-model comparison (differences from the primary model)",
       "format": "png",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_model_comparison_differences.png"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_model_comparison_differences.png"
     },
     {
       "group": "Exon structure",
@@ -15576,7 +15576,7 @@
       "title": "PTPN11 · Transcript-model comparison (differences from the primary model)",
       "format": "tsv",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_model_comparison_differences.tsv"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_model_comparison_differences.tsv"
     },
     {
       "group": "Genomic context",
@@ -15584,7 +15584,7 @@
       "title": "PTPN11 · Local genomic neighbourhood",
       "format": "svg",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_local_gene_neighbourhood.svg"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_local_gene_neighbourhood.svg"
     },
     {
       "group": "Genomic context",
@@ -15592,7 +15592,7 @@
       "title": "PTPN11 · Local genomic neighbourhood",
       "format": "pdf",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_local_gene_neighbourhood.pdf"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_local_gene_neighbourhood.pdf"
     },
     {
       "group": "Genomic context",
@@ -15600,7 +15600,7 @@
       "title": "PTPN11 · Local genomic neighbourhood",
       "format": "png",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_local_gene_neighbourhood.png"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_local_gene_neighbourhood.png"
     },
     {
       "group": "Genomic context",
@@ -15608,7 +15608,7 @@
       "title": "PTPN11 · Local genomic neighbourhood",
       "format": "tsv",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_local_gene_neighbourhood.tsv"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_local_gene_neighbourhood.tsv"
     },
     {
       "group": "Exploratory candidates",
@@ -15616,7 +15616,7 @@
       "title": "PTPN11 · Exploratory candidate ranking",
       "format": "svg",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_exploratory_candidate_ranking.svg"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_exploratory_candidate_ranking.svg"
     },
     {
       "group": "Exploratory candidates",
@@ -15624,7 +15624,7 @@
       "title": "PTPN11 · Exploratory candidate ranking",
       "format": "pdf",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_exploratory_candidate_ranking.pdf"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_exploratory_candidate_ranking.pdf"
     },
     {
       "group": "Exploratory candidates",
@@ -15632,7 +15632,7 @@
       "title": "PTPN11 · Exploratory candidate ranking",
       "format": "png",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_exploratory_candidate_ranking.png"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_exploratory_candidate_ranking.png"
     },
     {
       "group": "Exploratory candidates",
@@ -15640,7 +15640,7 @@
       "title": "PTPN11 · Exploratory candidate ranking",
       "format": "tsv",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_exploratory_candidate_ranking.tsv"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_exploratory_candidate_ranking.tsv"
     },
     {
       "group": "Exploratory candidates",
@@ -15648,7 +15648,7 @@
       "title": "PTPN11 · Exploratory candidates in their domain context",
       "format": "svg",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_candidate_domain_context.svg"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_candidate_domain_context.svg"
     },
     {
       "group": "Exploratory candidates",
@@ -15656,7 +15656,7 @@
       "title": "PTPN11 · Exploratory candidates in their domain context",
       "format": "pdf",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_candidate_domain_context.pdf"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_candidate_domain_context.pdf"
     },
     {
       "group": "Exploratory candidates",
@@ -15664,7 +15664,7 @@
       "title": "PTPN11 · Exploratory candidates in their domain context",
       "format": "png",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_candidate_domain_context.png"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_candidate_domain_context.png"
     },
     {
       "group": "Exploratory candidates",
@@ -15672,7 +15672,7 @@
       "title": "PTPN11 · Exploratory candidates in their domain context",
       "format": "tsv",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_candidate_domain_context.tsv"
+      "path": "results/generic_gene_analysis/figures/exon_map/exon_map_rattus_norvegicus_candidate_domain_context.tsv"
     },
     {
       "group": "main_figures",
@@ -15681,7 +15681,7 @@
       "format": "svg",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_primary_exon_projection.svg"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_primary_exon_projection.svg"
     },
     {
       "group": "main_figures",
@@ -15690,7 +15690,7 @@
       "format": "pdf",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_primary_exon_projection.pdf"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_primary_exon_projection.pdf"
     },
     {
       "group": "main_figures",
@@ -15699,7 +15699,7 @@
       "format": "png",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_primary_exon_projection.png"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_primary_exon_projection.png"
     },
     {
       "group": "main_figures",
@@ -15708,7 +15708,7 @@
       "format": "tsv",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_primary_exon_projection.tsv"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_primary_exon_projection.tsv"
     },
     {
       "group": "main_figures",
@@ -15717,7 +15717,7 @@
       "format": "svg",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_integrated_domain_architecture.svg"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_integrated_domain_architecture.svg"
     },
     {
       "group": "main_figures",
@@ -15726,7 +15726,7 @@
       "format": "pdf",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_integrated_domain_architecture.pdf"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_integrated_domain_architecture.pdf"
     },
     {
       "group": "main_figures",
@@ -15735,7 +15735,7 @@
       "format": "png",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_integrated_domain_architecture.png"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_integrated_domain_architecture.png"
     },
     {
       "group": "main_figures",
@@ -15744,7 +15744,7 @@
       "format": "tsv",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_integrated_domain_architecture.tsv"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_integrated_domain_architecture.tsv"
     },
     {
       "group": "main_figures",
@@ -15753,7 +15753,7 @@
       "format": "svg",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_on_architecture.svg"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_on_architecture.svg"
     },
     {
       "group": "main_figures",
@@ -15762,7 +15762,7 @@
       "format": "pdf",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_on_architecture.pdf"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_on_architecture.pdf"
     },
     {
       "group": "main_figures",
@@ -15771,7 +15771,7 @@
       "format": "png",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_on_architecture.png"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_on_architecture.png"
     },
     {
       "group": "main_figures",
@@ -15780,7 +15780,7 @@
       "format": "tsv",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_on_architecture.tsv"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_on_architecture.tsv"
     },
     {
       "group": "main_figures",
@@ -15789,7 +15789,7 @@
       "format": "svg",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_signed_boundary_distances.svg"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_signed_boundary_distances.svg"
     },
     {
       "group": "main_figures",
@@ -15798,7 +15798,7 @@
       "format": "pdf",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_signed_boundary_distances.pdf"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_signed_boundary_distances.pdf"
     },
     {
       "group": "main_figures",
@@ -15807,7 +15807,7 @@
       "format": "png",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_signed_boundary_distances.png"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_signed_boundary_distances.png"
     },
     {
       "group": "main_figures",
@@ -15816,7 +15816,7 @@
       "format": "tsv",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_signed_boundary_distances.tsv"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_signed_boundary_distances.tsv"
     },
     {
       "group": "main_figures",
@@ -15825,7 +15825,7 @@
       "format": "svg",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_class_summary.svg"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_class_summary.svg"
     },
     {
       "group": "main_figures",
@@ -15834,7 +15834,7 @@
       "format": "pdf",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_class_summary.pdf"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_class_summary.pdf"
     },
     {
       "group": "main_figures",
@@ -15843,7 +15843,7 @@
       "format": "png",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_class_summary.png"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_class_summary.png"
     },
     {
       "group": "main_figures",
@@ -15852,7 +15852,7 @@
       "format": "tsv",
       "species_id": "homo_sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_class_summary.tsv"
+      "path": "results/generic_gene_analysis/figures/main/main_homo_sapiens_boundary_class_summary.tsv"
     },
     {
       "group": "main_figures",
@@ -15861,7 +15861,7 @@
       "format": "svg",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_primary_exon_projection.svg"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_primary_exon_projection.svg"
     },
     {
       "group": "main_figures",
@@ -15870,7 +15870,7 @@
       "format": "pdf",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_primary_exon_projection.pdf"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_primary_exon_projection.pdf"
     },
     {
       "group": "main_figures",
@@ -15879,7 +15879,7 @@
       "format": "png",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_primary_exon_projection.png"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_primary_exon_projection.png"
     },
     {
       "group": "main_figures",
@@ -15888,7 +15888,7 @@
       "format": "tsv",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_primary_exon_projection.tsv"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_primary_exon_projection.tsv"
     },
     {
       "group": "main_figures",
@@ -15897,7 +15897,7 @@
       "format": "svg",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_integrated_domain_architecture.svg"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_integrated_domain_architecture.svg"
     },
     {
       "group": "main_figures",
@@ -15906,7 +15906,7 @@
       "format": "pdf",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_integrated_domain_architecture.pdf"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_integrated_domain_architecture.pdf"
     },
     {
       "group": "main_figures",
@@ -15915,7 +15915,7 @@
       "format": "png",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_integrated_domain_architecture.png"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_integrated_domain_architecture.png"
     },
     {
       "group": "main_figures",
@@ -15924,7 +15924,7 @@
       "format": "tsv",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_integrated_domain_architecture.tsv"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_integrated_domain_architecture.tsv"
     },
     {
       "group": "main_figures",
@@ -15933,7 +15933,7 @@
       "format": "svg",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_on_architecture.svg"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_on_architecture.svg"
     },
     {
       "group": "main_figures",
@@ -15942,7 +15942,7 @@
       "format": "pdf",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_on_architecture.pdf"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_on_architecture.pdf"
     },
     {
       "group": "main_figures",
@@ -15951,7 +15951,7 @@
       "format": "png",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_on_architecture.png"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_on_architecture.png"
     },
     {
       "group": "main_figures",
@@ -15960,7 +15960,7 @@
       "format": "tsv",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_on_architecture.tsv"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_on_architecture.tsv"
     },
     {
       "group": "main_figures",
@@ -15969,7 +15969,7 @@
       "format": "svg",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_signed_boundary_distances.svg"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_signed_boundary_distances.svg"
     },
     {
       "group": "main_figures",
@@ -15978,7 +15978,7 @@
       "format": "pdf",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_signed_boundary_distances.pdf"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_signed_boundary_distances.pdf"
     },
     {
       "group": "main_figures",
@@ -15987,7 +15987,7 @@
       "format": "png",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_signed_boundary_distances.png"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_signed_boundary_distances.png"
     },
     {
       "group": "main_figures",
@@ -15996,7 +15996,7 @@
       "format": "tsv",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_signed_boundary_distances.tsv"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_signed_boundary_distances.tsv"
     },
     {
       "group": "main_figures",
@@ -16005,7 +16005,7 @@
       "format": "svg",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_class_summary.svg"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_class_summary.svg"
     },
     {
       "group": "main_figures",
@@ -16014,7 +16014,7 @@
       "format": "pdf",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_class_summary.pdf"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_class_summary.pdf"
     },
     {
       "group": "main_figures",
@@ -16023,7 +16023,7 @@
       "format": "png",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_class_summary.png"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_class_summary.png"
     },
     {
       "group": "main_figures",
@@ -16032,7 +16032,7 @@
       "format": "tsv",
       "species_id": "mus_musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_class_summary.tsv"
+      "path": "results/generic_gene_analysis/figures/main/main_mus_musculus_boundary_class_summary.tsv"
     },
     {
       "group": "main_figures",
@@ -16041,7 +16041,7 @@
       "format": "svg",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_primary_exon_projection.svg"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_primary_exon_projection.svg"
     },
     {
       "group": "main_figures",
@@ -16050,7 +16050,7 @@
       "format": "pdf",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_primary_exon_projection.pdf"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_primary_exon_projection.pdf"
     },
     {
       "group": "main_figures",
@@ -16059,7 +16059,7 @@
       "format": "png",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_primary_exon_projection.png"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_primary_exon_projection.png"
     },
     {
       "group": "main_figures",
@@ -16068,7 +16068,7 @@
       "format": "tsv",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_primary_exon_projection.tsv"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_primary_exon_projection.tsv"
     },
     {
       "group": "main_figures",
@@ -16077,7 +16077,7 @@
       "format": "svg",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_integrated_domain_architecture.svg"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_integrated_domain_architecture.svg"
     },
     {
       "group": "main_figures",
@@ -16086,7 +16086,7 @@
       "format": "pdf",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_integrated_domain_architecture.pdf"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_integrated_domain_architecture.pdf"
     },
     {
       "group": "main_figures",
@@ -16095,7 +16095,7 @@
       "format": "png",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_integrated_domain_architecture.png"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_integrated_domain_architecture.png"
     },
     {
       "group": "main_figures",
@@ -16104,7 +16104,7 @@
       "format": "tsv",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_integrated_domain_architecture.tsv"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_integrated_domain_architecture.tsv"
     },
     {
       "group": "main_figures",
@@ -16113,7 +16113,7 @@
       "format": "svg",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_boundary_on_architecture.svg"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_boundary_on_architecture.svg"
     },
     {
       "group": "main_figures",
@@ -16122,7 +16122,7 @@
       "format": "pdf",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_boundary_on_architecture.pdf"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_boundary_on_architecture.pdf"
     },
     {
       "group": "main_figures",
@@ -16131,7 +16131,7 @@
       "format": "png",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_boundary_on_architecture.png"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_boundary_on_architecture.png"
     },
     {
       "group": "main_figures",
@@ -16140,7 +16140,7 @@
       "format": "tsv",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_boundary_on_architecture.tsv"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_boundary_on_architecture.tsv"
     },
     {
       "group": "main_figures",
@@ -16149,7 +16149,7 @@
       "format": "svg",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_signed_boundary_distances.svg"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_signed_boundary_distances.svg"
     },
     {
       "group": "main_figures",
@@ -16158,7 +16158,7 @@
       "format": "pdf",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_signed_boundary_distances.pdf"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_signed_boundary_distances.pdf"
     },
     {
       "group": "main_figures",
@@ -16167,7 +16167,7 @@
       "format": "png",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_signed_boundary_distances.png"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_signed_boundary_distances.png"
     },
     {
       "group": "main_figures",
@@ -16176,7 +16176,7 @@
       "format": "tsv",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_signed_boundary_distances.tsv"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_signed_boundary_distances.tsv"
     },
     {
       "group": "main_figures",
@@ -16185,7 +16185,7 @@
       "format": "svg",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_boundary_class_summary.svg"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_boundary_class_summary.svg"
     },
     {
       "group": "main_figures",
@@ -16194,7 +16194,7 @@
       "format": "pdf",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_boundary_class_summary.pdf"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_boundary_class_summary.pdf"
     },
     {
       "group": "main_figures",
@@ -16203,7 +16203,7 @@
       "format": "png",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_boundary_class_summary.png"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_boundary_class_summary.png"
     },
     {
       "group": "main_figures",
@@ -16212,7 +16212,7 @@
       "format": "tsv",
       "species_id": "rattus_norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/main/main_rattus_norvegicus_boundary_class_summary.tsv"
+      "path": "results/generic_gene_analysis/figures/main/main_rattus_norvegicus_boundary_class_summary.tsv"
     },
     {
       "group": "Domain architecture",
@@ -16222,7 +16222,7 @@
       "species_id": "homo_sapiens",
       "scientific_name": "Homo Sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/domain_architecture/domain_arch_homo_sapiens_member_signature_supplement.svg"
+      "path": "results/generic_gene_analysis/figures/domain_architecture/domain_arch_homo_sapiens_member_signature_supplement.svg"
     },
     {
       "group": "Domain architecture",
@@ -16232,7 +16232,7 @@
       "species_id": "homo_sapiens",
       "scientific_name": "Homo Sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/domain_architecture/domain_arch_homo_sapiens_member_signature_supplement.pdf"
+      "path": "results/generic_gene_analysis/figures/domain_architecture/domain_arch_homo_sapiens_member_signature_supplement.pdf"
     },
     {
       "group": "Domain architecture",
@@ -16242,7 +16242,7 @@
       "species_id": "homo_sapiens",
       "scientific_name": "Homo Sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/domain_architecture/domain_arch_homo_sapiens_member_signature_supplement.png"
+      "path": "results/generic_gene_analysis/figures/domain_architecture/domain_arch_homo_sapiens_member_signature_supplement.png"
     },
     {
       "group": "Domain architecture",
@@ -16252,7 +16252,7 @@
       "species_id": "homo_sapiens",
       "scientific_name": "Homo Sapiens",
       "protein_id": "NP_001317366.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/domain_architecture/domain_arch_homo_sapiens_member_signature_supplement.tsv"
+      "path": "results/generic_gene_analysis/figures/domain_architecture/domain_arch_homo_sapiens_member_signature_supplement.tsv"
     },
     {
       "group": "Domain architecture",
@@ -16262,7 +16262,7 @@
       "species_id": "mus_musculus",
       "scientific_name": "Mus Musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/domain_architecture/domain_arch_mus_musculus_member_signature_supplement.svg"
+      "path": "results/generic_gene_analysis/figures/domain_architecture/domain_arch_mus_musculus_member_signature_supplement.svg"
     },
     {
       "group": "Domain architecture",
@@ -16272,7 +16272,7 @@
       "species_id": "mus_musculus",
       "scientific_name": "Mus Musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/domain_architecture/domain_arch_mus_musculus_member_signature_supplement.pdf"
+      "path": "results/generic_gene_analysis/figures/domain_architecture/domain_arch_mus_musculus_member_signature_supplement.pdf"
     },
     {
       "group": "Domain architecture",
@@ -16282,7 +16282,7 @@
       "species_id": "mus_musculus",
       "scientific_name": "Mus Musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/domain_architecture/domain_arch_mus_musculus_member_signature_supplement.png"
+      "path": "results/generic_gene_analysis/figures/domain_architecture/domain_arch_mus_musculus_member_signature_supplement.png"
     },
     {
       "group": "Domain architecture",
@@ -16292,7 +16292,7 @@
       "species_id": "mus_musculus",
       "scientific_name": "Mus Musculus",
       "protein_id": "NP_035332.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/domain_architecture/domain_arch_mus_musculus_member_signature_supplement.tsv"
+      "path": "results/generic_gene_analysis/figures/domain_architecture/domain_arch_mus_musculus_member_signature_supplement.tsv"
     },
     {
       "group": "Domain architecture",
@@ -16302,7 +16302,7 @@
       "species_id": "rattus_norvegicus",
       "scientific_name": "Rattus Norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/domain_architecture/domain_arch_rattus_norvegicus_member_signature_supplement.svg"
+      "path": "results/generic_gene_analysis/figures/domain_architecture/domain_arch_rattus_norvegicus_member_signature_supplement.svg"
     },
     {
       "group": "Domain architecture",
@@ -16312,7 +16312,7 @@
       "species_id": "rattus_norvegicus",
       "scientific_name": "Rattus Norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/domain_architecture/domain_arch_rattus_norvegicus_member_signature_supplement.pdf"
+      "path": "results/generic_gene_analysis/figures/domain_architecture/domain_arch_rattus_norvegicus_member_signature_supplement.pdf"
     },
     {
       "group": "Domain architecture",
@@ -16322,7 +16322,7 @@
       "species_id": "rattus_norvegicus",
       "scientific_name": "Rattus Norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/domain_architecture/domain_arch_rattus_norvegicus_member_signature_supplement.png"
+      "path": "results/generic_gene_analysis/figures/domain_architecture/domain_arch_rattus_norvegicus_member_signature_supplement.png"
     },
     {
       "group": "Domain architecture",
@@ -16332,7 +16332,7 @@
       "species_id": "rattus_norvegicus",
       "scientific_name": "Rattus Norvegicus",
       "protein_id": "NP_001171064.1",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/domain_architecture/domain_arch_rattus_norvegicus_member_signature_supplement.tsv"
+      "path": "results/generic_gene_analysis/figures/domain_architecture/domain_arch_rattus_norvegicus_member_signature_supplement.tsv"
     },
     {
       "group": "comparative_figures",
@@ -16340,7 +16340,7 @@
       "title": "MSA-aligned exon architecture",
       "format": "svg",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_msa_aligned_exon_architecture.svg"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_msa_aligned_exon_architecture.svg"
     },
     {
       "group": "comparative_figures",
@@ -16348,7 +16348,7 @@
       "title": "MSA-aligned exon architecture",
       "format": "pdf",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_msa_aligned_exon_architecture.pdf"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_msa_aligned_exon_architecture.pdf"
     },
     {
       "group": "comparative_figures",
@@ -16356,7 +16356,7 @@
       "title": "MSA-aligned exon architecture",
       "format": "png",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_msa_aligned_exon_architecture.png"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_msa_aligned_exon_architecture.png"
     },
     {
       "group": "comparative_figures",
@@ -16364,7 +16364,7 @@
       "title": "MSA-aligned exon architecture",
       "format": "tsv",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_msa_aligned_exon_architecture.tsv"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_msa_aligned_exon_architecture.tsv"
     },
     {
       "group": "comparative_figures",
@@ -16372,7 +16372,7 @@
       "title": "Native-coordinate exon architecture comparison",
       "format": "svg",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_native_exon_architecture.svg"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_native_exon_architecture.svg"
     },
     {
       "group": "comparative_figures",
@@ -16380,7 +16380,7 @@
       "title": "Native-coordinate exon architecture comparison",
       "format": "pdf",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_native_exon_architecture.pdf"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_native_exon_architecture.pdf"
     },
     {
       "group": "comparative_figures",
@@ -16388,7 +16388,7 @@
       "title": "Native-coordinate exon architecture comparison",
       "format": "png",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_native_exon_architecture.png"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_native_exon_architecture.png"
     },
     {
       "group": "comparative_figures",
@@ -16396,7 +16396,7 @@
       "title": "Native-coordinate exon architecture comparison",
       "format": "tsv",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_native_exon_architecture.tsv"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_native_exon_architecture.tsv"
     },
     {
       "group": "comparative_figures",
@@ -16404,7 +16404,7 @@
       "title": "Cross-species primary-protein MSA overview",
       "format": "svg",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_primary_msa_overview.svg"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_primary_msa_overview.svg"
     },
     {
       "group": "comparative_figures",
@@ -16412,7 +16412,7 @@
       "title": "Cross-species primary-protein MSA overview",
       "format": "pdf",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_primary_msa_overview.pdf"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_primary_msa_overview.pdf"
     },
     {
       "group": "comparative_figures",
@@ -16420,7 +16420,7 @@
       "title": "Cross-species primary-protein MSA overview",
       "format": "png",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_primary_msa_overview.png"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_primary_msa_overview.png"
     },
     {
       "group": "comparative_figures",
@@ -16428,7 +16428,7 @@
       "title": "Cross-species primary-protein MSA overview",
       "format": "tsv",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_primary_msa_overview.tsv"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_primary_msa_overview.tsv"
     },
     {
       "group": "comparative_figures",
@@ -16436,7 +16436,7 @@
       "title": "Comparative domain architecture (native coordinates)",
       "format": "svg",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_native.svg"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_native.svg"
     },
     {
       "group": "comparative_figures",
@@ -16444,7 +16444,7 @@
       "title": "Comparative domain architecture (native coordinates)",
       "format": "pdf",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_native.pdf"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_native.pdf"
     },
     {
       "group": "comparative_figures",
@@ -16452,7 +16452,7 @@
       "title": "Comparative domain architecture (native coordinates)",
       "format": "png",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_native.png"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_native.png"
     },
     {
       "group": "comparative_figures",
@@ -16460,7 +16460,7 @@
       "title": "Comparative domain architecture (native coordinates)",
       "format": "tsv",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_native.tsv"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_native.tsv"
     },
     {
       "group": "comparative_figures",
@@ -16468,7 +16468,7 @@
       "title": "Comparative domain architecture (MSA-aligned coordinates)",
       "format": "svg",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_msa.svg"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_msa.svg"
     },
     {
       "group": "comparative_figures",
@@ -16476,7 +16476,7 @@
       "title": "Comparative domain architecture (MSA-aligned coordinates)",
       "format": "pdf",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_msa.pdf"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_msa.pdf"
     },
     {
       "group": "comparative_figures",
@@ -16484,7 +16484,7 @@
       "title": "Comparative domain architecture (MSA-aligned coordinates)",
       "format": "png",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_msa.png"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_msa.png"
     },
     {
       "group": "comparative_figures",
@@ -16492,7 +16492,7 @@
       "title": "Comparative domain architecture (MSA-aligned coordinates)",
       "format": "tsv",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_msa.tsv"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_domain_architecture_msa.tsv"
     },
     {
       "group": "comparative_figures",
@@ -16500,7 +16500,7 @@
       "title": "Exon and domain architecture per species (native coordinates)",
       "format": "svg",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_native.svg"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_native.svg"
     },
     {
       "group": "comparative_figures",
@@ -16508,7 +16508,7 @@
       "title": "Exon and domain architecture per species (native coordinates)",
       "format": "pdf",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_native.pdf"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_native.pdf"
     },
     {
       "group": "comparative_figures",
@@ -16516,7 +16516,7 @@
       "title": "Exon and domain architecture per species (native coordinates)",
       "format": "png",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_native.png"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_native.png"
     },
     {
       "group": "comparative_figures",
@@ -16524,7 +16524,7 @@
       "title": "Exon and domain architecture per species (native coordinates)",
       "format": "tsv",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_native.tsv"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_native.tsv"
     },
     {
       "group": "comparative_figures",
@@ -16532,7 +16532,7 @@
       "title": "Exon and domain architecture per species (MSA-aligned coordinates)",
       "format": "svg",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_msa.svg"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_msa.svg"
     },
     {
       "group": "comparative_figures",
@@ -16540,7 +16540,7 @@
       "title": "Exon and domain architecture per species (MSA-aligned coordinates)",
       "format": "pdf",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_msa.pdf"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_msa.pdf"
     },
     {
       "group": "comparative_figures",
@@ -16548,7 +16548,7 @@
       "title": "Exon and domain architecture per species (MSA-aligned coordinates)",
       "format": "png",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_msa.png"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_msa.png"
     },
     {
       "group": "comparative_figures",
@@ -16556,7 +16556,7 @@
       "title": "Exon and domain architecture per species (MSA-aligned coordinates)",
       "format": "tsv",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_msa.tsv"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_exon_domain_architecture_msa.tsv"
     },
     {
       "group": "comparative_figures",
@@ -16564,7 +16564,7 @@
       "title": "Domain annotation matrix",
       "format": "svg",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_domain_annotation_matrix.svg"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_domain_annotation_matrix.svg"
     },
     {
       "group": "comparative_figures",
@@ -16572,7 +16572,7 @@
       "title": "Domain annotation matrix",
       "format": "pdf",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_domain_annotation_matrix.pdf"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_domain_annotation_matrix.pdf"
     },
     {
       "group": "comparative_figures",
@@ -16580,7 +16580,7 @@
       "title": "Domain annotation matrix",
       "format": "png",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_domain_annotation_matrix.png"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_domain_annotation_matrix.png"
     },
     {
       "group": "comparative_figures",
@@ -16588,7 +16588,7 @@
       "title": "Domain annotation matrix",
       "format": "tsv",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_domain_annotation_matrix.tsv"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_domain_annotation_matrix.tsv"
     },
     {
       "group": "comparative_figures",
@@ -16596,7 +16596,7 @@
       "title": "Comparative isoform diversity",
       "format": "svg",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_isoform_diversity.svg"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_isoform_diversity.svg"
     },
     {
       "group": "comparative_figures",
@@ -16604,7 +16604,7 @@
       "title": "Comparative isoform diversity",
       "format": "pdf",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_isoform_diversity.pdf"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_isoform_diversity.pdf"
     },
     {
       "group": "comparative_figures",
@@ -16612,7 +16612,7 @@
       "title": "Comparative isoform diversity",
       "format": "png",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_isoform_diversity.png"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_isoform_diversity.png"
     },
     {
       "group": "comparative_figures",
@@ -16620,7 +16620,7 @@
       "title": "Comparative isoform diversity",
       "format": "tsv",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_isoform_diversity.tsv"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_isoform_diversity.tsv"
     },
     {
       "group": "comparative_figures",
@@ -16628,7 +16628,7 @@
       "title": "Comparative local genomic context",
       "format": "svg",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_comparative_synteny.svg"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_comparative_synteny.svg"
     },
     {
       "group": "comparative_figures",
@@ -16636,7 +16636,7 @@
       "title": "Comparative local genomic context",
       "format": "pdf",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_comparative_synteny.pdf"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_comparative_synteny.pdf"
     },
     {
       "group": "comparative_figures",
@@ -16644,7 +16644,7 @@
       "title": "Comparative local genomic context",
       "format": "png",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_comparative_synteny.png"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_comparative_synteny.png"
     },
     {
       "group": "comparative_figures",
@@ -16652,7 +16652,7 @@
       "title": "Comparative local genomic context",
       "format": "tsv",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_comparative_synteny.tsv"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_comparative_synteny.tsv"
     },
     {
       "group": "comparative_figures",
@@ -16660,7 +16660,7 @@
       "title": "Neighbour conservation across species",
       "format": "svg",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_synteny_neighbour_conservation.svg"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_synteny_neighbour_conservation.svg"
     },
     {
       "group": "comparative_figures",
@@ -16668,7 +16668,7 @@
       "title": "Neighbour conservation across species",
       "format": "pdf",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_synteny_neighbour_conservation.pdf"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_synteny_neighbour_conservation.pdf"
     },
     {
       "group": "comparative_figures",
@@ -16676,7 +16676,7 @@
       "title": "Neighbour conservation across species",
       "format": "png",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_synteny_neighbour_conservation.png"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_synteny_neighbour_conservation.png"
     },
     {
       "group": "comparative_figures",
@@ -16684,7 +16684,7 @@
       "title": "Neighbour conservation across species",
       "format": "tsv",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_synteny_neighbour_conservation.tsv"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_synteny_neighbour_conservation.tsv"
     },
     {
       "group": "comparative_figures",
@@ -16692,7 +16692,7 @@
       "title": "Comparative exon–domain boundary matrix",
       "format": "svg",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_boundary_matrix.svg"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_boundary_matrix.svg"
     },
     {
       "group": "comparative_figures",
@@ -16700,7 +16700,7 @@
       "title": "Comparative exon–domain boundary matrix",
       "format": "pdf",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_boundary_matrix.pdf"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_boundary_matrix.pdf"
     },
     {
       "group": "comparative_figures",
@@ -16708,7 +16708,7 @@
       "title": "Comparative exon–domain boundary matrix",
       "format": "png",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_boundary_matrix.png"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_boundary_matrix.png"
     },
     {
       "group": "comparative_figures",
@@ -16716,7 +16716,7 @@
       "title": "Comparative exon–domain boundary matrix",
       "format": "tsv",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_boundary_matrix.tsv"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_boundary_matrix.tsv"
     },
     {
       "group": "comparative_figures",
@@ -16724,7 +16724,7 @@
       "title": "Paired signed-distance plot",
       "format": "svg",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_paired_signed_distance.svg"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_paired_signed_distance.svg"
     },
     {
       "group": "comparative_figures",
@@ -16732,7 +16732,7 @@
       "title": "Paired signed-distance plot",
       "format": "pdf",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_paired_signed_distance.pdf"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_paired_signed_distance.pdf"
     },
     {
       "group": "comparative_figures",
@@ -16740,7 +16740,7 @@
       "title": "Paired signed-distance plot",
       "format": "png",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_paired_signed_distance.png"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_paired_signed_distance.png"
     },
     {
       "group": "comparative_figures",
@@ -16748,7 +16748,7 @@
       "title": "Paired signed-distance plot",
       "format": "tsv",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_paired_signed_distance.tsv"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_paired_signed_distance.tsv"
     },
     {
       "group": "comparative_figures",
@@ -16756,7 +16756,7 @@
       "title": "Boundary-position consistency",
       "format": "svg",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_boundary_position_consistency.svg"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_boundary_position_consistency.svg"
     },
     {
       "group": "comparative_figures",
@@ -16764,7 +16764,7 @@
       "title": "Boundary-position consistency",
       "format": "pdf",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_boundary_position_consistency.pdf"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_boundary_position_consistency.pdf"
     },
     {
       "group": "comparative_figures",
@@ -16772,7 +16772,7 @@
       "title": "Boundary-position consistency",
       "format": "png",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_boundary_position_consistency.png"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_boundary_position_consistency.png"
     },
     {
       "group": "comparative_figures",
@@ -16780,7 +16780,7 @@
       "title": "Boundary-position consistency",
       "format": "tsv",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_boundary_position_consistency.tsv"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_boundary_position_consistency.tsv"
     },
     {
       "group": "comparative_figures",
@@ -16788,7 +16788,7 @@
       "title": "Comparative local boundary architecture",
       "format": "svg",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_local_boundary_architecture.svg"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_local_boundary_architecture.svg"
     },
     {
       "group": "comparative_figures",
@@ -16796,7 +16796,7 @@
       "title": "Comparative local boundary architecture",
       "format": "pdf",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_local_boundary_architecture.pdf"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_local_boundary_architecture.pdf"
     },
     {
       "group": "comparative_figures",
@@ -16804,7 +16804,7 @@
       "title": "Comparative local boundary architecture",
       "format": "png",
       "scope": "comparative",
-      "path": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/figures/comparative/cmp_local_boundary_architecture.png"
+      "path": "results/generic_gene_analysis/figures/comparative/cmp_local_boundary_architecture.png"
     }
   ]
 }

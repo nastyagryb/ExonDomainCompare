@@ -9,8 +9,8 @@
     "available": true,
     "reason": "Cross-species primary-protein alignment; one primary per species. A shared column means the residues were aligned, not that they are functionally equivalent.",
     "n_columns": 597,
-    "alignment_file": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/msa/primaries_msa.aln.faa",
-    "primary_proteins_file": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/msa/primaries_msa_input.faa"
+    "alignment_file": "results/generic_gene_analysis/msa/primaries_msa.aln.faa",
+    "primary_proteins_file": "results/generic_gene_analysis/msa/primaries_msa_input.faa"
   },
   "species_order": {
     "contract": "species_order_v1",
@@ -10233,20 +10233,20 @@
     }
   ],
   "artefacts": {
-    "species_inventory": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/species_inventory.tsv",
-    "analysis_availability": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/analysis_availability.tsv",
-    "msa_aligned_exons": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/msa_aligned_exons.tsv",
-    "msa_aligned_domains": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/msa_aligned_domains.tsv",
-    "domain_annotation_matrix": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/domain_annotation_matrix.tsv",
-    "comparable_domain_groups": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/comparable_domain_groups.tsv",
-    "species_order": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/species_order.tsv",
-    "pairwise_identity": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/pairwise_identity.tsv",
-    "isoform_diversity": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/isoform_diversity.tsv",
-    "comparative_synteny": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/comparative_synteny.tsv",
-    "comparable_boundary_groups": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/comparable_boundary_groups.tsv",
-    "exon_domain_boundaries_long": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/exon_domain_boundaries_long.tsv",
-    "boundary_consistency_summary": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/boundary_consistency_summary.tsv",
-    "inspection_cases": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/generic_gene_analysis/comparative/inspection_cases.tsv"
+    "species_inventory": "results/generic_gene_analysis/comparative/species_inventory.tsv",
+    "analysis_availability": "results/generic_gene_analysis/comparative/analysis_availability.tsv",
+    "msa_aligned_exons": "results/generic_gene_analysis/comparative/msa_aligned_exons.tsv",
+    "msa_aligned_domains": "results/generic_gene_analysis/comparative/msa_aligned_domains.tsv",
+    "domain_annotation_matrix": "results/generic_gene_analysis/comparative/domain_annotation_matrix.tsv",
+    "comparable_domain_groups": "results/generic_gene_analysis/comparative/comparable_domain_groups.tsv",
+    "species_order": "results/generic_gene_analysis/comparative/species_order.tsv",
+    "pairwise_identity": "results/generic_gene_analysis/comparative/pairwise_identity.tsv",
+    "isoform_diversity": "results/generic_gene_analysis/comparative/isoform_diversity.tsv",
+    "comparative_synteny": "results/generic_gene_analysis/comparative/comparative_synteny.tsv",
+    "comparable_boundary_groups": "results/generic_gene_analysis/comparative/comparable_boundary_groups.tsv",
+    "exon_domain_boundaries_long": "results/generic_gene_analysis/comparative/exon_domain_boundaries_long.tsv",
+    "boundary_consistency_summary": "results/generic_gene_analysis/comparative/boundary_consistency_summary.tsv",
+    "inspection_cases": "results/generic_gene_analysis/comparative/inspection_cases.tsv"
   },
-  "source_coordinate_model": "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/website_indices/generic/protein_coordinate_model.json"
+  "source_coordinate_model": "website_indices/generic/protein_coordinate_model.json"
 }

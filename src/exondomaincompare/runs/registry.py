@@ -231,6 +231,9 @@ def resolve_run_record(config: RuntimeConfig, run_id: str) -> RunRecord | None:
     candidates = discover_candidates(config, run_id)
     if not candidates:
         return None
+    user_candidates = [row for row in candidates if row.kind != "bundled_example"]
+    if user_candidates:
+        candidates = user_candidates
     if len(candidates) > 1:
         raise RunCollisionError(run_id, candidates)
     return candidates[0]
