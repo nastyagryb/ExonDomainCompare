@@ -7,7 +7,7 @@ export default function StartPage({
   onExploreExample, onCreateRun, onOpenRuns, onExploreDataset,
 }) {
   const apiOk = health?.status === "ok";
-  const runs = (datasets || []).filter((d) => d.kind === "run");
+  const runs = (datasets || []).filter((d) => d.kind === "run" && !d.bundled_example);
   const exampleAvailable = (datasets || []).some((d) => d.kind === "example") || health?.example_available;
 
   return (

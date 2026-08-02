@@ -2844,6 +2844,7 @@ def list_datasets() -> Dict[str, Any]:
                 "species_count": s.get("species_count", 0),
                 "created_at": s.get("created_at", ""),
                 "read_only": bool(s.get("read_only")),
+                "bundled_example": s.get("root_kind") == "bundled_example",
                 "root_id": s.get("root_id", ""),
                 "layout_version": s.get("layout_version", ""),
                 "explorable": s.get("explorable", False),

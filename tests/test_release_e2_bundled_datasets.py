@@ -91,6 +91,7 @@ def test_backend_discovers_both_bundled_datasets_without_a_live_run_root():
     assert datasets["example"]["gene_symbol"] == "FGFR2"
     bcl2l1 = datasets[f"run:{BCL2L1_RUN_ID}"]
     assert bcl2l1["read_only"] is True
+    assert bcl2l1["bundled_example"] is True
     assert bcl2l1["gene_symbol"] == "BCL2L1"
     assert bcl2l1["status"] == "results_ready"
     assert bcl2l1["available_views"]["figure_gallery"] is True
@@ -103,6 +104,13 @@ def test_bundled_examples_do_not_appear_as_user_owned_runs():
     run_ids = {row["run_id"] for row in main.local_runs()}
 
     assert BCL2L1_RUN_ID not in run_ids
+
+
+def test_homepage_excludes_bundled_examples_from_my_runs():
+    start_page = (ROOT / "webapp" / "frontend" / "src" / "pages"
+                  / "StartPage.jsx").read_text(encoding="utf-8")
+
+    assert 'd.kind === "run" && !d.bundled_example' in start_page
 
 
 def test_bundled_models_preserve_the_accepted_scientific_scope():
