@@ -41,7 +41,11 @@ def release_files() -> list[Path]:
         ["git", "ls-files", "--cached", "--others", "--exclude-standard"],
         cwd=ROOT, text=True, capture_output=True, check=True,
     )
-    return [Path(line) for line in process.stdout.splitlines() if line]
+    return [
+        Path(line)
+        for line in process.stdout.splitlines()
+        if line and (ROOT / line).is_file()
+    ]
 
 
 def check_dataset_hashes() -> None:
@@ -77,6 +81,8 @@ def main() -> int:
         path = ROOT / relative
         if path.is_file() and path.stat().st_size >= 100_000_000:
             raise RuntimeError(f"File is too large for GitHub: {relative}")
+        if "screenshot" in relative.name.lower():
+            raise RuntimeError(f"Screenshot helper or output included: {relative}")
     if Path("RELEASE_CANDIDATE_STATUS.md") in files:
         raise RuntimeError("Internal release status must not be published")
     tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))

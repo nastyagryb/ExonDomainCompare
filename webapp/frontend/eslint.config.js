@@ -5,9 +5,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  // `.pw-browsers` is the machine-local Playwright browser download (git-ignored),
-  // not repository source; linting it makes the result depend on user state.
-  globalIgnores(['dist', '.pw-browsers']),
+  globalIgnores(['dist']),
   {
     files: ['**/*.{js,jsx}'],
     extends: [

@@ -46,5 +46,7 @@ jobs:
         run: npm ci
       - name: Lint frontend
         run: npm run lint
+      - name: Check frontend parity
+        run: npm run parity
       - name: Build frontend
         run: npm run build

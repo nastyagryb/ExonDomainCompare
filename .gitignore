@@ -25,9 +25,6 @@ dist/
 # Frontend dependencies and generated output
 webapp/frontend/node_modules/
 webapp/frontend/dist/
-webapp/frontend/.pw-browsers/
-playwright-report/
-test-results/
 
 # Private local configuration and mutable state
 config/exondomain.local.toml

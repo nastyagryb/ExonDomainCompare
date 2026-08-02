@@ -3,6 +3,7 @@
 ## Included
 
 - Python source and compatibility entry points
+- release-maintenance tools for rebuilding the public dataset projections
 - frontend and backend source
 - tests and GitHub CI
 - configuration templates
