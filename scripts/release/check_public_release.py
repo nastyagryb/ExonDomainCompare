@@ -26,6 +26,14 @@ FORBIDDEN_TOP_LEVEL = {
     "packages",
 }
 FORBIDDEN_PARTS = {"node_modules", "__pycache__", ".pytest_cache"}
+REQUIRED_PACKAGES = {
+    "src/exondomaincompare/runs/__init__.py",
+    "src/exondomaincompare/runs/layout.py",
+    "src/exondomaincompare/runs/legacy.py",
+    "src/exondomaincompare/runs/migration.py",
+    "src/exondomaincompare/runs/outputs.py",
+    "src/exondomaincompare/runs/registry.py",
+}
 
 
 def release_files() -> list[Path]:
@@ -56,6 +64,10 @@ def main() -> int:
                      "datasets/DATA_NOTICE.md", ".github/workflows/ci.yml"):
         if Path(required) not in files:
             raise RuntimeError(f"Required release file missing: {required}")
+    missing_packages = REQUIRED_PACKAGES.difference(map(str, files))
+    if missing_packages:
+        missing = ", ".join(sorted(missing_packages))
+        raise RuntimeError(f"Required Python package files missing: {missing}")
     for relative in files:
         if relative.parts[0] not in ALLOWED_TOP_LEVEL:
             raise RuntimeError(f"Unexpected top-level path: {relative}")

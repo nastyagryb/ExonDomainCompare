@@ -1,0 +1,2 @@
+species_id	input_name	scientific_name	ensembl_species	ncbi_species	taxid	common_name	clade	preferred_source	assembly_preference	status	notes
+gallus_gallus	gallus_gallus	Gallus gallus	gallus_gallus	Gallus gallus	9031	chicken	bird	ensembl_first	RefSeq	known_lookup	validated_against_internal_lookup_review_recommended

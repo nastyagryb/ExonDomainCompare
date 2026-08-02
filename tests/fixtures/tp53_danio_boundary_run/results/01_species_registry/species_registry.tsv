@@ -1,0 +1,2 @@
+species_id	input_name	scientific_name	ensembl_species	ncbi_species	taxid	common_name	clade	preferred_source	assembly_preference	status	notes
+danio_rerio	danio_rerio	Danio rerio	danio_rerio	Danio rerio	7955	zebrafish	fish	ensembl_first	RefSeq	known_lookup	validated_against_internal_lookup_review_recommended

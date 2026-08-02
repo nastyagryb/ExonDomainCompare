@@ -1,0 +1,14 @@
+species_id	protein_id	layer	interpro_accession	interpro_name	interpro_type	start_aa	end_aa	member_databases	supporting_interpro	n_signatures	representative_signature	score_or_evalue	domain_source	domain_id	domain_name	feature_type	interpro_description
+danio_rerio	NP_001258749.1	domain	IPR011615	p53_DNA-bd	DOMAIN	69	258	CDD,PFAM	IPR011615:p53_DNA-bd	2	PF00870	1.01315e-96	CDD,PFAM	IPR011615	p53_DNA-bd	domain	p53_DNA-bd
+danio_rerio	NP_001258749.1	domain	IPR010991	p53_tetrameristn	DOMAIN	294	334	PFAM	IPR010991:p53_tetrameristn	1	PF07710	2.1e-17	PFAM	IPR010991	p53_tetrameristn	domain	p53_tetrameristn
+danio_rerio	NP_001258749.1	family	IPR002117	p53_tumour_suppressor	FAMILY	55	347	PANTHER,PRINTS		0			PANTHER,PRINTS	IPR002117	p53_tumour_suppressor	family	p53_tumour_suppressor
+danio_rerio	NP_001258749.1	family	IPR012346	p53/RUNT-type_TF_DNA-bd_sf	HOMOLOGOUS_SUPERFAMILY	63	266	GENE3D		0			GENE3D	IPR012346	p53/RUNT-type_TF_DNA-bd_sf	family	p53/RUNT-type_TF_DNA-bd_sf
+danio_rerio	NP_001258749.1	family	IPR008967	p53-like_TF_DNA-bd_sf	HOMOLOGOUS_SUPERFAMILY	66	255	SUPERFAMILY		0			SUPERFAMILY	IPR008967	p53-like_TF_DNA-bd_sf	family	p53-like_TF_DNA-bd_sf
+danio_rerio	NP_001258749.1	family	IPR036674	p53_tetramer_sf	HOMOLOGOUS_SUPERFAMILY	297	346	GENE3D,SUPERFAMILY		0			GENE3D,SUPERFAMILY	IPR036674	p53_tetramer_sf	family	p53_tetramer_sf
+danio_rerio	NP_001258749.1	feature		disorder_prediction	DISORDER	53	70	MOBIDB_LITE		0			MOBIDB_LITE		disorder_prediction	feature	disorder_prediction
+danio_rerio	NP_001258749.1	feature		disorder_prediction	DISORDER	53	81	MOBIDB_LITE		0			MOBIDB_LITE		disorder_prediction	feature	disorder_prediction
+danio_rerio	NP_001258749.1	feature	IPR057064	P53_central_site	CONSERVED_SITE	206	218	PROSITE_PATTERNS		0			PROSITE_PATTERNS	IPR057064	P53_central_site	feature	P53_central_site
+danio_rerio	NP_001258749.1	feature		disorder_prediction	DISORDER	251	266	MOBIDB_LITE		0			MOBIDB_LITE		disorder_prediction	feature	disorder_prediction
+danio_rerio	NP_001258749.1	feature		disorder_prediction	DISORDER	251	302	MOBIDB_LITE		0			MOBIDB_LITE		disorder_prediction	feature	disorder_prediction
+danio_rerio	NP_001258749.1	feature		disorder_prediction	DISORDER	330	374	MOBIDB_LITE		0			MOBIDB_LITE		disorder_prediction	feature	disorder_prediction
+danio_rerio	NP_001258749.1	feature		disorder_prediction	DISORDER	347	374	MOBIDB_LITE		0			MOBIDB_LITE		disorder_prediction	feature	disorder_prediction

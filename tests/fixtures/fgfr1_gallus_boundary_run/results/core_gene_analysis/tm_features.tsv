@@ -1,0 +1,2 @@
+species_id	protein_id	start_aa	end_aa	source	topology
+gallus_gallus	NP_990841.2	372	394	pytmhmm	transmembrane

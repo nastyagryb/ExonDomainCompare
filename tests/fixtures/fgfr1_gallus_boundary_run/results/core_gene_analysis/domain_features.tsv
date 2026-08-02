@@ -1,0 +1,16 @@
+species_id	protein_id	layer	interpro_accession	interpro_name	interpro_type	start_aa	end_aa	member_databases	supporting_interpro	n_signatures	representative_signature	score_or_evalue	domain_source	domain_id	domain_name	feature_type	interpro_description
+gallus_gallus	NP_990841.2	domain	IPR007110	Ig-like_dom	DOMAIN	33	118	PFAM,PROSITE_PROFILES,SMART	IPR003598:Ig_sub2;IPR003599:Ig_sub;IPR007110:Ig-like_dom;IPR013151:Immunoglobulin_dom	4	PS50835		PFAM,PROSITE_PROFILES,SMART	IPR007110	Ig-like_dom	domain	Ig-like_dom
+gallus_gallus	NP_990841.2	domain	IPR007110	Ig-like_dom	DOMAIN	145	244	PFAM,PROSITE_PROFILES,SMART	IPR003598:Ig_sub2;IPR003599:Ig_sub;IPR007110:Ig-like_dom;IPR013098:Ig_I-set	4	PS50835		PFAM,PROSITE_PROFILES,SMART	IPR007110	Ig-like_dom	domain	Ig-like_dom
+gallus_gallus	NP_990841.2	domain	IPR007110	Ig-like_dom	DOMAIN	253	355	PROSITE_PROFILES,SMART	IPR003598:Ig_sub2;IPR003599:Ig_sub;IPR007110:Ig-like_dom	3	PS50835		PROSITE_PROFILES,SMART	IPR007110	Ig-like_dom	domain	Ig-like_dom
+gallus_gallus	NP_990841.2	domain	IPR001245	Ser-Thr/Tyr_kinase_cat_dom	DOMAIN	476	750	CDD,PFAM,PRINTS,PROSITE_PROFILES,SMART	IPR000719:Prot_kinase_dom;IPR001245:Ser-Thr/Tyr_kinase_cat_dom;IPR020635:Tyr_kinase_cat_dom;IPR028174:FGF_rcpt_1	5	PF07714	2.5e-98	CDD,PFAM,PRINTS,PROSITE_PROFILES,SMART	IPR001245	Ser-Thr/Tyr_kinase_cat_dom	domain	Ser-Thr/Tyr_kinase_cat_dom
+gallus_gallus	NP_990841.2	family	IPR016248	FGF_rcpt_fam	FAMILY	6	811	PIRSF		0			PIRSF	IPR016248	FGF_rcpt_fam	family	FGF_rcpt_fam
+gallus_gallus	NP_990841.2	family	IPR013783	Ig-like_fold	HOMOLOGOUS_SUPERFAMILY	34	362	GENE3D		0			GENE3D	IPR013783	Ig-like_fold	family	Ig-like_fold
+gallus_gallus	NP_990841.2	family	IPR036179	Ig-like_dom_sf	HOMOLOGOUS_SUPERFAMILY	39	356	SUPERFAMILY		0			SUPERFAMILY	IPR036179	Ig-like_dom_sf	family	Ig-like_dom_sf
+gallus_gallus	NP_990841.2	family	IPR050122	RTK	FAMILY	61	760	PANTHER		0			PANTHER	IPR050122	RTK	family	RTK
+gallus_gallus	NP_990841.2	family	IPR011009	Kinase-like_dom_sf	HOMOLOGOUS_SUPERFAMILY	464	750	SUPERFAMILY		0			SUPERFAMILY	IPR011009	Kinase-like_dom_sf	family	Kinase-like_dom_sf
+gallus_gallus	NP_990841.2	feature		disorder_prediction	DISORDER	121	150	MOBIDB_LITE		0			MOBIDB_LITE		disorder_prediction	feature	disorder_prediction
+gallus_gallus	NP_990841.2	feature		disorder_prediction	DISORDER	124	134	MOBIDB_LITE		0			MOBIDB_LITE		disorder_prediction	feature	disorder_prediction
+gallus_gallus	NP_990841.2	feature	IPR017441	Protein_kinase_ATP_BS	BINDING_SITE	480	510	PROSITE_PATTERNS		0			PROSITE_PATTERNS	IPR017441	Protein_kinase_ATP_BS	feature	Protein_kinase_ATP_BS
+gallus_gallus	NP_990841.2	feature	IPR008266	Tyr_kinase_AS	ACTIVE_SITE	615	627	PROSITE_PATTERNS		0			PROSITE_PATTERNS	IPR008266	Tyr_kinase_AS	feature	Tyr_kinase_AS
+gallus_gallus	NP_990841.2	feature		disorder_prediction	DISORDER	778	799	MOBIDB_LITE		0			MOBIDB_LITE		disorder_prediction	feature	disorder_prediction
+gallus_gallus	NP_990841.2	feature		disorder_prediction	DISORDER	779	788	MOBIDB_LITE		0			MOBIDB_LITE		disorder_prediction	feature	disorder_prediction

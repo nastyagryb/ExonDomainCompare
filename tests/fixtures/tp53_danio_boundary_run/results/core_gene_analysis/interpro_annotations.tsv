@@ -1,0 +1,27 @@
+species_id	protein_id	layer	member_database	signature_accession	signature_name	interpro_accession	interpro_name	interpro_type	start_aa	end_aa	score_or_evalue	is_integrated
+danio_rerio	NP_001258749.1	family	PANTHER	PTHR11447	CELLULAR TUMOR ANTIGEN P53	IPR002117	p53_tumour_suppressor	FAMILY	55	347	7.4e-135	1
+danio_rerio	NP_001258749.1	family	GENE3D	G3DSA:4.10.170.10		IPR036674	p53_tetramer_sf	HOMOLOGOUS_SUPERFAMILY	299	346	1.4e-24	1
+danio_rerio	NP_001258749.1	domain	PFAM	PF00870	P53	IPR011615	p53_DNA-bd	DOMAIN	69	257	1.7e-60	1
+danio_rerio	NP_001258749.1	family	PRINTS	PR00386	P53SUPPRESSR	IPR002117	p53_tumour_suppressor	FAMILY	303	327	8.4e-82	1
+danio_rerio	NP_001258749.1	family	PRINTS	PR00386	P53SUPPRESSR	IPR002117	p53_tumour_suppressor	FAMILY	182	203	8.4e-82	1
+danio_rerio	NP_001258749.1	family	PRINTS	PR00386	P53SUPPRESSR	IPR002117	p53_tumour_suppressor	FAMILY	233	255	8.4e-82	1
+danio_rerio	NP_001258749.1	family	PRINTS	PR00386	P53SUPPRESSR	IPR002117	p53_tumour_suppressor	FAMILY	85	111	8.4e-82	1
+danio_rerio	NP_001258749.1	family	PRINTS	PR00386	P53SUPPRESSR	IPR002117	p53_tumour_suppressor	FAMILY	205	227	8.4e-82	1
+danio_rerio	NP_001258749.1	family	PRINTS	PR00386	P53SUPPRESSR	IPR002117	p53_tumour_suppressor	FAMILY	127	148	8.4e-82	1
+danio_rerio	NP_001258749.1	raw	PIRSR	PIRSR602117-2	PIRSR602117-2				4	374	1.4e-181	0
+danio_rerio	NP_001258749.1	feature	PROSITE_PATTERNS	PS00348	P53	IPR057064	P53_central_site	CONSERVED_SITE	206	218		1
+danio_rerio	NP_001258749.1	feature	MOBIDB_LITE	mobidb-lite	disorder_prediction				53	70		0
+danio_rerio	NP_001258749.1	feature	MOBIDB_LITE	mobidb-lite	disorder_prediction				251	302		0
+danio_rerio	NP_001258749.1	feature	MOBIDB_LITE	mobidb-lite	disorder_prediction				330	374		0
+danio_rerio	NP_001258749.1	feature	MOBIDB_LITE	mobidb-lite	disorder_prediction				347	374		0
+danio_rerio	NP_001258749.1	feature	MOBIDB_LITE	mobidb-lite	disorder_prediction				53	81		0
+danio_rerio	NP_001258749.1	feature	MOBIDB_LITE	mobidb-lite	disorder_prediction				251	266		0
+danio_rerio	NP_001258749.1	family	GENE3D	G3DSA:2.60.40.720		IPR012346	p53/RUNT-type_TF_DNA-bd_sf	HOMOLOGOUS_SUPERFAMILY	63	266	4.8e-83	1
+danio_rerio	NP_001258749.1	raw	PIRSR	PIRSR602117-1	PIRSR602117-1				4	374	1.4e-181	0
+danio_rerio	NP_001258749.1	domain	CDD	cd08367	P53	IPR011615	p53_DNA-bd	DOMAIN	78	258	1.01315e-96	1
+danio_rerio	NP_001258749.1	raw	FUNFAM	G3DSA:2.60.40.720:FF:000003	Cellular tumor antigen p53				63	263	1.1e-112	0
+danio_rerio	NP_001258749.1	family	SUPERFAMILY	SSF47719	p53 tetramerization domain	IPR036674	p53_tetramer_sf	HOMOLOGOUS_SUPERFAMILY	297	334	1.23e-12	1
+danio_rerio	NP_001258749.1	family	SUPERFAMILY	SSF49417	p53-like transcription factors	IPR008967	p53-like_TF_DNA-bd_sf	HOMOLOGOUS_SUPERFAMILY	66	255	8.2e-87	1
+danio_rerio	NP_001258749.1	domain	PFAM	PF07710	P53_tetramer	IPR010991	p53_tetrameristn	DOMAIN	294	334	2.1e-17	1
+danio_rerio	NP_001258749.1	raw	FUNFAM	G3DSA:4.10.170.10:FF:000005	Cellular tumor antigen p53				299	346	7.7e-30	0
+danio_rerio	NP_001258749.1	raw	PIRSR	PIRSR602117-3	PIRSR602117-3				4	374	1.4e-181	0

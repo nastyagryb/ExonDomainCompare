@@ -38,11 +38,11 @@ config/exondomain.local.toml
 
 # Runtime data belongs outside source control. Release examples are added only
 # as explicit, checksummed projections in E2.
-runs/
-results/
-tmp/
-artifacts/
-packages/
+/runs/
+/results/
+/tmp/
+/artifacts/
+/packages/
 datasets/*
 !datasets/README.md
 !datasets/DATA_NOTICE.md
@@ -54,9 +54,9 @@ datasets/*
 datasets/runs/*
 !datasets/runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/
 !datasets/runs/2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus/**
-cache/
-logs/
-registry/
+/cache/
+/logs/
+/registry/
 
 # Generated scientific caches and external-tool products
 **/_ncbi_datasets_cache/

@@ -1,0 +1,13 @@
+species_id	protein_id	transcript_id	isoform_label	protein_length	sequence_path	primary_status	notes
+danio_rerio	NP_001258749.1	NM_001271820.1		374	results/core_gene_analysis/proteins_primary.faa	primary	
+danio_rerio	NP_571402.1	NM_131327.2		373	results/core_gene_analysis/proteins_primary.faa	alternative	
+danio_rerio	NP_001315516.1	NM_001328587.1		369	results/core_gene_analysis/proteins_primary.faa	alternative	
+danio_rerio	XP_073805892.1	XM_073949791.1		261	results/core_gene_analysis/proteins_primary.faa	alternative	
+danio_rerio	XP_073805893.1	XM_073949792.1		257	results/core_gene_analysis/proteins_primary.faa	alternative	
+danio_rerio	XP_005165158.1	XM_005165101.5		370	results/core_gene_analysis/proteins_primary.faa	alternative	
+danio_rerio	XP_073805887.1	XM_073949786.1		374	results/core_gene_analysis/proteins_primary.faa	alternative	
+danio_rerio	XP_073805889.1	XM_073949788.1		370	results/core_gene_analysis/proteins_primary.faa	alternative	
+danio_rerio	XP_073805888.1	XM_073949787.1		373	results/core_gene_analysis/proteins_primary.faa	alternative	
+danio_rerio	XP_073805890.1	XM_073949789.1		369	results/core_gene_analysis/proteins_primary.faa	alternative	
+danio_rerio	NP_001315517.1	NM_001328588.1		261	results/core_gene_analysis/proteins_primary.faa	alternative	
+danio_rerio	XP_073805894.1	XM_073949793.1		257	results/core_gene_analysis/proteins_primary.faa	alternative	

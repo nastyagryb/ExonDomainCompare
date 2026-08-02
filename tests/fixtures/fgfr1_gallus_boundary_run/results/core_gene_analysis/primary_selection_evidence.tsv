@@ -1,0 +1,9 @@
+protein_id	transcript_id	selected_primary	selection_rule	selection_source	evidence_status	confidence	reason	alternatives_considered
+XP_024998538.1	XM_025142770.3	false		RefSeq predicted (XM/XP)	alternative		RefSeq predicted (XM/XP) isoform	
+XP_015152852.2	XM_015297366.4	false		RefSeq predicted (XM/XP)	alternative		RefSeq predicted (XM/XP) isoform	
+XP_040507404.1	XM_040651470.2	false		RefSeq predicted (XM/XP)	alternative		RefSeq predicted (XM/XP); longer (819 aa > 817 aa) but not curated — curated RefSeq primary was preferred	
+XP_015152847.2	XM_015297361.4	false		RefSeq predicted (XM/XP)	alternative		RefSeq predicted (XM/XP); longer (819 aa > 817 aa) but not curated — curated RefSeq primary was preferred	
+XP_015152849.2	XM_015297363.4	false		RefSeq predicted (XM/XP)	alternative		RefSeq predicted (XM/XP); longer (821 aa > 817 aa) but not curated — curated RefSeq primary was preferred	
+NP_990841.2	NM_205510.2	true	refseq_curated_over_predicted	RefSeq curated (NM/NP)	accepted	high	NP_990841.2 (NM_205510.2) was selected as primary because it is the curated RefSeq protein (NM/NP). Predicted XP isoforms are retained as alternatives; 4 predicted isoform(s) are longer but were not preferred over the curated protein.	XP_024998538.1(729aa); XP_015152852.2(733aa); XP_040507404.1(819aa); XP_015152847.2(819aa); XP_015152849.2(821aa); XP_040507405.1(817aa); XP_046759308.1(821aa)
+XP_040507405.1	XM_040651471.2	false		RefSeq predicted (XM/XP)	alternative		RefSeq predicted (XM/XP) isoform	
+XP_046759308.1	XM_046903352.1	false		RefSeq predicted (XM/XP)	alternative		RefSeq predicted (XM/XP); longer (821 aa > 817 aa) but not curated — curated RefSeq primary was preferred	
