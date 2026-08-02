@@ -21,7 +21,7 @@ IMPORTANT
 
 Usage
 -----
-    python scripts/interpro_cluster/run_cluster_roundtrip.py --run-id <run_id>
+    .venv/bin/edc cluster roundtrip --run-id <run_id>
 
 Options
 -------
@@ -74,8 +74,8 @@ def _require_cluster_profile(config: RuntimeConfig) -> None:
     except ConfigurationError as exc:
         raise SystemExit(
             "Cluster profile is not ready: "
-            f"{exc}\nConfigure it once with 'edc cluster configure', then run "
-            "'edc cluster doctor --redact-paths'."
+            f"{exc}\nConfigure it once with '.venv/bin/edc cluster configure', then run "
+            "'.venv/bin/edc cluster doctor --redact-paths'."
         ) from None
 
 
@@ -232,7 +232,7 @@ class Roundtrip:
         st["cluster_roundtrip"] = rt
         st["cluster_profile"] = self.config.lrz_profile_name
         st["cluster_continuation_command"] = self.config.command([
-            "edc", "cluster", "roundtrip",
+            ".venv/bin/edc", "cluster", "roundtrip",
             "--run-id", self.run_id,
             "--local-profile", self.config.local_profile_name,
             "--lrz-profile", self.config.lrz_profile_name,
@@ -542,7 +542,7 @@ def main(argv: Optional[List[str]] = None) -> None:
             "local_profile": RUNTIME_CONFIG.local_profile_name,
             "lrz_profile": RUNTIME_CONFIG.lrz_profile_name,
             "continuation_command": RUNTIME_CONFIG.command([
-                "edc", "cluster", "roundtrip",
+                ".venv/bin/edc", "cluster", "roundtrip",
                 "--run-id", args.run_id,
                 "--local-profile", RUNTIME_CONFIG.local_profile_name,
                 "--lrz-profile", RUNTIME_CONFIG.lrz_profile_name,

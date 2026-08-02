@@ -397,7 +397,7 @@ find . -maxdepth 3 -type f | sort
     now = datetime.now().isoformat(timespec="seconds")
 
     continuation = RUNTIME_CONFIG.command([
-        "edc", "cluster", "roundtrip",
+        ".venv/bin/edc", "cluster", "roundtrip",
         "--run-id", run_id,
         "--local-profile", RUNTIME_CONFIG.local_profile_name,
         "--lrz-profile", RUNTIME_CONFIG.lrz_profile_name,

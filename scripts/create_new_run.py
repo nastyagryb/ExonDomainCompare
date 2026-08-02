@@ -333,7 +333,7 @@ def build_status(run_id: str, species: List[str], run_dir: Path) -> dict:
         "--lrz-profile", RUNTIME_CONFIG.lrz_profile_name,
     ])
     roundtrip = RUNTIME_CONFIG.command([
-        "edc", "cluster", "roundtrip", "--run-id", run_id,
+        ".venv/bin/edc", "cluster", "roundtrip", "--run-id", run_id,
         "--local-profile", RUNTIME_CONFIG.local_profile_name,
         "--lrz-profile", RUNTIME_CONFIG.lrz_profile_name,
     ])

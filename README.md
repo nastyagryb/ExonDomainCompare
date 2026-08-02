@@ -26,12 +26,26 @@ cd ExonDomainCompare
 Open <http://127.0.0.1:5173>. The bundled FGFR2 and BCL2L1 datasets work without
 an LRZ account.
 
+## One-time LRZ setup
+
+This is required only before the first cluster annotation of a new run. It is
+not required for the bundled datasets.
+
+1. Configure the LRZ username, login host and Slurm partition.
+2. Run the read-only cluster doctor.
+3. If a required tool is missing, install it and run the doctor again.
+4. Continue only when `ready_for_cluster_runs` is `true`.
+
+The exact commands are in [docs/LRZ.md](docs/LRZ.md). Configuration is normally
+done once per computer and LRZ account, before creating the first cluster run.
+
 ## New analyses
 
 1. Open `New Analysis` in the website.
 2. Enter a gene and one or more species.
 3. Start the local pre-cluster analysis.
-4. If domain annotation is needed, run the command shown on `My Runs`.
+4. If domain annotation is needed, run the command shown on `My Runs`:
+   `.venv/bin/edc cluster roundtrip --run-id RUN_ID`.
 5. Refresh the run after the command finishes.
 
 LRZ setup is required only for the cluster round trip. See

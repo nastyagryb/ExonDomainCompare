@@ -80,7 +80,7 @@ def test_external_completed_run_uses_the_canonical_record_and_stays_ready(tmp_pa
     assert report["inferred_status"] == "results_ready"
     assert report["suggested_next_action"] == "open_results"
     assert report["cluster_command"] == (
-        ".venv/bin/python scripts/edc.py cluster roundtrip --run-id ptpn11_external"
+        ".venv/bin/edc cluster roundtrip --run-id ptpn11_external"
     )
     assert report["logs"] == ["run:logs/cluster_roundtrip.log"]
 

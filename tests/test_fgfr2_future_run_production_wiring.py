@@ -227,7 +227,7 @@ def test_my_runs_and_the_dataset_selector_read_one_cluster_required_verdict(
 
 def test_the_roundtrip_command_is_offered_for_a_cluster_required_run(status_model: dict):
     assert status_model["cluster_command"] == (
-        ".venv/bin/python scripts/edc.py cluster roundtrip "
+        ".venv/bin/edc cluster roundtrip "
         "--run-id 2026-07-29_1634_fgfr2_homo_sapiens_felis_catus")
     assert status_model["next_action"] == "run_cluster_roundtrip_command"
 

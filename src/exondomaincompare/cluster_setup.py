@@ -262,7 +262,7 @@ def remote_preflight(cfg: RuntimeConfig, *, redact_paths: bool = False) -> dict[
     missing_tools = [key for key in ("interproscan", "pytmhmm") if key in missing]
     missing_infrastructure = [key for key in missing if key not in missing_tools]
     if not missing:
-        next_action = "edc cluster roundtrip --run-id <RUN_ID>"
+        next_action = ".venv/bin/edc cluster roundtrip --run-id <RUN_ID>"
     elif missing_infrastructure:
         next_action = (
             "Review the reported LRZ profile, destination and scheduler checks; "
@@ -270,7 +270,7 @@ def remote_preflight(cfg: RuntimeConfig, *, redact_paths: bool = False) -> dict[
         )
     else:
         tool = missing_tools[0] if len(missing_tools) == 1 else "all"
-        next_action = f"edc cluster tools install --tool {tool}"
+        next_action = f".venv/bin/edc cluster tools install --tool {tool}"
     return {
         "schema_version": "1.0",
         "profile": cfg.lrz_profile_name,

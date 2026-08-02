@@ -195,7 +195,7 @@ def evaluate_core_run(run_dir: Path) -> Dict[str, Any]:
         cp = resolve_path_reference(
             str(cluster_fasta_rel), repository_root=PROJECT_ROOT, run_root=run_dir)
         cluster_fasta_ok = cp.is_file() and _fasta_records(cp) > 0
-    cluster_command = f".venv/bin/python scripts/edc.py cluster roundtrip --run-id {run_id}"
+    cluster_command = f".venv/bin/edc cluster roundtrip --run-id {run_id}"
     add("cluster_input", "Cluster input FASTA", True,
         ["cluster_input_fasta"] if cluster_fasta_ok else [],
         [] if cluster_fasta_ok else ["cluster_input_fasta"], cluster_fasta_ok,

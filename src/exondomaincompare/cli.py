@@ -155,7 +155,7 @@ def cluster_configure(args: argparse.Namespace) -> int:
         "configuration_file": str(written),
         "credentials_stored": False,
         "network_contacted": False,
-        "next_command": "edc cluster doctor",
+        "next_command": ".venv/bin/edc cluster doctor --redact-paths",
     }, indent=2))
     return 0
 
@@ -171,7 +171,7 @@ def cluster_tools_install(args: argparse.Namespace) -> int:
     if not args.confirm:
         report = remote_install_plan(cfg, args.tool)
         report["next_command"] = (
-            f"edc cluster tools install --tool {args.tool} --confirm")
+            f".venv/bin/edc cluster tools install --tool {args.tool} --confirm")
         print(json.dumps(report, indent=2))
         return 0
     return install_remote_tools(cfg, tool=args.tool, confirmed=True)

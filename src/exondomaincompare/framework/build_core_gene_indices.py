@@ -516,7 +516,7 @@ def _capability_report(src: CoreSource, gene_idx: Dict[str, Any],
         "support_level": cfg.support_level,
         "selection_method": gene_idx.get("selection_method", ""),
         "cluster_command": (
-            f".venv/bin/python scripts/edc.py cluster roundtrip "
+            f".venv/bin/edc cluster roundtrip "
             f"--run-id {src.dataset_id[4:]}" if src.dataset_id.startswith("run:") else ""),
     }
 

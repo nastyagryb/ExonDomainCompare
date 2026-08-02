@@ -110,7 +110,7 @@ python scripts/framework/run_core_gene_analysis.py \
     --input-mode auto
 
 # after the cluster round-trip fetched InterProScan/pyTMHMM outputs:
-python scripts/interpro_cluster/run_cluster_roundtrip.py --run-id <run_id>
+.venv/bin/edc cluster roundtrip --run-id <run_id>
 # (the round-trip calls run_core_gene_analysis.py --post automatically)
 ```
 

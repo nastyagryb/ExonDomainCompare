@@ -54,7 +54,7 @@ Open <http://127.0.0.1:5173>. Stop both local servers with `Ctrl+C`.
 ## 5. Check the installation
 
 ```bash
-.venv/bin/python scripts/edc.py doctor --redact-paths
+.venv/bin/edc doctor --redact-paths
 ```
 
 The bundled datasets can be viewed without an LRZ account. Continue with

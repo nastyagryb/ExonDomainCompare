@@ -3,7 +3,7 @@
 
 The user-facing contract is a single command:
 
-    python scripts/interpro_cluster/run_cluster_roundtrip.py --run-id <run_id>
+    .venv/bin/edc cluster roundtrip --run-id <run_id>
 
 whose post-cluster half is ``run_core_gene_analysis.py --post``. This test starts from a
 run that has real InterProScan and pyTMHMM outputs but no derived tables, runs that one

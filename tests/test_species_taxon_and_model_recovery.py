@@ -1118,6 +1118,12 @@ def test_the_roundtrip_command_is_withheld_until_the_primary_fasta_exists(backen
     assert 'if primary_ok else ""' in source[marker:marker + 200]
 
 
+def test_the_website_uses_the_installed_roundtrip_command(backend):
+    assert backend._cluster_roundtrip_command("run_1") == (
+        ".venv/bin/edc cluster roundtrip --run-id run_1"
+    )
+
+
 def test_retry_local_preparation_resumes_the_same_run(backend):
     """One request must not become two runs."""
     source = (ROOT / "webapp" / "backend" / "main.py").read_text(encoding="utf-8")

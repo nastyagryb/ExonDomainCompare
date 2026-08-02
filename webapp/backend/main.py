@@ -1595,13 +1595,7 @@ def _require_writable_run(run_id: str) -> Path:
 
 
 def _cluster_roundtrip_command(run_id: str) -> str:
-    if shutil.which("edc"):
-        argv = ["edc", "cluster", "roundtrip", "--run-id", run_id]
-    else:
-        argv = [
-            ".venv/bin/python", "scripts/edc.py", "cluster", "roundtrip",
-            "--run-id", run_id,
-        ]
+    argv = [".venv/bin/edc", "cluster", "roundtrip", "--run-id", run_id]
     return RUNTIME_CONFIG.command(argv)
 
 

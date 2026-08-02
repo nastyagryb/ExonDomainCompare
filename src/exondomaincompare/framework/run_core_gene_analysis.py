@@ -1118,7 +1118,7 @@ def phase_create(args: argparse.Namespace) -> int:
     print(f"    exon->protein map: {'available' if built['exon_map_available'] else 'unavailable'}")
     print(f"    synteny: {'available' if built['n_synteny'] else 'not_computed'}")
     print("\n    Next (cluster required):")
-    print(f"      .venv/bin/python scripts/edc.py cluster roundtrip --run-id {run_id}")
+    print(f"      .venv/bin/edc cluster roundtrip --run-id {run_id}")
     return 0
 
 

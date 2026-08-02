@@ -31,7 +31,7 @@ node --version
 Install the missing program and open a new terminal. Then run:
 
 ```bash
-.venv/bin/python scripts/edc.py doctor --redact-paths
+.venv/bin/edc doctor --redact-paths
 ```
 
 ## Port 5173 or 8000 is already in use
