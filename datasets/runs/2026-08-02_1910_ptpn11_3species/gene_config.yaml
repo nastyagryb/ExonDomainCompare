@@ -1,0 +1,47 @@
+{
+  "_compatibility_projection": {
+    "owner": "framework.legacy_run_adapter",
+    "source": "run:config/gene.json"
+  },
+  "analysis": {
+    "description": "Generic exploratory analysis for PTPN11: gene-level comparative exon\u2013protein mapping and post-InterPro domain/boundary analysis. No validated event region is configured.",
+    "display_name": "PTPN11 core-only exploratory analysis",
+    "id": "PTPN11_core_only_pilot"
+  },
+  "analysis_id": "PTPN11_core_only_pilot",
+  "analysis_modes": {
+    "core_gene_analysis": true,
+    "event_analysis": "optional"
+  },
+  "canonical_outputs": {},
+  "event": {
+    "labels": [],
+    "status": "not_configured",
+    "type": "requires_gene_specific_event_detector"
+  },
+  "event_id": "",
+  "event_type": "requires_gene_specific_event_detector",
+  "gene": {
+    "display_name": "PTPN11",
+    "reference_species": "",
+    "symbol": "PTPN11"
+  },
+  "gene_symbol": "PTPN11",
+  "provenance": {
+    "generated": true,
+    "generated_at": "2026-08-02T17:10:59.194328+00:00",
+    "generated_by": "run_core_gene_analysis.py",
+    "note": "Auto-generated generic core-only config. No gene-specific YAML was required or edited. Only FGFR2 uses a hand-authored validated config.",
+    "source": "dynamic_generic_run_creation"
+  },
+  "reference_control": {
+    "enabled": false
+  },
+  "run_id": "2026-08-02_1910_ptpn11_3species",
+  "runnable": "experimental",
+  "schema_version": 1,
+  "source": "generated:generic-gene-config",
+  "status": "core_only_pilot",
+  "ui_labels": {},
+  "views": {}
+}

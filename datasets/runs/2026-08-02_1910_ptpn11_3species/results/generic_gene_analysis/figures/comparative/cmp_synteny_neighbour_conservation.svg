@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="756" height="193" viewBox="0 0 756 193">
+<rect x="0" y="0" width="756" height="193" fill="#ffffff" stroke="none" />
+<text x="14" y="24" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="12" fill="#1c2433" text-anchor="start" font-weight="bold">PTPN11 · neighbour conservation</text>
+<text x="14" y="37" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="9" fill="#6B7280" text-anchor="start" font-weight="normal">Flanking symbols recovered per species, canonical species order</text>
+<text x="14" y="49" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal" font-style="italic">Which flanking loci recur across the analysed species, and where is the neighbourhood incomplete?</text>
+<text x="127" y="74.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">HECTD4</text>
+<text x="161" y="83.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">RPH3A</text>
+<line x1="161" y1="85.8" x2="161" y2="90.8" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="195" y="74.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">RPL6</text>
+<text x="229" y="83.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">TRAFD1</text>
+<line x1="229" y1="85.8" x2="229" y2="90.8" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="263" y="74.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">ERP29</text>
+<text x="297" y="83.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">NAA25</text>
+<line x1="297" y1="85.8" x2="297" y2="90.8" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="331" y="74.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Oas1a</text>
+<text x="365" y="83.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Oas1d</text>
+<line x1="365" y1="85.8" x2="365" y2="90.8" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="399" y="74.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Oas1h</text>
+<text x="102" y="105.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Homo sapiens</text>
+<rect x="111" y="93.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="145" y="93.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="179" y="93.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="213" y="93.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="247" y="93.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="281" y="93.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="315" y="93.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="349" y="93.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="383" y="93.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="102" y="123.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Mus musculus</text>
+<rect x="111" y="111.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="145" y="111.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="179" y="111.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="213" y="111.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="247" y="111.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="281" y="111.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="315" y="111.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="349" y="111.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="383" y="111.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<text x="102" y="141.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Rattus norvegicus</text>
+<rect x="111" y="129.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="145" y="129.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="179" y="129.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="213" y="129.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="247" y="129.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="281" y="129.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="315" y="129.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="349" y="129.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="383" y="129.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="14" y="150.8" width="7" height="7" fill="#E3F0E8" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="25" y="156.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Resolved ortholog</text>
+<rect x="96.94" y="150.8" width="7" height="7" fill="#ffffff" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="107.94" y="156.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Symbol not recovered in this species</text>
+<text x="14" y="175" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">A filled cell means the annotation of that species carries the same gene symbol somewhere in the flanking window. A shared symbol is a nomenclature match supporting locus context, not an orthology assignment.</text>
+</svg>

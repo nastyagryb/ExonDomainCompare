@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Build the two read-only datasets distributed with ExonDomainCompare."""
+"""Build the validated FGFR2 dataset and one exploratory example dataset."""
 
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
 import json
 import re
@@ -16,8 +17,7 @@ from typing import Any, Iterable
 
 FGFR2_SOURCE_REL = Path("results/final_30_until_interpro_prepare")
 FGFR2_DERIVED_REL = Path("results/derived/example/website_indices")
-BCL2L1_RUN_ID = "2026-07-29_1646_bcl2l1_homo_sapiens_mus_musculus"
-BCL2L1_SOURCE_REL = Path("runs") / BCL2L1_RUN_ID
+DEFAULT_EXPLORATORY_RUN_ID = "2026-08-02_1910_ptpn11_3species"
 TEXT_SUFFIXES = {
     ".csv", ".faa", ".fasta", ".fa", ".gff", ".gff3", ".json", ".md",
     ".svg", ".tsv", ".txt", ".yaml", ".yml",
@@ -102,10 +102,28 @@ def sanitize_json(value: Any, source_repo: Path, key: str = "") -> Any:
     return value
 
 
+def canonicalize_public_commands(value: Any) -> Any:
+    if isinstance(value, dict):
+        return {name: canonicalize_public_commands(child) for name, child in value.items()}
+    if isinstance(value, list):
+        return [canonicalize_public_commands(child) for child in value]
+    if not isinstance(value, str):
+        return value
+    for old in (
+        ".venv/bin/python scripts/edc.py cluster roundtrip",
+        "python scripts/interpro_cluster/run_cluster_roundtrip.py",
+        "edc cluster roundtrip",
+    ):
+        if value.startswith(old):
+            return ".venv/bin/edc cluster roundtrip" + value[len(old):]
+    return value
+
+
 def sanitize_json_files(root: Path, source_repo: Path) -> None:
     for path in sorted(root.rglob("*.json")):
         data = json.loads(path.read_text(encoding="utf-8"))
         projected = sanitize_json(data, source_repo)
+        projected = canonicalize_public_commands(projected)
         path.write_text(
             json.dumps(projected, indent=2, ensure_ascii=False) + "\n",
             encoding="utf-8",
@@ -225,7 +243,7 @@ def project_fgfr2(source_repo: Path, datasets_root: Path) -> Path:
     return target
 
 
-BCL2L1_RESULT_DIRS = (
+EXPLORATORY_RESULT_DIRS = (
     "01_species_registry",
     "07_msa",
     "13_final_pre_interpro_closure",
@@ -238,7 +256,7 @@ BCL2L1_RESULT_DIRS = (
 )
 
 
-def repair_bcl2l1_figure_sources(target: Path) -> None:
+def repair_exploratory_figure_sources(target: Path) -> None:
     for relative in (Path("website_indices/figures_index.json"),
                      Path("website_indices/generic/figures_index.json")):
         path = target / relative
@@ -267,7 +285,7 @@ def repair_bcl2l1_figure_sources(target: Path) -> None:
             json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
-def public_bcl2l1_config(source: Path, source_repo: Path) -> dict[str, Any]:
+def public_exploratory_config(source: Path, source_repo: Path) -> dict[str, Any]:
     data = json.loads((source / "run_config.json").read_text(encoding="utf-8"))
     data = sanitize_json(data, source_repo)
     data.update({
@@ -287,7 +305,7 @@ def public_bcl2l1_config(source: Path, source_repo: Path) -> dict[str, Any]:
     return data
 
 
-def public_bcl2l1_status(source: Path) -> dict[str, Any]:
+def public_exploratory_status(source: Path) -> dict[str, Any]:
     raw = json.loads((source / "status.json").read_text(encoding="utf-8"))
     keep = {
         "run_id", "status", "current_step", "run_mode", "experimental",
@@ -310,17 +328,33 @@ def public_bcl2l1_status(source: Path) -> dict[str, Any]:
     return projected
 
 
-def project_bcl2l1(source_repo: Path, datasets_root: Path) -> Path:
-    source = source_repo / BCL2L1_SOURCE_REL
-    target = datasets_root / "runs" / BCL2L1_RUN_ID
+def exploratory_species(source: Path) -> list[str]:
+    registry = source / "results" / "01_species_registry" / "species_registry.tsv"
+    if registry.is_file():
+        with registry.open(encoding="utf-8", newline="") as handle:
+            rows = list(csv.DictReader(handle, delimiter="\t"))
+        names = [row.get("scientific_name", "").strip() for row in rows]
+        if names and all(names):
+            return names
+    config = json.loads((source / "run_config.json").read_text(encoding="utf-8"))
+    return [str(item).replace("_", " ").capitalize()
+            for item in config.get("species_ids", [])]
+
+
+def project_exploratory(source_repo: Path, source: Path, datasets_root: Path) -> Path:
+    run_id = source.name
+    source_config = json.loads((source / "run_config.json").read_text(encoding="utf-8"))
+    gene_symbol = str(source_config.get("gene_symbol") or "").upper()
+    species = exploratory_species(source)
+    target = datasets_root / "runs" / run_id
     target.mkdir(parents=True)
     for name in ("gene_config.yaml", "species_list.txt"):
         copy_file(source / name, target / name)
     copy_tree(source / "website_indices", target / "website_indices")
-    for name in BCL2L1_RESULT_DIRS:
+    for name in EXPLORATORY_RESULT_DIRS:
         copy_tree(source / "results" / name, target / "results" / name)
-    config = public_bcl2l1_config(source, source_repo)
-    status = public_bcl2l1_status(source)
+    config = public_exploratory_config(source, source_repo)
+    status = public_exploratory_status(source)
     (target / "run_config.json").write_text(
         json.dumps(config, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     (target / "status.json").write_text(
@@ -329,11 +363,11 @@ def project_bcl2l1(source_repo: Path, datasets_root: Path) -> Path:
     public.mkdir(parents=True, exist_ok=True)
     (public / "run_config.json").write_text(
         json.dumps(config, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    repair_bcl2l1_figure_sources(target)
+    repair_exploratory_figure_sources(target)
     sanitize_json_files(target, source_repo)
     sanitize_text_files(target, source_repo)
     (target / "DATASET.md").write_text(
-        "# BCL2L1 — Homo sapiens and Mus musculus\n\n"
+        f"# {gene_symbol} — {', '.join(species)}\n\n"
         "This bundled read-only dataset demonstrates the generic exploratory "
         "isoform workflow. Protein-difference Candidates are exploratory evidence, "
         "not validated splicing events. The dataset must not be presented as validated "
@@ -344,17 +378,17 @@ def project_bcl2l1(source_repo: Path, datasets_root: Path) -> Path:
     )
     metadata = {
         "schema_version": "1.0",
-        "dataset_id": f"run:{BCL2L1_RUN_ID}",
-        "release_id": "bcl2l1_human_mouse",
-        "run_id": BCL2L1_RUN_ID,
-        "gene_symbol": "BCL2L1",
-        "species": ["Homo sapiens", "Mus musculus"],
-        "species_count": 2,
+        "dataset_id": f"run:{run_id}",
+        "release_id": f"{gene_symbol.lower()}_{len(species)}_species",
+        "run_id": run_id,
+        "gene_symbol": gene_symbol,
+        "species": species,
+        "species_count": len(species),
         "pipeline_type": "shared_gene_pipeline",
         "support_level": "generic_gene_analysis_experimental",
         "scientific_semantics": "exploratory_not_validated",
         "read_only": True,
-        "source_record": BCL2L1_SOURCE_REL.as_posix(),
+        "source_record": f"source-run:{run_id}",
         "distribution": "sanitized website projection",
         "omitted": ["raw NCBI caches", "logs", "SSH and Slurm state", "private paths"],
     }
@@ -408,7 +442,7 @@ def validate_text(root: Path) -> None:
         raise RuntimeError("Release dataset validation failed:\n" + "\n".join(violations))
 
 
-def validate_references(fgfr2: Path, bcl2l1: Path) -> None:
+def validate_references(fgfr2: Path, exploratory: Path) -> None:
     missing: list[str] = []
     legacy_prefix = FGFR2_SOURCE_REL.as_posix() + "/"
     derived_prefix = "results/derived/example/"
@@ -422,28 +456,32 @@ def validate_references(fgfr2: Path, bcl2l1: Path) -> None:
                 target = fgfr2 / "derived" / Path(value).relative_to("results/derived/example")
                 if not target.is_file():
                     missing.append(f"FGFR2:{value}")
-    for path in sorted(bcl2l1.rglob("*.json")):
+    run_id = exploratory.name
+    for path in sorted(exploratory.rglob("*.json")):
         for value in json_strings(json.loads(path.read_text(encoding="utf-8"))):
             candidate = value.split("?path=", 1)[1].split("&", 1)[0] if "?path=" in value else value
-            run_prefix = f"runs/{BCL2L1_RUN_ID}/"
+            run_prefix = f"runs/{run_id}/"
             if candidate.startswith(run_prefix):
                 candidate = candidate[len(run_prefix):]
             if candidate.startswith("results/") and Path(candidate).suffix.lower() in PUBLIC_FILE_SUFFIXES:
-                if not (bcl2l1 / candidate).is_file():
-                    missing.append(f"BCL2L1:{candidate}")
+                if not (exploratory / candidate).is_file():
+                    missing.append(f"{run_id}:{candidate}")
     if missing:
         raise RuntimeError("Referenced release files are missing:\n" + "\n".join(sorted(set(missing))))
 
 
-def build(source_repo: Path, release_repo: Path) -> None:
+def build(source_repo: Path, release_repo: Path,
+          exploratory_run_dir: Path | None = None) -> None:
     source_repo = source_repo.resolve()
     release_repo = release_repo.resolve()
     if source_repo == release_repo:
         raise RuntimeError("Source and release repositories must be different.")
     if not (source_repo / FGFR2_SOURCE_REL).is_dir():
         raise FileNotFoundError("Validated FGFR2 source dataset is unavailable.")
-    if not (source_repo / BCL2L1_SOURCE_REL).is_dir():
-        raise FileNotFoundError("BCL2L1 source run is unavailable.")
+    exploratory_source = (exploratory_run_dir or
+                          source_repo / "runs" / DEFAULT_EXPLORATORY_RUN_ID).resolve()
+    if not exploratory_source.is_dir():
+        raise FileNotFoundError(f"Exploratory source run is unavailable: {exploratory_source}")
     if not (release_repo / ".git").is_dir():
         raise RuntimeError("Release target must be the separate Git repository.")
     datasets = release_repo / "datasets"
@@ -451,13 +489,15 @@ def build(source_repo: Path, release_repo: Path) -> None:
         raise FileExistsError("Release datasets already exist; refusing to overwrite them.")
     datasets.mkdir()
     fgfr2 = project_fgfr2(source_repo, datasets)
-    bcl2l1 = project_bcl2l1(source_repo, datasets)
+    exploratory = project_exploratory(source_repo, exploratory_source, datasets)
+    run_id = exploratory.name
+    dataset_meta = json.loads((exploratory / "dataset.json").read_text(encoding="utf-8"))
     registry = {
         "schema_version": "1.0",
         "default_dataset": "example",
         "datasets": [
             {"id": "example", "path": "fgfr2_30_species", "read_only": True},
-            {"id": f"run:{BCL2L1_RUN_ID}", "path": f"runs/{BCL2L1_RUN_ID}",
+            {"id": f"run:{run_id}", "path": f"runs/{run_id}",
              "read_only": True},
         ],
     }
@@ -467,14 +507,15 @@ def build(source_repo: Path, release_repo: Path) -> None:
         "# Bundled datasets\n\n"
         "These compact, checksummed, read-only projections are displayed immediately "
         "after a clean installation. `fgfr2_30_species` is the validated thesis dataset; "
-        "the BCL2L1 human/mouse run is an exploratory generic demonstration. Mutable new "
+        f"the {dataset_meta['gene_symbol']} {dataset_meta['species_count']}-species run is an "
+        "exploratory generic demonstration. Mutable new "
         "runs are stored separately in the user's configured application data directory.\n",
         encoding="utf-8",
     )
     validate_text(datasets)
-    validate_references(fgfr2, bcl2l1)
+    validate_references(fgfr2, exploratory)
     write_dataset_manifest(fgfr2)
-    write_dataset_manifest(bcl2l1)
+    write_dataset_manifest(exploratory)
     root_files = [path for path in sorted(datasets.rglob("*"))
                   if path.is_file() and path != datasets / "SHA256SUMS"]
     (datasets / "SHA256SUMS").write_text(
@@ -487,9 +528,10 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source-repo", type=Path, required=True)
     parser.add_argument("--release-repo", type=Path, required=True)
+    parser.add_argument("--exploratory-run-dir", type=Path)
     args = parser.parse_args()
     try:
-        build(args.source_repo, args.release_repo)
+        build(args.source_repo, args.release_repo, args.exploratory_run_dir)
     except Exception as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1

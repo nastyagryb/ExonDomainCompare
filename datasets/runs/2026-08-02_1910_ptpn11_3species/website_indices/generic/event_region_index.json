@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "dataset_id": "run:2026-08-02_1910_ptpn11_3species",
+  "analysis_id": "PTPN11_core_only_pilot",
+  "available": false,
+  "reason": "no_event_configured",
+  "message": "No event region is configured for this gene. Core gene-level analysis is available.",
+  "event_labels": [],
+  "species": []
+}

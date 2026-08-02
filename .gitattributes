@@ -20,5 +20,8 @@
 
 # Preserve released scientific data byte for byte.
 datasets/** -text
+# Empty final TSV columns and generated SVG spacing are part of released data.
+datasets/**/*.tsv whitespace=-blank-at-eol
+datasets/**/*.svg whitespace=-blank-at-eol
 reference/** -text
 references/** -text

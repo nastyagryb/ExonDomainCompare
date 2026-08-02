@@ -1,4 +1,0 @@
-msa_id	msa_kind	n_sequences	msa_status	tool	input_fasta	alignment_file	reason
-BCL2L1_homo_sapiens_isoform_msa	isoform_alignment	10	available	mafft --auto	results/generic_gene_analysis/msa/isoform_msa_input__homo_sapiens.faa	results/generic_gene_analysis/msa/isoform_msa__homo_sapiens.aln.faa	Within-species isoform MSA for homo_sapiens built with MAFFT --auto.
-BCL2L1_mus_musculus_isoform_msa	isoform_alignment	9	available	mafft --auto	results/generic_gene_analysis/msa/isoform_msa_input__mus_musculus.faa	results/generic_gene_analysis/msa/isoform_msa__mus_musculus.aln.faa	Within-species isoform MSA for mus_musculus built with MAFFT --auto.
-BCL2L1_cross_species_msa	cross_species_primary_alignment	2	available	mafft --auto	results/generic_gene_analysis/msa/primaries_msa_input.faa	results/generic_gene_analysis/msa/primaries_msa.aln.faa	Cross-species primary MSA built with MAFFT --auto (one primary per species).

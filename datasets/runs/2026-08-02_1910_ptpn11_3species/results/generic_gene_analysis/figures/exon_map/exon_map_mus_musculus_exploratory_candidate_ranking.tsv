@@ -1,0 +1,2 @@
+rank	candidate_id	candidate_label	aa_start	aa_end	length_aa	n_affected_isoforms	affected_isoforms	supporting_comparisons	evidence_score	evidence_strength	biological_validation
+1	PTPN11:mus_musculus:indel:409-412	C1	409	412	4	2	NP_001103462.1;NP_035332.1	1	28	low	not validated

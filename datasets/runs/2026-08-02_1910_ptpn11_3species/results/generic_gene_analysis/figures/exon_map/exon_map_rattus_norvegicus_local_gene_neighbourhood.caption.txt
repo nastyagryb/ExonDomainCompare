@@ -1,0 +1,1 @@
+PTPN11 (Rattus Norvegicus) — 10 annotated flanking loci around PTPN11 with their transcription directions. Coordinates: ordinal gene order along the assembly. Annotation source: NCBI RefSeq gene annotation. Descriptive annotation summary; no event is claimed as validated.

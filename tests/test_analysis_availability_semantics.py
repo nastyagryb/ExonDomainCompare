@@ -691,8 +691,17 @@ def test_a_new_run_is_shown_before_the_registry_is_asked_again():
     body = WORKFLOW.read_text(encoding="utf-8").split("async function handleStart")[1] \
         .split("\n  }")[0]
     insert = body.index("insertRun(res)")
-    reload = body.index("loadRuns()")
+    reload = body.index("loadRuns({ preserveIds })")
     assert insert < reload, "the created run must appear without waiting for the registry"
+
+
+def test_a_provisioning_run_is_discovered_without_a_manual_refresh():
+    body = WORKFLOW.read_text(encoding="utf-8").split("async function handleStart")[1] \
+        .split("\n  }")[0]
+    assert "RUN_DISCOVERY_ATTEMPTS" in body
+    assert "knownIds.has(run.run_id)" in body
+    assert "setTimeout(resolve, RUN_DISCOVERY_POLL_MS)" in body
+    assert "preserveIds" in body
 
 
 def test_the_selected_run_is_polled_until_it_is_stable():

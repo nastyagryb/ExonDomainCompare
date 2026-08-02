@@ -1,2 +1,0 @@
-transition	boundary_position_aa	left_exon	right_exon	nearest_domain_instance_id	nearest_domain_accession	nearest_domain_label	nearest_domain_start	nearest_domain_end	nearest_edge	nearest_edge_position	signed_distance_aa	absolute_distance_aa	boundary_class
-E1 → E2	188	E1	E2	IPR046371:90-188	IPR046371	Bcl-2 BH1-3 · aa 90–188	90	188	end	188	0	0	exact_domain_edge

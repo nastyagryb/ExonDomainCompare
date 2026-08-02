@@ -1,0 +1,10 @@
+transcript_id	protein_id	species_id	annotation_source	curation_status	protein_length	exon_count	selected_primary	alternative_model_type
+NM_001330437.2	NP_001317366.1	homo_sapiens	RefSeq curated (NM/NP)	curated	597	15	true	
+NM_002834.5	NP_002825.3	homo_sapiens	RefSeq curated (NM/NP)	curated	593	15	false	alternative_protein_model
+XM_011538613.3	XP_011536915.1	homo_sapiens	RefSeq predicted (XM/XP)	predicted	596	15	false	alternative_protein_model
+NM_001374625.1	NP_001361554.1	homo_sapiens	RefSeq curated (NM/NP)	curated	592	15	false	alternative_protein_model
+NM_080601.3	NP_542168.1	homo_sapiens	RefSeq curated (NM/NP)	curated	460	11	false	alternative_protein_model
+NM_001109992.1	NP_001103462.1	mus_musculus	RefSeq curated (NM/NP)	curated	593	15	false	alternative_protein_model
+NM_011202.3	NP_035332.1	mus_musculus	RefSeq curated (NM/NP)	curated	597	15	true	
+NM_001177593.1	NP_001171064.1	rattus_norvegicus	RefSeq curated (NM/NP)	curated	597	15	true	
+NM_013088.2	NP_037220.2	rattus_norvegicus	RefSeq curated (NM/NP)	curated	593	15	false	alternative_protein_model

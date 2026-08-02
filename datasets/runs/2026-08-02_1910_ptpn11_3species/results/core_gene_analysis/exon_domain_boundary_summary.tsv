@@ -1,0 +1,6 @@
+category	count	near_edge_threshold_aa
+exact_edge	0	5
+inside_domain	27	5
+near_edge	9	5
+outside_domain	6	5
+unknown	0	5

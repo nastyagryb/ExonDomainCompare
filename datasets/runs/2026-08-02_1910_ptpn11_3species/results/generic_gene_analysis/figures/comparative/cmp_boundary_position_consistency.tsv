@@ -1,0 +1,15 @@
+comparable_boundary_group_id	mapping_method	mapping_status	mapping_confidence	msa_column	n_species_mapped	species_ids	species_coverage	cross_species_difference	distance_range_min	distance_range_max	dominant_class	classes_differ	domain_annotation_available_in_all	primary_statistic
+CBG1	msa_aligned_position	supported_comparable	1	5	3	homo_sapiens,mus_musculus,rattus_norvegicus	1	0	1	1	near_domain_edge	false	true	distribution
+CBG2	msa_aligned_position	supported_comparable	1	46	3	homo_sapiens,mus_musculus,rattus_norvegicus	1	0	42	42	inside_domain	false	true	distribution
+CBG3	msa_aligned_position	supported_comparable	1	111	3	homo_sapiens,mus_musculus,rattus_norvegicus	1	0	1	1	near_domain_edge	false	true	distribution
+CBG4	msa_aligned_position	supported_comparable	1	175	3	homo_sapiens,mus_musculus,rattus_norvegicus	1	0	-41	-41	inside_domain	false	true	distribution
+CBG5	msa_aligned_position	supported_comparable	1	214	3	homo_sapiens,mus_musculus,rattus_norvegicus	1	0	-2	-2	near_domain_edge	false	true	distribution
+CBG6	msa_aligned_position	supported_comparable	1	252	3	homo_sapiens,mus_musculus,rattus_norvegicus	1	0	6	6	inside_domain	false	true	distribution
+CBG7	msa_aligned_position	supported_comparable	1	285	3	homo_sapiens,mus_musculus,rattus_norvegicus	1	0	39	39	inside_domain	false	true	distribution
+CBG8	msa_aligned_position	supported_comparable	1	311	3	homo_sapiens,mus_musculus,rattus_norvegicus	1	0	65	65	inside_domain	false	true	distribution
+CBG9	msa_aligned_position	supported_comparable	1	364	3	homo_sapiens,mus_musculus,rattus_norvegicus	1	0	118	118	inside_domain	false	true	distribution
+CBG10	msa_aligned_position	supported_comparable	1	408	3	homo_sapiens,mus_musculus,rattus_norvegicus	1	0	-119	-119	inside_domain	false	true	distribution
+CBG11	msa_aligned_position	supported_comparable	1	464	3	homo_sapiens,mus_musculus,rattus_norvegicus	1	0	-63	-63	inside_domain	false	true	distribution
+CBG12	msa_aligned_position	supported_comparable	1	487	3	homo_sapiens,mus_musculus,rattus_norvegicus	1	0	-40	-40	inside_domain	false	true	distribution
+CBG13	msa_aligned_position	supported_comparable	1	537	3	homo_sapiens,mus_musculus,rattus_norvegicus	1	0	10	10	outside_annotated_domains	false	true	distribution
+CBG14	msa_aligned_position	supported_comparable	1	575	3	homo_sapiens,mus_musculus,rattus_norvegicus	1	0	48	48	outside_annotated_domains	false	true	distribution

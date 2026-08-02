@@ -1,0 +1,26 @@
+member_database	signature_accession	signature_name	start_aa	end_aa	length_aa	interpro_accession	interpro_entry_name	integration_status
+PRINTS	PR00401	SH2DOMAIN	112	126	15			not integrated
+PRINTS	PR00401	SH2DOMAIN	132	142	11			not integrated
+PRINTS	PR00401	SH2DOMAIN	144	155	12			not integrated
+PRINTS	PR00401	SH2DOMAIN	166	176	11			not integrated
+PRINTS	PR00401	SH2DOMAIN	186	200	15			not integrated
+PRINTS	PR00700	PRTYPHPHTASE	303	310	8	IPR000242	PTP_cat	integrated
+PRINTS	PR00700	PRTYPHPHTASE	327	347	21	IPR000242	PTP_cat	integrated
+PRINTS	PR00700	PRTYPHPHTASE	417	434	18	IPR000242	PTP_cat	integrated
+PRINTS	PR00700	PRTYPHPHTASE	458	476	19	IPR000242	PTP_cat	integrated
+PRINTS	PR00700	PRTYPHPHTASE	492	507	16	IPR000242	PTP_cat	integrated
+PRINTS	PR00700	PRTYPHPHTASE	508	518	11	IPR000242	PTP_cat	integrated
+SMART	SM00252	SH2_5	4	87	84	IPR000980	SH2	integrated
+SMART	SM00252	SH2_5	110	203	94	IPR000980	SH2	integrated
+SMART	SM00194	PTPc_3	246	527	282	IPR000242	PTP_cat	integrated
+SMART	SM00404	ptp_7	418	524	107	IPR003595	Tyr_Pase_cat	integrated
+CDD	cd10340	SH2_N-SH2_SHP_like	5	103	99			not integrated
+CDD	cd09931	SH2_C-SH2_SHP_like	111	218	108			not integrated
+CDD	cd14605	PTPc-N11	272	528	257			not integrated
+FUNFAM	G3DSA:3.30.505.10:FF:000018	Tyrosine-protein phosphatase non-receptor type	1	102	102			not integrated
+FUNFAM	G3DSA:3.30.505.10:FF:000012	Tyrosine-protein phosphatase non-receptor type	104	217	114			not integrated
+FUNFAM	G3DSA:3.90.190.10:FF:000018	Tyrosine-protein phosphatase non-receptor type	218	529	312			not integrated
+PFAM	PF00017	SH2	6	81	76	IPR000980	SH2	integrated
+PFAM	PF00017	SH2	112	197	86	IPR000980	SH2	integrated
+PFAM	PF00102	Y_phosphatase	273	523	251	IPR000242	PTP_cat	integrated
+PANTHER	PTHR46559	TYROSINE-PROTEIN PHOSPHATASE NON-RECEPTOR TYPE 11	1	597	597			not integrated

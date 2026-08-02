@@ -1,5 +1,0 @@
-candidate_id	species_id	reference_protein	aa_start	aa_end	length	status	overall_score	confidence_class	isoform_support_score	exon_boundary_score	external_annotation_score	alignment_score	domain_context_score	penalty	confidence_reason
-BCL2L1:homo_sapiens:indel:126-188	homo_sapiens	NP_001304849.1	126	188	63	exploratory_not_validated	80	high	40	10	0	20	10	0	Supported by 9 isoform pair(s); exploratory only, not a validated event.
-BCL2L1:mus_musculus:indel:189-221	mus_musculus	NP_001276668.1	189	221	33	exploratory_not_validated	75	high	40	10	0	20	5	0	Supported by 16 isoform pair(s); exploratory only, not a validated event.
-BCL2L1:mus_musculus:substitution:227-235	mus_musculus	NP_001276668.1	227	235	9	exploratory_not_validated	70	high	40	10	0	20	0	0	Supported by 16 isoform pair(s); exploratory only, not a validated event.
-BCL2L1:mus_musculus:substitution:191-191	mus_musculus	NP_001276668.1	191	191	1	exploratory_not_validated	45	medium	40	0	0	20	0	15	Supported by 8 isoform pair(s); exploratory only, not a validated event.

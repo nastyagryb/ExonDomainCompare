@@ -1,0 +1,136 @@
+{
+  "analysis_id": "PTPN11_core_only_pilot",
+  "gene_symbol": "PTPN11",
+  "species_id": "homo_sapiens",
+  "species_ids": [
+    "homo_sapiens",
+    "mus_musculus",
+    "rattus_norvegicus"
+  ],
+  "n_species": 3,
+  "generated_at": "2026-08-02T17:13:29.963203+00:00",
+  "input_mode": "auto",
+  "source": {
+    "species_id": "homo_sapiens",
+    "assembly_accession": "GCF_000001405.40",
+    "genomic_gff": "external:NCBI/GCF_000001405.40/genomic.gff",
+    "protein_faa": "external:NCBI/GCF_000001405.40/protein.faa",
+    "source_run": "ncbi_datasets_download",
+    "taxid": "9606"
+  },
+  "per_species": [
+    {
+      "species_id": "homo_sapiens",
+      "gene_locus": {
+        "gene_id": "gene-PTPN11",
+        "seqid": "NC_000012.12",
+        "start": 112418947,
+        "end": 112509918,
+        "strand": "+"
+      },
+      "selection_rule_applied": "canonical",
+      "n_transcripts": 5,
+      "n_protein_coding": 5,
+      "n_primary_proteins": 1,
+      "primary_protein_ids": [
+        "NP_001317366.1"
+      ],
+      "source": {
+        "species_id": "homo_sapiens",
+        "assembly_accession": "GCF_000001405.40",
+        "genomic_gff": "external:NCBI/GCF_000001405.40/genomic.gff",
+        "protein_faa": "external:NCBI/GCF_000001405.40/protein.faa",
+        "source_run": "ncbi_datasets_download",
+        "taxid": "9606"
+      }
+    },
+    {
+      "species_id": "mus_musculus",
+      "gene_locus": {
+        "gene_id": "gene-Ptpn11",
+        "seqid": "NC_000071.7",
+        "start": 121268596,
+        "end": 121329460,
+        "strand": "-"
+      },
+      "selection_rule_applied": "canonical",
+      "n_transcripts": 2,
+      "n_protein_coding": 2,
+      "n_primary_proteins": 1,
+      "primary_protein_ids": [
+        "NP_035332.1"
+      ],
+      "source": {
+        "species_id": "mus_musculus",
+        "assembly_accession": "GCF_000001635.27",
+        "genomic_gff": "external:NCBI/GCF_000001635.27/genomic.gff",
+        "protein_faa": "external:NCBI/GCF_000001635.27/protein.faa",
+        "source_run": "ncbi_datasets_download",
+        "taxid": "10090"
+      }
+    },
+    {
+      "species_id": "rattus_norvegicus",
+      "gene_locus": {
+        "gene_id": "gene-Ptpn11",
+        "seqid": "NC_086030.1",
+        "start": 41026079,
+        "end": 41085577,
+        "strand": "+"
+      },
+      "selection_rule_applied": "canonical",
+      "n_transcripts": 2,
+      "n_protein_coding": 2,
+      "n_primary_proteins": 1,
+      "primary_protein_ids": [
+        "NP_001171064.1"
+      ],
+      "source": {
+        "species_id": "rattus_norvegicus",
+        "assembly_accession": "GCF_036323735.1",
+        "genomic_gff": "external:NCBI/GCF_036323735.1/genomic.gff",
+        "protein_faa": "external:NCBI/GCF_036323735.1/protein.faa",
+        "source_run": "ncbi_datasets_download",
+        "taxid": "10116"
+      }
+    }
+  ],
+  "gene_locus": {
+    "gene_id": "gene-PTPN11",
+    "seqid": "NC_000012.12",
+    "start": 112418947,
+    "end": 112509918,
+    "strand": "+"
+  },
+  "selection_method_requested": "canonical_if_available",
+  "selection_rule_applied": "canonical",
+  "n_transcripts": 9,
+  "n_protein_coding": 9,
+  "n_primary_proteins": 3,
+  "primary_protein_ids": [
+    "NP_001317366.1",
+    "NP_035332.1",
+    "NP_001171064.1"
+  ],
+  "exon_map_available": true,
+  "exon_map_reason": "",
+  "synteny_available": true,
+  "synteny_reason": "",
+  "fasta_reason": "",
+  "warnings": [],
+  "_exondomain": {
+    "contract_version": "1.0",
+    "payload_type": "core_model_collection_report",
+    "run_id": "",
+    "dataset_id": "",
+    "generator": "scripts/framework/run_core_gene_analysis.py",
+    "profile": {
+      "schema_version": "1.0",
+      "local_profile": "default",
+      "lrz_profile": "lrz"
+    },
+    "source_checksums": [],
+    "generated_at": "2026-08-02T17:13:29.963447+00:00",
+    "content_sha256": "7a20c71a7558949c1a07a41b6ffdcd821e4293acf29d5321018c08352f0fc2f2"
+  }
+}

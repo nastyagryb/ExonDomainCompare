@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "dataset_id": "run:2026-08-02_1910_ptpn11_3species",
+  "analysis_id": "PTPN11_core_only_pilot",
+  "available": true,
+  "synteny_status": "computed",
+  "synteny_reason": "",
+  "n_resolved_neighbors": 30,
+  "species": [
+    {
+      "species": "homo_sapiens",
+      "neighbors": [
+        {
+          "symbol": "RPL6",
+          "side": "upstream",
+          "order": 1,
+          "orientation": "-",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "RPH3A",
+          "side": "downstream",
+          "order": 1,
+          "orientation": "+",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "HECTD4",
+          "side": "upstream",
+          "order": 2,
+          "orientation": "-",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "OAS1",
+          "side": "downstream",
+          "order": 2,
+          "orientation": "+",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "TRAFD1",
+          "side": "upstream",
+          "order": 3,
+          "orientation": "+",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "OAS3",
+          "side": "downstream",
+          "order": 3,
+          "orientation": "+",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "NAA25",
+          "side": "upstream",
+          "order": 4,
+          "orientation": "-",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "OAS2",
+          "side": "downstream",
+          "order": 4,
+          "orientation": "+",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "ERP29",
+          "side": "upstream",
+          "order": 5,
+          "orientation": "+",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "DTX1",
+          "side": "downstream",
+          "order": 5,
+          "orientation": "+",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        }
+      ]
+    },
+    {
+      "species": "mus_musculus",
+      "neighbors": [
+        {
+          "symbol": "Rph3a",
+          "side": "downstream",
+          "order": 1,
+          "orientation": "-",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "Rpl6",
+          "side": "upstream",
+          "order": 1,
+          "orientation": "+",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "Oas1d",
+          "side": "downstream",
+          "order": 2,
+          "orientation": "+",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "Hectd4",
+          "side": "upstream",
+          "order": 2,
+          "orientation": "+",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "Oas1a",
+          "side": "downstream",
+          "order": 3,
+          "orientation": "-",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "Trafd1",
+          "side": "upstream",
+          "order": 3,
+          "orientation": "-",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "Oas1g",
+          "side": "downstream",
+          "order": 4,
+          "orientation": "-",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "Naa25",
+          "side": "upstream",
+          "order": 4,
+          "orientation": "+",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "Oas1h",
+          "side": "downstream",
+          "order": 5,
+          "orientation": "+",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "Erp29",
+          "side": "upstream",
+          "order": 5,
+          "orientation": "-",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        }
+      ]
+    },
+    {
+      "species": "rattus_norvegicus",
+      "neighbors": [
+        {
+          "symbol": "Rpl6",
+          "side": "upstream",
+          "order": 1,
+          "orientation": "-",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "Rph3a",
+          "side": "downstream",
+          "order": 1,
+          "orientation": "+",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "Trafd1",
+          "side": "upstream",
+          "order": 2,
+          "orientation": "+",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "Oas1i",
+          "side": "downstream",
+          "order": 2,
+          "orientation": "+",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "LOC100909911",
+          "side": "upstream",
+          "order": 3,
+          "orientation": "-",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "Oas1d",
+          "side": "downstream",
+          "order": 3,
+          "orientation": "-",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "Hectd4",
+          "side": "upstream",
+          "order": 4,
+          "orientation": "-",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "Oas1a",
+          "side": "downstream",
+          "order": 4,
+          "orientation": "+",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "LOC100364561",
+          "side": "upstream",
+          "order": 5,
+          "orientation": "+",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        },
+        {
+          "symbol": "Oas1h",
+          "side": "downstream",
+          "order": 5,
+          "orientation": "-",
+          "classification": "same_scaffold_ordered",
+          "status": "resolved"
+        }
+      ]
+    }
+  ],
+  "source": "core_gene_analysis"
+}

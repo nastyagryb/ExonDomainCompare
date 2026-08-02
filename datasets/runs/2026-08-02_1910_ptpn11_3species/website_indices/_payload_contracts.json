@@ -1,0 +1,155 @@
+{
+  "run_id": "2026-08-02_1910_ptpn11_3species",
+  "dataset_id": "2026-08-02_1910_ptpn11_3species",
+  "payloads": {
+    "available_views.json": {
+      "sha256": "b079140809d1f143dbc29750d5a934b47bc849ba02de09e34db3ce8bd52e3671",
+      "bytes": 1012,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "coordinate_track_index.json": {
+      "sha256": "87c91e6c0bf1e1bf18c305f3f2e80cbabbdccd8241ef4376e51c3a4a45e7a4a4",
+      "bytes": 214137,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "dataset_summary.json": {
+      "sha256": "dfb1496f0e7991c3816b47c75c5bc836a6126244baad0ceacc90e244cb77fc20",
+      "bytes": 2453,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "domain_architecture_index.json": {
+      "sha256": "4a9022bb1d6d827a01137dd7b95ee1108def62a283cdd64e16588421128a00d5",
+      "bytes": 620,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "event_candidate_evidence_index.json": {
+      "sha256": "f51f7baa7276faca6e34170babb483061142982e83881696386ef186569a75c6",
+      "bytes": 47981,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "event_evidence_index.json": {
+      "sha256": "1976253c52a93a12bf6ab571b988e59f770c903e0e424f5838951d3257913dc9",
+      "bytes": 2939,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "event_region_index.json": {
+      "sha256": "3945fd1870fe1557f5e152cf92d42d1e6014bda28dd02152b2dbf35ab8f5868a",
+      "bytes": 320,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "evidence_stack.json": {
+      "sha256": "913b7dfa988825da4c381cdc235a559fb09862c52ac3abe54ae86c46ad125570",
+      "bytes": 5003,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "exon_domain_boundaries_index.json": {
+      "sha256": "5382a30128b06453776b17276beb1fa012e237b2709acc4482d09da7176c66a5",
+      "bytes": 614,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "exon_domain_boundary_index.json": {
+      "sha256": "048735286938e0523e4ec9de6827654c1c348aeacb07e295bb107ffa6dd0f8ab",
+      "bytes": 761,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "figures_index.json": {
+      "sha256": "a3c129759ed06e9210a3d29a1946fcecc79ce4039403f0542e0c78e5166cbc74",
+      "bytes": 3090,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "gene_analysis_index.json": {
+      "sha256": "dc5037a428b1447a3115c08fb0333bb861a862ed4b1142c26f5ec7a1d433224c",
+      "bytes": 3189,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "gene_capability_report.json": {
+      "sha256": "0428e68cc77d0c973b2c8b0d4b93d3f4d9cc1a78dc8d8a043f03614950e3af49",
+      "bytes": 891,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "gene_event_index.json": {
+      "sha256": "dc5037a428b1447a3115c08fb0333bb861a862ed4b1142c26f5ec7a1d433224c",
+      "bytes": 3189,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "gene_explorer_index.json": {
+      "sha256": "8bee0b5193f8d67cadc5e2fa40c32e4b3e3e9e185f04c729ad41afee6100d272",
+      "bytes": 2740,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "isoform_alignment_index.json": {
+      "sha256": "3da5cad144cdc925a695af4e339203b402785b5ed8a1a4d7577007e4b0be90e4",
+      "bytes": 15942,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "msa_index.json": {
+      "sha256": "7842d7424ebce2e8599194a83b028903735500121d3cedee428f8f8aed419226",
+      "bytes": 3722,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "overview_index.json": {
+      "sha256": "bbd840c5e52277dce4bf1e52fc4ddf435a39fe97e4b0c44b55c4e707b52132be",
+      "bytes": 2760,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "primary_selection_index.json": {
+      "sha256": "53fdd1389e63f3a56ec5cbd4c98af9b21e9cfa42bf7fe1fd0b359b3bcb9936db",
+      "bytes": 5351,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "protein_architecture_index.json": {
+      "sha256": "09f2dc676e140e61053d776dd09da6afbb3ea472c5616f6537314993c5550265",
+      "bytes": 21215,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "synteny_index.json": {
+      "sha256": "64ea354a0a71bc407a3e131e0f7b66522290b7205612c5dd8e6eed771c0341a4",
+      "bytes": 6430,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "synteny_locus_index.json": {
+      "sha256": "f253668ddca684a38ade7f4ecd25549b2146615765a0038f4e3309b3eff256ca",
+      "bytes": 171923,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    },
+    "transcript_exon_structure_index.json": {
+      "sha256": "4ff7b40a3cfefdea4b91c0708d5d1df67a0c3c969f998766694993b4f38c4274",
+      "bytes": 150249,
+      "run_id": "2026-08-02_1910_ptpn11_3species",
+      "dataset_id": "2026-08-02_1910_ptpn11_3species"
+    }
+  },
+  "_exondomain": {
+    "contract_version": "1.0",
+    "payload_type": "payload_contracts",
+    "run_id": "2026-08-02_1910_ptpn11_3species",
+    "dataset_id": "2026-08-02_1910_ptpn11_3species",
+    "generator": "scripts/generic_gene/build_generic_website_indices.py",
+    "profile": {},
+    "source_checksums": [],
+    "generated_at": "2026-08-02T18:08:29.349455+00:00",
+    "content_sha256": "0d5095f50b857592808e855cd606c7d0b2e150e566dd67ad6c572cdef7f6ab6b"
+  }
+}

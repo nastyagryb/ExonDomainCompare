@@ -1,0 +1,3274 @@
+{
+  "schema_version": 1,
+  "dataset_id": "run:2026-08-02_1910_ptpn11_3species",
+  "analysis_id": "PTPN11_core_only_pilot",
+  "gene_symbol": "PTPN11",
+  "mode": "generic",
+  "available": true,
+  "domain_layer": "representative_domain",
+  "entry_types_present": [
+    "ACTIVE_SITE",
+    "DISORDER",
+    "DOMAIN",
+    "FAMILY",
+    "HOMOLOGOUS_SUPERFAMILY"
+  ],
+  "relation_description": "Protein domain architecture (core, gene-agnostic; representative InterPro domain layer + separate family / feature / topology layers).",
+  "species": [
+    {
+      "species": "homo_sapiens",
+      "display_species_name": "Homo Sapiens",
+      "proteins": [
+        {
+          "species_id": "homo_sapiens",
+          "protein_id": "NP_001317366.1",
+          "length_aa": 597,
+          "role": "primary",
+          "transcript_id": "NM_001330437.2",
+          "domains": [
+            {
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "member_databases": "PFAM,PROSITE_PROFILES,SMART",
+              "supporting_interpro": "IPR000980:SH2",
+              "n_signatures": 3,
+              "representative_signature": "PF00017",
+              "start_aa": 4,
+              "end_aa": 102,
+              "domain_id": "IPR000980",
+              "domain_name": "SH2",
+              "domain_source": "PFAM,PROSITE_PROFILES,SMART"
+            },
+            {
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "member_databases": "PFAM,PROSITE_PROFILES,SMART",
+              "supporting_interpro": "IPR000980:SH2",
+              "n_signatures": 3,
+              "representative_signature": "PF00017",
+              "start_aa": 110,
+              "end_aa": 216,
+              "domain_id": "IPR000980",
+              "domain_name": "SH2",
+              "domain_source": "PFAM,PROSITE_PROFILES,SMART"
+            },
+            {
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "member_databases": "PFAM,PRINTS,PROSITE_PROFILES,SMART",
+              "supporting_interpro": "IPR000242:PTP_cat;IPR000387:Tyr_Pase_dom;IPR003595:Tyr_Pase_cat",
+              "n_signatures": 6,
+              "representative_signature": "PF00102",
+              "start_aa": 246,
+              "end_aa": 527,
+              "domain_id": "IPR000242",
+              "domain_name": "PTP_cat",
+              "domain_source": "PFAM,PRINTS,PROSITE_PROFILES,SMART"
+            }
+          ],
+          "families": [
+            {
+              "interpro_accession": "IPR036860",
+              "interpro_name": "SH2_dom_sf",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "member_databases": "GENE3D,SUPERFAMILY",
+              "supporting_interpro": "",
+              "n_signatures": 0,
+              "representative_signature": "",
+              "start_aa": 1,
+              "end_aa": 217,
+              "domain_id": "IPR036860",
+              "domain_name": "SH2_dom_sf",
+              "domain_source": "GENE3D,SUPERFAMILY"
+            },
+            {
+              "interpro_accession": "IPR012152",
+              "interpro_name": "Tyr_Pase_non-rcpt_typ-6/11",
+              "interpro_type": "FAMILY",
+              "member_databases": "PIRSF",
+              "supporting_interpro": "",
+              "n_signatures": 0,
+              "representative_signature": "",
+              "start_aa": 1,
+              "end_aa": 597,
+              "domain_id": "IPR012152",
+              "domain_name": "Tyr_Pase_non-rcpt_typ-6/11",
+              "domain_source": "PIRSF"
+            },
+            {
+              "interpro_accession": "IPR029021",
+              "interpro_name": "Prot-tyrosine_phosphatase-like",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "member_databases": "GENE3D,SUPERFAMILY",
+              "supporting_interpro": "",
+              "n_signatures": 0,
+              "representative_signature": "",
+              "start_aa": 218,
+              "end_aa": 529,
+              "domain_id": "IPR029021",
+              "domain_name": "Prot-tyrosine_phosphatase-like",
+              "domain_source": "GENE3D,SUPERFAMILY"
+            }
+          ],
+          "features": [
+            {
+              "interpro_accession": "IPR016130",
+              "interpro_name": "Tyr_Pase_AS",
+              "interpro_type": "ACTIVE_SITE",
+              "member_databases": "PROSITE_PATTERNS",
+              "supporting_interpro": "",
+              "n_signatures": 0,
+              "representative_signature": "",
+              "start_aa": 461,
+              "end_aa": 471,
+              "domain_id": "IPR016130",
+              "domain_name": "Tyr_Pase_AS",
+              "domain_source": "PROSITE_PATTERNS"
+            },
+            {
+              "interpro_accession": "",
+              "interpro_name": "disorder_prediction",
+              "interpro_type": "DISORDER",
+              "member_databases": "MOBIDB_LITE",
+              "supporting_interpro": "",
+              "n_signatures": 0,
+              "representative_signature": "",
+              "start_aa": 552,
+              "end_aa": 577,
+              "domain_id": "",
+              "domain_name": "disorder_prediction",
+              "domain_source": "MOBIDB_LITE"
+            },
+            {
+              "interpro_accession": "",
+              "interpro_name": "disorder_prediction",
+              "interpro_type": "DISORDER",
+              "member_databases": "MOBIDB_LITE",
+              "supporting_interpro": "",
+              "n_signatures": 0,
+              "representative_signature": "",
+              "start_aa": 563,
+              "end_aa": 572,
+              "domain_id": "",
+              "domain_name": "disorder_prediction",
+              "domain_source": "MOBIDB_LITE"
+            }
+          ],
+          "raw_signatures": [
+            {
+              "member_database": "FUNFAM",
+              "signature_accession": "G3DSA:3.30.505.10:FF:000018",
+              "signature_name": "Tyrosine-protein phosphatase non-receptor type",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 1,
+              "end_aa": 102
+            },
+            {
+              "member_database": "GENE3D",
+              "signature_accession": "G3DSA:3.30.505.10",
+              "signature_name": "SH2 domain",
+              "interpro_accession": "IPR036860",
+              "interpro_name": "SH2_dom_sf",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 1,
+              "end_aa": 103
+            },
+            {
+              "member_database": "PIRSF",
+              "signature_accession": "PIRSF000929",
+              "signature_name": "PTPN6_PTPN11",
+              "interpro_accession": "IPR012152",
+              "interpro_name": "Tyr_Pase_non-rcpt_typ-6/11",
+              "interpro_type": "FAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 1,
+              "end_aa": 597
+            },
+            {
+              "member_database": "PANTHER",
+              "signature_accession": "PTHR46559",
+              "signature_name": "TYROSINE-PROTEIN PHOSPHATASE NON-RECEPTOR TYPE 11",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 1,
+              "end_aa": 597
+            },
+            {
+              "member_database": "SUPERFAMILY",
+              "signature_accession": "SSF55550",
+              "signature_name": "SH2 domain",
+              "interpro_accession": "IPR036860",
+              "interpro_name": "SH2_dom_sf",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 3,
+              "end_aa": 106
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000929-1",
+              "signature_name": "PIRSR000929-1",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 3,
+              "end_aa": 550
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000929-2",
+              "signature_name": "PIRSR000929-2",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 3,
+              "end_aa": 550
+            },
+            {
+              "member_database": "SMART",
+              "signature_accession": "SM00252",
+              "signature_name": "SH2_5",
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 4,
+              "end_aa": 87
+            },
+            {
+              "member_database": "CDD",
+              "signature_accession": "cd10340",
+              "signature_name": "SH2_N-SH2_SHP_like",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 5,
+              "end_aa": 103
+            },
+            {
+              "member_database": "PFAM",
+              "signature_accession": "PF00017",
+              "signature_name": "SH2",
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 6,
+              "end_aa": 81
+            },
+            {
+              "member_database": "PROSITE_PROFILES",
+              "signature_accession": "PS50001",
+              "signature_name": "SH2",
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 6,
+              "end_aa": 102
+            },
+            {
+              "member_database": "GENE3D",
+              "signature_accession": "G3DSA:3.30.505.10",
+              "signature_name": "SH2 domain",
+              "interpro_accession": "IPR036860",
+              "interpro_name": "SH2_dom_sf",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 104,
+              "end_aa": 217
+            },
+            {
+              "member_database": "FUNFAM",
+              "signature_accession": "G3DSA:3.30.505.10:FF:000012",
+              "signature_name": "Tyrosine-protein phosphatase non-receptor type",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 104,
+              "end_aa": 217
+            },
+            {
+              "member_database": "SMART",
+              "signature_accession": "SM00252",
+              "signature_name": "SH2_5",
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 110,
+              "end_aa": 203
+            },
+            {
+              "member_database": "SUPERFAMILY",
+              "signature_accession": "SSF55550",
+              "signature_name": "SH2 domain",
+              "interpro_accession": "IPR036860",
+              "interpro_name": "SH2_dom_sf",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 111,
+              "end_aa": 216
+            },
+            {
+              "member_database": "CDD",
+              "signature_accession": "cd09931",
+              "signature_name": "SH2_C-SH2_SHP_like",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 111,
+              "end_aa": 218
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00401",
+              "signature_name": "SH2DOMAIN",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 112,
+              "end_aa": 126
+            },
+            {
+              "member_database": "PFAM",
+              "signature_accession": "PF00017",
+              "signature_name": "SH2",
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 112,
+              "end_aa": 197
+            },
+            {
+              "member_database": "PROSITE_PROFILES",
+              "signature_accession": "PS50001",
+              "signature_name": "SH2",
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 112,
+              "end_aa": 216
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00401",
+              "signature_name": "SH2DOMAIN",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 132,
+              "end_aa": 142
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00401",
+              "signature_name": "SH2DOMAIN",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 144,
+              "end_aa": 155
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00401",
+              "signature_name": "SH2DOMAIN",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 166,
+              "end_aa": 176
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00401",
+              "signature_name": "SH2DOMAIN",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 186,
+              "end_aa": 200
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000933-50",
+              "signature_name": "PIRSR000933-50",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 209,
+              "end_aa": 539
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000933-51",
+              "signature_name": "PIRSR000933-51",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 209,
+              "end_aa": 539
+            },
+            {
+              "member_database": "FUNFAM",
+              "signature_accession": "G3DSA:3.90.190.10:FF:000018",
+              "signature_name": "Tyrosine-protein phosphatase non-receptor type",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 218,
+              "end_aa": 529
+            },
+            {
+              "member_database": "GENE3D",
+              "signature_accession": "G3DSA:3.90.190.10",
+              "signature_name": "Protein tyrosine phosphatase superfamily",
+              "interpro_accession": "IPR029021",
+              "interpro_name": "Prot-tyrosine_phosphatase-like",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 218,
+              "end_aa": 529
+            },
+            {
+              "member_database": "SUPERFAMILY",
+              "signature_accession": "SSF52799",
+              "signature_name": "(Phosphotyrosine protein) phosphatases II",
+              "interpro_accession": "IPR029021",
+              "interpro_name": "Prot-tyrosine_phosphatase-like",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 220,
+              "end_aa": 526
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR002006-2",
+              "signature_name": "PIRSR002006-2",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 239,
+              "end_aa": 525
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000934-1",
+              "signature_name": "PIRSR000934-1",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 240,
+              "end_aa": 525
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000930-51",
+              "signature_name": "PIRSR000930-51",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 243,
+              "end_aa": 557
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000930-50",
+              "signature_name": "PIRSR000930-50",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 243,
+              "end_aa": 557
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000926-1",
+              "signature_name": "PIRSR000926-1",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 245,
+              "end_aa": 523
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000926-2",
+              "signature_name": "PIRSR000926-2",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 245,
+              "end_aa": 523
+            },
+            {
+              "member_database": "SMART",
+              "signature_accession": "SM00194",
+              "signature_name": "PTPc_3",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 246,
+              "end_aa": 527
+            },
+            {
+              "member_database": "PROSITE_PROFILES",
+              "signature_accession": "PS50055",
+              "signature_name": "TYR_PHOSPHATASE_PTP",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 247,
+              "end_aa": 525
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000927-1",
+              "signature_name": "PIRSR000927-1",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 266,
+              "end_aa": 538
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000927-2",
+              "signature_name": "PIRSR000927-2",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 266,
+              "end_aa": 538
+            },
+            {
+              "member_database": "CDD",
+              "signature_accession": "cd14605",
+              "signature_name": "PTPc-N11",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 272,
+              "end_aa": 528
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR001997-1",
+              "signature_name": "PIRSR001997-1",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 272,
+              "end_aa": 529
+            },
+            {
+              "member_database": "PFAM",
+              "signature_accession": "PF00102",
+              "signature_name": "Y_phosphatase",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 273,
+              "end_aa": 523
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR608356-51",
+              "signature_name": "PIRSR608356-51",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 274,
+              "end_aa": 530
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR608356-50",
+              "signature_name": "PIRSR608356-50",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 274,
+              "end_aa": 530
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00700",
+              "signature_name": "PRTYPHPHTASE",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 303,
+              "end_aa": 310
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00700",
+              "signature_name": "PRTYPHPHTASE",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 327,
+              "end_aa": 347
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00700",
+              "signature_name": "PRTYPHPHTASE",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 417,
+              "end_aa": 434
+            },
+            {
+              "member_database": "SMART",
+              "signature_accession": "SM00404",
+              "signature_name": "ptp_7",
+              "interpro_accession": "IPR003595",
+              "interpro_name": "Tyr_Pase_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 418,
+              "end_aa": 524
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000941-50",
+              "signature_name": "PIRSR000941-50",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 439,
+              "end_aa": 476
+            },
+            {
+              "member_database": "PROSITE_PROFILES",
+              "signature_accession": "PS50056",
+              "signature_name": "TYR_PHOSPHATASE_2",
+              "interpro_accession": "IPR000387",
+              "interpro_name": "Tyr_Pase_dom",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 440,
+              "end_aa": 516
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR038025-50",
+              "signature_name": "PIRSR038025-50",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 455,
+              "end_aa": 532
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00700",
+              "signature_name": "PRTYPHPHTASE",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 458,
+              "end_aa": 476
+            },
+            {
+              "member_database": "PROSITE_PATTERNS",
+              "signature_accession": "PS00383",
+              "signature_name": "TYR_PHOSPHATASE_1",
+              "interpro_accession": "IPR016130",
+              "interpro_name": "Tyr_Pase_AS",
+              "interpro_type": "ACTIVE_SITE",
+              "layer": "feature",
+              "is_integrated": true,
+              "start_aa": 461,
+              "end_aa": 471
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00700",
+              "signature_name": "PRTYPHPHTASE",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 492,
+              "end_aa": 507
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00700",
+              "signature_name": "PRTYPHPHTASE",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 508,
+              "end_aa": 518
+            },
+            {
+              "member_database": "MOBIDB_LITE",
+              "signature_accession": "mobidb-lite",
+              "signature_name": "disorder_prediction",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "feature",
+              "is_integrated": false,
+              "start_aa": 552,
+              "end_aa": 577
+            },
+            {
+              "member_database": "MOBIDB_LITE",
+              "signature_accession": "mobidb-lite",
+              "signature_name": "disorder_prediction",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "feature",
+              "is_integrated": false,
+              "start_aa": 563,
+              "end_aa": 572
+            }
+          ],
+          "tm": [],
+          "exons": [
+            {
+              "exon_id": "NP_001317366.1:cds1",
+              "exon_number": 1,
+              "protein_start_aa": 1,
+              "protein_end_aa": 5
+            },
+            {
+              "exon_id": "NP_001317366.1:cds2",
+              "exon_number": 2,
+              "protein_start_aa": 5,
+              "protein_end_aa": 46
+            },
+            {
+              "exon_id": "NP_001317366.1:cds3",
+              "exon_number": 3,
+              "protein_start_aa": 46,
+              "protein_end_aa": 111
+            },
+            {
+              "exon_id": "NP_001317366.1:cds4",
+              "exon_number": 4,
+              "protein_start_aa": 111,
+              "protein_end_aa": 175
+            },
+            {
+              "exon_id": "NP_001317366.1:cds5",
+              "exon_number": 5,
+              "protein_start_aa": 176,
+              "protein_end_aa": 214
+            },
+            {
+              "exon_id": "NP_001317366.1:cds6",
+              "exon_number": 6,
+              "protein_start_aa": 215,
+              "protein_end_aa": 252
+            },
+            {
+              "exon_id": "NP_001317366.1:cds7",
+              "exon_number": 7,
+              "protein_start_aa": 253,
+              "protein_end_aa": 285
+            },
+            {
+              "exon_id": "NP_001317366.1:cds8",
+              "exon_number": 8,
+              "protein_start_aa": 285,
+              "protein_end_aa": 311
+            },
+            {
+              "exon_id": "NP_001317366.1:cds9",
+              "exon_number": 9,
+              "protein_start_aa": 312,
+              "protein_end_aa": 364
+            },
+            {
+              "exon_id": "NP_001317366.1:cds10",
+              "exon_number": 10,
+              "protein_start_aa": 365,
+              "protein_end_aa": 408
+            },
+            {
+              "exon_id": "NP_001317366.1:cds11",
+              "exon_number": 11,
+              "protein_start_aa": 409,
+              "protein_end_aa": 464
+            },
+            {
+              "exon_id": "NP_001317366.1:cds12",
+              "exon_number": 12,
+              "protein_start_aa": 464,
+              "protein_end_aa": 487
+            },
+            {
+              "exon_id": "NP_001317366.1:cds13",
+              "exon_number": 13,
+              "protein_start_aa": 487,
+              "protein_end_aa": 537
+            },
+            {
+              "exon_id": "NP_001317366.1:cds14",
+              "exon_number": 14,
+              "protein_start_aa": 538,
+              "protein_end_aa": 575
+            },
+            {
+              "exon_id": "NP_001317366.1:cds15",
+              "exon_number": 15,
+              "protein_start_aa": 575,
+              "protein_end_aa": 597
+            }
+          ],
+          "annotated": true,
+          "n_representative_domains": 3
+        },
+        {
+          "species_id": "homo_sapiens",
+          "protein_id": "NP_001361554.1",
+          "length_aa": 592,
+          "role": "alternative",
+          "transcript_id": "NM_001374625.1",
+          "domains": [],
+          "families": [],
+          "features": [],
+          "raw_signatures": [],
+          "tm": [],
+          "exons": [
+            {
+              "exon_id": "NP_001361554.1:cds1",
+              "exon_number": 1,
+              "protein_start_aa": 1,
+              "protein_end_aa": 5
+            },
+            {
+              "exon_id": "NP_001361554.1:cds2",
+              "exon_number": 2,
+              "protein_start_aa": 5,
+              "protein_end_aa": 46
+            },
+            {
+              "exon_id": "NP_001361554.1:cds3",
+              "exon_number": 3,
+              "protein_start_aa": 46,
+              "protein_end_aa": 110
+            },
+            {
+              "exon_id": "NP_001361554.1:cds4",
+              "exon_number": 4,
+              "protein_start_aa": 110,
+              "protein_end_aa": 174
+            },
+            {
+              "exon_id": "NP_001361554.1:cds5",
+              "exon_number": 5,
+              "protein_start_aa": 175,
+              "protein_end_aa": 213
+            },
+            {
+              "exon_id": "NP_001361554.1:cds6",
+              "exon_number": 6,
+              "protein_start_aa": 214,
+              "protein_end_aa": 251
+            },
+            {
+              "exon_id": "NP_001361554.1:cds7",
+              "exon_number": 7,
+              "protein_start_aa": 252,
+              "protein_end_aa": 284
+            },
+            {
+              "exon_id": "NP_001361554.1:cds8",
+              "exon_number": 8,
+              "protein_start_aa": 284,
+              "protein_end_aa": 310
+            },
+            {
+              "exon_id": "NP_001361554.1:cds9",
+              "exon_number": 9,
+              "protein_start_aa": 311,
+              "protein_end_aa": 363
+            },
+            {
+              "exon_id": "NP_001361554.1:cds10",
+              "exon_number": 10,
+              "protein_start_aa": 364,
+              "protein_end_aa": 407
+            },
+            {
+              "exon_id": "NP_001361554.1:cds11",
+              "exon_number": 11,
+              "protein_start_aa": 408,
+              "protein_end_aa": 459
+            },
+            {
+              "exon_id": "NP_001361554.1:cds12",
+              "exon_number": 12,
+              "protein_start_aa": 459,
+              "protein_end_aa": 482
+            },
+            {
+              "exon_id": "NP_001361554.1:cds13",
+              "exon_number": 13,
+              "protein_start_aa": 482,
+              "protein_end_aa": 532
+            },
+            {
+              "exon_id": "NP_001361554.1:cds14",
+              "exon_number": 14,
+              "protein_start_aa": 533,
+              "protein_end_aa": 570
+            },
+            {
+              "exon_id": "NP_001361554.1:cds15",
+              "exon_number": 15,
+              "protein_start_aa": 570,
+              "protein_end_aa": 592
+            }
+          ],
+          "annotated": false,
+          "n_representative_domains": 0
+        },
+        {
+          "species_id": "homo_sapiens",
+          "protein_id": "NP_002825.3",
+          "length_aa": 593,
+          "role": "alternative",
+          "transcript_id": "NM_002834.5",
+          "domains": [],
+          "families": [],
+          "features": [],
+          "raw_signatures": [],
+          "tm": [],
+          "exons": [
+            {
+              "exon_id": "NP_002825.3:cds1",
+              "exon_number": 1,
+              "protein_start_aa": 1,
+              "protein_end_aa": 5
+            },
+            {
+              "exon_id": "NP_002825.3:cds2",
+              "exon_number": 2,
+              "protein_start_aa": 5,
+              "protein_end_aa": 46
+            },
+            {
+              "exon_id": "NP_002825.3:cds3",
+              "exon_number": 3,
+              "protein_start_aa": 46,
+              "protein_end_aa": 111
+            },
+            {
+              "exon_id": "NP_002825.3:cds4",
+              "exon_number": 4,
+              "protein_start_aa": 111,
+              "protein_end_aa": 175
+            },
+            {
+              "exon_id": "NP_002825.3:cds5",
+              "exon_number": 5,
+              "protein_start_aa": 176,
+              "protein_end_aa": 214
+            },
+            {
+              "exon_id": "NP_002825.3:cds6",
+              "exon_number": 6,
+              "protein_start_aa": 215,
+              "protein_end_aa": 252
+            },
+            {
+              "exon_id": "NP_002825.3:cds7",
+              "exon_number": 7,
+              "protein_start_aa": 253,
+              "protein_end_aa": 285
+            },
+            {
+              "exon_id": "NP_002825.3:cds8",
+              "exon_number": 8,
+              "protein_start_aa": 285,
+              "protein_end_aa": 311
+            },
+            {
+              "exon_id": "NP_002825.3:cds9",
+              "exon_number": 9,
+              "protein_start_aa": 312,
+              "protein_end_aa": 364
+            },
+            {
+              "exon_id": "NP_002825.3:cds10",
+              "exon_number": 10,
+              "protein_start_aa": 365,
+              "protein_end_aa": 408
+            },
+            {
+              "exon_id": "NP_002825.3:cds11",
+              "exon_number": 11,
+              "protein_start_aa": 409,
+              "protein_end_aa": 460
+            },
+            {
+              "exon_id": "NP_002825.3:cds12",
+              "exon_number": 12,
+              "protein_start_aa": 460,
+              "protein_end_aa": 483
+            },
+            {
+              "exon_id": "NP_002825.3:cds13",
+              "exon_number": 13,
+              "protein_start_aa": 483,
+              "protein_end_aa": 533
+            },
+            {
+              "exon_id": "NP_002825.3:cds14",
+              "exon_number": 14,
+              "protein_start_aa": 534,
+              "protein_end_aa": 571
+            },
+            {
+              "exon_id": "NP_002825.3:cds15",
+              "exon_number": 15,
+              "protein_start_aa": 571,
+              "protein_end_aa": 593
+            }
+          ],
+          "annotated": false,
+          "n_representative_domains": 0
+        },
+        {
+          "species_id": "homo_sapiens",
+          "protein_id": "NP_542168.1",
+          "length_aa": 460,
+          "role": "alternative",
+          "transcript_id": "NM_080601.3",
+          "domains": [],
+          "families": [],
+          "features": [],
+          "raw_signatures": [],
+          "tm": [],
+          "exons": [
+            {
+              "exon_id": "NP_542168.1:cds1",
+              "exon_number": 1,
+              "protein_start_aa": 1,
+              "protein_end_aa": 5
+            },
+            {
+              "exon_id": "NP_542168.1:cds2",
+              "exon_number": 2,
+              "protein_start_aa": 5,
+              "protein_end_aa": 46
+            },
+            {
+              "exon_id": "NP_542168.1:cds3",
+              "exon_number": 3,
+              "protein_start_aa": 46,
+              "protein_end_aa": 111
+            },
+            {
+              "exon_id": "NP_542168.1:cds4",
+              "exon_number": 4,
+              "protein_start_aa": 111,
+              "protein_end_aa": 175
+            },
+            {
+              "exon_id": "NP_542168.1:cds5",
+              "exon_number": 5,
+              "protein_start_aa": 176,
+              "protein_end_aa": 214
+            },
+            {
+              "exon_id": "NP_542168.1:cds6",
+              "exon_number": 6,
+              "protein_start_aa": 215,
+              "protein_end_aa": 252
+            },
+            {
+              "exon_id": "NP_542168.1:cds7",
+              "exon_number": 7,
+              "protein_start_aa": 253,
+              "protein_end_aa": 285
+            },
+            {
+              "exon_id": "NP_542168.1:cds8",
+              "exon_number": 8,
+              "protein_start_aa": 285,
+              "protein_end_aa": 311
+            },
+            {
+              "exon_id": "NP_542168.1:cds9",
+              "exon_number": 9,
+              "protein_start_aa": 312,
+              "protein_end_aa": 364
+            },
+            {
+              "exon_id": "NP_542168.1:cds10",
+              "exon_number": 10,
+              "protein_start_aa": 365,
+              "protein_end_aa": 408
+            },
+            {
+              "exon_id": "NP_542168.1:cds11",
+              "exon_number": 11,
+              "protein_start_aa": 409,
+              "protein_end_aa": 460
+            }
+          ],
+          "annotated": false,
+          "n_representative_domains": 0
+        },
+        {
+          "species_id": "homo_sapiens",
+          "protein_id": "XP_011536915.1",
+          "length_aa": 596,
+          "role": "alternative",
+          "transcript_id": "XM_011538613.3",
+          "domains": [],
+          "families": [],
+          "features": [],
+          "raw_signatures": [],
+          "tm": [],
+          "exons": [
+            {
+              "exon_id": "XP_011536915.1:cds1",
+              "exon_number": 1,
+              "protein_start_aa": 1,
+              "protein_end_aa": 5
+            },
+            {
+              "exon_id": "XP_011536915.1:cds2",
+              "exon_number": 2,
+              "protein_start_aa": 5,
+              "protein_end_aa": 46
+            },
+            {
+              "exon_id": "XP_011536915.1:cds3",
+              "exon_number": 3,
+              "protein_start_aa": 46,
+              "protein_end_aa": 110
+            },
+            {
+              "exon_id": "XP_011536915.1:cds4",
+              "exon_number": 4,
+              "protein_start_aa": 110,
+              "protein_end_aa": 174
+            },
+            {
+              "exon_id": "XP_011536915.1:cds5",
+              "exon_number": 5,
+              "protein_start_aa": 175,
+              "protein_end_aa": 213
+            },
+            {
+              "exon_id": "XP_011536915.1:cds6",
+              "exon_number": 6,
+              "protein_start_aa": 214,
+              "protein_end_aa": 251
+            },
+            {
+              "exon_id": "XP_011536915.1:cds7",
+              "exon_number": 7,
+              "protein_start_aa": 252,
+              "protein_end_aa": 284
+            },
+            {
+              "exon_id": "XP_011536915.1:cds8",
+              "exon_number": 8,
+              "protein_start_aa": 284,
+              "protein_end_aa": 310
+            },
+            {
+              "exon_id": "XP_011536915.1:cds9",
+              "exon_number": 9,
+              "protein_start_aa": 311,
+              "protein_end_aa": 363
+            },
+            {
+              "exon_id": "XP_011536915.1:cds10",
+              "exon_number": 10,
+              "protein_start_aa": 364,
+              "protein_end_aa": 407
+            },
+            {
+              "exon_id": "XP_011536915.1:cds11",
+              "exon_number": 11,
+              "protein_start_aa": 408,
+              "protein_end_aa": 463
+            },
+            {
+              "exon_id": "XP_011536915.1:cds12",
+              "exon_number": 12,
+              "protein_start_aa": 463,
+              "protein_end_aa": 486
+            },
+            {
+              "exon_id": "XP_011536915.1:cds13",
+              "exon_number": 13,
+              "protein_start_aa": 486,
+              "protein_end_aa": 536
+            },
+            {
+              "exon_id": "XP_011536915.1:cds14",
+              "exon_number": 14,
+              "protein_start_aa": 537,
+              "protein_end_aa": 574
+            },
+            {
+              "exon_id": "XP_011536915.1:cds15",
+              "exon_number": 15,
+              "protein_start_aa": 574,
+              "protein_end_aa": 596
+            }
+          ],
+          "annotated": false,
+          "n_representative_domains": 0
+        }
+      ],
+      "n_annotated_proteins": 1
+    },
+    {
+      "species": "mus_musculus",
+      "display_species_name": "Mus Musculus",
+      "proteins": [
+        {
+          "species_id": "mus_musculus",
+          "protein_id": "NP_035332.1",
+          "length_aa": 597,
+          "role": "primary",
+          "transcript_id": "NM_011202.3",
+          "domains": [
+            {
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "member_databases": "PFAM,PROSITE_PROFILES,SMART",
+              "supporting_interpro": "IPR000980:SH2",
+              "n_signatures": 3,
+              "representative_signature": "PF00017",
+              "start_aa": 4,
+              "end_aa": 102,
+              "domain_id": "IPR000980",
+              "domain_name": "SH2",
+              "domain_source": "PFAM,PROSITE_PROFILES,SMART"
+            },
+            {
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "member_databases": "PFAM,PROSITE_PROFILES,SMART",
+              "supporting_interpro": "IPR000980:SH2",
+              "n_signatures": 3,
+              "representative_signature": "PF00017",
+              "start_aa": 110,
+              "end_aa": 216,
+              "domain_id": "IPR000980",
+              "domain_name": "SH2",
+              "domain_source": "PFAM,PROSITE_PROFILES,SMART"
+            },
+            {
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "member_databases": "PFAM,PRINTS,PROSITE_PROFILES,SMART",
+              "supporting_interpro": "IPR000242:PTP_cat;IPR000387:Tyr_Pase_dom;IPR003595:Tyr_Pase_cat",
+              "n_signatures": 6,
+              "representative_signature": "PF00102",
+              "start_aa": 246,
+              "end_aa": 527,
+              "domain_id": "IPR000242",
+              "domain_name": "PTP_cat",
+              "domain_source": "PFAM,PRINTS,PROSITE_PROFILES,SMART"
+            }
+          ],
+          "families": [
+            {
+              "interpro_accession": "IPR036860",
+              "interpro_name": "SH2_dom_sf",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "member_databases": "GENE3D,SUPERFAMILY",
+              "supporting_interpro": "",
+              "n_signatures": 0,
+              "representative_signature": "",
+              "start_aa": 1,
+              "end_aa": 217,
+              "domain_id": "IPR036860",
+              "domain_name": "SH2_dom_sf",
+              "domain_source": "GENE3D,SUPERFAMILY"
+            },
+            {
+              "interpro_accession": "IPR012152",
+              "interpro_name": "Tyr_Pase_non-rcpt_typ-6/11",
+              "interpro_type": "FAMILY",
+              "member_databases": "PIRSF",
+              "supporting_interpro": "",
+              "n_signatures": 0,
+              "representative_signature": "",
+              "start_aa": 1,
+              "end_aa": 597,
+              "domain_id": "IPR012152",
+              "domain_name": "Tyr_Pase_non-rcpt_typ-6/11",
+              "domain_source": "PIRSF"
+            },
+            {
+              "interpro_accession": "IPR029021",
+              "interpro_name": "Prot-tyrosine_phosphatase-like",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "member_databases": "GENE3D,SUPERFAMILY",
+              "supporting_interpro": "",
+              "n_signatures": 0,
+              "representative_signature": "",
+              "start_aa": 218,
+              "end_aa": 529,
+              "domain_id": "IPR029021",
+              "domain_name": "Prot-tyrosine_phosphatase-like",
+              "domain_source": "GENE3D,SUPERFAMILY"
+            }
+          ],
+          "features": [
+            {
+              "interpro_accession": "IPR016130",
+              "interpro_name": "Tyr_Pase_AS",
+              "interpro_type": "ACTIVE_SITE",
+              "member_databases": "PROSITE_PATTERNS",
+              "supporting_interpro": "",
+              "n_signatures": 0,
+              "representative_signature": "",
+              "start_aa": 461,
+              "end_aa": 471,
+              "domain_id": "IPR016130",
+              "domain_name": "Tyr_Pase_AS",
+              "domain_source": "PROSITE_PATTERNS"
+            }
+          ],
+          "raw_signatures": [
+            {
+              "member_database": "FUNFAM",
+              "signature_accession": "G3DSA:3.30.505.10:FF:000018",
+              "signature_name": "Tyrosine-protein phosphatase non-receptor type",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 1,
+              "end_aa": 102
+            },
+            {
+              "member_database": "GENE3D",
+              "signature_accession": "G3DSA:3.30.505.10",
+              "signature_name": "SH2 domain",
+              "interpro_accession": "IPR036860",
+              "interpro_name": "SH2_dom_sf",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 1,
+              "end_aa": 103
+            },
+            {
+              "member_database": "PIRSF",
+              "signature_accession": "PIRSF000929",
+              "signature_name": "PTPN6_PTPN11",
+              "interpro_accession": "IPR012152",
+              "interpro_name": "Tyr_Pase_non-rcpt_typ-6/11",
+              "interpro_type": "FAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 1,
+              "end_aa": 597
+            },
+            {
+              "member_database": "PANTHER",
+              "signature_accession": "PTHR46559",
+              "signature_name": "TYROSINE-PROTEIN PHOSPHATASE NON-RECEPTOR TYPE 11",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 1,
+              "end_aa": 597
+            },
+            {
+              "member_database": "SUPERFAMILY",
+              "signature_accession": "SSF55550",
+              "signature_name": "SH2 domain",
+              "interpro_accession": "IPR036860",
+              "interpro_name": "SH2_dom_sf",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 3,
+              "end_aa": 106
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000929-1",
+              "signature_name": "PIRSR000929-1",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 3,
+              "end_aa": 550
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000929-2",
+              "signature_name": "PIRSR000929-2",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 3,
+              "end_aa": 550
+            },
+            {
+              "member_database": "SMART",
+              "signature_accession": "SM00252",
+              "signature_name": "SH2_5",
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 4,
+              "end_aa": 87
+            },
+            {
+              "member_database": "CDD",
+              "signature_accession": "cd10340",
+              "signature_name": "SH2_N-SH2_SHP_like",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 5,
+              "end_aa": 103
+            },
+            {
+              "member_database": "PFAM",
+              "signature_accession": "PF00017",
+              "signature_name": "SH2",
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 6,
+              "end_aa": 81
+            },
+            {
+              "member_database": "PROSITE_PROFILES",
+              "signature_accession": "PS50001",
+              "signature_name": "SH2",
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 6,
+              "end_aa": 102
+            },
+            {
+              "member_database": "GENE3D",
+              "signature_accession": "G3DSA:3.30.505.10",
+              "signature_name": "SH2 domain",
+              "interpro_accession": "IPR036860",
+              "interpro_name": "SH2_dom_sf",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 104,
+              "end_aa": 217
+            },
+            {
+              "member_database": "FUNFAM",
+              "signature_accession": "G3DSA:3.30.505.10:FF:000012",
+              "signature_name": "Tyrosine-protein phosphatase non-receptor type",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 104,
+              "end_aa": 217
+            },
+            {
+              "member_database": "SMART",
+              "signature_accession": "SM00252",
+              "signature_name": "SH2_5",
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 110,
+              "end_aa": 203
+            },
+            {
+              "member_database": "SUPERFAMILY",
+              "signature_accession": "SSF55550",
+              "signature_name": "SH2 domain",
+              "interpro_accession": "IPR036860",
+              "interpro_name": "SH2_dom_sf",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 111,
+              "end_aa": 216
+            },
+            {
+              "member_database": "CDD",
+              "signature_accession": "cd09931",
+              "signature_name": "SH2_C-SH2_SHP_like",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 111,
+              "end_aa": 218
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00401",
+              "signature_name": "SH2DOMAIN",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 112,
+              "end_aa": 126
+            },
+            {
+              "member_database": "PFAM",
+              "signature_accession": "PF00017",
+              "signature_name": "SH2",
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 112,
+              "end_aa": 197
+            },
+            {
+              "member_database": "PROSITE_PROFILES",
+              "signature_accession": "PS50001",
+              "signature_name": "SH2",
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 112,
+              "end_aa": 216
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00401",
+              "signature_name": "SH2DOMAIN",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 132,
+              "end_aa": 142
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00401",
+              "signature_name": "SH2DOMAIN",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 144,
+              "end_aa": 155
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00401",
+              "signature_name": "SH2DOMAIN",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 166,
+              "end_aa": 176
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00401",
+              "signature_name": "SH2DOMAIN",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 186,
+              "end_aa": 200
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000933-51",
+              "signature_name": "PIRSR000933-51",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 209,
+              "end_aa": 539
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000933-50",
+              "signature_name": "PIRSR000933-50",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 209,
+              "end_aa": 539
+            },
+            {
+              "member_database": "FUNFAM",
+              "signature_accession": "G3DSA:3.90.190.10:FF:000018",
+              "signature_name": "Tyrosine-protein phosphatase non-receptor type",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 218,
+              "end_aa": 529
+            },
+            {
+              "member_database": "GENE3D",
+              "signature_accession": "G3DSA:3.90.190.10",
+              "signature_name": "Protein tyrosine phosphatase superfamily",
+              "interpro_accession": "IPR029021",
+              "interpro_name": "Prot-tyrosine_phosphatase-like",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 218,
+              "end_aa": 529
+            },
+            {
+              "member_database": "SUPERFAMILY",
+              "signature_accession": "SSF52799",
+              "signature_name": "(Phosphotyrosine protein) phosphatases II",
+              "interpro_accession": "IPR029021",
+              "interpro_name": "Prot-tyrosine_phosphatase-like",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 220,
+              "end_aa": 526
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR002006-2",
+              "signature_name": "PIRSR002006-2",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 239,
+              "end_aa": 525
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000934-1",
+              "signature_name": "PIRSR000934-1",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 240,
+              "end_aa": 525
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000930-50",
+              "signature_name": "PIRSR000930-50",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 243,
+              "end_aa": 556
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000930-51",
+              "signature_name": "PIRSR000930-51",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 243,
+              "end_aa": 556
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000926-2",
+              "signature_name": "PIRSR000926-2",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 245,
+              "end_aa": 523
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000926-1",
+              "signature_name": "PIRSR000926-1",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 245,
+              "end_aa": 523
+            },
+            {
+              "member_database": "SMART",
+              "signature_accession": "SM00194",
+              "signature_name": "PTPc_3",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 246,
+              "end_aa": 527
+            },
+            {
+              "member_database": "PROSITE_PROFILES",
+              "signature_accession": "PS50055",
+              "signature_name": "TYR_PHOSPHATASE_PTP",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 247,
+              "end_aa": 525
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000927-2",
+              "signature_name": "PIRSR000927-2",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 266,
+              "end_aa": 538
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000927-1",
+              "signature_name": "PIRSR000927-1",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 266,
+              "end_aa": 538
+            },
+            {
+              "member_database": "CDD",
+              "signature_accession": "cd14605",
+              "signature_name": "PTPc-N11",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 272,
+              "end_aa": 528
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR001997-1",
+              "signature_name": "PIRSR001997-1",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 272,
+              "end_aa": 529
+            },
+            {
+              "member_database": "PFAM",
+              "signature_accession": "PF00102",
+              "signature_name": "Y_phosphatase",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 273,
+              "end_aa": 523
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR608356-50",
+              "signature_name": "PIRSR608356-50",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 274,
+              "end_aa": 530
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR608356-51",
+              "signature_name": "PIRSR608356-51",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 274,
+              "end_aa": 530
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00700",
+              "signature_name": "PRTYPHPHTASE",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 303,
+              "end_aa": 310
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00700",
+              "signature_name": "PRTYPHPHTASE",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 327,
+              "end_aa": 347
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00700",
+              "signature_name": "PRTYPHPHTASE",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 417,
+              "end_aa": 434
+            },
+            {
+              "member_database": "SMART",
+              "signature_accession": "SM00404",
+              "signature_name": "ptp_7",
+              "interpro_accession": "IPR003595",
+              "interpro_name": "Tyr_Pase_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 418,
+              "end_aa": 524
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000941-50",
+              "signature_name": "PIRSR000941-50",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 439,
+              "end_aa": 476
+            },
+            {
+              "member_database": "PROSITE_PROFILES",
+              "signature_accession": "PS50056",
+              "signature_name": "TYR_PHOSPHATASE_2",
+              "interpro_accession": "IPR000387",
+              "interpro_name": "Tyr_Pase_dom",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 440,
+              "end_aa": 516
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR038025-50",
+              "signature_name": "PIRSR038025-50",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 456,
+              "end_aa": 534
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00700",
+              "signature_name": "PRTYPHPHTASE",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 458,
+              "end_aa": 476
+            },
+            {
+              "member_database": "PROSITE_PATTERNS",
+              "signature_accession": "PS00383",
+              "signature_name": "TYR_PHOSPHATASE_1",
+              "interpro_accession": "IPR016130",
+              "interpro_name": "Tyr_Pase_AS",
+              "interpro_type": "ACTIVE_SITE",
+              "layer": "feature",
+              "is_integrated": true,
+              "start_aa": 461,
+              "end_aa": 471
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00700",
+              "signature_name": "PRTYPHPHTASE",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 492,
+              "end_aa": 507
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00700",
+              "signature_name": "PRTYPHPHTASE",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 508,
+              "end_aa": 518
+            }
+          ],
+          "tm": [],
+          "exons": [
+            {
+              "exon_id": "NP_035332.1:cds1",
+              "exon_number": 1,
+              "protein_start_aa": 1,
+              "protein_end_aa": 5
+            },
+            {
+              "exon_id": "NP_035332.1:cds2",
+              "exon_number": 2,
+              "protein_start_aa": 5,
+              "protein_end_aa": 46
+            },
+            {
+              "exon_id": "NP_035332.1:cds3",
+              "exon_number": 3,
+              "protein_start_aa": 46,
+              "protein_end_aa": 111
+            },
+            {
+              "exon_id": "NP_035332.1:cds4",
+              "exon_number": 4,
+              "protein_start_aa": 111,
+              "protein_end_aa": 175
+            },
+            {
+              "exon_id": "NP_035332.1:cds5",
+              "exon_number": 5,
+              "protein_start_aa": 176,
+              "protein_end_aa": 214
+            },
+            {
+              "exon_id": "NP_035332.1:cds6",
+              "exon_number": 6,
+              "protein_start_aa": 215,
+              "protein_end_aa": 252
+            },
+            {
+              "exon_id": "NP_035332.1:cds7",
+              "exon_number": 7,
+              "protein_start_aa": 253,
+              "protein_end_aa": 285
+            },
+            {
+              "exon_id": "NP_035332.1:cds8",
+              "exon_number": 8,
+              "protein_start_aa": 285,
+              "protein_end_aa": 311
+            },
+            {
+              "exon_id": "NP_035332.1:cds9",
+              "exon_number": 9,
+              "protein_start_aa": 312,
+              "protein_end_aa": 364
+            },
+            {
+              "exon_id": "NP_035332.1:cds10",
+              "exon_number": 10,
+              "protein_start_aa": 365,
+              "protein_end_aa": 408
+            },
+            {
+              "exon_id": "NP_035332.1:cds11",
+              "exon_number": 11,
+              "protein_start_aa": 409,
+              "protein_end_aa": 464
+            },
+            {
+              "exon_id": "NP_035332.1:cds12",
+              "exon_number": 12,
+              "protein_start_aa": 464,
+              "protein_end_aa": 487
+            },
+            {
+              "exon_id": "NP_035332.1:cds13",
+              "exon_number": 13,
+              "protein_start_aa": 487,
+              "protein_end_aa": 537
+            },
+            {
+              "exon_id": "NP_035332.1:cds14",
+              "exon_number": 14,
+              "protein_start_aa": 538,
+              "protein_end_aa": 575
+            },
+            {
+              "exon_id": "NP_035332.1:cds15",
+              "exon_number": 15,
+              "protein_start_aa": 575,
+              "protein_end_aa": 597
+            }
+          ],
+          "annotated": true,
+          "n_representative_domains": 3
+        },
+        {
+          "species_id": "mus_musculus",
+          "protein_id": "NP_001103462.1",
+          "length_aa": 593,
+          "role": "alternative",
+          "transcript_id": "NM_001109992.1",
+          "domains": [],
+          "families": [],
+          "features": [],
+          "raw_signatures": [],
+          "tm": [],
+          "exons": [
+            {
+              "exon_id": "NP_001103462.1:cds1",
+              "exon_number": 1,
+              "protein_start_aa": 1,
+              "protein_end_aa": 5
+            },
+            {
+              "exon_id": "NP_001103462.1:cds2",
+              "exon_number": 2,
+              "protein_start_aa": 5,
+              "protein_end_aa": 46
+            },
+            {
+              "exon_id": "NP_001103462.1:cds3",
+              "exon_number": 3,
+              "protein_start_aa": 46,
+              "protein_end_aa": 111
+            },
+            {
+              "exon_id": "NP_001103462.1:cds4",
+              "exon_number": 4,
+              "protein_start_aa": 111,
+              "protein_end_aa": 175
+            },
+            {
+              "exon_id": "NP_001103462.1:cds5",
+              "exon_number": 5,
+              "protein_start_aa": 176,
+              "protein_end_aa": 214
+            },
+            {
+              "exon_id": "NP_001103462.1:cds6",
+              "exon_number": 6,
+              "protein_start_aa": 215,
+              "protein_end_aa": 252
+            },
+            {
+              "exon_id": "NP_001103462.1:cds7",
+              "exon_number": 7,
+              "protein_start_aa": 253,
+              "protein_end_aa": 285
+            },
+            {
+              "exon_id": "NP_001103462.1:cds8",
+              "exon_number": 8,
+              "protein_start_aa": 285,
+              "protein_end_aa": 311
+            },
+            {
+              "exon_id": "NP_001103462.1:cds9",
+              "exon_number": 9,
+              "protein_start_aa": 312,
+              "protein_end_aa": 364
+            },
+            {
+              "exon_id": "NP_001103462.1:cds10",
+              "exon_number": 10,
+              "protein_start_aa": 365,
+              "protein_end_aa": 408
+            },
+            {
+              "exon_id": "NP_001103462.1:cds11",
+              "exon_number": 11,
+              "protein_start_aa": 409,
+              "protein_end_aa": 460
+            },
+            {
+              "exon_id": "NP_001103462.1:cds12",
+              "exon_number": 12,
+              "protein_start_aa": 460,
+              "protein_end_aa": 483
+            },
+            {
+              "exon_id": "NP_001103462.1:cds13",
+              "exon_number": 13,
+              "protein_start_aa": 483,
+              "protein_end_aa": 533
+            },
+            {
+              "exon_id": "NP_001103462.1:cds14",
+              "exon_number": 14,
+              "protein_start_aa": 534,
+              "protein_end_aa": 571
+            },
+            {
+              "exon_id": "NP_001103462.1:cds15",
+              "exon_number": 15,
+              "protein_start_aa": 571,
+              "protein_end_aa": 593
+            }
+          ],
+          "annotated": false,
+          "n_representative_domains": 0
+        }
+      ],
+      "n_annotated_proteins": 1
+    },
+    {
+      "species": "rattus_norvegicus",
+      "display_species_name": "Rattus Norvegicus",
+      "proteins": [
+        {
+          "species_id": "rattus_norvegicus",
+          "protein_id": "NP_001171064.1",
+          "length_aa": 597,
+          "role": "primary",
+          "transcript_id": "NM_001177593.1",
+          "domains": [
+            {
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "member_databases": "PFAM,PROSITE_PROFILES,SMART",
+              "supporting_interpro": "IPR000980:SH2",
+              "n_signatures": 3,
+              "representative_signature": "PF00017",
+              "start_aa": 4,
+              "end_aa": 102,
+              "domain_id": "IPR000980",
+              "domain_name": "SH2",
+              "domain_source": "PFAM,PROSITE_PROFILES,SMART"
+            },
+            {
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "member_databases": "PFAM,PROSITE_PROFILES,SMART",
+              "supporting_interpro": "IPR000980:SH2",
+              "n_signatures": 3,
+              "representative_signature": "PF00017",
+              "start_aa": 110,
+              "end_aa": 216,
+              "domain_id": "IPR000980",
+              "domain_name": "SH2",
+              "domain_source": "PFAM,PROSITE_PROFILES,SMART"
+            },
+            {
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "member_databases": "PFAM,PRINTS,PROSITE_PROFILES,SMART",
+              "supporting_interpro": "IPR000242:PTP_cat;IPR000387:Tyr_Pase_dom;IPR003595:Tyr_Pase_cat",
+              "n_signatures": 6,
+              "representative_signature": "PF00102",
+              "start_aa": 246,
+              "end_aa": 527,
+              "domain_id": "IPR000242",
+              "domain_name": "PTP_cat",
+              "domain_source": "PFAM,PRINTS,PROSITE_PROFILES,SMART"
+            }
+          ],
+          "families": [
+            {
+              "interpro_accession": "IPR036860",
+              "interpro_name": "SH2_dom_sf",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "member_databases": "GENE3D,SUPERFAMILY",
+              "supporting_interpro": "",
+              "n_signatures": 0,
+              "representative_signature": "",
+              "start_aa": 1,
+              "end_aa": 217,
+              "domain_id": "IPR036860",
+              "domain_name": "SH2_dom_sf",
+              "domain_source": "GENE3D,SUPERFAMILY"
+            },
+            {
+              "interpro_accession": "IPR012152",
+              "interpro_name": "Tyr_Pase_non-rcpt_typ-6/11",
+              "interpro_type": "FAMILY",
+              "member_databases": "PIRSF",
+              "supporting_interpro": "",
+              "n_signatures": 0,
+              "representative_signature": "",
+              "start_aa": 1,
+              "end_aa": 597,
+              "domain_id": "IPR012152",
+              "domain_name": "Tyr_Pase_non-rcpt_typ-6/11",
+              "domain_source": "PIRSF"
+            },
+            {
+              "interpro_accession": "IPR029021",
+              "interpro_name": "Prot-tyrosine_phosphatase-like",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "member_databases": "GENE3D,SUPERFAMILY",
+              "supporting_interpro": "",
+              "n_signatures": 0,
+              "representative_signature": "",
+              "start_aa": 218,
+              "end_aa": 529,
+              "domain_id": "IPR029021",
+              "domain_name": "Prot-tyrosine_phosphatase-like",
+              "domain_source": "GENE3D,SUPERFAMILY"
+            }
+          ],
+          "features": [
+            {
+              "interpro_accession": "IPR016130",
+              "interpro_name": "Tyr_Pase_AS",
+              "interpro_type": "ACTIVE_SITE",
+              "member_databases": "PROSITE_PATTERNS",
+              "supporting_interpro": "",
+              "n_signatures": 0,
+              "representative_signature": "",
+              "start_aa": 461,
+              "end_aa": 471,
+              "domain_id": "IPR016130",
+              "domain_name": "Tyr_Pase_AS",
+              "domain_source": "PROSITE_PATTERNS"
+            }
+          ],
+          "raw_signatures": [
+            {
+              "member_database": "FUNFAM",
+              "signature_accession": "G3DSA:3.30.505.10:FF:000018",
+              "signature_name": "Tyrosine-protein phosphatase non-receptor type",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 1,
+              "end_aa": 102
+            },
+            {
+              "member_database": "GENE3D",
+              "signature_accession": "G3DSA:3.30.505.10",
+              "signature_name": "SH2 domain",
+              "interpro_accession": "IPR036860",
+              "interpro_name": "SH2_dom_sf",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 1,
+              "end_aa": 103
+            },
+            {
+              "member_database": "PANTHER",
+              "signature_accession": "PTHR46559",
+              "signature_name": "TYROSINE-PROTEIN PHOSPHATASE NON-RECEPTOR TYPE 11",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 1,
+              "end_aa": 597
+            },
+            {
+              "member_database": "PIRSF",
+              "signature_accession": "PIRSF000929",
+              "signature_name": "PTPN6_PTPN11",
+              "interpro_accession": "IPR012152",
+              "interpro_name": "Tyr_Pase_non-rcpt_typ-6/11",
+              "interpro_type": "FAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 1,
+              "end_aa": 597
+            },
+            {
+              "member_database": "SUPERFAMILY",
+              "signature_accession": "SSF55550",
+              "signature_name": "SH2 domain",
+              "interpro_accession": "IPR036860",
+              "interpro_name": "SH2_dom_sf",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 3,
+              "end_aa": 106
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000929-2",
+              "signature_name": "PIRSR000929-2",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 3,
+              "end_aa": 550
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000929-1",
+              "signature_name": "PIRSR000929-1",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 3,
+              "end_aa": 550
+            },
+            {
+              "member_database": "SMART",
+              "signature_accession": "SM00252",
+              "signature_name": "SH2_5",
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 4,
+              "end_aa": 87
+            },
+            {
+              "member_database": "CDD",
+              "signature_accession": "cd10340",
+              "signature_name": "SH2_N-SH2_SHP_like",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 5,
+              "end_aa": 103
+            },
+            {
+              "member_database": "PFAM",
+              "signature_accession": "PF00017",
+              "signature_name": "SH2",
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 6,
+              "end_aa": 81
+            },
+            {
+              "member_database": "PROSITE_PROFILES",
+              "signature_accession": "PS50001",
+              "signature_name": "SH2",
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 6,
+              "end_aa": 102
+            },
+            {
+              "member_database": "GENE3D",
+              "signature_accession": "G3DSA:3.30.505.10",
+              "signature_name": "SH2 domain",
+              "interpro_accession": "IPR036860",
+              "interpro_name": "SH2_dom_sf",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 104,
+              "end_aa": 217
+            },
+            {
+              "member_database": "FUNFAM",
+              "signature_accession": "G3DSA:3.30.505.10:FF:000012",
+              "signature_name": "Tyrosine-protein phosphatase non-receptor type",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 104,
+              "end_aa": 217
+            },
+            {
+              "member_database": "SMART",
+              "signature_accession": "SM00252",
+              "signature_name": "SH2_5",
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 110,
+              "end_aa": 203
+            },
+            {
+              "member_database": "SUPERFAMILY",
+              "signature_accession": "SSF55550",
+              "signature_name": "SH2 domain",
+              "interpro_accession": "IPR036860",
+              "interpro_name": "SH2_dom_sf",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 111,
+              "end_aa": 216
+            },
+            {
+              "member_database": "CDD",
+              "signature_accession": "cd09931",
+              "signature_name": "SH2_C-SH2_SHP_like",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 111,
+              "end_aa": 218
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00401",
+              "signature_name": "SH2DOMAIN",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 112,
+              "end_aa": 126
+            },
+            {
+              "member_database": "PFAM",
+              "signature_accession": "PF00017",
+              "signature_name": "SH2",
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 112,
+              "end_aa": 197
+            },
+            {
+              "member_database": "PROSITE_PROFILES",
+              "signature_accession": "PS50001",
+              "signature_name": "SH2",
+              "interpro_accession": "IPR000980",
+              "interpro_name": "SH2",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 112,
+              "end_aa": 216
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00401",
+              "signature_name": "SH2DOMAIN",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 132,
+              "end_aa": 142
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00401",
+              "signature_name": "SH2DOMAIN",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 144,
+              "end_aa": 155
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00401",
+              "signature_name": "SH2DOMAIN",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 166,
+              "end_aa": 176
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00401",
+              "signature_name": "SH2DOMAIN",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 186,
+              "end_aa": 200
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000933-51",
+              "signature_name": "PIRSR000933-51",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 209,
+              "end_aa": 539
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000933-50",
+              "signature_name": "PIRSR000933-50",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 209,
+              "end_aa": 539
+            },
+            {
+              "member_database": "FUNFAM",
+              "signature_accession": "G3DSA:3.90.190.10:FF:000018",
+              "signature_name": "Tyrosine-protein phosphatase non-receptor type",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 218,
+              "end_aa": 529
+            },
+            {
+              "member_database": "GENE3D",
+              "signature_accession": "G3DSA:3.90.190.10",
+              "signature_name": "Protein tyrosine phosphatase superfamily",
+              "interpro_accession": "IPR029021",
+              "interpro_name": "Prot-tyrosine_phosphatase-like",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 218,
+              "end_aa": 529
+            },
+            {
+              "member_database": "SUPERFAMILY",
+              "signature_accession": "SSF52799",
+              "signature_name": "(Phosphotyrosine protein) phosphatases II",
+              "interpro_accession": "IPR029021",
+              "interpro_name": "Prot-tyrosine_phosphatase-like",
+              "interpro_type": "HOMOLOGOUS_SUPERFAMILY",
+              "layer": "family",
+              "is_integrated": true,
+              "start_aa": 220,
+              "end_aa": 526
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR002006-2",
+              "signature_name": "PIRSR002006-2",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 239,
+              "end_aa": 525
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000934-1",
+              "signature_name": "PIRSR000934-1",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 240,
+              "end_aa": 525
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000930-51",
+              "signature_name": "PIRSR000930-51",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 243,
+              "end_aa": 556
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000930-50",
+              "signature_name": "PIRSR000930-50",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 243,
+              "end_aa": 556
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000926-1",
+              "signature_name": "PIRSR000926-1",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 245,
+              "end_aa": 523
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000926-2",
+              "signature_name": "PIRSR000926-2",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 245,
+              "end_aa": 523
+            },
+            {
+              "member_database": "SMART",
+              "signature_accession": "SM00194",
+              "signature_name": "PTPc_3",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 246,
+              "end_aa": 527
+            },
+            {
+              "member_database": "PROSITE_PROFILES",
+              "signature_accession": "PS50055",
+              "signature_name": "TYR_PHOSPHATASE_PTP",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 247,
+              "end_aa": 525
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000927-1",
+              "signature_name": "PIRSR000927-1",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 266,
+              "end_aa": 538
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000927-2",
+              "signature_name": "PIRSR000927-2",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 266,
+              "end_aa": 538
+            },
+            {
+              "member_database": "CDD",
+              "signature_accession": "cd14605",
+              "signature_name": "PTPc-N11",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 272,
+              "end_aa": 528
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR001997-1",
+              "signature_name": "PIRSR001997-1",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 272,
+              "end_aa": 529
+            },
+            {
+              "member_database": "PFAM",
+              "signature_accession": "PF00102",
+              "signature_name": "Y_phosphatase",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 273,
+              "end_aa": 523
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR608356-50",
+              "signature_name": "PIRSR608356-50",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 274,
+              "end_aa": 530
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR608356-51",
+              "signature_name": "PIRSR608356-51",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 274,
+              "end_aa": 530
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00700",
+              "signature_name": "PRTYPHPHTASE",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 303,
+              "end_aa": 310
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00700",
+              "signature_name": "PRTYPHPHTASE",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 327,
+              "end_aa": 347
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00700",
+              "signature_name": "PRTYPHPHTASE",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 417,
+              "end_aa": 434
+            },
+            {
+              "member_database": "SMART",
+              "signature_accession": "SM00404",
+              "signature_name": "ptp_7",
+              "interpro_accession": "IPR003595",
+              "interpro_name": "Tyr_Pase_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 418,
+              "end_aa": 524
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR000941-50",
+              "signature_name": "PIRSR000941-50",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 439,
+              "end_aa": 476
+            },
+            {
+              "member_database": "PROSITE_PROFILES",
+              "signature_accession": "PS50056",
+              "signature_name": "TYR_PHOSPHATASE_2",
+              "interpro_accession": "IPR000387",
+              "interpro_name": "Tyr_Pase_dom",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 440,
+              "end_aa": 516
+            },
+            {
+              "member_database": "PIRSR",
+              "signature_accession": "PIRSR038025-50",
+              "signature_name": "PIRSR038025-50",
+              "interpro_accession": "",
+              "interpro_name": "",
+              "interpro_type": "",
+              "layer": "raw",
+              "is_integrated": false,
+              "start_aa": 457,
+              "end_aa": 534
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00700",
+              "signature_name": "PRTYPHPHTASE",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 458,
+              "end_aa": 476
+            },
+            {
+              "member_database": "PROSITE_PATTERNS",
+              "signature_accession": "PS00383",
+              "signature_name": "TYR_PHOSPHATASE_1",
+              "interpro_accession": "IPR016130",
+              "interpro_name": "Tyr_Pase_AS",
+              "interpro_type": "ACTIVE_SITE",
+              "layer": "feature",
+              "is_integrated": true,
+              "start_aa": 461,
+              "end_aa": 471
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00700",
+              "signature_name": "PRTYPHPHTASE",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 492,
+              "end_aa": 507
+            },
+            {
+              "member_database": "PRINTS",
+              "signature_accession": "PR00700",
+              "signature_name": "PRTYPHPHTASE",
+              "interpro_accession": "IPR000242",
+              "interpro_name": "PTP_cat",
+              "interpro_type": "DOMAIN",
+              "layer": "domain",
+              "is_integrated": true,
+              "start_aa": 508,
+              "end_aa": 518
+            }
+          ],
+          "tm": [],
+          "exons": [
+            {
+              "exon_id": "NP_001171064.1:cds1",
+              "exon_number": 1,
+              "protein_start_aa": 1,
+              "protein_end_aa": 5
+            },
+            {
+              "exon_id": "NP_001171064.1:cds2",
+              "exon_number": 2,
+              "protein_start_aa": 5,
+              "protein_end_aa": 46
+            },
+            {
+              "exon_id": "NP_001171064.1:cds3",
+              "exon_number": 3,
+              "protein_start_aa": 46,
+              "protein_end_aa": 111
+            },
+            {
+              "exon_id": "NP_001171064.1:cds4",
+              "exon_number": 4,
+              "protein_start_aa": 111,
+              "protein_end_aa": 175
+            },
+            {
+              "exon_id": "NP_001171064.1:cds5",
+              "exon_number": 5,
+              "protein_start_aa": 176,
+              "protein_end_aa": 214
+            },
+            {
+              "exon_id": "NP_001171064.1:cds6",
+              "exon_number": 6,
+              "protein_start_aa": 215,
+              "protein_end_aa": 252
+            },
+            {
+              "exon_id": "NP_001171064.1:cds7",
+              "exon_number": 7,
+              "protein_start_aa": 253,
+              "protein_end_aa": 285
+            },
+            {
+              "exon_id": "NP_001171064.1:cds8",
+              "exon_number": 8,
+              "protein_start_aa": 285,
+              "protein_end_aa": 311
+            },
+            {
+              "exon_id": "NP_001171064.1:cds9",
+              "exon_number": 9,
+              "protein_start_aa": 312,
+              "protein_end_aa": 364
+            },
+            {
+              "exon_id": "NP_001171064.1:cds10",
+              "exon_number": 10,
+              "protein_start_aa": 365,
+              "protein_end_aa": 408
+            },
+            {
+              "exon_id": "NP_001171064.1:cds11",
+              "exon_number": 11,
+              "protein_start_aa": 409,
+              "protein_end_aa": 464
+            },
+            {
+              "exon_id": "NP_001171064.1:cds12",
+              "exon_number": 12,
+              "protein_start_aa": 464,
+              "protein_end_aa": 487
+            },
+            {
+              "exon_id": "NP_001171064.1:cds13",
+              "exon_number": 13,
+              "protein_start_aa": 487,
+              "protein_end_aa": 537
+            },
+            {
+              "exon_id": "NP_001171064.1:cds14",
+              "exon_number": 14,
+              "protein_start_aa": 538,
+              "protein_end_aa": 575
+            },
+            {
+              "exon_id": "NP_001171064.1:cds15",
+              "exon_number": 15,
+              "protein_start_aa": 575,
+              "protein_end_aa": 597
+            }
+          ],
+          "annotated": true,
+          "n_representative_domains": 3
+        },
+        {
+          "species_id": "rattus_norvegicus",
+          "protein_id": "NP_037220.2",
+          "length_aa": 593,
+          "role": "alternative",
+          "transcript_id": "NM_013088.2",
+          "domains": [],
+          "families": [],
+          "features": [],
+          "raw_signatures": [],
+          "tm": [],
+          "exons": [
+            {
+              "exon_id": "NP_037220.2:cds1",
+              "exon_number": 1,
+              "protein_start_aa": 1,
+              "protein_end_aa": 5
+            },
+            {
+              "exon_id": "NP_037220.2:cds2",
+              "exon_number": 2,
+              "protein_start_aa": 5,
+              "protein_end_aa": 46
+            },
+            {
+              "exon_id": "NP_037220.2:cds3",
+              "exon_number": 3,
+              "protein_start_aa": 46,
+              "protein_end_aa": 111
+            },
+            {
+              "exon_id": "NP_037220.2:cds4",
+              "exon_number": 4,
+              "protein_start_aa": 111,
+              "protein_end_aa": 175
+            },
+            {
+              "exon_id": "NP_037220.2:cds5",
+              "exon_number": 5,
+              "protein_start_aa": 176,
+              "protein_end_aa": 214
+            },
+            {
+              "exon_id": "NP_037220.2:cds6",
+              "exon_number": 6,
+              "protein_start_aa": 215,
+              "protein_end_aa": 252
+            },
+            {
+              "exon_id": "NP_037220.2:cds7",
+              "exon_number": 7,
+              "protein_start_aa": 253,
+              "protein_end_aa": 285
+            },
+            {
+              "exon_id": "NP_037220.2:cds8",
+              "exon_number": 8,
+              "protein_start_aa": 285,
+              "protein_end_aa": 311
+            },
+            {
+              "exon_id": "NP_037220.2:cds9",
+              "exon_number": 9,
+              "protein_start_aa": 312,
+              "protein_end_aa": 364
+            },
+            {
+              "exon_id": "NP_037220.2:cds10",
+              "exon_number": 10,
+              "protein_start_aa": 365,
+              "protein_end_aa": 408
+            },
+            {
+              "exon_id": "NP_037220.2:cds11",
+              "exon_number": 11,
+              "protein_start_aa": 409,
+              "protein_end_aa": 460
+            },
+            {
+              "exon_id": "NP_037220.2:cds12",
+              "exon_number": 12,
+              "protein_start_aa": 460,
+              "protein_end_aa": 483
+            },
+            {
+              "exon_id": "NP_037220.2:cds13",
+              "exon_number": 13,
+              "protein_start_aa": 483,
+              "protein_end_aa": 533
+            },
+            {
+              "exon_id": "NP_037220.2:cds14",
+              "exon_number": 14,
+              "protein_start_aa": 534,
+              "protein_end_aa": 571
+            },
+            {
+              "exon_id": "NP_037220.2:cds15",
+              "exon_number": 15,
+              "protein_start_aa": 571,
+              "protein_end_aa": 593
+            }
+          ],
+          "annotated": false,
+          "n_representative_domains": 0
+        }
+      ],
+      "n_annotated_proteins": 1
+    }
+  ],
+  "source": "core_gene_analysis",
+  "status": "available"
+}

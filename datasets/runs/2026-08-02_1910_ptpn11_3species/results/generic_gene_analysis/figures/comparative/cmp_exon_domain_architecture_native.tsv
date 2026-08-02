@@ -1,0 +1,10 @@
+species_id	scientific_name	protein_id	domain_instance_id	interpro_accession	label	instance_number	native_start	native_end	msa_start_column	msa_end_column	msa_mapping_status	order_along_protein
+homo_sapiens	Homo Sapiens	NP_001317366.1	IPR000980:4-102	IPR000980	SH2 1	1	4	102	4	102	mapped	1
+homo_sapiens	Homo Sapiens	NP_001317366.1	IPR000980:110-216	IPR000980	SH2 2	2	110	216	110	216	mapped	2
+homo_sapiens	Homo Sapiens	NP_001317366.1	IPR000242:246-527	IPR000242	PTP cat	1	246	527	246	527	mapped	3
+mus_musculus	Mus Musculus	NP_035332.1	IPR000980:4-102	IPR000980	SH2 1	1	4	102	4	102	mapped	1
+mus_musculus	Mus Musculus	NP_035332.1	IPR000980:110-216	IPR000980	SH2 2	2	110	216	110	216	mapped	2
+mus_musculus	Mus Musculus	NP_035332.1	IPR000242:246-527	IPR000242	PTP cat	1	246	527	246	527	mapped	3
+rattus_norvegicus	Rattus Norvegicus	NP_001171064.1	IPR000980:4-102	IPR000980	SH2 1	1	4	102	4	102	mapped	1
+rattus_norvegicus	Rattus Norvegicus	NP_001171064.1	IPR000980:110-216	IPR000980	SH2 2	2	110	216	110	216	mapped	2
+rattus_norvegicus	Rattus Norvegicus	NP_001171064.1	IPR000242:246-527	IPR000242	PTP cat	1	246	527	246	527	mapped	3

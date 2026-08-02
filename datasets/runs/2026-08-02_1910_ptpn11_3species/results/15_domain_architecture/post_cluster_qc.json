@@ -1,0 +1,75 @@
+{
+  "interproscan": {
+    "status": "valid",
+    "files": [
+      "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/14_interproscan/primary/output/input.fasta.tsv"
+    ],
+    "valid_lines": 113,
+    "malformed_lines": 0,
+    "reason": ""
+  },
+  "pytmhmm": {
+    "status": "valid",
+    "files": [
+      "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/15_exon_domain_boundary_post_interpro/pytmhmm_primary/output/NP_035332.1.summary",
+      "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/15_exon_domain_boundary_post_interpro/pytmhmm_primary/output/NP_001317366.1.summary",
+      "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/15_exon_domain_boundary_post_interpro/pytmhmm_primary/output/pytmhmm_transmembrane_hits.tsv",
+      "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/15_exon_domain_boundary_post_interpro/pytmhmm_primary/output/NP_001171064.1.summary",
+      "/private/tmp/exondomaincompare-user-test-data/runs/2026-08-02_1910_ptpn11_3species/results/15_exon_domain_boundary_post_interpro/pytmhmm_primary/output/pytmhmm_summary_all.tsv"
+    ],
+    "reason": "Valid pyTMHMM output contains no TM segment."
+  },
+  "returned_sequence_inventory": {
+    "n_species_submitted": 3,
+    "n_species_with_features": 3,
+    "species": [
+      {
+        "species_id": "homo_sapiens",
+        "protein_id": "NP_001317366.1",
+        "transcript_id": "NM_001330437.2",
+        "resolved_from": "primary_selection_evidence.species_primary",
+        "interproscan_features": 56,
+        "pytmhmm_features": 0,
+        "interproscan_status": "available",
+        "pytmhmm_status": "no_transmembrane_predicted"
+      },
+      {
+        "species_id": "mus_musculus",
+        "protein_id": "NP_035332.1",
+        "transcript_id": "NM_011202.3",
+        "resolved_from": "primary_selection_evidence.species_primary",
+        "interproscan_features": 54,
+        "pytmhmm_features": 0,
+        "interproscan_status": "available",
+        "pytmhmm_status": "no_transmembrane_predicted"
+      },
+      {
+        "species_id": "rattus_norvegicus",
+        "protein_id": "NP_001171064.1",
+        "transcript_id": "NM_001177593.1",
+        "resolved_from": "primary_selection_evidence.species_primary",
+        "interproscan_features": 54,
+        "pytmhmm_features": 0,
+        "interproscan_status": "available",
+        "pytmhmm_status": "no_transmembrane_predicted"
+      }
+    ]
+  },
+  "synthetic_outputs_accepted": false,
+  "generated_at": "2026-08-02T18:08:24.222467+00:00",
+  "_exondomain": {
+    "contract_version": "1.0",
+    "payload_type": "post_cluster_qc",
+    "run_id": "",
+    "dataset_id": "",
+    "generator": "scripts/framework/run_core_gene_analysis.py",
+    "profile": {
+      "schema_version": "1.0",
+      "local_profile": "default",
+      "lrz_profile": "lrz"
+    },
+    "source_checksums": [],
+    "generated_at": "2026-08-02T18:08:24.222783+00:00",
+    "content_sha256": "08844803aaf6834ae3df97056b04ef2f2367f2f53a6753879a2537b43e7761b5"
+  }
+}

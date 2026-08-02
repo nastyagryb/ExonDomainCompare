@@ -1,0 +1,10 @@
+species_id	scientific_name	comparable_domain_group_id	interpro_accession	label	state	domain_instance_id	native_start	native_end	msa_start_column	msa_end_column
+homo_sapiens	Homo Sapiens	CDG1	IPR000242	PTP cat	detected	IPR000242:246-527	246	527	246	527
+mus_musculus	Mus Musculus	CDG1	IPR000242	PTP cat	detected	IPR000242:246-527	246	527	246	527
+rattus_norvegicus	Rattus Norvegicus	CDG1	IPR000242	PTP cat	detected	IPR000242:246-527	246	527	246	527
+homo_sapiens	Homo Sapiens	CDG2	IPR000980	SH2 1	detected	IPR000980:4-102	4	102	4	102
+mus_musculus	Mus Musculus	CDG2	IPR000980	SH2 1	detected	IPR000980:4-102	4	102	4	102
+rattus_norvegicus	Rattus Norvegicus	CDG2	IPR000980	SH2 1	detected	IPR000980:4-102	4	102	4	102
+homo_sapiens	Homo Sapiens	CDG3	IPR000980	SH2 2	detected	IPR000980:110-216	110	216	110	216
+mus_musculus	Mus Musculus	CDG3	IPR000980	SH2 2	detected	IPR000980:110-216	110	216	110	216
+rattus_norvegicus	Rattus Norvegicus	CDG3	IPR000980	SH2 2	detected	IPR000980:110-216	110	216	110	216

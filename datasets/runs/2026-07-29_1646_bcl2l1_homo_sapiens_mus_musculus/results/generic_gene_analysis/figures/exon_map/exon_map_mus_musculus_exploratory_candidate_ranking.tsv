@@ -1,4 +1,0 @@
-rank	candidate_id	candidate_label	aa_start	aa_end	length_aa	n_affected_isoforms	affected_isoforms	supporting_comparisons	evidence_score	evidence_strength	biological_validation
-1	BCL2L1:mus_musculus:indel:189-221	C1	189	221	33	9	NP_001276645.1;NP_001276646.1;NP_001276668.1;NP_001341982.1;NP_001403825.1;NP_001403826.1;NP_001403827.1;NP_001403828.1;NP_033873.3	16	75	high	not validated
-2	BCL2L1:mus_musculus:substitution:227-235	C4	227	235	9	9	NP_001276645.1;NP_001276646.1;NP_001276668.1;NP_001341982.1;NP_001403825.1;NP_001403826.1;NP_001403827.1;NP_001403828.1;NP_033873.3	16	70	high	not validated
-3	BCL2L1:mus_musculus:substitution:191-191	C1	191	191	1	9	NP_001276645.1;NP_001276646.1;NP_001276668.1;NP_001341982.1;NP_001403825.1;NP_001403826.1;NP_001403827.1;NP_001403828.1;NP_033873.3	8	45	medium	not validated

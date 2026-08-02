@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "dataset_id": "run:2026-08-02_1910_ptpn11_3species",
+  "analysis_id": "PTPN11_core_only_pilot",
+  "analysis_display_name": "PTPN11 core-only exploratory analysis",
+  "gene": {
+    "symbol": "PTPN11",
+    "display_name": "PTPN11",
+    "reference_species": ""
+  },
+  "analysis_modes": {
+    "core_gene_analysis": true,
+    "event_analysis": "optional"
+  },
+  "has_event": false,
+  "event": {
+    "status": "not_configured",
+    "type": "requires_gene_specific_event_detector",
+    "labels": []
+  },
+  "selection_method": "canonical_if_available",
+  "species": [
+    "homo_sapiens",
+    "mus_musculus",
+    "rattus_norvegicus"
+  ],
+  "n_species": 3,
+  "n_gene_models": 9,
+  "n_proteins": 9,
+  "n_protein_isoforms": 9,
+  "n_primary_proteins": 3,
+  "primary_protein_ids": [
+    "NP_001317366.1",
+    "NP_035332.1",
+    "NP_001171064.1"
+  ],
+  "exon_map_available": true,
+  "isoforms": [
+    {
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001317366.1",
+      "transcript_id": "NM_001330437.2",
+      "protein_length": 597,
+      "primary_status": "primary"
+    },
+    {
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_002825.3",
+      "transcript_id": "NM_002834.5",
+      "protein_length": 593,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "homo_sapiens",
+      "protein_id": "XP_011536915.1",
+      "transcript_id": "XM_011538613.3",
+      "protein_length": 596,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_001361554.1",
+      "transcript_id": "NM_001374625.1",
+      "protein_length": 592,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "homo_sapiens",
+      "protein_id": "NP_542168.1",
+      "transcript_id": "NM_080601.3",
+      "protein_length": 460,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "mus_musculus",
+      "protein_id": "NP_001103462.1",
+      "transcript_id": "NM_001109992.1",
+      "protein_length": 593,
+      "primary_status": "alternative"
+    },
+    {
+      "species_id": "mus_musculus",
+      "protein_id": "NP_035332.1",
+      "transcript_id": "NM_011202.3",
+      "protein_length": 597,
+      "primary_status": "primary"
+    },
+    {
+      "species_id": "rattus_norvegicus",
+      "protein_id": "NP_001171064.1",
+      "transcript_id": "NM_001177593.1",
+      "protein_length": 597,
+      "primary_status": "primary"
+    },
+    {
+      "species_id": "rattus_norvegicus",
+      "protein_id": "NP_037220.2",
+      "transcript_id": "NM_013088.2",
+      "protein_length": 593,
+      "primary_status": "alternative"
+    }
+  ],
+  "source": "core_gene_analysis",
+  "selection_rule": "refseq_curated_over_predicted",
+  "selection_rule_label": "RefSeq curated (NM/NP) over predicted (XM/XP)",
+  "primary_selection": {
+    "primary_protein_id": "NP_001317366.1",
+    "selection_rule": "refseq_curated_over_predicted",
+    "selection_source": "RefSeq curated (NM/NP)",
+    "confidence": "high",
+    "explanation": "NP_001317366.1 (NM_001330437.2) was selected as primary because it is the curated RefSeq protein (NM/NP). Predicted XP isoforms are retained as alternatives."
+  }
+}

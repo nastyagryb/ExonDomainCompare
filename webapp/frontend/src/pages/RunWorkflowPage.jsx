@@ -11,6 +11,8 @@ import HumanReferenceBadge from "./HumanReferenceBadge";
 
 /** How often the selected run's detail is re-read while it is still progressing. */
 const RUN_POLL_MS = 5000;
+const RUN_DISCOVERY_POLL_MS = 1000;
+const RUN_DISCOVERY_ATTEMPTS = 30;
 const RUNNING = new Set(["pre_interpro_running", "post_interpro_running", "running"]);
 // Terminal pre-cluster failure states (shared/core runner + FGFR2 pipeline).
 const FAILED = new Set(["failed", "core_model_collection_failed", "incomplete"]);
@@ -60,18 +62,25 @@ export default function RunWorkflowPage({ activeId, onExploreDataset, onDatasets
   const pollRef = useRef(null);
   const runsRef = useRef([]);
 
-  const loadRuns = useCallback(async () => {
+  const loadRuns = useCallback(async ({ preserveIds = [] } = {}) => {
     setLoadingRuns(true);
     try {
       const list = await api.localRuns();
-      const arr = sortNewestFirst(Array.isArray(list) ? list : []);
+      const persisted = Array.isArray(list) ? list : [];
+      const persistedIds = new Set(persisted.map((run) => run.run_id));
+      const pending = runsRef.current.filter(
+        (run) => preserveIds.includes(run.run_id) && !persistedIds.has(run.run_id),
+      );
+      const arr = sortNewestFirst([...pending, ...persisted]);
       setRuns(arr);
       runsRef.current = arr;
-      return arr;
+      return { visible: arr, persisted };
     } catch {
-      setRuns([]);
-      runsRef.current = [];
-      return [];
+      if (preserveIds.length === 0) {
+        setRuns([]);
+        runsRef.current = [];
+      }
+      return { visible: runsRef.current, persisted: [] };
     } finally {
       setLoadingRuns(false);
     }
@@ -156,6 +165,7 @@ export default function RunWorkflowPage({ activeId, onExploreDataset, onDatasets
   async function handleStart(payload) {
     setStarting(true);
     try {
+      const knownIds = new Set(runsRef.current.map((run) => run.run_id));
       const res = await api.localRunStart(payload);
       // Show the run before asking the registry for it. The backend answers as soon as
       // the run is created, which can be a moment before it is fully listable, and
@@ -164,7 +174,18 @@ export default function RunWorkflowPage({ activeId, onExploreDataset, onDatasets
         insertRun(res);
         setSelectedId(res.run_id);
       }
-      await loadRuns();
+      const preserveIds = res?.run_id ? [res.run_id] : [];
+      for (let attempt = 0; attempt < RUN_DISCOVERY_ATTEMPTS; attempt += 1) {
+        const { persisted } = await loadRuns({ preserveIds });
+        const created = persisted.find((run) => (
+          res?.run_id ? run.run_id === res.run_id : !knownIds.has(run.run_id)
+        ));
+        if (created) {
+          setSelectedId(created.run_id);
+          break;
+        }
+        await new Promise((resolve) => window.setTimeout(resolve, RUN_DISCOVERY_POLL_MS));
+      }
       onDatasetsChanged?.();
     } finally {
       setStarting(false);

@@ -1,0 +1,77 @@
+{
+  "gene": "PTPN11",
+  "species": "Rattus norvegicus",
+  "primary": "NP_001171064.1",
+  "transcript": "NM_001177593.1",
+  "n_rows": 2,
+  "n_columns": 597,
+  "tool": "MAFFT",
+  "candidate": "C1",
+  "n_candidates": 1,
+  "protein_ids": [
+    "NP_001171064.1",
+    "NP_037220.2"
+  ],
+  "identities": {
+    "NP_001171064.1": 100,
+    "NP_037220.2": 100
+  },
+  "curation": {
+    "NP_001171064.1": "curated",
+    "NP_037220.2": "curated"
+  },
+  "wrapped": {
+    "colsPerBlock": 80,
+    "nBlocks": 8,
+    "nPages": 1,
+    "blocksPerPage": 8,
+    "pageCapacity": 10,
+    "n_pages_written": 1
+  },
+  "n_exons": 15,
+  "figures": [
+    "full_isoform_alignment",
+    "wrapped_alignment",
+    "candidate_alignment_detail"
+  ],
+  "candidate_columns": [
+    409,
+    412
+  ],
+  "candidate_aa": [
+    409,
+    412
+  ],
+  "affected": [
+    "NP_037220.2"
+  ],
+  "unaffected": [],
+  "render": [
+    {
+      "name": "full_isoform_alignment",
+      "stem": "main_rattus_norvegicus_full_isoform_alignment",
+      "width": 756,
+      "height": 381.8000000000002,
+      "marks": 410,
+      "warnings": []
+    },
+    {
+      "name": "wrapped_alignment_p1",
+      "stem": "main_rattus_norvegicus_wrapped_alignment_p1",
+      "width": 756,
+      "height": 639.0999999999998,
+      "marks": 3249,
+      "warnings": []
+    },
+    {
+      "name": "candidate_alignment_detail",
+      "stem": "main_rattus_norvegicus_candidate_alignment_detail",
+      "width": 756,
+      "height": 221.7,
+      "marks": 194,
+      "warnings": []
+    }
+  ],
+  "species_id": "rattus_norvegicus",
+  "gallery_stems": true
+}

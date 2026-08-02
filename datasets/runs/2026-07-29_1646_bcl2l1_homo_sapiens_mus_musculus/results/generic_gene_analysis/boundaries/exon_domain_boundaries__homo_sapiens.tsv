@@ -1,2 +1,0 @@
-species_id	scientific_name	primary_protein	boundary_id	comparable_boundary_group_id	exon_transition	native_aa_position	MSA_column	nearest_domain_instance_id	nearest_domain_label	nearest_edge	signed_distance	absolute_distance	boundary_class	mapping_method	mapping_confidence	status
-homo_sapiens	Homo sapiens	NP_001304849.1	NP_001304849.1:cds1_end	CBG1	E1 → E2	188	188	IPR046371:90-188	Bcl-2 BH1-3	end	0	0	exact_domain_edge	msa_aligned_position	1.0	supported_comparable

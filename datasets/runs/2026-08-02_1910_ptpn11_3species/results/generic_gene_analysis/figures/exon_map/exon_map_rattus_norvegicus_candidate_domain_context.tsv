@@ -1,0 +1,2 @@
+candidate_label	candidate_id	aa_start	aa_end	length_aa	relation	overlapping_domain_instance_ids	overlapping_domain_labels	nearest_domain_instance_id	nearest_domain_label	nearest_edge_type	nearest_edge_position_aa	distance_to_nearest_edge_aa	coincident_exon_boundary	biological_validation
+C1	PTPN11:rattus_norvegicus:indel:409-412	409	412	4	inside PTP cat	IPR000242:246-527	PTP cat	IPR000242:246-527	PTP cat	end	527	115		not validated

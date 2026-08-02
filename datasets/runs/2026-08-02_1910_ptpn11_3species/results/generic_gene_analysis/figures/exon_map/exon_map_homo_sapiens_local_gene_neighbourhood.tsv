@@ -1,0 +1,12 @@
+position_in_figure	side	order_from_target	locus_symbol	locus_kind	transcription_direction	annotation_source
+1	upstream	5	ERP29	annotated_neighbour	+	ncbi_gff
+2	upstream	4	NAA25	annotated_neighbour	-	ncbi_gff
+3	upstream	3	TRAFD1	annotated_neighbour	+	ncbi_gff
+4	upstream	2	HECTD4	annotated_neighbour	-	ncbi_gff
+5	upstream	1	RPL6	annotated_neighbour	-	ncbi_gff
+6	target	0	PTPN11	target	+	ncbi_gff
+7	downstream	1	RPH3A	annotated_neighbour	+	ncbi_gff
+8	downstream	2	OAS1	annotated_neighbour	+	ncbi_gff
+9	downstream	3	OAS3	annotated_neighbour	+	ncbi_gff
+10	downstream	4	OAS2	annotated_neighbour	+	ncbi_gff
+11	downstream	5	DTX1	annotated_neighbour	+	ncbi_gff

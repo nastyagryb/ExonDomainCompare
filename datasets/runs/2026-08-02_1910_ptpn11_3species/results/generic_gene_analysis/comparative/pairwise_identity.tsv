@@ -1,0 +1,7 @@
+species_a	protein_a	species_b	protein_b	n_compared_columns	n_identical	percent_identity
+homo_sapiens	NP_001317366.1	homo_sapiens	NP_001317366.1	597	597	100.0
+homo_sapiens	NP_001317366.1	mus_musculus	NP_035332.1	597	594	99.5
+homo_sapiens	NP_001317366.1	rattus_norvegicus	NP_001171064.1	597	591	98.99
+mus_musculus	NP_035332.1	mus_musculus	NP_035332.1	597	597	100.0
+mus_musculus	NP_035332.1	rattus_norvegicus	NP_001171064.1	597	594	99.5
+rattus_norvegicus	NP_001171064.1	rattus_norvegicus	NP_001171064.1	597	597	100.0

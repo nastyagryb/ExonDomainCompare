@@ -1,0 +1,10 @@
+analysis_id	gene_symbol	species_id	gene_id	transcript_id	protein_id	source	protein_length	model_status	notes
+PTPN11_core_only_pilot	PTPN11	homo_sapiens	gene-PTPN11	NM_001330437.2	NP_001317366.1	ncbi_gff	597	protein_coding	
+PTPN11_core_only_pilot	PTPN11	homo_sapiens	gene-PTPN11	NM_002834.5	NP_002825.3	ncbi_gff	593	protein_coding	
+PTPN11_core_only_pilot	PTPN11	homo_sapiens	gene-PTPN11	XM_011538613.3	XP_011536915.1	ncbi_gff	596	protein_coding	
+PTPN11_core_only_pilot	PTPN11	homo_sapiens	gene-PTPN11	NM_001374625.1	NP_001361554.1	ncbi_gff	592	protein_coding	
+PTPN11_core_only_pilot	PTPN11	homo_sapiens	gene-PTPN11	NM_080601.3	NP_542168.1	ncbi_gff	460	protein_coding	
+PTPN11_core_only_pilot	PTPN11	mus_musculus	gene-Ptpn11	NM_001109992.1	NP_001103462.1	ncbi_gff	593	protein_coding	
+PTPN11_core_only_pilot	PTPN11	mus_musculus	gene-Ptpn11	NM_011202.3	NP_035332.1	ncbi_gff	597	protein_coding	
+PTPN11_core_only_pilot	PTPN11	rattus_norvegicus	gene-Ptpn11	NM_001177593.1	NP_001171064.1	ncbi_gff	597	protein_coding	
+PTPN11_core_only_pilot	PTPN11	rattus_norvegicus	gene-Ptpn11	NM_013088.2	NP_037220.2	ncbi_gff	593	protein_coding	

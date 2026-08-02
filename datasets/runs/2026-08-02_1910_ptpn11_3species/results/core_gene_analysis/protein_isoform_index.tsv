@@ -1,0 +1,10 @@
+species_id	protein_id	transcript_id	isoform_label	protein_length	sequence_path	primary_status	notes
+homo_sapiens	NP_001317366.1	NM_001330437.2		597	results/core_gene_analysis/proteins_primary.faa	primary	
+homo_sapiens	NP_002825.3	NM_002834.5		593	results/core_gene_analysis/proteins_primary.faa	alternative	
+homo_sapiens	XP_011536915.1	XM_011538613.3		596	results/core_gene_analysis/proteins_primary.faa	alternative	
+homo_sapiens	NP_001361554.1	NM_001374625.1		592	results/core_gene_analysis/proteins_primary.faa	alternative	
+homo_sapiens	NP_542168.1	NM_080601.3		460	results/core_gene_analysis/proteins_primary.faa	alternative	
+mus_musculus	NP_001103462.1	NM_001109992.1		593	results/core_gene_analysis/proteins_primary.faa	alternative	
+mus_musculus	NP_035332.1	NM_011202.3		597	results/core_gene_analysis/proteins_primary.faa	primary	
+rattus_norvegicus	NP_001171064.1	NM_001177593.1		597	results/core_gene_analysis/proteins_primary.faa	primary	
+rattus_norvegicus	NP_037220.2	NM_013088.2		593	results/core_gene_analysis/proteins_primary.faa	alternative	

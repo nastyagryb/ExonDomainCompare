@@ -1,0 +1,10 @@
+species_id	protein_id	transcript_id	selected_primary	species_primary	selection_rule	selection_source	evidence_status	confidence	reason	alternatives_considered
+homo_sapiens	NP_001317366.1	NM_001330437.2	true	true	refseq_curated_over_predicted	RefSeq curated (NM/NP)	accepted	high	NP_001317366.1 (NM_001330437.2) was selected as primary because it is the curated RefSeq protein (NM/NP). Predicted XP isoforms are retained as alternatives.	NP_002825.3(593aa); XP_011536915.1(596aa); NP_001361554.1(592aa); NP_542168.1(460aa)
+homo_sapiens	NP_002825.3	NM_002834.5	false	false		RefSeq curated (NM/NP)	alternative		RefSeq curated (NM/NP) isoform	
+homo_sapiens	XP_011536915.1	XM_011538613.3	false	false		RefSeq predicted (XM/XP)	alternative		RefSeq predicted (XM/XP) isoform	
+homo_sapiens	NP_001361554.1	NM_001374625.1	false	false		RefSeq curated (NM/NP)	alternative		RefSeq curated (NM/NP) isoform	
+homo_sapiens	NP_542168.1	NM_080601.3	false	false		RefSeq curated (NM/NP)	alternative		RefSeq curated (NM/NP) isoform	
+mus_musculus	NP_001103462.1	NM_001109992.1	false	false		RefSeq curated (NM/NP)	alternative			
+mus_musculus	NP_035332.1	NM_011202.3	false	true		RefSeq curated (NM/NP)	alternative			
+rattus_norvegicus	NP_001171064.1	NM_001177593.1	false	true		RefSeq curated (NM/NP)	alternative			
+rattus_norvegicus	NP_037220.2	NM_013088.2	false	false		RefSeq curated (NM/NP)	alternative			

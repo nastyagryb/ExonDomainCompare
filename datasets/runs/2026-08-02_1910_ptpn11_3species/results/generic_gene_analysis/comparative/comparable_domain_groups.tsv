@@ -1,0 +1,4 @@
+comparable_domain_group_id	interpro_accession	instance_number	label	n_species	mapping_status
+CDG1	IPR000242	1	PTP cat	3	supported
+CDG2	IPR000980	1	SH2 1	3	supported
+CDG3	IPR000980	2	SH2 2	3	supported

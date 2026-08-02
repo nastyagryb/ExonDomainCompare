@@ -1,0 +1,4 @@
+species_id	scientific_name	primary_protein_id	n_protein_models	n_curated_models	n_predicted_models	primary_protein_length	protein_length_min	protein_length_max	n_variable_alignment_blocks	n_exploratory_candidates	max_difference_from_primary_aa
+homo_sapiens	Homo Sapiens	NP_001317366.1	5	4	1	597	460	597		4	137
+mus_musculus	Mus Musculus	NP_035332.1	2	2		597	593	597		1	4
+rattus_norvegicus	Rattus Norvegicus	NP_001171064.1	2	2		597	593	597		1	4

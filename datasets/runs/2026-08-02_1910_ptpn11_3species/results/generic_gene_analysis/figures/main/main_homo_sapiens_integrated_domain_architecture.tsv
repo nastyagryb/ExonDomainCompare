@@ -1,0 +1,11 @@
+track	domain_instance_id	label	interpro_accession	instance_number	start_aa	end_aa	source
+representative_domain	IPR000980:4-102	SH2 1 · aa 4–102	IPR000980	1	4	102	InterProScan
+representative_domain	IPR000980:110-216	SH2 2 · aa 110–216	IPR000980	2	110	216	InterProScan
+representative_domain	IPR000242:246-527	PTP cat · aa 246–527	IPR000242	1	246	527	InterProScan
+family_superfamily		Tyr_Pase_non-rcpt_typ-6/11	IPR012152		1	597	PIRSF
+family_superfamily		SH2_dom_sf	IPR036860		1	103	GENE3D
+family_superfamily		SH2_dom_sf	IPR036860		3	106	SUPERFAMILY
+family_superfamily		SH2_dom_sf	IPR036860		104	217	GENE3D
+family_superfamily		SH2_dom_sf	IPR036860		111	216	SUPERFAMILY
+family_superfamily		Prot-tyrosine_phosphatase-like	IPR029021		218	529	GENE3D
+family_superfamily		Prot-tyrosine_phosphatase-like	IPR029021		220	526	SUPERFAMILY

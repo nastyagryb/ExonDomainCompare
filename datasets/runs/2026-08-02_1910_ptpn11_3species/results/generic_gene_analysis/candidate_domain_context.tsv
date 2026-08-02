@@ -1,0 +1,6 @@
+candidate_id	reference_protein	aa_start	aa_end	status	overlapping_domain_ids	overlapping_domain_names	nearest_domain_id	nearest_domain_edge	distance_to_nearest_edge_aa	relation	domain_source	signature_accession	evidence_confidence	domain_context_score
+PTPN11:homo_sapiens:indel:465-592	NP_001317366.1	465	592	real_domain_context	IPR000242;IPR000242;IPR000242	PTP_cat;PTP_cat;PTP_cat	IPR000242	end	62	inside_or_overlapping	PFAM,PRINTS,PROSITE_PROFILES,SMART	IPR000242	high	10
+PTPN11:homo_sapiens:indel:408-411	NP_001317366.1	408	411	real_domain_context	IPR000242;IPR000242;IPR000242	PTP_cat;PTP_cat;PTP_cat	IPR000242	end	119	inside_or_overlapping	PFAM,PRINTS,PROSITE_PROFILES,SMART	IPR000242	high	10
+PTPN11:homo_sapiens:indel:46-46	NP_001317366.1	46	46	real_domain_context	IPR000980;IPR000980;IPR000980	SH2;SH2;SH2	IPR000980	start	42	inside_or_overlapping	PFAM,PROSITE_PROFILES,SMART	IPR000980	high	10
+PTPN11:mus_musculus:indel:409-412	NP_001317366.1	409	412	real_domain_context	IPR000242;IPR000242;IPR000242	PTP_cat;PTP_cat;PTP_cat	IPR000242	end	118	inside_or_overlapping	PFAM,PRINTS,PROSITE_PROFILES,SMART	IPR000242	high	10
+PTPN11:rattus_norvegicus:indel:409-412	NP_001317366.1	409	412	real_domain_context	IPR000242;IPR000242;IPR000242	PTP_cat;PTP_cat;PTP_cat	IPR000242	end	118	inside_or_overlapping	PFAM,PRINTS,PROSITE_PROFILES,SMART	IPR000242	high	10

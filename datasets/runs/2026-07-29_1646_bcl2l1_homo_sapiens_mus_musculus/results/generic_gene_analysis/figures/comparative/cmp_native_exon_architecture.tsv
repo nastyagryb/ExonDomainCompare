@@ -1,5 +1,0 @@
-species_id	scientific_name	protein_id	protein_length	exon_label	native_start	native_end
-homo_sapiens	Homo sapiens	NP_001304849.1	233	E1	1	188
-homo_sapiens	Homo sapiens	NP_001304849.1	233	E2	189	233
-mus_musculus	Mus musculus	NP_001276668.1	235	E1	1	188
-mus_musculus	Mus musculus	NP_001276668.1	235	E2	189	235

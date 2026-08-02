@@ -1,0 +1,41 @@
+{
+  "_compatibility_projection": {
+    "owner": "framework.legacy_run_adapter",
+    "schema_version": "1.0",
+    "source": "run:run.json",
+    "source_sha256": "81e5ec6713e13f9fec87795d7e5352a92414ed494a93bf7c00c10ed850f93ed1"
+  },
+  "analysis_id": "PTPN11_core_only_pilot",
+  "case_study": "PTPN11_core_only_pilot",
+  "created_at": "2026-08-02T17:10:59.194862+00:00",
+  "dataset_id": "2026-08-02_1910_ptpn11_3species",
+  "event_id": "",
+  "event_type": "requires_gene_specific_event_detector",
+  "experimental": true,
+  "gene_config": "run:gene_config.yaml",
+  "gene_symbol": "PTPN11",
+  "has_event": false,
+  "layout_version": "canonical-2.0",
+  "results_dir": "run:results",
+  "run_dir": "run:.",
+  "run_id": "2026-08-02_1910_ptpn11_3species",
+  "run_name": "",
+  "schema_version": "2.0",
+  "species_count": 3,
+  "species_ids": [
+    "homo_sapiens",
+    "mus_musculus",
+    "rattus_norvegicus"
+  ],
+  "species_list_path": "run:species_list.txt",
+  "support_level": "core_only_pilot",
+  "website_indices_dir": "run:website_indices",
+  "workflow": "shared_exploratory",
+  "cluster_input_fasta": "run:results/core_gene_analysis/proteins_primary.faa",
+  "primary_fasta_path": "run:results/core_gene_analysis/proteins_primary.faa",
+  "read_only": true,
+  "release_projection": {
+    "status": "bundled_read_only_example",
+    "scientific_semantics": "exploratory_not_validated"
+  }
+}

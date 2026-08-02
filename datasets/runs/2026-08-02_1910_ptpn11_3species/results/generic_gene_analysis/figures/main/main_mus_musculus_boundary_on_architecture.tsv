@@ -1,0 +1,15 @@
+transition	boundary_position_aa	left_exon	right_exon	nearest_domain_instance_id	nearest_domain_accession	nearest_domain_label	nearest_domain_start	nearest_domain_end	nearest_edge	nearest_edge_position	signed_distance_aa	absolute_distance_aa	boundary_class
+E1 → E2	5	E1	E2	IPR000980:4-102	IPR000980	SH2 1 · aa 4–102	4	102	start	4	1	1	near_domain_edge
+E2 → E3	46	E2	E3	IPR000980:4-102	IPR000980	SH2 1 · aa 4–102	4	102	start	4	42	42	inside_domain
+E3 → E4	111	E3	E4	IPR000980:110-216	IPR000980	SH2 2 · aa 110–216	110	216	start	110	1	1	near_domain_edge
+E4 → E5	175	E4	E5	IPR000980:110-216	IPR000980	SH2 2 · aa 110–216	110	216	end	216	-41	41	inside_domain
+E5 → E6	214	E5	E6	IPR000980:110-216	IPR000980	SH2 2 · aa 110–216	110	216	end	216	-2	2	near_domain_edge
+E6 → E7	252	E6	E7	IPR000242:246-527	IPR000242	PTP cat · aa 246–527	246	527	start	246	6	6	inside_domain
+E7 → E8	285	E7	E8	IPR000242:246-527	IPR000242	PTP cat · aa 246–527	246	527	start	246	39	39	inside_domain
+E8 → E9	311	E8	E9	IPR000242:246-527	IPR000242	PTP cat · aa 246–527	246	527	start	246	65	65	inside_domain
+E9 → E10	364	E9	E10	IPR000242:246-527	IPR000242	PTP cat · aa 246–527	246	527	start	246	118	118	inside_domain
+E10 → E11	408	E10	E11	IPR000242:246-527	IPR000242	PTP cat · aa 246–527	246	527	end	527	-119	119	inside_domain
+E11 → E12	464	E11	E12	IPR000242:246-527	IPR000242	PTP cat · aa 246–527	246	527	end	527	-63	63	inside_domain
+E12 → E13	487	E12	E13	IPR000242:246-527	IPR000242	PTP cat · aa 246–527	246	527	end	527	-40	40	inside_domain
+E13 → E14	537	E13	E14	IPR000242:246-527	IPR000242	PTP cat · aa 246–527	246	527	end	527	10	10	outside_annotated_domains
+E14 → E15	575	E14	E15	IPR000242:246-527	IPR000242	PTP cat · aa 246–527	246	527	end	527	48	48	outside_annotated_domains

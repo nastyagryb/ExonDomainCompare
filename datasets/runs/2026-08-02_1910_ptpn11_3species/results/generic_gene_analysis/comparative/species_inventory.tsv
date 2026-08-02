@@ -1,0 +1,4 @@
+species_id	scientific_name	taxonomic_group	clade	protein_id	transcript_id	protein_length	n_exons	n_domains	n_boundaries	n_transcript_models	analysis_status	domain_status	boundary_status
+homo_sapiens	Homo Sapiens	Other mammals	mammal	NP_001317366.1	NM_001330437.2	597	15	3	14	5	available	available	available
+mus_musculus	Mus Musculus	Other mammals	mammal	NP_035332.1	NM_011202.3	597	15	3	14	2	available	available	available
+rattus_norvegicus	Rattus Norvegicus	Other mammals	mammal	NP_001171064.1	NM_001177593.1	597	15	3	14	2	available	available	available

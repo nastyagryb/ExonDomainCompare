@@ -1,0 +1,797 @@
+{
+  "schema_version": 2,
+  "status": "available",
+  "stage": "post_cluster",
+  "scientific_question": "Which protein-level features occur along the amino-acid sequence?",
+  "domain_annotation_status": "available",
+  "message": "",
+  "gene_symbol": "PTPN11",
+  "n_species": 3,
+  "species": [
+    {
+      "species_id": "homo_sapiens",
+      "display_species_name": "Homo sapiens",
+      "proteins": [
+        {
+          "protein_id": "NP_001317366.1",
+          "transcript_id": "NM_001330437.2",
+          "length_aa": 597,
+          "is_primary": true,
+          "exon_boundaries": [
+            5,
+            46,
+            111,
+            175,
+            214,
+            252,
+            285,
+            311,
+            364,
+            408,
+            464,
+            487,
+            537,
+            575,
+            597
+          ],
+          "candidate_overlays": [
+            {
+              "candidate_id": "PTPN11:homo_sapiens:indel:465-592",
+              "start_aa": 465,
+              "end_aa": 592,
+              "status": "exploratory_not_validated"
+            },
+            {
+              "candidate_id": "PTPN11:homo_sapiens:indel:46-46",
+              "start_aa": 46,
+              "end_aa": 46,
+              "status": "exploratory_not_validated"
+            },
+            {
+              "candidate_id": "PTPN11:homo_sapiens:indel:408-411",
+              "start_aa": 408,
+              "end_aa": 411,
+              "status": "exploratory_not_validated"
+            }
+          ],
+          "domains": [
+            {
+              "source": "PFAM,PROSITE_PROFILES,SMART",
+              "signature_accession": "IPR000980",
+              "description": "SH2",
+              "start_aa": 4,
+              "end_aa": 102,
+              "score": "",
+              "interpro_accession": "IPR000980",
+              "interpro_description": "SH2",
+              "feature_type": "domain"
+            },
+            {
+              "source": "PFAM,PROSITE_PROFILES,SMART",
+              "signature_accession": "IPR000980",
+              "description": "SH2",
+              "start_aa": 110,
+              "end_aa": 216,
+              "score": "",
+              "interpro_accession": "IPR000980",
+              "interpro_description": "SH2",
+              "feature_type": "domain"
+            },
+            {
+              "source": "PFAM,PRINTS,PROSITE_PROFILES,SMART",
+              "signature_accession": "IPR000242",
+              "description": "PTP_cat",
+              "start_aa": 246,
+              "end_aa": 527,
+              "score": "",
+              "interpro_accession": "IPR000242",
+              "interpro_description": "PTP_cat",
+              "feature_type": "domain"
+            },
+            {
+              "source": "GENE3D,SUPERFAMILY",
+              "signature_accession": "IPR036860",
+              "description": "SH2_dom_sf",
+              "start_aa": 1,
+              "end_aa": 217,
+              "score": "",
+              "interpro_accession": "IPR036860",
+              "interpro_description": "SH2_dom_sf",
+              "feature_type": "family"
+            },
+            {
+              "source": "PIRSF",
+              "signature_accession": "IPR012152",
+              "description": "Tyr_Pase_non-rcpt_typ-6/11",
+              "start_aa": 1,
+              "end_aa": 597,
+              "score": "",
+              "interpro_accession": "IPR012152",
+              "interpro_description": "Tyr_Pase_non-rcpt_typ-6/11",
+              "feature_type": "family"
+            },
+            {
+              "source": "GENE3D,SUPERFAMILY",
+              "signature_accession": "IPR029021",
+              "description": "Prot-tyrosine_phosphatase-like",
+              "start_aa": 218,
+              "end_aa": 529,
+              "score": "",
+              "interpro_accession": "IPR029021",
+              "interpro_description": "Prot-tyrosine_phosphatase-like",
+              "feature_type": "family"
+            },
+            {
+              "source": "PROSITE_PATTERNS",
+              "signature_accession": "IPR016130",
+              "description": "Tyr_Pase_AS",
+              "start_aa": 461,
+              "end_aa": 471,
+              "score": "",
+              "interpro_accession": "IPR016130",
+              "interpro_description": "Tyr_Pase_AS",
+              "feature_type": "feature"
+            },
+            {
+              "source": "MOBIDB_LITE",
+              "signature_accession": "",
+              "description": "disorder_prediction",
+              "start_aa": 552,
+              "end_aa": 577,
+              "score": "",
+              "interpro_accession": "",
+              "interpro_description": "disorder_prediction",
+              "feature_type": "feature"
+            },
+            {
+              "source": "MOBIDB_LITE",
+              "signature_accession": "",
+              "description": "disorder_prediction",
+              "start_aa": 563,
+              "end_aa": 572,
+              "score": "",
+              "interpro_accession": "",
+              "interpro_description": "disorder_prediction",
+              "feature_type": "feature"
+            }
+          ],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_002825.3",
+          "transcript_id": "NM_002834.5",
+          "length_aa": 593,
+          "is_primary": false,
+          "exon_boundaries": [
+            5,
+            46,
+            111,
+            175,
+            214,
+            252,
+            285,
+            311,
+            364,
+            408,
+            460,
+            483,
+            533,
+            571,
+            593
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "XP_011536915.1",
+          "transcript_id": "XM_011538613.3",
+          "length_aa": 596,
+          "is_primary": false,
+          "exon_boundaries": [
+            5,
+            46,
+            110,
+            174,
+            213,
+            251,
+            284,
+            310,
+            363,
+            407,
+            463,
+            486,
+            536,
+            574,
+            596
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_001361554.1",
+          "transcript_id": "NM_001374625.1",
+          "length_aa": 592,
+          "is_primary": false,
+          "exon_boundaries": [
+            5,
+            46,
+            110,
+            174,
+            213,
+            251,
+            284,
+            310,
+            363,
+            407,
+            459,
+            482,
+            532,
+            570,
+            592
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_542168.1",
+          "transcript_id": "NM_080601.3",
+          "length_aa": 460,
+          "is_primary": false,
+          "exon_boundaries": [
+            5,
+            46,
+            111,
+            175,
+            214,
+            252,
+            285,
+            311,
+            364,
+            408,
+            460
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        }
+      ]
+    },
+    {
+      "species_id": "mus_musculus",
+      "display_species_name": "Mus musculus",
+      "proteins": [
+        {
+          "protein_id": "NP_001103462.1",
+          "transcript_id": "NM_001109992.1",
+          "length_aa": 593,
+          "is_primary": false,
+          "exon_boundaries": [
+            5,
+            46,
+            111,
+            175,
+            214,
+            252,
+            285,
+            311,
+            364,
+            408,
+            460,
+            483,
+            533,
+            571,
+            593
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_035332.1",
+          "transcript_id": "NM_011202.3",
+          "length_aa": 597,
+          "is_primary": true,
+          "exon_boundaries": [
+            5,
+            46,
+            111,
+            175,
+            214,
+            252,
+            285,
+            311,
+            364,
+            408,
+            464,
+            487,
+            537,
+            575,
+            597
+          ],
+          "candidate_overlays": [
+            {
+              "candidate_id": "PTPN11:mus_musculus:indel:409-412",
+              "start_aa": 409,
+              "end_aa": 412,
+              "status": "exploratory_not_validated"
+            }
+          ],
+          "domains": [
+            {
+              "source": "PFAM,PROSITE_PROFILES,SMART",
+              "signature_accession": "IPR000980",
+              "description": "SH2",
+              "start_aa": 4,
+              "end_aa": 102,
+              "score": "",
+              "interpro_accession": "IPR000980",
+              "interpro_description": "SH2",
+              "feature_type": "domain"
+            },
+            {
+              "source": "PFAM,PROSITE_PROFILES,SMART",
+              "signature_accession": "IPR000980",
+              "description": "SH2",
+              "start_aa": 110,
+              "end_aa": 216,
+              "score": "",
+              "interpro_accession": "IPR000980",
+              "interpro_description": "SH2",
+              "feature_type": "domain"
+            },
+            {
+              "source": "PFAM,PRINTS,PROSITE_PROFILES,SMART",
+              "signature_accession": "IPR000242",
+              "description": "PTP_cat",
+              "start_aa": 246,
+              "end_aa": 527,
+              "score": "",
+              "interpro_accession": "IPR000242",
+              "interpro_description": "PTP_cat",
+              "feature_type": "domain"
+            },
+            {
+              "source": "GENE3D,SUPERFAMILY",
+              "signature_accession": "IPR036860",
+              "description": "SH2_dom_sf",
+              "start_aa": 1,
+              "end_aa": 217,
+              "score": "",
+              "interpro_accession": "IPR036860",
+              "interpro_description": "SH2_dom_sf",
+              "feature_type": "family"
+            },
+            {
+              "source": "PIRSF",
+              "signature_accession": "IPR012152",
+              "description": "Tyr_Pase_non-rcpt_typ-6/11",
+              "start_aa": 1,
+              "end_aa": 597,
+              "score": "",
+              "interpro_accession": "IPR012152",
+              "interpro_description": "Tyr_Pase_non-rcpt_typ-6/11",
+              "feature_type": "family"
+            },
+            {
+              "source": "GENE3D,SUPERFAMILY",
+              "signature_accession": "IPR029021",
+              "description": "Prot-tyrosine_phosphatase-like",
+              "start_aa": 218,
+              "end_aa": 529,
+              "score": "",
+              "interpro_accession": "IPR029021",
+              "interpro_description": "Prot-tyrosine_phosphatase-like",
+              "feature_type": "family"
+            },
+            {
+              "source": "PROSITE_PATTERNS",
+              "signature_accession": "IPR016130",
+              "description": "Tyr_Pase_AS",
+              "start_aa": 461,
+              "end_aa": 471,
+              "score": "",
+              "interpro_accession": "IPR016130",
+              "interpro_description": "Tyr_Pase_AS",
+              "feature_type": "feature"
+            }
+          ],
+          "tm_regions": []
+        }
+      ]
+    },
+    {
+      "species_id": "rattus_norvegicus",
+      "display_species_name": "Rattus norvegicus",
+      "proteins": [
+        {
+          "protein_id": "NP_001171064.1",
+          "transcript_id": "NM_001177593.1",
+          "length_aa": 597,
+          "is_primary": true,
+          "exon_boundaries": [
+            5,
+            46,
+            111,
+            175,
+            214,
+            252,
+            285,
+            311,
+            364,
+            408,
+            464,
+            487,
+            537,
+            575,
+            597
+          ],
+          "candidate_overlays": [
+            {
+              "candidate_id": "PTPN11:rattus_norvegicus:indel:409-412",
+              "start_aa": 409,
+              "end_aa": 412,
+              "status": "exploratory_not_validated"
+            }
+          ],
+          "domains": [
+            {
+              "source": "PFAM,PROSITE_PROFILES,SMART",
+              "signature_accession": "IPR000980",
+              "description": "SH2",
+              "start_aa": 4,
+              "end_aa": 102,
+              "score": "",
+              "interpro_accession": "IPR000980",
+              "interpro_description": "SH2",
+              "feature_type": "domain"
+            },
+            {
+              "source": "PFAM,PROSITE_PROFILES,SMART",
+              "signature_accession": "IPR000980",
+              "description": "SH2",
+              "start_aa": 110,
+              "end_aa": 216,
+              "score": "",
+              "interpro_accession": "IPR000980",
+              "interpro_description": "SH2",
+              "feature_type": "domain"
+            },
+            {
+              "source": "PFAM,PRINTS,PROSITE_PROFILES,SMART",
+              "signature_accession": "IPR000242",
+              "description": "PTP_cat",
+              "start_aa": 246,
+              "end_aa": 527,
+              "score": "",
+              "interpro_accession": "IPR000242",
+              "interpro_description": "PTP_cat",
+              "feature_type": "domain"
+            },
+            {
+              "source": "GENE3D,SUPERFAMILY",
+              "signature_accession": "IPR036860",
+              "description": "SH2_dom_sf",
+              "start_aa": 1,
+              "end_aa": 217,
+              "score": "",
+              "interpro_accession": "IPR036860",
+              "interpro_description": "SH2_dom_sf",
+              "feature_type": "family"
+            },
+            {
+              "source": "PIRSF",
+              "signature_accession": "IPR012152",
+              "description": "Tyr_Pase_non-rcpt_typ-6/11",
+              "start_aa": 1,
+              "end_aa": 597,
+              "score": "",
+              "interpro_accession": "IPR012152",
+              "interpro_description": "Tyr_Pase_non-rcpt_typ-6/11",
+              "feature_type": "family"
+            },
+            {
+              "source": "GENE3D,SUPERFAMILY",
+              "signature_accession": "IPR029021",
+              "description": "Prot-tyrosine_phosphatase-like",
+              "start_aa": 218,
+              "end_aa": 529,
+              "score": "",
+              "interpro_accession": "IPR029021",
+              "interpro_description": "Prot-tyrosine_phosphatase-like",
+              "feature_type": "family"
+            },
+            {
+              "source": "PROSITE_PATTERNS",
+              "signature_accession": "IPR016130",
+              "description": "Tyr_Pase_AS",
+              "start_aa": 461,
+              "end_aa": 471,
+              "score": "",
+              "interpro_accession": "IPR016130",
+              "interpro_description": "Tyr_Pase_AS",
+              "feature_type": "feature"
+            }
+          ],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_037220.2",
+          "transcript_id": "NM_013088.2",
+          "length_aa": 593,
+          "is_primary": false,
+          "exon_boundaries": [
+            5,
+            46,
+            111,
+            175,
+            214,
+            252,
+            285,
+            311,
+            364,
+            408,
+            460,
+            483,
+            533,
+            571,
+            593
+          ],
+          "candidate_overlays": [],
+          "domains": [],
+          "tm_regions": []
+        }
+      ]
+    }
+  ],
+  "generated_at": "2026-08-02T18:08:29.439183+00:00",
+  "proteins": [
+    {
+      "protein_id": "NP_001317366.1",
+      "transcript_id": "NM_001330437.2",
+      "length_aa": 597,
+      "is_primary": true,
+      "exon_boundaries": [
+        5,
+        46,
+        111,
+        175,
+        214,
+        252,
+        285,
+        311,
+        364,
+        408,
+        464,
+        487,
+        537,
+        575,
+        597
+      ],
+      "candidate_overlays": [
+        {
+          "candidate_id": "PTPN11:homo_sapiens:indel:465-592",
+          "start_aa": 465,
+          "end_aa": 592,
+          "status": "exploratory_not_validated"
+        },
+        {
+          "candidate_id": "PTPN11:homo_sapiens:indel:46-46",
+          "start_aa": 46,
+          "end_aa": 46,
+          "status": "exploratory_not_validated"
+        },
+        {
+          "candidate_id": "PTPN11:homo_sapiens:indel:408-411",
+          "start_aa": 408,
+          "end_aa": 411,
+          "status": "exploratory_not_validated"
+        }
+      ],
+      "domains": [
+        {
+          "source": "PFAM,PROSITE_PROFILES,SMART",
+          "signature_accession": "IPR000980",
+          "description": "SH2",
+          "start_aa": 4,
+          "end_aa": 102,
+          "score": "",
+          "interpro_accession": "IPR000980",
+          "interpro_description": "SH2",
+          "feature_type": "domain"
+        },
+        {
+          "source": "PFAM,PROSITE_PROFILES,SMART",
+          "signature_accession": "IPR000980",
+          "description": "SH2",
+          "start_aa": 110,
+          "end_aa": 216,
+          "score": "",
+          "interpro_accession": "IPR000980",
+          "interpro_description": "SH2",
+          "feature_type": "domain"
+        },
+        {
+          "source": "PFAM,PRINTS,PROSITE_PROFILES,SMART",
+          "signature_accession": "IPR000242",
+          "description": "PTP_cat",
+          "start_aa": 246,
+          "end_aa": 527,
+          "score": "",
+          "interpro_accession": "IPR000242",
+          "interpro_description": "PTP_cat",
+          "feature_type": "domain"
+        },
+        {
+          "source": "GENE3D,SUPERFAMILY",
+          "signature_accession": "IPR036860",
+          "description": "SH2_dom_sf",
+          "start_aa": 1,
+          "end_aa": 217,
+          "score": "",
+          "interpro_accession": "IPR036860",
+          "interpro_description": "SH2_dom_sf",
+          "feature_type": "family"
+        },
+        {
+          "source": "PIRSF",
+          "signature_accession": "IPR012152",
+          "description": "Tyr_Pase_non-rcpt_typ-6/11",
+          "start_aa": 1,
+          "end_aa": 597,
+          "score": "",
+          "interpro_accession": "IPR012152",
+          "interpro_description": "Tyr_Pase_non-rcpt_typ-6/11",
+          "feature_type": "family"
+        },
+        {
+          "source": "GENE3D,SUPERFAMILY",
+          "signature_accession": "IPR029021",
+          "description": "Prot-tyrosine_phosphatase-like",
+          "start_aa": 218,
+          "end_aa": 529,
+          "score": "",
+          "interpro_accession": "IPR029021",
+          "interpro_description": "Prot-tyrosine_phosphatase-like",
+          "feature_type": "family"
+        },
+        {
+          "source": "PROSITE_PATTERNS",
+          "signature_accession": "IPR016130",
+          "description": "Tyr_Pase_AS",
+          "start_aa": 461,
+          "end_aa": 471,
+          "score": "",
+          "interpro_accession": "IPR016130",
+          "interpro_description": "Tyr_Pase_AS",
+          "feature_type": "feature"
+        },
+        {
+          "source": "MOBIDB_LITE",
+          "signature_accession": "",
+          "description": "disorder_prediction",
+          "start_aa": 552,
+          "end_aa": 577,
+          "score": "",
+          "interpro_accession": "",
+          "interpro_description": "disorder_prediction",
+          "feature_type": "feature"
+        },
+        {
+          "source": "MOBIDB_LITE",
+          "signature_accession": "",
+          "description": "disorder_prediction",
+          "start_aa": 563,
+          "end_aa": 572,
+          "score": "",
+          "interpro_accession": "",
+          "interpro_description": "disorder_prediction",
+          "feature_type": "feature"
+        }
+      ],
+      "tm_regions": []
+    },
+    {
+      "protein_id": "NP_002825.3",
+      "transcript_id": "NM_002834.5",
+      "length_aa": 593,
+      "is_primary": false,
+      "exon_boundaries": [
+        5,
+        46,
+        111,
+        175,
+        214,
+        252,
+        285,
+        311,
+        364,
+        408,
+        460,
+        483,
+        533,
+        571,
+        593
+      ],
+      "candidate_overlays": [],
+      "domains": [],
+      "tm_regions": []
+    },
+    {
+      "protein_id": "XP_011536915.1",
+      "transcript_id": "XM_011538613.3",
+      "length_aa": 596,
+      "is_primary": false,
+      "exon_boundaries": [
+        5,
+        46,
+        110,
+        174,
+        213,
+        251,
+        284,
+        310,
+        363,
+        407,
+        463,
+        486,
+        536,
+        574,
+        596
+      ],
+      "candidate_overlays": [],
+      "domains": [],
+      "tm_regions": []
+    },
+    {
+      "protein_id": "NP_001361554.1",
+      "transcript_id": "NM_001374625.1",
+      "length_aa": 592,
+      "is_primary": false,
+      "exon_boundaries": [
+        5,
+        46,
+        110,
+        174,
+        213,
+        251,
+        284,
+        310,
+        363,
+        407,
+        459,
+        482,
+        532,
+        570,
+        592
+      ],
+      "candidate_overlays": [],
+      "domains": [],
+      "tm_regions": []
+    },
+    {
+      "protein_id": "NP_542168.1",
+      "transcript_id": "NM_080601.3",
+      "length_aa": 460,
+      "is_primary": false,
+      "exon_boundaries": [
+        5,
+        46,
+        111,
+        175,
+        214,
+        252,
+        285,
+        311,
+        364,
+        408,
+        460
+      ],
+      "candidate_overlays": [],
+      "domains": [],
+      "tm_regions": []
+    }
+  ]
+}

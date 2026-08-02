@@ -1,3 +1,0 @@
-species_id	gene_symbol	target_gene_id	target_symbol	seqid	genomic_start	genomic_end	strand	upstream_count_available	downstream_count_available	requested_neighbour_count	source
-homo_sapiens	BCL2L1	gene-BCL2L1	BCL2L1	NC_000020.11	31664452	31723963	-	5	5	5	ncbi_gff
-mus_musculus	BCL2L1	gene-Bcl2l1	Bcl2l1	NC_000068.8	152600652	152673632	-	5	5	5	ncbi_gff

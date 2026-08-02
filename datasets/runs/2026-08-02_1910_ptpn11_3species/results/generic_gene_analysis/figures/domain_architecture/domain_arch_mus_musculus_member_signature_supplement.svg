@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="750.96pt" height="796.08025pt" viewBox="0 0 750.96 796.08025" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-02T20:08:47.566451</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 796.08025 
+L 750.96 796.08025 
+L 750.96 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 7.2 730.74825 
+L 743.76 730.74825 
+L 743.76 48.83625 
+L 7.2 48.83625 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 7.2 302.057809 
+L 743.76 302.057809 
+L 743.76 70.901199 
+L 7.2 70.901199 
+z
+" clip-path="url(#p33831f7971)" style="fill: #f6f8fa; stroke: #f6f8fa; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 7.2 491.185945 
+L 743.76 491.185945 
+L 743.76 428.143233 
+L 7.2 428.143233 
+z
+" clip-path="url(#p33831f7971)" style="fill: #f6f8fa; stroke: #f6f8fa; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 7.2 659.299843 
+L 743.76 659.299843 
+L 743.76 596.257131 
+L 7.2 596.257131 
+z
+" clip-path="url(#p33831f7971)" style="fill: #f6f8fa; stroke: #f6f8fa; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 9.50175 70.901199 
+L 613.3275 70.901199 
+" clip-path="url(#p33831f7971)" style="fill: none; stroke: #d2d9e6; stroke-width: 0.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 9.50175 323.072047 
+L 613.3275 323.072047 
+" clip-path="url(#p33831f7971)" style="fill: none; stroke: #d2d9e6; stroke-width: 0.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 9.50175 428.143233 
+L 613.3275 428.143233 
+" clip-path="url(#p33831f7971)" style="fill: none; stroke: #d2d9e6; stroke-width: 0.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 9.50175 512.200182 
+L 613.3275 512.200182 
+" clip-path="url(#p33831f7971)" style="fill: none; stroke: #d2d9e6; stroke-width: 0.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 9.50175 596.257131 
+L 613.3275 596.257131 
+" clip-path="url(#p33831f7971)" style="fill: none; stroke: #d2d9e6; stroke-width: 0.5; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 9.50175 680.314081 
+L 613.3275 680.314081 
+" clip-path="url(#p33831f7971)" style="fill: none; stroke: #d2d9e6; stroke-width: 0.5; stroke-linecap: square"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_7">
+      <defs>
+       <path id="m2d41bfd4dd" d="M 0 0 
+L 0 3 
+" style="stroke: #444444; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m2d41bfd4dd" x="229.7025" y="730.74825" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #444444" x="229.7025" y="741.128328" transform="rotate(-0 229.7025 741.128328)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m2d41bfd4dd" x="293.961294" y="730.74825" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #444444" x="293.961294" y="741.128328" transform="rotate(-0 293.961294 741.128328)">100</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m2d41bfd4dd" x="358.220088" y="730.74825" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #444444" x="358.220088" y="741.128328" transform="rotate(-0 358.220088 741.128328)">200</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m2d41bfd4dd" x="422.478882" y="730.74825" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #444444" x="422.478882" y="741.128328" transform="rotate(-0 422.478882 741.128328)">300</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m2d41bfd4dd" x="486.737676" y="730.74825" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #444444" x="486.737676" y="741.128328" transform="rotate(-0 486.737676 741.128328)">400</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m2d41bfd4dd" x="550.99647" y="730.74825" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #444444" x="550.99647" y="741.128328" transform="rotate(-0 550.99647 741.128328)">500</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 8.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="375.48" y="752.888641" transform="rotate(-0 375.48 752.888641)">Amino-acid position on NP_035332.1 (aa)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2"/>
+   <g id="patch_6">
+    <path d="M 229.7025 730.74825 
+L 613.3275 730.74825 
+" style="fill: none; stroke: #444444; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="9.50175" y="83.599724" transform="rotate(-0 9.50175 83.599724)">PRINTS  (11 signature(s))</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="104.051055" transform="rotate(-0 18.70875 104.051055)">SH2DOMAIN</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="104.051055" transform="rotate(-0 114.615 104.051055)">PR00401</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8a5008" x="621" y="104.017555" transform="rotate(-0 621 104.017555)">not integrated</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="125.065292" transform="rotate(-0 18.70875 125.065292)">SH2DOMAIN</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="125.065292" transform="rotate(-0 114.615 125.065292)">PR00401</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8a5008" x="621" y="125.031792" transform="rotate(-0 621 125.031792)">not integrated</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="146.07953" transform="rotate(-0 18.70875 146.07953)">SH2DOMAIN</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="146.07953" transform="rotate(-0 114.615 146.07953)">PR00401</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8a5008" x="621" y="146.04603" transform="rotate(-0 621 146.04603)">not integrated</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="167.093767" transform="rotate(-0 18.70875 167.093767)">SH2DOMAIN</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="167.093767" transform="rotate(-0 114.615 167.093767)">PR00401</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8a5008" x="621" y="167.060267" transform="rotate(-0 621 167.060267)">not integrated</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="188.108004" transform="rotate(-0 18.70875 188.108004)">SH2DOMAIN</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="188.108004" transform="rotate(-0 114.615 188.108004)">PR00401</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8a5008" x="621" y="188.074504" transform="rotate(-0 621 188.074504)">not integrated</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="209.122242" transform="rotate(-0 18.70875 209.122242)">PRTYPHPHTASE</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="209.122242" transform="rotate(-0 114.615 209.122242)">PR00700</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="621" y="209.122242" transform="rotate(-0 621 209.122242)">IPR000242 PTP_cat</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="230.136479" transform="rotate(-0 18.70875 230.136479)">PRTYPHPHTASE</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="230.136479" transform="rotate(-0 114.615 230.136479)">PR00700</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="621" y="230.136479" transform="rotate(-0 621 230.136479)">IPR000242 PTP_cat</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="251.150716" transform="rotate(-0 18.70875 251.150716)">PRTYPHPHTASE</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="251.150716" transform="rotate(-0 114.615 251.150716)">PR00700</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="621" y="251.150716" transform="rotate(-0 621 251.150716)">IPR000242 PTP_cat</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="272.164953" transform="rotate(-0 18.70875 272.164953)">PRTYPHPHTASE</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="272.164953" transform="rotate(-0 114.615 272.164953)">PR00700</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="621" y="272.164953" transform="rotate(-0 621 272.164953)">IPR000242 PTP_cat</text>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="293.179191" transform="rotate(-0 18.70875 293.179191)">PRTYPHPHTASE</text>
+   </g>
+   <g id="text_37">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="293.179191" transform="rotate(-0 114.615 293.179191)">PR00700</text>
+   </g>
+   <g id="text_38">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="621" y="293.179191" transform="rotate(-0 621 293.179191)">IPR000242 PTP_cat</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="314.193428" transform="rotate(-0 18.70875 314.193428)">PRTYPHPHTASE</text>
+   </g>
+   <g id="text_40">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="314.193428" transform="rotate(-0 114.615 314.193428)">PR00700</text>
+   </g>
+   <g id="text_41">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="621" y="314.193428" transform="rotate(-0 621 314.193428)">IPR000242 PTP_cat</text>
+   </g>
+   <g id="text_42">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="9.50175" y="335.770572" transform="rotate(-0 9.50175 335.770572)">SMART  (4 signature(s))</text>
+   </g>
+   <g id="text_43">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="356.221903" transform="rotate(-0 18.70875 356.221903)">SH2_5</text>
+   </g>
+   <g id="text_44">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="356.221903" transform="rotate(-0 114.615 356.221903)">SM00252</text>
+   </g>
+   <g id="text_45">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="621" y="356.221903" transform="rotate(-0 621 356.221903)">IPR000980 SH2</text>
+   </g>
+   <g id="text_46">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="377.23614" transform="rotate(-0 18.70875 377.23614)">SH2_5</text>
+   </g>
+   <g id="text_47">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="377.23614" transform="rotate(-0 114.615 377.23614)">SM00252</text>
+   </g>
+   <g id="text_48">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="621" y="377.23614" transform="rotate(-0 621 377.23614)">IPR000980 SH2</text>
+   </g>
+   <g id="text_49">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="398.250377" transform="rotate(-0 18.70875 398.250377)">PTPc_3</text>
+   </g>
+   <g id="text_50">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="398.250377" transform="rotate(-0 114.615 398.250377)">SM00194</text>
+   </g>
+   <g id="text_51">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="621" y="398.250377" transform="rotate(-0 621 398.250377)">IPR000242 PTP_cat</text>
+   </g>
+   <g id="text_52">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="419.264614" transform="rotate(-0 18.70875 419.264614)">ptp_7</text>
+   </g>
+   <g id="text_53">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="419.264614" transform="rotate(-0 114.615 419.264614)">SM00404</text>
+   </g>
+   <g id="text_54">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="621" y="419.245614" transform="rotate(-0 621 419.245614)">IPR003595 Tyr_Pase_cat</text>
+   </g>
+   <g id="text_55">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="9.50175" y="440.841758" transform="rotate(-0 9.50175 440.841758)">CDD  (3 signature(s))</text>
+   </g>
+   <g id="text_56">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="461.293089" transform="rotate(-0 18.70875 461.293089)">SH2_N-SH2_SHP_like</text>
+   </g>
+   <g id="text_57">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="461.293089" transform="rotate(-0 114.615 461.293089)">cd10340</text>
+   </g>
+   <g id="text_58">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8a5008" x="621" y="461.259589" transform="rotate(-0 621 461.259589)">not integrated</text>
+   </g>
+   <g id="text_59">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="482.307326" transform="rotate(-0 18.70875 482.307326)">SH2_C-SH2_SHP_like</text>
+   </g>
+   <g id="text_60">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="482.307326" transform="rotate(-0 114.615 482.307326)">cd09931</text>
+   </g>
+   <g id="text_61">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8a5008" x="621" y="482.273826" transform="rotate(-0 621 482.273826)">not integrated</text>
+   </g>
+   <g id="text_62">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="503.321564" transform="rotate(-0 18.70875 503.321564)">PTPc-N11</text>
+   </g>
+   <g id="text_63">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="503.321564" transform="rotate(-0 114.615 503.321564)">cd14605</text>
+   </g>
+   <g id="text_64">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8a5008" x="621" y="503.288064" transform="rotate(-0 621 503.288064)">not integrated</text>
+   </g>
+   <g id="text_65">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="9.50175" y="524.865504" transform="rotate(-0 9.50175 524.865504)">FUNFAM  (3 signature(s))</text>
+   </g>
+   <g id="text_66">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="545.338538" transform="rotate(-0 18.70875 545.338538)">Tyrosine-protein ph...</text>
+   </g>
+   <g id="text_67">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="545.350038" transform="rotate(-0 114.615 545.350038)">G3DSA:3.30.505.10:FF:000018</text>
+   </g>
+   <g id="text_68">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8a5008" x="621" y="545.316538" transform="rotate(-0 621 545.316538)">not integrated</text>
+   </g>
+   <g id="text_69">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="566.352775" transform="rotate(-0 18.70875 566.352775)">Tyrosine-protein ph...</text>
+   </g>
+   <g id="text_70">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="566.364275" transform="rotate(-0 114.615 566.364275)">G3DSA:3.30.505.10:FF:000012</text>
+   </g>
+   <g id="text_71">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8a5008" x="621" y="566.330775" transform="rotate(-0 621 566.330775)">not integrated</text>
+   </g>
+   <g id="text_72">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="587.367013" transform="rotate(-0 18.70875 587.367013)">Tyrosine-protein ph...</text>
+   </g>
+   <g id="text_73">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="587.378513" transform="rotate(-0 114.615 587.378513)">G3DSA:3.90.190.10:FF:000018</text>
+   </g>
+   <g id="text_74">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8a5008" x="621" y="587.345013" transform="rotate(-0 621 587.345013)">not integrated</text>
+   </g>
+   <g id="text_75">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="9.50175" y="608.922453" transform="rotate(-0 9.50175 608.922453)">PFAM  (3 signature(s))</text>
+   </g>
+   <g id="text_76">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="629.406987" transform="rotate(-0 18.70875 629.406987)">SH2</text>
+   </g>
+   <g id="text_77">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="629.406987" transform="rotate(-0 114.615 629.406987)">PF00017</text>
+   </g>
+   <g id="text_78">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="621" y="629.406987" transform="rotate(-0 621 629.406987)">IPR000980 SH2</text>
+   </g>
+   <g id="text_79">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="650.421225" transform="rotate(-0 18.70875 650.421225)">SH2</text>
+   </g>
+   <g id="text_80">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="650.421225" transform="rotate(-0 114.615 650.421225)">PF00017</text>
+   </g>
+   <g id="text_81">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="621" y="650.421225" transform="rotate(-0 621 650.421225)">IPR000980 SH2</text>
+   </g>
+   <g id="text_82">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="671.442962" transform="rotate(-0 18.70875 671.442962)">Y_phosphatase</text>
+   </g>
+   <g id="text_83">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="671.435462" transform="rotate(-0 114.615 671.435462)">PF00102</text>
+   </g>
+   <g id="text_84">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="621" y="671.435462" transform="rotate(-0 621 671.435462)">IPR000242 PTP_cat</text>
+   </g>
+   <g id="text_85">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="9.50175" y="692.979402" transform="rotate(-0 9.50175 692.979402)">PANTHER  (1 signature(s))</text>
+   </g>
+   <g id="text_86">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="18.70875" y="713.463936" transform="rotate(-0 18.70875 713.463936)">TYROSINE-PROTEIN PH...</text>
+   </g>
+   <g id="text_87">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="713.463936" transform="rotate(-0 114.615 713.463936)">PTHR46559</text>
+   </g>
+   <g id="text_88">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8a5008" x="621" y="713.430436" transform="rotate(-0 621 713.430436)">not integrated</text>
+   </g>
+   <g id="text_89">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="18.70875" y="63.601213" transform="rotate(-0 18.70875 63.601213)">signature</text>
+   </g>
+   <g id="text_90">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="114.615" y="63.683213" transform="rotate(-0 114.615 63.683213)">accession</text>
+   </g>
+   <g id="text_91">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="621" y="63.645213" transform="rotate(-0 621 63.645213)">InterPro entry</text>
+   </g>
+   <g id="text_92">
+    <text style="font-style: italic; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="7.2" y="45.42025" transform="rotate(-0 7.2 45.42025)">Which member-database signatures underlie the representative domain annotation? Supplementary evidence: individual signatures overlap and are not independent observations, and an unintegrated signature is not an annotated domain.</text>
+   </g>
+   <g id="text_93">
+    <text style="font-size: 9px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="7.2" y="34.845" transform="rotate(-0 7.2 34.845)">Mus Musculus · NP_035332.1 · 25 signature(s) from 6 member database(s) · 13 integrated into an InterPro entry</text>
+   </g>
+   <g id="text_94">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="7.2" y="787.46425" transform="rotate(-0 7.2 787.46425)">Source: InterProScan member-database matches · 3 representative domain instance(s) are derived from these signatures · run 2026-08-02_1910_ptpn11_3species</text>
+   </g>
+   <g id="text_95">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="7.2" y="15.83625" transform="rotate(-0 7.2 15.83625)">PTPN11 — member-database signature supplement</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 301.672349 107.465972 
+L 310.66858 107.465972 
+L 310.66858 97.379138 
+L 301.672349 97.379138 
+z
+" clip-path="url(#p33831f7971)" style="fill: #ffffff; stroke-dasharray: 2.25,1.35; stroke-dashoffset: 0; stroke: #6f7f92; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 314.524108 128.480209 
+L 320.949987 128.480209 
+L 320.949987 118.393375 
+L 314.524108 118.393375 
+z
+" clip-path="url(#p33831f7971)" style="fill: #ffffff; stroke-dasharray: 2.25,1.35; stroke-dashoffset: 0; stroke: #6f7f92; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 322.235163 149.494447 
+L 329.303631 149.494447 
+L 329.303631 139.407613 
+L 322.235163 139.407613 
+z
+" clip-path="url(#p33831f7971)" style="fill: #ffffff; stroke-dasharray: 2.25,1.35; stroke-dashoffset: 0; stroke: #6f7f92; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 336.372098 170.508684 
+L 342.797977 170.508684 
+L 342.797977 160.42185 
+L 336.372098 160.42185 
+z
+" clip-path="url(#p33831f7971)" style="fill: #ffffff; stroke-dasharray: 2.25,1.35; stroke-dashoffset: 0; stroke: #6f7f92; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 349.223857 191.522921 
+L 358.220088 191.522921 
+L 358.220088 181.436087 
+L 349.223857 181.436087 
+z
+" clip-path="url(#p33831f7971)" style="fill: #ffffff; stroke-dasharray: 2.25,1.35; stroke-dashoffset: 0; stroke: #6f7f92; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 424.406646 212.537158 
+L 428.904761 212.537158 
+L 428.904761 202.450325 
+L 424.406646 202.450325 
+z
+" clip-path="url(#p33831f7971)" style="fill: #6f7f92; stroke: #6f7f92; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 439.828756 233.551396 
+L 452.680515 233.551396 
+L 452.680515 223.464562 
+L 439.828756 223.464562 
+z
+" clip-path="url(#p33831f7971)" style="fill: #6f7f92; stroke: #6f7f92; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 497.661671 254.565633 
+L 508.585666 254.565633 
+L 508.585666 244.478799 
+L 497.661671 244.478799 
+z
+" clip-path="url(#p33831f7971)" style="fill: #6f7f92; stroke: #6f7f92; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 524.007776 275.57987 
+L 535.574359 275.57987 
+L 535.574359 265.493036 
+L 524.007776 265.493036 
+z
+" clip-path="url(#p33831f7971)" style="fill: #6f7f92; stroke: #6f7f92; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 545.855766 296.594108 
+L 555.494585 296.594108 
+L 555.494585 286.507274 
+L 545.855766 286.507274 
+z
+" clip-path="url(#p33831f7971)" style="fill: #6f7f92; stroke: #6f7f92; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 556.137173 317.608345 
+L 562.563053 317.608345 
+L 562.563053 307.521511 
+L 556.137173 307.521511 
+z
+" clip-path="url(#p33831f7971)" style="fill: #6f7f92; stroke: #6f7f92; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 232.272852 359.636819 
+L 285.607651 359.636819 
+L 285.607651 349.549986 
+L 232.272852 349.549986 
+z
+" clip-path="url(#p33831f7971)" style="fill: #6f7f92; stroke: #6f7f92; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 300.387173 380.651057 
+L 360.147852 380.651057 
+L 360.147852 370.564223 
+L 300.387173 370.564223 
+z
+" clip-path="url(#p33831f7971)" style="fill: #6f7f92; stroke: #6f7f92; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 387.779133 401.665294 
+L 568.346344 401.665294 
+L 568.346344 391.57846 
+L 387.779133 391.57846 
+z
+" clip-path="url(#p33831f7971)" style="fill: #6f7f92; stroke: #6f7f92; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 498.304259 422.679531 
+L 566.41858 422.679531 
+L 566.41858 412.592697 
+L 498.304259 412.592697 
+z
+" clip-path="url(#p33831f7971)" style="fill: #6f7f92; stroke: #6f7f92; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 232.91544 464.708006 
+L 295.889058 464.708006 
+L 295.889058 454.621172 
+L 232.91544 454.621172 
+z
+" clip-path="url(#p33831f7971)" style="fill: #ffffff; stroke-dasharray: 2.25,1.35; stroke-dashoffset: 0; stroke: #6f7f92; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 301.029761 485.722243 
+L 369.786671 485.722243 
+L 369.786671 475.635409 
+L 301.029761 475.635409 
+z
+" clip-path="url(#p33831f7971)" style="fill: #ffffff; stroke-dasharray: 2.25,1.35; stroke-dashoffset: 0; stroke: #6f7f92; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 404.48642 506.736481 
+L 568.988932 506.736481 
+L 568.988932 496.649647 
+L 404.48642 496.649647 
+z
+" clip-path="url(#p33831f7971)" style="fill: #ffffff; stroke-dasharray: 2.25,1.35; stroke-dashoffset: 0; stroke: #6f7f92; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 230.345088 548.764955 
+L 295.24647 548.764955 
+L 295.24647 538.678121 
+L 230.345088 538.678121 
+z
+" clip-path="url(#p33831f7971)" style="fill: #ffffff; stroke-dasharray: 2.25,1.35; stroke-dashoffset: 0; stroke: #6f7f92; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 296.531646 569.779192 
+L 369.144083 569.779192 
+L 369.144083 559.692358 
+L 296.531646 559.692358 
+z
+" clip-path="url(#p33831f7971)" style="fill: #ffffff; stroke-dasharray: 2.25,1.35; stroke-dashoffset: 0; stroke: #6f7f92; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_27">
+    <path d="M 369.786671 590.79343 
+L 569.63152 590.79343 
+L 569.63152 580.706596 
+L 369.786671 580.706596 
+z
+" clip-path="url(#p33831f7971)" style="fill: #ffffff; stroke-dasharray: 2.25,1.35; stroke-dashoffset: 0; stroke: #6f7f92; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_28">
+    <path d="M 233.558028 632.821904 
+L 281.752123 632.821904 
+L 281.752123 622.73507 
+L 233.558028 622.73507 
+z
+" clip-path="url(#p33831f7971)" style="fill: #6f7f92; stroke: #6f7f92; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_29">
+    <path d="M 301.672349 653.836142 
+L 356.292324 653.836142 
+L 356.292324 643.749308 
+L 301.672349 643.749308 
+z
+" clip-path="url(#p33831f7971)" style="fill: #6f7f92; stroke: #6f7f92; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_30">
+    <path d="M 405.129008 674.850379 
+L 565.775992 674.850379 
+L 565.775992 664.763545 
+L 405.129008 664.763545 
+z
+" clip-path="url(#p33831f7971)" style="fill: #6f7f92; stroke: #6f7f92; stroke-width: 0.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_31">
+    <path d="M 230.345088 716.878853 
+L 613.3275 716.878853 
+L 613.3275 706.792019 
+L 230.345088 706.792019 
+z
+" clip-path="url(#p33831f7971)" style="fill: #ffffff; stroke-dasharray: 2.25,1.35; stroke-dashoffset: 0; stroke: #6f7f92; stroke-width: 0.9; stroke-linejoin: miter"/>
+   </g>
+   <g id="legend_1">
+    <g id="patch_32">
+     <path d="M 13.95 774.895906 
+L 22.2 774.895906 
+L 22.2 769.645906 
+L 13.95 769.645906 
+z
+" style="fill: #6f7f92"/>
+    </g>
+    <g id="text_96">
+     <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="25.95" y="774.895906" transform="rotate(-0 25.95 774.895906)">signature integrated into an InterPro entry</text>
+    </g>
+    <g id="patch_33">
+     <path d="M 174.105469 774.895906 
+L 182.355469 774.895906 
+L 182.355469 769.645906 
+L 174.105469 769.645906 
+z
+" style="fill: #ffffff; stroke-dasharray: 2.25,1.35; stroke-dashoffset: 0; stroke: #6f7f92; stroke-width: 0.9; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_97">
+     <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="186.105469" y="774.895906" transform="rotate(-0 186.105469 774.895906)">signature not integrated into an InterPro entry</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p33831f7971">
+   <rect x="7.2" y="48.83625" width="736.56" height="681.912"/>
+  </clipPath>
+ </defs>
+</svg>

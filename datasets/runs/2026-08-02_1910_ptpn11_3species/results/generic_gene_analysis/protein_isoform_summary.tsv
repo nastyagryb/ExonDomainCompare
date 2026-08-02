@@ -1,0 +1,10 @@
+species_id	protein_id	transcript_id	protein_length	primary_status	source_kind	notes
+homo_sapiens	NP_001317366.1	NM_001330437.2	597	primary	refseq_curated	
+homo_sapiens	NP_002825.3	NM_002834.5	593	alternative	refseq_curated	
+homo_sapiens	XP_011536915.1	XM_011538613.3	596	alternative	refseq_predicted	
+homo_sapiens	NP_001361554.1	NM_001374625.1	592	alternative	refseq_curated	
+homo_sapiens	NP_542168.1	NM_080601.3	460	alternative	refseq_curated	
+mus_musculus	NP_001103462.1	NM_001109992.1	593	alternative	refseq_curated	
+mus_musculus	NP_035332.1	NM_011202.3	597	primary	refseq_curated	
+rattus_norvegicus	NP_001171064.1	NM_001177593.1	597	primary	refseq_curated	
+rattus_norvegicus	NP_037220.2	NM_013088.2	593	alternative	refseq_curated	

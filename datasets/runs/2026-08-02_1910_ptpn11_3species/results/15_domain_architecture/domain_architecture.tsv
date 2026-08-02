@@ -1,0 +1,24 @@
+species_id	protein_id	domain_source	domain_id	domain_name	start_aa	end_aa	score	match_status	interpro_accession	interpro_description	go_terms	pathways	feature_type	domain_class_simplified	source_file
+homo_sapiens	NP_001317366.1	PFAM,PROSITE_PROFILES,SMART	IPR000980	SH2	4	102			IPR000980	SH2			domain		
+homo_sapiens	NP_001317366.1	PFAM,PROSITE_PROFILES,SMART	IPR000980	SH2	110	216			IPR000980	SH2			domain		
+homo_sapiens	NP_001317366.1	PFAM,PRINTS,PROSITE_PROFILES,SMART	IPR000242	PTP_cat	246	527			IPR000242	PTP_cat			domain		
+homo_sapiens	NP_001317366.1	GENE3D,SUPERFAMILY	IPR036860	SH2_dom_sf	1	217			IPR036860	SH2_dom_sf			family		
+homo_sapiens	NP_001317366.1	PIRSF	IPR012152	Tyr_Pase_non-rcpt_typ-6/11	1	597			IPR012152	Tyr_Pase_non-rcpt_typ-6/11			family		
+homo_sapiens	NP_001317366.1	GENE3D,SUPERFAMILY	IPR029021	Prot-tyrosine_phosphatase-like	218	529			IPR029021	Prot-tyrosine_phosphatase-like			family		
+homo_sapiens	NP_001317366.1	PROSITE_PATTERNS	IPR016130	Tyr_Pase_AS	461	471			IPR016130	Tyr_Pase_AS			feature		
+homo_sapiens	NP_001317366.1	MOBIDB_LITE		disorder_prediction	552	577				disorder_prediction			feature		
+homo_sapiens	NP_001317366.1	MOBIDB_LITE		disorder_prediction	563	572				disorder_prediction			feature		
+mus_musculus	NP_035332.1	PFAM,PROSITE_PROFILES,SMART	IPR000980	SH2	4	102			IPR000980	SH2			domain		
+mus_musculus	NP_035332.1	PFAM,PROSITE_PROFILES,SMART	IPR000980	SH2	110	216			IPR000980	SH2			domain		
+mus_musculus	NP_035332.1	PFAM,PRINTS,PROSITE_PROFILES,SMART	IPR000242	PTP_cat	246	527			IPR000242	PTP_cat			domain		
+mus_musculus	NP_035332.1	GENE3D,SUPERFAMILY	IPR036860	SH2_dom_sf	1	217			IPR036860	SH2_dom_sf			family		
+mus_musculus	NP_035332.1	PIRSF	IPR012152	Tyr_Pase_non-rcpt_typ-6/11	1	597			IPR012152	Tyr_Pase_non-rcpt_typ-6/11			family		
+mus_musculus	NP_035332.1	GENE3D,SUPERFAMILY	IPR029021	Prot-tyrosine_phosphatase-like	218	529			IPR029021	Prot-tyrosine_phosphatase-like			family		
+mus_musculus	NP_035332.1	PROSITE_PATTERNS	IPR016130	Tyr_Pase_AS	461	471			IPR016130	Tyr_Pase_AS			feature		
+rattus_norvegicus	NP_001171064.1	PFAM,PROSITE_PROFILES,SMART	IPR000980	SH2	4	102			IPR000980	SH2			domain		
+rattus_norvegicus	NP_001171064.1	PFAM,PROSITE_PROFILES,SMART	IPR000980	SH2	110	216			IPR000980	SH2			domain		
+rattus_norvegicus	NP_001171064.1	PFAM,PRINTS,PROSITE_PROFILES,SMART	IPR000242	PTP_cat	246	527			IPR000242	PTP_cat			domain		
+rattus_norvegicus	NP_001171064.1	GENE3D,SUPERFAMILY	IPR036860	SH2_dom_sf	1	217			IPR036860	SH2_dom_sf			family		
+rattus_norvegicus	NP_001171064.1	PIRSF	IPR012152	Tyr_Pase_non-rcpt_typ-6/11	1	597			IPR012152	Tyr_Pase_non-rcpt_typ-6/11			family		
+rattus_norvegicus	NP_001171064.1	GENE3D,SUPERFAMILY	IPR029021	Prot-tyrosine_phosphatase-like	218	529			IPR029021	Prot-tyrosine_phosphatase-like			family		
+rattus_norvegicus	NP_001171064.1	PROSITE_PATTERNS	IPR016130	Tyr_Pase_AS	461	471			IPR016130	Tyr_Pase_AS			feature		

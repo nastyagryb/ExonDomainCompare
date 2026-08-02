@@ -1,0 +1,517 @@
+{
+  "run_id": "2026-08-02_1910_ptpn11_3species",
+  "dataset_id": "2026-08-02_1910_ptpn11_3species",
+  "source_identity": {
+    "algorithm": "sha256",
+    "file_count": 99,
+    "files": [
+      {
+        "path": "01_species_registry/species_registry.tsv",
+        "sha256": "7b4c2f52fb7b5ad31debd97fa35bcfec72bd46a5c3ea779c3e1e16a2dca70259",
+        "bytes": 921
+      },
+      {
+        "path": "01_species_registry/species_registry_warnings.tsv",
+        "sha256": "5be31149b92dc8f85f141312168c18d71ad6bf8e873961c0b6105dbd44e37e7e",
+        "bytes": 33
+      },
+      {
+        "path": "02_models/gene_candidates_homo_sapiens.tsv",
+        "sha256": "874e8c2f34e53d3f895982945a11a8463ab89b9ac2cead2a2b68f65595144bdd",
+        "bytes": 454
+      },
+      {
+        "path": "02_models/gene_candidates_mus_musculus.tsv",
+        "sha256": "58c44c3793bb1cd2a6a92605a50b7a062b7a2e121b315d794fd3e3af733c9f82",
+        "bytes": 484
+      },
+      {
+        "path": "02_models/gene_candidates_rattus_norvegicus.tsv",
+        "sha256": "c11d49eb68a2c71dbf6d71c66dc46fbe71db56de926017a77c5b70098c4337b4",
+        "bytes": 482
+      },
+      {
+        "path": "02_models/gene_resolution_homo_sapiens.json",
+        "sha256": "1d3ef97ce532ddf4c1810b7b4df7ceefa28437a51db6e19e46f82de9b9ea89da",
+        "bytes": 4543
+      },
+      {
+        "path": "02_models/gene_resolution_mus_musculus.json",
+        "sha256": "3a8c31d2b2f192ec7796fecf73a5d78cd4e2f58c8aa8c319ab31090a9fd20581",
+        "bytes": 4092
+      },
+      {
+        "path": "02_models/gene_resolution_rattus_norvegicus.json",
+        "sha256": "e7b2f009cd838c175f8ca9c76d27598018c729302efe22560ac0700963a6bff0",
+        "bytes": 3807
+      },
+      {
+        "path": "04_event_evidence/event_region_evidence.tsv",
+        "sha256": "7c0fe88854f50104cfdda3105f4c3b0b8b9c69841b773ac4925171757334da6c",
+        "bytes": 6937
+      },
+      {
+        "path": "04_event_evidence/event_region_evidence_summary.json",
+        "sha256": "1ca1624818f91292c88fffef45e047aa988ab0d5f684fa8efebcee6acec76368",
+        "bytes": 257
+      },
+      {
+        "path": "05_event_region_detection/event_region_candidate_clusters.tsv",
+        "sha256": "b429cc8b0202e8c0f20fae2392308da72906d17d31a9d4aadd4136fd2e1a45ab",
+        "bytes": 1977
+      },
+      {
+        "path": "05_event_region_detection/event_region_detection_report.json",
+        "sha256": "9eb061700735a2d6d16eadab7a9290150bcd424c8e1ce88fb4580fead4f298ef",
+        "bytes": 322
+      },
+      {
+        "path": "06_coordinate_mapping/coordinate_mapping_report.json",
+        "sha256": "0cd6013ea4573da149344e28ea7169178a5e70a9e0625a63d11d6658f7636a9f",
+        "bytes": 153
+      },
+      {
+        "path": "06_coordinate_mapping/exon_protein_architecture.tsv",
+        "sha256": "079bc379c60aa577ad5584f8097f6a99aac36920f6477113b526f601c97af8c6",
+        "bytes": 15990
+      },
+      {
+        "path": "07_msa/msa_status.json",
+        "sha256": "feee0dc3cb841206ea4400f71ba58bfa136ce9aec803351367837e6fd902b57f",
+        "bytes": 263
+      },
+      {
+        "path": "07_msa/protein_alignment.faa",
+        "sha256": "bc7087f1b4ef2790e675e07be51dce07194ab5ebfb9c8b9044d8f0a19d4e5ffe",
+        "bytes": 3209
+      },
+      {
+        "path": "08_synteny/synteny_neighbourhood.tsv",
+        "sha256": "058892449628a0975afcc827bdd04a5ea9fdc90c510909aa25c5e733b48d0472",
+        "bytes": 2585
+      },
+      {
+        "path": "08_synteny/synteny_report.json",
+        "sha256": "ace3f3b0859691dcaf74e6d0400b84f6655f51f83ecb8a660c7861174a3251ea",
+        "bytes": 86
+      },
+      {
+        "path": "09_qc/run_qc_summary.json",
+        "sha256": "c929bb9a42587aa74eaf9c44232094425664bb9f14581863ba895514cb005ad3",
+        "bytes": 255
+      },
+      {
+        "path": "13_final_pre_interpro_closure/freeze/final_pre_interpro_proteins_primary.faa",
+        "sha256": "abc702210e01642887602330b0c997fb1406ffcd411975317e6b851aed402356",
+        "bytes": 1931
+      },
+      {
+        "path": "14_interproscan/primary/input/final_pre_interpro_proteins_primary.faa",
+        "sha256": "abc702210e01642887602330b0c997fb1406ffcd411975317e6b851aed402356",
+        "bytes": 1931
+      },
+      {
+        "path": "14_interproscan/primary/interproscan_manifest.json",
+        "sha256": "8264a9345e83e8826244a89162ab586f7fb8e0ed1bb0c3d2491c0fb720da74bd",
+        "bytes": 1677
+      },
+      {
+        "path": "14_interproscan/primary/output/input.fasta.gff3",
+        "sha256": "011bcbf969a5840c8e8db3d340cde73985aa3ee6c77064bf09dd7b1df63be6ba",
+        "bytes": 1445201
+      },
+      {
+        "path": "14_interproscan/primary/output/input.fasta.json",
+        "sha256": "105a7e070234ab8684bff8d182ca252477b254440c5bcbba5f08692b6cb33e6a",
+        "bytes": 6196100
+      },
+      {
+        "path": "14_interproscan/primary/output/input.fasta.tsv",
+        "sha256": "f009cd7f6dceb677d6c770ae39a0ce102514c39bdebe771921a74ebad08ccab0",
+        "bytes": 1286545
+      },
+      {
+        "path": "15_domain_architecture/domain_architecture.tsv",
+        "sha256": "aed349fbd5859d32e34a68b1cb630319bead40ea0fdeb62e23a1f99109c35ee1",
+        "bytes": 201
+      },
+      {
+        "path": "15_domain_architecture/domain_architecture_report.json",
+        "sha256": "34ded2d30e1a61fc947100692b71b2319e6620b12a0bc415e4ea8fbefffec86f",
+        "bytes": 168
+      },
+      {
+        "path": "15_domain_architecture/post_cluster_qc.json",
+        "sha256": "23c4c92cd99bdadf1ea894dfa8c6262cfaa9fc6b5354aa07a6a243da9a967e57",
+        "bytes": 3170
+      },
+      {
+        "path": "15_domain_architecture/tm_features.tsv",
+        "sha256": "217d6d8c4d16642730fa175ffe068335a1e6c743067f5d5b838600bc9a5063f6",
+        "bytes": 55
+      },
+      {
+        "path": "15_exon_domain_boundary_post_interpro/pytmhmm_primary/input/final_pre_interpro_proteins_primary.faa",
+        "sha256": "abc702210e01642887602330b0c997fb1406ffcd411975317e6b851aed402356",
+        "bytes": 1931
+      },
+      {
+        "path": "15_exon_domain_boundary_post_interpro/pytmhmm_primary/output/pytmhmm_summary_all.tsv",
+        "sha256": "6cd873243142abb0923b76f20e5a36d38d861a361358039f9b990600e2ee253e",
+        "bytes": 101
+      },
+      {
+        "path": "15_exon_domain_boundary_post_interpro/pytmhmm_primary/output/pytmhmm_transmembrane_hits.tsv",
+        "sha256": "6cd873243142abb0923b76f20e5a36d38d861a361358039f9b990600e2ee253e",
+        "bytes": 101
+      },
+      {
+        "path": "15_exon_domain_boundary_post_interpro/pytmhmm_primary/pytmhmm_manifest.json",
+        "sha256": "3992ca8fefa895e386635ade31cf98da910e8e23e84b80a340f8a03e13e0ed24",
+        "bytes": 2858
+      },
+      {
+        "path": "16_final_analyses/boundary_analysis_report.json",
+        "sha256": "8c5f5a7111bc4ebec09283c2d748ffa709306b479702d68325b828bd3142e7d4",
+        "bytes": 1288
+      },
+      {
+        "path": "16_final_analyses/exon_domain_boundary_analysis.tsv",
+        "sha256": "4137d4aabd5cc3620dbb939281933aebbf25f7109d713f2a68337afb3eb78ef4",
+        "bytes": 324
+      },
+      {
+        "path": "16_final_analyses/exon_domain_boundary_distances.tsv",
+        "sha256": "4137d4aabd5cc3620dbb939281933aebbf25f7109d713f2a68337afb3eb78ef4",
+        "bytes": 324
+      },
+      {
+        "path": "16_final_analyses/exon_domain_boundary_summary.tsv",
+        "sha256": "aaf9de017fda66dcb9bfd6d34e2eff0db0e9d0226f63979e8b2ad303fc0658d5",
+        "bytes": 43
+      },
+      {
+        "path": "core_gene_analysis/core_gene_report.json",
+        "sha256": "b6fc51871d2fdd1fc627bf6f7c214510dec85b393463ad3d9b12cc0e856d2c30",
+        "bytes": 3933
+      },
+      {
+        "path": "core_gene_analysis/core_model_collection_report.json",
+        "sha256": "2b1d3ebbd1241e38431184bc1719cb05f6606096a98ab6d0dadc76394aaed116",
+        "bytes": 5195
+      },
+      {
+        "path": "core_gene_analysis/domain_features.tsv",
+        "sha256": "7df9d337fa7652b8d724e9fefdff3b39c2bab604df06c9af2a075e0671b644f6",
+        "bytes": 4596
+      },
+      {
+        "path": "core_gene_analysis/event_candidate_regions.tsv",
+        "sha256": "12e64221d53cb73160f225a88818fedc174e396d7ec89f45642f48fcdde57e53",
+        "bytes": 4328
+      },
+      {
+        "path": "core_gene_analysis/event_region_candidate_clusters.tsv",
+        "sha256": "b429cc8b0202e8c0f20fae2392308da72906d17d31a9d4aadd4136fd2e1a45ab",
+        "bytes": 1977
+      },
+      {
+        "path": "core_gene_analysis/event_region_evidence.tsv",
+        "sha256": "7e94600a3aca8d4a24c33cfdcbbd9e30ee00943d25b713e62ed8b76c3f50b769",
+        "bytes": 7563
+      },
+      {
+        "path": "core_gene_analysis/exon_domain_boundary_distances.tsv",
+        "sha256": "6eaf5e5b5f4b0aeda31bea3109cb21a85313c3b54ac366a3d4ccdd4179dfa417",
+        "bytes": 11259
+      },
+      {
+        "path": "core_gene_analysis/exon_domain_boundary_summary.tsv",
+        "sha256": "93607257b677b08a45b3dbc9cd01048d8e85552c7af766589ade0d38cc31dfdc",
+        "bytes": 123
+      },
+      {
+        "path": "core_gene_analysis/exon_protein_map.tsv",
+        "sha256": "6c0fafbfa5c28f381e95e3c3e50cd1b441eb4f54ee22e82b2887ab5653ee197c",
+        "bytes": 21461
+      },
+      {
+        "path": "core_gene_analysis/gene_model_index.tsv",
+        "sha256": "50b9925d7271a2d279dd603e9c864b7e16a0d513c6be12899527489736f1ccf6",
+        "bytes": 1131
+      },
+      {
+        "path": "core_gene_analysis/interpro_annotations.tsv",
+        "sha256": "b18dc9940d7e800f9af8550dac6439fac0521bc116890c0e20fbacb872f271d3",
+        "bytes": 17123
+      },
+      {
+        "path": "core_gene_analysis/primary_selection_evidence.tsv",
+        "sha256": "adc2a55a9ebe828700719b9deeadfdcf8d9f55aa981a40adb4d71ae288c17914",
+        "bytes": 1392
+      },
+      {
+        "path": "core_gene_analysis/primary_selection_report.json",
+        "sha256": "53fdd1389e63f3a56ec5cbd4c98af9b21e9cfa42bf7fe1fd0b359b3bcb9936db",
+        "bytes": 5351
+      },
+      {
+        "path": "core_gene_analysis/protein_isoform_index.tsv",
+        "sha256": "0af8a1a45cfdc6126bbf85048b3b89132112367fcc01601cfeb06f7758b77b53",
+        "bytes": 1065
+      },
+      {
+        "path": "core_gene_analysis/proteins_all_isoforms.faa",
+        "sha256": "80e55e51e8720ab930ca5cbee2c912fa7f5f742005a57f2787f9dbee5d9ff498",
+        "bytes": 5628
+      },
+      {
+        "path": "core_gene_analysis/proteins_primary.faa",
+        "sha256": "abc702210e01642887602330b0c997fb1406ffcd411975317e6b851aed402356",
+        "bytes": 1931
+      },
+      {
+        "path": "core_gene_analysis/synteny_neighbors.tsv",
+        "sha256": "e250cac0d572286ca220f35a5447d977ec51f853954756dffd446a94b2550f56",
+        "bytes": 3786
+      },
+      {
+        "path": "core_gene_analysis/synteny_target.tsv",
+        "sha256": "53252294b28130ab7d7c00fe91d494460d95add95c5be5fb17f97bca85b28792",
+        "bytes": 448
+      },
+      {
+        "path": "core_gene_analysis/tm_features.tsv",
+        "sha256": "217d6d8c4d16642730fa175ffe068335a1e6c743067f5d5b838600bc9a5063f6",
+        "bytes": 55
+      },
+      {
+        "path": "generic_gene_analysis/analysis_evidence_stack.json",
+        "sha256": "913b7dfa988825da4c381cdc235a559fb09862c52ac3abe54ae86c46ad125570",
+        "bytes": 5003
+      },
+      {
+        "path": "generic_gene_analysis/candidate_domain_context.tsv",
+        "sha256": "75bb71f75aae0baf90e61157e554c5f54fb69f83203d979cddf88691fb32c9b7",
+        "bytes": 1360
+      },
+      {
+        "path": "generic_gene_analysis/comparative/analysis_availability.tsv",
+        "sha256": "03d37a3d3fb6f0dbb8ad14d1a2b2570c065556122ce25f3050a6e840713234a4",
+        "bytes": 348
+      },
+      {
+        "path": "generic_gene_analysis/comparative/boundary_consistency_summary.tsv",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "generic_gene_analysis/comparative/comparable_boundary_groups.tsv",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "generic_gene_analysis/comparative/comparable_domain_groups.tsv",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "generic_gene_analysis/comparative/comparative_dataset_index.json",
+        "sha256": "57447807b6f5f0c94aeae9c18b7f3ac963dc471de4fac20c0feaa8c9463849af",
+        "bytes": 200386
+      },
+      {
+        "path": "generic_gene_analysis/comparative/comparative_synteny.tsv",
+        "sha256": "d7165e772f9e6a8ab2caefc4c3abd90248138f3924f064997a359362bafba026",
+        "bytes": 3463
+      },
+      {
+        "path": "generic_gene_analysis/comparative/domain_annotation_matrix.tsv",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "generic_gene_analysis/comparative/exon_domain_boundaries_long.tsv",
+        "sha256": "be491c5a53d1bf77e9f04430154bf77fe447fe767d70dbde0fbae5811b62e519",
+        "bytes": 9154
+      },
+      {
+        "path": "generic_gene_analysis/comparative/inspection_cases.tsv",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "generic_gene_analysis/comparative/isoform_diversity.tsv",
+        "sha256": "94ffe09abe94897236b45512a9c5aced36bd2ec58d79de5d94287c5e1520838a",
+        "bytes": 443
+      },
+      {
+        "path": "generic_gene_analysis/comparative/msa_aligned_domains.tsv",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      {
+        "path": "generic_gene_analysis/comparative/msa_aligned_exons.tsv",
+        "sha256": "9e70c95b9b851c148a7649f2aa36e2f7a346d9f4b466590a19a225afb3e426c6",
+        "bytes": 4095
+      },
+      {
+        "path": "generic_gene_analysis/comparative/pairwise_identity.tsv",
+        "sha256": "aeebac3f3a8cdf72d003af30c486a1d78c68cca7583188ee6f06a9e878cb423a",
+        "bytes": 514
+      },
+      {
+        "path": "generic_gene_analysis/comparative/species_inventory.tsv",
+        "sha256": "7e1c06e8ceca4350ef657b3e9ba20b7a91cdbf10826c7ef834c3d033de04272b",
+        "bytes": 565
+      },
+      {
+        "path": "generic_gene_analysis/comparative/species_order.tsv",
+        "sha256": "2f556dbfc47bdeb4a5f2707d2fd0d2f804f7a27cd193e120d54edae55769b6d1",
+        "bytes": 462
+      },
+      {
+        "path": "generic_gene_analysis/domain_architecture.tsv",
+        "sha256": "aed349fbd5859d32e34a68b1cb630319bead40ea0fdeb62e23a1f99109c35ee1",
+        "bytes": 201
+      },
+      {
+        "path": "generic_gene_analysis/domain_architecture_status.json",
+        "sha256": "771f4df74e87d1f8cc5c3229d90c7b821bb4daf50a79c045dd2cb17c0910e0a5",
+        "bytes": 34
+      },
+      {
+        "path": "generic_gene_analysis/event_candidate_ranking.tsv",
+        "sha256": "01c8d6ae1398542d3e2737bd7d13f8f15b92c049b4f1cfe446002dd4a7e978f3",
+        "bytes": 1217
+      },
+      {
+        "path": "generic_gene_analysis/event_region_candidate_clusters.tsv",
+        "sha256": "b429cc8b0202e8c0f20fae2392308da72906d17d31a9d4aadd4136fd2e1a45ab",
+        "bytes": 1977
+      },
+      {
+        "path": "generic_gene_analysis/event_region_evidence.tsv",
+        "sha256": "7c0fe88854f50104cfdda3105f4c3b0b8b9c69841b773ac4925171757334da6c",
+        "bytes": 6937
+      },
+      {
+        "path": "generic_gene_analysis/exon_domain_boundary_analysis.tsv",
+        "sha256": "4137d4aabd5cc3620dbb939281933aebbf25f7109d713f2a68337afb3eb78ef4",
+        "bytes": 324
+      },
+      {
+        "path": "generic_gene_analysis/exon_domain_boundary_analysis_status.json",
+        "sha256": "771f4df74e87d1f8cc5c3229d90c7b821bb4daf50a79c045dd2cb17c0910e0a5",
+        "bytes": 34
+      },
+      {
+        "path": "generic_gene_analysis/exon_protein_architecture.tsv",
+        "sha256": "079bc379c60aa577ad5584f8097f6a99aac36920f6477113b526f601c97af8c6",
+        "bytes": 15990
+      },
+      {
+        "path": "generic_gene_analysis/figure_manifest.tsv",
+        "sha256": "23b4a592c1323f8ef7e2adecf60be85a4383264d2951ae5997812b95db507c1e",
+        "bytes": 3589
+      },
+      {
+        "path": "generic_gene_analysis/gene_model_summary.tsv",
+        "sha256": "50b9925d7271a2d279dd603e9c864b7e16a0d513c6be12899527489736f1ccf6",
+        "bytes": 1131
+      },
+      {
+        "path": "generic_gene_analysis/msa/isoform_msa.aln.faa",
+        "sha256": "bc7087f1b4ef2790e675e07be51dce07194ab5ebfb9c8b9044d8f0a19d4e5ffe",
+        "bytes": 3209
+      },
+      {
+        "path": "generic_gene_analysis/msa/isoform_msa__homo_sapiens.aln.faa",
+        "sha256": "bc7087f1b4ef2790e675e07be51dce07194ab5ebfb9c8b9044d8f0a19d4e5ffe",
+        "bytes": 3209
+      },
+      {
+        "path": "generic_gene_analysis/msa/isoform_msa__mus_musculus.aln.faa",
+        "sha256": "d7d9703adca82cd52da61f174079d79e0effe7ad5e9d9dd1b47e06439946f3e3",
+        "bytes": 1283
+      },
+      {
+        "path": "generic_gene_analysis/msa/isoform_msa__rattus_norvegicus.aln.faa",
+        "sha256": "9ef680ca2b2bac8d7429567f3e81f6647846ad69312557ff1627cb1ce62b291f",
+        "bytes": 1293
+      },
+      {
+        "path": "generic_gene_analysis/msa/isoform_msa_input__homo_sapiens.faa",
+        "sha256": "f6e594f9da710e2f8f0fc75a9b915164e73dbceaec49b8ff2a677036e6c7ac88",
+        "bytes": 3060
+      },
+      {
+        "path": "generic_gene_analysis/msa/isoform_msa_input__mus_musculus.faa",
+        "sha256": "62aa2ad5aab393ff89961873084b1d7e14dc30e459720eaf0e6d1ce752a897eb",
+        "bytes": 1279
+      },
+      {
+        "path": "generic_gene_analysis/msa/isoform_msa_input__rattus_norvegicus.faa",
+        "sha256": "7cc34f105efc9fb37bdcc6265a52d15bc953cba568a91baa1cd57ca1f8ed7b3b",
+        "bytes": 1289
+      },
+      {
+        "path": "generic_gene_analysis/msa/primaries_msa.aln.faa",
+        "sha256": "abc702210e01642887602330b0c997fb1406ffcd411975317e6b851aed402356",
+        "bytes": 1931
+      },
+      {
+        "path": "generic_gene_analysis/msa/primaries_msa_input.faa",
+        "sha256": "abc702210e01642887602330b0c997fb1406ffcd411975317e6b851aed402356",
+        "bytes": 1931
+      },
+      {
+        "path": "generic_gene_analysis/msa_index.tsv",
+        "sha256": "eb5ac021f8c1d8fabd78d12b78c17f4ba1238249248b44a8bed6d5fbfb0acdf4",
+        "bytes": 1222
+      },
+      {
+        "path": "generic_gene_analysis/primary_selection_evidence.tsv",
+        "sha256": "adc2a55a9ebe828700719b9deeadfdcf8d9f55aa981a40adb4d71ae288c17914",
+        "bytes": 1392
+      },
+      {
+        "path": "generic_gene_analysis/primary_selection_report.json",
+        "sha256": "c3903840ca31d1bae4f14bfc429d4052d3d6d00c885102907a0285b63b201d26",
+        "bytes": 5351
+      },
+      {
+        "path": "generic_gene_analysis/protein_isoform_summary.tsv",
+        "sha256": "e54900988a32d5cc08181e4beaf33de6685e983da00c6293dca27c38bc05fadf",
+        "bytes": 745
+      },
+      {
+        "path": "generic_gene_analysis/protein_model_evidence.tsv",
+        "sha256": "0f51e15a64cf72e13a54514e9902d172a6161e4c7d4536be195d04a4269cdb9e",
+        "bytes": 1075
+      },
+      {
+        "path": "generic_gene_analysis/synteny_neighbourhood.tsv",
+        "sha256": "058892449628a0975afcc827bdd04a5ea9fdc90c510909aa25c5e733b48d0472",
+        "bytes": 2585
+      },
+      {
+        "path": "generic_gene_analysis/transcript_model_evidence.tsv",
+        "sha256": "a5754cec8072c33fc2d0932e50fb04367114119dd68b1394e3a2fed6b31d1b22",
+        "bytes": 1075
+      }
+    ],
+    "content_sha256": "1a049fb3dd07a57f606b6fe34066f0668f0e63673c26e090d48e3eb18494f1e2"
+  },
+  "_exondomain": {
+    "contract_version": "1.0",
+    "payload_type": "freshness",
+    "run_id": "2026-08-02_1910_ptpn11_3species",
+    "dataset_id": "2026-08-02_1910_ptpn11_3species",
+    "generator": "scripts/generic_gene/build_generic_website_indices.py",
+    "profile": {},
+    "source_checksums": [],
+    "generated_at": "2026-08-02T18:08:29.341279+00:00",
+    "content_sha256": "8a6f666802c8f4873facc3eb1840d99594e0f126778dda7b8bcfe884e72eb9fc"
+  }
+}

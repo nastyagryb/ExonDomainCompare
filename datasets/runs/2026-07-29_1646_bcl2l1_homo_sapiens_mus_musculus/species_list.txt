@@ -1,2 +1,0 @@
-homo_sapiens
-mus_musculus

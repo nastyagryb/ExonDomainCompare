@@ -1,0 +1,1 @@
+PTPN11 (Rattus Norvegicus), primary protein NP_001171064.1 — coding-exon identity of 2 protein model(s) relative to the primary model (all protein models). Coordinates: protein 1-based amino-acid positions on NP_001171064.1. Annotation source: NCBI RefSeq GFF CDS features compared on genomic CDS intervals. Descriptive annotation summary; no event is claimed as validated.

@@ -1,4 +1,0 @@
-species_a	protein_a	species_b	protein_b	n_compared_columns	n_identical	percent_identity
-homo_sapiens	NP_001304849.1	homo_sapiens	NP_001304849.1	233	233	100
-homo_sapiens	NP_001304849.1	mus_musculus	NP_001276668.1	219	193	88.13
-mus_musculus	NP_001276668.1	mus_musculus	NP_001276668.1	235	235	100

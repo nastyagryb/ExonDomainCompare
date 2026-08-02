@@ -1,0 +1,4 @@
+rank	candidate_id	candidate_label	aa_start	aa_end	length_aa	n_affected_isoforms	affected_isoforms	supporting_comparisons	evidence_score	evidence_strength	biological_validation
+1	PTPN11:homo_sapiens:indel:465-592	C1	465	592	128	5	NP_001317366.1;NP_001361554.1;NP_002825.3;NP_542168.1;XP_011536915.1	8	70	high	not validated
+2	PTPN11:homo_sapiens:indel:46-46	C1	46	46	1	3	NP_001317366.1;NP_001361554.1;XP_011536915.1	6	63	medium	not validated
+3	PTPN11:homo_sapiens:indel:408-411	C3	408	411	4	5	NP_001317366.1;NP_001361554.1;NP_002825.3;NP_542168.1;XP_011536915.1	6	58	medium	not validated

@@ -1,0 +1,791 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 756 279.6] /Resources << /Font << /F_bold 5 0 R /F_normal 6 0 R /F_italic 7 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 10577 >>
+stream
+1 1 1 rg
+0 0 756 279.6 re f
+0.11 0.14 0.2 rg
+BT
+/F_bold 12 Tf
+14 255.6 Td
+(PTPN11 ∑ local genomic neighbourhood) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 9 Tf
+14 242.6 Td
+(One row per species, target locus centred on a shared slot grid) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_italic 6.6 Tf
+14 230.6 Td
+(Which annotated loci flank the target gene, in which transcription direction, and are the same neighbours present across species?) Tj
+ET
+0.93 0.96 0.98 rg
+0.93 0.93 0.93 RG
+0.6 w
+397.27 76 57.45 142 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_italic 8.2 Tf
+49.36 199 Td
+(Homo sapiens) Tj
+ET
+0.89 0.91 0.94 RG
+0.6 w
+[] 0 d
+110 202 m 742 202 l S
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+111.5 195.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+164.45 202 m 159.95 205.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+164.45 202 m 159.95 198.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+128.33 186.9 Td
+(ERP29) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+168.95 195.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+170.45 202 m 174.95 205.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+170.45 202 m 174.95 198.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+185.78 186.9 Td
+(NAA25) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+226.41 195.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+279.36 202 m 274.86 205.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+279.36 202 m 274.86 198.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+240.59 186.9 Td
+(TRAFD1) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+283.86 195.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+285.36 202 m 289.86 205.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+285.36 202 m 289.86 198.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+298.04 186.9 Td
+(HECTD4) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+341.32 195.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+342.82 202 m 347.32 205.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+342.82 202 m 347.32 198.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+359.98 186.9 Td
+(RPL6) Tj
+ET
+0 0.45 0.7 rg
+0 0.27 0.42 RG
+1.3 w
+398.77 193.5 54.45 17 re
+B
+1 1 1 RG
+0.6 w
+[] 0 d
+451.73 202 m 447.23 205.2 l S
+1 1 1 RG
+0.6 w
+[] 0 d
+451.73 202 m 447.23 198.8 l S
+0.11 0.14 0.2 rg
+BT
+/F_bold 6.6 Tf
+413.35 184.9 Td
+(PTPN11) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+456.23 195.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+509.18 202 m 504.68 205.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+509.18 202 m 504.68 198.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+472.64 186.9 Td
+(RPH3A) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+513.68 195.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+566.64 202 m 562.14 205.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+566.64 202 m 562.14 198.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+532.34 186.9 Td
+(OAS1) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+571.14 195.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+624.09 202 m 619.59 205.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+624.09 202 m 619.59 198.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+589.79 186.9 Td
+(OAS3) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+628.59 195.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+681.55 202 m 677.05 205.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+681.55 202 m 677.05 198.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+647.25 186.9 Td
+(OAS2) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+686.05 195.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+739 202 m 734.5 205.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+739 202 m 734.5 198.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+704.7 186.9 Td
+(DTX1) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_italic 8.2 Tf
+47.88 153 Td
+(Mus musculus) Tj
+ET
+0.89 0.91 0.94 RG
+0.6 w
+[] 0 d
+110 156 m 742 156 l S
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+111.5 149.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+113 156 m 117.5 159.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+113 156 m 117.5 152.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+129.88 140.9 Td
+(Erp29) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+168.95 149.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+221.91 156 m 217.41 159.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+221.91 156 m 217.41 152.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+186.77 140.9 Td
+(Naa25) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+226.41 149.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+227.91 156 m 232.41 159.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+227.91 156 m 232.41 152.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+243.69 140.9 Td
+(Trafd1) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+283.86 149.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+336.82 156 m 332.32 159.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+336.82 156 m 332.32 152.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+300.58 140.9 Td
+(Hectd4) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+341.32 149.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+394.27 156 m 389.77 159.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+394.27 156 m 389.77 152.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+361.8 140.9 Td
+(Rpl6) Tj
+ET
+0 0.45 0.7 rg
+0 0.27 0.42 RG
+1.3 w
+398.77 147.5 54.45 17 re
+B
+1 1 1 RG
+0.6 w
+[] 0 d
+400.27 156 m 404.77 159.2 l S
+1 1 1 RG
+0.6 w
+[] 0 d
+400.27 156 m 404.77 152.8 l S
+0.11 0.14 0.2 rg
+BT
+/F_bold 6.6 Tf
+415.4 138.9 Td
+(Ptpn11) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+456.23 149.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+457.73 156 m 462.23 159.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+457.73 156 m 462.23 152.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+474.12 140.9 Td
+(Rph3a) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+513.68 149.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+566.64 156 m 562.14 159.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+566.64 156 m 562.14 152.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+531.58 140.9 Td
+(Oas1d) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+571.14 149.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+572.64 156 m 577.14 159.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+572.64 156 m 577.14 152.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+589.03 140.9 Td
+(Oas1a) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+628.59 149.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+630.09 156 m 634.59 159.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+630.09 156 m 634.59 152.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+646.49 140.9 Td
+(Oas1g) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+686.05 149.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+739 156 m 734.5 159.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+739 156 m 734.5 152.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+703.94 140.9 Td
+(Oas1h) Tj
+ET
+0.11 0.14 0.2 rg
+BT
+/F_italic 8.2 Tf
+34.51 107 Td
+(Rattus norvegicus) Tj
+ET
+0.89 0.91 0.94 RG
+0.6 w
+[] 0 d
+110 110 m 742 110 l S
+0.96 0.95 0.9 rg
+0.72 0.64 0.45 RG
+0.6 w
+111.5 103.5 54.45 13 re
+B
+0.72 0.64 0.45 RG
+0.6 w
+[] 0 d
+164.45 110 m 159.95 113.2 l S
+0.72 0.64 0.45 RG
+0.6 w
+[] 0 d
+164.45 110 m 159.95 106.8 l S
+0.48 0.35 0.11 rg
+BT
+/F_italic 6.6 Tf
+115.48 94.9 Td
+(LOC100364561) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+168.95 103.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+170.45 110 m 174.95 113.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+170.45 110 m 174.95 106.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+185.67 94.9 Td
+(Hectd4) Tj
+ET
+0.96 0.95 0.9 rg
+0.72 0.64 0.45 RG
+0.6 w
+226.41 103.5 54.45 13 re
+B
+0.72 0.64 0.45 RG
+0.6 w
+[] 0 d
+227.91 110 m 232.41 113.2 l S
+0.72 0.64 0.45 RG
+0.6 w
+[] 0 d
+227.91 110 m 232.41 106.8 l S
+0.48 0.35 0.11 rg
+BT
+/F_italic 6.6 Tf
+230.39 94.9 Td
+(LOC100909911) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+283.86 103.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+336.82 110 m 332.32 113.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+336.82 110 m 332.32 106.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+301.14 94.9 Td
+(Trafd1) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+341.32 103.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+342.82 110 m 347.32 113.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+342.82 110 m 347.32 106.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+361.8 94.9 Td
+(Rpl6) Tj
+ET
+0 0.45 0.7 rg
+0 0.27 0.42 RG
+1.3 w
+398.77 101.5 54.45 17 re
+B
+1 1 1 RG
+0.6 w
+[] 0 d
+451.73 110 m 447.23 113.2 l S
+1 1 1 RG
+0.6 w
+[] 0 d
+451.73 110 m 447.23 106.8 l S
+0.11 0.14 0.2 rg
+BT
+/F_bold 6.6 Tf
+415.4 92.9 Td
+(Ptpn11) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+456.23 103.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+509.18 110 m 504.68 113.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+509.18 110 m 504.68 106.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+474.12 94.9 Td
+(Rph3a) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+513.68 103.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+566.64 110 m 562.14 113.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+566.64 110 m 562.14 106.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+532.41 94.9 Td
+(Oas1i) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+571.14 103.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+572.64 110 m 577.14 113.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+572.64 110 m 577.14 106.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+589.03 94.9 Td
+(Oas1d) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+628.59 103.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+681.55 110 m 677.05 113.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+681.55 110 m 677.05 106.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+646.49 94.9 Td
+(Oas1a) Tj
+ET
+0.89 0.94 0.91 rg
+0.18 0.62 0.44 RG
+0.6 w
+686.05 103.5 54.45 13 re
+B
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+687.55 110 m 692.05 113.2 l S
+0.18 0.62 0.44 RG
+0.6 w
+[] 0 d
+687.55 110 m 692.05 106.8 l S
+0.11 0.42 0.29 rg
+BT
+/F_normal 6.6 Tf
+703.94 94.9 Td
+(Oas1h) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.6 Tf
+110 63.4 Td
+(upstream \(rank 5 -> 1\)) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.6 Tf
+408.08 63.4 Td
+(target locus) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.6 Tf
+666.94 63.4 Td
+(downstream \(rank 1 -> 5\)) Tj
+ET
+0 0.45 0.7 rg
+0.6 0.64 0.7 RG
+0.6 w
+14 52.4 7 7 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 7.6 Tf
+25 53.4 Td
+(Target gene) Tj
+ET
+0.89 0.94 0.91 rg
+0.6 0.64 0.7 RG
+0.6 w
+76.57 52.4 7 7 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 7.6 Tf
+87.57 53.4 Td
+(Resolved ortholog) Tj
+ET
+0.96 0.95 0.9 rg
+0.6 0.64 0.7 RG
+0.6 w
+159.51 52.4 7 7 re
+B
+0.11 0.14 0.2 rg
+BT
+/F_normal 7.6 Tf
+170.51 53.4 Td
+(Placeholder locus) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.6 Tf
+14 35.2 Td
+(Loci are placed by annotated neighbour rank, not by genomic coordinate; the spacing carries no distance information. The arrowhead is the annotated transcription direction. Local synteny is supporting evidence for locus identity and) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.6 Tf
+14 26.6 Td
+(genomic context; it does not by itself establish isoform or event identity.) Tj
+ET
+0.42 0.45 0.5 rg
+BT
+/F_normal 6.6 Tf
+14 18 Td
+(Species shown: 3 of 3 in this dataset ∑ complete neighbourhood: Homo sapiens, Mus musculus, Rattus norvegicus ∑ partial: none ∑ no neighbourhood available: none.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000285 00000 n 
+0000010915 00000 n 
+0000011017 00000 n 
+0000011114 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+11219
+%%EOF

@@ -1,0 +1,81 @@
+{
+  "gene_symbol": "PTPN11",
+  "shared_pipeline": true,
+  "run_id": "2026-08-02_1910_ptpn11_3species",
+  "website_indices_status": "core_only",
+  "review_fasta_count": 0,
+  "current_step": "results_ready",
+  "species_count": 3,
+  "cluster_analysis_status": "complete",
+  "analysis_id": "PTPN11_core_only_pilot",
+  "pipeline_type": "shared_gene_pipeline",
+  "stage_status": {
+    "04_event_evidence": "available",
+    "05_event_region_detection": "available",
+    "06_coordinate_mapping": "available",
+    "07_msa": "available",
+    "08_synteny": "available",
+    "09_qc": "available",
+    "10_figures_pre_domain": "available",
+    "15_domain_architecture": "available",
+    "16_final_analyses": "available"
+  },
+  "website_indices": [
+    "overview_index.json",
+    "evidence_stack.json",
+    "gene_explorer_index.json",
+    "protein_architecture_index.json",
+    "synteny_index.json",
+    "event_evidence_index.json",
+    "domain_architecture_index.json",
+    "exon_domain_boundaries_index.json",
+    "figures_index.json",
+    "available_views.json"
+  ],
+  "human_reference": {},
+  "primary_fasta_status": "available",
+  "status": "results_ready",
+  "event_analysis_enabled": false,
+  "readiness_reason": "every species reached the requested analysis stage",
+  "primary_fasta_count": 3,
+  "species_status": {
+    "homo_sapiens": {
+      "domain_architecture": "available",
+      "boundary": "available",
+      "protein_coordinate_model": "available",
+      "primary_protein": "NP_001317366.1",
+      "complete": true
+    },
+    "mus_musculus": {
+      "domain_architecture": "available",
+      "boundary": "available",
+      "protein_coordinate_model": "available",
+      "primary_protein": "NP_035332.1",
+      "complete": true
+    },
+    "rattus_norvegicus": {
+      "domain_architecture": "available",
+      "boundary": "available",
+      "protein_coordinate_model": "available",
+      "primary_protein": "NP_001171064.1",
+      "complete": true
+    }
+  },
+  "experimental": true,
+  "support_level": "generic_gene_analysis_experimental",
+  "explorable": true,
+  "next_action": "open_results",
+  "event_status": "exploratory_candidates_only",
+  "pre_interpro_status": "complete",
+  "run_mode": "core_only_pilot",
+  "cluster_status": "complete",
+  "cluster_fetch_status": "complete",
+  "review_fasta_status": "not_available",
+  "run_status": "results_ready",
+  "event_layer_type": "exploratory_event_evidence",
+  "has_event": false,
+  "post_interpro_status": "complete",
+  "read_only": true,
+  "distribution_status": "bundled_read_only_example",
+  "scientific_semantics": "exploratory_not_validated"
+}

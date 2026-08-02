@@ -1,0 +1,4 @@
+species_id	gene_symbol	target_gene_id	target_symbol	seqid	genomic_start	genomic_end	strand	upstream_count_available	downstream_count_available	requested_neighbour_count	source
+homo_sapiens	PTPN11	gene-PTPN11	PTPN11	NC_000012.12	112418947	112509918	+	5	5	5	ncbi_gff
+mus_musculus	PTPN11	gene-Ptpn11	Ptpn11	NC_000071.7	121268596	121329460	-	5	5	5	ncbi_gff
+rattus_norvegicus	PTPN11	gene-Ptpn11	Ptpn11	NC_086030.1	41026079	41085577	+	5	5	5	ncbi_gff

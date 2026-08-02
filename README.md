@@ -23,7 +23,7 @@ cd ExonDomainCompare
 ./scripts/start_local.sh
 ```
 
-Open <http://127.0.0.1:5173>. The bundled FGFR2 and BCL2L1 datasets work without
+Open <http://127.0.0.1:5173>. The bundled FGFR2 and PTPN11 datasets work without
 an LRZ account.
 
 ## One-time LRZ setup

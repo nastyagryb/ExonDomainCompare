@@ -1,1 +1,0 @@
-BCL2L1 (Mus musculus) — 10 annotated flanking loci around BCL2L1 with their transcription directions. Coordinates: ordinal gene order along the assembly. Annotation source: NCBI RefSeq gene annotation. Descriptive annotation summary; no event is claimed as validated.

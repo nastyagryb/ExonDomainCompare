@@ -1,4 +1,0 @@
-candidate_id	reference_protein	aa_start	aa_end	status	overlapping_domain_ids	overlapping_domain_names	nearest_domain_id	nearest_domain_edge	distance_to_nearest_edge_aa	relation	domain_source	signature_accession	evidence_confidence	domain_context_score
-BCL2L1:mus_musculus:indel:189-221	NP_001304849.1	189	221	real_domain_context			IPR046371	end	1	near_boundary	PFAM,SMART	IPR046371	medium	5
-BCL2L1:mus_musculus:substitution:219-225	NP_001304849.1	219	225	real_domain_context			IPR046371	end	31	outside	PFAM,SMART	IPR046371	medium	0
-BCL2L1:homo_sapiens:indel:126-188	NP_001304849.1	126	188	real_domain_context	IPR046371;IPR046371	Bcl-2_BH1-3;Bcl-2_BH1-3	IPR046371	start	36	inside_or_overlapping	PFAM,SMART	IPR046371	high	10

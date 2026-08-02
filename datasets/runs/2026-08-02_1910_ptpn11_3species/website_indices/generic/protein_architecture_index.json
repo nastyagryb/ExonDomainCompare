@@ -1,0 +1,1358 @@
+{
+  "schema_version": 1,
+  "dataset_id": "run:2026-08-02_1910_ptpn11_3species",
+  "analysis_id": "PTPN11_core_only_pilot",
+  "gene_symbol": "PTPN11",
+  "domain_status": "available",
+  "selection_method": "canonical_if_available",
+  "species": [
+    {
+      "species_id": "homo_sapiens",
+      "proteins": [
+        {
+          "protein_id": "NP_001317366.1",
+          "transcript_id": "NM_001330437.2",
+          "length_aa": 597,
+          "role": "primary",
+          "exons": [
+            {
+              "exon_id": "NP_001317366.1:cds1",
+              "exon_number": 1,
+              "protein_start_aa": 1,
+              "protein_end_aa": 5,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001317366.1:cds2",
+              "exon_number": 2,
+              "protein_start_aa": 5,
+              "protein_end_aa": 46,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001317366.1:cds3",
+              "exon_number": 3,
+              "protein_start_aa": 46,
+              "protein_end_aa": 111,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001317366.1:cds4",
+              "exon_number": 4,
+              "protein_start_aa": 111,
+              "protein_end_aa": 175,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001317366.1:cds5",
+              "exon_number": 5,
+              "protein_start_aa": 176,
+              "protein_end_aa": 214,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001317366.1:cds6",
+              "exon_number": 6,
+              "protein_start_aa": 215,
+              "protein_end_aa": 252,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001317366.1:cds7",
+              "exon_number": 7,
+              "protein_start_aa": 253,
+              "protein_end_aa": 285,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001317366.1:cds8",
+              "exon_number": 8,
+              "protein_start_aa": 285,
+              "protein_end_aa": 311,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001317366.1:cds9",
+              "exon_number": 9,
+              "protein_start_aa": 312,
+              "protein_end_aa": 364,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001317366.1:cds10",
+              "exon_number": 10,
+              "protein_start_aa": 365,
+              "protein_end_aa": 408,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001317366.1:cds11",
+              "exon_number": 11,
+              "protein_start_aa": 409,
+              "protein_end_aa": 464,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001317366.1:cds12",
+              "exon_number": 12,
+              "protein_start_aa": 464,
+              "protein_end_aa": 487,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001317366.1:cds13",
+              "exon_number": 13,
+              "protein_start_aa": 487,
+              "protein_end_aa": 537,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001317366.1:cds14",
+              "exon_number": 14,
+              "protein_start_aa": 538,
+              "protein_end_aa": 575,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001317366.1:cds15",
+              "exon_number": 15,
+              "protein_start_aa": 575,
+              "protein_end_aa": 597,
+              "confidence": "gff_cds_derived"
+            }
+          ],
+          "candidate_regions": [
+            {
+              "candidate_cluster_id": "PTPN11:homo_sapiens:indel:465-592",
+              "start_aa": 465,
+              "end_aa": 592,
+              "length_aa": 128,
+              "support_count": 8,
+              "confidence": "low",
+              "exon_aligned": false,
+              "evidence_status": "exploratory"
+            },
+            {
+              "candidate_cluster_id": "PTPN11:homo_sapiens:indel:408-411",
+              "start_aa": 408,
+              "end_aa": 411,
+              "length_aa": 4,
+              "support_count": 6,
+              "confidence": "low",
+              "exon_aligned": false,
+              "evidence_status": "exploratory"
+            },
+            {
+              "candidate_cluster_id": "PTPN11:homo_sapiens:indel:46-46",
+              "start_aa": 46,
+              "end_aa": 46,
+              "length_aa": 1,
+              "support_count": 6,
+              "confidence": "low",
+              "exon_aligned": false,
+              "evidence_status": "exploratory"
+            },
+            {
+              "candidate_cluster_id": "PTPN11:mus_musculus:indel:409-412",
+              "start_aa": 409,
+              "end_aa": 412,
+              "length_aa": 4,
+              "support_count": 1,
+              "confidence": "low",
+              "exon_aligned": false,
+              "evidence_status": "exploratory"
+            },
+            {
+              "candidate_cluster_id": "PTPN11:rattus_norvegicus:indel:409-412",
+              "start_aa": 409,
+              "end_aa": 412,
+              "length_aa": 4,
+              "support_count": 1,
+              "confidence": "low",
+              "exon_aligned": false,
+              "evidence_status": "exploratory"
+            }
+          ],
+          "domains": [
+            {
+              "domain_source": "PFAM,PROSITE_PROFILES,SMART",
+              "domain_id": "IPR000980",
+              "domain_name": "SH2",
+              "start_aa": 4,
+              "end_aa": 102
+            },
+            {
+              "domain_source": "PFAM,PROSITE_PROFILES,SMART",
+              "domain_id": "IPR000980",
+              "domain_name": "SH2",
+              "start_aa": 110,
+              "end_aa": 216
+            },
+            {
+              "domain_source": "PFAM,PRINTS,PROSITE_PROFILES,SMART",
+              "domain_id": "IPR000242",
+              "domain_name": "PTP_cat",
+              "start_aa": 246,
+              "end_aa": 527
+            },
+            {
+              "domain_source": "GENE3D,SUPERFAMILY",
+              "domain_id": "IPR036860",
+              "domain_name": "SH2_dom_sf",
+              "start_aa": 1,
+              "end_aa": 217
+            },
+            {
+              "domain_source": "PIRSF",
+              "domain_id": "IPR012152",
+              "domain_name": "Tyr_Pase_non-rcpt_typ-6/11",
+              "start_aa": 1,
+              "end_aa": 597
+            },
+            {
+              "domain_source": "GENE3D,SUPERFAMILY",
+              "domain_id": "IPR029021",
+              "domain_name": "Prot-tyrosine_phosphatase-like",
+              "start_aa": 218,
+              "end_aa": 529
+            },
+            {
+              "domain_source": "PROSITE_PATTERNS",
+              "domain_id": "IPR016130",
+              "domain_name": "Tyr_Pase_AS",
+              "start_aa": 461,
+              "end_aa": 471
+            },
+            {
+              "domain_source": "MOBIDB_LITE",
+              "domain_id": "",
+              "domain_name": "disorder_prediction",
+              "start_aa": 552,
+              "end_aa": 577
+            },
+            {
+              "domain_source": "MOBIDB_LITE",
+              "domain_id": "",
+              "domain_name": "disorder_prediction",
+              "start_aa": 563,
+              "end_aa": 572
+            }
+          ],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_001361554.1",
+          "transcript_id": "NM_001374625.1",
+          "length_aa": 592,
+          "role": "alternative",
+          "exons": [
+            {
+              "exon_id": "NP_001361554.1:cds1",
+              "exon_number": 1,
+              "protein_start_aa": 1,
+              "protein_end_aa": 5,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001361554.1:cds2",
+              "exon_number": 2,
+              "protein_start_aa": 5,
+              "protein_end_aa": 46,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001361554.1:cds3",
+              "exon_number": 3,
+              "protein_start_aa": 46,
+              "protein_end_aa": 110,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001361554.1:cds4",
+              "exon_number": 4,
+              "protein_start_aa": 110,
+              "protein_end_aa": 174,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001361554.1:cds5",
+              "exon_number": 5,
+              "protein_start_aa": 175,
+              "protein_end_aa": 213,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001361554.1:cds6",
+              "exon_number": 6,
+              "protein_start_aa": 214,
+              "protein_end_aa": 251,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001361554.1:cds7",
+              "exon_number": 7,
+              "protein_start_aa": 252,
+              "protein_end_aa": 284,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001361554.1:cds8",
+              "exon_number": 8,
+              "protein_start_aa": 284,
+              "protein_end_aa": 310,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001361554.1:cds9",
+              "exon_number": 9,
+              "protein_start_aa": 311,
+              "protein_end_aa": 363,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001361554.1:cds10",
+              "exon_number": 10,
+              "protein_start_aa": 364,
+              "protein_end_aa": 407,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001361554.1:cds11",
+              "exon_number": 11,
+              "protein_start_aa": 408,
+              "protein_end_aa": 459,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001361554.1:cds12",
+              "exon_number": 12,
+              "protein_start_aa": 459,
+              "protein_end_aa": 482,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001361554.1:cds13",
+              "exon_number": 13,
+              "protein_start_aa": 482,
+              "protein_end_aa": 532,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001361554.1:cds14",
+              "exon_number": 14,
+              "protein_start_aa": 533,
+              "protein_end_aa": 570,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001361554.1:cds15",
+              "exon_number": 15,
+              "protein_start_aa": 570,
+              "protein_end_aa": 592,
+              "confidence": "gff_cds_derived"
+            }
+          ],
+          "candidate_regions": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_002825.3",
+          "transcript_id": "NM_002834.5",
+          "length_aa": 593,
+          "role": "alternative",
+          "exons": [
+            {
+              "exon_id": "NP_002825.3:cds1",
+              "exon_number": 1,
+              "protein_start_aa": 1,
+              "protein_end_aa": 5,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_002825.3:cds2",
+              "exon_number": 2,
+              "protein_start_aa": 5,
+              "protein_end_aa": 46,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_002825.3:cds3",
+              "exon_number": 3,
+              "protein_start_aa": 46,
+              "protein_end_aa": 111,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_002825.3:cds4",
+              "exon_number": 4,
+              "protein_start_aa": 111,
+              "protein_end_aa": 175,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_002825.3:cds5",
+              "exon_number": 5,
+              "protein_start_aa": 176,
+              "protein_end_aa": 214,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_002825.3:cds6",
+              "exon_number": 6,
+              "protein_start_aa": 215,
+              "protein_end_aa": 252,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_002825.3:cds7",
+              "exon_number": 7,
+              "protein_start_aa": 253,
+              "protein_end_aa": 285,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_002825.3:cds8",
+              "exon_number": 8,
+              "protein_start_aa": 285,
+              "protein_end_aa": 311,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_002825.3:cds9",
+              "exon_number": 9,
+              "protein_start_aa": 312,
+              "protein_end_aa": 364,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_002825.3:cds10",
+              "exon_number": 10,
+              "protein_start_aa": 365,
+              "protein_end_aa": 408,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_002825.3:cds11",
+              "exon_number": 11,
+              "protein_start_aa": 409,
+              "protein_end_aa": 460,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_002825.3:cds12",
+              "exon_number": 12,
+              "protein_start_aa": 460,
+              "protein_end_aa": 483,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_002825.3:cds13",
+              "exon_number": 13,
+              "protein_start_aa": 483,
+              "protein_end_aa": 533,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_002825.3:cds14",
+              "exon_number": 14,
+              "protein_start_aa": 534,
+              "protein_end_aa": 571,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_002825.3:cds15",
+              "exon_number": 15,
+              "protein_start_aa": 571,
+              "protein_end_aa": 593,
+              "confidence": "gff_cds_derived"
+            }
+          ],
+          "candidate_regions": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_542168.1",
+          "transcript_id": "NM_080601.3",
+          "length_aa": 460,
+          "role": "alternative",
+          "exons": [
+            {
+              "exon_id": "NP_542168.1:cds1",
+              "exon_number": 1,
+              "protein_start_aa": 1,
+              "protein_end_aa": 5,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_542168.1:cds2",
+              "exon_number": 2,
+              "protein_start_aa": 5,
+              "protein_end_aa": 46,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_542168.1:cds3",
+              "exon_number": 3,
+              "protein_start_aa": 46,
+              "protein_end_aa": 111,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_542168.1:cds4",
+              "exon_number": 4,
+              "protein_start_aa": 111,
+              "protein_end_aa": 175,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_542168.1:cds5",
+              "exon_number": 5,
+              "protein_start_aa": 176,
+              "protein_end_aa": 214,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_542168.1:cds6",
+              "exon_number": 6,
+              "protein_start_aa": 215,
+              "protein_end_aa": 252,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_542168.1:cds7",
+              "exon_number": 7,
+              "protein_start_aa": 253,
+              "protein_end_aa": 285,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_542168.1:cds8",
+              "exon_number": 8,
+              "protein_start_aa": 285,
+              "protein_end_aa": 311,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_542168.1:cds9",
+              "exon_number": 9,
+              "protein_start_aa": 312,
+              "protein_end_aa": 364,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_542168.1:cds10",
+              "exon_number": 10,
+              "protein_start_aa": 365,
+              "protein_end_aa": 408,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_542168.1:cds11",
+              "exon_number": 11,
+              "protein_start_aa": 409,
+              "protein_end_aa": 460,
+              "confidence": "gff_cds_derived"
+            }
+          ],
+          "candidate_regions": [],
+          "domains": [],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "XP_011536915.1",
+          "transcript_id": "XM_011538613.3",
+          "length_aa": 596,
+          "role": "alternative",
+          "exons": [
+            {
+              "exon_id": "XP_011536915.1:cds1",
+              "exon_number": 1,
+              "protein_start_aa": 1,
+              "protein_end_aa": 5,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "XP_011536915.1:cds2",
+              "exon_number": 2,
+              "protein_start_aa": 5,
+              "protein_end_aa": 46,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "XP_011536915.1:cds3",
+              "exon_number": 3,
+              "protein_start_aa": 46,
+              "protein_end_aa": 110,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "XP_011536915.1:cds4",
+              "exon_number": 4,
+              "protein_start_aa": 110,
+              "protein_end_aa": 174,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "XP_011536915.1:cds5",
+              "exon_number": 5,
+              "protein_start_aa": 175,
+              "protein_end_aa": 213,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "XP_011536915.1:cds6",
+              "exon_number": 6,
+              "protein_start_aa": 214,
+              "protein_end_aa": 251,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "XP_011536915.1:cds7",
+              "exon_number": 7,
+              "protein_start_aa": 252,
+              "protein_end_aa": 284,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "XP_011536915.1:cds8",
+              "exon_number": 8,
+              "protein_start_aa": 284,
+              "protein_end_aa": 310,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "XP_011536915.1:cds9",
+              "exon_number": 9,
+              "protein_start_aa": 311,
+              "protein_end_aa": 363,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "XP_011536915.1:cds10",
+              "exon_number": 10,
+              "protein_start_aa": 364,
+              "protein_end_aa": 407,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "XP_011536915.1:cds11",
+              "exon_number": 11,
+              "protein_start_aa": 408,
+              "protein_end_aa": 463,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "XP_011536915.1:cds12",
+              "exon_number": 12,
+              "protein_start_aa": 463,
+              "protein_end_aa": 486,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "XP_011536915.1:cds13",
+              "exon_number": 13,
+              "protein_start_aa": 486,
+              "protein_end_aa": 536,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "XP_011536915.1:cds14",
+              "exon_number": 14,
+              "protein_start_aa": 537,
+              "protein_end_aa": 574,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "XP_011536915.1:cds15",
+              "exon_number": 15,
+              "protein_start_aa": 574,
+              "protein_end_aa": 596,
+              "confidence": "gff_cds_derived"
+            }
+          ],
+          "candidate_regions": [],
+          "domains": [],
+          "tm_regions": []
+        }
+      ]
+    },
+    {
+      "species_id": "mus_musculus",
+      "proteins": [
+        {
+          "protein_id": "NP_035332.1",
+          "transcript_id": "NM_011202.3",
+          "length_aa": 597,
+          "role": "primary",
+          "exons": [
+            {
+              "exon_id": "NP_035332.1:cds1",
+              "exon_number": 1,
+              "protein_start_aa": 1,
+              "protein_end_aa": 5,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_035332.1:cds2",
+              "exon_number": 2,
+              "protein_start_aa": 5,
+              "protein_end_aa": 46,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_035332.1:cds3",
+              "exon_number": 3,
+              "protein_start_aa": 46,
+              "protein_end_aa": 111,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_035332.1:cds4",
+              "exon_number": 4,
+              "protein_start_aa": 111,
+              "protein_end_aa": 175,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_035332.1:cds5",
+              "exon_number": 5,
+              "protein_start_aa": 176,
+              "protein_end_aa": 214,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_035332.1:cds6",
+              "exon_number": 6,
+              "protein_start_aa": 215,
+              "protein_end_aa": 252,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_035332.1:cds7",
+              "exon_number": 7,
+              "protein_start_aa": 253,
+              "protein_end_aa": 285,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_035332.1:cds8",
+              "exon_number": 8,
+              "protein_start_aa": 285,
+              "protein_end_aa": 311,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_035332.1:cds9",
+              "exon_number": 9,
+              "protein_start_aa": 312,
+              "protein_end_aa": 364,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_035332.1:cds10",
+              "exon_number": 10,
+              "protein_start_aa": 365,
+              "protein_end_aa": 408,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_035332.1:cds11",
+              "exon_number": 11,
+              "protein_start_aa": 409,
+              "protein_end_aa": 464,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_035332.1:cds12",
+              "exon_number": 12,
+              "protein_start_aa": 464,
+              "protein_end_aa": 487,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_035332.1:cds13",
+              "exon_number": 13,
+              "protein_start_aa": 487,
+              "protein_end_aa": 537,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_035332.1:cds14",
+              "exon_number": 14,
+              "protein_start_aa": 538,
+              "protein_end_aa": 575,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_035332.1:cds15",
+              "exon_number": 15,
+              "protein_start_aa": 575,
+              "protein_end_aa": 597,
+              "confidence": "gff_cds_derived"
+            }
+          ],
+          "candidate_regions": [
+            {
+              "candidate_cluster_id": "PTPN11:homo_sapiens:indel:465-592",
+              "start_aa": 465,
+              "end_aa": 592,
+              "length_aa": 128,
+              "support_count": 8,
+              "confidence": "low",
+              "exon_aligned": false,
+              "evidence_status": "exploratory"
+            },
+            {
+              "candidate_cluster_id": "PTPN11:homo_sapiens:indel:408-411",
+              "start_aa": 408,
+              "end_aa": 411,
+              "length_aa": 4,
+              "support_count": 6,
+              "confidence": "low",
+              "exon_aligned": false,
+              "evidence_status": "exploratory"
+            },
+            {
+              "candidate_cluster_id": "PTPN11:homo_sapiens:indel:46-46",
+              "start_aa": 46,
+              "end_aa": 46,
+              "length_aa": 1,
+              "support_count": 6,
+              "confidence": "low",
+              "exon_aligned": false,
+              "evidence_status": "exploratory"
+            },
+            {
+              "candidate_cluster_id": "PTPN11:mus_musculus:indel:409-412",
+              "start_aa": 409,
+              "end_aa": 412,
+              "length_aa": 4,
+              "support_count": 1,
+              "confidence": "low",
+              "exon_aligned": false,
+              "evidence_status": "exploratory"
+            },
+            {
+              "candidate_cluster_id": "PTPN11:rattus_norvegicus:indel:409-412",
+              "start_aa": 409,
+              "end_aa": 412,
+              "length_aa": 4,
+              "support_count": 1,
+              "confidence": "low",
+              "exon_aligned": false,
+              "evidence_status": "exploratory"
+            }
+          ],
+          "domains": [
+            {
+              "domain_source": "PFAM,PROSITE_PROFILES,SMART",
+              "domain_id": "IPR000980",
+              "domain_name": "SH2",
+              "start_aa": 4,
+              "end_aa": 102
+            },
+            {
+              "domain_source": "PFAM,PROSITE_PROFILES,SMART",
+              "domain_id": "IPR000980",
+              "domain_name": "SH2",
+              "start_aa": 110,
+              "end_aa": 216
+            },
+            {
+              "domain_source": "PFAM,PRINTS,PROSITE_PROFILES,SMART",
+              "domain_id": "IPR000242",
+              "domain_name": "PTP_cat",
+              "start_aa": 246,
+              "end_aa": 527
+            },
+            {
+              "domain_source": "GENE3D,SUPERFAMILY",
+              "domain_id": "IPR036860",
+              "domain_name": "SH2_dom_sf",
+              "start_aa": 1,
+              "end_aa": 217
+            },
+            {
+              "domain_source": "PIRSF",
+              "domain_id": "IPR012152",
+              "domain_name": "Tyr_Pase_non-rcpt_typ-6/11",
+              "start_aa": 1,
+              "end_aa": 597
+            },
+            {
+              "domain_source": "GENE3D,SUPERFAMILY",
+              "domain_id": "IPR029021",
+              "domain_name": "Prot-tyrosine_phosphatase-like",
+              "start_aa": 218,
+              "end_aa": 529
+            },
+            {
+              "domain_source": "PROSITE_PATTERNS",
+              "domain_id": "IPR016130",
+              "domain_name": "Tyr_Pase_AS",
+              "start_aa": 461,
+              "end_aa": 471
+            }
+          ],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_001103462.1",
+          "transcript_id": "NM_001109992.1",
+          "length_aa": 593,
+          "role": "alternative",
+          "exons": [
+            {
+              "exon_id": "NP_001103462.1:cds1",
+              "exon_number": 1,
+              "protein_start_aa": 1,
+              "protein_end_aa": 5,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001103462.1:cds2",
+              "exon_number": 2,
+              "protein_start_aa": 5,
+              "protein_end_aa": 46,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001103462.1:cds3",
+              "exon_number": 3,
+              "protein_start_aa": 46,
+              "protein_end_aa": 111,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001103462.1:cds4",
+              "exon_number": 4,
+              "protein_start_aa": 111,
+              "protein_end_aa": 175,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001103462.1:cds5",
+              "exon_number": 5,
+              "protein_start_aa": 176,
+              "protein_end_aa": 214,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001103462.1:cds6",
+              "exon_number": 6,
+              "protein_start_aa": 215,
+              "protein_end_aa": 252,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001103462.1:cds7",
+              "exon_number": 7,
+              "protein_start_aa": 253,
+              "protein_end_aa": 285,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001103462.1:cds8",
+              "exon_number": 8,
+              "protein_start_aa": 285,
+              "protein_end_aa": 311,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001103462.1:cds9",
+              "exon_number": 9,
+              "protein_start_aa": 312,
+              "protein_end_aa": 364,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001103462.1:cds10",
+              "exon_number": 10,
+              "protein_start_aa": 365,
+              "protein_end_aa": 408,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001103462.1:cds11",
+              "exon_number": 11,
+              "protein_start_aa": 409,
+              "protein_end_aa": 460,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001103462.1:cds12",
+              "exon_number": 12,
+              "protein_start_aa": 460,
+              "protein_end_aa": 483,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001103462.1:cds13",
+              "exon_number": 13,
+              "protein_start_aa": 483,
+              "protein_end_aa": 533,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001103462.1:cds14",
+              "exon_number": 14,
+              "protein_start_aa": 534,
+              "protein_end_aa": 571,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001103462.1:cds15",
+              "exon_number": 15,
+              "protein_start_aa": 571,
+              "protein_end_aa": 593,
+              "confidence": "gff_cds_derived"
+            }
+          ],
+          "candidate_regions": [],
+          "domains": [],
+          "tm_regions": []
+        }
+      ]
+    },
+    {
+      "species_id": "rattus_norvegicus",
+      "proteins": [
+        {
+          "protein_id": "NP_001171064.1",
+          "transcript_id": "NM_001177593.1",
+          "length_aa": 597,
+          "role": "primary",
+          "exons": [
+            {
+              "exon_id": "NP_001171064.1:cds1",
+              "exon_number": 1,
+              "protein_start_aa": 1,
+              "protein_end_aa": 5,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001171064.1:cds2",
+              "exon_number": 2,
+              "protein_start_aa": 5,
+              "protein_end_aa": 46,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001171064.1:cds3",
+              "exon_number": 3,
+              "protein_start_aa": 46,
+              "protein_end_aa": 111,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001171064.1:cds4",
+              "exon_number": 4,
+              "protein_start_aa": 111,
+              "protein_end_aa": 175,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001171064.1:cds5",
+              "exon_number": 5,
+              "protein_start_aa": 176,
+              "protein_end_aa": 214,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001171064.1:cds6",
+              "exon_number": 6,
+              "protein_start_aa": 215,
+              "protein_end_aa": 252,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001171064.1:cds7",
+              "exon_number": 7,
+              "protein_start_aa": 253,
+              "protein_end_aa": 285,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001171064.1:cds8",
+              "exon_number": 8,
+              "protein_start_aa": 285,
+              "protein_end_aa": 311,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001171064.1:cds9",
+              "exon_number": 9,
+              "protein_start_aa": 312,
+              "protein_end_aa": 364,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001171064.1:cds10",
+              "exon_number": 10,
+              "protein_start_aa": 365,
+              "protein_end_aa": 408,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001171064.1:cds11",
+              "exon_number": 11,
+              "protein_start_aa": 409,
+              "protein_end_aa": 464,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001171064.1:cds12",
+              "exon_number": 12,
+              "protein_start_aa": 464,
+              "protein_end_aa": 487,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001171064.1:cds13",
+              "exon_number": 13,
+              "protein_start_aa": 487,
+              "protein_end_aa": 537,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001171064.1:cds14",
+              "exon_number": 14,
+              "protein_start_aa": 538,
+              "protein_end_aa": 575,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_001171064.1:cds15",
+              "exon_number": 15,
+              "protein_start_aa": 575,
+              "protein_end_aa": 597,
+              "confidence": "gff_cds_derived"
+            }
+          ],
+          "candidate_regions": [
+            {
+              "candidate_cluster_id": "PTPN11:homo_sapiens:indel:465-592",
+              "start_aa": 465,
+              "end_aa": 592,
+              "length_aa": 128,
+              "support_count": 8,
+              "confidence": "low",
+              "exon_aligned": false,
+              "evidence_status": "exploratory"
+            },
+            {
+              "candidate_cluster_id": "PTPN11:homo_sapiens:indel:408-411",
+              "start_aa": 408,
+              "end_aa": 411,
+              "length_aa": 4,
+              "support_count": 6,
+              "confidence": "low",
+              "exon_aligned": false,
+              "evidence_status": "exploratory"
+            },
+            {
+              "candidate_cluster_id": "PTPN11:homo_sapiens:indel:46-46",
+              "start_aa": 46,
+              "end_aa": 46,
+              "length_aa": 1,
+              "support_count": 6,
+              "confidence": "low",
+              "exon_aligned": false,
+              "evidence_status": "exploratory"
+            },
+            {
+              "candidate_cluster_id": "PTPN11:mus_musculus:indel:409-412",
+              "start_aa": 409,
+              "end_aa": 412,
+              "length_aa": 4,
+              "support_count": 1,
+              "confidence": "low",
+              "exon_aligned": false,
+              "evidence_status": "exploratory"
+            },
+            {
+              "candidate_cluster_id": "PTPN11:rattus_norvegicus:indel:409-412",
+              "start_aa": 409,
+              "end_aa": 412,
+              "length_aa": 4,
+              "support_count": 1,
+              "confidence": "low",
+              "exon_aligned": false,
+              "evidence_status": "exploratory"
+            }
+          ],
+          "domains": [
+            {
+              "domain_source": "PFAM,PROSITE_PROFILES,SMART",
+              "domain_id": "IPR000980",
+              "domain_name": "SH2",
+              "start_aa": 4,
+              "end_aa": 102
+            },
+            {
+              "domain_source": "PFAM,PROSITE_PROFILES,SMART",
+              "domain_id": "IPR000980",
+              "domain_name": "SH2",
+              "start_aa": 110,
+              "end_aa": 216
+            },
+            {
+              "domain_source": "PFAM,PRINTS,PROSITE_PROFILES,SMART",
+              "domain_id": "IPR000242",
+              "domain_name": "PTP_cat",
+              "start_aa": 246,
+              "end_aa": 527
+            },
+            {
+              "domain_source": "GENE3D,SUPERFAMILY",
+              "domain_id": "IPR036860",
+              "domain_name": "SH2_dom_sf",
+              "start_aa": 1,
+              "end_aa": 217
+            },
+            {
+              "domain_source": "PIRSF",
+              "domain_id": "IPR012152",
+              "domain_name": "Tyr_Pase_non-rcpt_typ-6/11",
+              "start_aa": 1,
+              "end_aa": 597
+            },
+            {
+              "domain_source": "GENE3D,SUPERFAMILY",
+              "domain_id": "IPR029021",
+              "domain_name": "Prot-tyrosine_phosphatase-like",
+              "start_aa": 218,
+              "end_aa": 529
+            },
+            {
+              "domain_source": "PROSITE_PATTERNS",
+              "domain_id": "IPR016130",
+              "domain_name": "Tyr_Pase_AS",
+              "start_aa": 461,
+              "end_aa": 471
+            }
+          ],
+          "tm_regions": []
+        },
+        {
+          "protein_id": "NP_037220.2",
+          "transcript_id": "NM_013088.2",
+          "length_aa": 593,
+          "role": "alternative",
+          "exons": [
+            {
+              "exon_id": "NP_037220.2:cds1",
+              "exon_number": 1,
+              "protein_start_aa": 1,
+              "protein_end_aa": 5,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_037220.2:cds2",
+              "exon_number": 2,
+              "protein_start_aa": 5,
+              "protein_end_aa": 46,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_037220.2:cds3",
+              "exon_number": 3,
+              "protein_start_aa": 46,
+              "protein_end_aa": 111,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_037220.2:cds4",
+              "exon_number": 4,
+              "protein_start_aa": 111,
+              "protein_end_aa": 175,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_037220.2:cds5",
+              "exon_number": 5,
+              "protein_start_aa": 176,
+              "protein_end_aa": 214,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_037220.2:cds6",
+              "exon_number": 6,
+              "protein_start_aa": 215,
+              "protein_end_aa": 252,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_037220.2:cds7",
+              "exon_number": 7,
+              "protein_start_aa": 253,
+              "protein_end_aa": 285,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_037220.2:cds8",
+              "exon_number": 8,
+              "protein_start_aa": 285,
+              "protein_end_aa": 311,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_037220.2:cds9",
+              "exon_number": 9,
+              "protein_start_aa": 312,
+              "protein_end_aa": 364,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_037220.2:cds10",
+              "exon_number": 10,
+              "protein_start_aa": 365,
+              "protein_end_aa": 408,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_037220.2:cds11",
+              "exon_number": 11,
+              "protein_start_aa": 409,
+              "protein_end_aa": 460,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_037220.2:cds12",
+              "exon_number": 12,
+              "protein_start_aa": 460,
+              "protein_end_aa": 483,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_037220.2:cds13",
+              "exon_number": 13,
+              "protein_start_aa": 483,
+              "protein_end_aa": 533,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_037220.2:cds14",
+              "exon_number": 14,
+              "protein_start_aa": 534,
+              "protein_end_aa": 571,
+              "confidence": "gff_cds_derived"
+            },
+            {
+              "exon_id": "NP_037220.2:cds15",
+              "exon_number": 15,
+              "protein_start_aa": 571,
+              "protein_end_aa": 593,
+              "confidence": "gff_cds_derived"
+            }
+          ],
+          "candidate_regions": [],
+          "domains": [],
+          "tm_regions": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,0 @@
-BCL2L1 (Homo sapiens), primary protein NP_001304849.1 — coding-exon identity of 10 protein model(s) relative to the primary model (all protein models). Coordinates: protein 1-based amino-acid positions on NP_001304849.1. Annotation source: NCBI RefSeq GFF CDS features compared on genomic CDS intervals. Descriptive annotation summary; no event is claimed as validated.

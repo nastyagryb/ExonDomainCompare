@@ -1,0 +1,23 @@
+species_id	gene_symbol	transcript_a	transcript_b	protein_a	protein_b	coordinate_reference_protein	candidate_start_aa	candidate_end_aa	candidate_length_aa	candidate_type	evidence	confidence	notes
+homo_sapiens	PTPN11	NM_001330437.2	NM_002834.5	NP_001317366.1	NP_002825.3	NP_001317366.1	409	412	4	deletion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+homo_sapiens	PTPN11	NM_001330437.2	XM_011538613.3	NP_001317366.1	XP_011536915.1	NP_001317366.1	46	46	1	deletion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+homo_sapiens	PTPN11	NM_001330437.2	NM_001374625.1	NP_001317366.1	NP_001361554.1	NP_001317366.1	46	46	1	deletion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+homo_sapiens	PTPN11	NM_001330437.2	NM_001374625.1	NP_001317366.1	NP_001361554.1	NP_001317366.1	409	412	4	deletion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+homo_sapiens	PTPN11	NM_001330437.2	NM_080601.3	NP_001317366.1	NP_542168.1	NP_001317366.1	409	412	4	deletion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+homo_sapiens	PTPN11	NM_001330437.2	NM_080601.3	NP_001317366.1	NP_542168.1	NP_001317366.1	464	468	5	deletion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+homo_sapiens	PTPN11	NM_001330437.2	NM_080601.3	NP_001317366.1	NP_542168.1	NP_001317366.1	470	597	128	deletion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+homo_sapiens	PTPN11	NM_002834.5	XM_011538613.3	NP_002825.3	XP_011536915.1	NP_002825.3	46	46	1	deletion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+homo_sapiens	PTPN11	NM_002834.5	XM_011538613.3	NP_002825.3	XP_011536915.1	XP_011536915.1	408	411	4	insertion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+homo_sapiens	PTPN11	NM_002834.5	NM_001374625.1	NP_002825.3	NP_001361554.1	NP_002825.3	46	46	1	deletion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+homo_sapiens	PTPN11	NM_002834.5	NM_080601.3	NP_002825.3	NP_542168.1	NP_002825.3	460	464	5	deletion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+homo_sapiens	PTPN11	NM_002834.5	NM_080601.3	NP_002825.3	NP_542168.1	NP_002825.3	466	593	128	deletion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+homo_sapiens	PTPN11	XM_011538613.3	NM_001374625.1	XP_011536915.1	NP_001361554.1	XP_011536915.1	408	411	4	deletion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+homo_sapiens	PTPN11	XM_011538613.3	NM_080601.3	XP_011536915.1	NP_542168.1	NP_542168.1	46	46	1	insertion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+homo_sapiens	PTPN11	XM_011538613.3	NM_080601.3	XP_011536915.1	NP_542168.1	XP_011536915.1	408	411	4	deletion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+homo_sapiens	PTPN11	XM_011538613.3	NM_080601.3	XP_011536915.1	NP_542168.1	XP_011536915.1	463	467	5	deletion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+homo_sapiens	PTPN11	XM_011538613.3	NM_080601.3	XP_011536915.1	NP_542168.1	XP_011536915.1	469	596	128	deletion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+homo_sapiens	PTPN11	NM_001374625.1	NM_080601.3	NP_001361554.1	NP_542168.1	NP_542168.1	46	46	1	insertion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+homo_sapiens	PTPN11	NM_001374625.1	NM_080601.3	NP_001361554.1	NP_542168.1	NP_001361554.1	459	463	5	deletion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+homo_sapiens	PTPN11	NM_001374625.1	NM_080601.3	NP_001361554.1	NP_542168.1	NP_001361554.1	465	592	128	deletion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+mus_musculus	PTPN11	NM_001109992.1	NM_011202.3	NP_001103462.1	NP_035332.1	NP_035332.1	409	412	4	insertion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.
+rattus_norvegicus	PTPN11	NM_001177593.1	NM_013088.2	NP_001171064.1	NP_037220.2	NP_001171064.1	409	412	4	deletion	isoform_sequence_diff	low	Exploratory candidate; not a validated event region.

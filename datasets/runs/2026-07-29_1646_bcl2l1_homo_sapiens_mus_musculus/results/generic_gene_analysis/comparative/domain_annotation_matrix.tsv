@@ -1,5 +1,0 @@
-species_id	scientific_name	comparable_domain_group_id	interpro_accession	label	state	domain_instance_id	native_start	native_end	msa_start_column	msa_end_column
-homo_sapiens	Homo sapiens	CDG1	IPR003093	Bcl2 BH4	detected	IPR003093:1-27	1	27	1	27
-mus_musculus	Mus musculus	CDG1	IPR003093	Bcl2 BH4	detected	IPR003093:1-27	1	27	1	27
-homo_sapiens	Homo sapiens	CDG2	IPR046371	Bcl-2 BH1-3	detected	IPR046371:90-188	90	188	90	188
-mus_musculus	Mus musculus	CDG2	IPR046371	Bcl-2 BH1-3	detected	IPR046371:90-188	90	188	90	188

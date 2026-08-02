@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "run:2026-08-02_1910_ptpn11_3species",
+  "release_id": "ptpn11_3_species",
+  "run_id": "2026-08-02_1910_ptpn11_3species",
+  "gene_symbol": "PTPN11",
+  "species": [
+    "Homo sapiens",
+    "Mus musculus",
+    "Rattus norvegicus"
+  ],
+  "species_count": 3,
+  "pipeline_type": "shared_gene_pipeline",
+  "support_level": "generic_gene_analysis_experimental",
+  "scientific_semantics": "exploratory_not_validated",
+  "read_only": true,
+  "source_record": "source-run:2026-08-02_1910_ptpn11_3species",
+  "distribution": "sanitized website projection",
+  "omitted": [
+    "raw NCBI caches",
+    "logs",
+    "SSH and Slurm state",
+    "private paths"
+  ]
+}

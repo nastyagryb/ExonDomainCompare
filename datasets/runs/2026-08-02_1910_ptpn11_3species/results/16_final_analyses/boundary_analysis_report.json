@@ -1,0 +1,16 @@
+{
+  "status": "available",
+  "mode": "all_exon_boundaries",
+  "reason": "All-exon distances to domain boundaries.",
+  "n_rows": 42,
+  "category_counts": {
+    "exact_edge": "0",
+    "inside_domain": "27",
+    "near_edge": "9",
+    "outside_domain": "6",
+    "unknown": "0"
+  },
+  "near_boundary_threshold_aa": 5,
+  "source": "real fetched InterProScan coordinates",
+  "generated_at": "2026-08-02T20:08:29"
+}

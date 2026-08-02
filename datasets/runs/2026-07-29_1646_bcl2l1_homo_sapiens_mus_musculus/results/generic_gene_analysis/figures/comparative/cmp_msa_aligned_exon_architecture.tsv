@@ -1,5 +1,0 @@
-species_id	scientific_name	protein_id	exon_id	exon_label	native_start	native_end	msa_start_column	msa_end_column	msa_mapping_status
-homo_sapiens	Homo sapiens	NP_001304849.1	NP_001304849.1:cds1	E1	1	188	1	188	mapped
-homo_sapiens	Homo sapiens	NP_001304849.1	NP_001304849.1:cds2	E2	189	233	189	236	mapped
-mus_musculus	Mus musculus	NP_001276668.1	NP_001276668.1:cds1	E1	1	188	1	188	mapped
-mus_musculus	Mus musculus	NP_001276668.1	NP_001276668.1:cds2	E2	189	235	196	249	mapped

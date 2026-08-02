@@ -1,0 +1,6 @@
+candidate_id	species_id	reference_protein	aa_start	aa_end	length	status	overall_score	confidence_class	isoform_support_score	exon_boundary_score	external_annotation_score	alignment_score	domain_context_score	penalty	confidence_reason
+PTPN11:homo_sapiens:indel:465-592	homo_sapiens	NP_001317366.1	465	592	128	exploratory_not_validated	70	high	40	0	0	20	10	0	Supported by 8 isoform pair(s); exploratory only, not a validated event.
+PTPN11:homo_sapiens:indel:46-46	homo_sapiens	NP_001317366.1	46	46	1	exploratory_not_validated	63	medium	30	20	0	18	10	15	Supported by 6 isoform pair(s); exploratory only, not a validated event.
+PTPN11:homo_sapiens:indel:408-411	homo_sapiens	NP_001317366.1	408	411	4	exploratory_not_validated	58	medium	30	0	0	18	10	0	Supported by 6 isoform pair(s); exploratory only, not a validated event.
+PTPN11:mus_musculus:indel:409-412	mus_musculus	NP_035332.1	409	412	4	exploratory_not_validated	28	low	5	10	0	3	10	0	Supported by 1 isoform pair(s); exploratory only, not a validated event.
+PTPN11:rattus_norvegicus:indel:409-412	rattus_norvegicus	NP_001171064.1	409	412	4	exploratory_not_validated	28	low	5	10	0	3	10	0	Supported by 1 isoform pair(s); exploratory only, not a validated event.

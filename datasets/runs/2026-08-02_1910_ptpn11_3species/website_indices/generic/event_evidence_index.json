@@ -1,0 +1,681 @@
+{
+  "schema_version": 1,
+  "dataset_id": "run:2026-08-02_1910_ptpn11_3species",
+  "analysis_id": "PTPN11_core_only_pilot",
+  "gene_symbol": "PTPN11",
+  "available": true,
+  "evidence_status": "exploratory",
+  "n_clusters": 5,
+  "n_raw_evidence": 22,
+  "clusters": [
+    {
+      "candidate_cluster_id": "PTPN11:homo_sapiens:indel:465-592",
+      "region": "465–592",
+      "start_aa": 465,
+      "end_aa": 592,
+      "length_aa": 128,
+      "confidence": "low",
+      "status": "exploratory",
+      "evidence": {
+        "isoform_difference": {
+          "n_isoform_pairs": 8,
+          "proteins": [
+            "NP_001317366.1",
+            "NP_001361554.1",
+            "NP_002825.3",
+            "NP_542168.1",
+            "XP_011536915.1"
+          ],
+          "transcripts": [
+            "NM_001330437.2",
+            "NM_001374625.1",
+            "NM_002834.5",
+            "NM_080601.3",
+            "XM_011538613.3"
+          ],
+          "confidence": "low",
+          "explanation": "Supported by 8 isoform pair comparison(s) across 5 isoform(s)."
+        },
+        "exon_alignment": {
+          "aligned": false,
+          "n_exon_aligned": 0,
+          "confidence": "low",
+          "explanation": "Region does not align cleanly with exon boundaries."
+        },
+        "external_curated": {
+          "uniprot": "unavailable",
+          "confidence": "n/a",
+          "explanation": "No curated UniProt alternative-sequence evidence for this region."
+        },
+        "domain": {
+          "status": "available",
+          "explanation": "Domain overlap can be evaluated."
+        }
+      },
+      "interpretation": "This region differs between 5 PTPN11 protein isoform(s). It is an exploratory candidate region, not a validated event. It may become more interpretable after domain annotation or external curated evidence.",
+      "raw_support_rows": [
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:464-468:006",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "NM_001330437.2",
+          "transcript_b": "NM_080601.3",
+          "protein_a": "NP_001317366.1",
+          "protein_b": "NP_542168.1",
+          "region_start_aa": "464",
+          "region_end_aa": "468",
+          "region_length_aa": "5",
+          "event_type_candidate": "deletion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        },
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:470-597:007",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "NM_001330437.2",
+          "transcript_b": "NM_080601.3",
+          "protein_a": "NP_001317366.1",
+          "protein_b": "NP_542168.1",
+          "region_start_aa": "470",
+          "region_end_aa": "597",
+          "region_length_aa": "128",
+          "event_type_candidate": "deletion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        },
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:460-464:011",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "NM_002834.5",
+          "transcript_b": "NM_080601.3",
+          "protein_a": "NP_002825.3",
+          "protein_b": "NP_542168.1",
+          "region_start_aa": "460",
+          "region_end_aa": "464",
+          "region_length_aa": "5",
+          "event_type_candidate": "deletion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        },
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:466-593:012",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "NM_002834.5",
+          "transcript_b": "NM_080601.3",
+          "protein_a": "NP_002825.3",
+          "protein_b": "NP_542168.1",
+          "region_start_aa": "466",
+          "region_end_aa": "593",
+          "region_length_aa": "128",
+          "event_type_candidate": "deletion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        },
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:463-467:016",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "XM_011538613.3",
+          "transcript_b": "NM_080601.3",
+          "protein_a": "XP_011536915.1",
+          "protein_b": "NP_542168.1",
+          "region_start_aa": "463",
+          "region_end_aa": "467",
+          "region_length_aa": "5",
+          "event_type_candidate": "deletion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        },
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:469-596:017",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "XM_011538613.3",
+          "transcript_b": "NM_080601.3",
+          "protein_a": "XP_011536915.1",
+          "protein_b": "NP_542168.1",
+          "region_start_aa": "469",
+          "region_end_aa": "596",
+          "region_length_aa": "128",
+          "event_type_candidate": "deletion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        },
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:459-463:019",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "NM_001374625.1",
+          "transcript_b": "NM_080601.3",
+          "protein_a": "NP_001361554.1",
+          "protein_b": "NP_542168.1",
+          "region_start_aa": "459",
+          "region_end_aa": "463",
+          "region_length_aa": "5",
+          "event_type_candidate": "deletion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        },
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:465-592:020",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "NM_001374625.1",
+          "transcript_b": "NM_080601.3",
+          "protein_a": "NP_001361554.1",
+          "protein_b": "NP_542168.1",
+          "region_start_aa": "465",
+          "region_end_aa": "592",
+          "region_length_aa": "128",
+          "event_type_candidate": "deletion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        }
+      ]
+    },
+    {
+      "candidate_cluster_id": "PTPN11:homo_sapiens:indel:408-411",
+      "region": "408–411",
+      "start_aa": 408,
+      "end_aa": 411,
+      "length_aa": 4,
+      "confidence": "low",
+      "status": "exploratory",
+      "evidence": {
+        "isoform_difference": {
+          "n_isoform_pairs": 6,
+          "proteins": [
+            "NP_001317366.1",
+            "NP_001361554.1",
+            "NP_002825.3",
+            "NP_542168.1",
+            "XP_011536915.1"
+          ],
+          "transcripts": [
+            "NM_001330437.2",
+            "NM_001374625.1",
+            "NM_002834.5",
+            "NM_080601.3",
+            "XM_011538613.3"
+          ],
+          "confidence": "low",
+          "explanation": "Supported by 6 isoform pair comparison(s) across 5 isoform(s)."
+        },
+        "exon_alignment": {
+          "aligned": false,
+          "n_exon_aligned": 0,
+          "confidence": "low",
+          "explanation": "Region does not align cleanly with exon boundaries."
+        },
+        "external_curated": {
+          "uniprot": "unavailable",
+          "confidence": "n/a",
+          "explanation": "No curated UniProt alternative-sequence evidence for this region."
+        },
+        "domain": {
+          "status": "available",
+          "explanation": "Domain overlap can be evaluated."
+        }
+      },
+      "interpretation": "This region differs between 5 PTPN11 protein isoform(s). It is an exploratory candidate region, not a validated event. It may become more interpretable after domain annotation or external curated evidence.",
+      "raw_support_rows": [
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:409-412:001",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "NM_001330437.2",
+          "transcript_b": "NM_002834.5",
+          "protein_a": "NP_001317366.1",
+          "protein_b": "NP_002825.3",
+          "region_start_aa": "409",
+          "region_end_aa": "412",
+          "region_length_aa": "4",
+          "event_type_candidate": "deletion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        },
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:409-412:004",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "NM_001330437.2",
+          "transcript_b": "NM_001374625.1",
+          "protein_a": "NP_001317366.1",
+          "protein_b": "NP_001361554.1",
+          "region_start_aa": "409",
+          "region_end_aa": "412",
+          "region_length_aa": "4",
+          "event_type_candidate": "deletion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        },
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:409-412:005",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "NM_001330437.2",
+          "transcript_b": "NM_080601.3",
+          "protein_a": "NP_001317366.1",
+          "protein_b": "NP_542168.1",
+          "region_start_aa": "409",
+          "region_end_aa": "412",
+          "region_length_aa": "4",
+          "event_type_candidate": "deletion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        },
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:408-411:009",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "NM_002834.5",
+          "transcript_b": "XM_011538613.3",
+          "protein_a": "NP_002825.3",
+          "protein_b": "XP_011536915.1",
+          "region_start_aa": "408",
+          "region_end_aa": "411",
+          "region_length_aa": "4",
+          "event_type_candidate": "insertion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        },
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:408-411:013",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "XM_011538613.3",
+          "transcript_b": "NM_001374625.1",
+          "protein_a": "XP_011536915.1",
+          "protein_b": "NP_001361554.1",
+          "region_start_aa": "408",
+          "region_end_aa": "411",
+          "region_length_aa": "4",
+          "event_type_candidate": "deletion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        },
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:408-411:015",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "XM_011538613.3",
+          "transcript_b": "NM_080601.3",
+          "protein_a": "XP_011536915.1",
+          "protein_b": "NP_542168.1",
+          "region_start_aa": "408",
+          "region_end_aa": "411",
+          "region_length_aa": "4",
+          "event_type_candidate": "deletion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        }
+      ]
+    },
+    {
+      "candidate_cluster_id": "PTPN11:homo_sapiens:indel:46-46",
+      "region": "46–46",
+      "start_aa": 46,
+      "end_aa": 46,
+      "length_aa": 1,
+      "confidence": "low",
+      "status": "exploratory",
+      "evidence": {
+        "isoform_difference": {
+          "n_isoform_pairs": 6,
+          "proteins": [
+            "NP_001317366.1",
+            "NP_001361554.1",
+            "NP_002825.3",
+            "NP_542168.1",
+            "XP_011536915.1"
+          ],
+          "transcripts": [
+            "NM_001330437.2",
+            "NM_001374625.1",
+            "NM_002834.5",
+            "NM_080601.3",
+            "XM_011538613.3"
+          ],
+          "confidence": "low",
+          "explanation": "Supported by 6 isoform pair comparison(s) across 5 isoform(s)."
+        },
+        "exon_alignment": {
+          "aligned": false,
+          "n_exon_aligned": 0,
+          "confidence": "low",
+          "explanation": "Region does not align cleanly with exon boundaries."
+        },
+        "external_curated": {
+          "uniprot": "unavailable",
+          "confidence": "n/a",
+          "explanation": "No curated UniProt alternative-sequence evidence for this region."
+        },
+        "domain": {
+          "status": "available",
+          "explanation": "Domain overlap can be evaluated."
+        }
+      },
+      "interpretation": "This region differs between 5 PTPN11 protein isoform(s). It is an exploratory candidate region, not a validated event. It may become more interpretable after domain annotation or external curated evidence.",
+      "raw_support_rows": [
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:46-46:002",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "NM_001330437.2",
+          "transcript_b": "XM_011538613.3",
+          "protein_a": "NP_001317366.1",
+          "protein_b": "XP_011536915.1",
+          "region_start_aa": "46",
+          "region_end_aa": "46",
+          "region_length_aa": "1",
+          "event_type_candidate": "deletion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        },
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:46-46:003",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "NM_001330437.2",
+          "transcript_b": "NM_001374625.1",
+          "protein_a": "NP_001317366.1",
+          "protein_b": "NP_001361554.1",
+          "region_start_aa": "46",
+          "region_end_aa": "46",
+          "region_length_aa": "1",
+          "event_type_candidate": "deletion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        },
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:46-46:008",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "NM_002834.5",
+          "transcript_b": "XM_011538613.3",
+          "protein_a": "NP_002825.3",
+          "protein_b": "XP_011536915.1",
+          "region_start_aa": "46",
+          "region_end_aa": "46",
+          "region_length_aa": "1",
+          "event_type_candidate": "deletion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        },
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:46-46:010",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "NM_002834.5",
+          "transcript_b": "NM_001374625.1",
+          "protein_a": "NP_002825.3",
+          "protein_b": "NP_001361554.1",
+          "region_start_aa": "46",
+          "region_end_aa": "46",
+          "region_length_aa": "1",
+          "event_type_candidate": "deletion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        },
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:46-46:014",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "XM_011538613.3",
+          "transcript_b": "NM_080601.3",
+          "protein_a": "XP_011536915.1",
+          "protein_b": "NP_542168.1",
+          "region_start_aa": "46",
+          "region_end_aa": "46",
+          "region_length_aa": "1",
+          "event_type_candidate": "insertion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        },
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "homo_sapiens",
+          "event_candidate_id": "PTPN11:homo_sapiens:46-46:018",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "NM_001374625.1",
+          "transcript_b": "NM_080601.3",
+          "protein_a": "NP_001361554.1",
+          "protein_b": "NP_542168.1",
+          "region_start_aa": "46",
+          "region_end_aa": "46",
+          "region_length_aa": "1",
+          "event_type_candidate": "insertion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        }
+      ]
+    },
+    {
+      "candidate_cluster_id": "PTPN11:mus_musculus:indel:409-412",
+      "region": "409–412",
+      "start_aa": 409,
+      "end_aa": 412,
+      "length_aa": 4,
+      "confidence": "low",
+      "status": "exploratory",
+      "evidence": {
+        "isoform_difference": {
+          "n_isoform_pairs": 1,
+          "proteins": [
+            "NP_001103462.1",
+            "NP_035332.1"
+          ],
+          "transcripts": [
+            "NM_001109992.1",
+            "NM_011202.3"
+          ],
+          "confidence": "low",
+          "explanation": "Supported by 1 isoform pair comparison(s) across 2 isoform(s)."
+        },
+        "exon_alignment": {
+          "aligned": false,
+          "n_exon_aligned": 0,
+          "confidence": "low",
+          "explanation": "Region does not align cleanly with exon boundaries."
+        },
+        "external_curated": {
+          "uniprot": "unavailable",
+          "confidence": "n/a",
+          "explanation": "No curated UniProt alternative-sequence evidence for this region."
+        },
+        "domain": {
+          "status": "available",
+          "explanation": "Domain overlap can be evaluated."
+        }
+      },
+      "interpretation": "This region differs between 2 PTPN11 protein isoform(s). It is an exploratory candidate region, not a validated event. It may become more interpretable after domain annotation or external curated evidence.",
+      "raw_support_rows": [
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "mus_musculus",
+          "event_candidate_id": "PTPN11:mus_musculus:409-412:021",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "NM_001109992.1",
+          "transcript_b": "NM_011202.3",
+          "protein_a": "NP_001103462.1",
+          "protein_b": "NP_035332.1",
+          "region_start_aa": "409",
+          "region_end_aa": "412",
+          "region_length_aa": "4",
+          "event_type_candidate": "insertion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        }
+      ]
+    },
+    {
+      "candidate_cluster_id": "PTPN11:rattus_norvegicus:indel:409-412",
+      "region": "409–412",
+      "start_aa": 409,
+      "end_aa": 412,
+      "length_aa": 4,
+      "confidence": "low",
+      "status": "exploratory",
+      "evidence": {
+        "isoform_difference": {
+          "n_isoform_pairs": 1,
+          "proteins": [
+            "NP_001171064.1",
+            "NP_037220.2"
+          ],
+          "transcripts": [
+            "NM_001177593.1",
+            "NM_013088.2"
+          ],
+          "confidence": "low",
+          "explanation": "Supported by 1 isoform pair comparison(s) across 2 isoform(s)."
+        },
+        "exon_alignment": {
+          "aligned": false,
+          "n_exon_aligned": 0,
+          "confidence": "low",
+          "explanation": "Region does not align cleanly with exon boundaries."
+        },
+        "external_curated": {
+          "uniprot": "unavailable",
+          "confidence": "n/a",
+          "explanation": "No curated UniProt alternative-sequence evidence for this region."
+        },
+        "domain": {
+          "status": "available",
+          "explanation": "Domain overlap can be evaluated."
+        }
+      },
+      "interpretation": "This region differs between 2 PTPN11 protein isoform(s). It is an exploratory candidate region, not a validated event. It may become more interpretable after domain annotation or external curated evidence.",
+      "raw_support_rows": [
+        {
+          "analysis_id": "PTPN11_core_only_pilot",
+          "gene_symbol": "PTPN11",
+          "species_id": "rattus_norvegicus",
+          "event_candidate_id": "PTPN11:rattus_norvegicus:409-412:022",
+          "evidence_source": "protein_isoform_difference",
+          "evidence_status": "exploratory",
+          "transcript_a": "NM_001177593.1",
+          "transcript_b": "NM_013088.2",
+          "protein_a": "NP_001171064.1",
+          "protein_b": "NP_037220.2",
+          "region_start_aa": "409",
+          "region_end_aa": "412",
+          "region_length_aa": "4",
+          "event_type_candidate": "deletion",
+          "exon_aligned": "no",
+          "confidence": "low",
+          "confidence_reason": "Protein-level isoform sequence difference only; exploratory, not a validated event.",
+          "notes": "Exploratory candidate; not a validated event region."
+        }
+      ]
+    }
+  ],
+  "explanation": "Candidate regions are sequence differences between protein isoforms of the same gene. They are exploratory and NOT validated event regions."
+}

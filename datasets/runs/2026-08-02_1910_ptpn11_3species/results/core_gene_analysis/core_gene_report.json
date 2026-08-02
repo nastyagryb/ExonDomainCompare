@@ -1,0 +1,91 @@
+{
+  "analysis_id": "PTPN11_core_only_pilot",
+  "gene_symbol": "PTPN11",
+  "dataset_id": "run:2026-08-02_1910_ptpn11_3species",
+  "adapter": "core_gene_runner",
+  "contract_version": 1,
+  "event_analysis_mode": "optional",
+  "has_event": false,
+  "generated_at": "2026-08-02T17:13:29.964147+00:00",
+  "selection_method": "canonical_if_available",
+  "summary": {
+    "n_species": 3,
+    "n_transcripts": 9,
+    "n_protein_coding": 9,
+    "n_primary_proteins": 3,
+    "n_exon_boundaries": 42,
+    "n_domain_features": 9,
+    "n_tm_features": 0,
+    "n_synteny_neighbors": 30,
+    "n_representative_domains": 9,
+    "n_interpro_annotations_raw": 164
+  },
+  "species_ids": [
+    "homo_sapiens",
+    "mus_musculus",
+    "rattus_norvegicus"
+  ],
+  "inputs": [
+    {
+      "species_id": "homo_sapiens",
+      "assembly_accession": "GCF_000001405.40",
+      "genomic_gff": "external:NCBI/GCF_000001405.40/genomic.gff",
+      "protein_faa": "external:NCBI/GCF_000001405.40/protein.faa",
+      "source_run": "ncbi_datasets_download",
+      "taxid": "9606"
+    },
+    {
+      "species_id": "mus_musculus",
+      "assembly_accession": "GCF_000001635.27",
+      "genomic_gff": "external:NCBI/GCF_000001635.27/genomic.gff",
+      "protein_faa": "external:NCBI/GCF_000001635.27/protein.faa",
+      "source_run": "ncbi_datasets_download",
+      "taxid": "10090"
+    },
+    {
+      "species_id": "rattus_norvegicus",
+      "assembly_accession": "GCF_036323735.1",
+      "genomic_gff": "external:NCBI/GCF_036323735.1/genomic.gff",
+      "protein_faa": "external:NCBI/GCF_036323735.1/protein.faa",
+      "source_run": "ncbi_datasets_download",
+      "taxid": "10116"
+    }
+  ],
+  "outputs": [
+    "gene_model_index.tsv",
+    "protein_isoform_index.tsv",
+    "exon_protein_map.tsv",
+    "domain_features.tsv",
+    "tm_features.tsv",
+    "synteny_neighbors.tsv",
+    "synteny_target.tsv",
+    "exon_domain_boundary_distances.tsv",
+    "core_gene_report.json"
+  ],
+  "synteny_reason": "",
+  "exon_map_reason": "",
+  "fasta_reason": "",
+  "selection_rule_applied": "canonical",
+  "domain_status": "complete",
+  "warnings": [],
+  "failures": [],
+  "note": "Core-only experimental pilot. Domain/TM/boundary features require the cluster InterProScan/pyTMHMM step. No event-specific analysis.",
+  "_exondomain": {
+    "contract_version": "1.0",
+    "payload_type": "core_gene_report",
+    "run_id": "",
+    "dataset_id": "run:2026-08-02_1910_ptpn11_3species",
+    "generator": "scripts/framework/run_core_gene_analysis.py",
+    "profile": {
+      "schema_version": "1.0",
+      "local_profile": "default",
+      "lrz_profile": "lrz"
+    },
+    "source_checksums": [],
+    "generated_at": "2026-08-02T18:08:24.230020+00:00",
+    "content_sha256": "7dac332a4c26aa9f4ccc177a555a8527966d592414b604ae45fb1c56d779678d"
+  },
+  "tm_status": "valid",
+  "post_cluster_qc": "results/15_domain_architecture/post_cluster_qc.json",
+  "post_interpro_generated_at": "2026-08-02T18:08:24.229953+00:00"
+}

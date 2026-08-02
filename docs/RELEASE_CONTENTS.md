@@ -11,7 +11,7 @@
 - MIT software license and a separate research-data notice
 - scientific reference files
 - the checksummed, read-only FGFR2 30-species dataset
-- the checksummed BCL2L1 human/mouse demonstration
+- the checksummed PTPN11 human/mouse/rat demonstration
 
 ## Not included
 

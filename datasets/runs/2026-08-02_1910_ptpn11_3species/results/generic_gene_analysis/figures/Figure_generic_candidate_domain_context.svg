@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="717.48pt" height="406.219281pt" viewBox="0 0 717.48 406.219281" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-02T20:08:28.945931</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.9, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 406.219281 
+L 717.48 406.219281 
+L 717.48 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 7.2 348.21225 
+L 710.28 348.21225 
+L 710.28 48.83625 
+L 7.2 48.83625 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="me14d3dd966" d="M 0 0 
+L 0 3 
+" style="stroke: #444444; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#me14d3dd966" x="201.153103" y="348.21225" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #444444" x="201.153103" y="358.592328" transform="rotate(-0 201.153103 358.592328)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#me14d3dd966" x="283.058975" y="348.21225" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #444444" x="283.058975" y="358.592328" transform="rotate(-0 283.058975 358.592328)">100</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#me14d3dd966" x="364.964846" y="348.21225" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #444444" x="364.964846" y="358.592328" transform="rotate(-0 364.964846 358.592328)">200</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#me14d3dd966" x="446.870718" y="348.21225" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #444444" x="446.870718" y="358.592328" transform="rotate(-0 446.870718 358.592328)">300</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#me14d3dd966" x="528.776589" y="348.21225" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #444444" x="528.776589" y="358.592328" transform="rotate(-0 528.776589 358.592328)">400</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#me14d3dd966" x="610.68246" y="348.21225" style="fill: #444444; stroke: #444444; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #444444" x="610.68246" y="358.592328" transform="rotate(-0 610.68246 358.592328)">500</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 8.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1a1a1a" x="358.74" y="370.352641" transform="rotate(-0 358.74 370.352641)">Amino-acid position on the primary protein (aa)</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2"/>
+   <g id="patch_3">
+    <path d="M 201.153103 348.21225 
+L 686.035862 348.21225 
+" style="fill: none; stroke: #444444; stroke-width: 0.5; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="11.079062" y="68.472329" transform="rotate(-0 11.079062 68.472329)">C1 · aa 465–592 · 128 aa</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="11.079062" y="79.727066" transform="rotate(-0 11.079062 79.727066)">outside annotated domains</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="11.079062" y="124.746013" transform="rotate(-0 11.079062 124.746013)">C2 · aa 408–411 · 4 aa</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="11.079062" y="136.00075" transform="rotate(-0 11.079062 136.00075)">outside annotated domains</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="11.079062" y="181.019697" transform="rotate(-0 11.079062 181.019697)">C3 · aa 46–46 · 1 aa</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="11.079062" y="192.274434" transform="rotate(-0 11.079062 192.274434)">outside annotated domains</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="11.079062" y="237.293382" transform="rotate(-0 11.079062 237.293382)">C4 · aa 409–412 · 4 aa</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="11.079062" y="248.548118" transform="rotate(-0 11.079062 248.548118)">outside annotated domains</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="11.079062" y="293.567066" transform="rotate(-0 11.079062 293.567066)">C5 · aa 409–412 · 4 aa</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="11.079062" y="304.821803" transform="rotate(-0 11.079062 304.821803)">outside annotated domains</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 8.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="11.079062" y="45.830151" transform="rotate(-0 11.079062 45.830151)">Exploratory candidate regions</text>
+   </g>
+   <g id="text_19">
+    <text style="font-style: italic; font-size: 6.4px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="7.2" y="45.42025" transform="rotate(-0 7.2 45.42025)">Do the exploratory candidate regions fall inside annotated domains or between them? Exploratory candidate regions only — Biological validation: not validated. A positional overlap with a domain is an observation, not a functional claim.</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 9px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b7280" x="7.2" y="34.845" transform="rotate(-0 7.2 34.845)">5 candidate region(s) · 0 representative domain instance(s) · domains resolved by instance, not by accession</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="7.2" y="15.83625" transform="rotate(-0 7.2 15.83625)">PTPN11 — exploratory candidates in their domain context</text>
+   </g>
+   <g id="patch_4">
+    <path d="M 582.015405 82.037724 
+L 686.035862 82.037724 
+L 686.035862 62.904671 
+L 582.015405 62.904671 
+z
+" clip-path="url(#p5875c35775)" style="fill: #f2b705; stroke: #8a5008; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 535.329059 138.311408 
+L 537.786235 138.311408 
+L 537.786235 119.178355 
+L 535.329059 119.178355 
+z
+" clip-path="url(#p5875c35775)" style="fill: #f2b705; stroke: #8a5008; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 238.829804 194.585092 
+L 239.648863 194.585092 
+L 239.648863 175.452039 
+L 238.829804 175.452039 
+z
+" clip-path="url(#p5875c35775)" style="fill: #f2b705; stroke: #8a5008; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 536.148117 250.858776 
+L 538.605294 250.858776 
+L 538.605294 231.725724 
+L 536.148117 231.725724 
+z
+" clip-path="url(#p5875c35775)" style="fill: #f2b705; stroke: #8a5008; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 536.148117 307.132461 
+L 538.605294 307.132461 
+L 538.605294 287.999408 
+L 536.148117 287.999408 
+z
+" clip-path="url(#p5875c35775)" style="fill: #f2b705; stroke: #8a5008; stroke-width: 0.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="legend_1">
+    <g id="patch_9">
+     <path d="M 13.95 394.359906 
+L 22.2 394.359906 
+L 22.2 389.109906 
+L 13.95 389.109906 
+z
+" style="fill: #f2b705"/>
+    </g>
+    <g id="text_22">
+     <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="25.95" y="394.359906" transform="rotate(-0 25.95 394.359906)">exploratory candidate region · Biological validation: not validated</text>
+    </g>
+    <g id="line2d_7">
+     <defs>
+      <path id="m01f4917542" d="M -0 4.242641 
+L 4.242641 0 
+L 0 -4.242641 
+L -4.242641 -0 
+z
+" style="stroke: #1a1a1a; stroke-width: 0.6; stroke-linejoin: miter"/>
+     </defs>
+     <g>
+      <use xlink:href="#m01f4917542" x="253.278516" y="391.734906" style="fill: #1a1a1a; stroke: #1a1a1a; stroke-width: 0.6; stroke-linejoin: miter"/>
+     </g>
+    </g>
+    <g id="text_23">
+     <text style="font-size: 7.5px; font-family: 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #1a1a1a" x="261.153516" y="394.359906" transform="rotate(-0 261.153516 394.359906)">nearest representative-domain edge</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p5875c35775">
+   <rect x="7.2" y="48.83625" width="703.08" height="299.376"/>
+  </clipPath>
+ </defs>
+</svg>

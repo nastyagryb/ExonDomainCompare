@@ -1,0 +1,8 @@
+{
+  "msa_status": "available",
+  "n_sequences": 5,
+  "tool": "mafft --auto",
+  "reason": "Within-species isoform MSA for homo_sapiens built with MAFFT --auto.",
+  "alignment_file": "results/07_msa/protein_alignment.faa",
+  "generated_at": "2026-08-02T20:08:29"
+}

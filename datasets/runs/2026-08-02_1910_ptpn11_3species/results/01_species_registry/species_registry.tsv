@@ -1,0 +1,4 @@
+species_id	input_name	scientific_name	ensembl_species	ncbi_species	taxid	common_name	clade	preferred_source	assembly_preference	status	notes	taxon_resolution_status	accepted_scientific_name	taxon_synonyms	taxon_rank	taxon_query_term
+homo_sapiens	homo_sapiens	Homo sapiens	homo_sapiens	Homo sapiens	9606	human	mammal	ensembl_first	RefSeq	taxon_verified	resolved against NCBI Taxonomy as Homo sapiens (taxid 9606)	resolved	Homo sapiens		species	9606
+mus_musculus	mus_musculus	Mus musculus	mus_musculus	Mus musculus	10090	mouse	mammal	ensembl_first	RefSeq	taxon_verified	resolved against NCBI Taxonomy as Mus musculus (taxid 10090)	resolved	Mus musculus		species	10090
+rattus_norvegicus	rattus_norvegicus	Rattus norvegicus	rattus_norvegicus	Rattus norvegicus	10116	rat	mammal	ensembl_first	RefSeq	taxon_verified	resolved against NCBI Taxonomy as Rattus norvegicus (taxid 10116)	resolved	Rattus norvegicus		species	10116

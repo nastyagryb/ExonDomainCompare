@@ -1,0 +1,3 @@
+protein_id	transcript_id	is_primary	curation_status	protein_length	alignment_columns	identity_to_primary_pct	gap_columns	differing_columns	candidate_id	candidate_alignment_columns	candidate_identity_pct	candidate_role
+NP_035332.1	NM_011202.3	true	curated	597	597	100	0	0	C1	409-412	100	reference
+NP_001103462.1	NM_001109992.1	false	curated	593	597	100	4	0	C1	409-412	100	affected
