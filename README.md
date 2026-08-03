@@ -57,7 +57,6 @@ LRZ setup is required only for the cluster round trip. See
 - [LRZ setup](docs/LRZ.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 - [Release contents](docs/RELEASE_CONTENTS.md)
-- [Architecture](docs/architecture/README.md)
 - [Bundled datasets](datasets/README.md)
 
 ## Verification
