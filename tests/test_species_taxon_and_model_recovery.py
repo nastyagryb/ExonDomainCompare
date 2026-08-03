@@ -1121,8 +1121,20 @@ def test_the_roundtrip_command_is_withheld_until_the_primary_fasta_exists(backen
     assert 'if primary_ok else ""' in source[marker:marker + 200]
 
 
-def test_the_website_uses_the_installed_roundtrip_command(backend):
+def test_the_website_uses_the_installed_roundtrip_command(backend, monkeypatch):
+    monkeypatch.delenv("EDC_DATA_DIR", raising=False)
     assert backend._cluster_roundtrip_command("run_1") == (
+        ".venv/bin/edc cluster roundtrip --run-id run_1"
+    )
+
+
+def test_the_roundtrip_command_preserves_an_external_data_root(backend, monkeypatch,
+                                                               tmp_path):
+    data_root = tmp_path / "external data"
+    monkeypatch.setenv("EDC_DATA_DIR", str(data_root))
+
+    assert backend._cluster_roundtrip_command("run_1") == (
+        f"env 'EDC_DATA_DIR={data_root}' "
         ".venv/bin/edc cluster roundtrip --run-id run_1"
     )
 
