@@ -25,6 +25,8 @@ from __future__ import annotations
 
 import ast
 import json
+import shutil
+import subprocess
 import sys
 import time
 from pathlib import Path
@@ -384,6 +386,32 @@ def test_external_run_gallery_assets_are_run_relative(pre_cluster_run: Path):
     assert card["status"] == "available"
     assert not any(item["figure_id"] == card["figure_id"]
                    for item in report["technically_missing"])
+
+
+def test_the_frontend_serves_relative_gallery_assets_from_the_selected_run():
+    node = shutil.which("node")
+    if not node:
+        pytest.skip("node is required for the frontend URL contract")
+    api = (ROOT / "webapp" / "frontend" / "src" / "api.js").as_uri()
+    code = (
+        f'import {{ runFileUrl }} from {json.dumps(api)}; '
+        'console.log(runFileUrl("run with spaces", "results/figure 3.png", true));'
+    )
+    result = subprocess.run(
+        [node, "--input-type=module", "-e", code],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    assert result.stdout.strip() == (
+        "http://localhost:8000/api/runs/run%20with%20spaces/files"
+        "?path=results%2Ffigure%203.png&inline=true"
+    )
+
+    gallery = (ROOT / "webapp" / "frontend" / "src" / "pages"
+               / "FigureGallery.jsx").read_text(encoding="utf-8")
+    assert "assetUrl(thumbnail, true, runId)" in gallery
+    assert "assetUrl(f.source_table, false, runId)" in gallery
 
 
 def test_release_uses_the_bundled_validated_human_reference():

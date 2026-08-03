@@ -282,6 +282,10 @@ export function payloadMatchesIndexVersion(payload, status) {
 export const fileUrl = (path, inline = false) =>
   `${API_BASE}/api/download?path=${encodeURIComponent(path)}${inline ? "&inline=true" : ""}`;
 
+export const runFileUrl = (runId, path, inline = false) =>
+  `${API_BASE}/api/runs/${encodeURIComponent(runId)}/files?path=${encodeURIComponent(path)}`
+  + `${inline ? "&inline=true" : ""}`;
+
 // Absolute URL for a server-provided (already API-rooted) url, e.g. figure urls.
 export const absUrl = (u) => (!u ? u : (/^https?:\/\//.test(u) ? u : `${API_BASE}${u}`));
 

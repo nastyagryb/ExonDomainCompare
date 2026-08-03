@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { API_BASE, fileUrl } from "../api";
+import { API_BASE, fileUrl, runFileUrl } from "../api";
 import { Badge, Drawer, Modal } from "../ui";
 import { FigureCardGrid, FigureCard } from "../components/shared";
 import { useScientificSelection } from "../components/ScientificSelectionContext";
@@ -42,6 +42,8 @@ function readInitialScope(multiSpecies) {
 
 export default function FigureGallery({ model, openBoundary }) {
   const index = normalizeFigureIndex(model);
+  const runId = model?.dataset?.kind === "run"
+    ? (model?.run_id || model?.dataset?.run_id || "") : "";
   const vi = model?.validated_event_indices || {};
   const gene = model?.dataset_info?.gene_symbol || model?.gene_symbol || "";
   const selection = useScientificSelection();
@@ -178,7 +180,7 @@ export default function FigureGallery({ model, openBoundary }) {
           <div key={g} className="fig-group">
             <h3 className="group-title">{g} <span className="muted small">· {byGroup[g].length}</span></h3>
             <FigureCardGrid>
-              {byGroup[g].map((f) => <FigCard key={f.id} f={f} gene={gene}
+              {byGroup[g].map((f) => <FigCard key={f.id} f={f} gene={gene} runId={runId}
                 onOpen={() => setLightbox(f)} onInteractive={openInteractive} />)}
             </FigureCardGrid>
           </div>
@@ -197,17 +199,17 @@ export default function FigureGallery({ model, openBoundary }) {
               <button className="btn primary sm" onClick={() => { const k = interactiveKind(lightbox); setLightbox(null); openInteractive(k); }}>Open interactive</button>
             )}
             {["png", "svg", "pdf"].map((fmt) => lightbox.formats[fmt] && (
-              <a key={fmt} className="btn ghost sm" href={assetUrl(lightbox.formats[fmt])}>{fmt.toUpperCase()}</a>
+              <a key={fmt} className="btn ghost sm" href={assetUrl(lightbox.formats[fmt], false, runId)}>{fmt.toUpperCase()}</a>
             ))}
-            {lightbox.source_table && <a className="btn ghost sm" href={fileUrl(lightbox.source_table)}>Source table</a>}
+            {lightbox.source_table && <a className="btn ghost sm" href={assetUrl(lightbox.source_table, false, runId)}>Source table</a>}
           </div>
         )}
       >
         {lightbox && (
           <>
             {lightbox.thumbnail && (
-              <a href={assetUrl(lightbox.formats.svg || lightbox.thumbnail, true)} target="_blank" rel="noreferrer">
-                <img className="lightbox-img" src={assetUrl(lightbox.thumbnail, true)} alt={lightbox.title} />
+              <a href={assetUrl(lightbox.formats.svg || lightbox.thumbnail, true, runId)} target="_blank" rel="noreferrer">
+                <img className="lightbox-img" src={assetUrl(lightbox.thumbnail, true, runId)} alt={lightbox.title} />
               </a>
             )}
             {lightbox.scientific_question && (
@@ -425,10 +427,11 @@ function withCategories(index) {
   return { ...index, figures, categories: ordered, groups: ordered };
 }
 
-function assetUrl(path, inline = false) {
+function assetUrl(path, inline = false, runId = "") {
   if (!path) return "";
   if (/^https?:\/\//.test(path)) return path;
   if (path.startsWith("/api/")) return `${API_BASE}${path}`;
+  if (runId) return runFileUrl(runId, path, inline);
   return fileUrl(path, inline);
 }
 
@@ -504,7 +507,7 @@ function unavailableText(f) {
 // the identity of the analysed molecule, and the download formats. Reproducibility
 // provenance (source file names, tool versions) lives in the detail view and in
 // the downloadable tables, not on the primary card face (Part 7).
-function FigCard({ f, gene, onOpen, onInteractive }) {
+function FigCard({ f, gene, runId, onOpen, onInteractive }) {
   const kind = interactiveKind(f);
   // Which previews failed, by url rather than a single flag: a card can switch
   // between several rendered views, and one broken view must not hide the others.
@@ -529,7 +532,7 @@ function FigCard({ f, gene, onOpen, onInteractive }) {
     <FigureCard
       thumbOnClick={onOpen}
       thumb={thumbnail && !failedThumbs.has(thumbnail)
-        ? <img key={thumbnail} src={assetUrl(thumbnail, true)} alt={f.title} loading="lazy"
+        ? <img key={thumbnail} src={assetUrl(thumbnail, true, runId)} alt={f.title} loading="lazy"
             onError={() => setFailedThumbs((s) => new Set(s).add(thumbnail))} />
         : <div className="fig-noimg">{f.error
           || (unavailable ? unavailableText(f) : "Preview unavailable")}</div>}
@@ -562,10 +565,10 @@ function FigCard({ f, gene, onOpen, onInteractive }) {
       actions={<>
         {kind && !unavailable && <button className="btn primary sm" onClick={() => onInteractive(kind)}>Interactive</button>}
         {!unavailable && <button className="btn ghost sm" onClick={onOpen}>Open</button>}
-        {formats.svg && <a className="btn ghost sm" href={assetUrl(formats.svg)}>SVG</a>}
-        {formats.pdf && <a className="btn ghost sm" href={assetUrl(formats.pdf)}>PDF</a>}
-        {formats.png && <a className="btn ghost sm" href={assetUrl(formats.png)}>PNG</a>}
-        {f.source_table && <a className="btn ghost sm" href={fileUrl(f.source_table)}>TSV</a>}
+        {formats.svg && <a className="btn ghost sm" href={assetUrl(formats.svg, false, runId)}>SVG</a>}
+        {formats.pdf && <a className="btn ghost sm" href={assetUrl(formats.pdf, false, runId)}>PDF</a>}
+        {formats.png && <a className="btn ghost sm" href={assetUrl(formats.png, false, runId)}>PNG</a>}
+        {f.source_table && <a className="btn ghost sm" href={assetUrl(f.source_table, false, runId)}>TSV</a>}
       </>}
     />
   );
