@@ -81,6 +81,11 @@ def _local_python_command(script: Path, *args: str) -> List[str]:
     """Build every backend-owned local Python child command from one runtime."""
     return [PYTHON, str(script), *map(str, args)]
 
+
+def _local_python_module_command(module: str, *args: str) -> List[str]:
+    """Run installed application logic through its canonical module path."""
+    return [PYTHON, "-m", module, *map(str, args)]
+
 # NOTE: results/web_runs/ is legacy and is never created for new runs anymore.
 # We intentionally do NOT mkdir it here. New runs live under runs/<run_id>/.
 CURRENT_RUN_PTR = WEB_STATE_DIR / "current_run.json"
@@ -1773,9 +1778,10 @@ def _launch_shared_run(gene_symbol: str, species: List[str], run_name: str,
     annotation it writes an honest 'blocked' status. We launch it in the
     background (like pre-InterPro) and detect the run folder it creates.
     """
-    runner = SCRIPTS_DIR / "framework" / "run_core_gene_analysis.py"
+    runner = PROJECT_ROOT / "src" / "exondomaincompare" / "framework" / \
+        "run_core_gene_analysis.py"
     if not runner.exists():
-        raise HTTPException(status_code=500, detail="run_core_gene_analysis.py not found.")
+        raise HTTPException(status_code=500, detail="Core gene analysis module not found.")
     # No pre-existing gene YAML is required: the core runner generates a generic
     # core-only config automatically for any gene. We only gate on a syntactically
     # plausible symbol here; whether the gene actually exists in a given species is
@@ -1792,8 +1798,9 @@ def _launch_shared_run(gene_symbol: str, species: List[str], run_name: str,
     # Pass ALL species to the generic runner (species count is a dataset property,
     # not a separate code path). argparse consumes every value after --species up
     # to the next flag, so one/two/many species use the exact same launcher.
-    cmd = _local_python_command(
-        runner, "--gene", gene_symbol, "--species", *species,
+    cmd = _local_python_module_command(
+        "exondomaincompare.framework.run_core_gene_analysis",
+        "--gene", gene_symbol, "--species", *species,
         "--input-mode", "auto")
     label = run_labels.clean_run_name(run_name)
     if label:

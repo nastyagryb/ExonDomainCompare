@@ -64,7 +64,7 @@ SUBMIT = CLUSTER_DIR / "submit_cluster_analysis.py"
 CHECK = CLUSTER_DIR / "check_cluster_analysis.py"
 FETCH = CLUSTER_DIR / "fetch_cluster_analysis.py"
 POST = REPO / "scripts" / "run_post_interpro_for_run.py"
-CORE_POST = REPO / "scripts" / "framework" / "run_core_gene_analysis.py"
+CORE_POST_MODULE = "exondomaincompare.framework.run_core_gene_analysis"
 
 
 def _require_cluster_profile(config: RuntimeConfig) -> None:
@@ -272,6 +272,18 @@ class Roundtrip:
         self.log(f"  -> exit {proc.returncode}")
         return proc.returncode
 
+    def run_module(self, module: str, *args: str) -> int:
+        cmd = [
+            self.py, "-m", module, "--run-id", self.run_id,
+            "--local-profile", self.config.local_profile_name,
+            "--lrz-profile", self.config.lrz_profile_name,
+            *args,
+        ]
+        self.log(f"$ {' '.join(cmd)}")
+        proc = subprocess.run(cmd, cwd=str(REPO))
+        self.log(f"  -> exit {proc.returncode}")
+        return proc.returncode
+
     def cluster_status(self) -> str:
         return str((read_json(self.status_path, {}) or {}).get("cluster_analysis_status", ""))
 
@@ -343,13 +355,14 @@ class Roundtrip:
         FGFR2 run fetched its cluster annotation and was then judged without ever
         deriving the domain and boundary layers from it. It could only fail.
         """
-        runner, label = ((CORE_POST, "core post-InterPro") if self._is_core_only()
-                         else (POST, "post-InterPro"))
-        if not runner.exists():
-            self.log(f"{runner.name} not found — skipping {label}.")
+        core_only = self._is_core_only()
+        label = "core post-InterPro" if core_only else "post-InterPro"
+        if not core_only and not POST.exists():
+            self.log(f"{POST.name} not found — skipping {label}.")
             return
         self.set_phase("post_interpro")
-        rc = self.run(runner, *(("--post",) if self._is_core_only() else ()))
+        rc = (self.run_module(CORE_POST_MODULE, "--post")
+              if core_only else self.run(POST))
         if rc != 0:
             self.set_phase("post_interpro_failed", exit_code=rc)
             raise SystemExit(f"{label} failed (exit {rc}).")
@@ -520,7 +533,7 @@ def main(argv: Optional[List[str]] = None) -> None:
                     help="render the selected profile plan without network or writes")
     args = ap.parse_args(argv)
 
-    global RUNTIME_CONFIG, REPO, CLUSTER_DIR, SUBMIT, CHECK, FETCH, POST, CORE_POST
+    global RUNTIME_CONFIG, REPO, CLUSTER_DIR, SUBMIT, CHECK, FETCH, POST
     RUNTIME_CONFIG = load_config(
         config_path=args.config, repository_root=REPO,
         local_profile=args.local_profile, lrz_profile=args.lrz_profile,
@@ -531,8 +544,7 @@ def main(argv: Optional[List[str]] = None) -> None:
     SUBMIT = CLUSTER_DIR / "submit_cluster_analysis.py"
     CHECK = CLUSTER_DIR / "check_cluster_analysis.py"
     FETCH = CLUSTER_DIR / "fetch_cluster_analysis.py"
-    _POST = REPO / "scripts" / "run_post_interpro_for_run.py"
-    _CORE_POST = REPO / "scripts" / "framework" / "run_core_gene_analysis.py"
+    POST = REPO / "scripts" / "run_post_interpro_for_run.py"
     rt = Roundtrip(args.run_id, RUNTIME_CONFIG)
     if not rt.run_dir.is_dir():
         raise SystemExit(f"Run folder not found: runs/{args.run_id}. "

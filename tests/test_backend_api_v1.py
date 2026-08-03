@@ -69,3 +69,39 @@ def test_local_run_status_uses_the_canonical_stage_vocabulary(client):
 def test_missing_index_file_returns_404_not_500(client):
     r = client.get("/api/local-runs/does-not-exist")
     assert r.status_code in {404, 422}, r.text
+
+
+def test_shared_run_launches_the_canonical_core_module(monkeypatch, tmp_path):
+    captured = {}
+
+    class Process:
+        pid = 123
+        returncode = None
+
+        @staticmethod
+        def poll():
+            return None
+
+    def launch(command, **kwargs):
+        captured["command"] = command
+        (tmp_path / "new_run").mkdir()
+        return Process()
+
+    monkeypatch.setattr(backend_main, "LOCAL_RUNS_ROOT", tmp_path)
+    monkeypatch.setattr(backend_main.subprocess, "Popen", launch)
+    result = backend_main._launch_shared_run(
+        "ACTN1", ["Homo sapiens", "Canis lupus familiaris"], "ACTN1 test")
+
+    assert result["run_id"] == "new_run"
+    assert captured["command"][1:3] == [
+        "-m", "exondomaincompare.framework.run_core_gene_analysis"]
+    assert "scripts/framework/run_core_gene_analysis.py" not in " ".join(
+        captured["command"])
+
+
+def test_cluster_roundtrip_uses_the_canonical_core_module():
+    source = (PROJECT_ROOT / "scripts" / "interpro_cluster" /
+              "run_cluster_roundtrip.py").read_text(encoding="utf-8")
+    assert 'CORE_POST_MODULE = "exondomaincompare.framework.run_core_gene_analysis"' in source
+    assert 'REPO / "scripts" / "framework" / "run_core_gene_analysis.py"' not in source
+    assert "self.run_module(CORE_POST_MODULE, \"--post\")" in source
