@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import "./App.css";
 import {
-  api, forDataset, payloadMatchesDataset, setActiveDataset as setApiDataset,
+  api, forDataset, payloadMatchesDataset, payloadMatchesIndexVersion,
+  setActiveDataset as setApiDataset,
 } from "./api";
 import { getDatasetLabels } from "./labels";
 // A run that leaves a stable state (e.g. a retry) starts being polled again, because the
@@ -134,7 +135,8 @@ export default function App() {
     ]);
     let model = firstModel;
     // Retry one transient model miss during backend startup.
-    if (info && (!model || !payloadMatchesDataset(model, target))) {
+    if (info && (!model || !payloadMatchesDataset(model, target)
+        || !payloadMatchesIndexVersion(model, info))) {
       await new Promise((resolve) => setTimeout(resolve, 250));
       if (epoch !== epochRef.current || signal?.aborted) return null;
       model = await client.datasetModel().catch(() => null);
@@ -143,7 +145,8 @@ export default function App() {
     // dataset we asked about. Either alone would let a mismatched payload through.
     if (epoch !== epochRef.current) return null;
     const okInfo = payloadMatchesDataset(info, target);
-    const okModel = payloadMatchesDataset(model, target);
+    const okModel = payloadMatchesDataset(model, target)
+      && payloadMatchesIndexVersion(model, info);
     if (okInfo) setDatasetInfo(info);
     if (okModel) setDatasetModel(model);
     return okInfo ? info : null;
@@ -248,9 +251,15 @@ export default function App() {
   // refreshed together, so My Runs, the selector, Summary, availability, the Figure
   // Gallery and Data & Downloads all move at once — a finished roundtrip shows up
   // without the browser being reloaded.
+  const observedStatus = datasetInfo?.status;
+  const observedStep = datasetInfo?.current_step;
+  const observedIndexVersion = datasetInfo?.index_version;
+  const observedModelVersion = datasetModel?.index_version;
   useEffect(() => {
     if (!activeId.startsWith("run:")) return undefined;
-    if (TERMINAL_RUN_STATES.has(datasetInfo?.status)) return undefined;
+    const modelIsCurrent = !observedIndexVersion
+      || observedModelVersion === observedIndexVersion;
+    if (TERMINAL_RUN_STATES.has(observedStatus) && modelIsCurrent) return undefined;
     const timer = window.setInterval(async () => {
       const client = forDataset(activeId);
       const info = await client.datasetStatus(activeId).catch(() => null);
@@ -258,21 +267,22 @@ export default function App() {
       // used while its dataset is still the selected one.
       if (!info || activeId !== pendingRef.current
           || !payloadMatchesDataset(info, activeId)) return;
-      const changed = info.status !== datasetInfo?.status
-        || info.current_step !== datasetInfo?.current_step
-        || info.index_version !== datasetInfo?.index_version;
+      const changed = info.status !== observedStatus
+        || info.current_step !== observedStep
+        || info.index_version !== observedIndexVersion;
       setDatasetInfo(info);
       if (changed || TERMINAL_RUN_STATES.has(info.status)) {
         const model = await client.datasetModel().catch(() => null);
         if (activeId !== pendingRef.current) return;
-        if (model && payloadMatchesDataset(model, activeId)) setDatasetModel(model);
+        if (model && payloadMatchesDataset(model, activeId)
+            && payloadMatchesIndexVersion(model, info)) setDatasetModel(model);
         await loadDatasets();
         setRefreshNonce((n) => n + 1);
       }
     }, POLL_INTERVAL_MS);
     return () => window.clearInterval(timer);
-  }, [activeId, datasetInfo?.status, datasetInfo?.current_step,
-      datasetInfo?.index_version, loadDatasets]);
+  }, [activeId, observedStatus, observedStep, observedIndexVersion,
+      observedModelVersion, loadDatasets]);
 
   const views = datasetModel?.available_views || datasetInfo?.available_views || {};
   const isExample = activeId === "example";

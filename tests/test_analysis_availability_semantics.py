@@ -662,6 +662,33 @@ def test_a_transient_model_load_is_retried_before_the_gallery_is_shown():
     assert "firstModel" in body
     assert body.count("client.datasetModel()") == 2
     assert "signal?.aborted" in body
+    assert "payloadMatchesIndexVersion(model, info)" in body
+
+
+def test_a_terminal_run_keeps_polling_until_its_model_version_is_current():
+    body = APP.read_text(encoding="utf-8")
+    poll = body.split("// Stage-aware runs refresh themselves")[1] \
+        .split("const views =")[0]
+    assert "observedModelVersion === observedIndexVersion" in poll
+    assert "payloadMatchesIndexVersion(model, info)" in poll
+    assert "observedModelVersion" in poll
+
+
+def test_dataset_status_exposes_the_same_index_version_contract_as_the_model():
+    backend = (ROOT / "webapp" / "backend" / "main.py").read_text(encoding="utf-8")
+    endpoint = backend.split('def dataset_status(dataset_id: str)')[1] \
+        .split('@app.post("/api/runs/example/load")')[0]
+    assert 'model["index_version"] = index_version(run_dir)' in endpoint
+
+
+def test_candidate_empty_state_distinguishes_one_model_from_identical_models():
+    gene = (ROOT / "webapp" / "frontend" / "src" / "pages"
+            / "GeneExplorer.jsx").read_text(encoding="utf-8")
+    assert "activeProteinCount === 1" in gene
+    assert "Only one protein isoform was available for this species" in gene
+    assert "encode identical protein sequences" in gene
+    assert "activePrimaryProtein" in gene
+    assert "activeIsSidebar ? selection?.primaryProteinId : activePrimaryProtein" in gene
 
 
 def test_the_gallery_rejects_a_scope_from_another_dataset():
@@ -679,7 +706,7 @@ def test_a_superseded_dataset_load_is_aborted():
 
 def test_polling_stops_only_at_a_stable_state():
     body = APP.read_text(encoding="utf-8")
-    assert "TERMINAL_RUN_STATES.has(datasetInfo?.status)" in body
+    assert "TERMINAL_RUN_STATES.has(observedStatus)" in body
     # A state change must refresh the registry too, so My Runs and the selector move with
     # the page rather than needing a browser refresh.
     poll = body.split("const timer = window.setInterval")[1].split("POLL_INTERVAL_MS")[0]

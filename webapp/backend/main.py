@@ -56,6 +56,9 @@ from exondomaincompare.runs.registry import (  # noqa: E402
 from exondomaincompare.config import (CONFIG_ENV, DATA_ENV, LOCAL_PROFILE_ENV,
                                       LRZ_PROFILE_ENV, RUNS_ENV, load_config)
 from exondomaincompare.runs.layout import RunLayout, RunLayoutVersion  # noqa: E402
+from exondomaincompare.shared_gene_analysis.analysis_availability import (  # noqa: E402
+    index_version,
+)
 
 RUNTIME_CONFIG = load_config(repository_root=PROJECT_ROOT)
 PROJECT_ROOT = RUNTIME_CONFIG.repository_root
@@ -2962,6 +2965,7 @@ def dataset_status(dataset_id: str) -> Dict[str, Any]:
     run_dir = ds["run_base"]
     _ensure_run_indices(run_dir)
     model = derive_status_model(run_dir)
+    model["index_version"] = index_version(run_dir)
     return {"id": f"run:{ds['run_id']}", "kind": "run", **model,
             "config": read_json(run_dir / "run_config.json", {}) or {},
             "files": _local_run_file_checks(run_dir)}

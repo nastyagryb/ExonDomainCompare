@@ -461,13 +461,24 @@ function CandidateEvidencePanel({ model, idx, multiSpecies, sp }) {
   const candidates = activeIsSidebar
     ? (selection?.rankedCandidates || [])
     : (speciesOptions.find((o) => o.id === activeSpecies)?.candidates || []);
+  const isoformRows = model?.shared_indices?.gene_explorer?.isoforms
+    || model?.protein_models || [];
+  const activeIsoforms = isoformRows
+    .filter((row) => (row.species_id || row.species) === activeSpecies);
+  const activeProteinCount = new Set(activeIsoforms
+    .map((row) => row.protein_id)
+    .filter(Boolean)).size;
+  const activePrimaryProtein = (activeIsoforms.find((row) =>
+    row.primary_status === "primary" || row.is_primary)?.protein_id
+    || activeIsoforms[0]?.protein_id || "");
   if (!candidates.length && !multiSpecies) {
     return <Empty title="Exploratory Candidate Evidence unavailable" />;
   }
   const selectedId = activeIsSidebar ? selection?.selectedCandidateId : localSelId;
   const selected = candidates.find((c) => c.candidate_id === selectedId) || candidates[0];
   const onSelect = (c) => activeIsSidebar ? selection?.selectCandidate(c) : setLocalSelId(c.candidate_id);
-  const refProtein = selected?.reference_protein || selection?.primaryProteinId;
+  const refProtein = selected?.reference_protein
+    || (activeIsSidebar ? selection?.primaryProteinId : activePrimaryProtein);
   const coord = selection?.model?.shared_indices?.coordinate_track_index
     || selection?.model?.shared_event_indices?.coordinates;
   const coordSpecies = (coord?.species || []).find((s) => (s.species === activeSpecies || s.species_id === activeSpecies))
@@ -496,11 +507,11 @@ function CandidateEvidencePanel({ model, idx, multiSpecies, sp }) {
         </div>
       )}
       {!candidates.length ? (
-        // The scan keeps every difference block down to a single residue, so an empty
-        // list means the isoforms of this species encode the same protein — not that a
-        // threshold hid something. The wording says which of the two it is.
+        // An empty list can mean one available model or several identical proteins.
         <Empty title="No protein-isoform difference block was detected."
-          hint="The compared isoforms of this species encode identical protein sequences, so there is no difference block to explore. Nothing was removed by a length threshold." />
+          hint={activeProteinCount === 1
+            ? "Only one protein isoform was available for this species, so no within-species protein-isoform comparison could be made."
+            : "The compared isoforms of this species encode identical protein sequences, so there is no difference block to explore. Nothing was removed by a length threshold."} />
       ) : (
       <div className="cand-page">
         {/* A — compact horizontal candidate strip. The ranking no longer reserves

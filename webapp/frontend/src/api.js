@@ -272,6 +272,13 @@ export function payloadMatchesDataset(payload, datasetId) {
   return true;
 }
 
+/** Whether a scientific model was built from the indices named by its status payload. */
+export function payloadMatchesIndexVersion(payload, status) {
+  const expected = String(status?.index_version || "");
+  if (!expected) return true;
+  return String(payload?.index_version || "") === expected;
+}
+
 export const fileUrl = (path, inline = false) =>
   `${API_BASE}/api/download?path=${encodeURIComponent(path)}${inline ? "&inline=true" : ""}`;
 

@@ -108,6 +108,12 @@ const runStates = await import(resolve(SRC, "runStates.js"));
   check("the nested dataset block is enough to match",
     payloadMatchesDataset({ dataset: { id: "run:2026_hba", run_id: "2026_hba" } },
       "run:2026_hba"));
+  check("a model from the status index version is accepted",
+    api.payloadMatchesIndexVersion({ index_version: "v2" }, { index_version: "v2" }));
+  check("a stale pre-cluster model is rejected after the indices change",
+    !api.payloadMatchesIndexVersion({ index_version: "v1" }, { index_version: "v2" }));
+  check("legacy status without a version remains compatible",
+    api.payloadMatchesIndexVersion({ index_version: "v1" }, {}));
 }
 
 // --------------------------------------------------------------------------- //
