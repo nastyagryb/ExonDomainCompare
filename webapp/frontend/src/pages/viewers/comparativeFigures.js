@@ -1,7 +1,7 @@
 // Publication figures for the generic Comparative Exon–Domain Boundary Explorer.
 //
 // Every figure is built from the canonical comparative index that
-// scripts/shared_gene_analysis/boundary_dashboard.py publishes. Nothing here
+// src/exondomaincompare/shared_gene_analysis/boundary_dashboard.py publishes. Nothing here
 // re-derives which boundaries are comparable, which species were mapped, or how
 // confident a mapping is — a second implementation of that logic in the browser
 // would be free to disagree with the backend, and a reader could not tell which

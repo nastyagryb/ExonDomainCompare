@@ -37,9 +37,9 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import _fgfr2_msa_common as M  # noqa: E402
+from exondomaincompare.scientific import fgfr2_msa_common as M  # noqa: E402
 from fgfr2 import human_reference_control as HRC  # noqa: E402
-import fgfr2_plot_style as S  # noqa: E402
+from exondomaincompare.presentation import fgfr2_plot_style as S  # noqa: E402
 
 os.environ.setdefault("MPLCONFIGDIR", tempfile.mkdtemp(prefix="mpl_closure_"))
 import matplotlib.pyplot as plt  # noqa: E402

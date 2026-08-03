@@ -16,9 +16,9 @@ SGA = ROOT / "scripts" / "shared_gene_analysis"
 if str(SGA) not in sys.path:
     sys.path.insert(0, str(SGA))
 
-import boundary_classification as bc  # noqa: E402
-import protein_coordinate_model as pcm  # noqa: E402
-import validate_protein_coordinate_model as vc  # noqa: E402
+from exondomaincompare.shared_gene_analysis import boundary_classification as bc  # noqa: E402
+from exondomaincompare.shared_gene_analysis import protein_coordinate_model as pcm  # noqa: E402
+from exondomaincompare.shared_gene_analysis import validate_protein_coordinate_model as vc  # noqa: E402
 
 TP53_DANIO_RUN = ROOT / "runs" / "2026-07-21_1436_custom_run"
 
@@ -188,7 +188,7 @@ def _load_plots():
     import os
     os.environ.setdefault("MPLCONFIGDIR", "/tmp/mplcache")
     sys.path.insert(0, str(ROOT / "scripts" / "plotting"))
-    import shared_gene_plots as sp  # noqa
+    from exondomaincompare.presentation import shared_gene_plots as sp  # noqa
     sp.apply_style()
     return sp
 

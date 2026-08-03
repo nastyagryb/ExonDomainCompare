@@ -35,9 +35,9 @@ from typing import Dict, List, Optional
 SCRIPTS_DIR = Path(__file__).resolve().parents[1]
 if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
-from framework.data_contract import file_sha256, stamp_payload  # noqa: E402
-from framework.local_registry import resolve_run_record  # noqa: E402
-from framework.portable_config import CONTROL_PATH_ENV, load_config  # noqa: E402
+from exondomaincompare.contracts import file_sha256, stamp_payload  # noqa: E402
+from exondomaincompare.runs.registry import resolve_run_record  # noqa: E402
+from exondomaincompare.config import CONTROL_PATH_ENV, load_config  # noqa: E402
 
 RUNTIME_CONFIG = load_config(repository_root=Path(__file__).resolve().parents[2])
 PROJECT_ROOT = RUNTIME_CONFIG.repository_root

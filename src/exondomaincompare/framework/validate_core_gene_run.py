@@ -3,12 +3,12 @@
 
 Prints completed milestones, missing required/optional files, the inferred
 status and the suggested next action. Uses the exact same milestone logic as the
-webapp backend (scripts/framework/core_run_milestones.py), so a partial or empty
+webapp backend (src/exondomaincompare/framework/core_run_milestones.py), so a partial or empty
 run is classified identically in both places.
 
 Usage:
-  python scripts/framework/validate_core_gene_run.py --run-id <run_id>
-  python scripts/framework/validate_core_gene_run.py --run-id <run_id> --json
+  python -m exondomaincompare.framework.validate_core_gene_run --run-id <run_id>
+  python -m exondomaincompare.framework.validate_core_gene_run --run-id <run_id> --json
 """
 from __future__ import annotations
 

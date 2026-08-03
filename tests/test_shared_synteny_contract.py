@@ -40,8 +40,8 @@ def _run_dir(key: str) -> Path:
 
 
 def _index(key: str) -> dict:
-    from shared_gene_analysis.common import SharedRunContext
-    from shared_gene_analysis.indices.synteny_locus import build_synteny_locus_index
+    from exondomaincompare.shared_gene_analysis.common import SharedRunContext
+    from exondomaincompare.shared_gene_analysis.indices.synteny_locus import build_synteny_locus_index
     return build_synteny_locus_index(SharedRunContext.from_run_dir(_run_dir(key)))
 
 
@@ -165,7 +165,7 @@ def test_complete_five_and_five_case_is_reported_as_complete(key):
 
 def test_unequal_neighbour_counts_are_stated_rather_than_padded():
     """A genome with fewer real loci on one side must say so, not invent a gene."""
-    from shared_gene_analysis import synteny_contract as sc
+    from exondomaincompare.shared_gene_analysis import synteny_contract as sc
     neighbours = (
         [sc.neighbour_locus(side="upstream", rank=i, source_symbol=f"UP{i}",
                             resolved_symbol=f"UP{i}", strand="+") for i in range(1, 6)]
@@ -185,7 +185,7 @@ def test_unequal_neighbour_counts_are_stated_rather_than_padded():
 
 
 def test_upstream_reads_outward_to_inward_so_the_display_order_is_genomic():
-    from shared_gene_analysis import synteny_contract as sc
+    from exondomaincompare.shared_gene_analysis import synteny_contract as sc
     neighbours = [
         sc.neighbour_locus(side="upstream", rank=i, source_symbol=f"UP{i}")
         for i in range(1, 4)
@@ -202,7 +202,7 @@ def test_upstream_reads_outward_to_inward_so_the_display_order_is_genomic():
 
 def test_status_and_orthology_strings_carry_readable_labels():
     """Internal state strings never reach the interface as the primary label."""
-    from shared_gene_analysis import synteny_contract as sc
+    from exondomaincompare.shared_gene_analysis import synteny_contract as sc
     for status in sc.STATUS_DISPLAY:
         label, definition = sc.status_display(status)
         assert "_" not in label

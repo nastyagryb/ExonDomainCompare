@@ -16,15 +16,15 @@ from __future__ import annotations
 import argparse
 from typing import Any, Dict, List
 
-from framework import production_contract
-from framework.data_contract import write_freshness_contract, write_payload_contracts
-from shared_gene_analysis.public_paths import (
+from exondomaincompare.framework import production_contract
+from exondomaincompare.contracts import write_freshness_contract, write_payload_contracts
+from exondomaincompare.shared_gene_analysis.public_paths import (
     sanitize_public_payload,
     write_public_download_projections,
 )
 
-from .common import GenericContext, display_species, load_context, read_tsv, write_json
-from .stages import event_layer_for_gene
+from exondomaincompare.generic_gene.common import GenericContext, display_species, load_context, read_tsv, write_json
+from exondomaincompare.generic_gene.stages import event_layer_for_gene
 
 SCHEMA_VERSION = 2
 

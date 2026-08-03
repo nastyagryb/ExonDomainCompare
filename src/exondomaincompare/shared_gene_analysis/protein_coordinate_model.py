@@ -1,29 +1,3 @@
-"""protein_coordinate_model.py — the shared protein-coordinate data contract.
-
-One canonical, read-only coordinate model per (species, selected primary protein)
-consumed by the Exon Map, Domain Architecture and Boundary views. It is a pure
-projection over the real Core-run TSV contract; it never invents coordinates and
-it never rewrites the FGFR2 freeze.
-
-Sources (all under ``<run>/results/core_gene_analysis``):
-  * ``exon_protein_map.tsv``            — coding exon -> protein aa intervals
-  * ``domain_features.tsv``             — representative InterPro domains (+ layers)
-  * ``interpro_annotations.tsv``        — families / member signatures / sites (layers)
-  * ``tm_features.tsv``                 — pyTMHMM TM segments (0 rows == real "no TM")
-  * ``exon_domain_boundary_distances.tsv`` — internal boundary classification
-  * ``event_candidate_regions.tsv``     — exploratory candidate regions (optional)
-  * ``primary_selection_evidence.tsv``  — the selected primary protein per species
-  * ``proteins_primary.faa``            — authoritative protein length (optional)
-  * ``run_config.json``                 — gene, species, scientific names, provenance
-
-Coordinate system: ``protein_1_based_inclusive``.
-
-Repeated InterPro entries (e.g. the three ``IPR007110`` Ig-like domains of FGFR1)
-are separate feature *instances*. Every representative domain therefore carries a
-``domain_instance_id`` of the form ``<accession>:<start>-<end>`` and every boundary
-persists the instance it was actually measured against. A feature instance is never
-resolved by InterPro accession alone.
-"""
 from __future__ import annotations
 
 import csv
@@ -335,7 +309,7 @@ def build_models_for_run(run_dir: Path, project_root: Optional[Path] = None) -> 
                 "gene_symbol": gene_symbol,
                 "species_id": sp,
                 "coordinate_system": COORDINATE_SYSTEM,
-                "generated_by": "scripts/shared_gene_analysis/protein_coordinate_model.py",
+                "generated_by": "src/exondomaincompare/shared_gene_analysis/protein_coordinate_model.py",
                 "generated_at": datetime.now(timezone.utc).isoformat(),
                 "source_files": src_files,
                 "clade": (species_meta.get(sp) or {}).get("clade") or "",

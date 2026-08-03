@@ -30,7 +30,7 @@ for _p in (ROOT / "scripts", ROOT / "scripts" / "shared_gene_analysis"):
         sys.path.insert(0, str(_p))
 
 from fgfr2 import coordinate_model as cm  # noqa: E402
-from shared_gene_analysis.msa_coordinates import read_aligned_fasta  # noqa: E402
+from exondomaincompare.shared_gene_analysis.msa_coordinates import read_aligned_fasta  # noqa: E402
 
 DERIVED = ROOT / "results" / "derived" / "example"
 
@@ -69,7 +69,7 @@ def write_reference_alignment(model_index: Dict[str, Any], source_path: Path,
 
 def build(derived: Path = DERIVED) -> Dict[str, Any]:
     """Build the FGFR2 comparative dataset from the primary reference models."""
-    from shared_gene_analysis.comparative_dataset import build_comparative_dataset
+    from exondomaincompare.shared_gene_analysis.comparative_dataset import build_comparative_dataset
 
     # Resolved against the project root, because the alignment path is later reported
     # relative to it. A caller passing "runs/<id>" is as legitimate as an absolute path.

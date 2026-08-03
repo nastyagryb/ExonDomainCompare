@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, List
 
-from .common import GenericContext, load_context, read_json, read_tsv, write_tsv  # noqa: E402
+from exondomaincompare.generic_gene.common import GenericContext, load_context, read_json, read_tsv, write_tsv  # noqa: E402
 
 # Import only the canonical plotting API (built on the FGFR2 primitives).
 _SCRIPTS = Path(__file__).resolve().parents[1]

@@ -29,8 +29,8 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT / "scripts") not in sys.path:
     sys.path.insert(0, str(ROOT / "scripts"))
 
-from framework.local_registry import RegistryError, resolve_run_record  # noqa: E402
-from framework.portable_config import load_config  # noqa: E402
+from exondomaincompare.runs.registry import RegistryError, resolve_run_record  # noqa: E402
+from exondomaincompare.config import load_config  # noqa: E402
 
 RUNTIME_CONFIG = load_config(repository_root=ROOT)
 
@@ -97,7 +97,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     run_dir = record.path
     out = model_path(run_dir)
     if args.rebuild_model:
-        from shared_gene_analysis.protein_coordinate_model import build_models_for_run
+        from exondomaincompare.shared_gene_analysis.protein_coordinate_model import build_models_for_run
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(json.dumps(build_models_for_run(run_dir), indent=2))
     if not out.exists():

@@ -19,8 +19,8 @@ SGA = ROOT / "scripts" / "shared_gene_analysis"
 if str(SGA) not in sys.path:
     sys.path.insert(0, str(SGA))
 
-import boundary_dashboard as bd  # noqa: E402
-import protein_coordinate_model as pcm  # noqa: E402
+from exondomaincompare.shared_gene_analysis import boundary_dashboard as bd  # noqa: E402
+from exondomaincompare.shared_gene_analysis import protein_coordinate_model as pcm  # noqa: E402
 
 # Both dashboards are built from committed fixtures rather than from the live run
 # registry: the Core tables are verbatim copies of the runs they were taken from

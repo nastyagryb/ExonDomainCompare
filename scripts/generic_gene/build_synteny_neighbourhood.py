@@ -9,7 +9,7 @@ from __future__ import annotations
 import argparse
 from typing import Any, Dict
 
-from .common import GenericContext, load_context, read_tsv, write_tsv
+from exondomaincompare.generic_gene.common import GenericContext, load_context, read_tsv, write_tsv
 
 COLUMNS = [
     "species_id", "gene_symbol", "neighbor_symbol", "side", "order",

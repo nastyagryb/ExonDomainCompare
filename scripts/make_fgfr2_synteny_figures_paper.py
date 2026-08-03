@@ -24,9 +24,9 @@ from pathlib import Path
 from typing import List, Tuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import _fgfr2_msa_common as M  # noqa: E402
-from shared_gene_analysis.strand import same_strand, strand_sign  # noqa: E402
-import fgfr2_plot_style as S  # noqa: E402
+from exondomaincompare.scientific import fgfr2_msa_common as M  # noqa: E402
+from exondomaincompare.shared_gene_analysis.strand import same_strand, strand_sign  # noqa: E402
+from exondomaincompare.presentation import fgfr2_plot_style as S  # noqa: E402
 from matplotlib.patches import FancyBboxPatch, Rectangle  # noqa: E402
 
 MAIN_SPECIES = ["homo_sapiens", "mus_musculus", "pan_troglodytes", "gorilla_gorilla_gorilla",

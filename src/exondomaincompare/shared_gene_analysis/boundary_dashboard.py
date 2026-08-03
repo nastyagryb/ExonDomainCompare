@@ -746,7 +746,7 @@ def build_boundary_dashboard(index: Dict[str, Any],
                                                       DEFAULT_NEAR_EDGE_THRESHOLD_AA),
         "species_available": [m.get("species_id") for m in models
                               if m.get("status") == "available"],
-        "generated_by": "scripts/shared_gene_analysis/boundary_dashboard.py",
+        "generated_by": "src/exondomaincompare/shared_gene_analysis/boundary_dashboard.py",
     }
     if mode in (PAGE_SINGLE, PAGE_MULTI, PAGE_PENDING) and primary is not None:
         out["single_species"] = build_single_species_dashboard(primary, gene)

@@ -99,12 +99,12 @@ sent to the cluster).
 
 ## Real live runner (experimental)
 
-`scripts/framework/run_core_gene_analysis.py` is a real, gene-agnostic core
+`src/exondomaincompare/framework/run_core_gene_analysis.py` is a real, gene-agnostic core
 runner (not only a projection of FGFR2 outputs):
 
 ```bash
 # create: collect gene models/proteins, build the core contract + primary FASTA
-python scripts/framework/run_core_gene_analysis.py \
+python -m exondomaincompare.framework.run_core_gene_analysis \
     --gene-config configs/genes/drafts/FGFR1_core_only_pilot.yaml \
     --species "Gallus gallus" --selection-method canonical_if_available \
     --input-mode auto
@@ -137,7 +137,7 @@ schema change.
 ## Required milestones and the validator
 
 Every core run is classified by **file-based milestones** (single source of truth:
-`scripts/framework/core_run_milestones.py`, used by both the CLI validator and the
+`src/exondomaincompare/framework/core_run_milestones.py`, used by both the CLI validator and the
 webapp):
 
 1. **run setup** — `run_config.json`, `gene_config.yaml`, `species_list.txt`, `status.json`
@@ -150,7 +150,7 @@ webapp):
    `exon_domain_boundary_distances.tsv`, `core_gene_report.json`, generic indices
 
 ```bash
-python scripts/framework/validate_core_gene_run.py --run-id <run_id>
+python -m exondomaincompare.framework.validate_core_gene_run --run-id <run_id>
 ```
 
 **Honest status semantics** (a run never looks analysis-ready when required core
@@ -168,7 +168,7 @@ outputs are missing):
 
 ## Optional, exploratory event-candidate scan
 
-`scripts/framework/scan_isoform_event_candidates.py` compares a gene's protein
+`src/exondomaincompare/framework/scan_isoform_event_candidates.py` compares a gene's protein
 isoforms within a species and records candidate isoform-specific regions to
 `event_candidate_regions.tsv`. These are **candidates only — not validated
 events**, they never enable event-specific views, and the run succeeds with or
@@ -189,7 +189,7 @@ without the scan.
 ## FGFR2 mapping
 
 The existing FGFR2 outputs can be projected into these core files by
-`scripts/adapters/fgfr2_core_analysis_adapter.py` (projection only — no biology
+`src/exondomaincompare/adapters/fgfr2_core_analysis_adapter.py` (projection only — no biology
 recomputed). FGFR2 additionally has the event layer (IIIb/IIIc) on top.
 
 ## Support levels
@@ -209,15 +209,15 @@ yet. See `configs/genes/drafts/TEMPLATE_user_defined_event.yaml`.
 
 ## Building generic indices from core outputs
 
-`scripts/framework/build_core_gene_indices.py` turns the core contract TSVs into
+`src/exondomaincompare/framework/build_core_gene_indices.py` turns the core contract TSVs into
 the generic website indices, **without** any event outputs:
 
 ```bash
 # from a run's core outputs
-python scripts/framework/build_core_gene_indices.py --run-id <run_id>
+python -m exondomaincompare.framework.build_core_gene_indices --run-id <run_id>
 
 # from an explicit core dir (e.g. the synthetic mock), no event region
-python scripts/framework/build_core_gene_indices.py \
+python -m exondomaincompare.framework.build_core_gene_indices \
     --core-dir artifacts/core_gene_analysis/mock \
     --config configs/genes/drafts/TPM1_core_only_pilot.yaml \
     --dataset-id mock:tpm1_core_only \

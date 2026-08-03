@@ -25,9 +25,9 @@ Output:
   * uniprot_event_evidence_report.json  (always written; transparent status)
 
 Usage:
-  python scripts/framework/collect_uniprot_event_evidence.py --run-id <run_id>
-  python scripts/framework/collect_uniprot_event_evidence.py --run-id <run_id> --timeout 8
-  python scripts/framework/collect_uniprot_event_evidence.py --run-id <run_id> --offline
+  python -m exondomaincompare.framework.collect_uniprot_event_evidence --run-id <run_id>
+  python -m exondomaincompare.framework.collect_uniprot_event_evidence --run-id <run_id> --timeout 8
+  python -m exondomaincompare.framework.collect_uniprot_event_evidence --run-id <run_id> --offline
 """
 from __future__ import annotations
 

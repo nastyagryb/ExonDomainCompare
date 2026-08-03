@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import csv
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -28,10 +29,10 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from shared_gene_analysis import assembly_selection as asel  # noqa: E402
-from shared_gene_analysis import gene_identification as gid  # noqa: E402
-from shared_gene_analysis import model_recovery as recovery  # noqa: E402
-from shared_gene_analysis import taxon_resolution as tr  # noqa: E402
+from exondomaincompare.shared_gene_analysis import assembly_selection as asel  # noqa: E402
+from exondomaincompare.shared_gene_analysis import gene_identification as gid  # noqa: E402
+from exondomaincompare.shared_gene_analysis import model_recovery as recovery  # noqa: E402
+from exondomaincompare.shared_gene_analysis import taxon_resolution as tr  # noqa: E402
 
 import build_species_registry_improved as registry  # noqa: E402
 
@@ -214,7 +215,7 @@ def test_the_validated_panel_still_resolves_without_a_taxonomy_query(stub_taxono
     ) if False else None  # placeholder replaced below
 
     # Installed after the cache check so a cache miss is what raises.
-    import shared_gene_analysis.taxon_resolution as module
+    import exondomaincompare.shared_gene_analysis.taxon_resolution as module
     original_search = module._esearch_taxonomy
     module._esearch_taxonomy = forbidden
     try:
@@ -817,12 +818,14 @@ def test_transcript_selection_reports_instead_of_raising_valueerror(tmp_path):
                     "FGFR2 annotation could be retrieved."),
     }), encoding="utf-8")
 
+    env = os.environ.copy()
+    env["PYTHONPATH"] = str(ROOT / "src")
     proc = subprocess.run(
         [sys.executable,
          str(ROOT / "scripts" / "select_fgfr2_transcripts_annotation_aware_v2.py"),
          "--transcripts", str(transcripts), "--exons", str(exons),
          "--outdir", str(tmp_path / "out")],
-        cwd=ROOT, capture_output=True, text=True)
+        cwd=ROOT, capture_output=True, text=True, env=env)
 
     assert proc.returncode == 2, proc.stderr
     assert "Traceback" not in proc.stderr

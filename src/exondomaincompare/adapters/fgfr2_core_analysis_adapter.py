@@ -23,8 +23,8 @@ Outputs (under <out>/):
     core_gene_report.json
 
 Examples:
-    python scripts/adapters/fgfr2_core_analysis_adapter.py --run-id <run_id>
-    python scripts/adapters/fgfr2_core_analysis_adapter.py --example \
+    python -m exondomaincompare.adapters.fgfr2_core_analysis_adapter --run-id <run_id>
+    python -m exondomaincompare.adapters.fgfr2_core_analysis_adapter --example \
         --out artifacts/core_gene_analysis/example
 """
 from __future__ import annotations

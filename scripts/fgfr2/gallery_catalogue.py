@@ -48,8 +48,8 @@ if str(ROOT / "scripts") not in sys.path:
     sys.path.insert(0, str(ROOT / "scripts"))
 
 from fgfr2 import coordinate_model as cm  # noqa: E402
-from shared_gene_analysis import model_roles as mr  # noqa: E402
-from shared_gene_analysis import species_order as so  # noqa: E402
+from exondomaincompare.shared_gene_analysis import model_roles as mr  # noqa: E402
+from exondomaincompare.shared_gene_analysis import species_order as so  # noqa: E402
 
 SCHEMA_VERSION = 1
 GENE_SYMBOL = "FGFR2"

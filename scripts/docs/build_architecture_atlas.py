@@ -28,7 +28,7 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
-from framework.portable_config import load_config  # noqa: E402
+from exondomaincompare.config import load_config  # noqa: E402
 
 RUNTIME_CONFIG = load_config(repository_root=PROJECT_ROOT)
 ARCH = PROJECT_ROOT / "docs" / "architecture"

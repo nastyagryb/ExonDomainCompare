@@ -1,9 +1,3 @@
-"""Portable projections for website and download payloads.
-
-Raw run records deliberately retain the paths used by the analysis runtime.
-Anything exposed by the website or its download catalogue passes through this
-module so those implementation details never disclose a user's machine.
-"""
 from __future__ import annotations
 
 import json

@@ -26,7 +26,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import _fgfr2_msa_common as M  # noqa: E402
+from exondomaincompare.scientific import fgfr2_msa_common as M  # noqa: E402
 
 try:
     from Bio.Align import PairwiseAligner, substitution_matrices

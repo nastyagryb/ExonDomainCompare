@@ -1,23 +1,4 @@
 #!/usr/bin/env python3
-"""Why a run's views are or are not available, and whether a run is really ready.
-
-Two questions the project previously answered by guessing:
-
-1. *Is this derived artefact current?* A run's website indices summarize the closure
-   directory. Re-running the pre-InterPro pipeline rewrites that directory but does not
-   touch the indices, and nothing compared the two. An index older than the outputs it
-   describes still looked perfectly valid, so a repaired run kept serving the answer it
-   had given before the repair — for the *Equus quagga* run that meant three empty views
-   over data that was fully present on disk.
-
-2. *Why is a view empty?* An index carrying only ``available: false`` cannot distinguish
-   "this species has no second isoform" from "this file was never written". The frontend
-   had to guess, and it guessed biology, telling the user a cassette was absent when the
-   cassette table simply had not been rebuilt.
-
-Both answers need the same thing: states that separate a missing artefact from an absent
-result, and a dependency order that says which artefact a change invalidates.
-"""
 from __future__ import annotations
 
 import json
@@ -157,9 +138,6 @@ REQUIRED_FOR_READY_WITH_DOMAINS: Tuple[str, ...] = (
 )
 
 
-# --------------------------------------------------------------------------- #
-# Filesystem helpers
-# --------------------------------------------------------------------------- #
 def _newest_mtime(path: Path, ignore: Sequence[str] = ()) -> Optional[float]:
     """Newest modification time under ``path``, or None when it holds no file."""
     if path.is_file():
@@ -221,7 +199,7 @@ def _has_payload(data: Any) -> bool:
     if present:
         # The index is a collection and every collection in it is empty.
         return False
-    # A summary index — gate status, counters, KPIs — carries its content in its own
+    # A summary index: gate status, counters, KPIs: carries its content in its own
     # keys. Requiring an ``available`` flag it never had reported the run overview as
     # an absent scientific result.
     if data.get("available") is True:
@@ -288,9 +266,7 @@ def indices_are_stale(run_dir: Path, tolerance_s: float = 1.0,
     return False, "legacy unversioned indices pass the mtime compatibility adapter"
 
 
-# --------------------------------------------------------------------------- #
-# View availability
-# --------------------------------------------------------------------------- #
+
 @dataclass
 class ViewState:
     view: str
@@ -313,13 +289,6 @@ class ViewState:
 
 def _cluster_outputs_present(run_dir: Path) -> bool:
     """Whether usable cluster results exist for this run's current proteins.
-
-    File presence alone is not the question. A repaired coordinate model can
-    change a protein sequence while every returned output file stays exactly
-    where it was, and domain calls scored for a superseded sequence must not be
-    presented as this run's result. The sequences are therefore compared by
-    digest, and results that no longer match count as absent here even though
-    they remain on disk for diagnostics.
     """
     ips = (run_dir / "results" / "14_interproscan" / "primary" / "output")
     tm = (run_dir / "results" / "15_exon_domain_boundary_post_interpro"

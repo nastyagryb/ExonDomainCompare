@@ -22,8 +22,8 @@ Output (same directory):
   * event_region_evidence.tsv    (always written; header-only if no candidates)
 
 Usage:
-  python scripts/framework/build_event_region_evidence.py --run-id <run_id>
-  python scripts/framework/build_event_region_evidence.py --core-dir <dir> [--analysis-id ID] [--gene-symbol SYM]
+  python -m exondomaincompare.framework.build_event_region_evidence --run-id <run_id>
+  python -m exondomaincompare.framework.build_event_region_evidence --core-dir <dir> [--analysis-id ID] [--gene-symbol SYM]
 """
 from __future__ import annotations
 

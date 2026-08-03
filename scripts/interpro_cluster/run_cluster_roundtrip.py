@@ -46,11 +46,11 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from ssh_common import configure  # noqa: E402
+from exondomaincompare.cluster.ssh_common import configure  # noqa: E402
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from framework.data_contract import stamp_payload  # noqa: E402
-from framework.local_registry import resolve_run_record  # noqa: E402
-from framework.portable_config import (  # noqa: E402
+from exondomaincompare.contracts import stamp_payload  # noqa: E402
+from exondomaincompare.runs.registry import resolve_run_record  # noqa: E402
+from exondomaincompare.config import (  # noqa: E402
     CONTROL_PATH_ENV,
     ConfigurationError,
     RuntimeConfig,
@@ -441,7 +441,7 @@ class Roundtrip:
         """The canonical status verdict shared with the post-cluster runner."""
         try:
             sys.path.insert(0, str(REPO / "scripts"))
-            from shared_gene_analysis.finalize_run_status import evaluate_run
+            from exondomaincompare.shared_gene_analysis.finalize_run_status import evaluate_run
             report = evaluate_run(self.run_dir)
         except Exception:
             return None
@@ -455,7 +455,7 @@ class Roundtrip:
         """The end state of a generic core-only run, from its own milestone evaluator."""
         try:
             sys.path.insert(0, str(REPO / "scripts"))
-            from framework.core_run_milestones import evaluate_core_run, is_core_only_run
+            from exondomaincompare.framework.core_run_milestones import evaluate_core_run, is_core_only_run
         except Exception:
             return None
         try:
@@ -473,7 +473,7 @@ class Roundtrip:
     def _readiness(self, st: Dict[str, Any]) -> Optional[Tuple[bool, str]]:
         try:
             sys.path.insert(0, str(REPO / "scripts"))
-            from shared_gene_analysis.run_availability import models_run, readiness
+            from exondomaincompare.shared_gene_analysis.run_availability import models_run, readiness
         except Exception:
             return None
         # The availability contract describes the event-pipeline layout. A generic

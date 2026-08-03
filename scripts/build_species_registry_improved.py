@@ -192,7 +192,7 @@ def deduplicate_preserve_order(species_names: Sequence[str]) -> List[str]:
 
 def _resolve_taxon(name: str, offline: bool):
     """Resolve one name against NCBI Taxonomy, or report why it could not be."""
-    from shared_gene_analysis import taxon_resolution as tr
+    from exondomaincompare.shared_gene_analysis import taxon_resolution as tr
     return tr.resolve(name, offline=offline, known=_taxid_cache())
 
 
@@ -223,7 +223,7 @@ def build_registry_rows(
     if default_assembly_preference not in ALLOWED_ASSEMBLY_PREFERENCES:
         raise ValueError(f"Invalid assembly preference: {default_assembly_preference}")
 
-    from shared_gene_analysis import taxon_resolution as tr
+    from exondomaincompare.shared_gene_analysis import taxon_resolution as tr
 
     warnings = validate_unique_species(species_names)
     rows: List[Dict[str, str]] = []

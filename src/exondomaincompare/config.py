@@ -1,8 +1,4 @@
-"""Versioned, shared configuration and capability contract.
-
-Precedence is deterministic: explicit call/CLI overrides, environment, user
-configuration, then the tracked repository default.
-"""
+"""Versioned, shared configuration and capability contract."""
 from __future__ import annotations
 
 import copy

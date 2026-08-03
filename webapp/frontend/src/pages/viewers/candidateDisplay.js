@@ -1,7 +1,7 @@
 /**
  * One display representation for exploratory candidate regions.
  *
- * The coordinate model (scripts/shared_gene_analysis/protein_coordinate_model.py)
+ * The coordinate model (src/exondomaincompare/shared_gene_analysis/protein_coordinate_model.py)
  * already groups raw candidate rows into display clusters and assigns each cluster a
  * deterministic rank and lane: rows are merged only when they describe the same
  * primary-protein interval in the same alignment block, so an insertion and a deletion

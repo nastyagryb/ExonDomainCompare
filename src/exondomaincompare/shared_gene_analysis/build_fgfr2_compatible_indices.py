@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import argparse
-import sys
 from pathlib import Path
 from typing import Any, Dict, List
 
@@ -12,11 +11,10 @@ from .indices.coordinate_track import build_coordinate_track_index
 from .indices.msa import build_msa_index
 from .indices.synteny_locus import build_synteny_locus_index
 
-ROOT = Path(__file__).resolve().parents[2]
-if str(ROOT / "scripts") not in sys.path:
-    sys.path.insert(0, str(ROOT / "scripts"))
-from framework.local_registry import discover_run  # noqa: E402
-from framework.portable_config import load_config  # noqa: E402
+from exondomaincompare.config import discover_repository_root, load_config
+from exondomaincompare.runs.registry import discover_run
+
+ROOT = discover_repository_root(__file__)
 
 OUTPUT_FILES = {
     "coordinate_track_index": build_coordinate_track_index,

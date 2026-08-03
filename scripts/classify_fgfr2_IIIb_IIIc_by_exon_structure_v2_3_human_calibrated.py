@@ -59,10 +59,10 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from shared_gene_analysis.strand import is_reverse, same_strand  # noqa: E402
+from exondomaincompare.shared_gene_analysis.strand import is_reverse, same_strand  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lib import protein_lookup as PL  # noqa: E402
+from exondomaincompare.scientific import protein_lookup as PL  # noqa: E402
 
 SCRIPT_NAME = "classify_fgfr2_IIIb_IIIc_by_exon_structure_v2.py"
 SCRIPT_VERSION = "2.4.0_sequence_calibrated_direction"

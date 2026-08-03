@@ -40,14 +40,14 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from fgfr2 import human_reference_control
-from shared_gene_analysis import run_availability as ra
-from shared_gene_analysis import species_order as _species_order
-from shared_gene_analysis import synteny_contract as sc
-from shared_gene_analysis.public_paths import (
+from exondomaincompare.shared_gene_analysis import run_availability as ra
+from exondomaincompare.shared_gene_analysis import species_order as _species_order
+from exondomaincompare.shared_gene_analysis import synteny_contract as sc
+from exondomaincompare.shared_gene_analysis.public_paths import (
     sanitize_public_payload,
     write_public_download_projections,
 )
-from framework.data_contract import write_freshness_contract, write_payload_contracts
+from exondomaincompare.contracts import write_freshness_contract, write_payload_contracts
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 

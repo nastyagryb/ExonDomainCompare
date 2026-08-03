@@ -28,8 +28,8 @@ from pathlib import Path
 from typing import Dict, List
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import _fgfr2_msa_common as M  # noqa: E402
-from shared_gene_analysis.strand import strand_sign  # noqa: E402
+from exondomaincompare.scientific import fgfr2_msa_common as M  # noqa: E402
+from exondomaincompare.shared_gene_analysis.strand import strand_sign  # noqa: E402
 
 os.environ.setdefault("MPLCONFIGDIR", tempfile.mkdtemp(prefix="mpl_syn_"))
 import matplotlib  # noqa: E402

@@ -266,7 +266,7 @@ class CollectionContract:
             "n_species": len(self.outcomes),
             "n_species_with_models": len(self.usable),
             "species": [o.as_dict() for o in self.outcomes],
-            "generated_by": "scripts/shared_gene_analysis/model_recovery.py",
+            "generated_by": "src/exondomaincompare/shared_gene_analysis/model_recovery.py",
         }
 
     def write(self, outdir: Path) -> Path:

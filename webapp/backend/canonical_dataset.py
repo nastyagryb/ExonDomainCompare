@@ -10,7 +10,7 @@ from typing import Any, Dict, Iterable, List, Mapping, Optional
 _REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 if str(_REPOSITORY_ROOT / "scripts") not in sys.path:
     sys.path.insert(0, str(_REPOSITORY_ROOT / "scripts"))
-from framework.data_contract import stamp_payload  # noqa: E402
+from exondomaincompare.contracts import stamp_payload  # noqa: E402
 
 
 CANONICAL_DATASET_MODEL_VERSION = "1.0.0"
@@ -890,7 +890,7 @@ def _stamp_identity(model: Dict[str, Any], descriptor: Mapping[str, Any]) -> Dic
     version = ""
     if run_base:
         try:
-            from shared_gene_analysis.analysis_availability import index_version
+            from exondomaincompare.shared_gene_analysis.analysis_availability import index_version
             version = index_version(Path(run_base))
         except Exception:
             version = ""
@@ -924,7 +924,7 @@ def build_canonical_dataset_model(descriptor: Mapping[str, Any]) -> Dict[str, An
     # disk report the canonical states without being rebuilt.
     if run_base:
         try:
-            from shared_gene_analysis.analysis_availability import annotate_dataset_model
+            from exondomaincompare.shared_gene_analysis.analysis_availability import annotate_dataset_model
             model = annotate_dataset_model(model, run_base)
         except Exception:
             pass

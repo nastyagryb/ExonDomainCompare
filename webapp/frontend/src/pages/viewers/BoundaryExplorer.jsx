@@ -24,7 +24,7 @@ import {
 
 // Integrated exon–domain-boundary explorer for the Gene Explorer Boundary tab.
 // It is driven ENTIRELY by the validated protein-coordinate model
-// (scripts/shared_gene_analysis/protein_coordinate_model.py) — the same single
+// (src/exondomaincompare/shared_gene_analysis/protein_coordinate_model.py) — the same single
 // source of truth used by the Exon Map and Domain Architecture — and reuses the
 // shared boundary classifier (boundary_classification.py) values, the shared
 // ScientificSelectionContext and the shared track toolbar. No coordinate and no

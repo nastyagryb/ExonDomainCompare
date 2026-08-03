@@ -32,10 +32,10 @@ pytestmark = pytest.mark.skipif(
 
 @pytest.fixture(scope="module")
 def mapped():
-    from shared_gene_analysis.msa_coordinates import (
+    from exondomaincompare.shared_gene_analysis.msa_coordinates import (
         annotate_boundaries_with_columns, build_msa_coordinate_map,
     )
-    from shared_gene_analysis.protein_coordinate_model import build_models_for_run
+    from exondomaincompare.shared_gene_analysis.protein_coordinate_model import build_models_for_run
     idx = build_models_for_run(TWO_SPECIES_RUN)
     coord_map = build_msa_coordinate_map(ALIGNMENT)
     report = annotate_boundaries_with_columns(idx["models"], coord_map)
@@ -86,7 +86,7 @@ def test_native_positions_and_columns_differ_where_the_alignment_has_gaps(mapped
 
 
 def test_a_single_species_run_reports_no_mapping_instead_of_failing():
-    from shared_gene_analysis.msa_coordinates import build_msa_coordinate_map
+    from exondomaincompare.shared_gene_analysis.msa_coordinates import build_msa_coordinate_map
     cm = build_msa_coordinate_map(ROOT / "does" / "not" / "exist.faa")
     assert cm["available"] is False
     assert "single-species" in cm["reason"]
@@ -97,7 +97,7 @@ def test_a_single_species_run_reports_no_mapping_instead_of_failing():
 # 14, 17. comparable-boundary grouping: evidence priority, never exon rank
 # --------------------------------------------------------------------------- #
 def test_comparable_groups_exist_and_name_their_evidence(mapped):
-    import shared_gene_analysis.boundary_dashboard as bd
+    import exondomaincompare.shared_gene_analysis.boundary_dashboard as bd
     idx, _, _ = mapped
     groups = bd.match_comparable_boundaries(idx["models"])
     assert groups, "two fully processed species must yield comparable boundary groups"
@@ -112,7 +112,7 @@ def test_comparable_groups_exist_and_name_their_evidence(mapped):
 
 def test_grouping_is_not_by_exon_rank(mapped):
     """Boundaries with the same rank but different columns must not be grouped."""
-    import shared_gene_analysis.boundary_dashboard as bd
+    import exondomaincompare.shared_gene_analysis.boundary_dashboard as bd
     idx, _, _ = mapped
     groups = bd.match_comparable_boundaries(idx["models"])
     for g in groups:
@@ -127,7 +127,7 @@ def test_grouping_is_not_by_exon_rank(mapped):
 
 def test_a_genomic_exon_group_is_not_used_as_cross_species_evidence():
     """The genomic-interval hash identifies exons within a species only."""
-    import shared_gene_analysis.boundary_dashboard as bd
+    import exondomaincompare.shared_gene_analysis.boundary_dashboard as bd
     # Two species whose exon groups are distinct genomic hashes, but whose boundaries
     # share an alignment column. Grouping must succeed via the column, not the hash.
     def model(sid, group, col):
@@ -151,7 +151,7 @@ def test_a_genomic_exon_group_is_not_used_as_cross_species_evidence():
 
 
 def test_a_shared_exon_group_is_still_used_when_it_really_spans_species():
-    import shared_gene_analysis.boundary_dashboard as bd
+    import exondomaincompare.shared_gene_analysis.boundary_dashboard as bd
 
     def model(sid):
         return {
@@ -170,7 +170,7 @@ def test_a_shared_exon_group_is_still_used_when_it_really_spans_species():
 
 
 def test_boundaries_without_any_evidence_are_not_grouped():
-    import shared_gene_analysis.boundary_dashboard as bd
+    import exondomaincompare.shared_gene_analysis.boundary_dashboard as bd
 
     def model(sid, pos):
         return {
@@ -191,7 +191,7 @@ def test_boundaries_without_any_evidence_are_not_grouped():
 # 18-19. matrix and signed distances
 # --------------------------------------------------------------------------- #
 def test_the_matrix_has_one_row_per_species_and_one_cell_per_group(mapped):
-    import shared_gene_analysis.boundary_dashboard as bd
+    import exondomaincompare.shared_gene_analysis.boundary_dashboard as bd
     idx, _, _ = mapped
     groups = bd.match_comparable_boundaries(idx["models"])
     matrix = bd.build_boundary_matrix(idx["models"], groups)
@@ -201,7 +201,7 @@ def test_the_matrix_has_one_row_per_species_and_one_cell_per_group(mapped):
 
 
 def test_matrix_signed_distances_match_the_underlying_boundaries(mapped):
-    import shared_gene_analysis.boundary_dashboard as bd
+    import exondomaincompare.shared_gene_analysis.boundary_dashboard as bd
     idx, _, _ = mapped
     groups = bd.match_comparable_boundaries(idx["models"])
     by_species = {m["species_id"]: m for m in idx["models"]}
@@ -218,7 +218,7 @@ def test_matrix_signed_distances_match_the_underlying_boundaries(mapped):
 
 
 def test_consistency_statistics_cover_every_group_without_inventing_values(mapped):
-    import shared_gene_analysis.boundary_dashboard as bd
+    import exondomaincompare.shared_gene_analysis.boundary_dashboard as bd
     idx, _, _ = mapped
     groups = bd.match_comparable_boundaries(idx["models"])
     stats = bd.boundary_position_consistency(idx["models"], groups)

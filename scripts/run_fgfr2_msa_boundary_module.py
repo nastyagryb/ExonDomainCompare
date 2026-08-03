@@ -26,7 +26,7 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import _fgfr2_msa_common as M  # noqa: E402
+from exondomaincompare.scientific import fgfr2_msa_common as M  # noqa: E402
 
 SCRIPT_VERSION = "1.0"
 SCRIPTS_DIR = Path(__file__).resolve().parent
@@ -282,11 +282,16 @@ def write_manifests(base: Path, dirs: Dict[str, Path], cmd_used: str,
                 ["subdir", "output_name", "path", "sha256", "size_bytes"])
     # script versions
     sv = []
-    for _, scr in STEP_SCRIPTS + [("runner", "run_fgfr2_msa_boundary_module.py"),
-                                  ("common", "_fgfr2_msa_common.py")]:
+    version_sources = STEP_SCRIPTS + [("runner", "run_fgfr2_msa_boundary_module.py")]
+    for _, scr in version_sources:
         sp = SCRIPTS_DIR / scr
         sv.append({"script": scr, "sha256": M.sha256_file(sp) if sp.exists() else "",
                    "exists": "true" if sp.exists() else "false"})
+    common = (SCRIPTS_DIR.parent / "src" / "exondomaincompare" /
+              "scientific" / "fgfr2_msa_common.py")
+    sv.append({"script": "exondomaincompare.scientific.fgfr2_msa_common",
+               "sha256": M.sha256_file(common) if common.exists() else "",
+               "exists": "true" if common.exists() else "false"})
     M.write_tsv(meta / "msa_script_versions.tsv", sv, ["script", "sha256", "exists"])
     # dependency versions (mafft + python) — refreshed here too
     M.write_tsv(meta / "msa_dependency_versions.tsv", [

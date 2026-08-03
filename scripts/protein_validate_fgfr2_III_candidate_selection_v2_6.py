@@ -49,7 +49,7 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from lib import protein_lookup as PL  # noqa: E402
+from exondomaincompare.scientific import protein_lookup as PL  # noqa: E402
 
 SCRIPT_NAME = "protein_validate_fgfr2_III_candidate_selection_v2_6.py"
 SCRIPT_VERSION = "2.8.1_event_based_role_bounded_qc_primate_diag"

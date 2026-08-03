@@ -237,7 +237,7 @@ def test_the_generic_boundary_panel_is_one_model_per_species(multi_species):
 
 
 def test_the_generic_boundary_species_order_is_canonical(multi_species):
-    from shared_gene_analysis import species_order as so
+    from exondomaincompare.shared_gene_analysis import species_order as so
 
     ids = [r["species_id"] for r in multi_species["boundary_matrix"]]
     assert ids == list(so.order_species(ids))

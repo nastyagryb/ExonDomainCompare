@@ -7,7 +7,7 @@
 //
 // Filtering only ever removes real observations published by the backend. Nothing is
 // re-derived here — group membership, mapping method, mapping status and confidence all
-// come from scripts/shared_gene_analysis/boundary_dashboard.py.
+// come from src/exondomaincompare/shared_gene_analysis/boundary_dashboard.py.
 
 import { canonClass } from "./boundaryClasses.js";
 import { isSupported } from "./comparativeFigures.js";

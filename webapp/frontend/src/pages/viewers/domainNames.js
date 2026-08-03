@@ -6,7 +6,7 @@
  * renderer can load it too.
  *
  * The Python counterpart is `_DOMAIN_DISPLAY_NAMES` in
- * `scripts/shared_gene_analysis/protein_coordinate_model.py`; both must agree, so
+ * `src/exondomaincompare/shared_gene_analysis/protein_coordinate_model.py`; both must agree, so
  * that a figure, a table and an exported TSV name the same feature identically.
  *
  * This never invents a name: the accession and the raw short name travel with

@@ -122,7 +122,8 @@ def test_validated_event_layer_scripts_stay_on_same_base_primitives():
     for path in event_scripts:
         tree = _tree(path)
         assert any(
-            isinstance(node, ast.Import)
+            isinstance(node, ast.ImportFrom)
+            and node.module == "exondomaincompare.presentation"
             and any(alias.name == "fgfr2_plot_style" for alias in node.names)
             for node in ast.walk(tree)
         ), path

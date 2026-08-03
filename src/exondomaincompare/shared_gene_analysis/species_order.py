@@ -1,26 +1,3 @@
-"""One canonical species order for every comparative view.
-
-Comparative figures are read by scanning down a column, so the row order carries
-meaning: species next to each other should be related. Before this module each
-view picked its own order — the boundary matrix used the reference list, the
-gallery used whatever the index happened to yield, the selectors were
-alphabetical — and the same two species swapped places between two figures of
-the same dataset.
-
-Two orderings exist, and the difference is not cosmetic:
-
-* **taxonomic** — species are grouped by clade and ordered within a clade by a
-  curated arrangement. This is what this module produces, and it is what the
-  outputs are labelled.
-* **phylogenetic** — species are ordered by the tips of an actual tree. It
-  requires a tree, computed or supplied. No tree is used here, so nothing
-  produced by this module may be described that way.
-
-The validated 30-species panel keeps the approved order of
-``reference/Species_list_final_30.txt`` exactly. Species outside that panel are
-placed by clade and then alphabetically, which is a stated rule rather than an
-accident of dictionary iteration.
-"""
 from __future__ import annotations
 
 import csv

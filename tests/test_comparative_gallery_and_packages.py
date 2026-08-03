@@ -22,7 +22,7 @@ def comparative_index(tmp_path_factory):
     import sys
     sys.path.insert(0, str(ROOT / "scripts"))
     sys.path.insert(0, str(ROOT / "scripts" / "shared_gene_analysis"))
-    from comparative_dataset import build_comparative_dataset
+    from exondomaincompare.shared_gene_analysis.comparative_dataset import build_comparative_dataset
     return build_comparative_dataset(RUN)
 
 
@@ -86,7 +86,7 @@ def test_species_specific_gallery_cards_remain_for_both_species():
 def test_package_capabilities_are_availability_aware():
     import sys
     sys.path.insert(0, str(ROOT / "scripts" / "shared_gene_analysis"))
-    from package_builder import capabilities, resolve_dependencies
+    from exondomaincompare.shared_gene_analysis.package_builder import capabilities, resolve_dependencies
     caps = capabilities(RUN, "comparative")
     assert caps["multi_species"] is True
     assert [s["id"] for s in caps["scopes"]][:2] == ["comparative", "all"]
@@ -105,7 +105,7 @@ def test_package_capabilities_are_availability_aware():
 def test_recommended_package_builds_valid_zip_with_manifest():
     import sys
     sys.path.insert(0, str(ROOT / "scripts" / "shared_gene_analysis"))
-    from package_builder import PACKAGES_ROOT, build_package
+    from exondomaincompare.shared_gene_analysis.package_builder import PACKAGES_ROOT, build_package
     job = build_package(RUN, {"preset": "recommended", "scope": "comparative"})
     assert job.status == "ready", job.error
     assert job.zip_path.startswith("package:")
@@ -127,7 +127,7 @@ def test_recommended_package_builds_valid_zip_with_manifest():
 def test_dependency_resolution_pulls_msa_for_aligned_exons():
     import sys
     sys.path.insert(0, str(ROOT / "scripts" / "shared_gene_analysis"))
-    from package_builder import resolve_dependencies
+    from exondomaincompare.shared_gene_analysis.package_builder import resolve_dependencies
     resolved = resolve_dependencies(["msa_aligned_exons"], "comparative")
     assert resolved.index("primary_proteins_msa") < resolved.index("msa_aligned_exons")
 
@@ -141,7 +141,7 @@ def test_fgfr2_freeze_untouched_by_package_builder():
     before = {p.name: p.stat().st_mtime for p in example.glob("*.json")}
     import sys
     sys.path.insert(0, str(ROOT / "scripts" / "shared_gene_analysis"))
-    from package_builder import capabilities
+    from exondomaincompare.shared_gene_analysis.package_builder import capabilities
     # Capabilities against the multi-species run only.
     capabilities(RUN, "comparative")
     after = {p.name: p.stat().st_mtime for p in example.glob("*.json")}

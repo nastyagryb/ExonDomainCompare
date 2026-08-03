@@ -10,6 +10,7 @@ from __future__ import annotations
 import io
 import json
 import sys
+import tomllib
 import zipfile
 from pathlib import Path
 
@@ -28,7 +29,7 @@ MUS = "mus_musculus"
 
 
 def _package_path(job) -> Path:
-    from package_builder import PACKAGES_ROOT
+    from exondomaincompare.shared_gene_analysis.package_builder import PACKAGES_ROOT
     assert job.zip_path.startswith("package:")
     return PACKAGES_ROOT / job.zip_path[len("package:"):]
 
@@ -251,7 +252,7 @@ def test_boundary_matrix_matches_the_explorer_values():
     header = lines[0].split("\t")
     groups = header[2:]
     assert groups and all(g.startswith("CBG") for g in groups), header
-    import boundary_observations as bo
+    from exondomaincompare.shared_gene_analysis import boundary_observations as bo
     canonical = {
         (r["species_id"], r["comparable_boundary_group_id"]): str(r["signed_distance"])
         for r in bo.build_rows(MULTI)
@@ -293,14 +294,14 @@ REQUIRED_BOUNDARY_FIELDS = [
 
 
 def test_boundary_observation_columns_are_the_download_contract():
-    import boundary_observations as bo
+    from exondomaincompare.shared_gene_analysis import boundary_observations as bo
     assert list(bo.COLUMNS) == REQUIRED_BOUNDARY_FIELDS
 
 
 def test_boundary_observations_exist_for_a_single_species_run():
     if not SINGLE.is_dir():
         pytest.skip("standalone Gallus run required")
-    import boundary_observations as bo
+    from exondomaincompare.shared_gene_analysis import boundary_observations as bo
     rows = bo.build_rows(SINGLE)
     assert rows
     assert {r["species_id"] for r in rows} == {GALLUS}
@@ -315,7 +316,7 @@ def test_boundary_observations_exist_for_a_single_species_run():
 def test_multi_species_boundary_long_table_has_one_row_per_observation():
     if not MULTI.is_dir():
         pytest.skip("multi-species run required")
-    import boundary_observations as bo
+    from exondomaincompare.shared_gene_analysis import boundary_observations as bo
     rows = bo.build_rows(MULTI)
     assert {r["species_id"] for r in rows} == {GALLUS, MUS}
     keys = [(r["species_id"], r["boundary_id"]) for r in rows]
@@ -344,7 +345,7 @@ COMPARATIVE_ONLY_ITEMS = {
 def test_single_species_run_has_no_comparative_scope_or_items():
     if not SINGLE.is_dir():
         pytest.skip("standalone Gallus run required")
-    from package_builder import capabilities, scopes_for_run
+    from exondomaincompare.shared_gene_analysis.package_builder import capabilities, scopes_for_run
     scopes = {s["id"] for s in scopes_for_run(SINGLE)}
     assert scopes == {GALLUS}
     caps = capabilities(SINGLE)
@@ -359,7 +360,7 @@ def test_single_species_run_has_no_comparative_scope_or_items():
 def test_single_species_boundary_observations_are_available():
     if not SINGLE.is_dir():
         pytest.skip("standalone Gallus run required")
-    from package_builder import capabilities
+    from exondomaincompare.shared_gene_analysis.package_builder import capabilities
     item = capabilities(SINGLE)["items"]["boundary_observations"]
     assert item["available"] is True
     assert item["label"] == "Boundary observations (TSV)"
@@ -369,7 +370,7 @@ def test_single_species_boundary_observations_are_available():
 def test_multi_species_boundary_long_table_is_available():
     if not MULTI.is_dir():
         pytest.skip("multi-species run required")
-    from package_builder import capabilities
+    from exondomaincompare.shared_gene_analysis.package_builder import capabilities
     item = capabilities(MULTI, "comparative")["items"]["boundary_long_table"]
     assert item["available"] is True
     assert item["label"] == "All species Boundary observations (TSV)"
@@ -378,7 +379,7 @@ def test_multi_species_boundary_long_table_is_available():
 def test_multi_species_scopes_and_species_scope_files():
     if not MULTI.is_dir():
         pytest.skip("multi-species run required")
-    from package_builder import capabilities, scopes_for_run
+    from exondomaincompare.shared_gene_analysis.package_builder import capabilities, scopes_for_run
     ids = [s["id"] for s in scopes_for_run(MULTI)]
     assert ids == ["comparative", "all", GALLUS, MUS]
     # A species Scope offers the same item set as a single-species dataset.
@@ -394,7 +395,7 @@ def test_multi_species_scopes_and_species_scope_files():
 
 def test_unavailable_items_are_excluded_from_presets_and_resolution(tmp_path):
     """A run with no comparative artefacts must not preselect comparative items."""
-    from package_builder import capabilities
+    from exondomaincompare.shared_gene_analysis.package_builder import capabilities
     run = tmp_path / "2026-01-01_0000_empty"
     (run / "website_indices" / "generic").mkdir(parents=True)
     (run / "website_indices" / "generic" / "protein_coordinate_model.json").write_text(
@@ -416,7 +417,7 @@ def test_unavailable_items_are_excluded_from_presets_and_resolution(tmp_path):
 
 
 def test_build_drops_unavailable_items_with_a_reason(tmp_path):
-    from package_builder import build_package
+    from exondomaincompare.shared_gene_analysis.package_builder import build_package
     run = tmp_path / "2026-01-01_0000_empty"
     (run / "website_indices" / "generic").mkdir(parents=True)
     (run / "website_indices" / "generic" / "protein_coordinate_model.json").write_text(
@@ -434,14 +435,18 @@ def test_build_drops_unavailable_items_with_a_reason(tmp_path):
 # Parts 9–12 — workbook, package lifecycle and content validation
 # --------------------------------------------------------------------------- #
 
-def test_openpyxl_is_declared_in_the_backend_requirements():
+def test_openpyxl_is_declared_for_the_backend_and_project():
     text = (ROOT / "webapp" / "backend" / "requirements.txt").read_text()
     assert "openpyxl" in text
-    assert "openpyxl" in (ROOT / "requirements.txt").read_text()
+    project = tomllib.loads((ROOT / "pyproject.toml").read_text())
+    assert any(
+        dependency.lower().startswith("openpyxl")
+        for dependency in project["project"]["dependencies"]
+    )
 
 
 def test_workbook_capability_is_reported_not_raised():
-    from package_builder import workbook_capability
+    from exondomaincompare.shared_gene_analysis.package_builder import workbook_capability
     ok, detail = workbook_capability()
     assert isinstance(ok, bool)
     if not ok:
@@ -449,7 +454,7 @@ def test_workbook_capability_is_reported_not_raised():
 
 
 def test_no_raw_dependency_error_reaches_the_user():
-    from package_builder import WORKBOOK_FAILURE_MESSAGE
+    from exondomaincompare.shared_gene_analysis.package_builder import WORKBOOK_FAILURE_MESSAGE
     assert "openpyxl" not in WORKBOOK_FAILURE_MESSAGE
     assert WORKBOOK_FAILURE_MESSAGE.startswith("Workbook generation failed.")
 
@@ -458,7 +463,7 @@ def test_no_raw_dependency_error_reaches_the_user():
 def test_package_lifecycle_produces_a_valid_downloadable_zip(scope):
     if not MULTI.is_dir():
         pytest.skip("multi-species run required")
-    from package_builder import build_package, validate_package
+    from exondomaincompare.shared_gene_analysis.package_builder import build_package, validate_package
     job = build_package(MULTI, {"scope": scope, "preset": "recommended"})
     assert job.status == "ready", job.error
     assert job.package_name.endswith(".zip")
@@ -493,7 +498,7 @@ def test_package_lifecycle_produces_a_valid_downloadable_zip(scope):
 def test_species_scope_package_contains_only_that_species():
     if not MULTI.is_dir():
         pytest.skip("multi-species run required")
-    from package_builder import build_package
+    from exondomaincompare.shared_gene_analysis.package_builder import build_package
     job = build_package(MULTI, {"scope": MUS, "preset": "recommended"})
     assert job.status == "ready", job.error
     with zipfile.ZipFile(_package_path(job)) as zf:
@@ -509,7 +514,7 @@ def test_species_scope_package_contains_only_that_species():
 def test_comparative_workbook_has_a_boundary_observations_sheet():
     if not MULTI.is_dir():
         pytest.skip("multi-species run required")
-    from package_builder import build_package, workbook_capability
+    from exondomaincompare.shared_gene_analysis.package_builder import build_package, workbook_capability
     if not workbook_capability()[0]:
         pytest.skip("workbook support not installed in this interpreter")
     job = build_package(MULTI, {"scope": "comparative", "preset": "recommended"})
@@ -529,7 +534,7 @@ def test_comparative_workbook_has_a_boundary_observations_sheet():
 def test_workbook_failure_does_not_stop_the_rest_of_the_package(monkeypatch):
     if not MULTI.is_dir():
         pytest.skip("multi-species run required")
-    import package_builder as pb
+    from exondomaincompare.shared_gene_analysis import package_builder as pb
     monkeypatch.setattr(pb, "_write_workbook", _raise_workbook_error)
     job = pb.build_package(MULTI, {"scope": "comparative", "preset": "recommended"})
     assert job.status == "ready", job.error
@@ -547,7 +552,7 @@ def _raise_workbook_error(*_args, **_kwargs):
 def test_expired_package_is_reported_as_expired():
     if not MULTI.is_dir():
         pytest.skip("multi-species run required")
-    from package_builder import build_package, get_job, _JOBS
+    from exondomaincompare.shared_gene_analysis.package_builder import build_package, get_job, _JOBS
     job = build_package(MULTI, {"scope": "comparative", "preset": "figures"})
     assert job.status == "ready", job.error
     _package_path(job).unlink()
@@ -563,7 +568,7 @@ def test_tp53_danio_run_still_resolves_its_own_scope():
     if not (TP53 / "website_indices" / "generic"
             / "protein_coordinate_model.json").is_file():
         pytest.skip("TP53 Danio run not present")
-    from package_builder import capabilities
+    from exondomaincompare.shared_gene_analysis.package_builder import capabilities
     caps = capabilities(TP53)
     assert caps["scopes"]
     assert caps["scope"] == caps["scopes"][0]["id"]
@@ -584,7 +589,7 @@ def test_fgfr2_freeze_is_not_touched_by_the_correction():
     if not freeze.is_dir():
         pytest.skip("FGFR2 freeze not present")
     before = {p.name: p.stat().st_mtime for p in freeze.rglob("*.json")}
-    from package_builder import capabilities
+    from exondomaincompare.shared_gene_analysis.package_builder import capabilities
     if MULTI.is_dir():
         capabilities(MULTI, "comparative")
     if SINGLE.is_dir():

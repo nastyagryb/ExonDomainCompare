@@ -29,7 +29,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "webapp" / "backend"))
 
-from shared_gene_analysis import analysis_availability as aa  # noqa: E402
+from exondomaincompare.shared_gene_analysis import analysis_availability as aa  # noqa: E402
 
 RUNS = ROOT / "runs"
 MC1R = RUNS / "2026-07-29_1306_mc1r_gallus_gallus"
@@ -383,7 +383,7 @@ def test_mc1r_boundary_is_not_applicable_and_the_run_is_ready():
 
 @_needs(MC1R)
 def test_mc1r_is_results_ready_and_not_post_interpro_incomplete():
-    from framework.core_run_milestones import evaluate_core_run
+    from exondomaincompare.framework.core_run_milestones import evaluate_core_run
     report = evaluate_core_run(MC1R)
     assert report["inferred_status"] == "results_ready"
     persisted = json.loads((MC1R / "status.json").read_text(encoding="utf-8"))
@@ -393,7 +393,7 @@ def test_mc1r_is_results_ready_and_not_post_interpro_incomplete():
 
 @_needs(MC1R)
 def test_mc1r_boundary_is_not_blocking_at_the_species_level():
-    from framework.species_completion import build_species_completion
+    from exondomaincompare.framework.species_completion import build_species_completion
     record = build_species_completion(MC1R)["gallus_gallus"]
     assert record["boundary_analysis"] == "not_applicable"
     assert record["blocking_analyses"] == []

@@ -7,7 +7,7 @@ generic figures share the established style without changing FGFR2 event-layer
 figure scripts.
 """
 
-from .shared_gene_plots import (
+from exondomaincompare.presentation.shared_gene_plots import (
     apply_style,
     figure_title,
     legend_patch,

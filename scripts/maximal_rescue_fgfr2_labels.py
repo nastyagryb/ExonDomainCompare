@@ -30,7 +30,7 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import _fgfr2_msa_common as M  # noqa: E402
+from exondomaincompare.scientific import fgfr2_msa_common as M  # noqa: E402
 import reconcile_fgfr2_exon_type_labels as RC  # noqa: E402
 import validate_and_rescue_fgfr2_labels as VR  # noqa: E402
 

@@ -30,10 +30,10 @@ from pathlib import Path
 from typing import List, Optional
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from framework import production_contract  # noqa: E402
-from framework.data_contract import portable_path_reference, stamp_payload  # noqa: E402
-from framework.portable_config import discover_repository_root, load_config  # noqa: E402
-from framework.run_layout import RunLayout, RunLayoutVersion  # noqa: E402
+from exondomaincompare.framework import production_contract  # noqa: E402
+from exondomaincompare.contracts import portable_path_reference, stamp_payload  # noqa: E402
+from exondomaincompare.config import discover_repository_root, load_config  # noqa: E402
+from exondomaincompare.runs.layout import RunLayout, RunLayoutVersion  # noqa: E402
 
 RUNTIME_CONFIG = load_config(repository_root=discover_repository_root(__file__))
 REPO = RUNTIME_CONFIG.repository_root

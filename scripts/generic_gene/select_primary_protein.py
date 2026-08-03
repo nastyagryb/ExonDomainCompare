@@ -17,14 +17,14 @@ from __future__ import annotations
 import argparse
 from typing import Any, Dict
 
-from .common import GenericContext, load_context, read_json, read_tsv
+from exondomaincompare.generic_gene.common import GenericContext, load_context, read_json, read_tsv
 
 try:  # framework is importable when scripts/ is on sys.path
-    from framework import primary_selection as _ps
+    from exondomaincompare.framework import primary_selection as _ps
 except Exception:  # pragma: no cover
     import sys
     sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parents[1]))
-    from framework import primary_selection as _ps
+    from exondomaincompare.framework import primary_selection as _ps
 
 
 def build(ctx: GenericContext) -> Dict[str, Any]:

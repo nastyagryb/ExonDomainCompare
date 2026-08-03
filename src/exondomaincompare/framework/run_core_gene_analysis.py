@@ -20,11 +20,11 @@ Two phases:
           core indices. (Experimental; not exercised without a cluster run.)
 
 Examples:
-  python scripts/framework/run_core_gene_analysis.py \
+  python -m exondomaincompare.framework.run_core_gene_analysis \
       --gene-config configs/genes/drafts/FGFR1_core_only_pilot.yaml \
       --species "Gallus gallus" --run-name fgfr1_gallus_core_pilot
 
-  python scripts/framework/run_core_gene_analysis.py \
+  python -m exondomaincompare.framework.run_core_gene_analysis \
       --gene FGFR1 --species gallus_gallus --support-level core_only_pilot
 """
 from __future__ import annotations
@@ -96,7 +96,7 @@ def write_json(p: Path, data: Any) -> None:
             run_id=run_id,
             dataset_id=run_id,
             profile=RUNTIME_CONFIG.public_identity(),
-            generator="scripts/framework/run_core_gene_analysis.py",
+            generator="src/exondomaincompare/framework/run_core_gene_analysis.py",
         )
     p.parent.mkdir(parents=True, exist_ok=True)
     p.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
@@ -1553,7 +1553,7 @@ def _build_coordinate_model_and_figures(run_dir: Path, logline) -> bool:
     """
     try:
         from exondomaincompare.shared_gene_analysis.protein_coordinate_model import build_models_for_run
-        from shared_gene_analysis.validate_protein_coordinate_model import validate_index
+        from exondomaincompare.shared_gene_analysis.validate_protein_coordinate_model import validate_index
         model_out = run_dir / "website_indices" / "generic" / "protein_coordinate_model.json"
         index = build_models_for_run(run_dir)
         errors = validate_index(index, core_dir=run_dir / "results" / "core_gene_analysis")

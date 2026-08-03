@@ -1,25 +1,3 @@
-"""One canonical local-synteny contract for every gene and every dataset.
-
-Every synteny consumer — the generic single-species view, the generic
-multi-species comparative view, the FGFR2 view and every publication export —
-reads the shape built here. Gene-specific behaviour is supplied as *data*
-(target symbol, orthology classes, review state), never as a second renderer.
-
-Three rules make the contract honest:
-
-* The target locus is a first-class object with its own slot ``0``. It is never
-  one of the flanking neighbours and is never counted as one, so a species with
-  five upstream and five downstream neighbours reports ten flanking loci, not
-  eleven.
-* Availability is stated, not implied. ``upstream_count_available`` and
-  ``downstream_count_available`` are what the annotation actually yielded;
-  ``displayed_*`` is what the view shows. When they differ the row carries a
-  ``truncation_status`` and an ``omission_reason``, so a genome with only four
-  downstream genes reads as "4 downstream", never as a rendering bug and never
-  as a fabricated fifth gene.
-* Internal state strings stay internal. Every status and orthology class also
-  carries a readable label and an exact definition for a tooltip.
-"""
 from __future__ import annotations
 
 import re
@@ -99,10 +77,6 @@ STATUS_DISPLAY: Dict[str, Tuple[str, str]] = {
 
 def is_placeholder_locus(symbol: Any) -> bool:
     """True when the annotation gave an identifier instead of a gene name.
-
-    NCBI assigns ``LOC…`` identifiers to loci that have no approved symbol yet.
-    That is a labelling limitation, not a failed orthology assignment, so such a
-    locus keeps its own honest style rather than being called unresolved.
     """
     text = str(symbol or "").strip()
     return not text or bool(_PLACEHOLDER_SYMBOL.match(text))
@@ -263,12 +237,7 @@ def species_row(species_id: str, *, gene_symbol: str,
                 is_review: bool = False,
                 is_human_reference_control: bool = False,
                 extra: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-    """Assemble one canonical species row from already-built locus objects.
 
-    ``neighbours`` may arrive in any order and may contain more loci than
-    ``requested``; the row keeps the real order by rank, truncates to the
-    request and records what was left out and why.
-    """
     up_all = sorted((n for n in neighbours if n.get("side") == "upstream"),
                     key=lambda n: n.get("rank") or 0)
     down_all = sorted((n for n in neighbours if n.get("side") == "downstream"),
@@ -352,11 +321,6 @@ def _position_text(target: Dict[str, Any]) -> str:
 
 
 def legacy_nodes(row: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """The older flat neighbour shape, so existing readers keep working.
-
-    The canonical ``loci`` array stays authoritative; this projection only adds
-    the historical key names that the first synteny viewer was written against.
-    """
     out: List[Dict[str, Any]] = []
     for n in row.get("loci") or []:
         out.append({

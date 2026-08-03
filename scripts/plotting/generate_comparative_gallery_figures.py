@@ -21,8 +21,8 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from plotting.generate_shared_main_figures import (  # noqa: E402
     EXPORT_DPI, _api, _rasterise_png, _rel,
 )
-from framework.local_registry import RegistryError, resolve_run_record  # noqa: E402
-from framework.portable_config import load_config  # noqa: E402
+from exondomaincompare.runs.registry import RegistryError, resolve_run_record  # noqa: E402
+from exondomaincompare.config import load_config  # noqa: E402
 
 RUNTIME_CONFIG = load_config(repository_root=ROOT)
 
@@ -300,7 +300,7 @@ def _register_gallery(run_dir: Path, cards: List[Dict[str, Any]]) -> int:
 
 
 def generate(run_dir: Path, model_json: Path) -> dict:
-    from shared_gene_analysis.comparative_dataset import build_comparative_dataset
+    from exondomaincompare.shared_gene_analysis.comparative_dataset import build_comparative_dataset
 
     run_dir = Path(run_dir)
     model_json = Path(model_json)
@@ -320,7 +320,7 @@ def generate(run_dir: Path, model_json: Path) -> dict:
     fig_dir = run_dir / FIGURE_SUBDIR
     fig_dir.mkdir(parents=True, exist_ok=True)
     # A retired card must not leave a downloadable file behind.
-    from plotting.figure_captions import remove_retired_figure_files
+    from exondomaincompare.presentation.figure_captions import remove_retired_figure_files
     remove_retired_figure_files(fig_dir, RETIRED_FIGURE_IDS)
     rendered = _render(model_json, cmp_path, fig_dir)
 

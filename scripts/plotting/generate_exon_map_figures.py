@@ -30,8 +30,8 @@ from typing import Any, Dict, List, Sequence
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from plotting import figure_captions as fc  # noqa: E402
-from plotting import shared_gene_plots as sgp  # noqa: E402
+from exondomaincompare.presentation import figure_captions as fc  # noqa: E402
+from exondomaincompare.presentation import shared_gene_plots as sgp  # noqa: E402
 
 FIGURE_DIR = "results/generic_gene_analysis/figures/exon_map"
 ANALYSIS_DIR = "results/generic_gene_analysis"

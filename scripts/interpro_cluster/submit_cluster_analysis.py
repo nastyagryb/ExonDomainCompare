@@ -10,16 +10,16 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-from ssh_common import clean_ssh_output, configure, scp_cmd, ssh_cmd, ssh_target
+from exondomaincompare.cluster.ssh_common import clean_ssh_output, configure, scp_cmd, ssh_cmd, ssh_target
 
 SCRIPTS_DIR = Path(__file__).resolve().parents[1]
 if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
-from framework.data_contract import (  # noqa: E402
+from exondomaincompare.contracts import (  # noqa: E402
     file_sha256, resolve_path_reference, stamp_payload,
 )
-from framework.local_registry import resolve_run_record  # noqa: E402
-from framework.portable_config import (  # noqa: E402
+from exondomaincompare.runs.registry import resolve_run_record  # noqa: E402
+from exondomaincompare.config import (  # noqa: E402
     ConfigurationError, load_config, remote_shell_path,
 )
 

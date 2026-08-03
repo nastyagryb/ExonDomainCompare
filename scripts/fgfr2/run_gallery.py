@@ -33,8 +33,8 @@ if str(ROOT / "scripts") not in sys.path:
 
 from fgfr2 import coordinate_model as cm  # noqa: E402
 from fgfr2 import gallery_catalogue as gc  # noqa: E402
-from framework.local_registry import RegistryError, resolve_run_record  # noqa: E402
-from framework.portable_config import load_config  # noqa: E402
+from exondomaincompare.runs.registry import RegistryError, resolve_run_record  # noqa: E402
+from exondomaincompare.config import load_config  # noqa: E402
 
 RUNTIME_CONFIG = load_config(repository_root=ROOT)
 

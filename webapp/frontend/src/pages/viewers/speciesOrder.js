@@ -9,7 +9,7 @@
 // keeps the approved arrangement of the validated 30-species reference panel.
 // No tree is involved, so nothing here may be labelled phylogenetic.
 //
-// This mirrors scripts/shared_gene_analysis/species_order.py, and a test
+// This mirrors src/exondomaincompare/shared_gene_analysis/species_order.py, and a test
 // compares the two so they cannot drift. When an index carries its own
 // `species_order` document, that document wins: it was built from the dataset.
 

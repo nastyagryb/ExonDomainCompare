@@ -7,7 +7,7 @@ it does not run or change the FGFR2 pipeline and never touches the example freez
 
 Usage (validation CLI):
 
-    python scripts/framework/gene_config.py \
+    python -m exondomaincompare.framework.gene_config \
         --config configs/genes/FGFR2_IIIb_IIIc.yaml --validate
 
 Programmatic:

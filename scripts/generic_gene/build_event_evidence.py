@@ -10,7 +10,7 @@ from __future__ import annotations
 import argparse
 from typing import Any, Dict
 
-from .common import GenericContext, load_context, read_tsv, write_tsv
+from exondomaincompare.generic_gene.common import GenericContext, load_context, read_tsv, write_tsv
 
 EVID_COLUMNS = [
     "analysis_id", "gene_symbol", "species_id", "event_candidate_id",

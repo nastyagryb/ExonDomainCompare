@@ -24,7 +24,7 @@ SCRIPTS = PROJECT_ROOT / "scripts"
 if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
-from framework import run_core_gene_analysis as rcga  # noqa: E402
+from exondomaincompare.framework import run_core_gene_analysis as rcga  # noqa: E402
 
 FGFR1_RUN = PROJECT_ROOT / "runs" / "2026-07-14_2153_fgfr1_gallus_mus_twospecies"
 FGFR1_INDICES = FGFR1_RUN / "website_indices"

@@ -54,7 +54,7 @@ from typing import Dict, List, Optional, Tuple
 
 # shared paper style (also sets a writable MPLCONFIGDIR + Agg backend)
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import fgfr2_plot_style as st  # noqa: E402
+from exondomaincompare.presentation import fgfr2_plot_style as st  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.patches import FancyBboxPatch, Rectangle  # noqa: E402
 from matplotlib.lines import Line2D  # noqa: E402

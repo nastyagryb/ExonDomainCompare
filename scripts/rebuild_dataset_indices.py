@@ -30,11 +30,11 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import build_website_indices as bwi  # noqa: E402
-from framework.local_registry import (  # noqa: E402
+from exondomaincompare.runs.registry import (  # noqa: E402
     RegistryError, discover_runs, resolve_run_record,
 )
-from framework.portable_config import load_config  # noqa: E402
-from shared_gene_analysis.public_paths import sanitize_public_payload  # noqa: E402
+from exondomaincompare.config import load_config  # noqa: E402
+from exondomaincompare.shared_gene_analysis.public_paths import sanitize_public_payload  # noqa: E402
 
 FREEZE_CLOSURE = (ROOT / "results" / "final_30_until_interpro_prepare"
                   / "13_final_pre_interpro_closure")
@@ -217,8 +217,8 @@ def rebuild_coordinate_model(run_dir: Path) -> Dict[str, object]:
     if not model_path.is_file():
         return {"rebuilt": False, "reason": "run has no coordinate model"}
     try:
-        from shared_gene_analysis.protein_coordinate_model import build_models_for_run
-        from shared_gene_analysis.validate_protein_coordinate_model import validate_index
+        from exondomaincompare.shared_gene_analysis.protein_coordinate_model import build_models_for_run
+        from exondomaincompare.shared_gene_analysis.validate_protein_coordinate_model import validate_index
         index = build_models_for_run(run_dir)
         errors = validate_index(index,
                                 core_dir=run_dir / "results" / "core_gene_analysis")
@@ -244,9 +244,9 @@ def rebuild_exploratory_candidates(run_dir: Path) -> Dict[str, object]:
     if not (core / "event_candidate_regions.tsv").is_file():
         return {"rebuilt": False, "reason": "run has no exploratory candidate layer"}
     try:
-        from framework.scan_isoform_event_candidates import scan, COLUMNS
-        from framework.build_event_region_evidence import build_evidence
-        from framework.cluster_event_region_evidence import build_clusters
+        from exondomaincompare.framework.scan_isoform_event_candidates import scan, COLUMNS
+        from exondomaincompare.framework.build_event_region_evidence import build_evidence
+        from exondomaincompare.framework.cluster_event_region_evidence import build_clusters
         cfg = json.loads((run_dir / "run_config.json").read_text(encoding="utf-8")) \
             if (run_dir / "run_config.json").is_file() else {}
         rows = scan(run_dir)
@@ -277,8 +277,9 @@ def _mirror_exploratory_layer(run_dir: Path) -> Dict[str, object]:
     generic = run_dir / "results" / "generic_gene_analysis"
     if not generic.is_dir():
         return {"generic_layer": "absent"}
-    from generic_gene import build_event_evidence, build_single_species_explorer
-    from generic_gene.common import load_context
+    from generic_gene import build_event_evidence
+    from exondomaincompare.generic_gene import build_single_species_explorer
+    from exondomaincompare.generic_gene.common import load_context
     ctx = load_context(run_dir.name)
     evidence = build_event_evidence.build(ctx)
     explorer = build_single_species_explorer.build(ctx)
@@ -319,7 +320,7 @@ def rebuild_run(run_id: str) -> Dict[str, object]:
     closure = run_dir / "results" / "13_final_pre_interpro_closure"
     if not (closure / "final_pre_interpro_truth_table.tsv").is_file():
         # A run from the shared exploratory pipeline uses the shared builders.
-        from shared_gene_analysis.build_fgfr2_compatible_indices import (  # noqa: WPS433
+        from exondomaincompare.shared_gene_analysis.build_fgfr2_compatible_indices import (  # noqa: WPS433
             build_fgfr2_compatible_indices)
         try:
             result = build_fgfr2_compatible_indices(run_dir)

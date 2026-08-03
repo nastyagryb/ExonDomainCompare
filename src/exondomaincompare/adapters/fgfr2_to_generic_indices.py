@@ -21,10 +21,10 @@ Generic outputs (under <out>/):
 Examples:
 
   # completed custom run -> runs/<id>/website_indices/generic/
-  python scripts/adapters/fgfr2_to_generic_indices.py --run-id 2026-07-07_1133_gallus_fresh_e2e
+  python -m exondomaincompare.adapters.fgfr2_to_generic_indices --run-id 2026-07-07_1133_gallus_fresh_e2e
 
   # example dataset preview into a safe non-freeze folder (read-only on the freeze)
-  python scripts/adapters/fgfr2_to_generic_indices.py --example \
+  python -m exondomaincompare.adapters.fgfr2_to_generic_indices --example \
       --out artifacts/generic_indices/example
 """
 from __future__ import annotations

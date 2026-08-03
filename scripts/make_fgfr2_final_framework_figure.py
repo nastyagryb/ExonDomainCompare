@@ -16,8 +16,8 @@ import tempfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import _fgfr2_msa_common as M  # noqa: E402
-import fgfr2_plot_style as S  # noqa: E402
+from exondomaincompare.scientific import fgfr2_msa_common as M  # noqa: E402
+from exondomaincompare.presentation import fgfr2_plot_style as S  # noqa: E402
 from matplotlib.patches import Patch, Rectangle  # noqa: E402
 
 os.environ.setdefault("MPLCONFIGDIR", tempfile.mkdtemp(prefix="mpl_fw_"))

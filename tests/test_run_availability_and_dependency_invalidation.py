@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 sys.path.insert(0, str(ROOT / "webapp" / "backend"))
 
-from shared_gene_analysis import run_availability as ra  # noqa: E402
+from exondomaincompare.shared_gene_analysis import run_availability as ra  # noqa: E402
 from exondomaincompare.contracts import write_freshness_contract  # noqa: E402
 
 REAL_RUN = ROOT / "runs" / "2026-07-29_1217_fgfr2_equus_quagga"
@@ -385,7 +385,7 @@ def test_finalize_derives_the_end_state_from_the_artefacts(tmp_path: Path, monke
 
 def test_shared_finalizer_clears_a_superseded_roundtrip_failure(
         complete_run: Path, monkeypatch: pytest.MonkeyPatch):
-    from shared_gene_analysis import finalize_run_status as finalizer
+    from exondomaincompare.shared_gene_analysis import finalize_run_status as finalizer
 
     path = complete_run / "status.json"
     path.write_text(json.dumps({

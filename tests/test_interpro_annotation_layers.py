@@ -24,7 +24,7 @@ SCRIPTS = PROJECT_ROOT / "scripts"
 if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
-from framework import interpro_annotations as ia  # noqa: E402
+from exondomaincompare.framework import interpro_annotations as ia  # noqa: E402
 
 FGFR1_RUN = PROJECT_ROOT / "runs" / "2026-07-14_2153_fgfr1_gallus_mus_twospecies"
 TP53_RUN = PROJECT_ROOT / "runs" / "2026-07-16_1642_tp53_human_core_pilot"

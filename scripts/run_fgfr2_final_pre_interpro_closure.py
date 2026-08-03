@@ -25,7 +25,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import _fgfr2_msa_common as M  # noqa: E402
+from exondomaincompare.scientific import fgfr2_msa_common as M  # noqa: E402
 
 SCRIPT_VERSION = "1.0"
 TRUTH_COLS = [
@@ -923,7 +923,6 @@ CLOSURE_SCRIPT_NAMES = [
     "make_fgfr2_msa_boundary_figures.py",
     "make_publication_figures_pre_interpro.py",
     "make_all_figures.py",
-    "_fgfr2_msa_common.py",
 ]
 
 
@@ -974,6 +973,12 @@ def stage_closure_scripts(cdir: Path) -> List[str]:
         dst = dest_root / name
         shutil.copy2(src, dst)
         staged.append(str(dst.relative_to(cdir)))
+    shared_source = (scripts_root.parent / "src" / "exondomaincompare" /
+                     "scientific" / "fgfr2_msa_common.py")
+    if shared_source.is_file():
+        shared_dest = dest_root / shared_source.name
+        shutil.copy2(shared_source, shared_dest)
+        staged.append(str(shared_dest.relative_to(cdir)))
     shell = scripts_root.parent / "run_fgfr2_pipeline_current_final_pre_interpro.sh"
     if shell.exists():
         shutil.copy2(shell, dest_root / shell.name)

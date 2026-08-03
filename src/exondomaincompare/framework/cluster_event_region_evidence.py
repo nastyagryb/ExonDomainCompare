@@ -17,8 +17,8 @@ Output (same directory):
   * event_region_candidate_clusters.tsv   (always written; header-only if empty)
 
 Usage:
-  python scripts/framework/cluster_event_region_evidence.py --run-id <run_id>
-  python scripts/framework/cluster_event_region_evidence.py --core-dir <dir> [--gap 5]
+  python -m exondomaincompare.framework.cluster_event_region_evidence --run-id <run_id>
+  python -m exondomaincompare.framework.cluster_event_region_evidence --core-dir <dir> [--gap 5]
 """
 from __future__ import annotations
 

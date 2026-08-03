@@ -1,33 +1,3 @@
-"""taxon_resolution.py — resolve a submitted species name to a real NCBI taxon.
-
-The species registry used to answer this question from a literal table of thirty
-entries: the validated FGFR2 panel. For anything else it copied the string it was
-given into the field later used as an NCBI query term. Since the web form submits
-Ensembl-style slugs, that field became ``equus_quagga``, and
-
-    datasets summary genome taxon equus_quagga
-    Error: The taxonomy name 'equus_quagga' is not recognized.
-
-which is where the Equus quagga run died — four stages before the empty transcript
-table that was reported as its cause. The failure was certain for every species
-outside the table and invisible for every species inside it.
-
-So resolution is asked of the service that owns the answer. What comes back is the
-accepted scientific name, the numeric taxid, the rank and the synonyms the source
-itself publishes. The numeric taxid is the important one: it is unambiguous, it needs
-no spelling, and every downstream query prefers it.
-
-Two guarantees this module owes the caller:
-
-*Never substitute a different species.* A name that cannot be resolved is returned
-unresolved, with a reason. Silently answering an *Equus quagga* request with *Equus
-caballus* — same genus, a published genome, a plausible FGFR2 — would produce a run
-that looks successful and is about the wrong animal.
-
-*A synonym is only an alias if it resolves back.* Querying under a synonym is allowed
-when the source maps that synonym to the requested taxon; it is not allowed as a way
-of reaching a neighbouring taxon that happens to have better data.
-"""
 from __future__ import annotations
 
 import json
@@ -74,10 +44,8 @@ class TaxonIdentity:
         return self.status in (RESOLVED, RESOLVED_VIA_SYNONYM)
 
     def query_term(self) -> str:
-        """What to send to a source service.
-
-        The numeric taxid where it is known, because it cannot be misspelled and
-        cannot drift when a name is revised. Otherwise the accepted name — never the
+        """ The numeric taxid where it is known, because it cannot be misspelled and
+        cannot drift when a name is revised. Otherwise the accepted name, never the
         underscored slug, which is what broke the original run.
         """
         return self.taxid or self.accepted_name or self.submitted_name
@@ -99,10 +67,7 @@ class TaxonIdentity:
 
 
 def normalise_name(name: str) -> str:
-    """A submitted name as a scientific name.
-
-    The web form and the species lists use ``equus_quagga``; NCBI wants ``Equus
-    quagga``. Underscores become spaces and the genus is capitalised. Anything that
+    """ Underscores become spaces and the genus is capitalised. Anything that
     already looks like a scientific name is left alone, so a caller cannot damage a
     correctly spelled subspecies trinomial by passing it through here.
     """
@@ -303,12 +268,6 @@ def _same_taxon(canonical: str, identity: TaxonIdentity) -> bool:
 
 
 def _is_published_synonym(canonical: str, identity: TaxonIdentity) -> bool:
-    """Whether the source itself lists the submitted name for this taxon.
-
-    The test is on the synonyms NCBI publishes, not on string similarity. *Equus
-    quagga* and *Equus caballus* share a genus and eight characters; only one of them
-    is a zebra.
-    """
     target = _norm(canonical)
     return any(_norm(s) == target for s in identity.synonyms)
 

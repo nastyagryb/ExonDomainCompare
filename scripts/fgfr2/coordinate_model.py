@@ -6,7 +6,7 @@ its Figure Gallery looks nothing like the one a FGFR1 or TP53 run gets, and why 
 species inside the 30-species panel has no gallery of its own.
 
 Nothing here re-analyses FGFR2. It reads the frozen result tables and restates
-them in the structure ``scripts/shared_gene_analysis/protein_coordinate_model.py``
+them in the structure ``src/exondomaincompare/shared_gene_analysis/protein_coordinate_model.py``
 produces for every other gene, so the accepted shared renderer — the same one the
 Gene Explorer exports through — can draw the validated FGFR2 features. One
 renderer, one set of semantic styles, one export path.
@@ -45,9 +45,9 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT / "scripts") not in sys.path:
     sys.path.insert(0, str(ROOT / "scripts"))
 
-from shared_gene_analysis import boundary_classification as bc  # noqa: E402
-from shared_gene_analysis import model_roles as mr  # noqa: E402
-from shared_gene_analysis import species_order as so  # noqa: E402
+from exondomaincompare.shared_gene_analysis import boundary_classification as bc  # noqa: E402
+from exondomaincompare.shared_gene_analysis import model_roles as mr  # noqa: E402
+from exondomaincompare.shared_gene_analysis import species_order as so  # noqa: E402
 
 SCHEMA_VERSION = 1
 COORDINATE_SYSTEM = "protein_1_based_inclusive"
@@ -567,7 +567,7 @@ def _msa_columns(msa: Path) -> Dict[str, Dict[int, int]]:
     per species. FGFR2 has two, so the mapping is built per protein here; the
     alignment file and the column arithmetic are the shared ones.
     """
-    from shared_gene_analysis.msa_coordinates import column_map, read_aligned_fasta
+    from exondomaincompare.shared_gene_analysis.msa_coordinates import column_map, read_aligned_fasta
     if not msa.is_file():
         return {}
     out: Dict[str, Dict[int, int]] = {}
@@ -815,7 +815,7 @@ def _boundary_dashboard(index: Dict[str, Any]) -> Dict[str, Any]:
     interactive Comparative Boundary Explorer read the same group ids, distances,
     classes and species order rather than two independently derived versions.
     """
-    from shared_gene_analysis.boundary_dashboard import build_boundary_dashboard
+    from exondomaincompare.shared_gene_analysis.boundary_dashboard import build_boundary_dashboard
 
     reduced = dict(index)
     reduced["models"] = [m for m in index["models"] if m["is_primary_reference"]]

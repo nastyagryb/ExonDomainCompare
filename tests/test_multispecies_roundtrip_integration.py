@@ -89,7 +89,7 @@ def rebuilt(tmp_path_factory):
     env["EDC_DATA_DIR"] = str(data_root)
     env["MPLCONFIGDIR"] = str(data_root / "matplotlib")
     proc = subprocess.run(
-        [sys.executable, str(ROOT / "scripts/framework/run_core_gene_analysis.py"),
+        [sys.executable, "-m", "exondomaincompare.framework.run_core_gene_analysis",
          "--post", "--run-id", SANDBOX_ID],
         cwd=str(ROOT), capture_output=True, text=True, env=env)
     try:
@@ -173,7 +173,7 @@ def test_the_returned_sequence_inventory_reports_every_species(rebuilt):
 
 def test_the_inventory_distinguishes_no_features_from_no_sequence():
     """A protein with no predicted TM region is not a missing analysis."""
-    from framework.run_core_gene_analysis import _returned_sequence_inventory
+    from exondomaincompare.framework.run_core_gene_analysis import _returned_sequence_inventory
     core = REFERENCE / "results" / "core_gene_analysis"
     inv = _returned_sequence_inventory(
         core, {"rows": [{"protein_id": "NP_990841.2"}]}, {"rows": []})
@@ -268,7 +268,7 @@ def test_an_unattributable_result_row_stops_the_phase():
 
 
 def test_the_primary_protein_list_covers_every_species():
-    from framework.run_core_gene_analysis import _primary_protein_ids
+    from exondomaincompare.framework.run_core_gene_analysis import _primary_protein_ids
     ids = _primary_protein_ids(REFERENCE / "results" / "core_gene_analysis")
     assert len(ids) == 2, f"expected one primary per species, got {ids}"
     assert len(set(ids)) == 2

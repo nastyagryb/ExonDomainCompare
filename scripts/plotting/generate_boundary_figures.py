@@ -23,7 +23,7 @@ from typing import Any, Dict, List
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from plotting import figure_captions as fc  # noqa: E402
+from exondomaincompare.presentation import figure_captions as fc  # noqa: E402
 
 LEGACY_GROUP = "exon_domain_boundaries"
 

@@ -14,10 +14,10 @@ Outputs (under <out>/):
 
 Examples:
     # custom run -> runs/<id>/results/generic_event_detector/
-    python scripts/adapters/fgfr2_event_detector_adapter.py --run-id 2026-07-07_1133_gallus_fresh_e2e
+    python -m exondomaincompare.adapters.fgfr2_event_detector_adapter --run-id 2026-07-07_1133_gallus_fresh_e2e
 
     # example preview into a safe (non-freeze) folder
-    python scripts/adapters/fgfr2_event_detector_adapter.py --example \
+    python -m exondomaincompare.adapters.fgfr2_event_detector_adapter --example \
         --out artifacts/generic_event_detector/example
 """
 from __future__ import annotations

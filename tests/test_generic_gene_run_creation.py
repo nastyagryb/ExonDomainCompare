@@ -22,9 +22,9 @@ SCRIPTS = PROJECT_ROOT / "scripts"
 if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
-from framework import gene_config as gc  # noqa: E402
-from framework import analysis_router as router  # noqa: E402
-from framework.run_core_gene_analysis import resolve_gene_locus  # noqa: E402
+from exondomaincompare.framework import gene_config as gc  # noqa: E402
+from exondomaincompare.framework import analysis_router as router  # noqa: E402
+from exondomaincompare.framework.run_core_gene_analysis import resolve_gene_locus  # noqa: E402
 
 
 # --------------------------------------------------------------------------- #

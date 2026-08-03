@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from shared_gene_analysis.public_paths import (
+from exondomaincompare.shared_gene_analysis.public_paths import (
     rebuild_existing_public_projections,
     sanitize_public_payload,
 )

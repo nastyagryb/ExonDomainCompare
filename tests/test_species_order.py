@@ -20,7 +20,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from shared_gene_analysis import species_order as so  # noqa: E402
+from exondomaincompare.shared_gene_analysis import species_order as so  # noqa: E402
 
 FRONTEND = ROOT / "webapp" / "frontend" / "src"
 JS_MODULE = FRONTEND / "pages" / "viewers" / "speciesOrder.js"
@@ -174,9 +174,7 @@ def test_the_indices_carry_the_order_so_the_frontend_need_not_recompute_it():
     assert "so.order_species(by_species.keys())" in synteny
     assert '"species_order": so.build_species_order' in synteny
 
-    legacy = (ROOT / "scripts/shared_gene_analysis"
-              / "comparative_dataset.py").read_text(encoding="utf-8")
-    assert "exondomaincompare.shared_gene_analysis.comparative_dataset" in legacy
+    assert not (ROOT / "scripts/shared_gene_analysis" / "comparative_dataset.py").exists()
 
 
 def test_the_validated_fgfr2_builder_uses_the_same_definition():

@@ -1,28 +1,4 @@
 #!/usr/bin/env python3
-"""Data & Downloads: capability contract and server-side package builder.
-
-Two things live here.
-
-**The capability contract** (Part 7). ``capabilities(run_dir, scope)`` answers one
-question per download item: is it available, where does it come from, and if it
-is not available, exactly why. The frontend never guesses availability from a
-filename, and never offers an item it cannot deliver.
-
-**The package builder** (Parts 10–12). ``build_package`` turns a validated
-selection into a ZIP with a README, a manifest and the selected real files. An
-item that is unavailable is recorded as omitted with its reason; it is never
-written as an empty file and it never stops the rest of the package.
-
-Scopes
-------
-``comparative``   the cross-species products of a multi-species run
-``all``           every species of a multi-species run, grouped per species
-``<species_id>``  exactly the species-specific products, identical in shape to
-                  what a single-species run offers
-
-A single-species run therefore has no comparative scope at all, which is what
-keeps its Data & Downloads page free of preselected comparative items.
-"""
 from __future__ import annotations
 
 import json
@@ -1020,7 +996,7 @@ def build_package(run_dir: Path, selection: Dict[str, Any],
                 "n_included_files": len(included),
             }, payload_type="download_manifest", run_id=run_id,
                dataset_id=run_id, profile=RUNTIME_CONFIG.public_identity(),
-               generator="scripts/shared_gene_analysis/package_builder.py")
+               generator="src/exondomaincompare/shared_gene_analysis/package_builder.py")
             readme = _readme(ctx_gene, run_id, scope, job.preset, species_ids,
                              included, omitted)
             for name, text in (

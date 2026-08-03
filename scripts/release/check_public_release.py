@@ -17,8 +17,8 @@ ALLOWED_TOP_LEVEL = {
     ".gitattributes", ".github", ".gitignore", "CHANGELOG.md", "CITATION.cff",
     "LICENSE", "Makefile", "README.md", "SECURITY.md", "config", "configs",
     "datasets", "docs", "pyproject.toml", "reference", "references",
-    "requirements", "requirements.txt", "run_fgfr2_pipeline_current_final_pre_interpro.sh",
-    "run_fgfr2_pipeline_current_v3.sh", "scripts", "species_list_final_30.txt",
+    "requirements", "run_fgfr2_pipeline_current_final_pre_interpro.sh",
+    "run_fgfr2_pipeline_current_v3.sh", "scripts",
     "src", "tests", "webapp",
 }
 FORBIDDEN_TOP_LEVEL = {
@@ -33,6 +33,16 @@ REQUIRED_PACKAGES = {
     "src/exondomaincompare/runs/migration.py",
     "src/exondomaincompare/runs/outputs.py",
     "src/exondomaincompare/runs/registry.py",
+}
+FORBIDDEN_SCRIPT_PREFIXES = {
+    "scripts/adapters", "scripts/framework", "scripts/lib",
+    "scripts/shared_gene_analysis",
+}
+FORBIDDEN_SCRIPT_FILES = {
+    "scripts/_fgfr2_msa_common.py", "scripts/fgfr2_plot_style.py",
+    "scripts/interpro_cluster/check_interpro_job.sh",
+    "scripts/interpro_cluster/fetch_interpro_result.sh",
+    "scripts/interpro_cluster/submit_interpro_job.sh",
 }
 
 
@@ -65,7 +75,8 @@ def main() -> int:
     if not files:
         raise RuntimeError("No release files found")
     for required in ("README.md", "LICENSE", "CITATION.cff", "CHANGELOG.md",
-                     "datasets/DATA_NOTICE.md", ".github/workflows/ci.yml"):
+                     "datasets/DATA_NOTICE.md", ".github/workflows/ci.yml",
+                     "scripts/README.md"):
         if Path(required) not in files:
             raise RuntimeError(f"Required release file missing: {required}")
     missing_packages = REQUIRED_PACKAGES.difference(map(str, files))
@@ -73,6 +84,11 @@ def main() -> int:
         missing = ", ".join(sorted(missing_packages))
         raise RuntimeError(f"Required Python package files missing: {missing}")
     for relative in files:
+        relative_text = relative.as_posix()
+        if relative_text in FORBIDDEN_SCRIPT_FILES or any(
+                relative_text.startswith(prefix + "/")
+                for prefix in FORBIDDEN_SCRIPT_PREFIXES):
+            raise RuntimeError(f"Retired script compatibility path included: {relative}")
         if relative.parts[0] not in ALLOWED_TOP_LEVEL:
             raise RuntimeError(f"Unexpected top-level path: {relative}")
         if relative.parts[0] in FORBIDDEN_TOP_LEVEL or \

@@ -1,26 +1,4 @@
 #!/usr/bin/env python3
-"""Native protein position ↔ cross-species MSA column mapping.
-
-Comparing exon boundaries across species needs a common coordinate. Native amino-acid
-positions are not comparable — *Gallus* FGFR1 is 817 aa and *Mus* 822 aa, so position
-147 means different things in the two — and genomic coordinates are worse, because the
-two genes sit on different assemblies and share no interval at all.
-
-The cross-species MSA of one primary protein per species supplies the only common frame
-this pipeline can honestly offer. This module materialises the mapping that was
-previously missing: for every species it records which alignment column each native
-residue occupies, which is what lets a boundary in one species be placed next to a
-boundary in another.
-
-Deliberately excluded:
-
-* **Isoforms.** The cross-species alignment holds exactly one primary protein per
-  species. Adding alternative isoforms would mix a within-species question (which
-  protein variants does this species make) into a between-species one.
-* **Similarity claims.** A shared column says two residues were aligned, not that they
-  are functionally equivalent. Callers decide what confidence to attach; this module
-  only reports the geometry, plus whether the aligned column is a gap in either species.
-"""
 from __future__ import annotations
 
 from pathlib import Path

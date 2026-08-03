@@ -22,25 +22,21 @@ to ``results_ready``.
 
 Usage::
 
-    python -m shared_gene_analysis.finalize_run_status --run-id <run_id>
+    python -m exondomaincompare.shared_gene_analysis.finalize_run_status --run-id <run_id>
 """
 from __future__ import annotations
 
 import argparse
 import json
-import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
-ROOT = Path(__file__).resolve().parents[2]
-if str(ROOT / "scripts") not in sys.path:
-    sys.path.insert(0, str(ROOT / "scripts"))
-from framework.data_contract import stamp_payload  # noqa: E402
-from framework.local_registry import resolve_run_record  # noqa: E402
-from framework.portable_config import load_config  # noqa: E402
+from exondomaincompare.config import discover_repository_root, load_config
+from exondomaincompare.contracts import stamp_payload
+from exondomaincompare.runs.registry import resolve_run_record
 
-RUNTIME_CONFIG = load_config(repository_root=ROOT)
+RUNTIME_CONFIG = load_config(repository_root=discover_repository_root(__file__))
 ROOT = RUNTIME_CONFIG.repository_root
 RUNS_ROOT = RUNTIME_CONFIG.runs_root
 
@@ -67,7 +63,7 @@ def _read_json(path: Path, default: Any = None) -> Any:
 
 
 def _cluster_state(run_dir: Path) -> Tuple[str, Dict[str, Any]]:
-    from shared_gene_analysis.cluster_output_freshness import evaluate
+    from .cluster_output_freshness import evaluate
     report = evaluate(run_dir)
     return report["status"], report
 
@@ -75,7 +71,7 @@ def _cluster_state(run_dir: Path) -> Tuple[str, Dict[str, Any]]:
 def _event_pipeline_verdict(run_dir: Path, status: Dict[str, Any],
                             ) -> Optional[Tuple[str, str, List[str]]]:
     """Verdict for a run with the event-pipeline closure, or None."""
-    from shared_gene_analysis.run_availability import models_run, readiness
+    from .run_availability import models_run, readiness
     if not models_run(run_dir):
         return None
     run_config = _read_json(run_dir / "run_config.json", {}) or {}
@@ -91,7 +87,7 @@ def _event_pipeline_verdict(run_dir: Path, status: Dict[str, Any],
 
 def _core_verdict(run_dir: Path) -> Optional[Tuple[str, str, List[str]]]:
     """Verdict for a generic core run, or None when the layout does not apply."""
-    from framework.species_completion import (
+    from exondomaincompare.framework.species_completion import (
         aggregate_run_status, build_species_completion,
     )
     completion = build_species_completion(run_dir)
@@ -180,7 +176,7 @@ def finalize(run_dir: Path, dry_run: bool = False) -> Dict[str, Any]:
     status = stamp_payload(
         status, payload_type="status", run_id=run_dir.name,
         dataset_id=run_dir.name, profile=RUNTIME_CONFIG.public_identity(),
-        generator="scripts/shared_gene_analysis/finalize_run_status.py",
+        generator="src/exondomaincompare/shared_gene_analysis/finalize_run_status.py",
     )
     path.write_text(json.dumps(status, indent=2))
     report["written"] = True

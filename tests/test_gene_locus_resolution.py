@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import ast
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -17,9 +18,10 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
+SOURCE = ROOT / "src" / "exondomaincompare"
 sys.path.insert(0, str(SCRIPTS))
 
-from shared_gene_analysis import gene_locus_resolution as glr  # noqa: E402
+from exondomaincompare.shared_gene_analysis import gene_locus_resolution as glr  # noqa: E402
 
 REAL_RUN = ROOT / "runs" / "2026-07-29_1347_hba_panthera_leo"
 FREEZE = ROOT / "results" / "final_30_until_interpro_prepare"
@@ -388,7 +390,7 @@ def test_the_coding_exon_count_comes_from_the_cds_not_the_gene_page(tmp_path):
     The NCBI Gene page total exon count is not the coding-exon count, and boundary
     availability depends on the latter.
     """
-    from framework.run_core_gene_analysis import parse_gene_models
+    from exondomaincompare.framework.run_core_gene_analysis import parse_gene_models
 
     rows = [_gene("chr1", 1000, 6000, "G", "G", "42")]
     rows.append("chr1\tGnomon\tmRNA\t1000\t6000\t.\t+\t.\t"
@@ -415,7 +417,7 @@ def test_the_coding_exon_count_comes_from_the_cds_not_the_gene_page(tmp_path):
 
 
 def test_transcript_exon_and_cds_parents_link_to_the_resolved_gene(loc_annotation):
-    from framework.run_core_gene_analysis import parse_gene_models
+    from exondomaincompare.framework.run_core_gene_analysis import parse_gene_models
 
     models = parse_gene_models(loc_annotation, "HBA",
                                gene_lookup=_lookup([_hba_record()]),
@@ -433,7 +435,7 @@ def test_transcript_exon_and_cds_parents_link_to_the_resolved_gene(loc_annotatio
 # The runner's adapter keeps its old contract
 # --------------------------------------------------------------------------- #
 def test_the_runner_adapter_reports_the_structured_status(loc_annotation):
-    from framework.run_core_gene_analysis import resolve_gene_locus as adapter
+    from exondomaincompare.framework.run_core_gene_analysis import resolve_gene_locus as adapter
 
     ok = adapter(loc_annotation, "HBA", gene_lookup=_lookup([_hba_record()]),
                  allow_network=False)
@@ -450,7 +452,7 @@ def test_the_runner_adapter_reports_the_structured_status(loc_annotation):
 
 
 def test_the_old_catch_all_message_is_gone_from_the_runner():
-    src = (SCRIPTS / "framework" / "run_core_gene_analysis.py").read_text(encoding="utf-8")
+    src = (SOURCE / "framework" / "run_core_gene_analysis.py").read_text(encoding="utf-8")
     assert "no locus with this symbol or synonym" not in src
 
 
@@ -476,8 +478,8 @@ def _executable_source(path: Path) -> str:
 
 
 @pytest.mark.parametrize("module", [
-    SCRIPTS / "shared_gene_analysis" / "gene_locus_resolution.py",
-    SCRIPTS / "framework" / "run_core_gene_analysis.py",
+    SOURCE / "shared_gene_analysis" / "gene_locus_resolution.py",
+    SOURCE / "framework" / "run_core_gene_analysis.py",
 ])
 def test_no_production_module_branches_on_the_species_or_the_gene(module):
     code = _executable_source(module).lower()
@@ -506,9 +508,11 @@ def test_the_cascade_is_generic_over_the_gene_symbol(tmp_path):
 # Retry in place (part 6 / part 9)
 # --------------------------------------------------------------------------- #
 def test_the_runner_offers_an_in_place_retry():
-    out = subprocess.run([sys.executable,
-                          str(SCRIPTS / "framework" / "run_core_gene_analysis.py"),
-                          "--help"], capture_output=True, text=True, cwd=str(ROOT))
+    env = os.environ.copy()
+    env["PYTHONPATH"] = str(ROOT / "src")
+    out = subprocess.run(
+        [sys.executable, "-m", "exondomaincompare.framework.run_core_gene_analysis",
+         "--help"], capture_output=True, text=True, cwd=str(ROOT), env=env)
     assert "--reuse-run-id" in out.stdout
 
 
@@ -521,7 +525,7 @@ def test_the_retry_endpoint_reuses_the_original_run_id():
 
 
 def test_invalidation_keeps_what_the_retry_did_not_invalidate(tmp_path):
-    from framework.run_core_gene_analysis import invalidate_derived_stages
+    from exondomaincompare.framework.run_core_gene_analysis import invalidate_derived_stages
 
     run = tmp_path / "run"
     registry = run / "results" / "01_species_registry" / "species_registry.tsv"
@@ -550,7 +554,7 @@ def test_invalidation_keeps_what_the_retry_did_not_invalidate(tmp_path):
 # Isoform differences with one protein model (part 7)
 # --------------------------------------------------------------------------- #
 def test_one_protein_model_is_not_applicable_rather_than_a_failure(tmp_path):
-    from shared_gene_analysis.indices.msa import build_msa_index
+    from exondomaincompare.shared_gene_analysis.indices.msa import build_msa_index
 
     wi = tmp_path / "website_indices"
     wi.mkdir(parents=True)

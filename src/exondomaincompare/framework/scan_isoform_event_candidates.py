@@ -26,7 +26,7 @@ Output:
   results/core_gene_analysis/event_candidate_regions.tsv
 
 Usage:
-  python scripts/framework/scan_isoform_event_candidates.py --run-id <run_id>
+  python -m exondomaincompare.framework.scan_isoform_event_candidates --run-id <run_id>
 """
 from __future__ import annotations
 

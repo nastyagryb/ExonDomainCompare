@@ -3,7 +3,7 @@
 
 This is the SINGLE source of truth for classifying a core-only run's state,
 used by both:
-  * scripts/framework/validate_core_gene_run.py (CLI), and
+  * src/exondomaincompare/framework/validate_core_gene_run.py (CLI), and
   * the webapp backend (webapp/backend/main.py) so a dashboard refresh uses the
     exact same milestone logic.
 

@@ -40,7 +40,7 @@ _TRANSCRIPTS_PATH: Optional[Path] = None
 
 
 def _explain_no_transcripts() -> str:
-    from shared_gene_analysis import model_recovery as recovery
+    from exondomaincompare.shared_gene_analysis import model_recovery as recovery
 
     contract = None
     if _TRANSCRIPTS_PATH is not None:

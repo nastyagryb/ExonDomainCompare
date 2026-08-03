@@ -26,7 +26,7 @@ SCRIPTS = REPO_ROOT / "scripts"
 if str(SCRIPTS) not in sys.path:
     sys.path.insert(0, str(SCRIPTS))
 
-from shared_gene_analysis.strand import (  # noqa: E402
+from exondomaincompare.shared_gene_analysis.strand import (  # noqa: E402
     MINUS, PLUS, is_forward, is_reverse, normalize_strand, same_strand,
     strand_sign, strand_symbol,
 )
@@ -524,7 +524,7 @@ def _fake_run(tmp_path, fasta_seq, scored_seq):
 
 
 def test_matching_cluster_outputs_are_reusable(tmp_path):
-    from shared_gene_analysis.cluster_output_freshness import evaluate
+    from exondomaincompare.shared_gene_analysis.cluster_output_freshness import evaluate
     report = evaluate(_fake_run(tmp_path, "MKV", "MKV"))
     assert report["status"] == "fresh"
     assert report["usable"] is True
@@ -532,14 +532,14 @@ def test_matching_cluster_outputs_are_reusable(tmp_path):
 
 def test_cluster_outputs_for_a_superseded_sequence_are_stale(tmp_path):
     """A repaired coordinate model must not reuse annotations by filename."""
-    from shared_gene_analysis.cluster_output_freshness import evaluate
+    from exondomaincompare.shared_gene_analysis.cluster_output_freshness import evaluate
     report = evaluate(_fake_run(tmp_path, "MKVA", "MKV"))
     assert report["status"] == "stale"
     assert report["interproscan"]["mismatched"] == ["P1"]
 
 
 def test_stale_cluster_outputs_block_results_ready(tmp_path):
-    from framework.species_completion import (
+    from exondomaincompare.framework.species_completion import (
         STATE_STALE, aggregate_run_status,
     )
     completion = {"homo_sapiens": {
@@ -551,7 +551,7 @@ def test_stale_cluster_outputs_block_results_ready(tmp_path):
 
 
 def test_not_applicable_does_not_block_results_ready():
-    from framework.species_completion import (
+    from exondomaincompare.framework.species_completion import (
         REQUIRED_ANALYSES, STATE_AVAILABLE, STATE_NOT_APPLICABLE,
         aggregate_run_status,
     )
@@ -597,7 +597,7 @@ def test_accepted_reference_runs_keep_their_ready_status(run_id):
     directory = run_dir(run_id)
     if not (directory / "status.json").is_file():
         pytest.skip(f"{run_id} not present")
-    from shared_gene_analysis.finalize_run_status import evaluate_run
+    from exondomaincompare.shared_gene_analysis.finalize_run_status import evaluate_run
     report = evaluate_run(directory)
     assert report["status"] == "results_ready", report["reason"]
     assert report["cluster_outputs"] == "fresh"

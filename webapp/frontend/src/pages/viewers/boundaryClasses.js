@@ -1,6 +1,6 @@
 // Canonical (generic) exon-boundary classification vocabulary.
 //
-// Mirrors scripts/shared_gene_analysis/boundary_classification.py. Colours and
+// Mirrors src/exondomaincompare/shared_gene_analysis/boundary_classification.py. Colours and
 // labels are NOT defined here: they come from the shared scientific visual
 // specification in semanticStyles.js, so the interactive Boundary views and the
 // exported publication figures cannot drift apart. They previously did: this file

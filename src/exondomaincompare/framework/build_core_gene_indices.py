@@ -20,8 +20,8 @@ Output:
   --out <dir>       default: runs/<id>/website_indices/generic (for --run-id)
 
 Examples:
-  python scripts/framework/build_core_gene_indices.py --run-id <run_id>
-  python scripts/framework/build_core_gene_indices.py \
+  python -m exondomaincompare.framework.build_core_gene_indices --run-id <run_id>
+  python -m exondomaincompare.framework.build_core_gene_indices \
       --core-dir artifacts/core_gene_analysis/mock \
       --config configs/genes/drafts/TPM1_core_only_pilot.yaml \
       --dataset-id mock:tpm1_core_only \

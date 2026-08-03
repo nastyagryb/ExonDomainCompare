@@ -16,8 +16,8 @@ Rules enforced per model:
      boundary is consistent with the domain *instance* it was measured against
 
 Usage:
-    python scripts/shared_gene_analysis/validate_protein_coordinate_model.py runs/<id>
-    python scripts/shared_gene_analysis/validate_protein_coordinate_model.py --model-json path.json
+    python -m exondomaincompare.shared_gene_analysis.validate_protein_coordinate_model runs/<id>
+    python -m exondomaincompare.shared_gene_analysis.validate_protein_coordinate_model --model-json path.json
 """
 from __future__ import annotations
 
@@ -28,11 +28,8 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-_HERE = Path(__file__).resolve().parent
-if str(_HERE) not in sys.path:
-    sys.path.insert(0, str(_HERE))
-import model_roles  # noqa: E402
-from protein_coordinate_model import build_models_for_run  # noqa: E402
+from . import model_roles
+from .protein_coordinate_model import build_models_for_run
 
 BOUNDARY_MATCH_TOLERANCE_AA = 0  # boundary must land exactly on an exon-projection edge
 

@@ -1,4 +1,5 @@
 import csv
+import os
 import subprocess
 import sys
 
@@ -56,12 +57,15 @@ def test_cli_writes_expected_files(tmp_path):
     species_list.write_text("# comment\nHomo sapiens\nUnknown animal\n", encoding="utf-8")
     outdir = tmp_path / "out"
 
+    env = os.environ.copy()
+    env["PYTHONPATH"] = str(SCRIPT.parents[1] / "src")
     completed = subprocess.run(
         [sys.executable, str(SCRIPT), "--species_list", str(species_list),
          "--outdir", str(outdir), "--offline"],
         check=True,
         text=True,
         capture_output=True,
+        env=env,
     )
     assert "[OK] species_registry.tsv rows: 2" in completed.stdout
 
@@ -76,11 +80,14 @@ def test_strict_mode_fails_on_unknown_species(tmp_path):
     species_list.write_text("Unknown animal\n", encoding="utf-8")
     outdir = tmp_path / "out"
 
+    env = os.environ.copy()
+    env["PYTHONPATH"] = str(SCRIPT.parents[1] / "src")
     completed = subprocess.run(
         [sys.executable, str(SCRIPT), "--species_list", str(species_list),
          "--outdir", str(outdir), "--strict", "--offline"],
         text=True,
         capture_output=True,
+        env=env,
     )
     assert completed.returncode != 0
     assert "Strict mode failed" in completed.stderr

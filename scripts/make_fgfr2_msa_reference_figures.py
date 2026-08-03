@@ -27,7 +27,7 @@ from typing import Dict, List, Tuple
 os.environ.setdefault("MPLCONFIGDIR", tempfile.mkdtemp(prefix="mpl_msaref_"))
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import _fgfr2_msa_common as M  # noqa: E402
+from exondomaincompare.scientific import fgfr2_msa_common as M  # noqa: E402
 
 import matplotlib  # noqa: E402
 matplotlib.use("Agg")

@@ -14,7 +14,7 @@ import {
 } from "./semanticStyles";
 
 // Interactive Domain Architecture driven ENTIRELY by the validated
-// protein-coordinate model (scripts/shared_gene_analysis/protein_coordinate_model.py),
+// protein-coordinate model (src/exondomaincompare/shared_gene_analysis/protein_coordinate_model.py),
 // the exact same single source of truth used by the Exon Map. No coordinate is
 // reconstructed in React and no biological feature is fabricated: pre-cluster
 // runs render the same axis + exon/candidate context and report the domain /

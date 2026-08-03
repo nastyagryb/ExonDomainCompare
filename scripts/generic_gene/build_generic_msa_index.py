@@ -15,9 +15,9 @@ import argparse
 from pathlib import Path
 from typing import Any, Dict, List
 
-from .common import GenericContext, load_context, read_fasta, read_tsv, write_tsv
+from exondomaincompare.generic_gene.common import GenericContext, load_context, read_fasta, read_tsv, write_tsv
 from run_fgfr2_mafft_alignments import run_mafft
-from framework.portable_config import load_config
+from exondomaincompare.config import load_config
 
 RUNTIME_CONFIG = load_config(repository_root=Path(__file__).resolve().parents[2])
 

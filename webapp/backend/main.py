@@ -47,14 +47,14 @@ APP_VERSION = "1.0.0-phase1"
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 SCRIPTS_DIR = PROJECT_ROOT / "scripts"
 sys.path.insert(0, str(SCRIPTS_DIR))
-from framework.data_contract import stamp_payload, verify_payload_contract  # noqa: E402
-from framework.legacy_run_adapter import LegacyRunAdapter, LegacyRunError  # noqa: E402
-from framework.local_registry import (  # noqa: E402
+from exondomaincompare.contracts import stamp_payload, verify_payload_contract  # noqa: E402
+from exondomaincompare.runs.legacy import LegacyRunAdapter, LegacyRunError  # noqa: E402
+from exondomaincompare.runs.registry import (  # noqa: E402
     RegistryError, RunCollisionError, discover_runs, hide_discovered_run,
     resolve_run_record, unregister,
 )
-from framework.portable_config import LOCAL_PROFILE_ENV, LRZ_PROFILE_ENV, RUNS_ENV, load_config
-from framework.run_layout import RunLayout, RunLayoutVersion  # noqa: E402
+from exondomaincompare.config import LOCAL_PROFILE_ENV, LRZ_PROFILE_ENV, RUNS_ENV, load_config
+from exondomaincompare.runs.layout import RunLayout, RunLayoutVersion  # noqa: E402
 
 RUNTIME_CONFIG = load_config(repository_root=PROJECT_ROOT)
 PROJECT_ROOT = RUNTIME_CONFIG.repository_root
@@ -114,7 +114,7 @@ _cnr_spec.loader.exec_module(cnr)
 
 # How a run is named, labelled and ordered. Shared with the run-creation scripts
 # so the technical run_id and the visible run name are derived in one place.
-from framework import run_labels  # noqa: E402
+from exondomaincompare.framework import run_labels  # noqa: E402
 
 # Offline species → (scientific name, taxid) lookup, shared with the CLI species
 # registry. Used by the run-creation input preview so the frontend can show a
@@ -132,15 +132,15 @@ except Exception:  # pragma: no cover - best effort
 # gene/event metadata + UI labels so the frontend can drive labels from config
 # while keeping FGFR2 wording as the default fallback. Never required for the app.
 try:
-    from framework import gene_config as _gene_config  # type: ignore
+    from exondomaincompare.framework import gene_config as _gene_config  # type: ignore
 except Exception:  # pragma: no cover - PyYAML missing / import issue
     _gene_config = None
 
 # Canonical, file-based milestone logic for Core Gene Analysis runs. Shared with
-# the CLI validator (scripts/framework/validate_core_gene_run.py) so a dashboard
+# the CLI validator (src/exondomaincompare/framework/validate_core_gene_run.py) so a dashboard
 # refresh classifies empty/partial core-only runs exactly the same way.
 try:
-    from framework.core_run_milestones import (  # type: ignore
+    from exondomaincompare.framework.core_run_milestones import (  # type: ignore
         evaluate_core_run as _evaluate_core_run,
         is_core_only_run as _is_core_only_run,
     )
@@ -152,7 +152,7 @@ except Exception:  # pragma: no cover
 # index is still current, and why a view is empty. Shared with the pipeline so the
 # badge, the API and the pages quote one verdict.
 try:
-    from shared_gene_analysis.run_availability import (  # type: ignore
+    from exondomaincompare.shared_gene_analysis.run_availability import (  # type: ignore
         readiness as _readiness,
         view_states as _view_states,
     )
@@ -164,7 +164,7 @@ except Exception:  # pragma: no cover
 # FGFR2 → validated (frozen) workflow; every other gene → shared exploratory
 # workflow. No gene symbol is hard-checked anywhere else in the backend.
 try:
-    from framework import analysis_router as _router  # type: ignore
+    from exondomaincompare.framework import analysis_router as _router  # type: ignore
 except Exception:  # pragma: no cover
     _router = None
 
@@ -334,7 +334,7 @@ def _validate_package_builder_capability() -> None:
     """
     sys.path.insert(0, str(SCRIPTS_DIR / "shared_gene_analysis"))
     try:
-        from package_builder import workbook_capability  # type: ignore
+        from exondomaincompare.shared_gene_analysis.package_builder import workbook_capability  # type: ignore
         ok, detail = workbook_capability()
     except Exception as exc:  # pragma: no cover - import path problem only
         ok, detail = False, str(exc)
@@ -663,7 +663,7 @@ def _with_availability(data: Any, name: str, ds: Mapping[str, Any]) -> Any:
         return data
     analysis = _INDEX_ANALYSIS.get(name)
     try:
-        from shared_gene_analysis import analysis_availability as aa
+        from exondomaincompare.shared_gene_analysis import analysis_availability as aa
         if not aa.has_core_tables(Path(run_base)):
             return _with_event_view_state(data, name, Path(run_base))
         if not analysis:
@@ -705,7 +705,7 @@ def _with_event_view_state(data: Dict[str, Any], name: str, run_base: Path) -> D
     if data.get("available") is True:
         return data
     try:
-        from shared_gene_analysis.run_availability import FGFR2_VIEWS, models_run
+        from exondomaincompare.shared_gene_analysis.run_availability import FGFR2_VIEWS, models_run
         if not models_run(run_base):
             return data
         requirement = next((v for v in FGFR2_VIEWS if v.index == name), None)
@@ -1608,15 +1608,15 @@ def _local_run_commands(run_id: str, run_dir: Path) -> Dict[str, Any]:
     wf = _resolve_workflow(rc.get("gene_symbol") or "FGFR2")
     shared = not wf["is_validated"]
     gene = wf["gene_symbol"]
-    def command(script: str, *parts: str, cluster: bool = False) -> str:
+    def command(*parts: str, cluster: bool = False) -> str:
         # Keep the accepted copy/paste command stable. The selected profile is
         # returned separately and resolved by the same user config at execution.
-        return RUNTIME_CONFIG.command(["python", script, *parts])
+        return RUNTIME_CONFIG.command(["python", *parts])
 
     if shared:
         commands = [
             {"id": "core", "title": "1 · Core gene analysis (pre-cluster)",
-             "command": command("scripts/framework/run_core_gene_analysis.py",
+             "command": command("-m", "exondomaincompare.framework.run_core_gene_analysis",
                                 "--gene", gene, "--species", "<species>",
                                 "--input-mode", "auto"),
              "explanation": "Build the gene-agnostic core contract, exploratory evidence and "
@@ -1653,7 +1653,7 @@ def _local_run_commands(run_id: str, run_dir: Path) -> Dict[str, Any]:
     if shared:
         commands.append(
             {"id": "post_core", "title": "5 · Post-cluster analysis (domains/boundaries)",
-             "command": command("scripts/framework/run_core_gene_analysis.py",
+             "command": command("-m", "exondomaincompare.framework.run_core_gene_analysis",
                                 "--post", "--run-id", run_id),
              "explanation": "Parse real InterProScan/pyTMHMM outputs, rebuild domain architecture, "
                             "compute all-exon boundary analysis and regenerate indices.",
@@ -3544,7 +3544,7 @@ def current_core_capability(dataset: Optional[str] = Query(None)) -> Any:
 @app.get("/api/local-runs/{run_id}/core-validate")
 def local_run_core_validate(run_id: str) -> Dict[str, Any]:
     """Milestone validation report for a Core Gene Analysis run (same logic as
-    scripts/framework/validate_core_gene_run.py)."""
+    src/exondomaincompare/framework/validate_core_gene_run.py)."""
     run_dir = _safe_local_run_dir(run_id)
     if not run_dir.is_dir():
         raise HTTPException(status_code=404, detail=f"Run not found: {run_id}")
@@ -3620,7 +3620,7 @@ def package_capabilities(scope: Optional[str] = Query(None),
     availability from a filename.
     """
     sys.path.insert(0, str(SCRIPTS_DIR / "shared_gene_analysis"))
-    from package_builder import capabilities  # type: ignore
+    from exondomaincompare.shared_gene_analysis.package_builder import capabilities  # type: ignore
     return capabilities(_resolve_active_run_dir(dataset), scope)
 
 
@@ -3634,7 +3634,7 @@ def package_catalogue(scope: Optional[str] = Query(None),
 @app.post("/api/runs/current/packages")
 def create_package(body: PackageSelection, dataset: Optional[str] = Query(None)) -> Any:
     sys.path.insert(0, str(SCRIPTS_DIR / "shared_gene_analysis"))
-    from package_builder import PackageJob, build_package  # type: ignore
+    from exondomaincompare.shared_gene_analysis.package_builder import PackageJob, build_package  # type: ignore
     run_dir = _resolve_active_run_dir(dataset)
     job = PackageJob(
         job_id=f"pkg_{uuid.uuid4().hex[:12]}",
@@ -3649,7 +3649,7 @@ def create_package(body: PackageSelection, dataset: Optional[str] = Query(None))
 @app.get("/api/runs/current/packages/{job_id}")
 def package_status(job_id: str) -> Any:
     sys.path.insert(0, str(SCRIPTS_DIR / "shared_gene_analysis"))
-    from package_builder import get_job  # type: ignore
+    from exondomaincompare.shared_gene_analysis.package_builder import get_job  # type: ignore
     job = get_job(job_id)
     if not job:
         raise HTTPException(status_code=404, detail=f"Package job not found: {job_id}")

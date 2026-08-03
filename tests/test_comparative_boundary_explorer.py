@@ -3,7 +3,7 @@
 
 Two layers are covered here:
 
-* the backend contract in ``scripts/shared_gene_analysis/boundary_dashboard.py``, which
+* the backend contract in ``src/exondomaincompare/shared_gene_analysis/boundary_dashboard.py``, which
   is the single place that decides which boundaries are comparable, and
 * the browser-side behaviour (filtering, matrix cells, pair connections, exports), which
   is exercised by ``tests/check_comparative_explorer.mjs`` in Node and reported here.
@@ -156,7 +156,7 @@ def test_a_cell_without_an_observation_carries_no_distance(index):
     which is a real boundary class and the opposite of missing data. The failure mode is
     invisible on a fully mapped dataset and would surface only on a run with a gap.
     """
-    from shared_gene_analysis import boundary_dashboard as bd
+    from exondomaincompare.shared_gene_analysis import boundary_dashboard as bd
 
     models = index["models"]
     groups = bd.match_comparable_boundaries(models)

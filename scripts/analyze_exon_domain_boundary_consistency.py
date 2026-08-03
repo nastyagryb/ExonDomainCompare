@@ -43,7 +43,7 @@ def display_path(path) -> str:
     except Exception:
         return str(p)
 sys.path.insert(0, str(REPO / "scripts"))
-import fgfr2_plot_style as st  # noqa: E402
+from exondomaincompare.presentation import fgfr2_plot_style as st  # noqa: E402
 import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib.patches import Patch, Rectangle  # noqa: E402
 

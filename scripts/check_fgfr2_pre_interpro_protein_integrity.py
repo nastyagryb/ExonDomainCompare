@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import _fgfr2_msa_common as M  # noqa: E402
+from exondomaincompare.scientific import fgfr2_msa_common as M  # noqa: E402
 
 
 COLS = ["species", "isoform", "protein_id", "transcript_id", "sequence_length",

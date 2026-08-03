@@ -33,12 +33,12 @@ import sys
 ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT / "scripts") not in sys.path:
     sys.path.insert(0, str(ROOT / "scripts"))
-from framework import production_contract  # noqa: E402
-from framework.data_contract import file_sha256  # noqa: E402
-from framework.portable_config import load_config  # noqa: E402
+from exondomaincompare.framework import production_contract  # noqa: E402
+from exondomaincompare.contracts import file_sha256  # noqa: E402
+from exondomaincompare.config import load_config  # noqa: E402
 
 RUNTIME_CONFIG = load_config(repository_root=ROOT)
-from framework.local_registry import RegistryError, resolve_run_record  # noqa: E402
+from exondomaincompare.runs.registry import RegistryError, resolve_run_record  # noqa: E402
 
 INDEX_NAMES = ("figures_index.json", "generic/figures_index.json",
                "figure_index.json")

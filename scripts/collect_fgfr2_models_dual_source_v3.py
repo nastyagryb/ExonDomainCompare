@@ -39,7 +39,7 @@ import sys as _sys
 if str(Path(__file__).resolve().parent) not in _sys.path:
     _sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from shared_gene_analysis.strand import MINUS, is_reverse, normalize_strand  # noqa: E402
+from exondomaincompare.shared_gene_analysis.strand import MINUS, is_reverse, normalize_strand  # noqa: E402
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote, urlencode, unquote
 from urllib.request import Request, urlopen
@@ -47,9 +47,9 @@ from urllib.request import Request, urlopen
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from shared_gene_analysis import assembly_selection as asel  # noqa: E402
-from shared_gene_analysis import gene_identification as gid  # noqa: E402
-from shared_gene_analysis import model_recovery as recovery  # noqa: E402
+from exondomaincompare.shared_gene_analysis import assembly_selection as asel  # noqa: E402
+from exondomaincompare.shared_gene_analysis import gene_identification as gid  # noqa: E402
+from exondomaincompare.shared_gene_analysis import model_recovery as recovery  # noqa: E402
 
 ENSEMBL_REST = "https://rest.ensembl.org"
 EUTILS_BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"

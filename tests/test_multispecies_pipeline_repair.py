@@ -44,7 +44,7 @@ def core() -> Path:
 
 @pytest.fixture(scope="module")
 def models():
-    from shared_gene_analysis.protein_coordinate_model import build_models_for_run
+    from exondomaincompare.shared_gene_analysis.protein_coordinate_model import build_models_for_run
     idx = build_models_for_run(TWO_SPECIES_RUN)
     return {m["species_id"]: m for m in idx["models"]}, idx
 
@@ -76,7 +76,7 @@ def test_every_returned_sequence_maps_to_exactly_one_species(core: Path):
                / "results/14_interproscan/primary/output/input.fasta.tsv").read_text()
         returned = {l.split("\t")[0] for l in raw.splitlines() if l.strip()}
 
-    from framework.primary_resolution import resolve_primaries
+    from exondomaincompare.framework.primary_resolution import resolve_primaries
     primaries = resolve_primaries(core)
     by_protein = {v["protein_id"]: sid for sid, v in primaries.items()}
 
@@ -93,7 +93,7 @@ def test_every_returned_sequence_maps_to_exactly_one_species(core: Path):
 # 3-4. both species processed, and the primary agrees with what was analysed
 # --------------------------------------------------------------------------- #
 def test_the_resolved_primary_is_the_protein_the_cluster_analysed(core: Path):
-    from framework.primary_resolution import resolve_primaries
+    from exondomaincompare.framework.primary_resolution import resolve_primaries
     fasta = (TWO_SPECIES_RUN / "results/14_interproscan/primary/input"
              / "final_pre_interpro_proteins_primary.faa")
     submitted = {}
@@ -155,7 +155,7 @@ def test_the_coordinate_model_does_not_guess_a_primary_alphabetically():
 
 
 def test_a_species_without_a_primary_raises_instead_of_being_guessed(tmp_path: Path):
-    from framework.primary_resolution import PrimaryResolutionError, resolve_primaries
+    from exondomaincompare.framework.primary_resolution import PrimaryResolutionError, resolve_primaries
     core = tmp_path / "core"
     core.mkdir()
     (core / "protein_isoform_index.tsv").write_text(
@@ -173,13 +173,13 @@ def test_a_species_without_a_primary_raises_instead_of_being_guessed(tmp_path: P
 # 6. the selection evidence table is species-aware
 # --------------------------------------------------------------------------- #
 def test_the_selection_evidence_table_carries_a_species_column():
-    from framework.primary_selection import _TSV_FIELDS
+    from exondomaincompare.framework.primary_selection import _TSV_FIELDS
     assert "species_id" in _TSV_FIELDS
     assert "species_primary" in _TSV_FIELDS
 
 
 def test_the_writer_marks_one_primary_per_species(tmp_path: Path):
-    from framework.primary_selection import write_selection_evidence
+    from exondomaincompare.framework.primary_selection import write_selection_evidence
     report = {
         "primary_protein_id": "NP_g.1",
         "species_primaries": [
@@ -208,7 +208,7 @@ def test_the_writer_marks_one_primary_per_species(tmp_path: Path):
 # 7-8. per-species completion contract and run-level aggregation
 # --------------------------------------------------------------------------- #
 def test_every_species_gets_a_completion_object():
-    from framework.species_completion import REQUIRED_ANALYSES, build_species_completion
+    from exondomaincompare.framework.species_completion import REQUIRED_ANALYSES, build_species_completion
     completion = build_species_completion(TWO_SPECIES_RUN)
     assert set(completion) == {"gallus_gallus", "mus_musculus"}
     for sid, rec in completion.items():
@@ -218,14 +218,14 @@ def test_every_species_gets_a_completion_object():
 
 
 def test_a_complete_two_species_run_is_results_ready():
-    from framework.species_completion import aggregate_run_status, build_species_completion
+    from exondomaincompare.framework.species_completion import aggregate_run_status, build_species_completion
     status, reasons = aggregate_run_status(build_species_completion(TWO_SPECIES_RUN))
     assert status == "results_ready", f"{status}: {reasons}"
 
 
 def test_one_incomplete_species_makes_the_run_partial(tmp_path: Path):
     """The guard must catch exactly the state the run was in before the repair."""
-    from framework.species_completion import aggregate_run_status, build_species_completion
+    from exondomaincompare.framework.species_completion import aggregate_run_status, build_species_completion
 
     sandbox = tmp_path / "run"
     shutil.copytree(TWO_SPECIES_RUN, sandbox)
@@ -249,7 +249,7 @@ def test_an_analysis_that_ran_and_found_nothing_is_not_incomplete():
     """TP53 has no transmembrane region; that is a result, not a missing analysis."""
     if not TP53_RUN.is_dir():
         pytest.skip("TP53 regression run not present")
-    from framework.species_completion import aggregate_run_status, build_species_completion
+    from exondomaincompare.framework.species_completion import aggregate_run_status, build_species_completion
     completion = build_species_completion(TP53_RUN)
     for sid, rec in completion.items():
         assert rec["pytmhmm"] == "available", (
@@ -265,7 +265,7 @@ def test_an_analysis_that_ran_and_found_nothing_is_not_incomplete():
 def test_the_gallus_single_species_reference_is_unchanged():
     if not GALLUS_RUN.is_dir():
         pytest.skip("Gallus reference run not present")
-    from shared_gene_analysis.protein_coordinate_model import build_models_for_run
+    from exondomaincompare.shared_gene_analysis.protein_coordinate_model import build_models_for_run
     idx = build_models_for_run(GALLUS_RUN)
     assert idx["n_models"] == 1
     m = idx["models"][0]

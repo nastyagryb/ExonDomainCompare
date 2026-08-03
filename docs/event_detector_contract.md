@@ -36,7 +36,7 @@ detector must satisfy. It is the boundary between *biological event detection*
 - A detector **produces files**; it does not need to expose internal logic.
 - The generic index builder and all downstream views read **only** these files.
 - FGFR2 IIIb/IIIc is the first detector, provided as a **projection adapter** over
-  the existing validated outputs (`scripts/adapters/fgfr2_event_detector_adapter.py`).
+  the existing validated outputs (`src/exondomaincompare/adapters/fgfr2_event_detector_adapter.py`).
   It recomputes **nothing** and changes **no** biology.
 - Nothing here writes into the example freeze
   (`results/final_30_until_interpro_prepare/`).
@@ -132,7 +132,7 @@ The generic layer can build, from these files alone:
 - **domain architecture** (protein ids + InterPro/TM annotation)
 - **boundary relation** (event region vs domain boundaries)
 - **synteny context** (gene locus neighbourhood)
-- **generic website indices** (`scripts/adapters/fgfr2_to_generic_indices.py`)
+- **generic website indices** (`src/exondomaincompare/adapters/fgfr2_to_generic_indices.py`)
 
 ## Mapping FGFR2 IIIb/IIIc onto the contract
 

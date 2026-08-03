@@ -19,7 +19,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from framework import run_labels as rl  # noqa: E402
+from exondomaincompare.framework import run_labels as rl  # noqa: E402
 
 FRONTEND = ROOT / "webapp" / "frontend" / "src"
 

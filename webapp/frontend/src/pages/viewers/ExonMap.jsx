@@ -9,7 +9,7 @@ import {
 import { featureProps, featureStyle, textProps } from "./semanticStyles";
 
 // Interactive Exon Map driven entirely by the validated protein-coordinate model
-// (scripts/shared_gene_analysis/protein_coordinate_model.py). This is the single
+// (src/exondomaincompare/shared_gene_analysis/protein_coordinate_model.py). This is the single
 // source of truth for the primary exon-to-protein projection, exploratory
 // candidate overlays, optional real domain context, and inline transcript-model
 // comparison. Fully gene-agnostic — no hard-coded gene / transcript IDs.

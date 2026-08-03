@@ -25,10 +25,10 @@ import sys as _sys
 from . import (build_event_evidence, build_exon_protein_architecture,
                build_gene_model_summary, build_generic_msa_index,
                build_generic_precluster_figures, build_generic_website_indices,
-               build_single_species_explorer, build_synteny_neighbourhood,
-               select_primary_protein)
-from .common import GenericContext, load_context, read_json, read_tsv, write_json, write_tsv
-from .stages import STAGES, event_layer_for_gene
+               build_synteny_neighbourhood, select_primary_protein)
+from exondomaincompare.generic_gene import build_single_species_explorer
+from exondomaincompare.generic_gene.common import GenericContext, load_context, read_json, read_tsv, write_json, write_tsv
+from exondomaincompare.generic_gene.stages import STAGES, event_layer_for_gene
 
 # Real generated pre-cluster figure files, keyed by the figures_index item id used
 # by the shared/rich figures index. These are enriched into the shared root
@@ -264,7 +264,7 @@ def _write_shared_root_indices(ctx: GenericContext) -> Dict[str, Any]:
     scripts_dir = str(Path(__file__).resolve().parents[1])
     if scripts_dir not in _sys.path:
         _sys.path.insert(0, scripts_dir)
-    from framework import build_core_gene_indices as bcgi  # noqa: E402
+    from exondomaincompare.framework import build_core_gene_indices as bcgi  # noqa: E402
 
     cfg = bcgi._load_cfg(None, ctx.run_dir)
     src = bcgi.CoreSource(ctx.core_dir, f"run:{ctx.run_id}", cfg)
@@ -378,7 +378,7 @@ def run(run_id: str) -> Dict[str, Any]:
         root_result = _write_shared_root_indices(ctx)
         idx_result["website_indices_root"] = root_result.get("website_indices_root", [])
         # FGFR2-compatible coordinate_track / msa / synteny_locus for shared renderer parity.
-        from shared_gene_analysis.build_fgfr2_compatible_indices import (  # noqa: E402
+        from exondomaincompare.shared_gene_analysis.build_fgfr2_compatible_indices import (  # noqa: E402
             build_fgfr2_compatible_indices,
         )
         compat = build_fgfr2_compatible_indices(ctx.run_dir)

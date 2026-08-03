@@ -1,28 +1,4 @@
 #!/usr/bin/env python3
-"""One canonical reading of a genomic strand, for every source this project fetches.
-
-The sources disagree on how to spell the same fact. Ensembl's REST API returns the strand
-as the integer ``-1``; NCBI Datasets and RefSeq/Gnomon GFF3 write ``-``; some cached tables
-carry the string ``"reverse"``. A production check written as ``strand == "-"`` is therefore
-true for one source and false for another *describing the same gene on the same strand*.
-
-That is not a cosmetic difference. When such a check decides whether a transcript's CDS
-parts are read 5'→3', a minus-strand gene from the source with the unrecognised spelling is
-assembled in reverse: its exons are projected onto the protein from the C-terminus back, so
-its exon-to-protein map, its internal coding-exon boundaries and every cross-species
-comparison built on them are wrong — while the gene from the other source is right. Two
-orthologues then have no comparable boundary at all, which is how a two-species comparison
-came to produce zero comparable groups.
-
-So the spelling is normalised once, here, and nowhere else decides what a strand means.
-
-    >>> normalize_strand("-1") == normalize_strand("-") == MINUS
-    True
-    >>> is_reverse(-1) and is_reverse("reverse")
-    True
-    >>> normalize_strand("") is None
-    True
-"""
 from __future__ import annotations
 
 from typing import Any, Optional

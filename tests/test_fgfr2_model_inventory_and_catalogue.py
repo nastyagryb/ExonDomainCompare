@@ -191,7 +191,7 @@ def test_review_flags_are_carried_not_flattened(model_index):
 # 2. the model-role hierarchy
 # --------------------------------------------------------------------------- #
 def test_every_model_states_an_explicit_role_and_id(model_index):
-    import model_roles
+    from exondomaincompare.shared_gene_analysis import model_roles
 
     for m in model_index["models"]:
         assert m["model_id"], m["protein_id"]
@@ -224,7 +224,7 @@ def test_isoform_models_are_roles_not_two_unlabelled_primaries(model_index):
 
 def test_a_generic_gene_still_has_one_primary_reference_per_species():
     """The stricter rule must not have changed how a normal gene behaves."""
-    import model_roles
+    from exondomaincompare.shared_gene_analysis import model_roles
 
     runs = sorted((ROOT / "runs").glob("*/website_indices/generic/"
                                        "protein_coordinate_model.json"))
@@ -431,7 +431,7 @@ def test_a_multi_species_dataset_opens_on_the_comparative_scope(catalogue):
 
 
 def test_species_scopes_follow_the_canonical_order(catalogue, model_index):
-    import species_order
+    from exondomaincompare.shared_gene_analysis import species_order
 
     listed = [s["species_id"] for s in catalogue["filters"]["species"]]
     assert listed == list(catalogue["species_scopes"].keys())

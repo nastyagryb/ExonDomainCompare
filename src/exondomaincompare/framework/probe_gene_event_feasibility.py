@@ -8,7 +8,7 @@ or the example freeze.
 
 Usage:
 
-    python scripts/framework/probe_gene_event_feasibility.py \
+    python -m exondomaincompare.framework.probe_gene_event_feasibility \
         --gene FGFR1 --reference-species homo_sapiens \
         --outdir artifacts/gene_feasibility/FGFR1
 

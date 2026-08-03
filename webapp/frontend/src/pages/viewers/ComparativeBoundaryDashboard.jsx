@@ -24,7 +24,7 @@ import {
 // Comparative multi-species Exon–Domain-Boundary Explorer.
 //
 // Everything shown here comes from the canonical comparative index published by
-// scripts/shared_gene_analysis/boundary_dashboard.py. The browser does not decide which
+// src/exondomaincompare/shared_gene_analysis/boundary_dashboard.py. The browser does not decide which
 // boundaries are comparable, how they were matched, or how confident the mapping is; a
 // second implementation of that logic would be free to disagree with the backend and
 // with the exported tables, and a reader could not tell which answer the figures rest

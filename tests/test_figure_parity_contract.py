@@ -15,6 +15,7 @@ import json
 import re
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 import pytest
@@ -23,7 +24,7 @@ ROOT = Path(__file__).resolve().parents[1]
 VIEWERS = ROOT / "webapp" / "frontend" / "src" / "pages" / "viewers"
 FRONTEND = ROOT / "webapp" / "frontend" / "src"
 SPEC = VIEWERS / "semanticStyles.js"
-CONTRACT = ROOT / "docs" / "architecture" / "figure_parity_contract.md"
+CONTRACT = ROOT / "tests" / "contracts" / "figure_parity_contract.md"
 
 FGFR1_RUN = "2026-07-23_1100_fgfr1_gallus_core_pilot"
 TP53_RUN = "2026-07-21_1436_custom_run"
@@ -54,11 +55,13 @@ FROZEN_VOCABULARY = {"boundary.js", "fgfr2Styles.js"}
 def _node(expr: str) -> dict:
     """Evaluate an expression against the shared spec and return its JSON."""
     script = (
-        "import * as S from './semanticStyles.js';\n"
+        f"import * as S from {json.dumps(SPEC.resolve().as_uri())};\n"
         f"process.stdout.write(JSON.stringify({expr}));\n"
     )
-    tmp = VIEWERS / "_parity_probe.mjs"
-    tmp.write_text(script, encoding="utf-8")
+    with tempfile.NamedTemporaryFile("w", suffix=".mjs", delete=False,
+                                     encoding="utf-8") as handle:
+        handle.write(script)
+        tmp = Path(handle.name)
     try:
         out = subprocess.run([_node_bin(), str(tmp)], capture_output=True, text=True,
                              cwd=VIEWERS)

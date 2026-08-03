@@ -41,7 +41,7 @@ from fgfr2 import gallery_catalogue as gc  # noqa: E402
 from fgfr2 import human_reference_control as hrc  # noqa: E402
 from fgfr2 import run_gallery as rg  # noqa: E402
 from plotting import figure_registration as fr  # noqa: E402
-from shared_gene_analysis import run_availability as ra  # noqa: E402
+from exondomaincompare.shared_gene_analysis import run_availability as ra  # noqa: E402
 
 REAL_RUN = ROOT / "runs" / "2026-07-29_1634_fgfr2_homo_sapiens_felis_catus"
 FREEZE_INDICES = ROOT / "results" / "derived" / "example" / "website_indices"
