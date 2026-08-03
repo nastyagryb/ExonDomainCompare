@@ -1,28 +1,28 @@
 #!/usr/bin/env python3
 """
-make_all_figures.py  (Sprint Part 4 + Part 7 — MANDATORY central entry point)
+Central entry point for final pre-InterPro figures.
 
-Single entry point for the final pre-InterPro publication sprint:
+Single entry point for final pre-InterPro publication outputs:
 
     python scripts/make_all_figures.py --base results/final_30_until_interpro_prepare
 
 This generates ALL final pre-InterPro figures, plotting tables, captions and
 manifests, and writes the completion reports. It:
 
-  * builds the reproducible phylogenetic/taxonomic species order (Part 2),
-  * builds the CDS phase/boundary audit tables (Part 1 support),
+  * builds the reproducible phylogenetic/taxonomic species order,
+  * builds the CDS phase/boundary audit tables,
   * ensures species_qc_master.tsv carries the phylo-order columns (canonical),
-  * runs the final validation gate (Part 1) and FAILS clearly if data are
+  * runs the final validation gate and FAILS clearly if data are
     missing/stale,
-  * renders the publication figures (Parts 3, 5, 6) via
+  * renders the publication figures via
     make_publication_figures_pre_interpro.render_all,
   * writes publication_figure_manifest.tsv, output_file_manifest_pre_interpro.tsv
-    and the completion reports (Part 7).
+    and the completion reports.
 
 Reads FINAL tables only and never recomputes biological QC.
 No real InterPro domains are generated or plotted.
 
-A legacy mode (--tables/--outdir) is retained for the older Task-11 figure set.
+A table-driven compatibility mode is available through --tables/--outdir.
 """
 
 from __future__ import annotations
@@ -166,7 +166,7 @@ def build_cassette_map(base: Path) -> Path:
 
 
 def build_phase_rescue(base: Path) -> Path:
-    """Uncertainty-refinement Part B: attempt codon-phase rescue (cumulative-CDS
+    """Attempt codon-phase rescue using cumulative CDS
     reconstruction) for phase-unavailable cassettes before final classification."""
     coord = _require(base, "fgfr2_current_stage_IIIb_IIIc_coordinate_audit.tsv")
     d = coord.parent
@@ -384,7 +384,7 @@ def ensure_master_phylo(base: Path, phylo_path: Path, cds_audit_path: Optional[P
 
 
 # ---------------------------------------------------------------------------
-# Reports (Part 7)
+# Reports.
 # ---------------------------------------------------------------------------
 def _count(rows, col):
     return dict(Counter(str(r.get(col, "")) for r in rows))
@@ -413,7 +413,7 @@ def write_reports(base: Path, pub: Path, master: Path, phylo_path: Path,
     def _exp(dim):
         return {r["category"]: r["count"] for r in cds_exp if r["dimension"] == dim}
 
-    # cassette-mapping correction sprint tables
+    # Cassette-mapping correction tables.
     cmap_p = locate(base, "fgfr2_cassette_cds_block_map.tsv")
     cmap = read_tsv(cmap_p) if cmap_p else []
     sanity_p = locate(base, "fgfr2_cassette_coordinate_sanity_audit.tsv")
@@ -428,7 +428,7 @@ def write_reports(base: Path, pub: Path, master: Path, phylo_path: Path,
     patch_status = _count(patch, "patch_status")
     n_at_start1 = sum(1 for m in cmap if str(m.get("matched_protein_start_aa")) == "1")
 
-    # uncertainty-refinement sprint tables (Parts A/B/C)
+    # Uncertainty-refinement tables.
     refined_p = locate(base, "fgfr2_refined_uncertainty_classes.tsv")
     refined = read_tsv(refined_p) if refined_p else []
     rescue_p = locate(base, "cds_phase_rescue_audit.tsv")
@@ -459,7 +459,7 @@ def write_reports(base: Path, pub: Path, master: Path, phylo_path: Path,
     taxa_lines = "\n".join(f"  - {k}: {v}" for k, v in taxa.items())
     ortho_lines = "\n".join(f"  - {k}: {v}" for k, v in ortho_status.items())
 
-    report = f"""# QC migration report — Tasks 7–12 (pre-InterPro completion)
+    report = f"""# QC migration report — pre-InterPro completion
 
 _Generated: {_now()} · script v{SCRIPT_VERSION}_
 
@@ -710,9 +710,7 @@ color-blind-safe palette with stable IIIb (#0072B2) and IIIc (#E69F00) colors.
     }
 
 
-# ---------------------------------------------------------------------------
-# Sprint orchestration
-# ---------------------------------------------------------------------------
+# Publication-figure orchestration.
 def run_sprint(base: Path) -> int:
     base = base.resolve()
     pub = base / "11_publication_figures_pre_interpro"
@@ -764,9 +762,7 @@ def run_sprint(base: Path) -> int:
     return 0
 
 
-# ---------------------------------------------------------------------------
-# Legacy mode (older Task-11 figure set)
-# ---------------------------------------------------------------------------
+# Legacy figure mode.
 def run_legacy(tables: Path, outdir: Path) -> int:
     figs = _load("pre_interpro_figs", "make_pre_interpro_figures.py")
     _spec = getattr(figs, "FIGURE_SPEC", None)
@@ -774,13 +770,13 @@ def run_legacy(tables: Path, outdir: Path) -> int:
     if hasattr(figs, "render_all_legacy"):
         figs.render_all_legacy(tables, outdir)  # type: ignore[attr-defined]
         return 0
-    raise SystemExit("Legacy figure spec unavailable; use --base for the publication sprint.")
+    raise SystemExit("Compatibility figure specification unavailable; use --base.")
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Central pre-InterPro figure entry point (Part 4).")
+    ap = argparse.ArgumentParser(description="Central pre-InterPro figure entry point.")
     ap.add_argument("--base", type=Path, default=None,
-                    help="results/<run> base dir (publication sprint; recommended)")
+                    help="results/<run> base directory (recommended)")
     ap.add_argument("--tables", type=Path, default=None, help="legacy figure-tables dir")
     ap.add_argument("--outdir", type=Path, default=None, help="legacy output dir")
     args = ap.parse_args()
@@ -788,7 +784,7 @@ def main() -> int:
         return run_sprint(args.base)
     if args.tables and args.outdir:
         return run_legacy(args.tables, args.outdir)
-    ap.error("provide --base (publication sprint) or --tables and --outdir (legacy)")
+    ap.error("provide --base or --tables and --outdir")
     return 2
 
 

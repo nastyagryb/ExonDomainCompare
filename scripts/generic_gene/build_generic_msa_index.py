@@ -1,4 +1,4 @@
-"""Generic MSA handling (gene-agnostic, PART 7).
+"""Generic gene-agnostic MSA handling.
 
 Rules:
   * multiple protein isoforms present  -> build an isoform-level MSA (MAFFT --auto)

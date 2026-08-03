@@ -178,10 +178,7 @@ def _has_payload(data: Any) -> bool:
         return False
     if data.get("available") is False:
         return False
-    # `sequence_evidence` is here because a cassette index can be real without any
-    # per-species residue row: a run whose species have no human-referenced residue
-    # agreement still resolves both cassettes from their sequence markers, and reading
-    # only `species` reported that marker-level result as no result at all.
+    # Sequence evidence can establish a cassette result without residue rows.
     collections = ("species", "rows", "alignments", "items", "figures", "cards",
                    "groups", "entries", "blocks", "sequence_evidence")
     present = [k for k in collections if k in data]
@@ -481,10 +478,7 @@ def readiness(run_dir: Path, n_species: int = 0, has_event: bool = True,
                          pre_interpro_complete=pre_interpro_complete)
     by_view = {s.view: s for s in states}
 
-    # Every required view, including the ones the cluster produces. A view that this run is
-    # not entitled to reports ``not_applicable`` and is therefore not blocking on its own
-    # merit; a view that is entitled but pending is. Deciding entitlement in `view_states`
-    # and blocking here is what keeps "not applicable" and "not done yet" apart.
+    # Applicable pending views block readiness; not-applicable views do not.
     required = list(REQUIRED_FOR_READY) + list(REQUIRED_FOR_READY_WITH_DOMAINS)
 
     blocking = [by_view[v] for v in required

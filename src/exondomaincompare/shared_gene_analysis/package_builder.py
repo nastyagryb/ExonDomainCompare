@@ -34,7 +34,7 @@ SCOPE_ALL = "all"
 WORKBOOK_FAILURE_MESSAGE = (
     "Workbook generation failed. Other selected files can still be packaged.")
 
-# Names that must never appear inside a delivered package (Part 12).
+# Names that must never appear inside a delivered package.
 FORBIDDEN_ZIP_PATTERNS = ("__MACOSX", ".DS_Store", "Thumbs.db")
 
 
@@ -250,7 +250,7 @@ def _comparative_figures(ctx: Context) -> Resolution:
 
 
 def _boundary_observations(ctx: Context) -> Resolution:
-    """Part 8: built from the canonical JSON, never from a pre-existing TSV."""
+    """Build from canonical JSON rather than a pre-existing TSV."""
     from exondomaincompare.shared_gene_analysis import boundary_observations as bo
     out = bo.ensure_table(ctx.run_dir, ctx.species_id or None)
     if out is None:
@@ -577,7 +577,7 @@ def resolve_dependencies(item_ids: Sequence[str], scope: str) -> List[str]:
 
 
 # --------------------------------------------------------------------------- #
-# Capability contract (Part 7)
+# Capability contract.
 # --------------------------------------------------------------------------- #
 
 def _context(run_dir: Path, scope: str, species_id: str = "") -> Context:
@@ -629,7 +629,7 @@ def scopes_for_run(run_dir: Path) -> List[Dict[str, str]]:
 
 
 def capabilities(run_dir: Path, scope: Optional[str] = None) -> Dict[str, Any]:
-    """The canonical availability object for one scope (Part 7).
+    """Return canonical availability for one scope.
 
     Every item reports ``available``, its ``path`` when it has one, the exact
     ``reason`` when it has none, and its ``dependencies``. Presets are returned
@@ -1082,7 +1082,7 @@ def _readme(gene: str, run_id: str, scope: str, preset: str,
 
 
 def validate_package(zip_path: Path, manifest: Dict[str, Any]) -> List[str]:
-    """Part 12 checks. Returns the list of problems; empty means the ZIP is good."""
+    """Return package problems; an empty list means the ZIP is valid."""
     problems: List[str] = []
     with zipfile.ZipFile(zip_path, "r") as zf:
         bad = zf.testzip()

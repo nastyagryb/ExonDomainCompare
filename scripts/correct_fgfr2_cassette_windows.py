@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-correct_fgfr2_cassette_windows.py  (MSA interpretability sprint, Part A pre-step)
+Correct FGFR2 cassette windows.
 
 Anchor-based correction of cassette extraction windows. Several upstream cassette windows
 are biologically offset (e.g. extending into the transmembrane helix, or starting in a

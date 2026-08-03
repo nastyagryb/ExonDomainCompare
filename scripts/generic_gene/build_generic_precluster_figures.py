@@ -1,4 +1,4 @@
-"""Generic pre-cluster figure files (gene-agnostic, PART 5).
+"""Generic gene-agnostic pre-cluster figure files.
 
 Generates real, reusable figure files (SVG + PDF + PNG) by delegating ALL drawing
 to the canonical ``plotting`` package API. Its implementation uses the same

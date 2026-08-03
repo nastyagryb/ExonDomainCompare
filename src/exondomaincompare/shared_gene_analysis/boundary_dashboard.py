@@ -8,8 +8,7 @@ and *classifies views* over fields already present on the model:
 
   * page-mode resolution (single-species / multi-species / pending / unavailable)
   * single-species summary (class counts) + inspection cases + auto captions
-  * the multi-species comparative data contract (Part 12) and the comparable-
-    boundary matching evidence priority (Part 13)
+  * the multi-species comparative data contract and comparable-boundary evidence priority
 
 The comparative sections are intentionally *empty* unless real, mutually
 comparable multi-species evidence exists (shared exon groups or an MSA-aligned
@@ -24,14 +23,14 @@ from .boundary_classification import CANONICAL_CLASSES, DEFAULT_NEAR_EDGE_THRESH
 
 SCHEMA_VERSION = 1
 
-# ---- page modes (Part 1) --------------------------------------------------- #
+# Page modes.
 PAGE_VALIDATED_EVENT = "validated_event"
 PAGE_SINGLE = "generic_single_species_results_ready"
 PAGE_MULTI = "generic_multi_species_results_ready"
 PAGE_PENDING = "pending_cluster"
 PAGE_UNAVAILABLE = "unavailable"
 
-# ---- comparable-boundary matching (Part 13) -------------------------------- #
+# Comparable-boundary matching.
 # Evidence priority. Exon rank is *secondary descriptive* evidence only and must
 # never be the sole basis for calling two boundaries comparable.
 MAPPING_METHOD_PRIORITY = [
@@ -83,7 +82,7 @@ def _cls(b: Dict[str, Any]) -> str:
 
 
 # --------------------------------------------------------------------------- #
-# page-mode resolution (Part 1)
+# Page-mode resolution.
 # --------------------------------------------------------------------------- #
 def resolve_page_mode(index: Dict[str, Any], event_layer_type: Optional[str] = None) -> str:
     """Resolve the global-page mode purely from the coordinate model (no gene names)."""
@@ -127,7 +126,7 @@ def _status_badge(model: Dict[str, Any]) -> str:
 
 
 def build_inspection_cases(model: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """Real, applicable inspection cases only (Part 9). Never called an error."""
+    """Return real applicable inspection cases without labelling them errors."""
     if model.get("status") != "available":
         return []
     bnds = model.get("exon_boundaries") or []
@@ -189,7 +188,7 @@ def build_inspection_cases(model: Dict[str, Any]) -> List[Dict[str, Any]]:
 
 def generate_caption(model: Dict[str, Any], gene_symbol: Optional[str] = None,
                      *, species_scope: str = "single_species") -> Dict[str, Any]:
-    """Editable, cautious auto-caption (Part 20)."""
+    """Return an editable, cautious automatic caption."""
     gene = (gene_symbol or model.get("gene_symbol") or "gene")
     sci = model.get("scientific_name") or model.get("species_id") or "the species"
     pid = model.get("protein_id") or "the primary protein"
@@ -324,7 +323,7 @@ def _observation(model: Dict[str, Any], boundary: Dict[str, Any], method: str,
 
 
 def match_comparable_boundaries(models: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Group boundaries across species using the evidence priority (Part 13).
+    """Group boundaries across species using the evidence priority.
 
     Returns comparable-boundary groups ONLY when ≥2 available species contribute
     to a group through strong evidence (a shared exon group, or an MSA-aligned
@@ -440,7 +439,7 @@ def match_comparable_boundaries(models: Sequence[Dict[str, Any]]) -> List[Dict[s
 
 def boundary_position_consistency(models: Sequence[Dict[str, Any]],
                                   comparable: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Per comparable-boundary-group consistency statistics (Part 16).
+    """Calculate comparable-boundary-group consistency statistics.
 
     Uses cautious wording (boundary-position consistency / domain-edge proximity
     consistency); never asserts "conserved" without meeting explicit criteria.
@@ -514,7 +513,7 @@ def boundary_position_consistency(models: Sequence[Dict[str, Any]],
 
 def build_boundary_matrix(models: Sequence[Dict[str, Any]],
                           comparable: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Species × comparable-boundary-group cell states (Part 14). Empty w/o data.
+    """Build species-by-comparable-boundary-group cell states.
 
     A cell carries the species' own observation verbatim, so the matrix, its hover and
     the detail panel are the same numbers rather than three re-derivations. Cells with
@@ -666,7 +665,7 @@ def build_comparative_inspection_cases(models: Sequence[Dict[str, Any]],
 
 
 def build_multi_species_contract(index: Dict[str, Any]) -> Dict[str, Any]:
-    """The comparative data structure (Part 12). Comparative arrays fill only
+    """Build the comparative data structure. Comparative arrays fill only
     when real comparable evidence exists; otherwise they stay empty (honest)."""
     models = index.get("models") or []
     species_rows = [{

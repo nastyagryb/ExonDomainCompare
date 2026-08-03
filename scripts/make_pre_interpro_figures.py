@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-make_pre_interpro_figures.py  (Task 11)
+Render publication-quality pre-InterProScan figures.
 
-Render publication-quality PRE-InterProScan figures from the Task 10 tidy tables.
+Render publication-quality figures from the prepared tidy tables.
 This script only visualises pre-computed tables; it performs no biological QC.
 
 Important
@@ -209,8 +209,8 @@ def fig_review(rows: List[Dict[str, str]], outdir: Path) -> None:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Render pre-InterPro figures (Task 11).")
-    ap.add_argument("--tables", type=Path, required=True, help="Directory with Task 10 figure tables.")
+    ap = argparse.ArgumentParser(description="Render pre-InterPro figures.")
+    ap.add_argument("--tables", type=Path, required=True, help="Directory with prepared figure tables.")
     ap.add_argument("--outdir", type=Path, required=True)
     args = ap.parse_args()
     t = args.tables

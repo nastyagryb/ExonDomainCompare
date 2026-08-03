@@ -55,6 +55,9 @@ must("Legacy BoundaryConsistencyPage controller is deleted",
   !existsSync(new URL("pages/BoundaryConsistencyPage.jsx", ROOT)));
 must("Canonical endpoint exists in API client",
   /datasetModel:\s*\(\)\s*=>\s*dget\("\/api\/runs\/current\/dataset-model"\)/.test(api));
+must("File downloads carry the selected dataset",
+  /fileUrl[\s\S]*dataset \|\| activeDataset/.test(api)
+  && /api\/download\?path=/.test(api));
 must("Explore controllers do not call legacy/shared/core APIs",
   !/api\.(summary|species|figures|shared|core|boundaryConsistency|evidenceStack)/.test(
     overview + geneExplorer + figureGallery + boundary));

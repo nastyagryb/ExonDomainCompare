@@ -125,12 +125,7 @@ def cluster_rows(evidence: List[Dict[str, str]], gap: int) -> List[Dict[str, Any
             _cluster_n += 1
             starts = [x["_s"] for x in grp]
             ends = [x["_e"] for x in grp]
-            # Representative region: the span reported by most isoform pairs. Ties are
-            # broken by the longer span, then by the earlier start. Without that
-            # tie-break a group that mixes a short block with a long one a few residues
-            # away — every span observed once — would be represented by whichever row
-            # happened to sort first, and the longer block would silently vanish from
-            # every view built on the clusters while staying in the raw evidence.
+            # Prefer the most-supported span, then the longer and earlier span on ties.
             span_counts: Dict[Any, int] = {}
             for x in grp:
                 span_counts[(x["_s"], x["_e"])] = span_counts.get((x["_s"], x["_e"]), 0) + 1

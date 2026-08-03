@@ -131,12 +131,7 @@ def validate_input_schemas(transcripts: List[Dict[str, str]], exons: List[Dict[s
     recommended_tx = ["transcript_biotype", "translation_id_source", "protein_length_aa", "is_canonical_source", "support_level", "completeness_flags"]
     required_ex = ["exon_rank", "chrom", "start", "end", "strand"]
     if not transcripts:
-        # Not this step's failure, and not this step's story to invent. An empty
-        # transcript table means model collection recovered nothing, and it recorded
-        # why. Raising here produced the traceback that became the Equus quagga run's
-        # user-facing explanation — pointing at the wrong file and the wrong stage,
-        # and never mentioning the species, the assembly, or the misspelled taxonomy
-        # query four stages upstream.
+        # Model collection records the cause when no transcript was recovered.
         raise EmptyModelInput(_explain_no_transcripts())
     missing_tx = missing_columns(transcripts, required_tx)
     if missing_tx:

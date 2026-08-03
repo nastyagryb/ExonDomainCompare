@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-run_fgfr2_cassette_linsi_alignments.py  (MSA interpretability sprint, Part A)
+Run FGFR2 cassette L-INS-i alignments.
 
 Add high-accuracy MAFFT L-INS-i (`--localpair --maxiterate 1000`) alignments for the short
 IIIb / IIIc / combined cassette inputs. The previous `--auto` alignments are kept as

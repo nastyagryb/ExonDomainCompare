@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-run_fgfr2_msa_boundary_module.py  (MSA boundary-robustness sprint, Parts 1 + 12 + orchestration)
+Run the FGFR2 MSA and boundary-robustness module.
 
 Central runner for the pre-InterPro MSA / boundary-robustness module. Performs the MAFFT
 dependency check, orchestrates every step (input prep -> MAFFT -> coordinate maps/projection
 -> conservation -> discriminating residues -> protein integrity -> splice QC -> robustness
--> figures -> reports), integrates summaries into species_qc_master.tsv (Part 12) and writes
-the reproducibility manifests (Part 1).
+-> figures -> reports), integrates summaries into species_qc_master.tsv and writes
+the reproducibility manifests.
 
 This module is strictly pre-InterProScan: it never runs InterProScan and never invents
 domain annotations. MSA is an independent robustness/QC layer that does not relabel IIIb/IIIc.
@@ -341,7 +341,7 @@ def main() -> int:
     dirs = M.ensure_module_dirs(base)
     cmd_used = "python " + " ".join([str(Path(sys.argv[0]).name)] + sys.argv[1:])
 
-    # ---- dependency check (Part 1) ----
+    # Check dependencies.
     mafft_bin = shutil.which("mafft")
     if not mafft_bin and not args.allow_fallback:
         msg = ("MAFFT not found on PATH. MAFFT is required for final MSA analysis.\n"
@@ -398,7 +398,7 @@ def main() -> int:
     step_status["maximal_rescue_final"] = gate_rc
 
     propagate_reconciliation(base, dirs)  # legacy-preserving final-label propagation
-    update_master(base, dirs)           # Part 12
+    update_master(base, dirs)
 
     if gate_rc == 4:
         print("[FAIL] maximal-rescue validation gate hard-failed; NOT generating primary figures.",
@@ -410,13 +410,7 @@ def main() -> int:
     # ---- local synteny / gene-neighborhood validation (once, on final post-rescue state) ----
     step_status["synteny"] = run_step(SYNTENY_STEPS[0][1], base, [])
 
-    # Clear STALE cross-checked figure tables before the figure phase. The per-script
-    # consistency gate cross-validates figure6 / figure8 / figure6C, but these tables are
-    # produced by DIFFERENT figure scripts (figure6/figure8 by make_..._boundary_figures,
-    # figure6C by make_..._reference_figures). On a re-run, a stale figure6C from a previous
-    # rescue state would make the first script's gate fail spuriously. Removing them first
-    # makes the gate treat not-yet-regenerated tables as absent (skipped) rather than stale,
-    # so each script regenerates its own tables and the gate is order-independent.
+    # Remove cross-checked figure tables before independently regenerating them.
     for _stale in ("figure6_msa_projected_boundary_map.tsv",
                    "figure8_boundary_robustness_evidence_stack.tsv",
                    "figure6C_human_referenced_residue_agreement_map.tsv"):
@@ -430,16 +424,10 @@ def main() -> int:
         step_status[step] = run_step(scr, base, [])
     step_status["synteny_figures"] = run_step(SYNTENY_STEPS[1][1], base, [])
 
-    write_reports(base, dirs)           # Part 14 + I
-    write_manifests(base, dirs, cmd_used, step_status, mafft_ver)  # Part 1
+    write_reports(base, dirs)
+    write_manifests(base, dirs, cmd_used, step_status, mafft_ver)
 
-    # The plotting steps below are PRESENTATION only. The closure (module 13) consumes
-    # the MSA/rescue DATA outputs (post-rescue truth table, robustness, conservation),
-    # not these figures. For a small custom run without human/mouse the figure scripts'
-    # positive-control gates can legitimately fail (e.g. "0 reference neighbors"); that
-    # must NOT strand the whole pipeline. Figure-step failures are therefore reported as
-    # warnings but do not fail the module. For the full-30 panel these figures succeed,
-    # so behaviour there is unchanged.
+    # Presentation-only figure failures do not invalidate the scientific data closure.
     OPTIONAL_FIGURE_STEPS = {"figures", "reference_figures", "synteny_figures"}
     failed = {k: v for k, v in step_status.items() if v != 0}
     critical_failed = {k: v for k, v in failed.items() if k not in OPTIONAL_FIGURE_STEPS}

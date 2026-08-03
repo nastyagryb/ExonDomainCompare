@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-patch_ncbi_cds_boundaries.py  (Uncertainty-refinement sprint, Part C)
+Patch supported NCBI CDS boundaries.
 
 Targeted NCBI/RefSeq retrieval ONLY for true missing data, never for minor phase /
 split-codon flags. Patch candidates (from the refined uncertainty classes / audits):

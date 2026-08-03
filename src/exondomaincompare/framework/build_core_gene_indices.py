@@ -463,7 +463,7 @@ def _capability_report(src: CoreSource, gene_idx: Dict[str, Any],
                        domain_idx: Dict[str, Any], synteny_idx: Dict[str, Any],
                        boundary_idx: Dict[str, Any],
                        n_evidence: int, n_clusters: int) -> Dict[str, Any]:
-    """PART 8 capability report — a single, honest status object for the UI.
+    """Build the single capability report used by the UI.
 
     Domain-dependent milestones are reported as ``pending`` (not ``failed``)
     before the cluster InterProScan/pyTMHMM step, and only become ``available``
@@ -731,7 +731,7 @@ def _protein_architecture_index(src: CoreSource, gene_idx: Dict[str, Any]) -> Di
 
 def _event_evidence_index(src: CoreSource, domain_available: bool,
                           uniprot: Optional[Dict[str, Any]]) -> Dict[str, Any]:
-    """Source-by-source exploratory candidate model (Part 5). Each cluster gets an
+    """Build the source-by-source exploratory candidate model. Each cluster gets an
     isoform-difference / exon-alignment / external-curated / domain evidence
     breakdown plus a cautious interpretation. NOT a validated event."""
     clusters = src.tsv("event_region_candidate_clusters.tsv")
@@ -824,7 +824,7 @@ def _event_evidence_index(src: CoreSource, domain_available: bool,
 
 def _figures_index(src: CoreSource, arch_idx: Dict[str, Any], synteny_idx: Dict[str, Any],
                    event_idx: Dict[str, Any], domain_available: bool) -> Dict[str, Any]:
-    """Stage-aware generic figures (Part 7). Pre-cluster plots are generic and
+    """Build stage-aware generic figures. Pre-cluster plots are generic and
     computable locally; domain/boundary plots are pending until the cluster step."""
     has_arch = any((s.get("proteins") for s in arch_idx.get("species", [])))
     available = []
@@ -866,15 +866,14 @@ def build_core_indices(src: CoreSource, out_dir: Path) -> Dict[str, Any]:
     boundary_idx = _exon_domain_boundary_index(src)
     gene_idx = _gene_analysis_index(src)
 
-    # Exploratory event-evidence + candidate-cluster counts (Part 4/5). These
+    # Exploratory event-evidence and candidate-cluster counts.
     # files are optional; missing == none.
     n_evidence = max(_count_tsv_rows(src.core_dir / "event_region_evidence.tsv"), 0)
     n_clusters = max(_count_tsv_rows(src.core_dir / "event_region_candidate_clusters.tsv"), 0)
     capability = _capability_report(src, gene_idx, domain_idx, synteny_idx,
                                     boundary_idx, n_evidence, n_clusters)
 
-    # Scientific primary-selection evidence (Part 3) + generic FGFR2-parity
-    # indices (Part 9). Domain-dependent indices carry an explicit
+    # Primary-selection evidence and generic parity indices. Domain-dependent indices carry an explicit
     # status=pending_cluster before InterProScan so nothing looks precomputed.
     domain_available = bool(domain_idx.get("available"))
     uniprot = read_json(src.core_dir / "uniprot_event_evidence_report.json", None)
@@ -935,7 +934,7 @@ def build_core_indices(src: CoreSource, out_dir: Path) -> Dict[str, Any]:
         "event_type": cfg.event_type,
         "analysed_species_count": gene_idx["n_species"],
         # protein_isoform_count == all coding isoforms; primary_protein_count ==
-        # the isoforms selected as primary for annotation (Part 2 cards).
+        # the isoforms selected as primary for annotation.
         "protein_isoform_count": gene_idx["n_protein_isoforms"],
         "primary_protein_count": gene_idx["n_primary_proteins"],
         "gene_model_count": gene_idx["n_gene_models"],
@@ -948,7 +947,7 @@ def build_core_indices(src: CoreSource, out_dir: Path) -> Dict[str, Any]:
         "ui_labels": cfg.ui_labels,
     }
 
-    # overview_index.json (Part 8): the Overview page reads a coherent, explicit
+    # The Overview page reads a coherent, explicit
     # index (KPIs + pending flags) rather than assembling ad-hoc from raw tables.
     overview_index = {
         "schema_version": SCHEMA_VERSION,
@@ -982,7 +981,7 @@ def build_core_indices(src: CoreSource, out_dir: Path) -> Dict[str, Any]:
         "dataset_summary.json": dataset_summary,
         "gene_analysis_index.json": gene_idx,
         "gene_event_index.json": gene_idx,   # alias for consumers expecting this name
-        "gene_explorer_index.json": gene_idx,  # FGFR2-parity name (Part 9)
+        "gene_explorer_index.json": gene_idx,
         "evidence_stack.json": evidence_stack,
         "primary_selection_index.json": sel,
         "protein_architecture_index.json": arch_idx,
@@ -991,7 +990,7 @@ def build_core_indices(src: CoreSource, out_dir: Path) -> Dict[str, Any]:
         "domain_architecture_index.json": domain_idx,
         "synteny_index.json": synteny_idx,
         "exon_domain_boundary_index.json": boundary_idx,
-        "exon_domain_boundaries_index.json": boundary_idx,  # FGFR2-parity name (Part 9)
+        "exon_domain_boundaries_index.json": boundary_idx,
         "event_region_index.json": _event_region_index(src, has_event),
         "gene_capability_report.json": capability,
         "available_views.json": {

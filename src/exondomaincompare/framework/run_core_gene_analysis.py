@@ -1096,17 +1096,10 @@ def phase_create(args: argparse.Namespace) -> int:
     _write_status_cluster_required(run_dir, run_id, cfg, species_id, built["n_primary"],
                                    built["n_species"])
 
-    # Shared generic pipeline: materialize the canonical stage folders
-    # (04_event_evidence … 16_final_analyses), generic_gene_analysis/ layer, and
-    # the shared website_indices/. Best-effort; never blocks the core run.
+    # Materialize the shared generic analysis and website layers.
     _run_generic_pipeline(run_id, logline)
 
-    # Validated protein-coordinate model (single source of truth for the Exon Map,
-    # Domain Architecture and Boundary pages) plus publication-ready static figures.
-    # This must come *after* the generic pipeline, which rewrites the shared
-    # figures_index.json from the pre-cluster figure manifest: running it earlier
-    # would leave the Gallery holding the pre-cluster cards these stages replace.
-    # Non-blocking: failures here never fail the core run.
+    # Build the shared coordinate model after the generic layer refreshes its indices.
     _build_coordinate_model_and_figures(run_dir, logline)
 
     # An isolated test root lives outside the project, so report the path as-is there.
@@ -1865,12 +1858,7 @@ def phase_post(args: argparse.Namespace) -> int:
     # refresh the shared generic layer now that domain/boundary are available
     _run_generic_pipeline(run_dir.name, lambda m: print(f"  {m}"))
 
-    # CRITICAL: rebuild the validated protein-coordinate model from the freshly
-    # written real domain/TM/boundary tables. Without this the model — the single
-    # source of truth for Domain Architecture, the Boundary tab and the global
-    # boundary dashboard — would remain the pre-cluster (pending) version while the
-    # status advances to results_ready. This is the fix for the stale post-cluster
-    # "pending cluster" regression; it makes the roundtrip fully self-contained.
+    # Rebuild the coordinate model from the final domain, TM and boundary tables.
     _build_coordinate_model_and_figures(run_dir, lambda m: print(f"  {m}"))
 
     partial_reasons = []

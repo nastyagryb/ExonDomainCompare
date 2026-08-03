@@ -39,7 +39,7 @@ def test_repository_bundled_run_root_is_always_read_only(tmp_path):
 
 def _bundled_or_skip() -> None:
     if not DATASETS.is_dir():
-        pytest.skip("bundled release datasets exist only in the clean release candidate")
+        pytest.skip("bundled release datasets exist only in the public release tree")
 
 
 def test_bundled_dataset_registry_has_exact_release_scope():
@@ -198,3 +198,60 @@ def test_every_bundled_gallery_file_and_download_resolves():
         assert main._resolve_public_file_path(item["path"]).is_file(), item["path"]
         checked += 1
     assert checked > 500
+
+
+def _viewer_file_paths(value, key=""):
+    direct = {"file", "report", "source_file", "source_table", "thumbnail",
+              "png", "svg", "pdf"}
+    suffixes = {".csv", ".faa", ".fasta", ".json", ".md", ".pdf", ".png",
+                ".svg", ".tsv", ".txt", ".xlsx", ".zip"}
+    if isinstance(value, dict):
+        for child_key, child in value.items():
+            if child_key in {"formats", "source_tables"} and isinstance(child, dict):
+                for path in child.values():
+                    yield from _viewer_file_paths(path, "source_table")
+            else:
+                yield from _viewer_file_paths(child, child_key)
+    elif isinstance(value, list):
+        for child in value:
+            yield from _viewer_file_paths(child, key)
+    elif isinstance(value, str) and key in direct \
+            and Path(value.split("?", 1)[0]).suffix.lower() in suffixes \
+            and not value.startswith(("/api/", "http://", "https://")):
+        yield value
+
+
+def test_every_bundled_viewer_file_link_is_dataset_resolvable():
+    _bundled_or_skip()
+    from webapp.backend import main
+    from webapp.backend.canonical_dataset import build_canonical_dataset_model
+
+    datasets = ("example", f"run:{PTPN11_RUN_ID}")
+    checked = 0
+    for dataset in datasets:
+        model = build_canonical_dataset_model(main.resolve_dataset(dataset))
+        for path in set(_viewer_file_paths(model)):
+            assert main._resolve_public_file_path(path, dataset=dataset).is_file(), \
+                (dataset, path)
+            checked += 1
+    assert checked > 1000
+
+
+def test_missing_viewer_file_links_are_removed_from_the_derived_model():
+    _bundled_or_skip()
+    from webapp.backend import main
+
+    payload = {
+        "source_table": "results/core_gene_analysis/does_not_exist.tsv",
+        "source_tables": {
+            "real": "results/core_gene_analysis/domain_features.tsv",
+            "missing": "results/core_gene_analysis/does_not_exist.tsv",
+        },
+    }
+    cleaned = main._prune_missing_file_links(
+        payload, f"run:{PTPN11_RUN_ID}"
+    )
+    assert "source_table" not in cleaned
+    assert cleaned["source_tables"] == {
+        "real": "results/core_gene_analysis/domain_features.tsv"
+    }

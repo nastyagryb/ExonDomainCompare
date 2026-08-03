@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-analyze_fgfr2_isoform_discriminating_residues.py  (MSA boundary-robustness sprint, Part 8)
+Analyse FGFR2 isoform-discriminating residues.
 
 Identify cassette alignment positions that are conserved within IIIb, conserved within
 IIIc, and different between IIIb and IIIc, using the COMBINED IIIb+IIIc cassette MSA as a
@@ -82,7 +82,7 @@ def analyze(items: List[Tuple[str, str]], href_b: str, href_c: str):
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Isoform-discriminating residue analysis (Part 8).")
+    ap = argparse.ArgumentParser(description="Analyse isoform-discriminating residues.")
     ap.add_argument("--base", type=Path, required=True)
     args = ap.parse_args()
     base = args.base.resolve()

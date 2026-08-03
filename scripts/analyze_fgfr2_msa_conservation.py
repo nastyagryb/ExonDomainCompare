@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-analyze_fgfr2_msa_conservation.py  (MSA boundary-robustness sprint, Part 6)
+Analyse FGFR2 MSA conservation.
 
 Per-column conservation and gap scores for each MSA, plus region-level summaries
 (cassette / left & right boundary windows / full sequence) per species/isoform.
@@ -81,7 +81,7 @@ def cons_class(cons: float, gap_fraction: float) -> str:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="MSA per-column conservation (Part 6).")
+    ap = argparse.ArgumentParser(description="Analyse MSA per-column conservation.")
     ap.add_argument("--base", type=Path, required=True)
     args = ap.parse_args()
     base = args.base.resolve()

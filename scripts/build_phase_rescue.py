@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-build_phase_rescue.py  (Uncertainty-refinement sprint, Part B)
+Rescue unresolved cassette codon phase where evidence permits.
 
 Attempts to rescue codon-phase / boundary precision for resolved IIIb/IIIc cassettes
 that are currently flagged unknown_codon_phase / phase_not_propagated_from_source.
@@ -83,7 +83,7 @@ def combine(left_split: bool, right_split: bool) -> str:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Phase rescue for unknown-phase IIIb/IIIc cassettes (Part B).")
+    ap = argparse.ArgumentParser(description="Rescue unknown-phase IIIb/IIIc cassettes.")
     ap.add_argument("--cds_audit", type=Path, required=True)
     ap.add_argument("--cds_features", type=Path, required=True)
     ap.add_argument("--cassette_map", type=Path, required=True)

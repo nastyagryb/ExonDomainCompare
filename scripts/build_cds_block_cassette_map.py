@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-build_cds_block_cassette_map.py  (Cassette-mapping correction sprint, Parts A/B/C/E)
+Map cassette intervals to CDS blocks.
 
 Fixes the join bug where IIIb/IIIc cassettes were mapped onto CDS blocks by a
 NON-UNIQUE NCBI/RefSeq CDS id (cds-XP_...), which collapsed many cassettes onto
@@ -233,13 +233,7 @@ def map_cassette(coord_row: Dict[str, str], blocks: List[Dict[str, str]]):
             # no CDS blocks at all -> overlay from resolved protein interval
             method, status = "resolved_protein_interval", "cassette_overlay_from_resolved_protein_interval"
 
-    # Hard rule (pre-InterPro robustness): protein_start_aa == 1 is NEVER a biologically
-    # valid FGFR2 IIIb/IIIc cassette start. It arises either from a synthetic placeholder
-    # (no linked protein) or when genomic overlap maps the cassette onto the FIRST coding
-    # block (cds_rank 1 -> protein_start_aa 1), a coordinate artifact. When the raw mapping
-    # yields <= 1, prefer the sequence-calibrated native cassette interval (validated
-    # upstream by assign_unclassified_fgfr2_isoform_fallback.py); if no plausible native
-    # interval exists, leave the coordinate unresolved rather than emit aa 1.
+    # An FGFR2 IIIb/IIIc cassette at aa 1 is a mapping artefact; prefer the validated native interval.
     if matched:
         eff_start = _int(matched.get("matched_protein_start_aa"))
         eff_end = _int(matched.get("matched_protein_end_aa"))
@@ -248,14 +242,13 @@ def map_cassette(coord_row: Dict[str, str], blocks: List[Dict[str, str]]):
     plen = _int(coord_row.get("protein_length_aa")) or _int(coord_row.get("native_protein_length_aa"))
     full_len = plen is not None and plen > FULL_LENGTH_AA
     native_plausible = ns is not None and ns >= MIN_PLAUSIBLE_CASSETTE_START
-    # block mapping is implausible when it lands on aa<=1 (first coding block / placeholder)
-    # or, in a full-length protein, before the IgIII cassette region can plausibly start.
+    # Reject first-block and implausibly early mappings in full-length proteins.
     block_implausible = eff_start is not None and (
         eff_start <= 1 or (full_len and eff_start < MIN_PLAUSIBLE_CASSETTE_START))
     aa1_override = False
     if block_implausible:
         if native_plausible:
-            # prefer the sequence-calibrated native cassette interval (validated upstream)
+            # Use the upstream-validated native cassette interval.
             eff_start, eff_end = ns, ne
             method = f"{method}+sequence_calibrated_native_override"
             status = f"{status}_native_protein_interval_override"

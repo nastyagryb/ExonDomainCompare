@@ -2,7 +2,7 @@
 """
 build_website_indices.py
 
-Phase-1 website data generator for ExonDomainCompare.
+Website data generator for ExonDomainCompare.
 
 Reads a *finished* FGFR2 pre-InterPro closure run directory (the
 ``13_final_pre_interpro_closure`` folder, which carries the truth table, the
@@ -418,7 +418,6 @@ def compute_layers(r: Dict[str, str], ref: Dict[str, str], sources: Dict[str, st
     return out
 
 
-# --- Phase-2 residue / synteny semantics ----------------------------------- #
 # Neutral residue-agreement colour classes (no functional-effect claims).
 def residue_class(value: str) -> str:
     """agreement_class / substitution_class -> {identical, conservative, nonconservative, gap}."""
@@ -1185,9 +1184,7 @@ def build_freeze_index(run_dir: Path) -> Dict[str, Any]:
     }
 
 
-# --------------------------------------------------------------------------- #
-# Phase-2 interactive indices (all derived from final run outputs)
-# --------------------------------------------------------------------------- #
+# Interactive indices derived from final run outputs.
 def build_cassette_residue_index(run_dir: Path) -> Dict[str, Any]:
     """Module 1 source: reproduce Figure 6B interactively + human-reference + discriminating."""
     fig6b = read_tsv(run_dir / "tables" / "figure6B_species_resolved_IIIb_IIIc_cassette_residue_map.tsv")
@@ -3025,7 +3022,7 @@ INDEX_BUILDERS = {
     "figure_index.json": build_figure_index,
     "download_index.json": build_download_index,
     "freeze_index.json": build_freeze_index,
-    # Phase-2 interactive viewers (graceful when optional inputs are absent)
+    # Interactive viewers remain available when optional inputs are absent.
     "cassette_residue_index.json": build_cassette_residue_index,
     "coordinate_track_index.json": build_coordinate_track_index,
     "msa_index.json": build_msa_index,
@@ -3119,7 +3116,7 @@ def _write_fgfr2_gallery(closure_dir: Path, outdir: Path) -> str:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Build Phase-1 website JSON indices from a closure run dir.")
+    ap = argparse.ArgumentParser(description="Build website JSON indices from a closure run directory.")
     ap.add_argument("--run-dir", type=Path, required=True,
                     help="path to a *_final_pre_interpro_closure directory")
     ap.add_argument("--outdir", type=Path, default=None,

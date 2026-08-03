@@ -41,6 +41,41 @@ def test_dataset_list_is_served(client):
     assert isinstance(datasets, list)
 
 
+def test_download_endpoint_resolves_relative_to_the_selected_dataset(client):
+    run_id = "2026-08-02_1910_ptpn11_3species"
+    bundled = PROJECT_ROOT / "datasets" / "runs" / run_id
+    if not bundled.is_dir():
+        pytest.skip("bundled PTPN11 dataset is not present")
+    response = client.get(
+        "/api/download",
+        params={
+            "dataset": f"run:{run_id}",
+            "path": "results/core_gene_analysis/domain_features.tsv",
+        },
+    )
+    assert response.status_code == 200, response.text
+    assert response.text.startswith("species_id\tprotein_id\t")
+
+
+def test_download_endpoint_accepts_only_dataset_internal_absolute_paths(client):
+    run_id = "2026-08-02_1910_ptpn11_3species"
+    target = (PROJECT_ROOT / "datasets" / "runs" / run_id / "results"
+              / "core_gene_analysis" / "domain_features.tsv")
+    if not target.is_file():
+        pytest.skip("bundled PTPN11 dataset is not present")
+    response = client.get(
+        "/api/download",
+        params={"dataset": f"run:{run_id}", "path": str(target)},
+    )
+    assert response.status_code == 200, response.text
+
+    rejected = client.get(
+        "/api/download",
+        params={"dataset": f"run:{run_id}", "path": "/etc/hosts"},
+    )
+    assert rejected.status_code == 400
+
+
 def test_unknown_dataset_status_is_not_a_server_error(client):
     r = client.get("/api/datasets/run:does-not-exist/status")
     assert r.status_code in {200, 404}, r.text

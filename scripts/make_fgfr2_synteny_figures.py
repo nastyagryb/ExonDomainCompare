@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-make_fgfr2_synteny_figures.py  (synteny / gene-neighborhood validation sprint, Part H)
+Render FGFR2 synteny figures.
 
 Paper-level FGFR2 local gene-neighborhood / synteny figures (SVG/PDF/PNG):
   Figure 9A — FGFR2 local gene-neighborhood map (5 neighbors, representative species)

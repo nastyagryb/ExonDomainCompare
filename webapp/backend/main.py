@@ -1,21 +1,5 @@
 from __future__ import annotations
 
-"""
-ExonDomainCompare — Phase 1 backend.
-
-Run-centric API around finished FGFR2 pre-InterPro closure runs:
-
-  * load the built-in example freeze (read-only),
-  * open a previous run folder,
-  * start a NEW run from a selected species list (writes SPECIES_LIST and calls
-    the existing pipeline runner),
-  * serve six prebuilt JSON indices for the *current* run,
-  * stream run status + logs.
-
-Final biological status always comes from the closure truth table / evidence
-stack (via scripts/build_website_indices.py); provenance is detail only.
-"""
-
 import importlib.util
 import json
 import logging
@@ -90,14 +74,11 @@ def _local_python_module_command(module: str, *args: str) -> List[str]:
     """Run installed application logic through its canonical module path."""
     return [PYTHON, "-m", module, *map(str, args)]
 
-# NOTE: results/web_runs/ is legacy and is never created for new runs anymore.
-# We intentionally do NOT mkdir it here. New runs live under runs/<run_id>/.
+
 CURRENT_RUN_PTR = WEB_STATE_DIR / "current_run.json"
 LEGACY_CURRENT_RUN_PTR = LEGACY_WEB_STATE_DIR / "current_run.json"
 
-# Load scripts/build_website_indices.py explicitly from its file path. The
-# script directory is not an installed package, so a plain `import` would not be
-# resolvable by static analyzers (and depends on sys.path side effects).
+
 _bwi_spec = importlib.util.spec_from_file_location(
     "build_website_indices", SCRIPTS_DIR / "build_website_indices.py"
 )
@@ -109,9 +90,6 @@ bwi = importlib.util.module_from_spec(_bwi_spec)
 sys.modules["build_website_indices"] = bwi
 _bwi_spec.loader.exec_module(bwi)
 
-# Reuse the SAFE run-folder creation logic from scripts/create_new_run.py. This
-# only writes runs/<run_id>/ (folders + config/status/README); it never runs the
-# pipeline, InterProScan, pyTMHMM, SSH or SLURM.
 _cnr_spec = importlib.util.spec_from_file_location(
     "create_new_run", SCRIPTS_DIR / "create_new_run.py"
 )
@@ -121,33 +99,22 @@ cnr = importlib.util.module_from_spec(_cnr_spec)
 sys.modules["create_new_run"] = cnr
 _cnr_spec.loader.exec_module(cnr)
 
-# How a run is named, labelled and ordered. Shared with the run-creation scripts
-# so the technical run_id and the visible run name are derived in one place.
 from exondomaincompare.framework import run_labels  # noqa: E402
 
-# Offline species → (scientific name, taxid) lookup, shared with the CLI species
-# registry. Used by the run-creation input preview so the frontend can show a
-# resolved species panel (scientific name + Taxonomy ID + identifier) before launch.
 try:
     from build_species_registry_improved import (  # type: ignore
         lookup_known_species as _lookup_known_species,
         slug_species as _slug_species,
     )
-except Exception:  # pragma: no cover - best effort
+except Exception:
     _lookup_known_species = None
     _slug_species = None
 
-# Gene/event generalization layer (additive, best-effort). Exposes the configured
-# gene/event metadata + UI labels so the frontend can drive labels from config
-# while keeping FGFR2 wording as the default fallback. Never required for the app.
 try:
     from exondomaincompare.framework import gene_config as _gene_config  # type: ignore
-except Exception:  # pragma: no cover - PyYAML missing / import issue
+except Exception:
     _gene_config = None
 
-# Canonical, file-based milestone logic for Core Gene Analysis runs. Shared with
-# the CLI validator (src/exondomaincompare/framework/validate_core_gene_run.py) so a dashboard
-# refresh classifies empty/partial core-only runs exactly the same way.
 try:
     from exondomaincompare.framework.core_run_milestones import (  # type: ignore
         evaluate_core_run as _evaluate_core_run,
@@ -157,9 +124,6 @@ except Exception:  # pragma: no cover
     _evaluate_core_run = None
     _is_core_only_run = None
 
-# Availability and readiness judged from the run's own artefacts: whether a derived
-# index is still current, and why a view is empty. Shared with the pipeline so the
-# badge, the API and the pages quote one verdict.
 try:
     from exondomaincompare.shared_gene_analysis.run_availability import (  # type: ignore
         readiness as _readiness,
@@ -169,9 +133,6 @@ except Exception:  # pragma: no cover
     _readiness = None
     _view_states = None
 
-# Central analysis router: THE single authoritative gene → workflow decision.
-# FGFR2 → validated (frozen) workflow; every other gene → shared exploratory
-# workflow. No gene symbol is hard-checked anywhere else in the backend.
 try:
     from exondomaincompare.framework import analysis_router as _router  # type: ignore
 except Exception:  # pragma: no cover
@@ -205,8 +166,6 @@ def _resolve_workflow(gene_symbol: Optional[str], mode: str = "auto") -> Dict[st
 _GENE_META_CACHE: Dict[str, Dict[str, Any]] = {}
 
 
-#: Where model collection records what it recovered and why. This is the run's own
-#: account of a pre-cluster failure, and it is what the interface should quote.
 _COLLECTION_STATUS_REL = Path("results") / "02_models" / "collection_status.json"
 
 
@@ -219,15 +178,6 @@ def _collection_status(run_dir: Optional[Path]) -> Dict[str, Any]:
 
 def _precluster_failure(run_dir: Optional[Path], status: Dict[str, Any]
                         ) -> Dict[str, str]:
-    """The cause of a pre-cluster failure, in words a user can act on.
-
-    The Equus quagga run showed "Traceback (most recent call last):" as its reason,
-    because that was the first line of the failed step's output. A traceback describes
-    the step that noticed the problem, not the problem: the real cause was a taxonomy
-    query issued under an underscored species slug, four stages earlier. Model
-    collection now records its own outcome, so the interface quotes that instead and
-    falls back to the raw text only when there is nothing better.
-    """
     contract = _collection_status(run_dir)
     raw = str(status.get("failed_reason") or status.get("error") or "").strip()
     message = str(contract.get("message") or "").strip()
@@ -238,8 +188,6 @@ def _precluster_failure(run_dir: Optional[Path], status: Dict[str, Any]
             "collection_status": str(contract.get("status") or ""),
             "next_action": str(contract.get("next_action") or "retry_local_preparation"),
         }
-    # No contract: an older run, or a failure before collection ran at all. A traceback
-    # is never shown as the cause; it stays in the diagnostics download.
     looks_like_traceback = raw.startswith("Traceback") or "  File \"" in raw
     return {
         "stage": "pre_cluster_data_acquisition" if raw else "",
@@ -252,12 +200,6 @@ def _precluster_failure(run_dir: Optional[Path], status: Dict[str, Any]
 
 
 def _gene_identity_for_run(run_dir: Optional[Path]) -> Dict[str, Any]:
-    """The requested symbol alongside what each assembly calls the locus.
-
-    The user typed HBA; the lion assembly annotates ``LOC122209636``. Replacing one with
-    the other would either hide the question or hide the evidence, so both travel to the
-    UI and the display symbol stays the user's.
-    """
     if run_dir is None:
         return {}
     rc = read_json(run_dir / "run_config.json", {}) or {}
@@ -270,11 +212,6 @@ def _gene_identity_for_run(run_dir: Optional[Path]) -> Dict[str, Any]:
 
 
 def _gene_meta_for_run(run_dir: Optional[Path]) -> Dict[str, Any]:
-    """Resolve compact gene/event metadata + ui_labels for a run (default FGFR2).
-
-    Read-only and defensive: any failure falls back to the canonical FGFR2 view so
-    the UI never breaks because of the config layer.
-    """
     fallback = {
         "analysis_id": "FGFR2_IIIb_IIIc",
         "gene_symbol": "FGFR2",
@@ -336,11 +273,6 @@ LOGGER = logging.getLogger("exondomaincompare.api")
 
 
 def _validate_package_builder_capability() -> None:
-    """Report a missing package-builder dependency once, at startup.
-
-    Without this the first user to ask for a workbook would be the one to
-    discover that the serving interpreter is missing a declared requirement.
-    """
     sys.path.insert(0, str(SCRIPTS_DIR / "shared_gene_analysis"))
     try:
         from exondomaincompare.shared_gene_analysis.package_builder import workbook_capability  # type: ignore
@@ -367,9 +299,6 @@ PRESET_VALIDATION = [
 ]
 
 
-# --------------------------------------------------------------------------- #
-# helpers
-# --------------------------------------------------------------------------- #
 def now_iso() -> str:
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 
@@ -427,11 +356,6 @@ def _public_run_path(path: Path) -> str:
 
 
 def read_species_file(path: Path) -> List[str]:
-    """Read a curated preset/reference list verbatim (trim + dedupe only).
-
-    Preset lists are shown exactly as maintained; normalization applies only to
-    user-supplied custom input (sanitize_species_list / parse_species_with_stats).
-    """
     if not Path(path).exists():
         return []
     seen, out = set(), []
@@ -479,7 +403,6 @@ def parse_species_with_stats(text: Optional[str]) -> Dict[str, Any]:
     }
 
 
-# --- current-run pointer --------------------------------------------------- #
 def set_current_run(kind: str, run_dir: Path, label: str, run_id: str = "") -> Dict[str, Any]:
     root_id = ""
     if run_id and run_id != "example":
@@ -550,23 +473,9 @@ def current_index(name: str, rebuild: bool = False) -> Any:
     return data
 
 
-# --------------------------------------------------------------------------- #
-# Dataset routing — a single "active dataset" concept for all explorable views.
-#
-#   dataset = "example"          -> validated 30-species freeze (read-only)
-#   dataset = "run:<run_id>"     -> a local custom run under runs/<run_id>/
-#   dataset = "<run_id>"         -> same as run:<run_id>
-#
-# The freeze is NEVER rewritten (its website_indices are prebuilt and read-only).
-# Custom-run indices are (re)built on demand under runs/<run_id>/website_indices;
-# a pre-InterPro-only run yields partial indices (overview / gene explorer), and
-# post-InterPro indices (domain architecture / boundary consistency) appear once
-# step 15/16 outputs exist.
-# --------------------------------------------------------------------------- #
+
 DATASET_EXAMPLE = "example"
-# Indices regenerated for the validated freeze live here. The freeze itself holds
-# the scientific data and is never written to, so a rebuilt Gallery or synteny
-# index has to land outside it and take precedence when it exists.
+
 EXAMPLE_DERIVED_INDICES_DIR = (
     RESULTS_ROOT / "derived" / "website_indices"
     if RESULTS_ROOT == BUNDLED_FGFR2_ROOT
@@ -649,7 +558,6 @@ def dataset_index(name: str, dataset: Optional[str], rebuild: bool = False) -> A
     return _with_availability(data, name, ds)
 
 
-#: Index file → the analysis whose applicability governs what the page may claim.
 _INDEX_ANALYSIS = {
     "msa_index.json": "protein_isoform_comparison",
     "isoform_alignment_index.json": "protein_isoform_comparison",
@@ -661,12 +569,6 @@ _INDEX_ANALYSIS = {
 
 
 def _with_availability(data: Any, name: str, ds: Mapping[str, Any]) -> Any:
-    """Attach the canonical availability block to an index as it is served.
-
-    Stamped here rather than written into each index file, so runs whose indices predate
-    this contract report the same states without being rebuilt. An index that already
-    reports a produced result keeps its own verdict.
-    """
     run_base = ds.get("run_base")
     if not run_base or not isinstance(data, dict):
         return data
@@ -691,8 +593,6 @@ def _with_availability(data: Any, name: str, ds: Mapping[str, Any]) -> Any:
     return data
 
 
-#: What a view's state means to a reader, for the event-pipeline (FGFR2) layout. The state
-#: names come from ``run_availability``; these are the words a page may put on screen.
 _EVENT_STATE_LABELS = {
     "pending": ("Pending cluster annotation", "pending"),
     "technically_missing": ("Expected output missing", "missing"),
@@ -704,13 +604,6 @@ _EVENT_STATE_LABELS = {
 
 
 def _with_event_view_state(data: Dict[str, Any], name: str, run_base: Path) -> Dict[str, Any]:
-    """Name why an event-pipeline view is empty, using the run's own readiness verdict.
-
-    An FGFR2 index awaiting the cluster round-trip carries ``available: false`` and a
-    technical note about a missing folder, which reads as a broken run rather than as work
-    not yet performed. The backend already computes the honest state; this carries it to the
-    page so a pre-cluster view says *pending cluster annotation* instead of *not available*.
-    """
     if data.get("available") is True:
         return data
     try:
@@ -745,14 +638,12 @@ def _with_event_view_state(data: Dict[str, Any], name: str, run_base: Path) -> D
 
 
 def index_for_request(name: str, dataset: Optional[str], rebuild: bool = False) -> Any:
-    """Serve an index for an explicit dataset, or fall back to the current run."""
     if dataset:
         return dataset_index(name, dataset, rebuild=rebuild)
     return current_index(name, rebuild=rebuild)
 
 
 def _ensure_run_indices(run_dir: Path, rebuild: bool = False) -> None:
-    """Build run-local website indices from the run's closure dir (best-effort)."""
     closure = run_dir / "results" / "13_final_pre_interpro_closure"
     idx = run_dir / "website_indices"
     if not (closure / "final_pre_interpro_truth_table.tsv").exists():
@@ -778,12 +669,6 @@ def _count_fasta_records(faa: Path) -> int:
         return 0
 
 
-# --------------------------------------------------------------------------- #
-# Human reference/control layer — curated human FGFR2 IIIb/IIIc taken from the
-# validated example dataset (read-only). Custom runs reuse this as a fixed
-# reference for marker comparison / IIIb-IIIc orientation; human is NOT added to
-# the analysed species panel unless the user explicitly selected homo_sapiens.
-# --------------------------------------------------------------------------- #
 HUMAN_REFERENCE_CACHE = WEB_STATE_DIR / "human_reference_control.json"
 
 
@@ -808,10 +693,6 @@ def build_human_reference_control(rebuild: bool = False) -> Dict[str, Any]:
                     "interpro_included": iso.get("interpro_included", ""),
                 }
 
-    # Curated human IIIb/IIIc cassette residue layer (reference/control only). Extracted
-    # from the validated example cassette index so custom runs can align their own species
-    # cassettes against the human reference and render the full Human-comparison UI without
-    # reusing any non-human example result rows.
     cassette_block = None
     ex_cass = read_json(EXAMPLE_RUN_DIR / "website_indices" / "cassette_residue_index.json", {}) or {}
     human_ref_residues = ex_cass.get("human_reference") or {}
@@ -850,15 +731,9 @@ def build_human_reference_control(rebuild: bool = False) -> Dict[str, Any]:
     return data
 
 
-# --------------------------------------------------------------------------- #
-# Derived UI status model — a small, stable set of fields the UI can rely on,
-# computed from status.json + on-disk artefacts (see PART 8 of the redesign).
-# --------------------------------------------------------------------------- #
 _CALM_STATUS = {
     "created": "Ready to prepare FASTA",
     "pre_interpro_running": "Preparing FASTA",
-    # Named after what the run has achieved, not after what is missing: the local
-    # preparation is complete and its cluster package is ready to be submitted.
     "cluster_required": "Cluster input ready",
     "cluster_running": "Cluster annotation running",
     "cluster_fetch_complete": "Cluster results fetched · Post-InterPro required",
@@ -916,12 +791,6 @@ def _run_species_count(run_dir: Path) -> int:
 
 
 def _derive_core_status_model(run_dir: Path) -> Dict[str, Any]:
-    """Honest, milestone-driven status model for a Core-only run.
-
-    A core-only run must never look analysis-ready when required core outputs are
-    missing, so its status is derived from on-disk artefacts (via the shared
-    milestone evaluator) rather than a possibly stale status.json.
-    """
     rep = _evaluate_core_run(run_dir)
     run_id = run_dir.name
     wi = run_dir / "website_indices"
@@ -945,9 +814,7 @@ def _derive_core_status_model(run_dir: Path) -> Dict[str, Any]:
         "event_region": False,
     }
 
-    # Capability report (PART 8): the single, honest status object the UI uses for
-    # cards / banners. Prefer the generated generic report; fall back to a compact
-    # derivation from the milestone evaluator so the UI is never empty.
+
     capability = read_json(wi / "generic" / "gene_capability_report.json", None)
     counts = rep["counts"]
     if not isinstance(capability, dict) or not capability:
@@ -972,8 +839,7 @@ def _derive_core_status_model(run_dir: Path) -> Dict[str, Any]:
         }
 
     next_action = rep["suggested_next_action"]
-    # Explicit, UI-facing stage (Part 10). Maps the milestone status to the
-    # canonical core-pipeline stages so the frontend can gate views honestly.
+
     _STAGE = {
         "created_not_started": ("created", "Created"),
         "running": ("running", "Running — pre-InterPro pipeline"),
@@ -1010,9 +876,6 @@ def _derive_core_status_model(run_dir: Path) -> Dict[str, Any]:
         "last_error": rep.get("failed_reason") or "",
         "failed_stage": rep.get("failed_stage") or "",
         "failed_species": rep.get("failed_species") or "",
-        # Honest pre-InterPro status the stepper/UI can rely on:
-        #   running -> live, failed/incomplete -> stopped with a reason,
-        #   otherwise complete once models + FASTA exist.
         "pre_interpro_status": (
             "running" if inferred == "running"
             else "failed" if inferred in ("core_model_collection_failed", "incomplete")
@@ -1033,7 +896,7 @@ def _derive_core_status_model(run_dir: Path) -> Dict[str, Any]:
         # Core-only extras: honest milestone detail for the dashboard.
         "core_only": True,
         "pipeline_type": "core_gene_pipeline",
-        # Shared-pipeline routing (PART 1): every gene runs the SAME conceptual
+        # Shared-pipeline routing: every gene runs the same conceptual
         # pipeline; only the event layer differs. A core-only gene uses the
         # exploratory event-evidence layer and has no validated event.
         "event_layer_type": "exploratory_event_evidence",
@@ -1051,9 +914,6 @@ def _derive_core_status_model(run_dir: Path) -> Dict[str, Any]:
 
 
 def derive_status_model(run_dir: Path) -> Dict[str, Any]:
-    # Core-only (no-event) runs are classified by the shared milestone evaluator
-    # so empty/partial runs are never shown as analysis-ready. FGFR2 runs keep the
-    # original event-aware logic below unchanged.
     if _evaluate_core_run is not None and _is_core_only_run is not None:
         try:
             if _is_core_only_run(run_dir):
@@ -1082,10 +942,6 @@ def derive_status_model(run_dir: Path) -> Dict[str, Any]:
     last_error = st.get("failed_reason") or st.get("error") or ""
     post_complete = post in ("complete", "completed")
     failure = _precluster_failure(run_dir, st)
-    # A stale `failed_reason` / `failed_step` from an earlier pre-InterPro attempt must NOT
-    # mark a run failed once it has genuinely progressed. A run that produced its primary
-    # FASTA (pre-InterPro succeeded) or reached a complete/running state is not failed,
-    # regardless of leftover error context from a previous attempt.
     pre_ok = primary_ok or pre in ("complete", "completed", "done")
     failed = (overall in ("failed", "error")
               or (bool(last_error) and not post_complete and not pre_ok
@@ -1095,10 +951,6 @@ def derive_status_model(run_dir: Path) -> Dict[str, Any]:
         return (wi / name).exists()
 
     def idx_available(name: str) -> bool:
-        """A view is available only if its index exists AND, when the index carries an
-        explicit ``available`` flag, that flag is truthy. This prevents a placeholder index
-        written for a pre-InterPro-only run (e.g. boundary_consistency with available=False)
-        from being mistaken for real post-InterPro results."""
         p = wi / name
         if not p.exists():
             return False
@@ -1127,10 +979,7 @@ def derive_status_model(run_dir: Path) -> Dict[str, Any]:
         "event_region": has_event and idx_available("cassette_residue_index.json"),
     }
 
-    # Core-only (no-event) runs publish generic core indices under
-    # website_indices/generic/ rather than the FGFR2-named standard indices.
-    # Merge those availability flags in additively so overview / gene models /
-    # synteny become inspectable. FGFR2 runs (has_event=True) are untouched.
+    # Core-only runs publish availability through their generic indices.
     if not has_event:
         gav = read_json(wi / "generic" / "available_views.json", {}) or {}
         gviews = gav.get("available_views", {}) if isinstance(gav, dict) else {}
@@ -1145,10 +994,7 @@ def derive_status_model(run_dir: Path) -> Dict[str, Any]:
                                                          or bool(gviews.get("exon_domain_boundaries")))
             available_views["synteny"] = available_views["synteny"] or bool(gviews.get("synteny"))
 
-    # What the run's own artefacts say, as opposed to what a persisted status field
-    # claims. A run that rewrote its analysis after the indices were built has stale
-    # views, and that must outrank ``post_interpro_status: complete`` — otherwise the
-    # badge reports finished results over views that have nothing to draw.
+    # On-disk artefacts override stale persisted completion fields.
     ready = _run_readiness(run_dir, has_event=has_event)
     view_reasons: Dict[str, Any] = {}
     if ready is not None:
@@ -1214,7 +1060,7 @@ def derive_status_model(run_dir: Path) -> Dict[str, Any]:
         "ui_labels": gene_meta["ui_labels"],
         "core_only": False,
         "pipeline_type": ("validated_event_pipeline" if has_event else "core_gene_pipeline"),
-        # Shared-pipeline routing (PART 1). FGFR2 (has_event) carries the
+        # Shared-pipeline routing. FGFR2 (has_event) carries the
         # validated IIIb/IIIc event layer; any other gene uses the exploratory
         # event-evidence layer. The frontend routes on these, not on isCoreOnly.
         "event_layer_type": ("validated_fgfr2_iiib_iiic" if has_event else "exploratory_event_evidence"),
@@ -1308,18 +1154,7 @@ def list_runs() -> List[Dict[str, Any]]:
     return runs
 
 
-# --- pipeline launch (REMOVED) --------------------------------------------- #
-# The old web-run queue executed the full pre-InterPro pipeline (optionally
-# FORCE=1) in a background thread and wrote to results/web_runs/. This is
-# intentionally removed: the webapp never auto-runs the pipeline, InterProScan,
-# pyTMHMM, SSH or SLURM. Runs are created as folders under runs/<run_id>/ via
-# POST /api/local-runs/create and executed explicitly by the user from a local
-# terminal using the copyable commands from /api/local-runs/{run_id}/commands.
-
-
-# --------------------------------------------------------------------------- #
-# request models
-# --------------------------------------------------------------------------- #
+# Request models.
 class RunRequest(BaseModel):
     case_study: str = Field(default="FGFR2 IIIb/IIIc")
     species_source: str = Field(default="full_reference")  # full_reference|pilot|validation|custom
@@ -1394,10 +1229,7 @@ def runs_current() -> Dict[str, Any]:
     return cur
 
 
-# --------------------------------------------------------------------------- #
-# Local run folders created by scripts/create_new_run.py (runs/<run_id>/).
-# Read-only discovery for the webapp; no execution, no LRZ/SSH/SLURM here.
-# --------------------------------------------------------------------------- #
+# Local run discovery never executes cluster or remote commands.
 LOCAL_RUNS_ROOT = RUNTIME_CONFIG.runs_root
 
 
@@ -1550,14 +1382,7 @@ def local_run_detail(run_id: str) -> Dict[str, Any]:
     }
 
 
-# --------------------------------------------------------------------------- #
-# Local run WORKFLOW endpoints (create + command templates + status/refresh).
-#
-# SAFETY: none of these run the pipeline, InterProScan, pyTMHMM, SSH or SLURM.
-# `create` only writes a runs/<run_id>/ folder (reusing scripts/create_new_run.py).
-# Cluster steps are executed by the user from their local terminal via the copy
-# commands returned by `/commands`. No credentials are ever collected.
-# --------------------------------------------------------------------------- #
+# Workflow endpoints create folders; cluster commands remain terminal-only.
 class CreateLocalRunRequest(BaseModel):
     # The visible label. Optional: when it is empty the run is titled from its
     # gene and species instead, and the run_id slug is derived the same way.
@@ -2215,14 +2040,7 @@ def legacy_web_runs() -> Dict[str, Any]:
     }
 
 
-# --------------------------------------------------------------------------- #
-# SAFE local pre-InterPro execution (runs the run-specific wrapper locally).
-#
-# This is the ONLY pipeline execution the webapp performs, and only for the
-# local pre-InterPro wrapper (scripts/run_pre_interpro_for_run.py). It NEVER
-# runs the old shell runner, NEVER uses FORCE=1 by default, and NEVER touches
-# LRZ/SSH/SLURM. Cluster annotation stays an explicit local terminal command.
-# --------------------------------------------------------------------------- #
+# Local preparation never executes LRZ, SSH, SLURM or cluster annotation.
 class StartPreInterproRequest(BaseModel):
     mode: str = Field(default="cached")     # cached (local-safe) | live (full refresh)
     confirm_live_run: bool = False
@@ -3053,19 +2871,13 @@ def run_logs(run_id: str, tail: int = Query(400, ge=1, le=8000)) -> Dict[str, An
     return {"run_id": run_id, "lines": lines}
 
 
-# --------------------------------------------------------------------------- #
-# Explorable dataset data (indices).
-#
-# Every endpoint accepts an optional ?dataset= parameter:
-#     ?dataset=example      -> validated freeze
-#     ?dataset=run:<run_id> -> a local custom run
-# When omitted, the backend falls back to the globally loaded current run
-# (backward compatible with the previous example/open-run flow).
-# --------------------------------------------------------------------------- #
+# Dataset endpoints accept example or run:<run_id> selectors.
 @app.get("/api/runs/current/dataset-model")
 def current_dataset_model(dataset: Optional[str] = Query(None)) -> Dict[str, Any]:
     """Return one versioned model without building or rewriting source indices."""
-    return build_canonical_dataset_model(resolve_dataset(dataset))
+    selected = dataset or DATASET_EXAMPLE
+    model = build_canonical_dataset_model(resolve_dataset(selected))
+    return _prune_missing_file_links(model, selected)
 
 
 @app.get("/api/runs/current/summary")
@@ -3108,9 +2920,7 @@ def current_freeze(dataset: Optional[str] = Query(None)) -> Any:
     return index_for_request("freeze_index.json", dataset)
 
 
-# --------------------------------------------------------------------------- #
-# Phase-2 interactive indices (cassette / coordinates / MSA / synteny / story)
-# --------------------------------------------------------------------------- #
+# Interactive cassette, coordinate, MSA, synteny and story indices.
 def _species_slice(index_name: str, species: str, dataset: Optional[str] = None) -> Dict[str, Any]:
     data = index_for_request(index_name, dataset)
     key = species.lower()
@@ -3193,11 +3003,7 @@ def current_species_domain_architecture(species: str, dataset: Optional[str] = Q
     return _species_slice("species_domain_architecture.json", species, dataset)
 
 
-# --------------------------------------------------------------------------- #
-# Core-only (gene-agnostic) generic indices — served for no-event datasets.
-# These read runs/<id>/website_indices/generic/*.json (built by the core runner /
-# build_core_gene_indices.py). They never touch the FGFR2 freeze.
-# --------------------------------------------------------------------------- #
+# Core-only datasets read their generic run-local indices.
 def _resolve_shared_index(run_base: Path, name: str) -> Any:
     """Prefer the shared website_indices/ root (new conceptual layer), then fall
     back to the legacy website_indices/generic/ location."""
@@ -3219,13 +3025,7 @@ def _core_generic_index(name: str, dataset: Optional[str]) -> Any:
     return _with_availability(data, name, ds)
 
 
-# --------------------------------------------------------------------------- #
-# Shared-pipeline indices (PART 7). One conceptual API for EVERY dataset. For a
-# shared_gene_pipeline dataset (e.g. FGFR1) these read runs/<id>/website_indices/
-# (rich canonical indices written by the shared pipeline). For FGFR2 datasets the
-# validated event layer keeps its own endpoints; the shared endpoints fall back
-# safely (404) so the frontend can prefer FGFR2-specific views there.
-# --------------------------------------------------------------------------- #
+# Shared indices use run-local data; FGFR2 retains validated event endpoints.
 _SHARED_INDEX_FILES = {
     "overview": "overview_index.json",
     "evidence-stack": "evidence_stack.json",
@@ -3291,13 +3091,13 @@ def current_core_protein_architecture(dataset: Optional[str] = Query(None)) -> A
 
 @app.get("/api/runs/current/core/event-evidence-index")
 def current_core_event_evidence_index(dataset: Optional[str] = Query(None)) -> Any:
-    """Source-by-source exploratory candidate model (Part 5)."""
+    """Return the source-by-source exploratory candidate model."""
     return _core_generic_index("event_evidence_index.json", dataset)
 
 
 @app.get("/api/runs/current/core/figures")
 def current_core_figures(dataset: Optional[str] = Query(None)) -> Any:
-    """Stage-aware generic figures index for a core-only dataset (Part 7)."""
+    """Return the stage-aware figure index for a core-only dataset."""
     return _core_generic_index("figures_index.json", dataset)
 
 
@@ -3352,7 +3152,7 @@ def current_core_event_candidates(dataset: Optional[str] = Query(None)) -> Any:
 
 @app.get("/api/runs/current/core/exon-protein-map")
 def current_core_exon_protein_map(dataset: Optional[str] = Query(None)) -> Any:
-    """Generic exon/protein track data for a core-only dataset (PART 4).
+    """Return generic exon/protein tracks for a core-only dataset.
 
     Returns, per species and protein, the exon blocks (aa coordinates from the
     exon→protein map), any exploratory candidate regions (from the clustered
@@ -3552,7 +3352,7 @@ def current_core_event_evidence(dataset: Optional[str] = Query(None)) -> Any:
 
 @app.get("/api/runs/current/core/capability")
 def current_core_capability(dataset: Optional[str] = Query(None)) -> Any:
-    """The gene_capability_report.json for a core-only run (PART 8)."""
+    """Return the capability report for a core-only run."""
     ds = resolve_dataset(dataset)
     if ds["kind"] != "run":
         raise HTTPException(status_code=404, detail="Capability report is only available for runs.")
@@ -3599,7 +3399,7 @@ def current_boundary_consistency_outliers(dataset: Optional[str] = Query(None)) 
 
 
 # --------------------------------------------------------------------------- #
-# Data & Downloads — configurable scientific package builder (Part 4)
+# Configurable scientific package builder.
 # --------------------------------------------------------------------------- #
 class PackageSelection(BaseModel):
     preset: str = "recommended"
@@ -3635,7 +3435,7 @@ def _resolve_active_run_dir(dataset: Optional[str] = None) -> Path:
 @app.get("/api/runs/current/package-capabilities")
 def package_capabilities(scope: Optional[str] = Query(None),
                          dataset: Optional[str] = Query(None)) -> Any:
-    """The canonical availability object for one Data & Downloads scope (Part 7).
+    """Return canonical availability for one Data & Downloads scope.
 
     Every item states whether it is available, where it comes from, and the exact
     reason when it is not. The frontend renders exactly this and never infers
@@ -3706,7 +3506,72 @@ def _job_payload(job: Any) -> Dict[str, Any]:
 # --------------------------------------------------------------------------- #
 # file serving (sandboxed to project root)
 # --------------------------------------------------------------------------- #
-def _resolve_public_file_path(path: str) -> Path:
+def _resolve_dataset_file_path(path: str, dataset: str) -> Optional[Path]:
+    """Resolve a file within the selected dataset roots."""
+    logical = Path(path)
+    if not dataset:
+        return None
+    descriptor = resolve_dataset(dataset)
+    run_id = str(descriptor.get("run_id") or "")
+    if descriptor.get("kind") == "example":
+        roots = [
+            Path(RESULTS_ROOT),
+            Path(descriptor["closure_dir"]),
+            Path(EXAMPLE_DERIVED_INDICES_DIR).parent,
+        ]
+    else:
+        roots = [Path(descriptor["run_base"]), Path(descriptor["closure_dir"])]
+
+    resolved_roots = [base.resolve() for base in roots]
+    if logical.is_absolute():
+        absolute = logical.resolve()
+        for root in resolved_roots:
+            try:
+                absolute.relative_to(root)
+                return absolute
+            except ValueError:
+                pass
+        if run_id and run_id in logical.parts:
+            marker = logical.parts.index(run_id)
+            logical = Path(*logical.parts[marker + 1:])
+        else:
+            return None
+
+    relative = logical
+    if len(logical.parts) >= 2 and logical.parts[0] == "runs" \
+            and logical.parts[1] == run_id:
+        relative = Path(*logical.parts[2:])
+    elif descriptor.get("kind") == "example":
+        for prefix in (
+            Path("results") / "final_30_until_interpro_prepare",
+            Path("datasets") / "fgfr2_30_species",
+        ):
+            try:
+                relative = logical.relative_to(prefix)
+                break
+            except ValueError:
+                pass
+        derived_prefix = Path("results") / "derived" / "example"
+        try:
+            derived_relative = logical.relative_to(derived_prefix)
+            relative = Path("derived") / derived_relative
+        except ValueError:
+            pass
+
+    safe_candidates: List[Path] = []
+    for root in resolved_roots:
+        candidate = (root / relative).resolve()
+        try:
+            candidate.relative_to(root)
+        except ValueError:
+            continue
+        safe_candidates.append(candidate)
+        if candidate.is_file():
+            return candidate
+    return safe_candidates[0] if safe_candidates else None
+
+
+def _resolve_public_file_path(path: str, dataset: Optional[str] = None) -> Path:
     if path.startswith("package:"):
         relative = Path(path[len("package:"):])
         candidate = (RUNTIME_CONFIG.paths.packages / relative).resolve()
@@ -3716,6 +3581,9 @@ def _resolve_public_file_path(path: str) -> Path:
         except ValueError:
             raise HTTPException(status_code=400, detail="Invalid package path") from None
         return candidate
+    dataset_candidate = _resolve_dataset_file_path(path, dataset or "")
+    if dataset_candidate is not None and dataset_candidate.is_file():
+        return dataset_candidate
     logical = Path(path)
     legacy_fgfr2 = Path("results") / "final_30_until_interpro_prepare"
     legacy_derived = Path("results") / "derived" / "example"
@@ -3746,6 +3614,75 @@ def _resolve_public_file_path(path: str) -> Path:
     return candidate
 
 
+_DIRECT_FILE_LINK_KEYS = {
+    "file", "report", "source_file", "source_table", "thumbnail",
+    "png", "svg", "pdf",
+}
+_FILE_LINK_MAP_KEYS = {"formats", "source_tables"}
+_DOWNLOAD_SUFFIXES = {
+    ".csv", ".faa", ".fasta", ".json", ".md", ".pdf", ".png",
+    ".svg", ".tsv", ".txt", ".xlsx", ".zip",
+}
+
+
+def _looks_like_file_link(value: str) -> bool:
+    return value.startswith("package:") or Path(value.split("?", 1)[0]).suffix.lower() \
+        in _DOWNLOAD_SUFFIXES
+
+
+def _prune_missing_file_links(value: Any, dataset: str) -> Any:
+    """Remove derived-view download links whose target file is unavailable."""
+    if isinstance(value, list):
+        cleaned = []
+        for item in value:
+            if isinstance(item, dict) and item.get("path") and item.get("format"):
+                try:
+                    available = _resolve_public_file_path(
+                        str(item["path"]), dataset=dataset
+                    ).is_file()
+                except HTTPException:
+                    available = False
+                if not available:
+                    continue
+            cleaned.append(_prune_missing_file_links(item, dataset))
+        return cleaned
+    if not isinstance(value, dict):
+        return value
+    cleaned: Dict[str, Any] = {}
+    for key, item in value.items():
+        if key in _DIRECT_FILE_LINK_KEYS and isinstance(item, str) and item \
+                and _looks_like_file_link(item) \
+                and not item.startswith(("/api/", "http://", "https://")):
+            try:
+                available = _resolve_public_file_path(item, dataset=dataset).is_file()
+            except HTTPException:
+                available = False
+            if not available:
+                continue
+        if key in _FILE_LINK_MAP_KEYS and isinstance(item, dict):
+            mapped = {}
+            for item_key, path in item.items():
+                if not isinstance(path, str) or not path:
+                    continue
+                if path.startswith(("/api/", "http://", "https://")):
+                    mapped[item_key] = path
+                    continue
+                if not _looks_like_file_link(path):
+                    continue
+                try:
+                    available = _resolve_public_file_path(
+                        path, dataset=dataset
+                    ).is_file()
+                except HTTPException:
+                    available = False
+                if available:
+                    mapped[item_key] = path
+            cleaned[key] = mapped
+        else:
+            cleaned[key] = _prune_missing_file_links(item, dataset)
+    return cleaned
+
+
 @app.get("/api/runs/{run_id}/files")
 def run_local_file(run_id: str, path: str, inline: bool = False):
     """Serve only an existing file inside one run folder.
@@ -3767,8 +3704,9 @@ def run_local_file(run_id: str, path: str, inline: bool = False):
 
 
 @app.get("/api/download")
-def download(path: str, inline: bool = False):
-    p = _resolve_public_file_path(path)
+def download(path: str, inline: bool = False,
+             dataset: Optional[str] = Query(None)):
+    p = _resolve_public_file_path(path, dataset=dataset)
     if not p.exists() or not p.is_file():
         raise HTTPException(status_code=404, detail="File not found")
     if inline:

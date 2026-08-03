@@ -363,7 +363,7 @@ def write_reports(outdir: Path, prefix: str, records: List[FastaRecord], unique_
 def write_task9_outputs(outdir: Path, prefix: str, records: List[FastaRecord], unique_records: List[FastaRecord],
                         warnings: List[WarningRow], unique_fasta: Path, split_paths: List[str],
                         args: argparse.Namespace) -> Dict[str, str]:
-    """Task 9: pre-InterPro summary, run instructions and input manifest.
+    """Write the pre-InterPro summary, run instructions and input manifest.
 
     These outputs make the FASTA preparation a self-contained, reproducible input
     layer for a *later* InterProScan run. No InterPro results are assumed here.

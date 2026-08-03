@@ -1,21 +1,4 @@
 #!/usr/bin/env bash
-###############################################################################
-# FGFR2 final pre-InterProScan closure runner
-#
-# End-to-end clean closure run:
-#   1. v3 pipeline (Steps 1-11, cached inputs OK)
-#   2. MSA / rescue / synteny module (12)
-#   3. Paper-level synteny figures
-#   4. Framework evidence stack figure
-#   5. Closure sprint (truth table, gate, FASTA freeze, archive)
-#
-# Usage:
-#   chmod +x run_fgfr2_pipeline_current_final_pre_interpro.sh
-#   ./run_fgfr2_pipeline_current_final_pre_interpro.sh
-#   BASE=results/final_30_until_interpro_prepare SKIP_V3=1 ./run_fgfr2_pipeline_current_final_pre_interpro.sh
-#
-# Environment: BASE, PYTHON, RUN_ID, SKIP_V3, SKIP_MSA, FORCE
-###############################################################################
 set -Eeuo pipefail
 
 BASE="${BASE:-results/final_30_until_interpro_prepare}"
@@ -71,10 +54,6 @@ run_step() {
   fi
 }
 
-# Like run_step, but a failure is recorded and the run CONTINUES. Used for
-# optional paper-level figures (synteny / framework) that assume a full
-# multi-species panel and can be empty for a small custom run. Never used for
-# the full-30 freeze (PAPER_FIGURES_OPTIONAL is unset there).
 run_step_optional() {
   local id="$1" name="$2" cmd="$3"
   STEP=$((STEP + 1))
@@ -192,9 +171,6 @@ else
 fi
 
 if [[ "$SKIP_MSA" != "1" ]]; then
-  # The MSA/rescue/synteny module always recomputes from the (freshly rebuilt) module-11
-  # inputs and overwrites its module-12 outputs, so a clean FORCE run needs no extra flag.
-  # (It does not support a cache-refresh flag; passing one aborts the module with rc=2.)
   MSA_EXTRA=""
   run_step "A2" "msa_rescue_synteny_module" \
     "${PYTHON} ${SCRIPTS}/run_fgfr2_msa_boundary_module.py --base ${BASE} ${MSA_EXTRA}" \

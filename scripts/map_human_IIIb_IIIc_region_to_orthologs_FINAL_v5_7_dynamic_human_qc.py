@@ -241,7 +241,7 @@ def classify_iii_region_similarity(fixed_id: float, local: "LocalAlignment", wb:
                                    full_window_id: float = 0.90,
                                    high_local_coverage: float = 0.80,
                                    ambiguous_local_coverage: float = 0.50):
-    """Task 6: split the broad III_region_nearly_identical label into explicit
+    """Split the broad III_region_nearly_identical label into explicit
     similarity classes, separating full-window near-identity from cases where only
     a (long or short) local subregion is identical.
 
@@ -653,7 +653,7 @@ def build_pair_audit(records: List[FastaRecord], seg_b: str, seg_c: str, w0: int
         fid, _fm, fdiff = fixed_identity(wb, wc)
         local = smith_waterman(wb, wc)
         n_local_diff = local.mismatches + local.gaps
-        # Task 6: refined similarity class (independent of the legacy status).
+        # Refined similarity is independent of the legacy status.
         similarity_class, local_cov_min, local_cov_max, local_len, similarity_warning = classify_iii_region_similarity(
             fid, local, wb, wc, identity_threshold)
         if rb.protein == rc.protein and rb.protein != "unknown":

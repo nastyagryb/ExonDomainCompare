@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-run_fgfr2_final_pre_interpro_closure.py — Final pre-InterProScan closure sprint (Parts B–E, I, J).
+Build the final pre-InterProScan closure.
 
 Builds the single final truth table, cross-table consistency gate, final MSA snapshot copies,
 InterProScan-ready FASTA freeze (primary + review), checksums, thesis-ready reports, and archive
@@ -234,7 +234,7 @@ def build_truth_table(base: Path) -> List[Dict[str, object]]:
 
 
 def final_consistency_gate(base: Path, truth: List[Dict[str, object]], cdir: Path) -> Tuple[bool, List[str]]:
-    """Part C — cross-table consistency gate (12 checks per closure sprint spec)."""
+    """Run the cross-table consistency gate."""
     md = M.module_dir(base)
     tabd = md / "tables"
     checks: List[Dict[str, str]] = []

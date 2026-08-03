@@ -13,7 +13,7 @@ from typing import Any, Mapping, Sequence
 
 try:
     from platformdirs import user_cache_dir, user_config_dir, user_data_dir, user_log_dir
-except ImportError:  # compatibility with the accepted pre-Phase-B environment
+except ImportError:  # fallback for installations without platformdirs
     def _fallback_user_dir(kind: str, app: str) -> str:
         home = Path.home()
         if sys.platform == "darwin":

@@ -14,7 +14,6 @@ This directory contains executable workflow and maintenance entry points only.
 | `plotting/*.py`, `plotting/*.mjs` | active workflow | Figure registration, generation and shared rendering |
 | `rebuild_dataset_indices.py` | maintenance | Rebuild published run indices without changing source evidence |
 | `release/*.py` | maintenance | Public dataset assembly and release validation |
-| `docs/*.py` | maintenance | Reproducible documentation generation |
 
 Compatibility aliases, historical one-command InterPro wrappers and unused
 development scripts are not part of the public release.

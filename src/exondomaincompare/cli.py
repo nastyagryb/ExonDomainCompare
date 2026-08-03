@@ -180,7 +180,7 @@ def cluster_tools_install(args: argparse.Namespace) -> int:
 def cluster_init(args: argparse.Namespace) -> int:
     if not args.dry_run:
         raise SystemExit(
-            "Remote initialization is reserved for Phase E; use --dry-run to inspect the plan.")
+            "Remote initialization is not automatic; use --dry-run to inspect the plan.")
     cfg = _config(args)
     cfg.require_cluster()
     print(json.dumps(cfg.remote_directory_plan(args.run_id), indent=2))

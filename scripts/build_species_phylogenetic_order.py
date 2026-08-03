@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-build_species_phylogenetic_order.py  (Sprint Part 2)
+Build the phylogenetic species display order.
 
 Derive a reproducible, taxonomy-based species display order for all FGFR2
 figures (never silent alphabetical order).
@@ -111,7 +111,7 @@ def try_ncbi_taxa():
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Build reproducible phylogenetic species order (Part 2).")
+    ap = argparse.ArgumentParser(description="Build a reproducible phylogenetic species order.")
     ap.add_argument("--registry", type=Path, required=True)
     ap.add_argument("--outdir", type=Path, required=True)
     args = ap.parse_args()

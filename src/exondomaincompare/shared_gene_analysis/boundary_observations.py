@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Canonical exon–domain Boundary observation table (Part 8).
+"""Canonical exon–domain boundary observation table.
 
 One row per species-specific Boundary observation, built from the canonical
 per-species Boundary index inside ``protein_coordinate_model.json`` and — when
@@ -194,7 +194,7 @@ def ensure_table(run_dir: Path, species_id: Optional[str] = None) -> Optional[Pa
 
 
 def label_for(multi_species: bool) -> str:
-    """The visible download label required by Part 8."""
+    """Return the visible download label."""
     return ("All species Boundary observations (TSV)" if multi_species
             else "Boundary observations (TSV)")
 

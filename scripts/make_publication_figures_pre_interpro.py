@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-make_publication_figures_pre_interpro.py  (Sprint Parts 3, 5, 6)
+Render publication-level pre-InterPro figures.
 
 Publication-level pre-InterPro figure engine.
 
@@ -36,7 +36,7 @@ from matplotlib.lines import Line2D
 
 
 # ---------------------------------------------------------------------------
-# Stable, color-blind-safe style (Part 3)
+# Stable colour-blind-safe style.
 # ---------------------------------------------------------------------------
 plt.rcParams.update({
     "font.family": "sans-serif",
@@ -71,7 +71,7 @@ STATE_LABELS = {
     "pending_missing": "pending / missing",
 }
 
-# Refined uncertainty visual states (uncertainty-refinement sprint, Part E).
+# Refined uncertainty visual states.
 # Minor technical boundary flags (split codon, phase unavailable) get calm,
 # non-alarming colors; only true missing data / conflicts / hard fails are loud.
 REFINED_STATE_COLORS = {
@@ -612,7 +612,7 @@ BOUNDARY_MARK = {"codon_boundary_exact": ("|", "#117733"),
 
 
 
-# Refined, calm edge symbols (Part E): split/phase flags are subtle and grey, never
+# Refined calm edge symbols: split/phase flags are subtle and grey, never
 # alarming; only true unresolved boundaries get a warning color.
 REFINED_EDGE = {
     "codon_boundary_exact": ("", "#117733", 6.0),

@@ -542,11 +542,7 @@ def resolve_gene_locus(gff_path: Path, gene_symbol: str, *,
                           ncbi_records=list(records), ncbi_lookup_status=ncbi_status,
                           routes_attempted=attempted)
 
-    # 1 + 2. The annotation's own symbol. Exact case first, then case-normalized: these
-    # differ under teleost and plant conventions (foxp1b vs FOXP1B).
-    #
-    # Duplicates are ambiguity, not a race. Returning whichever row came first in the file
-    # would make the answer depend on annotation order.
+    # Preserve case-sensitive symbols and treat duplicate matches as ambiguous.
     attempted.append(ROUTE_EXACT_SYMBOL)
     case_exact = [l for l in loci.values() if l.symbol == requested]
     if len(case_exact) == 1:

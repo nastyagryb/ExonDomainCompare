@@ -1,4 +1,4 @@
-"""Shared, gene-agnostic website indices (PART 6 + PART 8).
+"""Shared, gene-agnostic website indices.
 
 Reads the canonical ``generic_gene_analysis/`` products and writes the shared
 conceptual indices into ``website_indices/`` (same names for every gene):
@@ -167,7 +167,7 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
                                  if cluster_complete else
                                  "Pending the InterProScan/pyTMHMM cluster step.")}
 
-    # ---- evidence stack (rich; PART 6) ----
+    # Rich evidence stack.
     stack_items = _evidence_stack(ctx, routing, gm, iso, sel, arch, syn, clusters,
                                   msa_status, domain_status, boundary_status)
     evidence_stack = {**base_meta, "items": stack_items}
@@ -242,7 +242,7 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
     for name, data in outputs.items():
         write_json(wi / name, sanitize_public_payload(data))
 
-    # canonical rich stack also lives in the analysis layer (PART 6 name)
+    # The canonical rich stack also lives in the analysis layer.
     write_json(ctx.out("analysis_evidence_stack.json"), evidence_stack)
     write_public_download_projections(ctx.run_dir)
     write_freshness_contract(

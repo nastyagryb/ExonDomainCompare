@@ -32,7 +32,7 @@ from exondomaincompare.generic_gene.stages import STAGES, event_layer_for_gene
 
 # Real generated pre-cluster figure files, keyed by the figures_index item id used
 # by the shared/rich figures index. These are enriched into the shared root
-# figures_index.json so the Figure Gallery shows the actual files (PART 4).
+# figures_index.json lets the Figure Gallery show the actual files.
 _FIGURE_STEM_FOR_ID = {
     "transcript_exon_structure": "Figure_transcript_exon_structure",
     "primary_protein_exon_projection": "Figure_primary_protein_exon_projection",
@@ -196,7 +196,7 @@ def _write_pending_domain(ctx: GenericContext, stage_dir: Path, status: str) -> 
                    else "Pending the InterProScan/pyTMHMM cluster step."),
         "n_domains": len(dom_rows), "n_tm": len(tm_rows), "generated_at": _now(),
     })
-    # canonical layer copies (PART 1 items 9)
+    # Canonical layer copies.
     write_tsv(ctx.out("domain_architecture.tsv"), dom_rows, dom_cols)
     write_json(ctx.out("domain_architecture_status.json"), {"status": status})
 
@@ -228,7 +228,7 @@ def _write_pending_boundary(ctx: GenericContext, stage_dir: Path, status: str) -
         "source": "real fetched InterProScan coordinates" if status == "available" else "",
         "generated_at": _now(),
     })
-    # canonical layer copies (PART 1 item 10)
+    # Canonical layer copies.
     write_tsv(ctx.out("exon_domain_boundary_analysis.tsv"), rows, cols)
     write_json(ctx.out("exon_domain_boundary_analysis_status.json"), {"status": status})
 

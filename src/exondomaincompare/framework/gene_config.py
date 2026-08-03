@@ -337,9 +337,7 @@ class GeneConfig:
 # --------------------------------------------------------------------------- #
 # Loading + validation
 # --------------------------------------------------------------------------- #
-# Always required (core gene-level analysis is possible for any protein-coding
-# gene). Event fields are required ONLY when the config declares a configured or
-# user-defined event region (see validate_gene_config).
+# Event fields are required only when the configuration declares an event region.
 _REQUIRED = [
     ("analysis.id", lambda c: c.analysis_id),
     ("gene.symbol", lambda c: c.gene_symbol),

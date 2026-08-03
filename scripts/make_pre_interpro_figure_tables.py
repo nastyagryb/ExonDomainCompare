@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
 """
-make_pre_interpro_figure_tables.py  (Task 10)
+Build stable pre-InterPro plotting tables.
 
-Produce tidy, stable plotting-input tables that do NOT require InterProScan
-results. The plot scripts (Task 11) read these tables verbatim and must not
-recompute any biological QC -- all QC lives in the species QC master (Task 8)
-and the resolver pair-level QC (Task 7/10 resolver).
+These tables do not require InterProScan results. Plotting reads them verbatim
+and does not recompute the upstream biological QC.
 
 Outputs (in --outdir):
   figure1_framework_counts_pre_interpro.tsv
@@ -175,7 +173,7 @@ def build_review(master: List[Dict[str, str]]) -> List[Dict[str, object]]:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Build pre-InterPro figure input tables (Task 10).")
+    ap = argparse.ArgumentParser(description="Build pre-InterPro figure input tables.")
     ap.add_argument("--master", type=Path, required=True, help="species_qc_master_pre_interpro.tsv")
     ap.add_argument("--pair_qc", type=Path, required=True, help="fgfr2_pair_level_qc_summary.tsv")
     ap.add_argument("--outdir", type=Path, required=True)

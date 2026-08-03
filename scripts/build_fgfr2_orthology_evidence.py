@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-build_fgfr2_orthology_evidence.py  (Addendum Task B)
+Build the FGFR2 orthology evidence table.
 
 Build a dedicated FGFR2 orthology evidence table that integrates:
   * gene-symbol evidence (Step 2 genes.tsv),
@@ -58,7 +58,7 @@ def strip_ver(acc: str) -> str:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Build FGFR2 orthology evidence table (Addendum B).")
+    ap = argparse.ArgumentParser(description="Build the FGFR2 orthology evidence table.")
     ap.add_argument("--genes", type=Path, required=True, help="Step 2 genes.tsv")
     ap.add_argument("--paralog_detailed", type=Path, required=True, help="Multi-vertebrate paralog screen detailed")
     ap.add_argument("--protein_validation_summary", type=Path, required=True, help="Step 5b final selected validation summary")

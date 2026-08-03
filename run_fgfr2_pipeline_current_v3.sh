@@ -1,44 +1,13 @@
 #!/usr/bin/env bash
-###############################################################################
-# FGFR2 IIIb/IIIc comparative pipeline runner — v3 (Tasks 1-6 hardened)
-#
-# Improvements over run_fgfr2_pipeline_current_v2_22_references_fixed.sh:
-#   * Strict mode + per-step error trap (no silent failures).
-#   * Directory names match the committed result layout exactly, so the runner
-#     can resume from cached inputs without path guessing.
-#   * CLI calls verified against each script's actual argparse (the old runner
-#     mis-called Step 5b [missing --cache], Step 6 export, and Step 9 [wrong
-#     script name + wrong args]).
-#   * Step 5b and Step 6 now receive the NCBI datasets --cache so protein
-#     sequences resolve locally instead of failing.
-#   * The coordinate resolver (Tasks 3-5) runs as an explicit step that writes
-#     the coordinate audit + pair-level QC summary, before the figures step.
-#   * Every step verifies its key outputs and records them in a run manifest
-#     (JSON), with a final human-readable summary.
-#
-# Usage:
-#   chmod +x run_fgfr2_pipeline_current_v3.sh
-#   ./run_fgfr2_pipeline_current_v3.sh
-#   BASE=results/final_30_until_interpro_prepare RUN_FROM=5b RUN_TO=10 ./run_fgfr2_pipeline_current_v3.sh
-#   FORCE=1 RUN_FROM=10 ./run_fgfr2_pipeline_current_v3.sh
-#
-# Environment overrides: BASE, SCRIPTS, PYTHON, CACHE, RUN_FROM, RUN_TO, FORCE,
-#   RUN_STEP7, USE_NCBI_DATASETS, DATASETS_BIN, THREADS, MAX_MAIN_SPECIES,
-#   NO_ENSEMBL_REST (1 to disable remote protein fetches), SPECIES_LIST,
-#   HUMAN_IIIB_FASTA, HUMAN_IIIC_FASTA, FGFR_PARALOG_REF_FASTA.
-###############################################################################
 set -Eeuo pipefail
 
-# ---------------------------------------------------------------------------
-# Configuration
-# ---------------------------------------------------------------------------
 BASE="${BASE:-results/final_30_until_interpro_prepare}"
 SCRIPTS="${SCRIPTS:-scripts}"
 PYTHON="${PYTHON:-python}"
 FORCE="${FORCE:-0}"
 RUN_FROM="${RUN_FROM:-1}"
-RUN_TO="${RUN_TO:-11}"               # full pre-InterProScan endpoint (Tasks 8-12)
-RUN_STEP7="${RUN_STEP7:-1}"          # InterPro FASTA prep (on: scope ends at InterPro preparation)
+RUN_TO="${RUN_TO:-11}"
+RUN_STEP7="${RUN_STEP7:-1}"
 USE_NCBI_DATASETS="${USE_NCBI_DATASETS:-1}"
 DATASETS_BIN="${DATASETS_BIN:-datasets}"
 THREADS="${THREADS:-4}"
@@ -48,7 +17,7 @@ REF_DIR="${REF_DIR:-references}"
 FGFR2_III_SEGMENTS_DIR="${FGFR2_III_SEGMENTS_DIR:-${REF_DIR}/fgfr2_iii_segments}"
 GENE_SYMBOL="${GENE_SYMBOL:-FGFR2}"
 
-# Directory layout — matches the committed result tree so cached reuse works.
+
 D01="${BASE}/01_species_registry"
 D02="${BASE}/02_models"
 D03="${BASE}/03_selection_initial"
@@ -59,10 +28,10 @@ D06="${BASE}/06_protein_export_v2_7_marker_validated"
 D06B="${BASE}/06b_paralog_screen_v2_7_marker_validated"
 D06E="${BASE}/06e_III_region_anchor_v5_9_marker_validated"
 D07="${BASE}/07_interpro_prepare_v2_7_marker_validated"
-D06F="${BASE}/06f_orthology_evidence"          # Addendum B orthology evidence
+D06F="${BASE}/06f_orthology_evidence"
 D09="${BASE}/09_paper_ready_qc_v2_9"
 D10="${D10:-${D09}/figures_v2_22_final_qc_display}"
-D11="${D11:-${BASE}/11_pre_interpro_master}"  # Tasks 8/10/11/12 pre-InterPro package
+D11="${D11:-${BASE}/11_pre_interpro_master}"
 # Addendum A: multi-vertebrate FGFR1/2/3/4 paralog panel (preferred; human-only kept as legacy control).
 MULTI_PANEL_FASTA="${MULTI_PANEL_FASTA:-${REF_DIR}/fgfr_paralog_panel_multi_vertebrate.fasta}"
 ALLOW_PANEL_BUILD="${ALLOW_PANEL_BUILD:-1}"     # build panel via NCBI datasets if missing
@@ -123,9 +92,6 @@ fi
 
 MANIFEST="${MANIFEST:-${BASE}/run_manifest_v3.json}"
 
-# ---------------------------------------------------------------------------
-# Logging + manifest helpers
-# ---------------------------------------------------------------------------
 log(){ printf '\n[RUN] %s\n' "$*"; }
 warn(){ printf '[WARN] %s\n' "$*" >&2; }
 fail(){ printf '[ERROR] %s\n' "$*" >&2; exit 2; }
@@ -212,17 +178,11 @@ echo "[CONFIG] HUMAN_IIIB_FASTA=$HUMAN_IIIB_FASTA"
 echo "[CONFIG] HUMAN_IIIC_FASTA=$HUMAN_IIIC_FASTA"
 echo "[CONFIG] FGFR_PARALOG_REF_FASTA=$FGFR_PARALOG_REF_FASTA"
 
-# Whether Step 5b must fail (vs warn) when the NCBI cache is missing.
 STEP5B_REQUIRE_CACHE="${STEP5B_REQUIRE_CACHE:-1}"
 
 ENSEMBL_ARG=(); [[ "$NO_ENSEMBL_REST" == "1" ]] && ENSEMBL_ARG=(--no_ensembl_rest)
-# NOTE: do NOT compute a cache argument globally here. In a from-scratch run the
-# NCBI datasets cache is only created by Step 2, so any cache test before Step 2
-# would be stale. Each step that needs the cache resolves it at call time.
 
-# ---------------------------------------------------------------------------
-# 1. Species registry
-# ---------------------------------------------------------------------------
+
 step1_run(){
   log "Step 1: species registry"
   local s="build_species_registry.py"
@@ -233,9 +193,6 @@ step1_run(){
 }
 run_if_needed 1 "$D01/species_registry.tsv" step1_run
 
-# ---------------------------------------------------------------------------
-# 2. Dual-source FGFR2 collection (models + CDS features + datasets cache)
-# ---------------------------------------------------------------------------
 step2_run(){
   log "Step 2: collect FGFR2 models + CDS features"
   script "collect_fgfr2_models_dual_source_v3.py"; need "$D01/species_registry.tsv"; mkdir -p "$D02"
@@ -252,9 +209,6 @@ step2_run(){
 }
 run_if_needed 2 "$D02/cds_features.tsv" step2_run
 
-# ---------------------------------------------------------------------------
-# 3. Initial transcript selection
-# ---------------------------------------------------------------------------
 step3_run(){
   log "Step 3: initial annotation-aware transcript selection"
   script "select_fgfr2_transcripts_annotation_aware_v2.py"
@@ -266,15 +220,11 @@ step3_run(){
 }
 run_if_needed 3 "$D03/selected_transcripts.tsv" step3_run
 
-# ---------------------------------------------------------------------------
-# 4. IIIb/IIIc exon-structure classification
-# ---------------------------------------------------------------------------
 step4_run(){
   log "Step 4: classify IIIb/IIIc by exon structure"
   script "classify_fgfr2_IIIb_IIIc_by_exon_structure_v2_3_human_calibrated.py"
   need "$D02/transcripts.tsv"; need "$D02/exons.tsv"; need "$D03/selected_transcripts.tsv"; mkdir -p "$D04"
   need "$HUMAN_IIIB_FASTA"; need "$HUMAN_IIIC_FASTA"
-  # Resolve the cache argument at call time (Step 2 may have just created it).
   local CACHE_ARG=()
   if [[ -d "$CACHE" ]]; then
     CACHE_ARG=(--cache "$CACHE")
@@ -295,9 +245,6 @@ step4_run(){
 }
 run_if_needed 4 "$D04/fgfr2_isoform_evidence.tsv" step4_run
 
-# ---------------------------------------------------------------------------
-# 5. Re-selection with isoform evidence
-# ---------------------------------------------------------------------------
 step5_run(){
   log "Step 5: re-select transcripts with IIIb/IIIc evidence"
   script "select_fgfr2_transcripts_annotation_aware_v2.py"
@@ -310,15 +257,11 @@ step5_run(){
 }
 run_if_needed 5 "$D05/selected_transcripts.tsv" step5_run
 
-# ---------------------------------------------------------------------------
-# 5b. Protein-level IIIb/IIIc validation  (Task 2 — now receives --cache)
-# ---------------------------------------------------------------------------
 step5b_run(){
   log "Step 5b: protein-validate IIIb/IIIc candidates"
   script "protein_validate_fgfr2_III_candidate_selection_v2_6.py"
   need "$D05/selected_transcripts.tsv"; need "$D02/transcripts.tsv"; need "$D04/fgfr2_isoform_evidence.tsv"
   need "$HUMAN_IIIB_FASTA"; need "$HUMAN_IIIC_FASTA"; mkdir -p "$D05B"
-  # Resolve the cache argument at call time (Step 2 may have just created it).
   local CACHE_ARG=()
   if [[ -d "$CACHE" ]]; then
     CACHE_ARG=(--cache "$CACHE")
@@ -352,9 +295,6 @@ step5b_run(){
 }
 run_if_needed 5b "$D05B/selected_transcripts.tsv" step5b_run
 
-# ---------------------------------------------------------------------------
-# 6. Export selected proteins  (real CLI: --cache/--out/--report/--region_qc...)
-# ---------------------------------------------------------------------------
 step6_run(){
   log "Step 6: export selected FGFR2 proteins"
   script "export_selected_fgfr2_proteins_complete_v2_1_region_qc.py"
@@ -378,9 +318,6 @@ run_if_needed 6 "$D06/selected_fgfr2_proteins.faa" step6_run
 SELECTED_PROTEIN_FASTA="${SELECTED_PROTEIN_FASTA:-$D06/selected_fgfr2_proteins.faa}"
 PROTEIN_REPORT="${PROTEIN_REPORT:-$D06/protein_export_report.tsv}"
 
-# ---------------------------------------------------------------------------
-# 6b. FGFR paralog screen (Task 7 deferred — kept as-is, cached if present)
-# ---------------------------------------------------------------------------
 step6b_run(){
   log "Step 6b: FGFR paralog screen (legacy human-only control + multi-vertebrate panel + orthology)"
   script "validate_fgfr2_paralog_screen_v2_cautious.py"
@@ -430,9 +367,6 @@ step6b_run(){
 }
 run_if_needed 6b "$D06B/fgfr2_paralog_screen_detailed.tsv" step6b_run
 
-# ---------------------------------------------------------------------------
-# 6e. Dynamic human-calibrated IIIb/IIIc anchoring (Task 6 — similarity classes)
-# ---------------------------------------------------------------------------
 step6e_run(){
   log "Step 6e: dynamic IIIb/IIIc protein-region anchors + similarity classes"
   script "map_human_IIIb_IIIc_region_to_orthologs_FINAL_v5_7_dynamic_human_qc.py"
@@ -448,9 +382,6 @@ step6e_run(){
 }
 run_if_needed 6e "$D06E/fgfr2_III_pair_audit.tsv" step6e_run
 
-# ---------------------------------------------------------------------------
-# 7. InterProScan-ready clean FASTA (optional; off unless RUN_STEP7=1)
-# ---------------------------------------------------------------------------
 step7_run(){
   log "Step 7: prepare InterProScan-ready clean FASTA"
   script "prepare_interpro_clean_fasta_v2.py"; need "$SELECTED_PROTEIN_FASTA"; mkdir -p "$D07"
@@ -471,9 +402,6 @@ if should_run 7; then
   else run_if_needed 7 "$D07/fgfr2_interpro_clean_unique.fasta" step7_run; fi
 fi
 
-# ---------------------------------------------------------------------------
-# 9. Paper-ready QC package  (correct script name + real CLI)
-# ---------------------------------------------------------------------------
 step9_run(){
   log "Step 9: paper-ready QC package"
   script "make_fgfr2_paper_ready_qc_package_v2_9.py"
@@ -553,10 +481,6 @@ if should_run 10; then
   fi
 fi
 
-# ---------------------------------------------------------------------------
-# 11. Pre-InterProScan package: species QC master + figure tables + figures + report
-#     (Tasks 8, 10, 11, 12). Reads existing outputs; no online protein export.
-# ---------------------------------------------------------------------------
 step11_run(){
   log "Step 11: orthology evidence + canonical QC master + reproducible phylogenetic order + publication figures"
   script "build_fgfr2_orthology_evidence.py"
@@ -592,15 +516,11 @@ step11_run(){
   local PARALOG_ARG=(); [[ -s "$D06B/fgfr2_paralog_screen_species_summary.tsv" ]] && PARALOG_ARG=(--paralog_summary "$D06B/fgfr2_paralog_screen_species_summary.tsv")
   local ORTHO_ARG=(); [[ -s "$D06F/fgfr2_orthology_species_summary.tsv" ]] && ORTHO_ARG=(--orthology_summary "$D06F/fgfr2_orthology_species_summary.tsv")
 
-  # Sprint Part 2 — reproducible phylogenetic/taxonomic species order (built BEFORE
-  # the master so the order columns can be integrated into species_qc_master.tsv).
   "$PYTHON" "$SCRIPTS/build_species_phylogenetic_order.py" \
     --registry "$D01/species_registry.tsv" \
     --outdir "$D11PUB/tables"
 
-  # CDS-boundary sprint Part A — explainable CDS phase/boundary audit (built BEFORE
-  # the master so the explainability summary can be integrated). Propagates
-  # explainability columns into the final coordinate outputs (no resolver re-run).
+
   local PROT_ARG=(); [[ -s "$D06/selected_fgfr2_proteins.faa" ]] && PROT_ARG=(--proteins "$D06/selected_fgfr2_proteins.faa")
   "$PYTHON" "$SCRIPTS/build_cds_phase_boundary_audit.py" \
     --coordinate_audit "$D10/fgfr2_current_stage_IIIb_IIIc_coordinate_audit.tsv" \
@@ -611,7 +531,6 @@ step11_run(){
     --update_exon_cds_mapping "$D10/fgfr2_resolved_IIIb_IIIc_exon_CDS_mapping.tsv" \
     --update_pair_qc "$D10/fgfr2_pair_level_qc_summary.tsv"
 
-  # Task 8 / Addendum E + Sprint Part 2 + Part A — canonical species_qc_master.tsv (+ alias).
   "$PYTHON" "$SCRIPTS/build_species_qc_master_pre_interpro.py" \
     --registry "$D01/species_registry.tsv" \
     --isoform_evidence "$D04/fgfr2_isoform_evidence.tsv" \
@@ -624,14 +543,12 @@ step11_run(){
     ${PARALOG_ARG[@]+"${PARALOG_ARG[@]}"} ${ORTHO_ARG[@]+"${ORTHO_ARG[@]}"} \
     --outdir "$D11" --prefix fgfr2
 
-  # Task 10 — tidy figure input tables (read canonical master; complementary).
   "$PYTHON" "$SCRIPTS/make_pre_interpro_figure_tables.py" \
     --master "$D11/species_qc_master.tsv" \
     --pair_qc "$D10/fgfr2_pair_level_qc_summary.tsv" \
     --outdir "$D11/figure_tables"
 
-  # Sprint Parts 1,3,4,5,6,7 — MANDATORY central entry point: validation gate +
-  # publication figures (SVG/PDF/PNG) + plotting tables + captions + manifests + reports.
+
   "$PYTHON" "$SCRIPTS/make_all_figures.py" --base "$BASE"
 
   local PUBFIGS=(\
@@ -643,11 +560,6 @@ step11_run(){
     "Supplement_Figure_1_all_species_native_tracks_pre_interpro" \
     "Supplement_Figure_2_review_cases_pre_interpro" \
     "Supplement_Figure_3_interproscan_input_readiness_pre_interpro")
-  # Figures may be legitimately skipped for small/custom runs (e.g. a single-species
-  # run has no review cases → Supplement Figure 2). make_publication_figures records
-  # those with status=skipped_empty in the publication manifest. Such optional figures
-  # must NOT be hard-required here, or a valid custom run fails at Step 11. For the
-  # full-30 freeze nothing is skipped, so this block is a no-op there.
   local PUBMANIFEST="$D11PUB/metadata/publication_figure_manifest.tsv"
   local SKIPPED_IDS=""
   if [[ -s "$PUBMANIFEST" ]]; then
@@ -709,9 +621,6 @@ if should_run 11; then
   fi
 fi
 
-# ---------------------------------------------------------------------------
-# Final summary
-# ---------------------------------------------------------------------------
 finalize_manifest
 log "Pipeline finished"
 echo "[SUMMARY] Run manifest: $MANIFEST"

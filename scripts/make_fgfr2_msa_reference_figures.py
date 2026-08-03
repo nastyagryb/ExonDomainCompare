@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-make_fgfr2_msa_reference_figures.py  (MSA interpretability sprint, Parts G + H)
+Render FGFR2 MSA reference figures.
 
 Paper-level reference-guided figures (SVG/PDF/PNG):
   6C  Human-referenced IIIb/IIIc residue agreement map

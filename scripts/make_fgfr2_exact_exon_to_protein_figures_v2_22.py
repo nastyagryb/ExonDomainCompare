@@ -362,8 +362,7 @@ def main() -> None:
     alt = read_tsv(args.alt_exons, required=False) if args.alt_exons else pd.DataFrame()
 
     resolved, candidates = R.build_resolved(pair, cds, selected, alt)
-    # Task 10 (full plot refactor) is deferred; QC categories are now defined in
-    # the resolver (data layer). The plotting code only visualises these fields.
+    # QC categories come from the resolver; plotting only visualises them.
     pair_qc = R.build_pair_qc(resolved)
 
     write_tsv(resolved, args.outdir / f"{args.prefix}_current_stage_IIIb_IIIc_coordinate_audit.tsv")

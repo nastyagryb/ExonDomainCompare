@@ -354,11 +354,7 @@ def _card(figure_id: str, *, title: str, category: str, scope: str,
         "formats": dict(default["formats"]) if default else {},
         "thumbnail": default["thumbnail"] if default else "",
         "supersedes": list(supersedes),
-        # A post-cluster card with no rendered view and no stated absence is pending. A card
-        # that *does* state why its models cannot support the layer keeps that verdict: for
-        # Canis lupus familiaris the validated architecture genuinely has no coding-exon
-        # series, and calling that pending would promise a figure the analysis will never
-        # produce.
+        # Preserve explicit unsupported verdicts; otherwise an unrendered card is pending.
         "availability": ({**(availability or {}), "status": PENDING_CLUSTER,
                           "reason": pending}
                          if pending and not present and not stated_absence else
@@ -593,16 +589,8 @@ def _comparative_cards(comparative_dir: Optional[Path],
 
     ]
 
-    # The generic whole-protein boundary analysis, drawn by the same renderer from the same
-    # comparative boundary index the interactive Comparative Boundary Explorer reads.
-    # Boundaries are grouped across species by shared exon identity or by alignment column —
-    # never by exon number, which would equate the fourth exon of two species that do not
-    # have the same fourth exon. A group is only reported when at least two species really
-    # observe it.
-    #
-    # Built whether or not the figures exist yet: these are post-cluster sections, so an
-    # absent figure is a stated pending state rather than a card the reader never learns
-    # about. `comparative_dir` may therefore be None.
+    # Shared exon identity or alignment columns define cross-species boundary groups.
+    # Missing post-cluster figures remain visible as pending catalogue entries.
     G = "Comparative exon–domain boundaries"
     boundary_source = ([_asset_reference(ds.coordinate_model_path)]
                        if ds.coordinate_model_path else [])
@@ -1250,10 +1238,7 @@ def flatten_for_gallery(catalogue: Dict[str, Any]) -> Dict[str, Any]:
         figures += scope["cards"]
     figures += catalogue["supplements"]
 
-    # The fields the Gallery reads directly. They are projections of what the card
-    # already says, written out here so the frontend needs no FGFR2-specific
-    # knowledge: a card whose status the Gallery cannot read is shown as pending,
-    # which would label the entire curated catalogue as unfinished analysis.
+    # Expose card status directly so the frontend needs no FGFR2-specific rules.
     scientific = {s["species_id"]: s["scientific_name"]
                   for s in catalogue["filters"]["species"]}
     for card in figures:

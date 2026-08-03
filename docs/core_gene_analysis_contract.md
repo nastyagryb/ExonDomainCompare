@@ -22,8 +22,7 @@ The machine-readable version is `configs/framework/core_gene_analysis_contract.y
 ## Output location
 
 - Custom run: `runs/<run_id>/results/core_gene_analysis/`
-- Example preview: a **safe artifact** folder only
-  (e.g. `artifacts/core_gene_analysis/example/`) — never the freeze.
+- Bundled examples are built during release preparation and remain read-only.
 
 ## Required outputs
 
@@ -216,19 +215,19 @@ the generic website indices, **without** any event outputs:
 # from a run's core outputs
 python -m exondomaincompare.framework.build_core_gene_indices --run-id <run_id>
 
-# from an explicit core dir (e.g. the synthetic mock), no event region
+# from an explicit core directory, no event region
 python -m exondomaincompare.framework.build_core_gene_indices \
-    --core-dir artifacts/core_gene_analysis/mock \
+    --core-dir /path/to/core_gene_analysis \
     --config configs/genes/drafts/TPM1_core_only_pilot.yaml \
-    --dataset-id mock:tpm1_core_only \
-    --out artifacts/generic_indices/mock_core_only
+    --dataset-id example:tpm1_core_only \
+    --out /path/to/output_indices
 ```
 
 For a no-event config it writes `event_region_index.json` with
 `available: false, reason: "no_event_configured"`, disables the event-specific
-boundary view, and enables the generic Exon–Domain Boundaries view. A synthetic
-no-event **mock** dataset lives under `artifacts/generic_indices/mock_core_only/`
-for UI smoke testing only (not a biological result).
+boundary view, and enables the generic Exon–Domain Boundaries view. Automated
+tests use temporary synthetic fixtures for the no-event path; these are not
+biological results or release datasets.
 
 ## What core-only mode does NOT do
 

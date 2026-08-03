@@ -170,12 +170,7 @@ def scan(run_dir: Path) -> List[Dict[str, Any]]:
                     continue
                 for ctype, s, e in _diff_regions(sa, sb):
                     length = e - s + 1
-                    # Which protein the coordinates belong to. An insertion exists only
-                    # in b, so it is measured on b; a deletion or substitution block is
-                    # measured on a. Stating it removes the guess a consumer otherwise
-                    # has to make to decide whether a row lands on the primary's axis,
-                    # and a guess placed a's coordinates on b whenever they happened to
-                    # fit inside b's length.
+                    # Insertions use protein B coordinates; other blocks use protein A.
                     reference = pb if ctype == "insertion" else pa
                     # exon-aligned if the region matches an exon block in either protein
                     exon_aligned = any(abs(s - es) <= 2 and abs(e - et) <= 2

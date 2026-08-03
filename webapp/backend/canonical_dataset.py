@@ -450,11 +450,7 @@ def _shared_downloads(
                 "previewable": fmt in _PREVIEWABLE and size <= 256 * 1024,
             })
 
-    # Pending rows are derived from the catalogue itself rather than from
-    # directory presence: the pre-cluster stage already creates the directories
-    # and header-only placeholders, so only a real artefact counts as produced.
-    # Each still-missing product is named individually (Part 5: state the exact
-    # missing item) and never exposes a path.
+    # Only non-empty artefacts count as produced; pending entries expose no path.
     produced = {d["label"] for d in items if d["stage"] == "post_cluster"}
     for group, label, rel, generated_by, stage, sources in _PROVENANCE_CATALOGUE:
         if stage != "post_cluster" or label in produced:

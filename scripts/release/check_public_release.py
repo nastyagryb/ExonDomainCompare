@@ -25,7 +25,7 @@ FORBIDDEN_TOP_LEVEL = {
     ".venv", "venv", "runs", "results", "artifacts", "tmp", "cache", "logs",
     "packages",
 }
-FORBIDDEN_PARTS = {"node_modules", "__pycache__", ".pytest_cache"}
+FORBIDDEN_PARTS = {"node_modules", "__pycache__", ".pytest_cache", ".DS_Store"}
 REQUIRED_PACKAGES = {
     "src/exondomaincompare/runs/__init__.py",
     "src/exondomaincompare/runs/layout.py",
@@ -43,6 +43,12 @@ FORBIDDEN_SCRIPT_FILES = {
     "scripts/interpro_cluster/check_interpro_job.sh",
     "scripts/interpro_cluster/fetch_interpro_result.sh",
     "scripts/interpro_cluster/submit_interpro_job.sh",
+}
+FORBIDDEN_DOC_SNIPPETS = {
+    "python scripts/interpro_cluster/run_cluster_roundtrip.py",
+    "scripts/framework/",
+    "scripts/adapters/",
+    "scripts/plotting/shared_gene_plots.py",
 }
 
 
@@ -68,6 +74,18 @@ def check_dataset_hashes() -> None:
         actual = hashlib.sha256(path.read_bytes()).hexdigest()
         if actual != expected:
             raise RuntimeError(f"Dataset checksum mismatch: {relative}")
+
+
+def check_public_documentation(files: list[Path]) -> None:
+    for relative in files:
+        if relative.suffix.lower() != ".md":
+            continue
+        text = (ROOT / relative).read_text(encoding="utf-8")
+        for snippet in FORBIDDEN_DOC_SNIPPETS:
+            if snippet in text:
+                raise RuntimeError(
+                    f"Retired command or source path in {relative}: {snippet}"
+                )
 
 
 def main() -> int:
@@ -105,6 +123,7 @@ def main() -> int:
     yaml.safe_load((ROOT / "CITATION.cff").read_text(encoding="utf-8"))
     yaml.safe_load((ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8"))
     json.loads((ROOT / "datasets/registry.json").read_text(encoding="utf-8"))
+    check_public_documentation(files)
     check_dataset_hashes()
     print(f"Public release check passed: {len(files)} files")
     return 0

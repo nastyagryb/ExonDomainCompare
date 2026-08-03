@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-build_cds_phase_boundary_audit.py  (Sprint Part A — explainable CDS-boundary audit)
+Build the explainable CDS-boundary audit.
 
 Builds an explainable CDS phase / boundary audit for every resolved IIIb/IIIc
 mapping and makes the source of any codon-phase uncertainty auditable.
@@ -43,7 +43,7 @@ AUDIT_COLS = [
     "transcript_cds_reconstruction_status", "protein_translation_check_status",
 ]
 
-# new explainability columns propagated into the coordinate outputs
+# Explainability columns propagated into coordinate outputs.
 PROPAGATE_COLS = [
     "reason_if_unknown", "reason_if_split",
     "transcript_cds_reconstruction_status", "protein_translation_check_status",

@@ -492,10 +492,7 @@ def main(argv: Optional[List[str]] = None) -> None:
     update_status(rp.run_dir, post_interpro_status="complete",
                   website_indices_status=website_status,
                   current_step="analysis_complete", error="")
-    # The run-level status is decided from the run's artifacts, not from the
-    # persisted pre-cluster field. Reading `pre_interpro_status` here meant a
-    # pre-cluster stage that had failed once and was then repaired kept the run
-    # out of results_ready for good, while every scientific view had current data.
+    # Current run artefacts determine readiness after repaired earlier failures.
     _finalize_run_status(rp.run_dir)
     write_manifest(rp, start, end, "complete", executed, steps, skipped, found)
 

@@ -43,11 +43,7 @@ def write_reference_alignment(model_index: Dict[str, Any], source_path: Path,
     shared alignment parser reads, so no FGFR2-specific header handling leaks into
     the shared code.
     """
-    # Keyed on species *and* isoform, not on the protein id alone. One species in
-    # the panel (Pongo abelii) has a single protein sequence filed under both
-    # isoform slots because its isoform could not be resolved from sequence, so a
-    # protein-id match would select that species twice and the alignment would no
-    # longer have one sequence per species.
+    # Species and isoform together prevent duplicate rows for shared protein IDs.
     reference = {(m["species_id"], m["isoform"]): m
                  for m in cm.primary_reference_models(model_index)}
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -121,11 +117,7 @@ def build(derived: Path = DERIVED) -> Dict[str, Any]:
                  "because a comparative row can only be one."),
     }
 
-    # The generic cross-species boundary analysis is already on the coordinate index,
-    # built there by the shared dashboard over this same reduced panel. Reusing it
-    # rather than rebuilding it here is what guarantees the Figure Gallery, the
-    # comparative dataset and the interactive Boundary Explorer quote one set of
-    # comparable-group ids, signed distances and classes.
+    # Reuse the coordinate index so all boundary views share one result.
     dataset = build_comparative_dataset(
         derived, coordinate_index=comparative_index,
         project_root=projection_root)
@@ -134,10 +126,7 @@ def build(derived: Path = DERIVED) -> Dict[str, Any]:
     out.write_text(json.dumps(dataset, indent=2, ensure_ascii=False) + "\n",
                    encoding="utf-8")
 
-    # The reduced index is written out as well, because it is what the comparative
-    # renderer must be given. Handing it the full 58-model index would put two rows
-    # per species in every figure that draws one row per model — the same species
-    # twice, once as IIIb and once as IIIc — which reads as thirty extra species.
+    # The reduced index keeps comparative figures at one row per species.
     (derived / "website_indices" / "comparative_model_index.json").write_text(
         json.dumps(comparative_index, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8")

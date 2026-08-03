@@ -147,11 +147,7 @@ def rebuild_freeze_dataset(derived_root: Path = DERIVED_ROOT) -> Dict[str, objec
     outdir = derived_root / "example" / "website_indices"
     written, errors = _rebuild(FREEZE_CLOSURE, outdir)
 
-    # The FGFR2 dataset's coordinate model, comparative view and curated Gallery
-    # catalogue are derived from the same freeze and must be rebuilt with it. The
-    # catalogue writes the Gallery's figure_index.json, so it runs last: it is the
-    # curated answer to what a reader sees, and the generic builder's file listing
-    # is not.
+    # Rebuild the FGFR2 catalogue last so its curated figure index is authoritative.
     derived: Dict[str, object] = {}
     try:
         from fgfr2 import comparative_bridge, coordinate_model, gallery_catalogue
@@ -328,10 +324,7 @@ def rebuild_run(run_id: str) -> Dict[str, object]:
             return {**base, "written": [], "errors": {"shared": f"{type(exc).__name__}: {exc}"}}
         return {**base, "written": [f"{s}.json" for s in result["written"]], "errors": {}}
     written, errors = _rebuild(closure, run_dir / "website_indices")
-    # The curated FGFR2 Gallery must be written *after* `_rebuild`, because `_rebuild`
-    # writes the generic per-file `figure_index.json` and the Gallery deliberately
-    # replaces it. Summarising the Gallery without writing it left a rebuilt run on the
-    # legacy catalogue — one gene showing two different figure indices.
+    # Write the curated FGFR2 Gallery after the generic index rebuild.
     gallery = _run_gallery_summary(run_dir)
     if gallery:
         written += ["figure_catalogue.json", "figure_index.json",

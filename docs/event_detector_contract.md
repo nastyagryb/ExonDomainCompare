@@ -20,7 +20,7 @@ detector must satisfy. It is the boundary between *biological event detection*
 > FGFR2), **user_defined** (a user supplies `reference_protein` +
 > `region_start_aa`/`region_end_aa`; planned — the feasibility probe already
 > reports `event_user_defined_possible`), or **exploratory candidates** from the
-> optional `scan_isoform_event_candidates.py` scan. Only *configured* /
+> optional `exondomaincompare.framework.scan_isoform_event_candidates` scan. Only *configured* /
 > *user_defined* regions enable event-specific views; exploratory candidates are
 > shown as candidates only and never as validated events.
 
@@ -38,14 +38,12 @@ detector must satisfy. It is the boundary between *biological event detection*
 - FGFR2 IIIb/IIIc is the first detector, provided as a **projection adapter** over
   the existing validated outputs (`src/exondomaincompare/adapters/fgfr2_event_detector_adapter.py`).
   It recomputes **nothing** and changes **no** biology.
-- Nothing here writes into the example freeze
-  (`results/final_30_until_interpro_prepare/`).
+- Nothing here writes into the read-only bundled example dataset.
 
 ## Output location
 
 - For a custom run: `runs/<run_id>/results/generic_event_detector/`
-- For the example dataset preview: a **safe artifact** folder only
-  (e.g. `artifacts/generic_event_detector/example/`) — never the freeze.
+- The bundled example is built during release preparation and remains read-only.
 
 ## Required outputs
 

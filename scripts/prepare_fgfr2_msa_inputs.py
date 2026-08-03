@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-prepare_fgfr2_msa_inputs.py  (MSA boundary-robustness sprint, Part 2)
+Prepare FGFR2 MSA inputs.
 
 Prepare full-length, IIIb-cassette, IIIc-cassette and combined cassette MSA inputs
 from the VALIDATED exon/cassette pipeline. Cassette peptides are extracted using the
@@ -89,7 +89,7 @@ def build_protein_lookup(faa: Path) -> Tuple[Dict[Tuple[str, str, str], str], Di
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Prepare FGFR2 MSA inputs (Part 2).")
+    ap = argparse.ArgumentParser(description="Prepare FGFR2 MSA inputs.")
     ap.add_argument("--base", type=Path, required=True)
     args = ap.parse_args()
     base = args.base.resolve()

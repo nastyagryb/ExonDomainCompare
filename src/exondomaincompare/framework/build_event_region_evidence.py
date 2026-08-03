@@ -39,7 +39,7 @@ from exondomaincompare.runs.registry import RegistryError, resolve_run_record
 PROJECT_ROOT = discover_repository_root(__file__)
 RUNTIME_CONFIG = load_config(repository_root=PROJECT_ROOT)
 
-# Stable, user-facing evidence schema (Part 4).
+# Stable user-facing evidence schema.
 EVIDENCE_COLUMNS = [
     "analysis_id", "gene_symbol", "species_id", "event_candidate_id",
     "evidence_source", "evidence_status",
@@ -103,7 +103,7 @@ def convert_candidates(rows: List[Dict[str, str]], analysis_id: str,
         length = _int_or_blank(r.get("candidate_length_aa"))
         # A stable-ish id (region + pair index) so downstream can reference a row.
         cand_id = f"{gene}:{species_id}:{start}-{end}:{i:03d}"
-        # Rules (Part 4): protein comparison vs exon-aligned candidates.
+        # Distinguish protein-comparison and exon-aligned evidence.
         source = ("exon_aligned_isoform_difference" if exon_aligned
                   else "protein_isoform_difference")
         confidence = (r.get("confidence", "") or "low").strip()

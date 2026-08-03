@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-score_fgfr2_boundary_robustness.py  (MSA boundary-robustness sprint, Parts 7 + 11)
+Score FGFR2 boundary robustness.
 
 Transparent, component-based boundary robustness score per species/isoform, combining
 annotation/coordinate resolution, codon-phase/boundary precision, protein QC, MSA boundary
 projection, conservation/gap evidence and protein integrity. All component values and the
 exact weights are written out; nothing is hidden and uncertain cases are not forced to exact.
 
-Also emits review-case MSA diagnostics (Part 11): difficult cases are explained, not hidden.
+Also emits MSA diagnostics for review cases.
 """
 
 from __future__ import annotations
@@ -269,7 +269,7 @@ def main() -> int:
                       "pre-InterPro protein integrity"])],
                 ["component", "weight", "description"])
 
-    # ---- Part 11: review-case diagnostics ----
+    # Write review-case diagnostics.
     score_by = {(r["species"].lower(), r["isoform"]): r for r in rows}
     diag: List[Dict[str, object]] = []
     for (sp, iso), r in score_by.items():

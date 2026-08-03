@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-validate_fgfr2_local_synteny_neighborhood.py  (synteny / gene-neighborhood validation sprint)
+Validate the FGFR2 local synteny neighbourhood.
 
 Independent local synteny / gene-neighborhood validation around the FGFR2 locus. Validates that
 the final post-rescue FGFR2 candidates lie in the expected FGFR2 genomic neighborhood (locus /

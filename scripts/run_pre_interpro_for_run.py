@@ -83,11 +83,7 @@ def has_required_v3_outputs(results_dir: Path):
     return _check_required(results_dir, REQUIRED_V3_OUTPUTS)
 
 
-# Essential module-12 (MSA / rescue) outputs that the closure step (A5) consumes.
-# The post-rescue truth table is the single source of truth for the closure; if it
-# is absent the closure cannot build the freeze FASTA. This cache is INDEPENDENT of
-# the Step 1-11 (v3) cache: reusing Steps 1-11 says nothing about whether the MSA
-# module has run, so SKIP_MSA must key off THIS check, not SKIP_V3.
+# MSA reuse requires its own complete post-rescue cache.
 REQUIRED_MSA_OUTPUTS = [
     "12_msa_boundary_robustness_pre_interpro/maps/fgfr2_post_rescue_final_truth_table.tsv",
     "12_msa_boundary_robustness_pre_interpro/robustness/fgfr2_boundary_robustness_scores.tsv",
@@ -450,22 +446,16 @@ def build_env(run_id: str, run_dir: Path, results_dir: Path, species_path: Path,
     env["RUN_ID"] = run_id
     env["RUN_DIR"] = rel(run_dir)
     env["RESULTS_DIR"] = rel(results_dir)
-    # The existing pipeline is parametrized on BASE; map RESULTS_DIR -> BASE so all
-    # outputs land in the run folder (legacy default preserved when unset).
+    # BASE keeps every generated result inside the run folder.
     env["BASE"] = rel(results_dir)
     env["SPECIES_LIST"] = rel(species_path)
     env["PRE_INTERPRO_DIR"] = rel(pre_interpro_dir)
     env["PYTHON"] = detect_python()
-    # The gene configuration carries the spelled-out product name, which gene
-    # identification uses to tell a description of this gene's product from a
-    # paralog's when a run has no network access to ask the source.
+    # The product name supports offline target/paralog identification.
     config = _run_config(run_dir).get("gene_config")
     if config and (REPO / config).is_file():
         env["GENE_CONFIG"] = config
-    # Matplotlib font-cache churn: the user's default ~/.matplotlib is often not
-    # writable, so every figure subprocess would rebuild the font cache from scratch
-    # (minutes each, and it looks like a hang). Point MPLCONFIGDIR at a writable,
-    # persistent cache inside the repo so all figure steps share one warm cache.
+    # Share a writable Matplotlib cache across figure subprocesses.
     if not env.get("MPLCONFIGDIR"):
         mpl_cache = REPO / ".cache" / "matplotlib"
         try:
@@ -473,28 +463,14 @@ def build_env(run_id: str, run_dir: Path, results_dir: Path, species_path: Path,
             env["MPLCONFIGDIR"] = str(mpl_cache)
         except OSError:
             pass
-    # Paper-level synteny / framework figures (A3/A4) assume a full multi-species
-    # panel (conserved reference neighbours, taxon-group bands). For a small custom
-    # run they may legitimately be empty. They are NOT required for the FASTA closure
-    # (A5 consumes the module-12 maps/robustness/truth, not these paper figures), so
-    # mark them optional here. The full-30 freeze runs the .sh directly without this
-    # flag, so its paper figures stay hard-required.
+    # Small custom panels may legitimately lack full-panel paper figures.
     env["PAPER_FIGURES_OPTIONAL"] = "1"
     if force:
         env["FORCE"] = "1"
-    # SKIP_V3 is decided by the caller (only true when complete run-local Step 1-11
-    # outputs exist). It is NEVER blindly set to 1 for a fresh/empty run folder.
+    # Reuse the early pipeline only when its complete run-local cache exists.
     env["SKIP_V3"] = "1" if skip_v3 else "0"
     if env_mode == "cached":
-        # SKIP_MSA and NO_ENSEMBL_REST are only safe to enable when the relevant local
-        # cache genuinely exists. They key off DIFFERENT caches:
-        #   * NO_ENSEMBL_REST: remote protein fetches happen in Steps 1-11 (v3). Only
-        #     safe to suppress when v3 is reused (skip_v3). A fresh run must fetch, or
-        #     Step 6 exports 0 proteins ("ensembl_no_rest_or_missing_translation").
-        #   * SKIP_MSA: the module-12 MSA/rescue cache is INDEPENDENT of the v3 cache.
-        #     Reusing Steps 1-11 says nothing about whether the MSA module has run, so
-        #     SKIP_MSA keys off the module-12 check (skip_msa), NOT skip_v3. The closure
-        #     step (A5) hard-requires the module-12 post-rescue truth table.
+        # Protein-fetch and MSA reuse depend on separate validated caches.
         env["SKIP_MSA"] = "1" if skip_msa else "0"
         env["NO_ENSEMBL_REST"] = "1" if skip_v3 else "0"
     else:  # live
@@ -628,11 +604,7 @@ def main(argv: Optional[List[str]] = None) -> None:
     # runs whose species_list.txt still contains 'genus species' with a space).
     preflight_species_list(species)
 
-    # Human reference-control layer: the FGFR2 IIIb/IIIc calibration, marker checks
-    # and validation/figure logic all rely on curated HUMAN reference FGFR2 IIIb/IIIc
-    # data. When the user-selected species panel does NOT include homo_sapiens we keep
-    # the species list unchanged (human is NOT added as an analysed species) and use
-    # the curated human reference files purely as a control layer. Record this clearly.
+    # Human reference controls do not add human to the analysed species panel.
     human_in_panel = any((s or "").strip().lower() == "homo_sapiens" for s in species)
     record_human_reference_control(run_dir, species, human_in_panel)
 

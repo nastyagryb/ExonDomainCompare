@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-screen_fgfr2_paralogs_multi_vertebrate.py  (Addendum Task A)
+Screen FGFR2 candidates against the vertebrate paralog panel.
 
 Screen selected FGFR2 candidate proteins against a multi-vertebrate FGFR1/2/3/4
 paralog reference panel (blastp) to confirm that each candidate is most
@@ -100,7 +100,7 @@ def run_blast(query: Path, panel: Path, threads: int, workdir: Path) -> List[Dic
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Multi-vertebrate FGFR paralog screen (Addendum A).")
+    ap = argparse.ArgumentParser(description="Screen candidates against the multi-vertebrate FGFR panel.")
     ap.add_argument("--query_fasta", type=Path, required=True)
     ap.add_argument("--panel_fasta", type=Path, required=True)
     ap.add_argument("--outdir", type=Path, required=True)

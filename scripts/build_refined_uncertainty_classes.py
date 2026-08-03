@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-build_refined_uncertainty_classes.py  (Uncertainty-refinement sprint, Part A)
+Build refined uncertainty classes.
 
 Collapses the many low-level QC flags into a small set of explainable uncertainty
 classes and a plot-visibility level, so figures stop overstating uncertainty:

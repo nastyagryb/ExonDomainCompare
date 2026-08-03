@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-check_fgfr2_splice_site_qc.py  (MSA boundary-robustness sprint, Part 9)
+Check FGFR2 splice-site motif QC.
 
 Splice-site motif QC for resolved IIIb/IIIc cassette boundaries — ONLY where
 source-compatible genomic sequence is available. Splice-site motifs are NEVER faked,
@@ -69,7 +69,7 @@ def classify_motif(acceptor: str, donor: str) -> str:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Splice-site motif QC (Part 9).")
+    ap = argparse.ArgumentParser(description="Check splice-site motif QC.")
     ap.add_argument("--base", type=Path, required=True)
     ap.add_argument("--genome_dir", type=Path, default=None,
                     help="optional dir with per-contig genome FASTA ({seqid}.fa); "

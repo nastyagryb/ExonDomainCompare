@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-final_pre_interpro_validation.py  (Sprint Part 1)
+Validate final pre-InterPro inputs.
 
 Single validation gate used by all final plotting/report scripts.
 
@@ -364,7 +364,7 @@ def validate_or_raise(base: Path) -> Dict[str, object]:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Final pre-InterPro validation gate (Part 1).")
+    ap = argparse.ArgumentParser(description="Final pre-InterPro validation gate.")
     ap.add_argument("--base", type=Path, required=True)
     ap.add_argument("--outdir", type=Path, default=None,
                     help="metadata dir for report (default: <base>/11_publication_figures_pre_interpro/metadata)")

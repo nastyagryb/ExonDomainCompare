@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-build_fgfr2_reference_agreement.py  (MSA interpretability sprint, Parts B, C, D, E)
+Build FGFR2 reference-agreement evidence.
 
 Reference-guided, position-level cassette comparison built on the high-accuracy L-INS-i
 cassette alignments:

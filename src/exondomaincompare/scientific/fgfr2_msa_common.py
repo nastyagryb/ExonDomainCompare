@@ -209,7 +209,7 @@ def final_label(recon: Dict[Tuple[str, str], Dict[str, str]], species: str,
 
 def label_gate(base: Path, controls: Iterable[str] = ("homo_sapiens", "mus_musculus")
                ) -> Tuple[bool, List[str]]:
-    """Validation gate for final figures (sprint rule 8):
+    """Validate inputs for final figures:
       - no plotted/used row may have final_isoform_label != validated_exon_type;
       - human and mouse final labels must match curated reference evidence (resolved to IIIb/IIIc,
         final == validated).
@@ -270,8 +270,7 @@ def species_claim(claims: Dict[Tuple[str, str], Dict[str, str]], species: str) -
 
 
 def maximal_rescue_gate(base: Path) -> Tuple[bool, List[str]]:
-    """Hard gate from the maximal suspicious-case rescue layer (sprint Part H). Reads the gate
-    table; ok iff no check FAILed. Missing table => treated as not-yet-run (ok=True)."""
+    """Read the maximal-rescue gate; a missing table means not yet run."""
     p = module_dir(base) / "maps" / "fgfr2_maximal_rescue_validation_gate.tsv"
     rows = read_tsv(p)
     if not rows:
@@ -306,7 +305,7 @@ def synteny_gate(base: Path) -> Tuple[bool, List[str]]:
 
 
 def post_rescue_consistency_gate(base: Path, write: bool = True) -> Tuple[bool, List[str]]:
-    """Final cross-table consistency gate (sprint Part E). Verifies that
+    """Verify final cross-table consistency:
     final_claim_status_after_rescue (post-rescue truth) is the single source of truth across the
     reconciliation table, robustness scores, species_qc_master and the final figure tables, with
     explicit Gorilla / Canis / Pongo / control checks. Writes the gate tsv/json when `write`."""
@@ -402,11 +401,7 @@ def post_rescue_consistency_gate(base: Path, write: bool = True) -> Tuple[bool, 
         v = claim_everywhere(sp, iso)
         return all(x.startswith("primary_claim") for x in v) and len(v) >= 1
 
-    # Species-specific control checks reference fixed reference species. When such a
-    # species is NOT part of the run panel (custom run) the check is not applicable and
-    # is recorded as pass with an explicit not-applicable detail (so downstream
-    # "status != pass" readers are not tripped and the gate does not crash/fail). For
-    # the full-30 panel these species are present and the checks run exactly as before.
+    # Missing reference species make species-specific controls not applicable.
     if ("gorilla_gorilla_gorilla", "IIIb") in truth or ("gorilla_gorilla_gorilla", "IIIc") in truth:
         gor_ok = (is_primary("gorilla_gorilla_gorilla", "IIIb")
                   and is_primary("gorilla_gorilla_gorilla", "IIIc"))
@@ -449,9 +444,7 @@ def _write_consistency_gate(maps: Path, checks: List[Dict[str, str]]) -> None:
 
 
 def general_rescue_gate(base: Path) -> Tuple[bool, List[str]]:
-    """Hard gate from the general validation/rescue layer (sprint Part J). Reads the gate table;
-    ok iff no check FAILed. If the table is missing, the gate is treated as not-yet-run (ok=True)
-    so the figure step can still run on a reconciliation-only pipeline."""
+    """Read the general-rescue gate; a missing table means not yet run."""
     p = module_dir(base) / "maps" / "fgfr2_general_rescue_validation_gate.tsv"
     rows = read_tsv(p)
     if not rows:

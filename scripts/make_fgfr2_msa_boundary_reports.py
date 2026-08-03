@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-make_fgfr2_msa_boundary_reports.py  (MSA boundary-robustness sprint, Part 14)
+Write FGFR2 MSA boundary reports and captions.
 
 Write captions, QC migration report, methods text and results summary for the pre-InterPro
 MSA / boundary-robustness module. All numbers are computed from the produced tables.
@@ -28,7 +28,7 @@ def counts(rows, key):
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="MSA module reports/captions (Part 14).")
+    ap = argparse.ArgumentParser(description="Write MSA reports and captions.")
     ap.add_argument("--base", type=Path, required=True)
     args = ap.parse_args()
     base = args.base.resolve()

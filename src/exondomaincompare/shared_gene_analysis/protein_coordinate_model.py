@@ -642,7 +642,7 @@ def _left_right_exon(boundary_id: str, position: Optional[int],
 
 def _emit_boundary(position, left, right, source_file, *, threshold, mapping_status,
                    boundary_class, signed, absd, nearest, provenance):
-    """Assemble one normalized boundary object (Part 1 data contract).
+    """Assemble one normalized boundary object.
 
     Carries the canonical field names plus legacy ``*_aa`` / ``category`` aliases
     so the shared SignedDistancePlot and evidence table consume it unchanged.
@@ -941,11 +941,7 @@ def _candidate_features(rows, sp, pid, protein_length=None) -> List[Dict[str, An
         e = _int(r.get("candidate_end_aa") or r.get("aa_end") or r.get("end_aa"))
         if s is None or e is None:
             continue
-        # The scan states which protein a row's coordinates belong to: an insertion
-        # exists only in the second protein and is measured there, a deletion or
-        # substitution block is measured on the first. Where that column is present it
-        # is the answer; membership of the pair is not, because the other protein's
-        # coordinates can fall inside the primary's length and silently land on it.
+        # Keep only rows explicitly measured on the primary protein axis.
         reference = (r.get("coordinate_reference_protein") or "").strip()
         if reference:
             if reference != pid:

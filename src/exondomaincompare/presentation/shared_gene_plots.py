@@ -392,10 +392,7 @@ def number_domain_instances(domains: Sequence[Dict[str, Any]]) -> List[Dict[str,
             if not r["instance_id"]:
                 r["instance_id"] = (f"{r['accession']}:{r['start']}-{r['end']}"
                                     if r["accession"] else f"{r['start']}-{r['end']}")
-    # Two different entries can abbreviate to the same short form (a p53 DNA-binding
-    # domain and a p53 tetramerisation domain both shorten to "p53"). Where that
-    # happens the block label falls back to the resolved instance label, so no two
-    # domain instances are drawn under the same name.
+    # Resolve abbreviation collisions with the full instance label.
     seen: Dict[str, int] = {}
     for r in rows:
         seen[r["short"]] = seen.get(r["short"], 0) + 1

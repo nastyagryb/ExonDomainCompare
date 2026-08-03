@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-check_fgfr2_pre_interpro_protein_integrity.py  (MSA boundary-robustness sprint, Part 10)
+Check pre-InterPro protein integrity.
 
 Pre-InterPro protein integrity QC: validate that selected FGFR2 proteins are biologically
 plausible InterProScan inputs (valid alphabet, no internal stop, plausible length, cassette
@@ -46,7 +46,7 @@ def build_protein_lookup(faa: Path):
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Pre-InterPro protein integrity QC (Part 10).")
+    ap = argparse.ArgumentParser(description="Check pre-InterPro protein integrity.")
     ap.add_argument("--base", type=Path, required=True)
     args = ap.parse_args()
     base = args.base.resolve()

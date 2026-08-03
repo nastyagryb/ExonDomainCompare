@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """
-project_fgfr2_boundaries_to_msa.py  (MSA boundary-robustness sprint, Parts 4 + 5)
+Project validated FGFR2 cassette boundaries onto MSA columns.
 
-Part 4: build residue<->alignment-column coordinate maps for each MSA, with validation.
-Part 5: project the VALIDATED IIIb/IIIc cassette boundaries onto MSA columns
+Build validated residue-to-alignment coordinate maps and project IIIb/IIIc boundaries
         (full-length and cassette-only), with gap-aware projection status/confidence.
 
 MSA projection is independent robustness/QC evidence: it NEVER changes IIIb/IIIc labels.
@@ -107,7 +106,7 @@ def main() -> int:
     man_cache: Dict[str, Dict[str, Dict[str, str]]] = {}
     val_rows: List[Dict[str, object]] = []
 
-    # ---- Part 4: coordinate maps + validation ----
+    # Build and validate coordinate maps.
     for msa_name, (aln_file, stype_name, map_name) in ALN.items():
         aln_path = dirs["alignments"] / aln_file
         items = [(i, M.clean_alignment_seq(s)) for i, s in M.read_fasta(aln_path)]
@@ -164,7 +163,7 @@ def main() -> int:
 
     M.write_tsv(maps / "msa_coordinate_map_validation.tsv", val_rows, VAL_COLS)
 
-    # ---- Part 5: boundary projection ----
+    # Project cassette boundaries.
     full_items = aligned_cache["full_length"]
     full_u2c = u2c_cache["full_length"]
     full_gaps = gaps_cache["full_length"]

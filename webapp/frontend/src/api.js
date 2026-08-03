@@ -279,8 +279,10 @@ export function payloadMatchesIndexVersion(payload, status) {
   return String(payload?.index_version || "") === expected;
 }
 
-export const fileUrl = (path, inline = false) =>
-  `${API_BASE}/api/download?path=${encodeURIComponent(path)}${inline ? "&inline=true" : ""}`;
+export const fileUrl = (path, inline = false, dataset = "") =>
+  `${API_BASE}/api/download?path=${encodeURIComponent(path)}`
+  + `&dataset=${encodeURIComponent(dataset || activeDataset)}`
+  + `${inline ? "&inline=true" : ""}`;
 
 export const runFileUrl = (runId, path, inline = false) =>
   `${API_BASE}/api/runs/${encodeURIComponent(runId)}/files?path=${encodeURIComponent(path)}`

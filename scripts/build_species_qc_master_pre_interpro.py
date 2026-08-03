@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-build_species_qc_master_pre_interpro.py  (Task 8)
+Build the pre-InterPro species QC master table.
 
 Build ``species_qc_master_pre_interpro.tsv`` -- the single, pre-InterProScan
 source of truth for per-species display and QC. It joins the already-validated
@@ -35,10 +35,10 @@ COLUMNS = [
     "iii_region_similarity_class", "cds_boundary_precision_summary", "main_analysis_eligible",
     "final_display_class", "review_reason_short", "review_reason_long", "recommended_use",
     "interpro_status",
-    # Sprint Part 2: integrated phylogenetic/taxonomic ordering.
+    # Integrated phylogenetic and taxonomic ordering.
     "taxid", "taxon_group_display", "major_clade", "phylo_order",
     "phylo_order_source", "phylo_order_confidence",
-    # CDS-boundary sprint Part A: explainable codon-phase/boundary summary.
+    # Explainable codon-phase and boundary summary.
     "cds_boundary_explainability",
 ]
 
@@ -88,7 +88,7 @@ def boolish(v: str) -> bool:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Build the pre-InterPro species QC master table (Task 8).")
+    ap = argparse.ArgumentParser(description="Build the pre-InterPro species QC master table.")
     ap.add_argument("--registry", type=Path, required=True)
     ap.add_argument("--isoform_evidence", type=Path, required=True, help="Step 4 fgfr2_isoform_evidence.tsv")
     ap.add_argument("--paralog_summary", type=Path, default=None, help="Step 6b paralog screen species summary")
@@ -96,9 +96,9 @@ def main() -> int:
     ap.add_argument("--paper_ready_qc", type=Path, required=True, help="Step 9 paper-ready species QC")
     ap.add_argument("--pair_qc", type=Path, required=True, help="Step 10 pair-level QC summary")
     ap.add_argument("--interpro_id_mapping", type=Path, default=None, help="Step 7 InterPro id mapping")
-    ap.add_argument("--orthology_summary", type=Path, default=None, help="Addendum B orthology species summary")
-    ap.add_argument("--phylo_order", type=Path, default=None, help="Sprint Part 2 species_phylogenetic_order.tsv")
-    ap.add_argument("--cds_audit", type=Path, default=None, help="Sprint Part A cds_phase_boundary_audit.tsv")
+    ap.add_argument("--orthology_summary", type=Path, default=None, help="FGFR2 orthology species summary")
+    ap.add_argument("--phylo_order", type=Path, default=None, help="species_phylogenetic_order.tsv")
+    ap.add_argument("--cds_audit", type=Path, default=None, help="cds_phase_boundary_audit.tsv")
     ap.add_argument("--outdir", type=Path, required=True)
     ap.add_argument("--prefix", default="fgfr2")
     args = ap.parse_args()
@@ -134,13 +134,13 @@ def main() -> int:
     paper = {norm(r.get("species")): r for r in read_tsv(args.paper_ready_qc)}
     pairqc = {norm(r.get("species_canonical") or r.get("species")): r for r in read_tsv(args.pair_qc)}
 
-    # Addendum B: dedicated orthology evidence (preferred over paralog-only derivation).
+    # Prefer dedicated orthology evidence over paralog-only inference.
     orthology = {norm(r.get("species")): r for r in read_tsv(args.orthology_summary)}
 
-    # Sprint Part 2: integrated phylogenetic/taxonomic order.
+    # Integrated phylogenetic and taxonomic order.
     phylo = {norm(r.get("species")): r for r in read_tsv(args.phylo_order)}
 
-    # CDS-boundary sprint Part A: per-species codon-phase/boundary explainability.
+    # Per-species codon-phase and boundary explainability.
     cds_by_sp: Dict[str, List[Dict[str, str]]] = {}
     if args.cds_audit and Path(args.cds_audit).exists():
         for r in read_tsv(args.cds_audit):
@@ -201,7 +201,7 @@ def main() -> int:
         paralog_status = str(pl.get("species_fgfr2_screen_status", "")).strip() or "not_paralog_screened"
         orth = orthology.get(sp, {})
         if orth.get("orthology_status_species"):
-            # Prefer the dedicated multi-evidence orthology layer (Addendum B).
+            # Prefer the dedicated multi-evidence orthology layer.
             ortholog_status = str(orth.get("orthology_status_species"))
         elif "high_confidence" in paralog_status:
             ortholog_status = "fgfr2_ortholog_high_confidence"
@@ -259,7 +259,7 @@ def main() -> int:
         review_short = "ok" if not reasons else reasons[0].split(":")[0]
         review_long = "; ".join(reasons) if reasons else "no_review_flags"
 
-        # Sprint Part 2: phylogenetic/taxonomic order; broad taxon_group overrides raw clade.
+        # The broad taxon group overrides the raw clade for display ordering.
         ph = phylo.get(sp, {})
         broad_group = str(ph.get("taxon_group", "")).strip() or (str(reg.get("clade", "")).strip() or "unknown")
 
@@ -302,7 +302,7 @@ def main() -> int:
     rows.sort(key=_po)
     out = args.outdir
     out.mkdir(parents=True, exist_ok=True)
-    # Addendum E: species_qc_master.tsv is the CANONICAL display/QC table.
+    # species_qc_master.tsv is the canonical display and QC table.
     # species_qc_master_pre_interpro.tsv is an identical copy / documented alias
     # for the pre-InterProScan stage (no InterPro domain calls present yet).
     canonical_path = out / "species_qc_master.tsv"

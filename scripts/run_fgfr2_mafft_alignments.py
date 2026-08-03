@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-run_fgfr2_mafft_alignments.py  (MSA boundary-robustness sprint, Part 3)
+Run FGFR2 MAFFT alignments.
 
 Run MAFFT (--auto) on the four prepared MSA inputs and report alignment-quality
 statistics. MAFFT is REQUIRED for final analysis: if it is missing the module fails
@@ -98,7 +98,7 @@ def stats_for(aln: Path) -> Dict[str, object]:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Run MAFFT alignments (Part 3).")
+    ap = argparse.ArgumentParser(description="Run MAFFT alignments.")
     ap.add_argument("--base", type=Path, required=True)
     ap.add_argument("--allow_fallback", action="store_true",
                     help="smoke-test only: pad-to-length pseudo-alignment if MAFFT missing")

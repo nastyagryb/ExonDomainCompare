@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-build_fgfr_paralog_panel_multi_vertebrate.py  (Addendum Task A)
+Build the multi-vertebrate FGFR paralog reference panel.
 
 Build a multi-vertebrate FGFR1/2/3/4 paralog reference panel for the FGFR2
 orthology / paralog screen. Sequences are fetched with NCBI ``datasets`` for a
@@ -103,7 +103,7 @@ def fetch_gene_protein(gene: str, species: str, datasets_bin: str, cache_dir: Pa
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Build multi-vertebrate FGFR1-4 paralog panel (Addendum A).")
+    ap = argparse.ArgumentParser(description="Build a multi-vertebrate FGFR1-4 paralog panel.")
     ap.add_argument("--panel_fasta", type=Path, default=Path("references/fgfr_paralog_panel_multi_vertebrate.fasta"))
     ap.add_argument("--outdir", type=Path, required=True, help="Where to write the panel manifest.")
     ap.add_argument("--cache_dir", type=Path, default=Path("references/_paralog_panel_cache"))

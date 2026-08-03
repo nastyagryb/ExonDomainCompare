@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-make_fgfr2_msa_boundary_figures.py  (MSA boundary-robustness sprint, Part 13)
+Render FGFR2 MSA boundary figures.
 
 Publication-level MSA figures (exported as SVG, PDF and PNG):
   Figure 6 — MSA-projected IIIb/IIIc boundary map (main new MSA figure)
@@ -346,7 +346,7 @@ def supp_integrity(dirs, master, integ, dirs_full_manifest):
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="MSA boundary figures (Part 13).")
+    ap = argparse.ArgumentParser(description="Render MSA boundary figures.")
     ap.add_argument("--base", type=Path, required=True)
     args = ap.parse_args()
     base = args.base.resolve()

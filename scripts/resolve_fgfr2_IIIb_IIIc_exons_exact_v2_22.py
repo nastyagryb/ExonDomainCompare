@@ -34,19 +34,17 @@ VERSION = "v2.22_refined_evidence_native_normalized_resolver"
 
 
 
-# ---------------------------------------------------------------------------
-# Task 3: refined resolver evidence labels.
+# Refined resolver evidence labels.
 # The single broad legacy label `gold_exact_multi_evidence_CDS_pair` hid whether
 # the CDS feature was matched using transcript+protein evidence or only one of
 # them. These helpers split that into explicit evidence levels / match types /
 # confidence / refined status, while keeping the legacy label in a column.
-# ---------------------------------------------------------------------------
 
 def classify_resolver_evidence(ov: int, txm: bool, prm: bool, same_pair_key: bool,
                                identity_incomplete: bool, has_candidate: bool) -> Dict[str, str]:
     """Return refined resolver evidence labels for a single IIIb/IIIc CDS choice.
 
-    Rules (Task 3):
+    Rules:
       * transcript AND protein match -> gold_exact_transcript_and_protein_CDS_pair
       * transcript match only         -> gold_exact_transcript_specific_CDS_pair
       * protein match only            -> silver_exact_protein_specific_CDS_pair
@@ -105,7 +103,7 @@ def classify_resolver_evidence(ov: int, txm: bool, prm: bool, same_pair_key: boo
 
 
 def codon_boundary_precision(phase: str, coordinate_source: str, warning: str) -> Tuple[str, str]:
-    """Task 4/9 preview: explicit CDS codon-phase / boundary precision.
+    """Return explicit CDS codon-phase and boundary precision.
 
     NCBI/Ensembl CDS phase indicates how many bases of the first codon lie in the
     previous exon. Phase 0 means the exon boundary coincides with a codon boundary;
@@ -145,7 +143,7 @@ def _phase_int(phase: str) -> Optional[int]:
 
 def cds_boundary_precision_lr(phase: str, cds_len_bp: Optional[int], coordinate_source: str,
                               warning: str, strand: str) -> Dict[str, str]:
-    """Task 7: explicit left/right CDS-boundary precision from GFF3 phase.
+    """Return left/right CDS-boundary precision from GFF3 phase.
 
     GFF3 phase is defined in transcript/translation order (not raw genomic order),
     so it is correct on the negative strand without flipping. ``phase`` is the
@@ -386,7 +384,7 @@ def normalize_pair_audit(pair: pd.DataFrame) -> pd.DataFrame:
         source = first(r, ["source_db", "source"])
         pair_status = first(r, ["pair_audit_status"])
         human_status = first(r, ["human_control_status"])
-        # Task 6 forward-compatibility: carry refined similarity fields if present.
+        # Carry refined similarity fields when present.
         similarity_class = first(r, ["iii_region_similarity_class"])
         similarity_warning = first(r, ["iii_region_similarity_warning"])
         legacy_pair_status = first(r, ["legacy_pair_audit_status"], pair_status)
@@ -742,13 +740,13 @@ def build_resolved(pair: pd.DataFrame, cds: pd.DataFrame, selected: pd.DataFrame
                     pair_class = "not_gold_outside_expected_window"
                     exact = False
 
-                # Task 3: refined evidence labels (keep legacy_resolver_status).
+                # Keep the legacy resolver status beside refined evidence labels.
                 refined = classify_resolver_evidence(
                     ov=ov, txm=txm, prm=prm, same_pair_key=same_pair_key,
                     identity_incomplete=identity_incomplete, has_candidate=ch is not None,
                 )
 
-                # Task 4: native protein coordinates (transcript-specific axis).
+                # Native protein coordinates use the transcript-specific axis.
                 p1 = to_int(ch.get("candidate_protein_start_aa"))
                 p2 = to_int(ch.get("candidate_protein_end_aa"))
                 if p1 is not None and p2 is not None:
@@ -758,7 +756,7 @@ def build_resolved(pair: pd.DataFrame, cds: pd.DataFrame, selected: pd.DataFrame
                     native_center = ""
                     native_length = ""
 
-                # Task 4: normalized III-slot coordinates (exon_internal_relative).
+                # Normalized III-slot coordinates use an exon-internal axis.
                 # IMPORTANT: this is NOT an anchor/human-alignment biological
                 # normalization. Each mutually-exclusive cassette's own start is set
                 # to origin 1, so the axis normalizes cassette SHAPE/LENGTH, not the
@@ -781,13 +779,13 @@ def build_resolved(pair: pd.DataFrame, cds: pd.DataFrame, selected: pd.DataFrame
                     iii_slot_conf = "unresolved"
                     iii_slot_note = "insufficient_evidence_for_normalization"
 
-                # Task 4/9: codon-phase / CDS boundary precision (legacy single value).
+                # Retain the legacy single-value CDS boundary precision.
                 cds_precision, cds_precision_note = codon_boundary_precision(
                     first(ch, ["phase", "phase_values"]),
                     first(ch, ["coordinate_source"]),
                     first(ch, ["warning"]),
                 )
-                # Task 7: explicit left/right CDS-boundary precision (transcript order).
+                # Store explicit left and right CDS-boundary precision.
                 _cds_start = to_int(first(ch, ["coding_exon_cds_start", "cds_start", "start", "genomic_start", "exon_start"]))
                 _cds_end = to_int(first(ch, ["coding_exon_cds_end", "cds_end", "end", "genomic_end", "exon_end"]))
                 _cds_len_bp = to_int(first(ch, ["cds_length_bp", "coding_exon_cds_length_bp"]))
@@ -865,11 +863,9 @@ def build_resolved(pair: pd.DataFrame, cds: pd.DataFrame, selected: pd.DataFrame
     return resolved, candidates
 
 
-# ---------------------------------------------------------------------------
-# Task 5: conservative pair-level coordinate sanity + main-figure eligibility.
+# Conservative pair-level coordinate sanity and figure eligibility.
 # These QC categories used to live in the plotting script. They are defined here
 # (data layer) so plotting only visualises existing QC fields.
-# ---------------------------------------------------------------------------
 
 _EVIDENCE_RANK = {
     "transcript_and_protein": 4,
@@ -909,7 +905,7 @@ def _iii_slot_coordinate_sanity(dist: Optional[float], confidence_ok: bool) -> s
 
 
 def build_pair_qc(resolved: pd.DataFrame) -> pd.DataFrame:
-    """One row per species with native + normalized III-slot pair QC (Task 4/5)."""
+    """Return one row per species with native and normalized III-slot pair QC."""
     if resolved.empty:
         return pd.DataFrame()
     sp_col = col_first(resolved, ["species_canonical", "species"])
@@ -996,7 +992,7 @@ def build_pair_qc(resolved: pd.DataFrame) -> pd.DataFrame:
         distinct = bool(row.get("IIIb_strict_cds_exon_key")) and bool(row.get("IIIc_strict_cds_exon_key")) and row.get("IIIb_strict_cds_exon_key") != row.get("IIIc_strict_cds_exon_key")
         row["distinct_CDS_pair"] = bool(distinct)
 
-        # Task 7: pair-level CDS-boundary precision summary (worst-of-pair).
+        # Pair precision uses the weaker boundary result.
         _prec_rank = {"exact": 3, "codon_split_one_side": 2, "codon_split_both_sides": 1, "unknown_codon_phase": 0, "": 0, "missing": 0}
         pb = str(row.get("IIIb_cds_boundary_precision_refined", "") or "")
         pc = str(row.get("IIIc_cds_boundary_precision_refined", "") or "")
@@ -1028,7 +1024,7 @@ def build_pair_qc(resolved: pd.DataFrame) -> pd.DataFrame:
         else:
             row["pair_status"] = "review_no_exact_pair"
 
-        # Anchor contradiction (sequence-level). Prefer the Task 6 refined
+        # Anchor contradiction uses the refined
         # similarity class when present: only FULL-window near-identity (or a
         # failed human control / identical proteins) is treated as contradictory.
         # Window-distinct-but-local-subregion-identical pairs are NOT contradictory.
@@ -1070,7 +1066,7 @@ def build_pair_qc(resolved: pd.DataFrame) -> pd.DataFrame:
         if "review_identity_incomplete" in row.get("resolver_status_refined_set", ""):
             flags.append("identity_incomplete")
 
-        # Main-figure eligibility (Task 5).
+        # Main-figure eligibility.
         slot_ok = row["iii_slot_coordinate_sanity"] in ("same_normalized_III_slot", "minor_normalized_III_slot_offset")
         native_not_major = row["native_coordinate_sanity"] != "major_native_offset_review"
         eligible = (
