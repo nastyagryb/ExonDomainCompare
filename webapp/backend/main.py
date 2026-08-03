@@ -53,7 +53,8 @@ from exondomaincompare.runs.registry import (  # noqa: E402
     RegistryError, RunCollisionError, discover_runs, hide_discovered_run,
     resolve_run_record, unregister,
 )
-from exondomaincompare.config import DATA_ENV, LOCAL_PROFILE_ENV, LRZ_PROFILE_ENV, RUNS_ENV, load_config
+from exondomaincompare.config import (CONFIG_ENV, DATA_ENV, LOCAL_PROFILE_ENV,
+                                      LRZ_PROFILE_ENV, RUNS_ENV, load_config)
 from exondomaincompare.runs.layout import RunLayout, RunLayoutVersion  # noqa: E402
 
 RUNTIME_CONFIG = load_config(repository_root=PROJECT_ROOT)
@@ -1601,9 +1602,16 @@ def _require_writable_run(run_id: str) -> Path:
 
 def _cluster_roundtrip_command(run_id: str) -> str:
     argv = [".venv/bin/edc", "cluster", "roundtrip", "--run-id", run_id]
-    data_dir = os.environ.get(DATA_ENV)
-    if data_dir:
-        argv = ["env", f"{DATA_ENV}={Path(data_dir).expanduser().resolve()}", *argv]
+    assignments = []
+    for name in (DATA_ENV, CONFIG_ENV, RUNS_ENV, LOCAL_PROFILE_ENV, LRZ_PROFILE_ENV):
+        value = os.environ.get(name)
+        if not value:
+            continue
+        if name in (DATA_ENV, CONFIG_ENV, RUNS_ENV):
+            value = str(Path(value).expanduser().resolve())
+        assignments.append(f"{name}={value}")
+    if assignments:
+        argv = ["env", *assignments, *argv]
     return RUNTIME_CONFIG.command(argv)
 
 

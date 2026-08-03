@@ -1139,6 +1139,20 @@ def test_the_roundtrip_command_preserves_an_external_data_root(backend, monkeypa
     )
 
 
+def test_the_roundtrip_command_preserves_an_explicit_cluster_config(backend,
+                                                                    monkeypatch,
+                                                                    tmp_path):
+    data_root = tmp_path / "external data"
+    config = tmp_path / "private config.toml"
+    monkeypatch.setenv("EDC_DATA_DIR", str(data_root))
+    monkeypatch.setenv("EXONDOMAIN_CONFIG", str(config))
+
+    assert backend._cluster_roundtrip_command("run_1") == (
+        f"env 'EDC_DATA_DIR={data_root}' 'EXONDOMAIN_CONFIG={config}' "
+        ".venv/bin/edc cluster roundtrip --run-id run_1"
+    )
+
+
 def test_retry_local_preparation_resumes_the_same_run(backend):
     """One request must not become two runs."""
     source = (ROOT / "webapp" / "backend" / "main.py").read_text(encoding="utf-8")
