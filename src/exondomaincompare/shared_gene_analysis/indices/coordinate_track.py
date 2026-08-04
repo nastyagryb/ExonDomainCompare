@@ -1,10 +1,3 @@
-"""Build coordinate_track_index.json from core exon→protein map (FGFR2 CoordinateTrack contract).
-
-The index is enriched with per-exon metadata (genomic/CDS coordinates, phase, strand,
-shared exon group) and a per-model track list so the Exon Map can show readable
-E1..En labels, full tooltips and an inline "Compare transcript models" panel.
-Gene-agnostic: no cassette / IIIb / IIIc assumptions.
-"""
 from __future__ import annotations
 
 from typing import Any, Dict, List, Optional
@@ -32,7 +25,6 @@ def _candidate_regions(candidates_blob: Dict[str, Any]) -> List[Dict[str, Any]]:
 
 
 def _block_from_structure_exon(e: Dict[str, Any], transcript_id: str) -> Optional[Dict[str, Any]]:
-    """A coding exon projected onto protein aa coordinates, with full provenance."""
     start = to_int(e.get("protein_start_aa"))
     end = to_int(e.get("protein_end_aa"))
     if start is None or end is None:
@@ -63,15 +55,6 @@ def _block_from_structure_exon(e: Dict[str, Any], transcript_id: str) -> Optiona
 
 
 def _blocks_from_map(rows: List[Dict[str, Any]], pid: str, tid: str) -> List[Dict[str, Any]]:
-    """Fallback: build blocks from exon_protein_map.tsv.
-
-    ``exon_protein_map.tsv`` carries genomic CDS coordinates and the normalized strand,
-    so this path derives the same genomic exon identity as the richer structure index
-    rather than leaving it empty. Without it a species built through this path had no
-    shared exon group at all, and "Compare transcript models" fell back to the
-    protein-scoped exon id — which no two models can ever share, so every model was
-    reported as differing from the primary.
-    """
     blocks: List[Dict[str, Any]] = []
     for r in rows:
         if r.get("protein_id") != pid:
@@ -165,12 +148,6 @@ def build_coordinate_track_index(
     protein_length: Optional[int] = None,
     species_id: str = "",
 ) -> Dict[str, Any]:
-    """Per-species primary-protein exon map (FGFR2 CoordinateTrack contract).
-
-    Emits one ``species[]`` entry per analysed species, each with its own primary
-    protein + per-model tracks. Fully generic (no gene/species assumptions); a
-    single-species run yields exactly one species entry.
-    """
     exon_map = ctx.core_dir / "exon_protein_map.tsv"
     map_rows = read_tsv(exon_map)
     iso_rows = read_tsv(ctx.core_dir / "protein_isoform_index.tsv")

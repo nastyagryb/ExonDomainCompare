@@ -1,16 +1,4 @@
 #!/usr/bin/env python3
-"""The Comparative Exon–Domain Boundary Explorer, checked against the real two-species run.
-
-Two layers are covered here:
-
-* the backend contract in ``src/exondomaincompare/shared_gene_analysis/boundary_dashboard.py``, which
-  is the single place that decides which boundaries are comparable, and
-* the browser-side behaviour (filtering, matrix cells, pair connections, exports), which
-  is exercised by ``tests/check_comparative_explorer.mjs`` in Node and reported here.
-
-The division matters: the frontend must not contain a second comparable-boundary
-algorithm, so these tests also assert that it does not grow one.
-"""
 from __future__ import annotations
 
 import json
@@ -49,7 +37,6 @@ def index():
 # the browser-side behaviour
 # --------------------------------------------------------------------------- #
 def test_the_explorer_behaviour_holds_on_the_real_dataset():
-    """Filters, matrix cells, pair connections and exports, exercised in Node."""
     if shutil.which("node") is None:
         pytest.skip("node is required to exercise the explorer's JavaScript")
     proc = subprocess.run(["node", str(HARNESS), str(FGFR1_MULTI / MODEL_REL)],
@@ -64,7 +51,6 @@ def test_the_explorer_behaviour_holds_on_the_real_dataset():
 # the comparative index is the single source of the comparability decision
 # --------------------------------------------------------------------------- #
 def test_the_frontend_holds_no_second_comparability_algorithm():
-    """The browser may filter and draw; it may not decide what is comparable."""
     sources = [p for p in VIEWERS.glob("*.js*") if p.name.startswith("comparative")
                or p.name.startswith("Comparative")]
     assert sources, "the comparative explorer sources are missing"
@@ -122,7 +108,6 @@ def test_each_observation_carries_every_field_the_ui_shows(multi):
 
 
 def test_the_taxonomic_group_is_real(multi):
-    """The taxonomic-group filter needs a value, and it must come from the registry."""
     groups = multi["filter_options"]["taxonomic_groups"]
     assert groups, "no taxonomic groups published for the filter"
     assert "Analysed species" not in groups, (
@@ -148,14 +133,6 @@ def test_matrix_cells_mirror_the_group_detail(multi):
 
 
 def test_a_cell_without_an_observation_carries_no_distance(index):
-    """The absent case, forced.
-
-    In the real two-species run every comparable group is mapped in both species, so no
-    unobserved cell exists to check. That is exactly why this test constructs one: a
-    missing observation rendered as ``0`` would read as "sits exactly on a domain edge",
-    which is a real boundary class and the opposite of missing data. The failure mode is
-    invisible on a fully mapped dataset and would surface only on a run with a gap.
-    """
     from exondomaincompare.shared_gene_analysis import boundary_dashboard as bd
 
     models = index["models"]
@@ -305,7 +282,6 @@ def test_the_comparative_figures_ship_their_source_tables(rendered):
 
 
 def test_a_single_species_run_produces_no_comparative_figures(tmp_path):
-    """Refusing to render is correct: an empty comparative panel is a claim."""
     if shutil.which("node") is None:
         pytest.skip("node is required")
     if not (FGFR1_SINGLE / MODEL_REL).is_file():

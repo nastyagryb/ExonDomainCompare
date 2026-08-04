@@ -1,27 +1,4 @@
 #!/usr/bin/env python3
-"""Gene/event feasibility probe.
-
-Given a gene symbol and reference species, produce a STRUCTURED, CONSERVATIVE
-report on whether this gene/event could be configured for the framework. It does
-NOT run any analysis, does NOT make any gene runnable, and does NOT modify runs
-or the example freeze.
-
-Usage:
-
-    python -m exondomaincompare.framework.probe_gene_event_feasibility \
-        --gene FGFR1 --reference-species homo_sapiens \
-        --outdir artifacts/gene_feasibility/FGFR1
-
-Outputs (under --outdir):
-    feasibility_report.json
-    feasibility_report.md
-
-Feasibility levels (conservative):
-    supported
-    partially_supported
-    requires_gene_specific_event_detector
-    not_supported_yet
-"""
 from __future__ import annotations
 
 import argparse
@@ -68,7 +45,6 @@ def _iso_now() -> str:
 
 
 def _find_configs_for_gene(gene: str) -> List[GeneConfig]:
-    """Return any active or draft configs whose gene symbol matches `gene`."""
     out: List[GeneConfig] = []
     g = gene.strip().lower()
     for d in (GENE_CONFIG_DIR, GENE_DRAFT_DIR):
@@ -88,7 +64,6 @@ def _find_configs_for_gene(gene: str) -> List[GeneConfig]:
 
 
 def _event_state(cfg: Optional[GeneConfig]) -> Dict[str, Any]:
-    """Describe whether the event region + markers are configured."""
     if cfg is None:
         return {
             "event_configured": False,
@@ -113,8 +88,6 @@ def _event_state(cfg: Optional[GeneConfig]) -> Dict[str, Any]:
 
 
 def _detector_state(cfg: Optional[GeneConfig]) -> Dict[str, Any]:
-    """Describe whether a SUPPORTED event detector exists for this analysis, and
-    whether it can satisfy the output contract."""
     contract = load_event_detector_contract()
     required = sorted((contract.get("outputs", {}) or {}).keys())
     if cfg is None:
@@ -147,12 +120,6 @@ def _detector_state(cfg: Optional[GeneConfig]) -> Dict[str, Any]:
 
 def classify_core_event(cfg: Optional[GeneConfig], event: Dict[str, Any],
                         detector: Dict[str, Any]) -> Dict[str, Any]:
-    """New model: classify core gene analysis and event analysis separately.
-
-    Core gene-level analysis is potentially supported for any protein-coding gene
-    (offline we assume gene models are collectable). Event analysis is a separate,
-    optional layer.
-    """
     core_disabled = bool(cfg is not None and not cfg.core_gene_analysis_enabled)
     core = "disabled" if core_disabled else "potentially_supported"
 

@@ -1,22 +1,4 @@
 #!/usr/bin/env python3
-"""Generic, gene-agnostic primary transcript/protein selection evidence.
-
-This module documents WHY a primary protein was chosen for a Core gene analysis,
-using a scientifically defensible hierarchy rather than "longest protein" alone:
-
-    1. MANE Select                     (highest)
-    2. APPRIS principal
-    3. Ensembl canonical
-    4. RefSeq curated (NM_/NP_)  preferred over predicted (XM_/XP_)
-    5. UniProt reviewed / canonical (if mapped)
-    6. Longest protein                 (fallback only)
-
-Not every source is available for every organism (e.g. MANE is human-only,
-APPRIS/Ensembl-canonical tags are absent from RefSeq GFFs for non-model species).
-Unavailable sources are recorded transparently instead of being silently ignored.
-
-It is intentionally free of any FGFR2/event/cassette logic.
-"""
 from __future__ import annotations
 
 import csv
@@ -44,7 +26,6 @@ _RULE_META = {rid: (label, conf) for rid, label, conf in SELECTION_RULES}
 
 
 def classify_accession(protein_id: str, transcript_id: str = "") -> Dict[str, str]:
-    """Classify a protein/transcript accession into a curation source."""
     pid = (protein_id or "").strip()
     tid = (transcript_id or "").strip()
     probe = pid or tid
@@ -69,17 +50,6 @@ def build_primary_selection(
     collection_report: Optional[Dict[str, Any]] = None,
     tags_by_protein: Optional[Dict[str, Dict[str, Any]]] = None,
 ) -> Dict[str, Any]:
-    """Return a primary-selection report + per-protein evidence rows.
-
-    ``isoform_rows``  : rows from protein_isoform_index.tsv (protein_id,
-                        transcript_id, protein_length, primary_status).
-    ``collection_report`` : optional core_model_collection_report.json (for the
-                        requested selection method / applied rule label).
-    ``tags_by_protein`` : optional {protein_id: {mane, appris, ensembl_canonical,
-                        uniprot_reviewed, canonical}} when the runner captured tags
-                        at collection time. When absent, classification falls back
-                        to accession patterns (curated vs predicted).
-    """
     collection_report = collection_report or {}
     tags_by_protein = tags_by_protein or {}
 
@@ -250,7 +220,6 @@ _TSV_FIELDS = [
 
 
 def write_selection_evidence(report: Dict[str, Any], tsv_path: Path, json_path: Path) -> None:
-    """Write primary_selection_evidence.tsv + primary_selection_report.json."""
     tsv_path.parent.mkdir(parents=True, exist_ok=True)
     alt_summary = "; ".join(
         f"{a['protein_id']}({a['length_aa']}aa)" for a in report.get("alternatives_considered", []))

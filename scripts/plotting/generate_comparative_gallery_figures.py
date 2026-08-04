@@ -1,11 +1,4 @@
 #!/usr/bin/env python3
-"""Generate and register Comparative Figure Gallery cards for multi-species runs.
-
-Renders through the shared JS figure builders (``comparativeGalleryFigures.js`` /
-``comparativeFigures.js``) so Gallery cards and Explorer exports stay one
-implementation. Single-species runs produce nothing — empty comparative figures
-are never registered.
-"""
 from __future__ import annotations
 
 import json
@@ -18,11 +11,11 @@ from typing import Any, Dict, List
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from plotting.generate_shared_main_figures import (  # noqa: E402
+from plotting.generate_shared_main_figures import (
     EXPORT_DPI, _api, _rasterise_png, _rel,
 )
-from exondomaincompare.runs.registry import RegistryError, resolve_run_record  # noqa: E402
-from exondomaincompare.config import load_config  # noqa: E402
+from exondomaincompare.runs.registry import RegistryError, resolve_run_record
+from exondomaincompare.config import load_config
 
 RUNTIME_CONFIG = load_config(repository_root=ROOT)
 
@@ -30,25 +23,11 @@ RENDERER = ROOT / "scripts" / "plotting" / "render_comparative_gallery_figures.m
 FIGURE_SUBDIR = Path("results") / "generic_gene_analysis" / "figures" / "comparative"
 GROUP = "comparative_figures"
 SCOPE = "comparative"
-
-# The final comparative inventory (Part 5). Insertion order is the Gallery
-# reading order. Every entry is a scientific visualisation: the three text-only
-# cards that used to sit here — the standalone pairwise-identity page, the
-# exon-boundary alignment summary page and the textual isoform-diversity page —
-# were removed. Their numbers now live inside the MSA overview, in the card
-# source tables and in the workbook.
 RETIRED_FIGURE_IDS = (
     "cmp_pairwise_identity",
     "cmp_exon_boundary_alignment_summary",
 )
 
-#: Cards withdrawn from one gene's catalogue rather than from the shared figure set.
-#: The per-neighbour synteny conservation matrix asks the same question as the main
-#: synteny neighbourhood figure and its blank cells are annotation gaps in single
-#: assemblies, so the FGFR2 catalogue no longer offers it as a reader's entry point.
-#: The figure is still rendered and exported; only the card is withheld, and only for
-#: the gene whose catalogue withdrew it — silently dropping it for every gene would
-#: change galleries nobody asked to change.
 WITHDRAWN_BY_GENE: Dict[str, tuple] = {
     "FGFR2": ("cmp_synteny_neighbour_conservation",),
 }
@@ -234,8 +213,6 @@ FIGURE_META: Dict[str, Dict[str, str]] = {
     },
 }
 
-
-# Which comparative artefact holds the numbers behind each card.
 SOURCE_ARTEFACT: Dict[str, str] = {
     "cmp_msa_aligned_exon_architecture": "msa_aligned_exons",
     "cmp_native_exon_architecture": "msa_aligned_exons",
@@ -284,7 +261,6 @@ def _register_gallery(run_dir: Path, cards: List[Dict[str, Any]]) -> int:
         kept = [f for f in (doc.get("figures") or [])
                 if f.get("figure_id") not in new_ids
                 and f.get("scope") != SCOPE]
-        # Comparative cards lead the catalogue for multi-species reading order.
         doc["figures"] = cards + kept
         avail = doc.get("available")
         if isinstance(avail, list):
@@ -307,8 +283,6 @@ def generate(run_dir: Path, model_json: Path) -> dict:
     index = json.loads(model_json.read_text())
     models = index.get("models") or []
     if len(models) < 2:
-        # A one-species dataset has nothing to compare, so it registers no
-        # comparative card at all rather than a cross-species card with one row.
         return {"figures": 0, "cards": 0, "skipped": "single_species"}
 
     comparative = build_comparative_dataset(run_dir, coordinate_index=index)
@@ -319,7 +293,6 @@ def generate(run_dir: Path, model_json: Path) -> dict:
     run_id = run_dir.name
     fig_dir = run_dir / FIGURE_SUBDIR
     fig_dir.mkdir(parents=True, exist_ok=True)
-    # A retired card must not leave a downloadable file behind.
     from exondomaincompare.presentation.figure_captions import remove_retired_figure_files
     remove_retired_figure_files(fig_dir, RETIRED_FIGURE_IDS)
     rendered = _render(model_json, cmp_path, fig_dir)
@@ -421,7 +394,7 @@ def generate(run_dir: Path, model_json: Path) -> dict:
 
 def main(argv=None) -> int:
     import argparse
-    p = argparse.ArgumentParser(description=__doc__)
+    p = argparse.ArgumentParser(description='Generate and register Comparative Figure Gallery cards for multi-species runs.')
     p.add_argument("--run-id", required=True)
     p.add_argument("--runs-root", type=Path, default=None)
     args = p.parse_args(argv)

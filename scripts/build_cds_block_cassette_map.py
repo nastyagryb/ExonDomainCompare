@@ -1,25 +1,4 @@
 #!/usr/bin/env python3
-"""
-Map cassette intervals to CDS blocks.
-
-Fixes the join bug where IIIb/IIIc cassettes were mapped onto CDS blocks by a
-NON-UNIQUE NCBI/RefSeq CDS id (cds-XP_...), which collapsed many cassettes onto
-the first CDS block (protein_start_aa = 1). Cassettes are now mapped by GENOMIC
-(and protein) coordinate overlap against a table of UNIQUE CDS blocks.
-
-Inputs (final tables only):
-  --coordinate_audit  fgfr2_current_stage_IIIb_IIIc_coordinate_audit.tsv (60 rows)
-  --cds_features      02_models/cds_features.tsv (all per-transcript CDS blocks)
-  --proteins          selected_fgfr2_proteins.faa (protein lengths / sequences)
-  [--cds_fasta_dir]   optional dir of reconstructed CDS nucleotide FASTA (Part D patch)
-
-Outputs (into --outdir):
-  PART A  fgfr2_unique_cds_block_table.tsv
-  PART B  fgfr2_cassette_cds_block_map.tsv
-  PART C  fgfr2_transcript_cds_reconstruction_audit.tsv
-  PART E  fgfr2_cassette_coordinate_sanity_audit.tsv
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -28,10 +7,6 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
-
-# A full-length FGFR2 protein is ~800 aa; the IIIb/IIIc cassette lies in the IgIII/D3
-# region (roughly aa 300-400). These thresholds are conservative coordinate sanity
-# only (pre-InterPro; no domain calls).
 FULL_LENGTH_AA = 500
 MIN_PLAUSIBLE_CASSETTE_START = 150
 
@@ -66,7 +41,6 @@ def norm_tx(tx: str) -> str:
 
 
 def overlap_inclusive(a0: int, a1: int, b0: int, b1: int) -> int:
-    """Inclusive genomic overlap length (bp)."""
     return max(0, min(a1, b1) - max(a0, b0) + 1)
 
 
@@ -98,9 +72,6 @@ def parse_proteins(fasta: Optional[Path]) -> Tuple[Dict[str, int], Dict[str, str
     return lengths, seqs
 
 
-# ---------------------------------------------------------------------------
-# PART A — unique CDS block table
-# ---------------------------------------------------------------------------
 UNIQUE_COLS = [
     "species", "transcript_id", "protein_id", "seqid", "strand",
     "genomic_start", "genomic_end", "cds_phase", "cds_rank",
@@ -113,8 +84,7 @@ def build_unique_blocks(cds_by_tx: Dict[str, List[Dict[str, str]]],
                         tx_meta: Dict[str, Dict[str, str]]) -> List[Dict[str, object]]:
     out: List[Dict[str, object]] = []
     for tx, blocks in cds_by_tx.items():
-        # cds_rank already encodes biological transcript 5'->3' order (protein_start_aa
-        # increases with cds_rank for both strands); sort defensively by cds_rank.
+
         blocks = sorted(blocks, key=lambda b: _int(b.get("cds_rank"), 0) or 0)
         meta = tx_meta.get(tx, {})
         cum = 0
@@ -142,9 +112,6 @@ def build_unique_blocks(cds_by_tx: Dict[str, List[Dict[str, str]]],
     return out
 
 
-# ---------------------------------------------------------------------------
-# PART B — cassette mapping by coordinate overlap (never by non-unique cds_id)
-# ---------------------------------------------------------------------------
 MAP_COLS = [
     "species", "isoform", "transcript_id", "protein_id", "resolver_source_db",
     "resolver_cds_rank", "resolver_genomic_start", "resolver_genomic_end",
@@ -157,8 +124,6 @@ MAP_COLS = [
 
 
 def map_cassette(coord_row: Dict[str, str], blocks: List[Dict[str, str]]):
-    """Return a mapping dict for one resolved IIIb/IIIc cassette using genomic overlap
-    (primary) then protein-coordinate overlap (fallback)."""
     rs, re = _int(coord_row.get("resolver_start")), _int(coord_row.get("resolver_end"))
     ns, ne = (_int(coord_row.get("native_protein_start_aa")),
               _int(coord_row.get("native_protein_end_aa")))
@@ -262,8 +227,6 @@ def map_cassette(coord_row: Dict[str, str], blocks: List[Dict[str, str]]):
         matched["matched_protein_start_aa"] = eff_start if eff_start is not None else ""
         matched["matched_protein_end_aa"] = eff_end if eff_end is not None else ""
         if aa1_override:
-            # the cds_rank-1 block match was a coordinate artifact (cassette is mid-protein);
-            # clear the artifact rank so downstream sanity does not re-flag first_cds_block.
             matched["matched_cds_rank"] = ""
 
     row = {
@@ -286,10 +249,6 @@ def map_cassette(coord_row: Dict[str, str], blocks: List[Dict[str, str]]):
     row.update(matched)
     return row
 
-
-# ---------------------------------------------------------------------------
-# PART C — transcript CDS reconstruction + translation audit
-# ---------------------------------------------------------------------------
 RECON_COLS = [
     "species", "isoform", "transcript_id", "protein_id", "source_annotation", "strand",
     "n_cds_blocks", "reconstructed_cds_nt_length", "reconstructed_protein_length",
@@ -318,7 +277,6 @@ def translate(nt: str) -> str:
 
 
 def load_cds_fasta(cds_fasta_dir: Optional[Path]) -> Dict[str, str]:
-    """Map transcript_id (normalized) -> CDS nucleotide sequence, from any FASTA in dir."""
     seqs: Dict[str, str] = {}
     if not cds_fasta_dir or not Path(cds_fasta_dir).exists():
         return seqs
@@ -405,9 +363,6 @@ def reconstruction_audit(coord_rows, cds_by_tx, prot_len, prot_seq, cds_nt):
     return out
 
 
-# ---------------------------------------------------------------------------
-# PART E — cassette coordinate sanity audit (hard biological checks)
-# ---------------------------------------------------------------------------
 SANITY_COLS = [
     "species", "isoform", "protein_id", "protein_length", "cassette_start_aa",
     "cassette_end_aa", "cds_rank", "coordinate_sanity_status", "coordinate_sanity_warning",

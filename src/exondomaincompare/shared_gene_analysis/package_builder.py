@@ -44,11 +44,6 @@ FORBIDDEN_ZIP_PATTERNS = ("__MACOSX", ".DS_Store", "Thumbs.db")
 
 @dataclass(frozen=True)
 class Item:
-    """One download item.
-
-    ``resolve`` returns the real source files for a context, or an empty list
-    together with the exact reason the item cannot be delivered.
-    """
     id: str
     label: str
     group: str
@@ -162,7 +157,6 @@ def _tmp_tsv(name: str, lines: Sequence[str]) -> Path:
 
 def _species_rows(src: Path, species_id: str, out_name: str,
                   label: str) -> Resolution:
-    """A species-filtered copy of a run-level TSV that carries a species column."""
     if not src.is_file():
         return Resolution(reason=f"{label} has not been generated for this run.")
     lines = src.read_text(encoding="utf-8").splitlines()
@@ -185,7 +179,6 @@ def _species_rows(src: Path, species_id: str, out_name: str,
 
 def _species_fasta(src: Path, species_id: str, out_name: str,
                    label: str) -> Resolution:
-    """Records of one species from a run-level FASTA (`>ACC GENE|species_id`)."""
     if not src.is_file():
         return Resolution(reason=f"{label} has not been generated for this run.")
     all_lines = src.read_text(encoding="utf-8").splitlines()
@@ -207,12 +200,6 @@ def _species_fasta(src: Path, species_id: str, out_name: str,
 
 
 def _card_file(run_dir: Path, url: str) -> Optional[Path]:
-    """The file behind a Gallery card URL.
-
-    The index stores serving URLs of the form
-    ``/api/runs/<id>/files?path=<run-relative path>``; the package needs the file
-    on disk, so the run-relative path is read back out of the query.
-    """
     if not url:
         return None
     match = re.search(r"[?&]path=([^&]+)", url)
@@ -222,7 +209,6 @@ def _card_file(run_dir: Path, url: str) -> Optional[Path]:
 
 
 def _species_figures(ctx: Context) -> Resolution:
-    """Every registered Gallery figure file of one species, in every format."""
     index = _load_json(ctx.run_dir / "website_indices" / "figures_index.json") or {}
     wanted: List[Path] = []
     for card in index.get("figures") or []:
@@ -250,7 +236,6 @@ def _comparative_figures(ctx: Context) -> Resolution:
 
 
 def _boundary_observations(ctx: Context) -> Resolution:
-    """Build from canonical JSON rather than a pre-existing TSV."""
     from exondomaincompare.shared_gene_analysis import boundary_observations as bo
     out = bo.ensure_table(ctx.run_dir, ctx.species_id or None)
     if out is None:
@@ -261,7 +246,6 @@ def _boundary_observations(ctx: Context) -> Resolution:
 
 
 def _workbook(ctx: Context) -> Resolution:
-    """Availability of the workbook, not the workbook itself; it is built lazily."""
     if not ctx.comparative.get("available"):
         return Resolution(reason="The workbook needs a multi-species comparative dataset.")
     ok, detail = workbook_capability()
@@ -272,11 +256,6 @@ def _workbook(ctx: Context) -> Resolution:
 
 
 def workbook_capability() -> Tuple[bool, str]:
-    """Whether this interpreter can write the XLSX workbook.
-
-    Called at application startup as well, so a missing declared dependency is
-    reported once on the server rather than as a raw ImportError per request.
-    """
     try:
         import openpyxl  # noqa: F401
     except Exception as exc:  # pragma: no cover - environment specific
@@ -555,7 +534,6 @@ def presets_for_scope(scope: str) -> Dict[str, Dict[str, Any]]:
 
 
 def resolve_dependencies(item_ids: Sequence[str], scope: str) -> List[str]:
-    """Item ids with their dependencies pulled in, in a stable build order."""
     catalogue = catalogue_for_scope(scope)
     seen: Set[str] = set()
     ordered: List[str] = []
@@ -611,11 +589,6 @@ def species_inventory(run_dir: Path) -> List[Dict[str, str]]:
 
 
 def scopes_for_run(run_dir: Path) -> List[Dict[str, str]]:
-    """The scopes this run really has.
-
-    A single-species run has exactly one scope — that species — so its page can
-    never show a comparative package form.
-    """
     inv = species_inventory(run_dir)
     if len(inv) < 2:
         return [{"id": r["species_id"], "label": r["scientific_name"], "kind": "species"}
@@ -629,13 +602,6 @@ def scopes_for_run(run_dir: Path) -> List[Dict[str, str]]:
 
 
 def capabilities(run_dir: Path, scope: Optional[str] = None) -> Dict[str, Any]:
-    """Return canonical availability for one scope.
-
-    Every item reports ``available``, its ``path`` when it has one, the exact
-    ``reason`` when it has none, and its ``dependencies``. Presets are returned
-    already filtered to the available items, so selecting a preset can never
-    preselect something the run cannot deliver.
-    """
     run_dir = Path(run_dir)
     inv = species_inventory(run_dir)
     scopes = scopes_for_run(run_dir)
@@ -731,7 +697,6 @@ def capabilities(run_dir: Path, scope: Optional[str] = None) -> Dict[str, Any]:
 
 
 def _is_lazy(item_id: str) -> bool:
-    """Items generated during the build rather than resolved from disk."""
     return item_id == "excel_workbook"
 
 
@@ -829,7 +794,6 @@ def get_job(job_id: str) -> Optional[PackageJob]:
 # --------------------------------------------------------------------------- #
 
 def _safe_arcname(name: str) -> str:
-    """A ZIP entry name that can never carry an absolute or escaping path."""
     cleaned = re.sub(r"^[A-Za-z]:", "", str(name)).replace("\\", "/")
     parts = [p for p in cleaned.split("/") if p not in ("", ".", "..")]
     return "/".join(parts)
@@ -1082,7 +1046,6 @@ def _readme(gene: str, run_id: str, scope: str, preset: str,
 
 
 def validate_package(zip_path: Path, manifest: Dict[str, Any]) -> List[str]:
-    """Return package problems; an empty list means the ZIP is valid."""
     problems: List[str] = []
     with zipfile.ZipFile(zip_path, "r") as zf:
         bad = zf.testzip()
@@ -1153,8 +1116,6 @@ def _write_workbook(path: Path, comparative: Dict[str, Any], gene: str) -> None:
     ws.append(["Note", "Blank cells are not used for biological absence."])
 
     def cell(value: Any) -> Any:
-        """A spreadsheet cell. A nested structure becomes one readable line rather
-        than crashing the writer, so no sheet is lost to a list-valued column."""
         if value is None:
             return ""
         if isinstance(value, (str, int, float, bool)):

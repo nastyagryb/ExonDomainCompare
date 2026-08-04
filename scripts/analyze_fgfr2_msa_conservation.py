@@ -1,13 +1,4 @@
 #!/usr/bin/env python3
-"""
-Analyse FGFR2 MSA conservation.
-
-Per-column conservation and gap scores for each MSA, plus region-level summaries
-(cassette / left & right boundary windows / full sequence) per species/isoform.
-
-conservation_score = 1 - normalized Shannon entropy over non-gap residues. The gap
-fraction is reported SEPARATELY and never hidden inside the conservation score.
-"""
 
 from __future__ import annotations
 
@@ -19,7 +10,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from exondomaincompare.scientific import fgfr2_msa_common as M  # noqa: E402
+from exondomaincompare.scientific import fgfr2_msa_common as M
 
 
 ALN = [
@@ -139,7 +130,6 @@ def main() -> int:
         M.write_tsv(cons_dir / out_name, rows, COL_COLS)
         col_cons_cache[msa_name] = col_map
 
-    # ---- region-level summary per species/isoform ----
     full_cols = col_cons_cache.get("full_length", {})
 
     def region_stat(cols: List[int]):
@@ -159,7 +149,6 @@ def main() -> int:
             regions["cassette"] = list(range(fs, fe + 1))
             regions["left_boundary_window"] = list(range(max(1, fs - 5), fs + 6))
             regions["right_boundary_window"] = list(range(max(1, fe - 5), fe + 6))
-        # full_sequence: span of this species' residues in full-length MSA
         regions["full_sequence"] = list(range(1, len(full_cols) + 1)) if full_cols else []
         for rtype, cols in regions.items():
             mc, mg, ncol = region_stat(cols)

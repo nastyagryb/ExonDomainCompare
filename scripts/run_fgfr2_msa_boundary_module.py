@@ -1,19 +1,4 @@
 #!/usr/bin/env python3
-"""
-Run the FGFR2 MSA and boundary-robustness module.
-
-Central runner for the pre-InterPro MSA / boundary-robustness module. Performs the MAFFT
-dependency check, orchestrates every step (input prep -> MAFFT -> coordinate maps/projection
--> conservation -> discriminating residues -> protein integrity -> splice QC -> robustness
--> figures -> reports), integrates summaries into species_qc_master.tsv and writes
-the reproducibility manifests.
-
-This module is strictly pre-InterProScan: it never runs InterProScan and never invents
-domain annotations. MSA is an independent robustness/QC layer that does not relabel IIIb/IIIc.
-
-Acceptance command:
-    python scripts/run_fgfr2_msa_boundary_module.py --base results/final_30_until_interpro_prepare
-"""
 
 from __future__ import annotations
 
@@ -88,9 +73,6 @@ def run_step(script: str, base: Path, extra: Optional[List[str]] = None) -> int:
 
 
 def propagate_reconciliation(base: Path, dirs: Dict[str, Path]) -> None:
-    """Add legacy-preserving reconciliation columns (legacy/upstream/final/validated/consistency)
-    to the major upstream audit tables and species_qc_master.tsv. Existing columns are preserved;
-    the upstream isoform column is never overwritten — final_isoform_label is added alongside."""
     rec = M.read_tsv(dirs["maps"] / "fgfr2_exon_type_label_reconciliation.tsv")
     if not rec:
         print("[WARN] reconciliation table missing; skipping propagation.", file=sys.stderr)

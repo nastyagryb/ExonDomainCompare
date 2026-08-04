@@ -1,23 +1,5 @@
 #!/usr/bin/env python3
 
-"""Fetch InterProScan and pyTMHMM outputs for a run from the LRZ cluster.
-
-Design notes (why this looks the way it does)
----------------------------------------------
-* subprocess.run([...]) does NOT invoke a shell, so any character in an argument
-  is passed VERBATIM. Wrapping a remote path in literal single quotes
-  (f"'{path}/*'") therefore makes ``scp`` look for a file whose name literally
-  begins with a quote -> "No such file or directory". Remote paths are handed to
-  scp WITHOUT embedded quotes; shell-style quoting is used ONLY when a command is
-  printed for the human reader (see ``display``).
-* Instead of firing many ``scp host:'.../*'`` glob calls (each of which triggers a
-  fresh password/2FA prompt and fails noisily on a non-matching glob), we:
-    1. open ONE multiplexed SSH master connection (ControlMaster/ControlPersist),
-    2. run a single remote ``find`` to discover which files actually exist,
-    3. copy only those discovered files, reusing the master connection so no
-       further password/2FA prompt is needed.
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -44,7 +26,6 @@ PROJECT_ROOT = RUNTIME_CONFIG.repository_root
 
 
 def display(cmd: List[str]) -> str:
-    """Shell-quoted rendering of a command, for logging ONLY (never for exec)."""
     return " ".join(shlex.quote(part) for part in cmd)
 
 
@@ -84,10 +65,6 @@ def write_json(path: Path, data: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
-
-# --------------------------------------------------------------------------- #
-# SSH connection multiplexing (one authentication reused for every copy)
-# --------------------------------------------------------------------------- #
 def ssh_mux_opts(control_path: Path) -> List[str]:
     return [
         "-o", "ControlMaster=auto",
@@ -106,11 +83,6 @@ def close_master(control_path: Path) -> None:
 
 
 def discover_remote_files(remote_root: str, control_path: Path) -> List[str]:
-    """Single remote discovery pass. Returns absolute remote file paths.
-
-    Note: remote_root is a plain absolute path (no spaces / shell metacharacters),
-    passed as a distinct argv element to ssh -> no quoting required.
-    """
     cmd = [RUNTIME_CONFIG.executable_token("ssh"), *RUNTIME_CONFIG.lrz.get("ssh_options", []),
            *ssh_mux_opts(control_path), RUNTIME_CONFIG.ssh_target,
            "find", remote_root, "-maxdepth", "6", "-type", "f", "-print"]
@@ -120,12 +92,6 @@ def discover_remote_files(remote_root: str, control_path: Path) -> List[str]:
 
 
 def scp_files_into(remote_files: List[str], local_dir: Path, control_path: Path) -> List[str]:
-    """Copy the given EXACT remote files into local_dir (flattened by basename).
-
-    Remote paths are passed as-is (no embedded quotes). All copies reuse the
-    multiplexed master connection, so there is at most one auth prompt overall.
-    Returns the list of basenames that now exist locally.
-    """
     if not remote_files:
         return []
     local_dir.mkdir(parents=True, exist_ok=True)
@@ -137,15 +103,8 @@ def scp_files_into(remote_files: List[str], local_dir: Path, control_path: Path)
     return [Path(rf).name for rf in remote_files]
 
 
-# --------------------------------------------------------------------------- #
-# Classification of discovered remote files -> local target directory
-# --------------------------------------------------------------------------- #
 def classify(remote_file: str, interpro_dir: str, pytmhmm_dir: str,
              targets: Dict[str, Path]) -> Optional[Path]:
-    """Map a discovered remote file to the local directory it belongs in.
-
-    Returns None for files that are not part of the fetched result set (e.g. large
-    intermediate scratch files), so they are skipped rather than downloaded."""
     name = Path(remote_file).name
 
     def under(base: str, sub: str) -> bool:
@@ -212,7 +171,6 @@ def main() -> None:
         raise RuntimeError(
             "Remote directories are missing in status.json. Did you run submit_cluster_analysis.py?")
     if not remote_root:
-        # Fall back to the common parent of the two known remote dirs.
         remote_root = str(Path(remote_interpro_dir).parent)
 
     if args.dry_run:
@@ -242,15 +200,8 @@ def main() -> None:
     interpro_manifest_path = interpro_base / "interproscan_manifest.json"
     pytmhmm_manifest_path = pytmhmm_base / "pytmhmm_manifest.json"
 
-    # One multiplexed SSH master for the whole session -> a single auth/2FA prompt.
-    # If run_cluster_roundtrip.py already opened a shared master (env
-    # FGFR2_SSH_CONTROL_PATH), reuse it and leave it open for the caller; otherwise
-    # create a private one for this fetch only.
     shared_cp = os.environ.get(CONTROL_PATH_ENV, "").strip()
     owns_master = not shared_cp
-    # Short /tmp socket path: the per-user temp dir (/var/folders/…/T on macOS) is long
-    # enough to exceed the unix-socket sun_path limit (~104 bytes), which makes ssh refuse
-    # to open the master. A short run-specific path avoids that.
     _private_sock = Path("/tmp") / f"fgfr2_{hashlib.sha1(run_id.encode()).hexdigest()[:8]}_cm.sock"
     try:
         control_path = Path(shared_cp) if shared_cp else _private_sock
@@ -265,7 +216,6 @@ def main() -> None:
 
         print(f"Discovered {len(remote_files)} remote file(s).")
 
-        # Group discovered files by their local destination, skipping unrelated files.
         grouped: Dict[str, List[str]] = {key: [] for key in targets}
         skipped: List[str] = []
         for rf in remote_files:
@@ -288,7 +238,6 @@ def main() -> None:
         if skipped:
             print(f"Skipped {len(skipped)} unrelated remote file(s) (not part of the result set).")
     finally:
-        # Only tear down the master WE created; a shared roundtrip master stays up.
         if owns_master:
             close_master(control_path)
             try:

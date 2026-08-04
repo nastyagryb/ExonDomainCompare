@@ -61,7 +61,6 @@ _REGISTRY: Optional[Dict[str, Dict[str, Any]]] = None
 
 
 def _registry() -> Dict[str, Dict[str, Any]]:
-    """The offline species registry, keyed by species_id."""
     global _REGISTRY
     if _REGISTRY is None:
         import sys
@@ -84,7 +83,6 @@ def _registry() -> Dict[str, Dict[str, Any]]:
 
 
 def reference_panel_order() -> Dict[str, int]:
-    """The approved order of the validated 30-species panel."""
     order: Dict[str, int] = {}
     if REFERENCE_PANEL.is_file():
         for i, line in enumerate(REFERENCE_PANEL.read_text(encoding="utf-8").splitlines()):
@@ -95,7 +93,6 @@ def reference_panel_order() -> Dict[str, int]:
 
 
 def scientific_name(species_id: str) -> str:
-    """`gallus_gallus` -> `Gallus gallus`; only the genus is capitalised."""
     known = _registry().get(species_id)
     if known and known["scientific_name"]:
         return known["scientific_name"]
@@ -117,7 +114,6 @@ def taxon_group(species_id: str) -> str:
 
 def species_record(species_id: str, display_order: int,
                    ordering_method: str) -> Dict[str, Any]:
-    """One row of the canonical order."""
     known = _registry().get(species_id, {})
     clade = known.get("clade", "other")
     return {
@@ -138,12 +134,6 @@ def species_record(species_id: str, display_order: int,
 
 
 def order_species(species_ids: Iterable[str]) -> List[str]:
-    """Sort species into the canonical order.
-
-    Members of the validated reference panel keep their approved positions and
-    come first. Everything else follows, grouped by clade and alphabetical
-    within a clade.
-    """
     panel = reference_panel_order()
     unique = list(dict.fromkeys(s for s in species_ids if s))
 
@@ -159,7 +149,6 @@ def order_species(species_ids: Iterable[str]) -> List[str]:
 
 def build_species_order(species_ids: Sequence[str],
                         ordering_method: str = "taxonomic") -> Dict[str, Any]:
-    """The canonical order for one dataset, as a serialisable document."""
     if ordering_method not in ("taxonomic", "phylogenetic"):
         raise ValueError("ordering_method must be 'taxonomic' or 'phylogenetic'")
     if ordering_method == "phylogenetic":
@@ -197,7 +186,6 @@ TSV_COLUMNS = ["species_id", "scientific_name", "common_name", "ncbi_taxonomy_id
 
 def write_species_order(species_ids: Sequence[str], outdir: Path,
                         ordering_method: str = "taxonomic") -> Dict[str, Path]:
-    """Write ``species_order.json`` and ``species_order.tsv`` into ``outdir``."""
     doc = build_species_order(species_ids, ordering_method)
     outdir = Path(outdir)
     outdir.mkdir(parents=True, exist_ok=True)

@@ -1,14 +1,4 @@
 #!/usr/bin/env python3
-"""
-select_fgfr2_transcripts_annotation_aware_v2.py
-
-Annotation-aware transcript prioritisation for FGFR2 exon--domain boundary studies.
-
-Designed for use after collect_fgfr2_models_dual_source_v3.py. The script selects a
-cross-species reference transcript while retaining FGFR2 IIIb/IIIc isoform candidates
-separately. It writes full audit, warnings, run metadata, a Markdown/HTML report and
-optional per-species top-score plots.
-"""
 from __future__ import annotations
 
 import argparse
@@ -26,12 +16,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 
 class EmptyModelInput(RuntimeError):
-    """No transcripts to select from, with the recorded reason attached.
-
-    A distinct type so the pipeline can tell "the upstream step recovered nothing, and
-    here is why" from a genuine defect in this step. The message is written for the
-    person who started the run; the traceback stays in the log.
-    """
+    pass
 
 
 #: Set by ``run()`` so the schema check can quote the collection status without being

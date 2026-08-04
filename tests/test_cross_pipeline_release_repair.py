@@ -1,18 +1,3 @@
-"""Regressions for the cross-pipeline release repair.
-
-Four defects are covered here, each of which reached a reader as a wrong or
-missing scientific statement rather than as an error:
-
-1. a strand spelling decided the biological exon order, so the same gene was
-   assembled 5'→3' from one source and 3'→5' from another;
-2. a stop codon was counted as a residue, so a coding exon projected one amino
-   acid past the end of its protein and the coordinate model failed validation
-   silently, which is what left a completed run showing an obsolete gallery;
-3. availability was maintained separately by six figure stages, so the record
-   could describe a card set the figures had moved on from;
-4. run readiness was derived from a persisted pre-cluster field instead of the
-   run's artifacts, so a repaired stage kept a finished run out of results_ready.
-"""
 from __future__ import annotations
 
 import json
@@ -74,7 +59,6 @@ def test_unavailable_strand_is_unknown_not_forward(value):
 
 
 def test_ensembl_and_refseq_spellings_are_the_same_strand():
-    """The defect in one line: Ensembl says -1 where RefSeq says -."""
     assert normalize_strand("-1") == normalize_strand("-")
     assert same_strand("-1", "-", -1, "reverse")
     assert same_strand("+1", "+", 1, "forward")
@@ -95,7 +79,6 @@ def test_symbol_and_sign_round_trip():
 
 
 def test_no_production_code_compares_a_raw_strand_value():
-    """The normaliser is the only place that may decide what a strand means."""
     import re
     pattern = r"strand[a-z_]*\s*[=!]=\s*[\"']?-1?[\"']?"
     offenders = []
@@ -114,7 +97,6 @@ def test_no_production_code_compares_a_raw_strand_value():
 # Transcript ordering and protein projection
 # --------------------------------------------------------------------------- #
 def _cds_parts_minus_strand(strand):
-    """Two CDS parts of a minus-strand transcript, in genomic ascending order."""
     return [
         {"seqid": "1", "start": "1000", "end": "1059", "strand": strand,
          "phase": "0", "exon_id": "exonB"},
@@ -142,26 +124,22 @@ def _model(features):
 
 @pytest.mark.parametrize("spelling", ["-", -1, "reverse"])
 def test_minus_strand_ordering_is_identical_across_source_spellings(spelling):
-    """A source spelling must never change the biological exon order."""
     assert _model(_build(spelling)) == _model(_build("-1"))
 
 
 def test_minus_strand_transcript_starts_at_the_highest_coordinate():
-    """5'→3' on the minus strand runs from the highest genomic coordinate down."""
     features = _build("-1")
     assert features[0].cds_id_source == "exonA"
     assert features[0].protein_start_aa == "1"
 
 
 def test_genomic_order_is_preserved_separately_from_transcript_order():
-    """Source exon identity must survive independently of display order."""
     features = _build("-1")
     assert [f.transcript_order for f in features] == ["1", "2"]
     assert [f.genomic_order for f in features] == ["2", "1"]
 
 
 def test_an_already_ordered_table_is_not_reversed_twice():
-    """A transcript given in 5'→3' order with explicit ranks stays in it."""
     from collect_fgfr2_models_dual_source_v3 import build_cds_features_from_parts
     parts = [
         {"seqid": "1", "start": "2000", "end": "2029", "strand": "-1",
@@ -188,7 +166,6 @@ def test_protein_coordinates_are_monotonic_and_do_not_overlap():
 
 
 def test_projection_never_exceeds_the_protein_length():
-    """A stop codon is not a residue: BCL2L1 mouse is 235 aa, not 236."""
     features = _build("-1", protein_length_aa=25)
     ends = [int(f.protein_end_aa) for f in features if f.protein_end_aa]
     assert max(ends) <= 25
@@ -235,7 +212,6 @@ def test_every_group_carries_both_species(fgfr2_boundary_rows):
 
 
 def test_groups_are_not_keyed_on_exon_rank_alone(fgfr2_boundary_rows):
-    """Grouping evidence must be an alignment position, not an exon label."""
     methods = {r["mapping_method"] for r in fgfr2_boundary_rows}
     assert methods, "no mapping method recorded"
     assert not (methods & {"exon_rank", "exon_label", "genomic_order"})
@@ -258,7 +234,6 @@ def test_domain_instance_ids_are_real_interpro_instances(fgfr2_boundary_rows):
 
 
 def test_signed_distances_agree_between_orthologous_boundaries(fgfr2_boundary_rows):
-    """Human and cat FGFR2 place the same boundary at the same domain offset."""
     by_group = {}
     for row in fgfr2_boundary_rows:
         by_group.setdefault(row["comparable_boundary_group_id"], {})[
@@ -286,7 +261,6 @@ def test_comparative_synteny_shows_both_species(fgfr2_synteny_svg):
 
 
 def test_comparative_synteny_discloses_its_species_coverage(fgfr2_synteny_svg):
-    """The caption has to name what the figure covers and what it does not."""
     assert "Species shown" in fgfr2_synteny_svg
     for word in ("complete", "partial", "no neighbourhood available"):
         assert word in fgfr2_synteny_svg
@@ -317,7 +291,6 @@ def test_registration_rejects_a_card_from_another_run(tmp_path):
 
 
 def test_a_card_whose_output_is_gone_is_reported_not_hidden(tmp_path):
-    """An absent expected output is a gap the run must show, not one to delete."""
     from plotting.figure_registration import normalise_index
     run = tmp_path / "2026-01-01_0000_gene_species"
     (run / "figures").mkdir(parents=True)
@@ -346,7 +319,6 @@ def test_registration_rejects_a_superseded_card(tmp_path):
 
 
 def test_registration_derives_availability_from_the_cards(tmp_path):
-    """The availability record can no longer describe a superseded card set."""
     from plotting.figure_registration import normalise_index
     run = tmp_path / "2026-01-01_0000_gene_species"
     (run / "figures").mkdir(parents=True)
@@ -454,7 +426,6 @@ def test_fgfr2_run_uses_the_modern_catalogue(fgfr2_index):
 
 
 def test_fgfr2_run_has_no_old_numbered_main_cards(fgfr2_index):
-    """Figure 1–12 numbering belongs to supplements, never to a main card."""
     import re
     numbered = [f["figure_id"] for f in fgfr2_index["figures"]
                 if f.get("kind") == "main"
@@ -492,7 +463,6 @@ def test_fgfr2_species_scopes_exist_for_every_dataset_species(fgfr2_index):
 # Comparative availability wording
 # --------------------------------------------------------------------------- #
 def test_a_comparative_card_never_claims_a_protein_lacks_the_analysis():
-    """`Not available for this protein` is a species-scope statement only."""
     source = (REPO_ROOT / "webapp" / "frontend" / "src" / "pages"
               / "FigureGallery.jsx").read_text(encoding="utf-8")
     assert "unavailableText(f)" in source
@@ -531,7 +501,6 @@ def test_matching_cluster_outputs_are_reusable(tmp_path):
 
 
 def test_cluster_outputs_for_a_superseded_sequence_are_stale(tmp_path):
-    """A repaired coordinate model must not reuse annotations by filename."""
     from exondomaincompare.shared_gene_analysis.cluster_output_freshness import evaluate
     report = evaluate(_fake_run(tmp_path, "MKVA", "MKV"))
     assert report["status"] == "stale"
@@ -593,7 +562,6 @@ def test_repaired_runs_are_consistently_results_ready(run_id):
     "2026-07-23_1100_fgfr1_gallus_core_pilot",
 ])
 def test_accepted_reference_runs_keep_their_ready_status(run_id):
-    """The new gates must not demote a run that was already correct."""
     directory = run_dir(run_id)
     if not (directory / "status.json").is_file():
         pytest.skip(f"{run_id} not present")
@@ -604,7 +572,6 @@ def test_accepted_reference_runs_keep_their_ready_status(run_id):
 
 
 def test_readiness_is_not_derived_from_the_persisted_precluster_field():
-    """The regression that kept a repaired FGFR2 run out of results_ready."""
     source = (SCRIPTS / "run_post_interpro_for_run.py").read_text(encoding="utf-8")
     assert '"complete" if prev.get("pre_interpro_status")' not in source
     assert "_finalize_run_status(rp.run_dir)" in source

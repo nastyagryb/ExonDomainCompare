@@ -76,20 +76,16 @@ STATUS_DISPLAY: Dict[str, Tuple[str, str]] = {
 
 
 def is_placeholder_locus(symbol: Any) -> bool:
-    """True when the annotation gave an identifier instead of a gene name.
-    """
     text = str(symbol or "").strip()
     return not text or bool(_PLACEHOLDER_SYMBOL.match(text))
 
 
 def display_binomial(species_id: str) -> str:
-    """``gallus_gallus`` -> ``Gallus gallus`` (genus capitalised, epithet not)."""
     text = str(species_id or "").replace("_", " ").strip()
     return text[:1].upper() + text[1:]
 
 
 def status_display(status: str) -> Tuple[str, str]:
-    """Readable label and exact definition for an internal status string."""
     key = str(status or "").strip()
     if key in STATUS_DISPLAY:
         return STATUS_DISPLAY[key]
@@ -98,7 +94,6 @@ def status_display(status: str) -> Tuple[str, str]:
 
 
 def orthology_display(cls: str) -> Tuple[str, str]:
-    """Readable label and exact definition for an internal orthology class."""
     key = str(cls or "").strip() or "unresolved"
     return ORTHOLOGY_DISPLAY.get(key, ORTHOLOGY_DISPLAY["unresolved"])
 
@@ -129,7 +124,6 @@ def neighbour_locus(*, side: str, rank: int, source_symbol: str = "",
                     coverage: Any = None, distance: Any = None,
                     seqid: str = "", start: Any = None, end: Any = None,
                     method: str = "") -> Dict[str, Any]:
-    """One flanking locus. ``rank`` is 1-based distance from the target."""
     rank = abs(int(rank or 0))
     slot = -rank if side == "upstream" else rank
     display = str(resolved_symbol or source_symbol or "").strip()
@@ -169,7 +163,6 @@ def target_locus(*, gene_symbol: str, gene_id: str = "", strand: str = "",
                  seqid: str = "", start: Any = None, end: Any = None,
                  protein_id: str = "",
                  coordinate_source: str = "annotation") -> Dict[str, Any]:
-    """The target gene as its own slot-0 object, explicit and never a neighbour."""
     label, definition = orthology_display("target")
     symbol = str(gene_symbol or "").strip() or "target gene"
     return {
@@ -217,7 +210,6 @@ def _confidence_for(cls: str) -> str:
 
 
 def counts_label(up: int, down: int) -> str:
-    """The honest one-line availability statement shown above a track."""
     total = up + down
     if not total:
         return "No flanking loci available"
@@ -339,7 +331,6 @@ def _legacy_method_class(node: Dict[str, Any]) -> str:
 
 
 def summarise(rows: Iterable[Dict[str, Any]]) -> Dict[str, Any]:
-    """Dataset-level totals derived from the per-species rows."""
     rows = list(rows)
     flanking = sum(r.get("displayed_flanking_count", 0) for r in rows)
     resolved = sum(

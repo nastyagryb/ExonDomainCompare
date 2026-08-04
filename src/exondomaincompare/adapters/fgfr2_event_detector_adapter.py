@@ -1,25 +1,4 @@
 #!/usr/bin/env python3
-"""FGFR2 IIIb/IIIc → generic event-detector contract adapter.
-
-Projects the EXISTING validated FGFR2 outputs into the gene/event-agnostic
-event-detector contract (see docs/event_detector_contract.md). This is the first
-"detector": it recomputes NOTHING and changes NO biology — it only reshapes
-already-computed FGFR2 results into the generic contract files.
-
-Outputs (under <out>/):
-    event_isoform_candidates.tsv
-    event_region_coordinates.tsv
-    event_label_evidence.tsv
-    event_detector_report.json
-
-Examples:
-    # custom run -> runs/<id>/results/generic_event_detector/
-    python -m exondomaincompare.adapters.fgfr2_event_detector_adapter --run-id 2026-07-07_1133_gallus_fresh_e2e
-
-    # example preview into a safe (non-freeze) folder
-    python -m exondomaincompare.adapters.fgfr2_event_detector_adapter --example \
-        --out artifacts/generic_event_detector/example
-"""
 from __future__ import annotations
 
 import argparse
@@ -38,8 +17,6 @@ SOURCE_LABEL = "legacy_fgfr2_adapter"
 
 
 def _cassette_agreement(src: DatasetSource) -> Dict[tuple, Dict[str, Any]]:
-    """(species, label) -> discriminating-column agreement vs human, projected from
-    the already-computed cassette residue index (no recomputation)."""
     cassette = src.idx("cassette_residue_index.json", {}) or {}
     out: Dict[tuple, Dict[str, Any]] = {}
     for sp in cassette.get("species", []) or []:

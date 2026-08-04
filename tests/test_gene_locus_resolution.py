@@ -1,10 +1,4 @@
 #!/usr/bin/env python3
-"""The generic gene-identity cascade, and the HBA / Panthera leo case it was written for.
-
-Every test here is offline: the NCBI Gene lookup is an injected callable, so the production
-cascade runs unchanged while the source responses are fixtures. The one exception is the
-regression against the real run, which reads that run's own recorded outputs.
-"""
 from __future__ import annotations
 
 import ast
@@ -48,7 +42,6 @@ def _gene(seqid: str, start: int, end: int, gid: str, symbol: str, geneid: str,
 
 def _transcript(seqid: str, start: int, end: int, gid: str, tid: str, pid: str,
                 product: str, symbol: str, *, n_cds: int = 3) -> list[str]:
-    """One mRNA with `n_cds` exon/CDS pairs, laid out like a real Gnomon record."""
     rows = [f"{seqid}\tGnomon\tmRNA\t{start}\t{end}\t.\t-\t.\t"
             f"ID=rna-{tid};Parent=gene-{gid};Dbxref=Genbank:{tid};Name={tid};"
             f"gbkey=mRNA;gene={symbol};product={product};transcript_id={tid}"]
@@ -68,12 +61,6 @@ def _transcript(seqid: str, start: int, end: int, gid: str, tid: str, pid: str,
 
 @pytest.fixture()
 def loc_annotation(tmp_path: Path) -> Path:
-    """The shape of the lion assembly: LOC symbols, no synonym, no gene description.
-
-    The product name sits on the child features only, and the alpha cluster holds a second,
-    near-identical alpha locus plus two zeta loci — so a description match is ambiguous and
-    prefers the wrong gene.
-    """
     rows = [
         _gene("NC_056694.1", 41223621, 41224454, "LOC122209634", "LOC122209634",
               "122209634"),
@@ -101,7 +88,6 @@ def loc_annotation(tmp_path: Path) -> Path:
 
 
 def _hba_record() -> glr.NcbiGeneRecord:
-    """The live NCBI Gene answer for `"Panthera leo"[Organism] AND HBA[All Fields]`."""
     return glr.NcbiGeneRecord(
         gene_id="122209636", official_symbol="LOC122209636",
         description="hemoglobin subunit alpha-like", aliases=["HBA"],
@@ -137,7 +123,6 @@ def test_an_exact_symbol_in_the_annotation_resolves_without_asking_the_source(tm
 
 
 def test_a_case_normalised_symbol_resolves(tmp_path):
-    """Teleost and plant annotations use lower case; a query in caps must still land."""
     gff = tmp_path / "g.gff"
     gff.write_text(_gff([_gene("chr1", 100, 900, "foxp1b", "foxp1b", "5555"),
                          *_transcript("chr1", 100, 900, "foxp1b", "NM_1.1", "NP_1.1",
@@ -149,7 +134,6 @@ def test_a_case_normalised_symbol_resolves(tmp_path):
 
 
 def test_an_annotation_provided_alias_resolves(tmp_path):
-    """Curated annotations carry gene_synonym; that route must still work."""
     gff = tmp_path / "g.gff"
     gff.write_text(_gff([_gene("chr1", 100, 900, "FGFR2", "FGFR2", "2263",
                                synonym="BEK,KGFR,CD332"),
@@ -191,7 +175,6 @@ def test_the_alias_route_is_only_reached_after_the_annotation_routes(loc_annotat
 
 
 def test_a_returned_official_loc_symbol_maps_when_the_dbxref_is_absent(tmp_path):
-    """Some annotations omit Dbxref; the official symbol is then the link."""
     rows = [_gene("chr1", 100, 900, "LOC999", "LOC999", ""),
             *_transcript("chr1", 100, 900, "LOC999", "XM_9.1", "XP_9.1",
                          "widget-like", "LOC999")]
@@ -205,7 +188,6 @@ def test_a_returned_official_loc_symbol_maps_when_the_dbxref_is_absent(tmp_path)
 
 
 def test_the_user_never_has_to_know_the_loc_identifier(loc_annotation):
-    """The requested symbol alone is enough input."""
     res = glr.resolve_gene_locus(loc_annotation, "HBA",
                                  gene_lookup=_lookup([_hba_record()]))
     assert res.resolved
@@ -217,7 +199,6 @@ def test_the_user_never_has_to_know_the_loc_identifier(loc_annotation):
 
 
 def test_a_predicted_xm_xp_only_model_is_accepted(loc_annotation):
-    """The lion HBA locus has no curated NM_/NP_ model; predicted must be usable."""
     res = glr.resolve_gene_locus(loc_annotation, "HBA",
                                  gene_lookup=_lookup([_hba_record()]))
     assert res.locus.transcript_count == 1
@@ -249,11 +230,6 @@ def test_the_source_symbol_is_not_concealed(loc_annotation):
 # Paralog and gene-family safety (part 4)
 # --------------------------------------------------------------------------- #
 def test_a_description_match_alone_never_selects_a_locus(loc_annotation):
-    """Without an identifier the alpha cluster is not resolvable, and must not be guessed.
-
-    `LOC122209634` is described as "hemoglobin subunit alpha" — a closer string match to a
-    naive HBA query than the locus NCBI actually records the alias on.
-    """
     res = glr.resolve_gene_locus(loc_annotation, "HBA", gene_lookup=NO_HIT)
     assert res.status == glr.GENE_NOT_FOUND
     assert res.locus is None
@@ -265,7 +241,6 @@ def test_the_description_route_is_declared_supporting_only():
 
 
 def test_the_rejected_family_members_are_recorded_on_success(loc_annotation):
-    """Choosing between near-identical paralogs has to be auditable."""
     res = glr.resolve_gene_locus(loc_annotation, "HBA",
                                  gene_lookup=_lookup([_hba_record()]))
     rejected = {c.locus.symbol: c for c in res.candidates if c.decision == "rejected"}
@@ -385,11 +360,6 @@ def test_every_declared_status_has_a_distinct_message(loc_annotation):
 # Annotation parsing: the coding-exon count comes from the CDS model
 # --------------------------------------------------------------------------- #
 def test_the_coding_exon_count_comes_from_the_cds_not_the_gene_page(tmp_path):
-    """A five-exon gene whose CDS covers three of them must report three coding exons.
-
-    The NCBI Gene page total exon count is not the coding-exon count, and boundary
-    availability depends on the latter.
-    """
     from exondomaincompare.framework.run_core_gene_analysis import parse_gene_models
 
     rows = [_gene("chr1", 1000, 6000, "G", "G", "42")]
@@ -460,11 +430,6 @@ def test_the_old_catch_all_message_is_gone_from_the_runner():
 # No species- or gene-specific production branch (part 8)
 # --------------------------------------------------------------------------- #
 def _executable_source(path: Path) -> str:
-    """The module's code with docstrings and comments removed.
-
-    A fixture value quoted in a docstring is documentation; only a branch in executable
-    code would be a hardcode.
-    """
     tree = ast.parse(path.read_text(encoding="utf-8"))
     for node in ast.walk(tree):
         if isinstance(node, (ast.Module, ast.ClassDef, ast.FunctionDef,
@@ -489,7 +454,6 @@ def test_no_production_module_branches_on_the_species_or_the_gene(module):
 
 
 def test_the_cascade_is_generic_over_the_gene_symbol(tmp_path):
-    """The same fixture shape resolves for an unrelated gene and organism."""
     rows = [_gene("chrZ", 500, 1500, "LOC777", "LOC777", "777"),
             *_transcript("chrZ", 500, 1500, "LOC777", "XM_7.1", "XP_7.1",
                          "myoglobin-like", "LOC777")]
@@ -665,7 +629,6 @@ def test_the_real_run_passed_the_primary_fasta_gate():
 
 @requires_real_run
 def test_the_real_run_boundary_scope_follows_the_coding_exon_count():
-    """Three coding exons give two internal boundaries; the index must not claim more."""
     index = json.loads((REAL_RUN / "website_indices"
                         / "exon_domain_boundaries_index.json").read_text(encoding="utf-8"))
     assert index["scope"] == "internal_coding_exon_boundaries"
@@ -685,7 +648,6 @@ def test_the_real_run_shows_isoform_differences_as_not_applicable():
 # --------------------------------------------------------------------------- #
 @pytest.mark.parametrize("gene", ["FGFR1", "TP53", "TPM1", "FGFR2"])
 def test_a_curated_symbol_still_resolves_by_the_first_route(tmp_path, gene):
-    """The genes that already worked must not start needing the network."""
     gff = tmp_path / f"{gene}.gff"
     gff.write_text(_gff([_gene("chr1", 100, 900, gene, gene, "1"),
                          *_transcript("chr1", 100, 900, gene, "NM_1.1", "NP_1.1",

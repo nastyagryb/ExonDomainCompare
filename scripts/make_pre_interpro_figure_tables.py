@@ -1,17 +1,4 @@
 #!/usr/bin/env python3
-"""
-Build stable pre-InterPro plotting tables.
-
-These tables do not require InterProScan results. Plotting reads them verbatim
-and does not recompute the upstream biological QC.
-
-Outputs (in --outdir):
-  figure1_framework_counts_pre_interpro.tsv
-  figure2_exon_to_protein_tracks_pre_interpro.tsv
-  figure3_species_evidence_matrix_pre_interpro.tsv
-  figure4_native_vs_normalized_qc_pre_interpro.tsv
-  figure_review_cases_pre_interpro.tsv
-"""
 
 from __future__ import annotations
 
@@ -45,7 +32,6 @@ def g(d: Dict[str, str], key: str, default: str = "") -> str:
 
 
 def build_figure1(master: List[Dict[str, str]]) -> List[Dict[str, object]]:
-    """Framework / category counts as a tidy (category, level, count) table."""
     rows: List[Dict[str, object]] = []
     dims = [
         ("final_display_class", "final_display_class"),
@@ -68,7 +54,6 @@ def build_figure1(master: List[Dict[str, str]]) -> List[Dict[str, object]]:
 
 
 def build_figure2(pairqc: List[Dict[str, str]], master_by_sp: Dict[str, Dict[str, str]]) -> List[Dict[str, object]]:
-    """Exon-to-protein tracks: one tidy row per (species, isoform)."""
     rows: List[Dict[str, object]] = []
     for r in pairqc:
         sp = g(r, "species_canonical") or g(r, "species")
@@ -100,7 +85,6 @@ def build_figure2(pairqc: List[Dict[str, str]], master_by_sp: Dict[str, Dict[str
 
 
 def build_figure3(master: List[Dict[str, str]]) -> List[Dict[str, object]]:
-    """Species x evidence matrix in tidy long form (species, dimension, status, ok_flag)."""
     rows: List[Dict[str, object]] = []
     dims = [
         ("fgfr2_ortholog", "fgfr2_ortholog_status", lambda v: "high_confidence" in v or "probable" in v),
@@ -131,7 +115,6 @@ def build_figure3(master: List[Dict[str, str]]) -> List[Dict[str, object]]:
 
 
 def build_figure4(pairqc: List[Dict[str, str]], master_by_sp: Dict[str, Dict[str, str]]) -> List[Dict[str, object]]:
-    """Native vs normalized III-slot pair QC per species."""
     rows: List[Dict[str, object]] = []
     for r in pairqc:
         sp = g(r, "species_canonical") or g(r, "species")

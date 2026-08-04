@@ -1,28 +1,4 @@
 #!/usr/bin/env python3
-"""
-audit_review_and_minor_flag_cases.py
-
-Final transparent audit of every non-plain-vanilla case in the FGFR2 IIIb/IIIc
-framework. Answers: which rows required rescue, correction, minor display flags,
-review/supplement handling, coordinate sanitation, or special interpretation.
-
-Read-only. Never modifies FASTA, truth table, manifest or membership.
-Never relabels IIIb/IIIc, never invents new review cases.
-
-Status semantics (fixed):
-    * Upstream label correction / reconciliation is NOT a failure.
-    * Rescued + validated primary rows are accepted, with provenance.
-    * Display-coordinate flags are NOT biological domain failures.
-    * InterProScan / pyTMHMM never relabel IIIb/IIIc.
-    * Pongo abelii IIIb and Canis lupus familiaris IIIc stay supplement/review.
-
-Outputs (results/.../16_final_thesis_analyses/final_audit/):
-    tables/final_review_and_minor_flags_audit.tsv       (all 60 rows)
-    tables/Supplement_Table_final_review_and_minor_flags.tsv  (non-clean subset)
-    figures/Figure_13_final_qc_review_audit_matrix.{svg,pdf,png}
-    reports/final_review_and_minor_flags_audit_report.md
-"""
-
 from __future__ import annotations
 
 import csv
@@ -34,19 +10,17 @@ REPO = Path(__file__).resolve().parent.parent
 
 
 def display_path(path) -> str:
-    """Repo-relative path for display/logging only; falls back to the raw path when
-    BASE is a run-local relative path. Never raises and never affects outputs."""
     p = Path(path)
     try:
         return str(p.resolve().relative_to(REPO.resolve()))
     except Exception:
         return str(p)
 sys.path.insert(0, str(REPO / "scripts"))
-from exondomaincompare.presentation import fgfr2_plot_style as st  # noqa: E402
-import matplotlib.pyplot as plt  # noqa: E402
-from matplotlib.patches import Patch, Rectangle  # noqa: E402
+from exondomaincompare.presentation import fgfr2_plot_style as st
+import matplotlib.pyplot as plt
+from matplotlib.patches import Patch, Rectangle
 
-import os as _os  # run-folder path override (RESULTS_DIR/BASE); legacy default preserved
+import os as _os
 BASE = Path(_os.environ.get("FGFR2_RESULTS_DIR") or _os.environ.get("RESULTS_DIR")
             or _os.environ.get("BASE") or (REPO / "results" / "final_30_until_interpro_prepare"))
 CLOSURE = BASE / "13_final_pre_interpro_closure"
@@ -64,7 +38,6 @@ M1_OUTLIERS = M1 / "tables" / "exon_domain_boundary_outliers.tsv"
 OUT = BASE / "16_final_thesis_analyses" / "final_audit"
 T_OUT, F_OUT, R_OUT = OUT / "tables", OUT / "figures", OUT / "reports"
 
-# ---- allowed vocabularies (enforced) ----
 CASE_CATEGORIES = ["clean_primary", "rescued_validated_primary",
                    "upstream_label_reconciled", "supplement_review",
                    "minor_coordinate_display_flag", "native_exon_blocks_reconstructed",
@@ -75,7 +48,6 @@ BIO_STATUS = ["supported", "supported_with_minor_flags", "review_supplement_only
 DISPLAY_STATUS = ["standard", "minor_length_clamped", "native_exon_blocks_reconstructed",
                   "cassette_only_high_confidence", "low_confidence_display", "not_applicable"]
 
-# figure category order (non-clean rows only)
 FIG_GROUP_ORDER = ["rescued_validated_primary", "upstream_label_reconciled",
                    "supplement_review", "native_exon_blocks_reconstructed",
                    "cassette_only_high_confidence", "minor_coordinate_display_flag",
@@ -94,7 +66,6 @@ GROUP_TITLE = {
     "failed": "Failed",
 }
 
-# audit-matrix cell status -> color (compact categorical)
 CELL_COLORS = {
     "supported": "#1B7837",
     "supported_minor": "#A6DBA0",
@@ -161,7 +132,6 @@ def main() -> int:
         final_qc = q.get("final_qc_status", "")
         warnings = q.get("warnings", "")
 
-        # ---- display_status ----
         if not primary:
             display_status = "not_applicable"
         elif eb == "minor_length_clamped":
@@ -173,7 +143,6 @@ def main() -> int:
         else:
             display_status = "standard"
 
-        # ---- biological_status ----
         if not primary:
             biological_status = "review_supplement_only"
         elif final_qc == "architecture_supported":
@@ -183,7 +152,6 @@ def main() -> int:
         else:
             biological_status = "unresolved"
 
-        # ---- case_category (precedence: most specific first) ----
         rescue_decision = (ex or {}).get("rescue_decision", "")
         label_source = (ex or {}).get("final_label_source", "")
         if not primary:
@@ -203,7 +171,6 @@ def main() -> int:
         else:
             case_category = "clean_primary"
 
-        # ---- affected layer ----
         layer = {
             "supplement_review": "membership (kept as supplement/review)",
             "rescued_validated_primary": "final label / external sequence rescue + coordinate display",
@@ -215,11 +182,9 @@ def main() -> int:
             "clean_primary": "none",
         }[case_category]
 
-        # ---- issue_short + evidence_summary ----
         issue_short, evidence = _issue_and_evidence(case_category, ex, q, recon.get(key),
                                                     qc_review.get(key), warnings)
 
-        # ---- final_decision ----
         if not primary:
             final_decision = "kept as supplement / review (provenance retained)"
         elif biological_status == "supported":
@@ -239,12 +204,10 @@ def main() -> int:
             "final_decision": final_decision, "thesis_interpretation": thesis,
             "display_status": display_status, "biological_status": biological_status,
             "source_files": _sources(case_category),
-            # helper fields (not exported in main table order but used for figure)
             "_boundary_outlier": key in m1_outliers,
             "_ex": ex, "_q": q,
         })
 
-    # sanity: enforce vocabularies
     for r in rows:
         assert r["case_category"] in CASE_CATEGORIES, r["case_category"]
         assert r["biological_status"] in BIO_STATUS, r["biological_status"]
@@ -262,13 +225,6 @@ def main() -> int:
         n = counts.get(c, 0)
         if n:
             print(f"    {c}: {n}")
-    # ---- run-panel-aware acceptance checks ----
-    # The run panel is EXACTLY the set of (species, isoform) present in the audit rows
-    # (i.e. the truth-table membership of THIS run). Full-30-freeze-specific expectations
-    # are enforced only for species/isoforms that are actually part of the run panel. For
-    # a reduced custom panel (e.g. gallus-only) an absent expected case is recorded as
-    # not_applicable instead of failing. This keeps full-30 validation strict while letting
-    # custom runs pass, and never adds Pongo/Canis/Human as analysed species.
     panel = {(r["species"], r["isoform"]) for r in rows}
     supp = {(r["species"], r["isoform"]) for r in rows
             if r["case_category"] == "supplement_review"}
@@ -280,7 +236,6 @@ def main() -> int:
 
     panel_checks: List[dict] = []
 
-    # Check 1: expected full-30 supplement/review cases (only those present in the panel)
     supp_present = [k for k in expected_supplement if k in panel]
     supp_absent = [k for k in expected_supplement if k not in panel]
     missing_supp = [k for k in supp_present if k not in supp]
@@ -301,7 +256,6 @@ def main() -> int:
     panel_checks.append({"check_name": "expected_full30_supplement_review_cases",
                          "status": c1_status, "reason": c1_reason})
 
-    # Check 2: expected full-30 display-artifact IIIb cases must not be biologically failed
     nf_present = [k for k in expected_not_failed if k in panel]
     nf_absent = [k for k in expected_not_failed if k not in panel]
     bad_failed = [k for k in nf_present
@@ -325,8 +279,6 @@ def main() -> int:
     for c in panel_checks:
         print(f"[acceptance] {c['check_name']}: {c['status']} — {c['reason']}")
 
-    # Hard-fail ONLY on genuine violations for species that ARE in the run panel; a
-    # not_applicable check (expected species absent) never fails the run.
     assert not missing_supp, (
         "full30 supplement/review validation failed: expected cases present in panel but "
         f"not marked supplement_review: {missing_supp}")
@@ -398,9 +350,7 @@ def _sources(cat) -> str:
     return m.get(cat, "fgfr2_domain_architecture_qc.tsv")
 
 
-# --------------------------------------------------------------------------- #
 def _cell_status(r: dict) -> Dict[str, str]:
-    """Derive the audit-matrix cell status per column for one row."""
     cat = r["case_category"]
     bio = r["biological_status"]
     disp = r["display_status"]
@@ -408,7 +358,6 @@ def _cell_status(r: dict) -> Dict[str, str]:
     ex = r.get("_ex") or {}
     cells: Dict[str, str] = {}
 
-    # final label
     if cat == "rescued_validated_primary":
         cells["final_label"] = "rescued_validated"
     elif cat == "supplement_review":
@@ -416,7 +365,6 @@ def _cell_status(r: dict) -> Dict[str, str]:
     else:
         cells["final_label"] = "supported"
 
-    # upstream reconcile (only lights up where reconciliation/rescue happened)
     if cat == "rescued_validated_primary":
         cells["reconcile"] = "rescued_validated"
     elif cat == "upstream_label_reconciled":
@@ -424,7 +372,6 @@ def _cell_status(r: dict) -> Dict[str, str]:
     else:
         cells["reconcile"] = "missing_na"
 
-    # coordinate mapping
     cells["coord"] = {
         "standard": "supported", "minor_length_clamped": "supported_minor",
         "native_exon_blocks_reconstructed": "display_artifact_resolved",
@@ -432,21 +379,17 @@ def _cell_status(r: dict) -> Dict[str, str]:
         "not_applicable": "missing_na", "low_confidence_display": "display_artifact_resolved",
     }[disp]
 
-    # cassette evidence
     cells["cassette"] = "review_supplement" if not primary else "supported"
 
-    # MSA support (from review explanation where present; else primary => supported)
     msa = ex.get("MSA_status", "")
     cells["msa"] = "supported" if (not msa or "pass" in msa) else "supported_minor"
 
-    # synteny / locus
     syn = ex.get("synteny_status", "")
     if "minor" in syn:
         cells["synteny"] = "supported_minor"
     else:
         cells["synteny"] = "supported"
 
-    # InterPro domains + pyTMHMM TM + boundary (post-InterPro layers)
     if not primary:
         cells["interpro"] = "missing_na"
         cells["tm"] = "missing_na"
@@ -469,7 +412,6 @@ def _cell_status(r: dict) -> Dict[str, str]:
 
 
 def _figure13(non_clean: List[dict]) -> None:
-    # order rows by figure group then species
     def gkey(r):
         c = r["case_category"]
         gi = FIG_GROUP_ORDER.index(c) if c in FIG_GROUP_ORDER else 99
@@ -529,7 +471,6 @@ def _figure13(non_clean: List[dict]) -> None:
     st.savefig(fig, F_OUT, "Figure_13_final_qc_review_audit_matrix")
 
 
-# --------------------------------------------------------------------------- #
 def _report(rows, non_clean) -> Dict[str, int]:
     counts = {c: sum(1 for r in rows if r["case_category"] == c) for c in CASE_CATEGORIES}
     n_primary = sum(1 for r in rows if r["primary_included"] == "true")
@@ -583,7 +524,6 @@ def _report(rows, non_clean) -> Dict[str, int]:
     return counts
 
 
-# --------------------------------------------------------------------------- #
 AUDIT_COLS = ["species", "isoform", "final_isoform_label", "transcript_id", "protein_id",
               "primary_included", "review_included", "case_category", "affected_layer",
               "issue_short", "evidence_summary", "final_decision", "thesis_interpretation",
@@ -599,8 +539,6 @@ def _write_supplement(non_clean) -> None:
 
 
 def _write_panel_checks(checks: List[dict]) -> None:
-    """Persist the run-panel-aware acceptance checks (check_name/status/reason) so the
-    full-30-vs-custom validation outcome is auditable in the run's manifest."""
     _tsv(T_OUT / "final_audit_run_panel_checks.tsv", checks,
          ["check_name", "status", "reason"])
 

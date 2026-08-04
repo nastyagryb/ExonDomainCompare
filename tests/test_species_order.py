@@ -1,14 +1,3 @@
-"""One canonical species order across every comparative view.
-
-Each view used to order species for itself — alphabetically in the gallery
-figures, by whatever the index returned in the matrices, by insertion order in
-the selectors. The same two species therefore swapped places between two figures
-of the same dataset, which makes a comparative reading unreliable: a reader
-scanning down a column has to re-check the labels for every panel.
-
-The order is taxonomic, not phylogenetic. No tree is computed or supplied, so
-these tests also pin the wording: nothing may be presented as phylogenetic.
-"""
 from __future__ import annotations
 
 import re
@@ -42,7 +31,6 @@ def test_the_validated_reference_panel_keeps_its_approved_order():
 
 
 def test_species_are_grouped_by_clade_not_alphabetically():
-    """Alphabetically Danio rerio lands between Callithrix and Equus."""
     ids = ["equus_caballus", "danio_rerio", "callithrix_jacchus", "gallus_gallus"]
     ordered = so.order_species(ids)
     assert ordered == ["callithrix_jacchus", "equus_caballus", "gallus_gallus",
@@ -125,7 +113,6 @@ def test_writing_the_order_produces_both_files(tmp_path):
 # One definition, used everywhere
 # --------------------------------------------------------------------------- #
 def test_the_frontend_mirror_matches_the_backend_order():
-    """The JS copy of the panel cannot drift from the reference list."""
     js = JS_MODULE.read_text(encoding="utf-8")
     block = js.split("const REFERENCE_PANEL = [", 1)[1].split("];", 1)[0]
     js_ids = re.findall(r'\["([a-z_]+)",\s*"([a-z]+)"\]', block)
@@ -186,7 +173,6 @@ def test_the_validated_fgfr2_builder_uses_the_same_definition():
 
 
 def test_nothing_the_user_reads_calls_this_order_phylogenetic():
-    """The word may be defined and disclaimed, but never used as the label."""
     doc = so.build_species_order(PANEL)
     emitted = [doc["ordering_method"],
                *(r["ordering_method"] for r in doc["species"]),

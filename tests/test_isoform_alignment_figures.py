@@ -1,20 +1,3 @@
-"""Export validation for the within-species isoform alignment figures.
-
-Three figures are validated as artefacts rather than as source code, because the
-defects being guarded against are invisible in the source: an alignment figure
-can look plausible on screen and still export as a rasterised page, drop the
-residue information it claims to show, or degenerate into one flat coverage bar
-per protein model.
-
-  * full_isoform_alignment      — the complete alignment at column resolution
-  * wrapped_alignment           — the same alignment at residue resolution,
-                                  wrapped Jalview-style over several PDF pages
-  * candidate_alignment_detail  — one candidate interval at residue resolution
-
-Reference dataset: the real FGFR1 / Gallus gallus post-cluster run, with the
-TP53 / Danio rerio run as a second, structurally different regression case.
-"""
-
 from __future__ import annotations
 
 import json
@@ -87,7 +70,6 @@ def tp53(tmp_path_factory) -> dict:
 
 @lru_cache(maxsize=None)
 def _pdf(path: Path):
-    """Probe a PDF once; the wrapped document is large and probed repeatedly."""
     return probe_pdf(path)
 
 
@@ -168,7 +150,6 @@ def test_pdf_is_well_formed(fgfr1, name):
 
 @pytest.mark.parametrize("name", PDF_NAMES)
 def test_pdf_contains_no_raster_image(fgfr1, name):
-    """The defect being replaced: an alignment exported as a rasterised page."""
     info = _pdf(fgfr1["dir"] / name)
     assert info.images == [], f"{name} embeds raster data: {info.images}"
     assert not info.is_single_raster_page
@@ -351,7 +332,6 @@ def test_overview_legend_explains_the_alignment_colours(fgfr1):
 
 
 def test_overview_is_not_a_row_of_uniform_coverage_bars(fgfr1):
-    """Per-column structure, not one flat rectangle per protein model."""
     path = fgfr1["dir"] / "full_isoform_alignment.svg"
     svg = probe_svg(path)
     assert svg["n_marks"] > 300, \
@@ -364,7 +344,6 @@ def test_overview_is_not_a_row_of_uniform_coverage_bars(fgfr1):
 
 
 def test_overview_uses_the_alignment_palette_and_no_colour_per_isoform(fgfr1):
-    """Colour encodes alignment state; a colour per model would encode nothing."""
     fills = _fills(fgfr1["dir"] / "full_isoform_alignment.svg")
     # The semantic colours that must all be present.
     for colour in ("#39536e",   # primary protein
@@ -487,7 +466,6 @@ def test_candidate_figure_states_the_exon_association(fgfr1):
 
 
 def test_candidate_figure_does_not_replace_the_overview(fgfr1):
-    """Both figures must exist, and the detail must be the narrower one."""
     detail = probe_svg(fgfr1["dir"] / "candidate_alignment_detail.svg")
     overview = probe_svg(fgfr1["dir"] / "full_isoform_alignment.svg")
     assert "823 alignment columns" in overview["raw"]

@@ -1,32 +1,4 @@
 #!/usr/bin/env python3
-"""FGFR2 -> generic CORE gene-analysis contract adapter.
-
-Projects the EXISTING validated FGFR2 outputs into the gene/event-AGNOSTIC core
-gene-analysis contract (see docs/core_gene_analysis_contract.md). The core layer
-applies to ANY protein-coding gene and does NOT depend on a configured event
-region: it produces gene models, isoforms, exon->protein maps, domain/TM
-features, synteny neighbours, and a GENERIC all-exon exon-domain boundary
-analysis.
-
-This adapter recomputes NO biology. The only computation is simple geometry
-(distance between already-computed exon boundaries and already-computed domain
-boundaries), which is gene-agnostic.
-
-Outputs (under <out>/):
-    gene_model_index.tsv
-    protein_isoform_index.tsv
-    exon_protein_map.tsv
-    domain_features.tsv
-    tm_features.tsv
-    synteny_neighbors.tsv
-    exon_domain_boundary_distances.tsv
-    core_gene_report.json
-
-Examples:
-    python -m exondomaincompare.adapters.fgfr2_core_analysis_adapter --run-id <run_id>
-    python -m exondomaincompare.adapters.fgfr2_core_analysis_adapter --example \
-        --out artifacts/core_gene_analysis/example
-"""
 from __future__ import annotations
 
 import argparse
@@ -62,7 +34,6 @@ def _tsv_write(path: Path, columns: List[str], rows: List[Dict[str, Any]]) -> No
 
 
 def _panels(src: DatasetSource) -> List[Dict[str, Any]]:
-    """Flat list of per-protein panels from species_domain_architecture.json."""
     sda = src.idx("species_domain_architecture.json", {}) or {}
     out: List[Dict[str, Any]] = []
     for sp in (sda.get("species", []) or []):
@@ -79,7 +50,6 @@ def _panels(src: DatasetSource) -> List[Dict[str, Any]]:
 
 def _classify_boundary(pos: int, domains: List[Dict[str, Any]],
                        threshold: int) -> Tuple[Optional[Dict[str, Any]], str, str, Optional[int]]:
-    """Return (nearest_domain, boundary_type, category, distance) for a boundary aa."""
     if not domains:
         return None, "", "outside_annotated_domain", None
     best = None

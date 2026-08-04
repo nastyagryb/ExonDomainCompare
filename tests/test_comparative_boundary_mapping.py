@@ -1,16 +1,4 @@
 #!/usr/bin/env python3
-"""Cross-species boundary comparison must rest on real evidence.
-
-Two species of different protein length cannot be compared by native amino-acid
-position, and they certainly cannot be compared by exon rank: ``E3 → E4`` in *Gallus* is
-not automatically the same junction as ``E3 → E4`` in *Mus*. These tests pin the
-evidence the comparison is allowed to use, and pin the two ways it previously failed:
-
-* the only cross-species key on offer was a hash of *genomic* coordinates, which cannot
-  coincide between species on different assemblies, so every group collapsed to one
-  species and was discarded;
-* alignment columns, the one honest common frame available, were never computed.
-"""
 from __future__ import annotations
 
 import sys
@@ -74,7 +62,6 @@ def test_every_boundary_of_every_species_receives_a_column(mapped):
 
 
 def test_native_positions_and_columns_differ_where_the_alignment_has_gaps(mapped):
-    """If native == column everywhere, the mapping is an identity and proves nothing."""
     idx, _, _ = mapped
     gallus = next(m for m in idx["models"] if m["species_id"] == "gallus_gallus")
     shifted = [b for b in gallus["exon_boundaries"]
@@ -111,7 +98,6 @@ def test_comparable_groups_exist_and_name_their_evidence(mapped):
 
 
 def test_grouping_is_not_by_exon_rank(mapped):
-    """Boundaries with the same rank but different columns must not be grouped."""
     import exondomaincompare.shared_gene_analysis.boundary_dashboard as bd
     idx, _, _ = mapped
     groups = bd.match_comparable_boundaries(idx["models"])
@@ -126,7 +112,6 @@ def test_grouping_is_not_by_exon_rank(mapped):
 
 
 def test_a_genomic_exon_group_is_not_used_as_cross_species_evidence():
-    """The genomic-interval hash identifies exons within a species only."""
     import exondomaincompare.shared_gene_analysis.boundary_dashboard as bd
     # Two species whose exon groups are distinct genomic hashes, but whose boundaries
     # share an alignment column. Grouping must succeed via the column, not the hash.
@@ -231,7 +216,6 @@ def test_consistency_statistics_cover_every_group_without_inventing_values(mappe
 
 
 def test_the_contract_is_published_in_the_run_index():
-    """The comparative structure must reach the frontend, not just exist in memory."""
     import json
     model = json.loads(
         (TWO_SPECIES_RUN / "website_indices/generic/protein_coordinate_model.json")

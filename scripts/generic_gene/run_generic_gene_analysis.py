@@ -1,17 +1,3 @@
-"""Shared generic gene-analysis orchestrator.
-
-Runs the shared, gene-agnostic modules for a run and materializes the SAME stage
-folder structure used by every gene (``04_event_evidence`` … ``16_final_analyses``),
-the canonical ``generic_gene_analysis/`` layer, and the shared ``website_indices/``.
-
-The event stage runs a *generic exploratory event-region candidate search*; it
-never claims validated events, invents markers, or uses IIIb/IIIc / cassette
-terminology. Domain (15) and boundary (16) stages are materialized as
-``pending_cluster`` until InterProScan/pyTMHMM outputs exist.
-
-Usage:
-    PYTHONPATH=scripts python -m generic_gene.run_generic_gene_analysis --run-id <id>
-"""
 from __future__ import annotations
 
 import argparse
@@ -30,9 +16,6 @@ from exondomaincompare.generic_gene import build_single_species_explorer
 from exondomaincompare.generic_gene.common import GenericContext, load_context, read_json, read_tsv, write_json, write_tsv
 from exondomaincompare.generic_gene.stages import STAGES, event_layer_for_gene
 
-# Real generated pre-cluster figure files, keyed by the figures_index item id used
-# by the shared/rich figures index. These are enriched into the shared root
-# figures_index.json lets the Figure Gallery show the actual files.
 _FIGURE_STEM_FOR_ID = {
     "transcript_exon_structure": "Figure_transcript_exon_structure",
     "primary_protein_exon_projection": "Figure_primary_protein_exon_projection",
@@ -63,11 +46,9 @@ def _ensure_stage_dirs(ctx: GenericContext) -> None:
 
 
 def _materialize_stages(ctx: GenericContext, results_summary: Dict[str, Any]) -> Dict[str, Any]:
-    """Copy canonical products into the shared numbered stage folders + reports."""
     R = ctx.run_dir / "results"
     stage_status: Dict[str, str] = {}
 
-    # 04 event evidence
     s = R / "04_event_evidence"
     _copy(ctx.out("event_region_evidence.tsv"), s / "event_region_evidence.tsv")
     write_json(s / "event_region_evidence_summary.json", {
@@ -79,7 +60,6 @@ def _materialize_stages(ctx: GenericContext, results_summary: Dict[str, Any]) ->
     })
     stage_status["04_event_evidence"] = "available"
 
-    # 05 event region detection
     s = R / "05_event_region_detection"
     _copy(ctx.out("event_region_candidate_clusters.tsv"), s / "event_region_candidate_clusters.tsv")
     write_json(s / "event_region_detection_report.json", {
@@ -92,7 +72,6 @@ def _materialize_stages(ctx: GenericContext, results_summary: Dict[str, Any]) ->
     })
     stage_status["05_event_region_detection"] = "available"
 
-    # 06 coordinate mapping
     s = R / "06_coordinate_mapping"
     _copy(ctx.out("exon_protein_architecture.tsv"), s / "exon_protein_architecture.tsv")
     write_json(s / "coordinate_mapping_report.json", {
@@ -103,7 +82,6 @@ def _materialize_stages(ctx: GenericContext, results_summary: Dict[str, Any]) ->
     })
     stage_status["06_coordinate_mapping"] = "available"
 
-    # 07 msa
     s = R / "07_msa"
     msa_rows = read_tsv(ctx.out("msa_index.tsv"))
     msa_status = msa_rows[0].get("msa_status") if msa_rows else "unavailable_single_sequence"
@@ -120,7 +98,6 @@ def _materialize_stages(ctx: GenericContext, results_summary: Dict[str, Any]) ->
     })
     stage_status["07_msa"] = msa_status
 
-    # 08 synteny
     s = R / "08_synteny"
     _copy(ctx.out("synteny_neighbourhood.tsv"), s / "synteny_neighbourhood.tsv")
     write_json(s / "synteny_report.json", {
@@ -130,7 +107,6 @@ def _materialize_stages(ctx: GenericContext, results_summary: Dict[str, Any]) ->
     })
     stage_status["08_synteny"] = "available"
 
-    # 09 qc
     s = R / "09_qc"
     write_json(s / "run_qc_summary.json", {
         "gene_symbol": ctx.gene_symbol,
@@ -145,7 +121,6 @@ def _materialize_stages(ctx: GenericContext, results_summary: Dict[str, Any]) ->
     })
     stage_status["09_qc"] = "available"
 
-    # 10 figures pre-domain (copy canonical figure files to stage-named files)
     s = R / "10_figures_pre_domain"
     fig_map = {
         "Figure_transcript_exon_structure": "transcript_exon_structure",
@@ -161,14 +136,12 @@ def _materialize_stages(ctx: GenericContext, results_summary: Dict[str, Any]) ->
                 n_fig += 1
     stage_status["10_figures_pre_domain"] = "available" if n_fig else "unavailable"
 
-    # 15 domain architecture (pending until cluster)
     cluster_complete = ctx.cluster_status == "complete"
     s = R / "15_domain_architecture"
     dom_status = "available" if cluster_complete else "pending_cluster"
     _write_pending_domain(ctx, s, dom_status)
     stage_status["15_domain_architecture"] = dom_status
 
-    # 16 final analyses (boundary; pending until cluster)
     s = R / "16_final_analyses"
     bnd_status = "available" if cluster_complete else "pending_cluster"
     _write_pending_boundary(ctx, s, bnd_status)
@@ -254,13 +227,6 @@ def _update_status(ctx: GenericContext, stage_status: Dict[str, str], idx_result
 
 
 def _write_shared_root_indices(ctx: GenericContext) -> Dict[str, Any]:
-    """Write the RICH canonical indices to the shared ``website_indices/`` root.
-
-    The frontend's shared renderer consumes ONE contract for every gene. Rather
-    than a second flat schema, the shared root gets the same rich, UI-ready index
-    shapes that FGFR2-style pages already understand (produced by the core index
-    builder), plus real pre-cluster figure files enriched into figures_index.json.
-    """
     scripts_dir = str(Path(__file__).resolve().parents[1])
     if scripts_dir not in _sys.path:
         _sys.path.insert(0, scripts_dir)
@@ -275,7 +241,6 @@ def _write_shared_root_indices(ctx: GenericContext) -> Dict[str, Any]:
 
 
 def _enrich_root_figures(ctx: GenericContext, root: Path) -> None:
-    """Build a verified run-local figure contract; never return a URL to a missing file."""
     fig_path = root / "figures_index.json"
     manifest = read_tsv(ctx.out("figure_manifest.tsv"))
     figures = []
@@ -327,15 +292,6 @@ def _enrich_root_figures(ctx: GenericContext, root: Path) -> None:
 
 
 def _keep_publication_cards(fig_path: Path, idx: Dict[str, Any]) -> None:
-    """Carry over the cards that the publication figure stages own.
-
-    This function rebuilds the whole index from the pre-cluster figure manifest, so
-    on its own it would delete the cards the publication figure stages registered
-    into the same file. Those stages run after this orchestrator and retire the
-    pre-cluster cards they replace, so the only thing needed here is not to throw
-    their work away. Cards are recognised as belonging to another stage by their
-    canonical Gallery category, which manifest-derived cards never carry.
-    """
     previous = (read_json(fig_path, {}) or {}).get("figures") or []
     mine = {f.get("figure_id") for f in idx["figures"]}
     foreign = [f for f in previous
@@ -365,28 +321,19 @@ def run(run_id: str) -> Dict[str, Any]:
                 build_exon_protein_architecture, build_synteny_neighbourhood,
                 build_generic_msa_index, build_event_evidence):
         summary.update(mod.build(ctx))
-    # Compose the scientifically richer single-species indices from the existing
-    # model/parser/MSA/synteny products. This adds no alternative pipeline.
     summary.update(build_single_species_explorer.build(ctx))
-    # figures depend on the canonical TSVs written above
     summary.update(build_generic_precluster_figures.build(ctx))
-    # analysis-layer stack + canonical products (does not shadow the rich root)
     idx_result = build_generic_website_indices.build(ctx)
-    # rich, UI-ready shared root indices (single contract for the frontend) —
-    # written last so they are authoritative over any flat root files.
     try:
         root_result = _write_shared_root_indices(ctx)
         idx_result["website_indices_root"] = root_result.get("website_indices_root", [])
-        # FGFR2-compatible coordinate_track / msa / synteny_locus for shared renderer parity.
-        from exondomaincompare.shared_gene_analysis.build_fgfr2_compatible_indices import (  # noqa: E402
+        from exondomaincompare.shared_gene_analysis.build_fgfr2_compatible_indices import (
             build_fgfr2_compatible_indices,
         )
         compat = build_fgfr2_compatible_indices(ctx.run_dir)
         idx_result["fgfr2_compatible_indices"] = compat.get("written", [])
-    except Exception as exc:  # pragma: no cover - non-blocking
+    except Exception as exc:
         idx_result["shared_root_error"] = str(exc)
-    # The legacy-compatible root builder above intentionally remains unchanged.
-    # Re-apply the additive scientific single-species indices it does not know.
     summary.update(build_single_species_explorer.build(ctx))
 
     stage_status = _materialize_stages(ctx, summary)

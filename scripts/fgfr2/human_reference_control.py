@@ -1,26 +1,3 @@
-"""human_reference_control.py — the canonical human FGFR2 IIIb/IIIc reference control.
-
-Human-referenced FGFR2 figures compare an analysed species against the validated
-human IIIb/IIIc cassette. Those figures must therefore work when *Homo sapiens* is
-not part of the analysed dataset — a rat + rabbit run still has a human reference,
-it simply has it as an external control rather than as an analysed row.
-
-This module builds one immutable, versioned reference-control object from the
-validated freeze and validates it before anyone may render against it.
-
-Why it is built here and not read from the old cache
-----------------------------------------------------
-The previous control object was copied out of the example run's derived
-``cassette_residue_index.json``. That index numbers IIIb and IIIc on a *single*
-shared ``human_reference_residue_index`` axis, deduplicated by one shared set. IIIb
-is 46 cassette positions and IIIc is 48, so the shared axis silently truncated IIIc
-to 46 and dropped residues from IIIb — destroying the ``GVNTTDKEI`` IIIc marker and
-turning IIIb positions 9–10 into gaps. A reference read through a lossy derived
-index is not a reference, so this module reads the validated per-isoform source
-table directly and keeps IIIb and IIIc on their own axes.
-
-The freeze itself is never written; only this derived object outside it is.
-"""
 from __future__ import annotations
 
 import csv
@@ -51,12 +28,8 @@ REFERENCE_GENE = "FGFR2"
 
 PANELS = ("IIIb", "IIIc")
 
-# Regression markers. A reference that has lost these is not the validated human
-# cassette and must never be rendered as one.
 MARKERS = {"IIIb": "SGINSSN", "IIIc": "GVNTTDKEI"}
 
-# The validated cassette lengths. IIIb and IIIc genuinely differ; a build that
-# reports equal lengths has collapsed them onto one axis.
 EXPECTED_LENGTHS = {"IIIb": 46, "IIIc": 48}
 
 _AA_PROPERTY = {
@@ -71,13 +44,11 @@ _AA_PROPERTY = {
 
 
 class ReferenceControlError(ValueError):
-    """Raised when the human reference control fails its integrity contract."""
+    pass
 
 
 @dataclass
 class PanelReference:
-    """One validated human cassette panel (IIIb or IIIc) on its own axis."""
-
     panel: str
     reference_species: str
     taxon_id: str
@@ -123,8 +94,6 @@ def aa_property(aa: Optional[str]) -> str:
     return _AA_PROPERTY.get(letter, "other")
 
 
-# A combined-alignment column separates IIIb from IIIc when it is classified as one of
-# these, or when a motif-map row flags it directly.
 DISCRIMINATING_POSITION_CLASSES = (
     "isoform_discriminating_conserved",
     "IIIb_specific_conserved",
@@ -140,7 +109,6 @@ def _int_or_none(value: Any) -> Optional[int]:
 
 
 def is_discriminating_column(row: Dict[str, Any]) -> bool:
-    """Whether one combined-alignment column distinguishes IIIb from IIIc."""
     flag = str(row.get("is_isoform_discriminating", "")).strip().lower()
     if flag in ("true", "1", "yes"):
         return True
@@ -148,24 +116,6 @@ def is_discriminating_column(row: Dict[str, Any]) -> bool:
 
 
 def discriminating_positions_by_panel(rows: List[Dict[str, Any]]) -> Dict[str, set]:
-    """Discriminating cassette positions **per panel**, never one shared set.
-
-    The IIIb/IIIc comparison lives on the combined cassette alignment, the one axis
-    both panels share. A panel's own residue numbering does not: IIIc carries a
-    two-residue insertion, so from that point on the same alignment column is a
-    different residue number in IIIb than in IIIc, and two columns exist only in IIIc.
-
-    Collapsing both onto one numeric set — as the Figure 6B overlay and the cassette
-    residue index both did — therefore painted the gold discriminating marker on the
-    wrong residues: IIIb was marked at 16 and 17, which are IIIc-specific columns it
-    does not have at all, and every IIIc annotation behind the insertion was shifted.
-    Each combined column is mapped through *its own* panel index instead, which is why
-    this returns one set per panel and callers must ask for the panel they are drawing.
-
-    ``rows`` are the discriminating/motif rows carrying ``human_IIIb_reference_index``
-    and ``human_IIIc_reference_index``; a row with no index for a panel (an
-    isoform-specific column) contributes nothing to that panel.
-    """
     out: Dict[str, set] = {panel: set() for panel in PANELS}
     fields = {"IIIb": "human_IIIb_reference_index", "IIIc": "human_IIIc_reference_index"}
     for row in rows:
@@ -179,7 +129,6 @@ def discriminating_positions_by_panel(rows: List[Dict[str, Any]]) -> Dict[str, s
 
 
 def has_panel_indices(rows: List[Dict[str, Any]]) -> bool:
-    """Whether the rows already carry both per-panel residue-index columns."""
     return any(_int_or_none(r.get("human_IIIb_reference_index")) is not None
                or _int_or_none(r.get("human_IIIc_reference_index")) is not None
                for r in rows)
@@ -190,14 +139,6 @@ def panel_indices_from_combined_alignment(
         *,
         column_fields: Sequence[str] = ("combined_alignment_col", "MSA_column", "alignment_col"),
         aa_fields: Dict[str, Sequence[str]] = None) -> List[Dict[str, Any]]:
-    """Add the per-panel residue indices to rows that only carry combined columns.
-
-    The validated freeze predates the two ``human_III?_reference_index`` columns, and
-    the freeze is read-only. The indices are recoverable without it: walking the
-    combined alignment columns in order and counting the non-gap residues of each panel
-    reproduces exactly the numbering the newer analysis writes out (verified against a
-    run that carries both). Returns new dicts; the input rows are not modified.
-    """
     fields = aa_fields or {
         "IIIb": ("human_IIIb_aa", "human_IIIb_aa_one_letter"),
         "IIIc": ("human_IIIc_aa", "human_IIIc_aa_one_letter"),
@@ -234,12 +175,6 @@ def panel_indices_from_combined_alignment(
 
 
 def build(repo_root: Optional[Path] = None) -> Dict[str, Any]:
-    """Build the reference-control object from the validated freeze.
-
-    Reads the freeze read-only and returns the derived object; the caller decides
-    where to persist it. Raises :class:`ReferenceControlError` when the freeze does
-    not yield a usable reference rather than returning a degraded one.
-    """
     root = Path(repo_root or _repo_root())
     def validated_path(relative: str) -> Path:
         legacy = root / relative
@@ -262,10 +197,6 @@ def build(repo_root: Optional[Path] = None) -> Dict[str, Any]:
         r.get("isoform"): r for r in _read_tsv(truth)
         if r.get("species") == REFERENCE_SPECIES
     }
-    # The freeze's Figure 6B table was written with the collapsed discriminating rule
-    # and the freeze is read-only, so its per-row flag would give both panels the same
-    # positions. The freeze's own discriminating analysis holds the truth; its
-    # per-panel indices are recovered from the combined alignment it also stores.
     freeze_disc = validated_path(FREEZE_SOURCE_TABLE.replace(
         "tables/figure6B_species_resolved_IIIb_IIIc_cassette_residue_map.tsv",
         "MSA/final_isoform_discriminating_residues.tsv"))
@@ -338,11 +269,6 @@ def build(repo_root: Optional[Path] = None) -> Dict[str, Any]:
 
 
 def validate(data: Optional[Dict[str, Any]]) -> List[str]:
-    """Raise unless ``data`` is a complete, non-degenerate reference control.
-
-    Returns the (empty) problem list on success so callers can also use it as a
-    predicate via :func:`problems`.
-    """
     issues = problems(data)
     if issues:
         raise ReferenceControlError("; ".join(issues))
@@ -350,7 +276,6 @@ def validate(data: Optional[Dict[str, Any]]) -> List[str]:
 
 
 def problems(data: Optional[Dict[str, Any]]) -> List[str]:
-    """Every reason ``data`` may not be rendered as the human reference."""
     issues: List[str] = []
     if not isinstance(data, dict) or not data:
         return ["reference control is empty"]
@@ -383,8 +308,6 @@ def problems(data: Optional[Dict[str, Any]]) -> List[str]:
         if not entry.get("protein_accession") or not entry.get("transcript_accession"):
             issues.append(f"{tag}: missing protein/transcript accession")
 
-    # A swap is the one corruption both panels can pass individually: each panel
-    # must carry its own marker and not the other panel's.
     for panel in PANELS:
         other = "IIIc" if panel == "IIIb" else "IIIb"
         sequence = str((reference.get(panel) or {}).get("cassette_sequence") or "")
@@ -394,7 +317,6 @@ def problems(data: Optional[Dict[str, Any]]) -> List[str]:
 
 
 def is_available(data: Optional[Dict[str, Any]]) -> bool:
-    """Whether a human-referenced figure may be registered as available."""
     return not problems(data)
 
 
@@ -404,12 +326,6 @@ def control_path(repo_root: Optional[Path] = None) -> Path:
 
 
 def load(repo_root: Optional[Path] = None, *, rebuild: bool = False) -> Dict[str, Any]:
-    """Return the validated reference control, rebuilding it when unusable.
-
-    A cached object that fails validation is never returned: the whole point of
-    the control is that a figure rendered against it is trustworthy. Normal reads
-    build in memory so a release checkout remains unchanged.
-    """
     path = control_path(repo_root)
     if not rebuild and path.is_file():
         try:
@@ -433,10 +349,10 @@ def panel_residues(data: Dict[str, Any], panel: str) -> List[Dict[str, Any]]:
     return list(((data.get("reference") or {}).get(panel) or {}).get("residues") or [])
 
 
-def _main(argv: Optional[List[str]] = None) -> int:  # pragma: no cover - CLI helper
+def _main(argv: Optional[List[str]] = None) -> int:
     import argparse
 
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description='human_reference_control.py — the canonical human FGFR2 IIIb/IIIc reference control.')
     ap.add_argument("--rebuild", action="store_true", help="rebuild from the freeze")
     ap.add_argument("--check", action="store_true", help="validate only, write nothing")
     args = ap.parse_args(argv)
@@ -451,5 +367,5 @@ def _main(argv: Optional[List[str]] = None) -> int:  # pragma: no cover - CLI he
     return 0
 
 
-if __name__ == "__main__":  # pragma: no cover
+if __name__ == "__main__":
     raise SystemExit(_main())

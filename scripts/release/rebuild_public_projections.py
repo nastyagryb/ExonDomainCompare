@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""Refresh portable website/download projections without recomputing biology."""
 from __future__ import annotations
 
 import argparse
@@ -18,7 +17,7 @@ from exondomaincompare.shared_gene_analysis.public_paths import (
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
+    parser = argparse.ArgumentParser(description='Refresh portable website/download projections without recomputing biology.')
     parser.add_argument("--run-id", action="append", default=[])
     parser.add_argument(
         "--path",

@@ -1,15 +1,3 @@
-"""Tests for dynamic, gene-agnostic run creation (arbitrary genes, no YAML).
-
-These cover the core of "any valid gene symbol + species starts a generic
-exploratory run without a pre-existing configs/genes/** file":
-
-* a generic core-only gene config is synthesized in memory and serializes to
-  valid, reloadable YAML;
-* the gene locus is resolved from a whole-genome GFF3 by exact symbol, by
-  synonym, or reported as not-found / ambiguous (all gene-agnostic);
-* FGFR2 still routes to the validated workflow while every other gene routes to
-  the shared exploratory workflow.
-"""
 from __future__ import annotations
 
 import sys

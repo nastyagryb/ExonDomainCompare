@@ -1,10 +1,3 @@
-"""The combined exon + domain architecture, for every gene.
-
-Exon architecture and domain architecture answered halves of one question in
-separate figures, so reading them together meant holding one panel in memory
-while looking at the other. The combined figure puts both tracks of a species on
-one axis, in native and in MSA coordinates, built by one builder for every gene.
-"""
 from __future__ import annotations
 
 import json
@@ -25,7 +18,6 @@ CARD_IDS = ("cmp_exon_domain_architecture_native", "cmp_exon_domain_architecture
 
 
 def test_one_builder_serves_both_coordinate_systems():
-    """No gene and no coordinate system gets a second implementation."""
     text = BUILDER.read_text(encoding="utf-8")
     assert text.count("export function comparativeExonDomainArchitectureFigureSpec") == 1
     body = text.split("export function comparativeExonDomainArchitectureFigureSpec", 1)[1]
@@ -46,7 +38,6 @@ def test_the_two_tracks_of_a_species_share_one_axis():
 
 
 def test_the_boundary_class_comes_from_the_boundary_analysis():
-    """The figure must not invent a second account of a classified boundary."""
     body = BUILDER.read_text(encoding="utf-8").split(
         "export function comparativeExonDomainArchitectureFigureSpec", 1)[1]
     body = body.split("\nexport function ", 1)[0]
@@ -141,7 +132,6 @@ def test_the_card_files_exist_in_every_published_format():
 
 
 def test_a_single_species_dataset_gets_no_comparative_card():
-    """A comparison needs two species; one species must not fake one."""
     generator = GENERATOR.read_text(encoding="utf-8")
     assert 'return {"figures": 0, "cards": 0, "skipped": "single_species"}' in generator
     renderer = RENDERER.read_text(encoding="utf-8")

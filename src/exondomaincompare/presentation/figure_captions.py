@@ -1,16 +1,3 @@
-"""Gallery card metadata: categories, captions and index registration.
-
-Every publication figure card carries exactly one :data:`CATEGORIES` entry and a
-caption that states gene, species, protein ID, coordinate system, annotation
-source, the relevant threshold and whether the content is exploratory or
-validated. The same caption text is written next to the figure as
-``<stem>.caption.txt`` so a downloaded figure always ships with its caption.
-:func:`register_gallery_cards` is the single writer for the run figure indices, so
-every generator inserts, replaces and retires cards the same way.
-
-This module is import-free with respect to matplotlib so caption text can be
-built by pipeline stages that never draw anything.
-"""
 from __future__ import annotations
 
 import json
@@ -40,11 +27,6 @@ def build_caption(*, gene: str, species: str, protein_id: str, description: str,
                   annotation_source: str = "",
                   threshold: str = "",
                   status: str = EXPLORATORY_STATUS) -> str:
-    """Compose the canonical caption sentence sequence for one figure card.
-
-    The result is deliberately plain prose so a thesis author can edit it in
-    place without having to re-derive the provenance facts.
-    """
     head = f"{gene or 'Gene'}"
     if species:
         head += f" ({species})"
@@ -66,7 +48,6 @@ def build_caption(*, gene: str, species: str, protein_id: str, description: str,
 
 
 def write_caption_file(fig_dir: Path, stem: str, caption: str) -> Optional[Path]:
-    """Write ``<stem>.caption.txt`` next to the figure; returns the path."""
     if not caption:
         return None
     path = Path(fig_dir) / f"{stem}.caption.txt"
@@ -86,7 +67,6 @@ GALLERY_INDEX_FILES = ("figures_index.json", "generic/figures_index.json")
 
 
 def file_url(run_id: str, run_relative_path: str, *, inline: bool = False) -> str:
-    """The API URL the Gallery uses to fetch one figure file of a run."""
     suffix = "&inline=true" if inline else ""
     return f"/api/runs/{run_id}/files?path={run_relative_path}{suffix}"
 
@@ -99,17 +79,6 @@ def figure_card(*, figure_id: str, title: str, category: str, run_id: str,
                 stage: str = "post_cluster", has_table: bool = True,
                 figure_type: str = "",
                 source_files: Sequence[str] = ()) -> Dict[str, Any]:
-    """One Gallery card for one figure.
-
-    SVG, PDF, PNG and the source table are *formats of a single card*, never cards
-    of their own, so a reader sees one entry per figure and picks the format from it.
-    ``figure_dir`` is the run-relative directory the figure files live in.
-
-    ``figure_id`` is unique inside one run and may carry a species suffix in a
-    multi-species run. ``figure_type`` names the *scientific* figure and is stable
-    across runs, so the same figure can be compared between a standalone
-    single-species run and the corresponding species Scope of a multi-species run.
-    """
     base = f"{figure_dir.rstrip('/')}/{stem}"
     card: Dict[str, Any] = {
         "figure_id": figure_id,
@@ -154,7 +123,6 @@ def _sort_key(card: Dict[str, Any]) -> tuple:
 
 
 def _available_entry(card: Dict[str, Any]) -> Dict[str, Any]:
-    """The legacy ``available`` shape, which keys the figure as ``id``."""
     entry = {"id": _card_id(card)}
     for key in ("title", "category", "kind", "figure_type", "caption",
                 "scientific_question", "interpretation", "stage", "status",
@@ -170,12 +138,6 @@ FIGURE_SUFFIXES = (".svg", ".pdf", ".png", ".tsv", ".caption.txt")
 
 
 def remove_retired_figure_files(figure_dir: Path, stems: Iterable[str]) -> int:
-    """Delete the files of figures a stage no longer produces.
-
-    A retired card must not leave a downloadable file behind: the file would still
-    be reachable by URL and would keep showing an analysis the Gallery no longer
-    presents. Returns the number of files removed.
-    """
     removed = 0
     directory = Path(figure_dir)
     for stem in stems:
@@ -189,14 +151,6 @@ def remove_retired_figure_files(figure_dir: Path, stems: Iterable[str]) -> int:
 
 def register_gallery_cards(run_dir: Path, cards: Sequence[Dict[str, Any]], *,
                            drop_figure_ids: Iterable[str] = ()) -> int:
-    """Insert or refresh figure cards in a run's Gallery indices.
-
-    Cards are matched by ``figure_id`` only. Re-running a generator therefore
-    replaces its own cards rather than adding a second card for the same figure, and
-    ``drop_figure_ids`` retires the cards this stage supersedes. Sections are never
-    used for matching, so one generator can never delete another generator's cards.
-    Returns the number of index files updated.
-    """
     drop = {i for i in drop_figure_ids if i}
     own = {_card_id(c) for c in cards}
     written = 0

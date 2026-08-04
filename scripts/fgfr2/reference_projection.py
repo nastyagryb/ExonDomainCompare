@@ -1,28 +1,3 @@
-"""reference_projection.py — put the human FGFR2 reference onto a run's cassette columns.
-
-A human-referenced cassette figure needs one thing from the human reference: for
-every column of the run's cassette alignment, which human reference residue (if
-any) that column corresponds to. When *Homo sapiens* is one of the analysed
-species that map falls out of the alignment itself. When it is not — a rat +
-rabbit run, say — the previous code found no ``homo_sapiens|IIIb`` row, produced an
-empty map, and every downstream agreement table came out with zero rows.
-
-This module resolves the map from whichever source is actually available:
-
-* human analysed in the run  → the analysed human row is the reference, and the
-  canonical control is used only to *disclose* whether the two agree. The
-  analysed model is never silently replaced.
-* human absent               → the canonical control (see
-  :mod:`fgfr2.human_reference_control`) is projected onto the run's columns as an
-  external control.
-
-Projection is exact where the run's cassette alignment is the same width as the
-validated cassette (the normal case: cassette alignments are anchored on the
-cassette, so IIIb is 46 columns and IIIc is 48). Otherwise the reference is
-aligned to the alignment's residue-majority consensus with a global alignment, and
-the method is recorded so the caller can report how the mapping was obtained. No
-column ever receives an invented residue.
-"""
 from __future__ import annotations
 
 import sys
@@ -33,7 +8,7 @@ from typing import Dict, List, Optional, Sequence, Tuple
 _HERE = Path(__file__).resolve().parent
 if str(_HERE) not in sys.path:
     sys.path.insert(0, str(_HERE))
-import human_reference_control as HRC  # noqa: E402
+import human_reference_control as HRC
 
 GAP_CHARS = {"-", ".", " ", "*"}
 
@@ -48,7 +23,6 @@ METHOD_GLOBAL = "canonical_control_global_alignment"
 
 @dataclass
 class ReferenceProjection:
-    """Per-column human reference for one cassette panel of one run."""
 
     panel: str
     source: str
@@ -56,7 +30,6 @@ class ReferenceProjection:
     reference_sequence: str = ""
     protein_accession: str = ""
     transcript_accession: str = ""
-    # column index (0-based) -> (human reference residue index, human residue)
     by_column: Dict[int, Tuple[Optional[int], str]] = field(default_factory=dict)
     control_agreement: str = ""
     note: str = ""
@@ -70,7 +43,6 @@ class ReferenceProjection:
         return sum(1 for idx, _ in self.by_column.values() if idx is not None)
 
     def at(self, column: int) -> Tuple[Optional[int], str]:
-        """(human reference residue index, residue) for a 0-based alignment column."""
         return self.by_column.get(column, (None, ""))
 
 
@@ -79,7 +51,6 @@ def _is_gap(ch: str) -> bool:
 
 
 def _map_from_row(sequence: str) -> Dict[int, Tuple[Optional[int], str]]:
-    """Number the ungapped residues of an aligned reference row by column."""
     out: Dict[int, Tuple[Optional[int], str]] = {}
     index = 0
     for column, ch in enumerate(sequence):
@@ -92,7 +63,6 @@ def _map_from_row(sequence: str) -> Dict[int, Tuple[Optional[int], str]]:
 
 
 def _consensus(rows: Sequence[str], width: int) -> str:
-    """Residue-majority consensus of the analysed rows, gaps where no residue."""
     letters: List[str] = []
     for column in range(width):
         counts: Dict[str, int] = {}
@@ -105,34 +75,28 @@ def _consensus(rows: Sequence[str], width: int) -> str:
 
 
 def _global_align(reference: str, consensus: str) -> Optional[Tuple[str, str]]:
-    """Global alignment of the reference against the consensus, or None."""
     try:
         from Bio import Align
         from Bio.Align import substitution_matrices
-    except Exception:  # noqa: BLE001 - biopython optional
+    except Exception:
         return None
     aligner = Align.PairwiseAligner()
     aligner.mode = "global"
     try:
         aligner.substitution_matrix = substitution_matrices.load("BLOSUM62")
-    except Exception:  # noqa: BLE001
+    except Exception:
         aligner.match_score, aligner.mismatch_score = 1.0, -1.0
     aligner.open_gap_score, aligner.extend_gap_score = -11.0, -1.0
     try:
         alignment = next(iter(aligner.align(reference, consensus.replace("-", "X"))))
-        # Index the alignment rather than parsing its printed form: the text layout
-        # carries coordinate columns that are easy to mistake for sequence.
         return str(alignment[0]), str(alignment[1])
-    except Exception:  # noqa: BLE001 - unalignable input
+    except Exception:
         return None
 
 
 def _project_control(reference: str, rows: Sequence[str],
                      width: int) -> Tuple[Dict[int, Tuple[Optional[int], str]], str]:
-    """Place an ungapped reference sequence onto ``width`` alignment columns."""
     if width == len(reference):
-        # The cassette alignment is anchored on the cassette itself, so column i is
-        # reference position i+1. This is the normal case and needs no alignment.
         return _map_from_row(reference), METHOD_IDENTITY
 
     aligned = _global_align(reference, _consensus(rows, width))
@@ -145,7 +109,7 @@ def _project_control(reference: str, rows: Sequence[str],
         if not _is_gap(ref_ch):
             ref_index += 1
         if _is_gap(cons_ch):
-            continue  # reference insertion relative to the run's columns
+            continue
         if column < width:
             out[column] = ((ref_index, ref_ch.upper()) if not _is_gap(ref_ch) else (None, ""))
         column += 1
@@ -157,11 +121,6 @@ def _project_control(reference: str, rows: Sequence[str],
 def resolve(panel: str, items: Sequence[Tuple[str, str]], *,
             control: Optional[Dict[str, object]] = None,
             repo_root: Optional[Path] = None) -> ReferenceProjection:
-    """Resolve the human reference for one panel of a run's cassette alignment.
-
-    ``items`` are ``(header, aligned_sequence)`` pairs as read from the run's
-    cassette MSA; headers are ``species|isoform|protein|tag``.
-    """
     rows = [seq for _, seq in items]
     width = max((len(seq) for seq in rows), default=0)
 

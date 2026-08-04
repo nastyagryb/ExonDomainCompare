@@ -1,32 +1,4 @@
 #!/usr/bin/env python3
-"""FGFR2 → generic website-index adapter.
-
-Reads the *existing* validated FGFR2 website indices for a run (or the example
-dataset) and writes a parallel set of gene/event-agnostic "generic" indices. This
-is an ADDITIVE layer:
-
-  * it never rewrites or replaces the canonical FGFR2 website indices,
-  * it never writes into the example freeze (results/final_30_until_interpro_prepare/),
-  * the current webapp keeps reading the canonical indices unchanged.
-
-Generic outputs (under <out>/):
-  dataset_summary.json
-  gene_event_index.json
-  event_region_index.json         (FGFR2 "Cassette" -> generic event_region)
-  domain_architecture_index.json
-  synteny_index.json
-  boundary_relation_index.json    (FGFR2 "Boundary Consistency" -> boundary_relation)
-  available_views.json
-
-Examples:
-
-  # completed custom run -> runs/<id>/website_indices/generic/
-  python -m exondomaincompare.adapters.fgfr2_to_generic_indices --run-id 2026-07-07_1133_gallus_fresh_e2e
-
-  # example dataset preview into a safe non-freeze folder (read-only on the freeze)
-  python -m exondomaincompare.adapters.fgfr2_to_generic_indices --example \
-      --out artifacts/generic_indices/example
-"""
 from __future__ import annotations
 
 import argparse
@@ -85,8 +57,6 @@ def _int_or_none(v: Any) -> Optional[int]:
 # dataset location resolution
 # --------------------------------------------------------------------------- #
 class DatasetSource:
-    """Resolves where a dataset's canonical FGFR2 artifacts live."""
-
     def __init__(self, *, kind: str, dataset_id: str, closure: Path,
                  website_indices: Path, run_config: Dict[str, Any],
                  status: Dict[str, Any], run_root: Optional[Path]):
@@ -145,8 +115,6 @@ class DatasetSource:
 # generic index builders
 # --------------------------------------------------------------------------- #
 def _projection_coords(closure: Path) -> Dict[tuple, Dict[str, Optional[int]]]:
-    """(species, isoform) -> {region_start_aa, region_end_aa} from the closure
-    MSA cassette boundary projection table (native protein coordinates)."""
     proj = closure / "MSA" / "final_cassette_msa_boundary_projection.tsv"
     out: Dict[tuple, Dict[str, Optional[int]]] = {}
     for row in read_tsv(proj):
@@ -161,8 +129,6 @@ def _projection_coords(closure: Path) -> Dict[tuple, Dict[str, Optional[int]]]:
 
 
 def _available_views(src: DatasetSource, cfg: GeneConfig) -> Dict[str, bool]:
-    """Generic view availability, derived from which canonical indices exist and
-    are marked available. Mirrors the webapp's own gating, in generic names."""
     def idx_available(name: str) -> bool:
         data = src.idx(name)
         if data is None:
@@ -267,7 +233,6 @@ def build_gene_event_index(src: DatasetSource, cfg: GeneConfig) -> Dict[str, Any
 
 
 def _detector_dir(src: DatasetSource) -> Optional[Path]:
-    """Location of generic event-detector contract outputs for this dataset, if any."""
     if src.run_root is not None:
         d = src.run_root / "results" / "generic_event_detector"
         if (d / "event_region_coordinates.tsv").is_file():
@@ -277,11 +242,6 @@ def _detector_dir(src: DatasetSource) -> Optional[Path]:
 
 def _event_region_from_detector(src: DatasetSource, cfg: GeneConfig,
                                 det_dir: Path) -> List[Dict[str, Any]]:
-    """Build the per-species event-region records from generic detector outputs.
-
-    This is the forward-looking path: a future gene's detector produces the same
-    contract files and this builder works unchanged.
-    """
     regions = read_tsv(det_dir / "event_region_coordinates.tsv")
     candidates = read_tsv(det_dir / "event_isoform_candidates.tsv")
     cand_by_key = {(r.get("species_id", ""), r.get("protein_id", ""), r.get("event_label", "")): r

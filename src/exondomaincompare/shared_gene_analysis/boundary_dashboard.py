@@ -1,21 +1,3 @@
-"""boundary_dashboard.py — derived analysis dashboard over the shared coordinate model.
-
-This module turns the validated protein-coordinate model (built by
-``protein_coordinate_model.py``) into the authoritative data contract consumed by
-the **global "Exon–Domain Boundaries" page**. It performs no coordinate maths and
-never fabricates domains, boundaries or comparative results — it only *aggregates*
-and *classifies views* over fields already present on the model:
-
-  * page-mode resolution (single-species / multi-species / pending / unavailable)
-  * single-species summary (class counts) + inspection cases + auto captions
-  * the multi-species comparative data contract and comparable-boundary evidence priority
-
-The comparative sections are intentionally *empty* unless real, mutually
-comparable multi-species evidence exists (shared exon groups or an MSA-aligned
-position). Boundaries are never compared only because both are called "E3→E4".
-
-The frozen FGFR2 Boundary Consistency vocabulary is never touched here.
-"""
 from __future__ import annotations
 
 from typing import Any, Dict, List, Optional, Sequence
@@ -85,7 +67,6 @@ def _cls(b: Dict[str, Any]) -> str:
 # Page-mode resolution.
 # --------------------------------------------------------------------------- #
 def resolve_page_mode(index: Dict[str, Any], event_layer_type: Optional[str] = None) -> str:
-    """Resolve the global-page mode purely from the coordinate model (no gene names)."""
     if (event_layer_type or "").lower() == "validated":
         return PAGE_VALIDATED_EVENT
     models = index.get("models") or []
@@ -126,7 +107,6 @@ def _status_badge(model: Dict[str, Any]) -> str:
 
 
 def build_inspection_cases(model: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """Return real applicable inspection cases without labelling them errors."""
     if model.get("status") != "available":
         return []
     bnds = model.get("exon_boundaries") or []
@@ -188,7 +168,6 @@ def build_inspection_cases(model: Dict[str, Any]) -> List[Dict[str, Any]]:
 
 def generate_caption(model: Dict[str, Any], gene_symbol: Optional[str] = None,
                      *, species_scope: str = "single_species") -> Dict[str, Any]:
-    """Return an editable, cautious automatic caption."""
     gene = (gene_symbol or model.get("gene_symbol") or "gene")
     sci = model.get("scientific_name") or model.get("species_id") or "the species"
     pid = model.get("protein_id") or "the primary protein"
@@ -268,17 +247,6 @@ def _exon_shared_groups(model: Dict[str, Any]) -> Dict[str, Optional[str]]:
 
 def _observation(model: Dict[str, Any], boundary: Dict[str, Any], method: str,
                  mapping_status: str, coverage: float) -> Dict[str, Any]:
-    """One species' real observation of a comparable boundary.
-
-    Every field is copied from the species' own boundary record; nothing is derived
-    across species here. This is the single record the matrix cell, the hover, the
-    detail row and the export table all read, so a cell can never show a value the
-    detail view contradicts.
-
-    ``domain_annotation_available`` is false when the species has no representative
-    domain near this boundary — a real annotation gap that must stay distinguishable
-    from a distance of zero.
-    """
     has_domain = boundary.get("nearest_domain_instance_id") is not None
     return {
         "species_id": model.get("species_id"),
@@ -323,13 +291,6 @@ def _observation(model: Dict[str, Any], boundary: Dict[str, Any], method: str,
 
 
 def match_comparable_boundaries(models: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Group boundaries across species using the evidence priority.
-
-    Returns comparable-boundary groups ONLY when ≥2 available species contribute
-    to a group through strong evidence (a shared exon group, or an MSA-aligned
-    protein position). Never groups by exon rank alone. Returns ``[]`` for a
-    single available species or when no shared/aligned evidence exists.
-    """
     available = [m for m in models if m.get("status") == "available"]
     if len(available) < 2:
         return []
@@ -439,12 +400,6 @@ def match_comparable_boundaries(models: Sequence[Dict[str, Any]]) -> List[Dict[s
 
 def boundary_position_consistency(models: Sequence[Dict[str, Any]],
                                   comparable: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Calculate comparable-boundary-group consistency statistics.
-
-    Uses cautious wording (boundary-position consistency / domain-edge proximity
-    consistency); never asserts "conserved" without meeting explicit criteria.
-    Empty unless real comparable groups exist.
-    """
     stats: List[Dict[str, Any]] = []
     n_available = len([m for m in models if m.get("status") == "available"]) or 1
     for g in comparable:
@@ -513,13 +468,6 @@ def boundary_position_consistency(models: Sequence[Dict[str, Any]],
 
 def build_boundary_matrix(models: Sequence[Dict[str, Any]],
                           comparable: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Build species-by-comparable-boundary-group cell states.
-
-    A cell carries the species' own observation verbatim, so the matrix, its hover and
-    the detail panel are the same numbers rather than three re-derivations. Cells with
-    no observation carry an explicit state and null values — never a zero distance,
-    which would read as a boundary sitting exactly on a domain edge.
-    """
     matrix: List[Dict[str, Any]] = []
     if not comparable:
         return matrix
@@ -559,13 +507,6 @@ def build_boundary_matrix(models: Sequence[Dict[str, Any]],
 def build_comparative_inspection_cases(models: Sequence[Dict[str, Any]],
                                        comparable: Sequence[Dict[str, Any]],
                                        stats: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Groups worth a second look, each pointing at a real comparable-boundary group.
-
-    Every case is phrased as an observation, not a verdict: a large cross-species
-    distance difference or a missing domain annotation may be biology, an annotation
-    gap, or an alignment artefact, and this layer cannot tell which. Wording therefore
-    never calls a discrepancy an error.
-    """
     cases: List[Dict[str, Any]] = []
     by_id = {s.get("comparable_boundary_group_id"): s for s in stats}
     available_species = {m.get("species_id") for m in models if m.get("status") == "available"}
@@ -665,8 +606,6 @@ def build_comparative_inspection_cases(models: Sequence[Dict[str, Any]],
 
 
 def build_multi_species_contract(index: Dict[str, Any]) -> Dict[str, Any]:
-    """Build the comparative data structure. Comparative arrays fill only
-    when real comparable evidence exists; otherwise they stay empty (honest)."""
     models = index.get("models") or []
     species_rows = [{
         "species_id": m.get("species_id"),

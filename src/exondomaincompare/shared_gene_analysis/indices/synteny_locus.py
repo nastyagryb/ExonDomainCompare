@@ -1,10 +1,3 @@
-"""Build synteny_locus_index.json from the shared canonical synteny contract.
-
-One contract and one renderer serve every gene: the per-species rows produced
-here have the same shape whether the run holds one species or thirty, and
-whether the gene is FGFR2 or any other. Gene-specific differences travel as
-data, never as a second implementation.
-"""
 from __future__ import annotations
 
 from typing import Any, Dict, List, Optional, Tuple
@@ -45,13 +38,6 @@ def _neighbour(row: Dict[str, Any]) -> Optional[Dict[str, Any]]:
 
 
 def _derive_target_strand(neighbours: List[Dict[str, Any]]) -> str:
-    """Recover the target's transcription direction from the recorded loci.
-
-    The extractor labels a genomically later locus ``downstream`` only on the
-    plus strand, so comparing the nearest neighbour on each side against their
-    genomic coordinates recovers the strand exactly. Nothing is guessed: when
-    the coordinates are missing the strand stays empty and no arrow is drawn.
-    """
     up = next((n for n in sorted((x for x in neighbours if x["side"] == "upstream"),
                                  key=lambda x: x["rank"]) if n["genomic_start"] is not None),
               None)
@@ -65,13 +51,6 @@ def _derive_target_strand(neighbours: List[Dict[str, Any]]) -> str:
 
 def _derive_target_span(neighbours: List[Dict[str, Any]],
                         plus: bool) -> Tuple[Optional[int], Optional[int]]:
-    """Target start/end reconstructed from the recorded neighbour distances.
-
-    ``distance_to_target`` is the gap between the target and that locus, so the
-    nearest locus on each genomic side pins one target edge. This only fills in
-    a legacy run that predates ``synteny_target.tsv``; a fresh run reads the
-    real coordinates from that table instead.
-    """
     # On the plus strand "upstream" is the lower coordinate; on the minus strand
     # transcription runs the other way, so the sides swap.
     lower_side, upper_side = ("upstream", "downstream") if plus else ("downstream", "upstream")
@@ -122,13 +101,6 @@ def _gene_ids(ctx: SharedRunContext) -> Dict[str, str]:
 
 
 def build_synteny_locus_index(ctx: SharedRunContext) -> Dict[str, Any]:
-    """Per-species local gene neighbourhood in the shared synteny contract.
-
-    Groups ``synteny_neighbors.tsv`` by species so a multi-species run renders
-    one comparative row per species; a single-species run yields one row. The
-    target locus comes from ``synteny_target.tsv`` when the run wrote one, and
-    is otherwise reconstructed from the recorded neighbour geometry.
-    """
     wi = ctx.website_indices
     flat = read_json(wi / "synteny_index.json", {})
     gene = ctx.gene_symbol or str(flat.get("gene_symbol") or "")

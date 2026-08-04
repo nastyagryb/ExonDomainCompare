@@ -1,9 +1,3 @@
-"""Tests for the shared protein-coordinate contract, validator and boundary classifier.
-
-Covers milestone Part 1 (coordinate model + validation), Part 5 (boundary-class
-priority, signed-distance, exact/near/inside/outside/unavailable) and Part 16
-(coordinate ranges, single-species schema, TP53 post-cluster, no absolute paths).
-"""
 from __future__ import annotations
 
 import sys
@@ -353,8 +347,6 @@ def test_tp53_boundary_contract_and_class_summary():
 
 @pytest.mark.skipif(not TP53_DANIO_RUN.is_dir(), reason="TP53 Danio run not present")
 def test_tp53_every_boundary_matches_shared_classifier():
-    """Check each boundary against the normalized feature coordinates via the
-    shared classifier (Part 8: verify every boundary manually)."""
     m = pcm.build_models_for_run(TP53_DANIO_RUN)["models"][0]
     domains = [{"id": d["id"], "interpro_accession": d.get("interpro_accession"),
                 "label": d["label"], "start": d["start"], "end": d["end"]}
@@ -385,8 +377,6 @@ def test_tp53_boundary_left_right_exon_and_edge_position():
 
 @pytest.mark.skipif(not TP53_DANIO_RUN.is_dir(), reason="TP53 Danio run not present")
 def test_tp53_boundary_selection_and_filtered_export_contract():
-    """The fields that drive linked selection (nearest domain / adjacent exons)
-    and the filtered-TSV export are all present and consistent."""
     m = pcm.build_models_for_run(TP53_DANIO_RUN)["models"][0]
     dom_ids = {d["id"] for d in m["representative_domains"]}
     exon_ids = {e["id"] for e in m["exons"]}
@@ -469,9 +459,6 @@ def test_no_personal_paths_in_boundary_objects():
 
 
 def test_fgfr2_canonical_vocabulary_is_stable():
-    """FGFR2 regression guard: the generic canonical vocabulary the Boundary tab
-    uses must stay exactly these five mutually-exclusive classes (the frozen FGFR2
-    Boundary Consistency vocabulary lives elsewhere and is never imported here)."""
     assert bc.CANONICAL_CLASSES == (
         "exact_domain_edge", "near_domain_edge", "inside_domain",
         "outside_annotated_domains", "unavailable_or_uncertain")

@@ -1,21 +1,4 @@
 #!/usr/bin/env python3
-"""
-Screen FGFR2 candidates against the vertebrate paralog panel.
-
-Screen selected FGFR2 candidate proteins against a multi-vertebrate FGFR1/2/3/4
-paralog reference panel (blastp) to confirm that each candidate is most
-consistent with FGFR2 rather than a paralog. The previous human-only panel is
-kept as a legacy control; this multi-vertebrate panel is the preferred evidence.
-
-Outputs:
-  fgfr2_paralog_screen_detailed.tsv
-  fgfr2_paralog_screen_species_summary.tsv
-  fgfr2_paralog_screen_warnings.tsv
-  fgfr2_paralog_screen_multi_vertebrate_metadata.json
-
-This screen does not alter IIIb/IIIc isoform labels; it only provides orthology /
-paralog evidence.
-"""
 
 from __future__ import annotations
 

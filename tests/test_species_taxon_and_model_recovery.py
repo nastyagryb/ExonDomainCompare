@@ -1,20 +1,3 @@
-"""Regression tests for the Equus quagga FGFR2 repair.
-
-The run `2026-07-29_1217_fgfr2_equus_quagga` failed with
-
-    ValueError: No transcripts found. Check --transcripts input.
-
-which was the fourth symptom of one defect: the species registry had no resolution
-path for a species outside a hardcoded thirty-entry table, so it wrote the underscored
-slug `equus_quagga` into the field used as an NCBI taxonomy query term. NCBI rejected
-the query, no assembly was ever listed, and an annotated chromosome-level RefSeq
-reference assembly went unnoticed.
-
-These tests hold the repair in place. Nothing here queries a network service: taxonomy
-answers are stubbed, and annotations are small GFF3 fixtures. Species names appear in
-fixtures — the point of the repair is that the production code contains no
-species-specific branch, and one test asserts exactly that.
-"""
 from __future__ import annotations
 
 import csv
@@ -50,11 +33,6 @@ FGFR2_PRODUCT = "fibroblast growth factor receptor 2"
 # --------------------------------------------------------------------------- #
 @pytest.fixture
 def stub_taxonomy(monkeypatch):
-    """NCBI Taxonomy, offline.
-
-    Returns a callable so a test can install its own record set; the default is the
-    real Equus quagga record as the service returns it.
-    """
     def install(records, *, search=None):
         def _esearch(term, timeout):
             if search is not None:
@@ -95,10 +73,6 @@ REAL_RECORDS = {
 
 
 def test_the_submitted_slug_resolves_to_the_canonical_taxon(stub_taxonomy):
-    """`equus_quagga` must become `Equus quagga`, taxid 89248.
-
-    This is the defect itself: the registry used to pass the slug on unchanged.
-    """
     stub_taxonomy(REAL_RECORDS)
     identity = tr.resolve("equus_quagga")
 
@@ -110,10 +84,6 @@ def test_the_submitted_slug_resolves_to_the_canonical_taxon(stub_taxonomy):
 
 
 def test_the_query_term_is_never_the_underscored_slug(stub_taxonomy):
-    """What goes to the source service is a taxid or an accepted name.
-
-    `datasets summary genome taxon equus_quagga` is the exact command that failed.
-    """
     stub_taxonomy(REAL_RECORDS)
     identity = tr.resolve("equus_quagga")
 
@@ -131,11 +101,6 @@ def test_a_published_synonym_resolves_back_to_the_requested_taxon(stub_taxonomy)
 
 
 def test_a_near_miss_is_not_silently_answered_with_another_species(stub_taxonomy):
-    """A zebra request must never be answered with a horse.
-
-    Equus caballus shares the genus, has a far better genome, and would produce a run
-    that looks entirely successful and is about the wrong animal.
-    """
     stub_taxonomy(REAL_RECORDS, search=lambda term: [EQUUS_CABALLUS_TAXID])
     identity = tr.resolve("Equus quagga")
 
@@ -164,7 +129,6 @@ def test_an_unknown_name_is_reported_not_invented(stub_taxonomy):
 
 
 def test_an_unreachable_taxonomy_service_is_distinct_from_a_bad_name(monkeypatch):
-    """A retry can fix one of these and not the other, so they must not be merged."""
     def boom(term, timeout):
         raise RuntimeError("URLError: connection refused")
 
@@ -189,7 +153,6 @@ def test_the_registry_records_the_resolved_identity(tmp_path, stub_taxonomy):
 
 
 def test_the_registry_leaves_the_ncbi_name_empty_when_unresolved(stub_taxonomy):
-    """An empty field stops a doomed query; a slug issues one and gets rejected."""
     stub_taxonomy(REAL_RECORDS, search=lambda term: [])
     result = registry.build_registry_rows(["Equus nonexistentia"], "ensembl_first",
                                           "RefSeq")
@@ -203,10 +166,6 @@ def test_the_registry_leaves_the_ncbi_name_empty_when_unresolved(stub_taxonomy):
 
 
 def test_the_validated_panel_still_resolves_without_a_taxonomy_query(stub_taxonomy):
-    """The thirty verified species come from the cache, not from thirty requests.
-
-    Also the regression guard for the validated panel: their taxids must not move.
-    """
     def forbidden(term, timeout):
         raise AssertionError("a cached species must not query the taxonomy service")
 
@@ -334,7 +293,6 @@ def test_a_suppressed_assembly_is_rejected_with_its_status():
 
 
 def test_a_subspecies_assembly_is_labelled_not_hidden():
-    """A taxon query returns descendants. That is legitimate and must be visible."""
     selection = asel.select(asel.parse_summary(REAL_QUAGGA_REPORTS),
                             requested_taxid=EQUUS_QUAGGA_TAXID,
                             requested_name="Equus quagga")
@@ -344,11 +302,6 @@ def test_a_subspecies_assembly_is_labelled_not_hidden():
 
 
 def test_a_changed_schema_does_not_lose_an_assembly():
-    """Fields have moved between Datasets releases before.
-
-    A report with its metadata in the older, flatter shape and no optional annotation
-    date must still yield a usable candidate rather than being dropped.
-    """
     legacy = {"assembly_accession": "GCF_000009.1", "assembly_level": "Chromosome",
               "annotation_info": {"release_name": "legacy-RS"},
               "organism": {"organism_name": "Equus quagga",
@@ -365,7 +318,6 @@ def test_a_report_without_an_accession_is_dropped_not_selected():
 
 
 def test_a_failure_with_no_candidates_still_writes_a_row():
-    """The heart of the diagnostic defect: an empty table cannot say what happened."""
     row = asel.failure_row(asel.TAXON_REJECTED,
                            "The taxonomy name 'equus_quagga' is not recognized.",
                            "equus_quagga", "equus_quagga", "", "equus_quagga")
@@ -406,7 +358,6 @@ def test_a_source_synonym_is_accepted():
 
 
 def test_a_gene_identifier_finds_a_locus_with_no_symbol_yet():
-    """The rescue finding the failed run discarded: NCBI GeneID 124236178."""
     result = gid.identify(
         [_cand(source_gene_id="gene-LOC124236178", source_symbol="LOC124236178",
                dbxrefs=["GeneID:124236178"])],
@@ -430,7 +381,6 @@ def test_a_loc_locus_is_accepted_only_on_sequence_evidence(panel):
 
 
 def test_a_loc_locus_is_not_accepted_for_being_the_first_hit(panel):
-    """Without sequence support there is no basis to call a LOC record this gene."""
     result = gid.identify(
         [_cand(source_gene_id="g", source_symbol="LOC999", description=FGFR2_PRODUCT)],
         "FGFR2", proteins={}, panel=panel, product_name=FGFR2_PRODUCT)
@@ -452,7 +402,6 @@ def test_a_paralog_locus_is_not_a_candidate(paralog, panel):
 
 
 def test_a_paralog_carrying_the_symbol_as_a_synonym_is_rejected(panel):
-    """The old matcher accepted this: a token match anywhere was enough."""
     result = gid.identify(
         [_cand(source_gene_id="g", source_symbol="FGFR1", synonyms=["FGFR2"],
                description="fibroblast growth factor receptor 1")],
@@ -463,7 +412,6 @@ def test_a_paralog_carrying_the_symbol_as_a_synonym_is_rejected(panel):
 
 
 def test_a_loc_locus_whose_protein_is_a_paralog_is_rejected(panel):
-    """The error that would not show up downstream: FGFR3 analysed as FGFR2."""
     result = gid.identify(
         [_cand(source_gene_id="g5", source_symbol="LOC999",
                description="fibroblast growth factor receptor 2/3-like")],
@@ -487,11 +435,6 @@ def test_a_near_tie_between_paralogs_is_left_ambiguous(panel):
 
 
 def test_the_description_route_does_not_match_every_gene_ending_in_two():
-    """Sixty-six loci from one zebra annotation matched a bare "receptor 2" rule.
-
-    ADIPOR2, NPR2, GRM2, TGFBR2, RYR2, TACR2 — a route that matches much of the genome
-    is not evidence. The description must name *this* gene's product.
-    """
     unrelated = [("ADIPOR2", "adiponectin receptor protein 2"),
                  ("NPR2", "natriuretic peptide receptor 2"),
                  ("GRM2", "glutamate metabotropic receptor 2"),
@@ -562,12 +505,6 @@ def species_record(collector):
 
 def test_a_candidate_records_how_many_transcripts_and_proteins_it_carries(
         tmp_path, collector):
-    """A locus annotated without transcripts must be distinguishable from a usable one.
-
-    The candidate inventory is where that difference has to be visible. Reporting zero
-    for every candidate would leave an annotated-but-empty locus looking exactly like
-    the locus the run actually used.
-    """
     candidates = collector.collect_gene_candidates(
         _gff(tmp_path, FGFR2_GFF), "FGFR2", product_name=FGFR2_PRODUCT)
 
@@ -578,7 +515,6 @@ def test_a_candidate_records_how_many_transcripts_and_proteins_it_carries(
 
 
 def test_a_predicted_xm_xp_transcript_is_parsed(tmp_path, collector, species_record):
-    """Species without curated RefSeq have only Gnomon XM/XP records."""
     parsed, warnings = collector.parse_ncbi_gff3_for_gene(
         _gff(tmp_path, FGFR2_GFF), species_record, "FGFR2",
         product_name=FGFR2_PRODUCT)
@@ -617,7 +553,6 @@ def test_strand_and_phase_are_preserved(tmp_path, collector, species_record):
 
 def test_a_loc_labelled_gene_is_found_via_its_identifier(tmp_path, collector,
                                                         species_record):
-    """An annotated gene must not be invisible because its symbol is still LOC-numbered."""
     body = FGFR2_GFF.replace("Name=FGFR2;gene=FGFR2", "Name=LOC124236178;gene=LOC124236178")
     parsed, warnings = collector.parse_ncbi_gff3_for_gene(
         _gff(tmp_path, body), species_record, "FGFR2",
@@ -659,11 +594,6 @@ def test_a_paralog_locus_in_the_same_file_is_not_selected(tmp_path, collector,
 def test_a_parser_exception_is_not_converted_into_zero_rows(tmp_path, collector,
                                                            species_record,
                                                            monkeypatch):
-    """A defect must be reported as a defect, never as missing data.
-
-    Silently returning "no model" is how a processing fault reaches the user as an
-    empty table and a message about their species having no annotation.
-    """
     def boom(*args, **kwargs):
         raise RuntimeError("simulated GFF3 parser defect")
 
@@ -696,12 +626,6 @@ def test_parse_failure_and_missing_annotation_map_to_different_statuses():
 # Parts 6 and 7 — rescue order and the zero-model contract
 # --------------------------------------------------------------------------- #
 def test_the_rescue_gene_id_reaches_identification_before_selection(collector):
-    """The ordering defect, as a test.
-
-    The failed run gathered the correct GeneID and then let a later step crash on an
-    empty table. The identifier must be an input to identification, which happens
-    inside step 2, not a note read afterwards.
-    """
     source = (ROOT / "scripts" / "collect_fgfr2_models_dual_source_v3.py").read_text()
     evidence_at = source.index("ncbi_gene_ev = fetch_ncbi_gene_evidence")
     expected_at = source.index("expected_gene_ids = [ncbi_gene_ev")
@@ -739,7 +663,6 @@ def test_each_zero_model_status_implies_its_own_next_action(status, expected_act
 
 
 def test_the_user_facing_message_names_the_species_and_the_gene():
-    """"No transcripts found. Check --transcripts input." named neither."""
     outcome = recovery.SpeciesOutcome("equus_quagga", "equus_quagga", "FGFR2",
                                       accepted_scientific_name="Equus quagga")
     outcome.conclude(recovery.ANNOTATION_NOT_FOUND)
@@ -767,7 +690,6 @@ def test_a_weak_route_model_is_marked_for_review_not_accepted_silently():
 
 
 def test_consistency_checks_cannot_pass_over_empty_tables():
-    """The failed run reported six of six PASS over four empty tables."""
     empty = recovery.consistency_checks(0, 0, 0, 0)
     populated = recovery.consistency_checks(1, 12, 206, 205)
 
@@ -807,7 +729,6 @@ def test_the_empty_input_explanation_quotes_the_recorded_reason():
 # Part 7 — transcript selection no longer raises a raw ValueError
 # --------------------------------------------------------------------------- #
 def test_transcript_selection_reports_instead_of_raising_valueerror(tmp_path):
-    """Step 3's crash is replaced by a precise message and a non-zero exit."""
     transcripts = tmp_path / "transcripts.tsv"
     transcripts.write_text("species_input\tspecies_canonical\n", encoding="utf-8")
     exons = tmp_path / "exons.tsv"
@@ -848,11 +769,6 @@ PRODUCTION_MODULES = [
 
 
 def _executable_source(rel: str) -> str:
-    """A module's code with comments and docstrings removed.
-
-    Prose that explains the failure this repair addresses legitimately names the
-    species and the assembly. What must not name them is the code.
-    """
     import ast
     import io
     import tokenize
@@ -880,7 +796,6 @@ def _executable_source(rel: str) -> str:
 
 
 def test_no_production_module_branches_on_the_species():
-    """A species-specific branch would fix one run and leave the defect in place."""
     for rel in PRODUCTION_MODULES:
         assert "quagga" not in _executable_source(rel).lower(), \
             f"{rel}: the code names the species"
@@ -893,9 +808,8 @@ def test_no_production_module_hardcodes_the_quagga_assembly():
 
 
 def test_the_selection_rule_is_stated_once_and_applies_to_any_species():
-    doc = asel.__doc__ or ""
-    assert "deterministic" in doc
-    assert "annotated assembly, always" in doc
+    assert "deterministic" in asel.SELECTION_RULE
+    assert "annotated assembly, always" in asel.SELECTION_RULE
 
 
 # --------------------------------------------------------------------------- #
@@ -913,8 +827,6 @@ def _rows(path: Path):
 @pytest.mark.skipif(not (REAL_RUN / "results" / "02_models" / "transcripts.tsv").exists(),
                     reason="the repaired Equus quagga run has not been rebuilt here")
 class TestTheRealEquusQuaggaRun:
-    """The actual run that failed, after repair. Not a synthetic replacement."""
-
     def test_the_species_is_resolved_to_the_requested_taxon(self):
         row = _rows(REAL_RUN / "results" / "01_species_registry"
                     / "species_registry.tsv")[0]
@@ -967,7 +879,6 @@ class TestTheRealEquusQuaggaRun:
         assert any("|IIIc|" in h for h in headers)
 
     def test_the_recovered_proteins_are_fgfr2_by_sequence(self, panel):
-        """Independent of the annotation: closest to FGFR2, not to a paralog."""
         faa = (REAL_RUN / "results" / "13_final_pre_interpro_closure" / "freeze"
                / "final_pre_interpro_proteins_primary.faa")
         sequences, name = {}, None
@@ -983,7 +894,6 @@ class TestTheRealEquusQuaggaRun:
             assert gid.panel_member_symbol(best, "FGFR2") == "FGFR2", label
 
     def test_each_cassette_form_carries_only_its_own_marker(self):
-        """Real marker evidence. Neither form is asserted from the other's absence."""
         faa = (REAL_RUN / "results" / "13_final_pre_interpro_closure" / "freeze"
                / "final_pre_interpro_proteins_primary.faa")
         sequences, name = {}, None
@@ -1026,7 +936,6 @@ class TestTheRealEquusQuaggaRun:
 
 
 def test_the_validated_freeze_is_untouched():
-    """The repair must not have written anything inside the validated 30-species freeze."""
     proc = subprocess.run(["git", "status", "--porcelain", "--",
                            str(FREEZE.relative_to(ROOT))],
                           cwd=ROOT, capture_output=True, text=True)
@@ -1036,7 +945,6 @@ def test_the_validated_freeze_is_untouched():
 
 
 def test_the_validated_thirty_species_still_hold_their_recorded_taxids():
-    """A regression guard on the panel the repair must not disturb."""
     cache = registry._taxid_cache()
 
     assert cache["Homo sapiens"]["taxid"] == "9606"
@@ -1045,11 +953,6 @@ def test_the_validated_thirty_species_still_hold_their_recorded_taxids():
 
 
 def test_another_new_fgfr2_species_takes_the_same_path(stub_taxonomy):
-    """Nothing about the repair is specific to one species.
-
-    A different species outside the built-in table resolves through the same code and
-    produces the same shape of registry row.
-    """
     stub_taxonomy({"9793": {"name": "Equus asinus", "common": "ass", "synonyms": []}})
     result = registry.build_registry_rows(["equus_asinus"], "ensembl_first", "RefSeq")
     row = result.rows[0]
@@ -1089,7 +992,6 @@ def test_the_frontend_cause_comes_from_the_recorded_status(backend, tmp_path):
 
 
 def test_a_traceback_is_never_shown_as_the_cause(backend, tmp_path):
-    """The exact string the failed run displayed."""
     failure = backend._precluster_failure(
         tmp_path, {"failed_reason": 'Traceback (most recent call last):\n  File "x"'})
 
@@ -1114,7 +1016,6 @@ def test_a_retryable_cause_offers_retry_and_a_name_error_does_not(backend, tmp_p
 
 
 def test_the_roundtrip_command_is_withheld_until_the_primary_fasta_exists(backend):
-    """The failed run offered a command whose input did not exist."""
     source = (ROOT / "webapp" / "backend" / "main.py").read_text(encoding="utf-8")
     marker = source.index("_cluster_roundtrip_command(run_id)")
 
@@ -1154,7 +1055,6 @@ def test_the_roundtrip_command_preserves_an_explicit_cluster_config(backend,
 
 
 def test_retry_local_preparation_resumes_the_same_run(backend):
-    """One request must not become two runs."""
     source = (ROOT / "webapp" / "backend" / "main.py").read_text(encoding="utf-8")
     start = source.index("def retry_local_preparation")
     body = source[start:start + 2000]

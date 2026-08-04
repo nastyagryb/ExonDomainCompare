@@ -1,14 +1,4 @@
 #!/usr/bin/env python3
-"""
-Score FGFR2 boundary robustness.
-
-Transparent, component-based boundary robustness score per species/isoform, combining
-annotation/coordinate resolution, codon-phase/boundary precision, protein QC, MSA boundary
-projection, conservation/gap evidence and protein integrity. All component values and the
-exact weights are written out; nothing is hidden and uncertain cases are not forced to exact.
-
-Also emits MSA diagnostics for review cases.
-"""
 
 from __future__ import annotations
 

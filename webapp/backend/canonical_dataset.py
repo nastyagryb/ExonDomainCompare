@@ -65,7 +65,6 @@ _SHARED_FILES = {
 
 
 def _read_json(path: Path, fallback: Any) -> Any:
-    """Read one existing index without creating, repairing, or rewriting it."""
     try:
         return json.loads(path.read_text(encoding="utf-8"))
     except (OSError, ValueError, TypeError):
@@ -73,15 +72,6 @@ def _read_json(path: Path, fallback: Any) -> Any:
 
 
 def _index_reader(descriptor: Mapping[str, Any]):
-    """Read a dataset's indices, preferring the derived overlay where one exists.
-
-    The validated FGFR2 dataset is a read-only scientific record, so anything
-    rebuilt from it — a re-curated Gallery catalogue, a corrected species order —
-    is written to a derived directory instead of into the freeze. That only helps
-    if every reader prefers the derived file; a reader that goes straight to the
-    freeze silently serves the pre-rebuild version, which is how a rebuilt
-    catalogue can appear to have had no effect at all.
-    """
     indices_dir = Path(descriptor["indices_dir"])
     derived = descriptor.get("derived_indices_dir")
     derived_dir = Path(derived) if derived else None
@@ -97,7 +87,6 @@ def _index_reader(descriptor: Mapping[str, Any]):
 
 
 def _read_shared(indices_dir: Path, filename: str, fallback: Any) -> Any:
-    """Prefer the shared root and fall back to the legacy generic subfolder."""
     for path in (indices_dir / filename, indices_dir / "generic" / filename):
         if path.is_file():
             return _read_json(path, fallback)
@@ -116,7 +105,6 @@ _CLADE_TO_TAXON_GROUP = {
 
 
 def _read_tsv_rows(path: Path) -> List[Dict[str, str]]:
-    """Read a small TSV without third-party deps; never raise on a missing file."""
     try:
         text = path.read_text(encoding="utf-8")
     except OSError:
@@ -133,11 +121,6 @@ def _read_tsv_rows(path: Path) -> List[Dict[str, str]]:
 
 
 def _species_registry_meta(run_base: Optional[Path]) -> Dict[str, Dict[str, Any]]:
-    """Species-level biological metadata from the run's species registry.
-
-    Reuses the same registry TSV that ``build_species_registry_improved.py`` writes,
-    so species badges come from species metadata (never from protein roles).
-    """
     if not run_base:
         return {}
     reg = Path(run_base) / "results" / "01_species_registry" / "species_registry.tsv"
@@ -175,12 +158,6 @@ def _curation_status(protein: Mapping[str, Any]) -> str:
 def _normalize_protein_models(
     primary_selection: Mapping[str, Any], species_id: str
 ) -> List[Dict[str, Any]]:
-    """One consistent protein-model list from the primary-selection index.
-
-    Every row carries both the boolean ``is_primary`` and the string
-    ``primary_status``/``role`` so that Summary, Protein Models, Architecture and
-    MSA can never disagree about which protein is primary.
-    """
     proteins = primary_selection.get("proteins") if isinstance(primary_selection, dict) else None
     if not isinstance(proteins, list):
         return []
@@ -236,14 +213,6 @@ def _dir_has_files(folder: Path, suffix: Optional[str] = None) -> bool:
 
 
 def _has_content(path: Path) -> bool:
-    """True when a produced artefact actually carries a result.
-
-    The pre-cluster stage writes header-only placeholder tables for the
-    post-cluster products, so file existence alone would advertise an empty
-    domain / boundary table as a finished result. A tabular artefact therefore
-    counts only with at least one data row beyond the header, and a JSON
-    artefact only with a non-empty payload.
-    """
     try:
         if path.stat().st_size == 0:
             return False
@@ -268,13 +237,6 @@ def _has_content(path: Path) -> bool:
 
 
 def _post_cluster_complete(base: Path) -> bool:
-    """True when the coordinate model was rebuilt from real cluster results.
-
-    This distinguishes the two reasons a post-cluster table can be empty: a
-    header-only placeholder written before the cluster round-trip, versus a
-    genuine zero result (TP53 has no transmembrane region, so its normalized
-    pyTMHMM table is legitimately empty). Only the first is pending.
-    """
     model = base / "website_indices" / "generic" / "protein_coordinate_model.json"
     try:
         payload = json.loads(model.read_text(encoding="utf-8"))
@@ -365,13 +327,6 @@ _PUBLIC_DOWNLOAD_PROJECTIONS = {
 def _shared_downloads(
     indices_dir: Path, run_base: Optional[Path], run_id: str
 ) -> Dict[str, Any]:
-    """Return a provenance-oriented ``{available, items:[...]}`` descriptor.
-
-    ``items`` is guaranteed to be a list so the Files tab can never crash. Each
-    real artefact carries category + generation provenance; pending cluster
-    stages are surfaced as explicit ``pending`` rows (never as missing errors).
-    Nothing is faked: pending rows expose no path.
-    """
     raw = _read_shared(indices_dir, "download_index.json", None)
     if isinstance(raw, list):
         return {"available": bool(raw), "items": raw}
@@ -545,7 +500,6 @@ def _dataset_metadata(
 
 
 def adapt_fgfr2_legacy(descriptor: Mapping[str, Any]) -> Dict[str, Any]:
-    """Adapt FGFR2 example/custom legacy website_indices without side effects."""
     _indices_dir = Path(descriptor["indices_dir"])
     run_base = descriptor.get("run_base")
     config = _read_json(Path(run_base) / "run_config.json", {}) if run_base else {}
@@ -734,7 +688,6 @@ def _shared_species(
 
 
 def adapt_shared_run(descriptor: Mapping[str, Any]) -> Dict[str, Any]:
-    """Adapt root/generic SharedRun indices (including the FGFR1 pilot)."""
     indices_dir = Path(descriptor["indices_dir"])
     run_base = Path(descriptor["run_base"])
     config = _read_json(run_base / "run_config.json", {})
@@ -869,15 +822,6 @@ def adapt_shared_run(descriptor: Mapping[str, Any]) -> Dict[str, Any]:
 
 
 def _stamp_identity(model: Dict[str, Any], descriptor: Mapping[str, Any]) -> Dict[str, Any]:
-    """Put the dataset's identity at the top level of the model.
-
-    The frontend has to be able to answer "which dataset is this response about?" without
-    interpreting the payload. Previously the only identity lived in the nested ``dataset``
-    block and nothing compared it against the selected dataset, so a slow response from a
-    dataset the user had already left was rendered under the new dataset's heading.
-    ``index_version`` changes whenever the run's indices are rebuilt, which lets a response
-    produced before a rebuild be discarded.
-    """
     dataset = model.get("dataset") or {}
     run_id = dataset.get("run_id") or descriptor.get("run_id") or ""
     model["dataset_id"] = dataset.get("id") or descriptor.get("id") or ""
@@ -901,7 +845,6 @@ def _stamp_identity(model: Dict[str, Any], descriptor: Mapping[str, Any]) -> Dic
 
 
 def build_canonical_dataset_model(descriptor: Mapping[str, Any]) -> Dict[str, Any]:
-    """Select one of the two read-only adapters for a resolved dataset."""
     if descriptor.get("kind") == "example":
         return _stamp_identity(adapt_fgfr2_legacy(descriptor), descriptor)
 

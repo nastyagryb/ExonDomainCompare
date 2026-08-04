@@ -1,29 +1,4 @@
 #!/usr/bin/env python3
-"""Run the local post-InterPro FGFR2 analysis inside a ``runs/<run_id>/`` folder.
-
-Processes already-fetched local InterProScan + pyTMHMM outputs for a selected
-run and writes all analysis outputs into that run folder via run-specific paths
-(``FGFR2_RESULTS_DIR`` / ``RESULTS_DIR`` / ``BASE`` -> runs/<run_id>/results).
-
-It never writes into the validated example freeze
-(``results/final_30_until_interpro_prepare/``), never changes FASTA / truth
-tables / membership, and never submits to LRZ/SLURM. Cluster submit/check/fetch
-stay in scripts/interpro_cluster/*, run separately from the local terminal.
-
-Steps (default order)
----------------------
-    architecture : exon-block reconstruction + sanitation + domain-architecture
-                   tables/figures (InterProScan + pyTMHMM integration)
-    boundary     : exon-domain boundary consistency analysis (+ human sanity check)
-    audit        : final review / minor-flag audit matrix
-    indices      : run-local website indices (runs/<run_id>/website_indices/)
-
-CLI
----
-    python scripts/run_post_interpro_for_run.py --run-id <run_id>
-    python scripts/run_post_interpro_for_run.py --run-id <run_id> --dry-run
-    python scripts/run_post_interpro_for_run.py --run-id <run_id> --steps architecture,indices
-"""
 from __future__ import annotations
 
 import argparse
@@ -116,7 +91,6 @@ def first_match(folder: Path, suffixes: Tuple[str, ...]) -> Optional[Path]:
 # status updates
 # --------------------------------------------------------------------------- #
 def _finalize_run_status(run_dir: Path) -> None:
-    """Record the canonical run status derived from the run's own artifacts."""
     try:
         scripts_dir = str(Path(__file__).resolve().parent)
         if scripts_dir not in sys.path:

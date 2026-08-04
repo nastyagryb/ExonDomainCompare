@@ -1,9 +1,3 @@
-"""Generic exon/protein architecture table (gene-agnostic).
-
-Reads standardized ``exon_protein_map.tsv`` and writes canonical
-``exon_protein_architecture.tsv`` (one row per protein-coding exon block mapped to
-protein aa coordinates). No cassette/event assumptions.
-"""
 from __future__ import annotations
 
 import argparse
@@ -53,7 +47,7 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description='Generic exon/protein architecture table (gene-agnostic).')
     ap.add_argument("--run-id", required=True)
     args = ap.parse_args()
     ctx = load_context(args.run_id)

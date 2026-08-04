@@ -1,9 +1,3 @@
-"""Repository-relative resolution of pipeline scripts for the test suite.
-
-Tests must never depend on the current working directory or on absolute paths
-from a particular machine or session. Everything is anchored on this file's
-location inside the repository.
-"""
 from __future__ import annotations
 
 import importlib.util
@@ -16,7 +10,6 @@ SCRIPTS_DIR = REPO_ROOT / "scripts"
 
 
 def script_path(name: str) -> Path:
-    """Return the path of ``scripts/<name>`` and fail loudly if it is missing."""
     candidate = SCRIPTS_DIR / name
     if not candidate.exists():
         available = sorted(p.name for p in SCRIPTS_DIR.glob("*.py"))
@@ -28,7 +21,6 @@ def script_path(name: str) -> Path:
 
 
 def load_script_module(name: str, module_name: str) -> ModuleType:
-    """Import ``scripts/<name>`` as a module under ``module_name``."""
     path = script_path(name)
     spec = importlib.util.spec_from_file_location(module_name, path)
     if spec is None or spec.loader is None:

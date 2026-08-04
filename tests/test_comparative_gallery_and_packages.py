@@ -1,4 +1,3 @@
-"""Part 3 / Part 4 / Part 6 — Comparative Figure Gallery, package builder, linked selection."""
 from __future__ import annotations
 
 import json

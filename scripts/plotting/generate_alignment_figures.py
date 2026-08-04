@@ -1,21 +1,4 @@
 #!/usr/bin/env python3
-"""Generate the Figure Gallery's isoform-analysis figures.
-
-The three figures are rendered by the *same* builders the Gene Explorer's alignment
-view exports through: this stage shells out to
-``scripts/plotting/render_alignment_figures.mjs``, which imports
-``webapp/frontend/src/pages/viewers/alignmentFigure.js``. A Gallery figure and the
-corresponding Gene Explorer export are therefore one figure with one
-implementation, not two renderers kept in agreement by hand.
-
-Figures produced per species with an available alignment:
-  1. full isoform-alignment overview     — every column, every model
-  2. wrapped residue-level alignment     — one multi-page vector PDF
-  3. candidate-associated alignment detail (only when a candidate maps to columns)
-
-Formats: standalone SVG, true vector PDF, 300 dpi PNG, and the alignment summary
-table. The wrapped alignment additionally ships one SVG per page.
-"""
 from __future__ import annotations
 
 import argparse
@@ -28,10 +11,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 
-from scripts.plotting.figure_captions import (  # noqa: E402
+from scripts.plotting.figure_captions import (
     build_caption, figure_card, register_gallery_cards, write_caption_file,
 )
-from scripts.plotting.generate_shared_main_figures import (  # noqa: E402
+from scripts.plotting.generate_shared_main_figures import (
     EXPORT_DPI, _rasterise_png,
 )
 
@@ -40,14 +23,10 @@ FIGURE_SUBDIR = Path("results") / "generic_gene_analysis" / "figures" / "main"
 CATEGORY = "Isoform analysis"
 GROUP = "alignment_figures"
 
-# The card that used to represent the alignment: a coverage bar per isoform in an
-# arbitrary categorical colour, with no residues, no conservation and no identity.
-# The three figures below replace it, so it is retired rather than left in place.
 SUPERSEDED_FIGURE_IDS = {"isoform_alignment", "generic_isoform_alignment"}
 
 
 def _rel(path: Path) -> str:
-    """Repository-relative where possible; a run directory may live anywhere."""
     try:
         return str(path.resolve().relative_to(ROOT))
     except ValueError:
@@ -110,7 +89,6 @@ def _render(index_json: Path, out_dir: Path, species_id: str = "") -> dict:
 
 
 def _caption(kind: str, summary: dict, threshold: str = "") -> str:
-    """Compose the caption from the numbers the figure was actually drawn from."""
     meta = FIGURE_META[kind]
     n_rows = summary.get("n_rows") or 0
     n_cols = summary.get("n_columns") or 0
@@ -148,13 +126,7 @@ def alignment_index(run_dir: Path) -> Path:
 
 def generate(run_dir: Path, model_json: Path | None = None, *,
              index_json: Path | None = None) -> dict:
-    """Render the isoform-analysis figures and register their Gallery cards.
-
-    ``model_json`` is accepted so this stage has the same signature as the other
-    figure stages the pipeline calls; these figures are built from the run's
-    isoform-alignment index, which is located here when not given explicitly.
-    """
-    del model_json  # the alignment index is this stage's input
+    del model_json
     index_json = index_json or alignment_index(run_dir)
     if not index_json.exists():
         return {"cards": 0, "figures": 0, "indices": 0,
@@ -165,10 +137,6 @@ def generate(run_dir: Path, model_json: Path | None = None, *,
     fig_rel = FIGURE_SUBDIR.as_posix()
     run_id = run_dir.name
 
-    # Every species with its own within-species alignment gets its own three
-    # figures, rendered from that species' own alignment. Nothing is shared or
-    # copied between species; a species without an alignment is reported with the
-    # exact reason instead of being given another species' figures.
     index_doc = json.loads(index_json.read_text())
     entries = index_doc.get("species") or []
     renderable = [e for e in entries if e.get("status") == "available"]
@@ -201,14 +169,12 @@ def _render_species(index_json: Path, fig_dir: Path, fig_rel: str,
                     run_id: str, species_filter: str,
                     cards: list, manifest: list, warnings: list, *,
                     source_alignment: str = "") -> None:
-    """Render and register the three isoform figures for exactly one species."""
     summary = _render(index_json, fig_dir, species_filter)
     species_id = summary.get("species_id") or species_filter
     gene = summary.get("gene") or "GENE"
     species = summary.get("species") or species_id
 
     produced = {s["name"] for s in summary.get("render") or []}
-    # The wrapped export is reported per page, so it is keyed by its own stem.
     if any(n.startswith("wrapped_alignment_p") for n in produced):
         produced.add("wrapped_alignment")
 
@@ -246,7 +212,6 @@ def _render_species(index_json: Path, fig_dir: Path, fig_rel: str,
             has_table=tsv.exists(),
             source_files=[source_alignment] if source_alignment else [],
         )
-        # These figures come from the shared figure specification, not matplotlib.
         card["renderer"] = "shared_figure_specification"
         entry = next((s for s in summary.get("render") or []
                       if s["name"] == kind), None)
@@ -270,7 +235,7 @@ def _render_species(index_json: Path, fig_dir: Path, fig_rel: str,
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description="Generate the Figure Gallery's isoform-analysis figures.")
     ap.add_argument("run_dir", type=Path)
     ap.add_argument("--index", type=Path, default=None,
                     help="isoform alignment index (defaults to the run's own)")

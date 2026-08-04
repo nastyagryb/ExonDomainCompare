@@ -1,20 +1,4 @@
 #!/usr/bin/env python3
-"""Analysis applicability, and how it differs from run completion.
-
-Chicken MC1R is the case that exposed the confusion. Its protein is encoded by a single
-coding exon, so it has zero internal coding-exon boundaries and no exon–domain boundary
-analysis can exist for it. The pipeline handled that correctly — it produced a boundary
-table with no rows because no boundary exists — and the completion check, which demanded at
-least one row, concluded the run was ``post_cluster_partial``. The gene's exon structure was
-reported as a pipeline defect.
-
-The tests below fix the distinction in place:
-
-* a *run* is complete when every **applicable** stage finished;
-* an *analysis* is applicable when its biological prerequisites exist.
-
-``not_applicable`` is a successfully resolved answer and must never block completion.
-"""
 from __future__ import annotations
 
 import json
@@ -84,7 +68,6 @@ def test_a_genuine_gap_still_blocks_a_run():
 def _write_run(tmp_path: Path, *, exons: int, proteins: dict, transcripts=None,
               boundary_rows: int = 0, domain_rows: int = 1,
               cluster: bool = True) -> Path:
-    """A minimal run directory with only the canonical tables the module reads."""
     run = tmp_path / "run"
     core = run / aa.CORE
     core.mkdir(parents=True)
@@ -226,7 +209,6 @@ def test_two_distinct_sequences_make_isoform_comparison_applicable(tmp_path):
 
 
 def test_two_transcripts_are_not_two_protein_isoforms(tmp_path):
-    """The distinction the counts exist to preserve."""
     same = _write_run(tmp_path / "a", exons=3, proteins={"P1": "MKVLA"},
                       transcripts=[("T1", "P1"), ("T2", "P1")], boundary_rows=2)
     differ = _write_run(tmp_path / "b", exons=3, proteins={"P1": "MKVLA", "P2": "MKVLAQ"},

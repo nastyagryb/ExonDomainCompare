@@ -1,25 +1,4 @@
 #!/usr/bin/env python3
-"""The one place a Gallery card becomes visible.
-
-Six figure stages write into the same ``figures_index.json``. Each of them used
-to maintain its own copy of the run's availability list, so a stage that only
-appended to ``figures`` left the availability record describing an older card
-set — and a legacy card that no stage owned any more stayed in that record for
-good. This module is the single owner of the record: it derives availability from
-the registered cards themselves and refuses a card that cannot be justified.
-
-A card survives normalisation only when every part of its identity agrees with
-the run it is registered in:
-
-* the run_id of every referenced output path is this run;
-* the referenced preview and export files exist on disk;
-* the producing stage recorded a status;
-* the card is not superseded by another registered card.
-
-Cards that fail are removed rather than downgraded, because a rejected card has
-no scientific content to show and a placeholder preview would only assert an
-availability claim the run cannot support.
-"""
 from __future__ import annotations
 
 import argparse
@@ -33,23 +12,21 @@ import sys
 ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT / "scripts") not in sys.path:
     sys.path.insert(0, str(ROOT / "scripts"))
-from exondomaincompare.framework import production_contract  # noqa: E402
-from exondomaincompare.contracts import file_sha256  # noqa: E402
-from exondomaincompare.config import load_config  # noqa: E402
+from exondomaincompare.framework import production_contract
+from exondomaincompare.contracts import file_sha256
+from exondomaincompare.config import load_config
 
 RUNTIME_CONFIG = load_config(repository_root=ROOT)
-from exondomaincompare.runs.registry import RegistryError, resolve_run_record  # noqa: E402
+from exondomaincompare.runs.registry import RegistryError, resolve_run_record
 
 INDEX_NAMES = ("figures_index.json", "generic/figures_index.json",
                "figure_index.json")
 
-# Path-bearing keys of a card, in the order a reader would reach for them.
 _PATH_KEYS = ("png_url", "svg_url", "pdf_url", "table_url", "thumbnail",
               "png_path", "svg_path", "pdf_path")
 
 AVAILABLE = "available"
-#: An expected output of a completed stage is absent. A blocking state, kept
-#: distinct from "the analysis does not apply" and from "not done yet".
+
 TECHNICALLY_MISSING = "technically_missing"
 
 
@@ -75,11 +52,6 @@ def _card_paths(card: Dict[str, Any]) -> List[str]:
 
 
 def _resolve(reference: str) -> tuple[str, str]:
-    """Split a card reference into (run_id, path relative to the run directory).
-
-    Cards carry either a repository-relative path or the backend file URL the
-    browser fetches; both name the same file, so both have to resolve to it.
-    """
     ref = reference.strip()
     if ref.startswith("/api/runs/") or ref.startswith("api/runs/"):
         tail = ref.split("/runs/", 1)[1]
@@ -95,7 +67,6 @@ def _resolve(reference: str) -> tuple[str, str]:
 
 
 def _foreign_run(paths: Iterable[str], run_id: str) -> List[str]:
-    """References that point into a different run directory."""
     bad = []
     for p in paths:
         other, _ = _resolve(p)
@@ -124,7 +95,6 @@ def gallery_asset_checksums(card: Dict[str, Any], run_dir: Path) -> Dict[str, st
 
 
 def _superseded(cards: Sequence[Dict[str, Any]]) -> set:
-    """Ids that a registered card explicitly replaces."""
     out: set = set()
     live = {c.get("figure_id") for c in cards}
     for c in cards:
@@ -135,7 +105,6 @@ def _superseded(cards: Sequence[Dict[str, Any]]) -> set:
 
 
 def _contract_for(run_dir: Path) -> Dict[str, Any]:
-    """The run's production contract, resolved from its gene symbol."""
     config = {}
     try:
         config = json.loads((run_dir / "run_config.json").read_text(encoding="utf-8"))
@@ -145,14 +114,9 @@ def _contract_for(run_dir: Path) -> Dict[str, Any]:
 
 
 def normalise_index(doc: Dict[str, Any], run_dir: Path) -> Dict[str, Any]:
-    """Return the rejection report for one index document, edited in place."""
     run_id = run_dir.name
     cards = [c for c in (doc.get("figures") or []) if isinstance(c, dict)]
     superseded = _superseded(cards)
-    # Every card carries the architecture that produced it. Without this a card is
-    # only identified by its file path, so a card left over from an older renderer is
-    # indistinguishable from a current one and survives on the strength of its file
-    # still being there.
     identity = _contract_for(run_dir)
 
     kept: List[Dict[str, Any]] = []
@@ -161,8 +125,6 @@ def normalise_index(doc: Dict[str, Any], run_dir: Path) -> Dict[str, Any]:
     seen: set = set()
     for card in cards:
         fid = card.get("figure_id") or card.get("id")
-        # Wrong identity: the card does not belong to this run's card set at all,
-        # and nothing about it can be salvaged for a reader.
         reasons: List[str] = []
         if not fid:
             reasons.append("no figure_id")
@@ -188,16 +150,9 @@ def normalise_index(doc: Dict[str, Any], run_dir: Path) -> Dict[str, Any]:
         card.update(identity)
         card["run_id"] = run_id
 
-        # The scope decides which Gallery tab shows the card and which
-        # availability wording applies to it, so it is recorded rather than left
-        # for a consumer to infer from the presence of a species id.
         if not card.get("scope"):
             card["scope"] = "species" if card.get("species_id") else "comparative"
 
-        # A card that claims to be available but has no file to show is a gap in the
-        # run, not a card to delete: deleting it would hide the gap, and readiness
-        # has to see it. It is reported as technically missing instead, which is a
-        # blocking state, so a broken preview cannot pass for a result.
         if (card.get("status") or AVAILABLE) == AVAILABLE:
             gone = _missing(paths, run_dir) if paths else ["<no output paths>"]
             if gone:
@@ -227,8 +182,6 @@ def normalise_index(doc: Dict[str, Any], run_dir: Path) -> Dict[str, Any]:
         kept.append(card)
 
     doc["figures"] = kept
-    # One derived availability record, so the list can no longer describe a card
-    # set that the figures themselves have moved on from.
     doc[AVAILABLE] = [c["figure_id"] for c in kept
                       if (c.get("status") or AVAILABLE) == AVAILABLE]
     doc["pending"] = [c["figure_id"] for c in kept
@@ -249,7 +202,6 @@ def normalise_index(doc: Dict[str, Any], run_dir: Path) -> Dict[str, Any]:
 
 
 def normalise_run(run_dir: Path) -> Dict[str, Any]:
-    """Normalise every figure index of a run."""
     out: Dict[str, Any] = {"run_id": run_dir.name, "indices": {}}
     for name in INDEX_NAMES:
         fp = run_dir / "website_indices" / name
@@ -266,15 +218,14 @@ def normalise_run(run_dir: Path) -> Dict[str, Any]:
     return out
 
 
-def generate(run_dir: Path, model_json: Path) -> Dict[str, Any]:  # noqa: ARG001
-    """Figure-stage entry point, so the sequence owns the final registration."""
+def generate(run_dir: Path, model_json: Path) -> Dict[str, Any]:
     res = normalise_run(run_dir)
     total = sum(r.get("n_registered", 0) for r in res["indices"].values())
     return {"figures": 0, "registered": total, "registration": res}
 
 
 def main(argv: Sequence[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description=__doc__,
+    ap = argparse.ArgumentParser(description='The one place a Gallery card becomes visible.',
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--run-id", required=True)
     args = ap.parse_args(argv)

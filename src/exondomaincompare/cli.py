@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""Unified ExonDomainCompare command-line entry point."""
 from __future__ import annotations
 
 import argparse

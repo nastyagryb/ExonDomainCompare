@@ -1,26 +1,3 @@
-"""A newly created FGFR2 run must reach the same state and the same Gallery as the freeze.
-
-Three defects met in one run — ``2026-07-29_1634_fgfr2_homo_sapiens_felis_catus`` — and each
-one is pinned here:
-
-1. Readiness was computed circularly. The post-cluster views were added to the required list
-   only when the cluster outputs they check were *already present*, so a run whose round-trip
-   had not happened was measured against the pre-cluster views alone and published as
-   "Results ready" while its own page asked for the round-trip.
-
-2. The cluster round-trip could never finish an FGFR2 run. ``post_interpro()`` called
-   ``finalize()`` outside the core-only branch and returned, leaving the FGFR2 post-cluster
-   builder below it unreachable: the annotation was fetched and then judged without ever
-   being turned into domain and boundary layers.
-
-3. The modern Gallery was wired into a migration script and the validated freeze's own paths,
-   not into the path a new run takes, so every new FGFR2 run fell back to the legacy per-file
-   catalogue.
-
-The states a card may report are also pinned, because "pending cluster", "not applicable for
-one species", "no comparable evidence" and "output missing" are four different findings and
-collapsing them is what made the Gallery unreadable.
-"""
 from __future__ import annotations
 
 import ast
@@ -103,7 +80,6 @@ POST_CLUSTER_INDEX_PAYLOADS = {
 
 
 def _make_run(tmp_path: Path, *, with_cluster: bool = False) -> Path:
-    """A two-species FGFR2 run with its pre-InterPro closure and primary FASTA."""
     run = tmp_path / "runs" / "2026-07-29_1634_fgfr2_homo_sapiens_felis_catus"
     closure = run / "results" / "13_final_pre_interpro_closure"
     for rel, text in CLOSURE_INPUTS.items():
@@ -158,11 +134,6 @@ def post_cluster_run(tmp_path: Path) -> Path:
 # 1. the readiness regression
 # --------------------------------------------------------------------------- #
 def test_post_cluster_views_are_required_whether_or_not_their_outputs_exist():
-    """The root cause, pinned at its source.
-
-    Making the requirement conditional on the outputs meant a run could satisfy the
-    contract by not having done the work.
-    """
     for view in ra.REQUIRED_FOR_READY_WITH_DOMAINS:
         assert view in ra.REQUIRED_FOR_READY + ra.REQUIRED_FOR_READY_WITH_DOMAINS
 
@@ -185,7 +156,6 @@ def test_a_pre_cluster_two_species_run_is_not_results_ready(pre_cluster_run: Pat
 
 
 def test_missing_cluster_annotation_is_pending_not_not_applicable(pre_cluster_run: Path):
-    """A round-trip that has not run is work outstanding, not biology that does not apply."""
     states = {s.view: s for s in ra.view_states(pre_cluster_run, n_species=2)}
     for view in ("domain_architecture", "exon_domain_boundaries"):
         assert states[view].state == ra.PENDING, states[view].reason
@@ -210,7 +180,6 @@ def test_a_run_with_real_cluster_annotation_becomes_ready(post_cluster_run: Path
 
 @pytest.fixture()
 def status_model(pre_cluster_run: Path, monkeypatch: pytest.MonkeyPatch) -> dict:
-    """The status model My Runs and the dataset selector both read."""
     import main as backend
 
     # The backend reports paths relative to the project root, so a run outside it has to
@@ -224,7 +193,6 @@ def status_model(pre_cluster_run: Path, monkeypatch: pytest.MonkeyPatch) -> dict
 
 def test_my_runs_and_the_dataset_selector_read_one_cluster_required_verdict(
         status_model: dict):
-    """Both surfaces project one model, so they cannot disagree by construction."""
     assert status_model["status"] == "cluster_required"
     assert status_model["status_label"] == "Cluster input ready"
     assert status_model["cluster_required"] is True
@@ -239,7 +207,6 @@ def test_the_roundtrip_command_is_offered_for_a_cluster_required_run(status_mode
 
 def test_the_command_is_withheld_when_the_primary_fasta_is_missing(
         pre_cluster_run: Path, monkeypatch: pytest.MonkeyPatch):
-    """Part 4's gate: an invalid pre-cluster state must not offer cluster work."""
     import main as backend
 
     (pre_cluster_run / "results" / "13_final_pre_interpro_closure" / "freeze"
@@ -255,7 +222,6 @@ def test_the_command_is_withheld_when_the_primary_fasta_is_missing(
 
 def test_domain_architecture_reads_as_pending_before_the_roundtrip(
         pre_cluster_run: Path, monkeypatch: pytest.MonkeyPatch):
-    """Part 12: the view must say the round-trip is outstanding, not that nothing was found."""
     import main as backend
 
     root = pre_cluster_run.parents[1]
@@ -271,7 +237,6 @@ def test_domain_architecture_reads_as_pending_before_the_roundtrip(
 # 2. the round-trip could not finish an FGFR2 run
 # --------------------------------------------------------------------------- #
 def test_the_roundtrip_reaches_the_fgfr2_post_cluster_builder():
-    """No statement in ``post_interpro`` may sit after an unconditional return."""
     source = (ROOT / "scripts" / "interpro_cluster" / "run_cluster_roundtrip.py").read_text()
     fn = next(n for n in ast.walk(ast.parse(source))
               if isinstance(n, ast.FunctionDef) and n.name == "post_interpro")
@@ -335,7 +300,6 @@ def test_both_species_get_their_own_scope(pre_cluster_run: Path):
 
 
 def test_a_one_species_run_reports_comparison_as_not_applicable(tmp_path: Path):
-    """One species is a scientific limit of the run, not a missing file."""
     run = _make_run(tmp_path, with_cluster=True)
     index = cm.build_index(sources=cm.run_sources(run))
     for model in index["models"]:
@@ -448,7 +412,6 @@ def test_the_modern_gallery_is_not_written_for_a_non_fgfr2_run(tmp_path: Path):
 # --------------------------------------------------------------------------- #
 @pytest.mark.skipif(not FREEZE_INDICES.is_dir(), reason="validated dataset not present")
 def test_the_validated_thirty_species_catalogue_is_unchanged():
-    """Parameterising the builder may not move one card of the validated dataset."""
     model_index = json.loads(
         (FREEZE_INDICES / "protein_coordinate_model.json").read_text())
     derived = FREEZE_INDICES.parent
@@ -468,7 +431,6 @@ def test_the_validated_thirty_species_catalogue_is_unchanged():
 
 @pytest.mark.skipif(not FREEZE.is_dir(), reason="freeze not present")
 def test_the_freeze_is_not_written_to():
-    """The builders read the freeze; nothing here may write into it."""
     for module in (gc, cm, rg):
         source = Path(module.__file__).read_text()
         for verb in ("write_text(", "mkdir(", "open(\"w\""):
@@ -479,7 +441,6 @@ def test_the_freeze_is_not_written_to():
 
 @pytest.mark.skipif(not REAL_RUN.is_dir(), reason="the affected run is not present")
 def test_the_affected_real_run_is_repaired():
-    """The integration case: the run the regression was found on."""
     index = json.loads((REAL_RUN / "website_indices" / "figure_index.json").read_text())
     assert index["default_scope"] == "comparative"
     assert {f.get("species_id") for f in index["figures"] if f.get("species_id")} == {

@@ -1,24 +1,3 @@
-"""validate_protein_coordinate_model.py — loud validator for the coordinate contract.
-
-Validates a protein coordinate model (Part 1 data contract) against the rules in
-the milestone brief and **fails loudly** on any inconsistency (raises
-``CoordinateModelError`` from the library API; exits non-zero from the CLI).
-
-Rules enforced per model:
-  1. every feature coordinate is within ``[1, protein_length]``
-  2. ``start <= end`` for every feature
-  3. exactly one selected primary protein per species (one model per species)
-  4. exon-boundary positions agree with exon projections
-  5. representative-domain coordinates agree with the normalized InterProScan table
-  6. TM coordinates agree with the pyTMHMM table
-  7. candidate coordinates use the selected primary-protein coordinate system
-  8. every representative domain carries a unique ``domain_instance_id`` and every
-     boundary is consistent with the domain *instance* it was measured against
-
-Usage:
-    python -m exondomaincompare.shared_gene_analysis.validate_protein_coordinate_model runs/<id>
-    python -m exondomaincompare.shared_gene_analysis.validate_protein_coordinate_model --model-json path.json
-"""
 from __future__ import annotations
 
 import argparse
@@ -35,7 +14,7 @@ BOUNDARY_MATCH_TOLERANCE_AA = 0  # boundary must land exactly on an exon-project
 
 
 class CoordinateModelError(ValueError):
-    """Raised when a coordinate model violates the data contract."""
+    pass
 
 
 _TRACKS = (
@@ -66,7 +45,6 @@ def _int(v: Any) -> Optional[int]:
 
 
 def validate_model(model: Dict[str, Any], *, core_dir: Optional[Path] = None) -> List[str]:
-    """Return a list of human-readable violations for a single species model."""
     errors: List[str] = []
     sp = model.get("species_id", "?")
     pid = model.get("protein_id", "?")
@@ -128,7 +106,6 @@ def validate_model(model: Dict[str, Any], *, core_dir: Optional[Path] = None) ->
 
 
 def domain_instance_errors(model: Dict[str, Any]) -> List[str]:
-    """Every representative domain must carry a unique, coordinate-derived instance id."""
     tag = f"[{model.get('species_id', '?')}/{model.get('protein_id', '?')}]"
     errs: List[str] = []
     seen: Dict[str, int] = {}
@@ -157,13 +134,6 @@ def domain_instance_errors(model: Dict[str, Any]) -> List[str]:
 
 
 def boundary_instance_errors(model: Dict[str, Any]) -> List[str]:
-    """Boundary ↔ domain-instance invariants.
-
-    ``signed_distance = boundary_position - nearest_edge_position`` with the edge
-    taken from the instance actually recorded on the boundary; ``inside_domain``
-    boundaries lie within that instance and ``near_domain_edge`` boundaries are
-    within the near-edge threshold of it.
-    """
     tag = f"[{model.get('species_id', '?')}/{model.get('protein_id', '?')}]"
     thr = _int(model.get("near_edge_threshold_aa")) or 5
     by_instance = {d.get("domain_instance_id"): d
@@ -274,7 +244,7 @@ def validate_index(index: Dict[str, Any], *, core_dir: Optional[Path] = None) ->
 
 
 def main(argv: Optional[List[str]] = None) -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description='validate_protein_coordinate_model.py — loud validator for the coordinate contract.')
     ap.add_argument("run_dir", nargs="?", help="run directory (builds the model)")
     ap.add_argument("--model-json", help="validate a pre-built model index JSON instead")
     ap.add_argument("--write", help="write the built model index JSON to this path")

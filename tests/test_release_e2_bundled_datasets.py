@@ -1,5 +1,3 @@
-"""Release E2 contracts for bundled read-only example datasets."""
-
 from __future__ import annotations
 
 import hashlib

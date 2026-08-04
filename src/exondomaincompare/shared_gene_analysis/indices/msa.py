@@ -1,4 +1,3 @@
-"""Build msa_index.json from isoform alignment (FGFR2 MsaExplorer contract)."""
 from __future__ import annotations
 
 from pathlib import Path
@@ -8,12 +7,6 @@ from ..common import SharedRunContext, display_species, read_json, read_tsv, to_
 
 
 def _resolve_alignment_mode(species_count: int, sequence_count: int) -> Dict[str, str]:
-    """Data-driven alignment mode + visible tab label (generic, gene-agnostic).
-
-    A. one species + >=2 isoforms -> isoform_alignment (label "Isoform Alignment")
-    B. >=2 species                -> cross_species_msa (label "MSA")
-    C. one species + one sequence -> unavailable_single_sequence
-    """
     if species_count >= 2:
         return {"alignment_mode": "cross_species_msa", "tab_label": "MSA"}
     if sequence_count >= 2:
@@ -22,10 +15,6 @@ def _resolve_alignment_mode(species_count: int, sequence_count: int) -> Dict[str
 
 
 def _read_fasta(path: Path) -> List[Tuple[str, str, str]]:
-    """Parse a FASTA whose headers look like '>PROTEIN GENE|species_id'.
-
-    Returns ordered list of (protein_id, species_id, aligned_sequence).
-    """
     out: List[Tuple[str, str, str]] = []
     if not path.is_file():
         return out
@@ -56,7 +45,6 @@ def _species_order(ctx: SharedRunContext) -> List[str]:
 
 def _build_cross_species_msa(ctx: SharedRunContext, species_count: int,
                              disclaimer: str) -> Dict[str, Any]:
-    """Cross-species MSA: one primary protein per species (headline multi-species view)."""
     aln_path = ctx.generic_dir / "msa" / "primaries_msa.aln.faa"
     records = _read_fasta(aln_path)
     order = _species_order(ctx)
@@ -118,7 +106,6 @@ def _build_cross_species_msa(ctx: SharedRunContext, species_count: int,
 
 
 def build_msa_index(ctx: SharedRunContext) -> Dict[str, Any]:
-    """Within-species isoform MSA in the same envelope as FGFR2 ``build_msa_index``."""
     wi = ctx.website_indices
     iso_idx = read_json(wi / "isoform_alignment_index.json", {})
     primary_sel = read_json(wi / "primary_selection_index.json", {})

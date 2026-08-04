@@ -1,61 +1,4 @@
 #!/usr/bin/env python3
-"""
-map_human_IIIb_IIIc_region_to_orthologs_FINAL_v5_7_dynamic_human_qc.py
-
-Exon/CDS-aware and sequence-aware FGFR2 IIIb/IIIc-region anchoring.
-
-This version extends the sequence-only III-region anchor workflow with an optional
-exon-structure integration layer. It is designed for an annotation-aware bachelor
-thesis workflow around FGFR2 IIIb/IIIc.
-
-Main evidence layers
---------------------
-1. Human full-region protein anchor
-   Local Smith-Waterman alignment of curated human IIIb/IIIc-associated segments
-   against each candidate protein to locate the approximate IgIII-associated
-   region.
-
-2. Species-local IIIb/IIIc pair audit
-   For every species, exported IIIb and IIIc candidate proteins are compared in
-   the expected local protein window. This determines whether a species is
-   informative for sequence-based isoform discrimination at all.
-
-3. Species-calibrated protein window scoring
-   Candidate proteins are compared against their own species' exported IIIb and
-   IIIc candidate windows. This avoids the strong bias caused by a human-only
-   motif panel across distant vertebrates.
-
-4. Optional exon-aware integration
-   If fgfr2_isoform_evidence.tsv and exons.tsv are supplied, exon-structure calls
-   are joined to protein candidates and compared against sequence-based calls.
-   Exon architecture plots highlight the IIIb/IIIc alternative exon signatures.
-
-Outputs
--------
-Tables:
-  <prefix>_III_region_anchor_map.tsv
-  <prefix>_III_region_species_summary.tsv
-  <prefix>_III_pair_audit.tsv
-  <prefix>_III_region_review_cases.tsv
-  <prefix>_III_exon_sequence_agreement.tsv       optional/non-empty when evidence available
-  <prefix>_III_species_pair_windows.fasta
-  <prefix>_III_region_anchor_report.md
-
-Plots:
-  <prefix>_v5_final_status_counts.pdf/png
-  <prefix>_v5_pair_audit_status_counts.pdf/png
-  <prefix>_v5_pair_identity_barplot.pdf/png
-  <prefix>_v5_expected_vs_sequence_call_matrix.pdf/png
-  <prefix>_v5_exon_vs_sequence_call_matrix.pdf/png       when evidence available
-  <prefix>_v5_pair_difference_map.pdf/png
-  <prefix>_v5_species_support_scatter.pdf/png
-  <prefix>_v5_exon_architecture_overview.pdf/png         when exons/evidence available
-  <prefix>_v5_exon_motif_storyboard.pdf/png              overview figure
-
-This script deliberately keeps ambiguous and uninformative cases explicit rather
-than forcing a hard IIIb/IIIc label. That is the intended behavior for an
-annotation-aware robustness analysis.
-"""
 from __future__ import annotations
 
 import argparse
@@ -241,17 +184,6 @@ def classify_iii_region_similarity(fixed_id: float, local: "LocalAlignment", wb:
                                    full_window_id: float = 0.90,
                                    high_local_coverage: float = 0.80,
                                    ambiguous_local_coverage: float = 0.50):
-    """Split the broad III_region_nearly_identical label into explicit
-    similarity classes, separating full-window near-identity from cases where only
-    a (long or short) local subregion is identical.
-
-    The high-coverage decision uses the MINIMUM coverage across the IIIb and IIIc
-    windows, so an identical subregion only counts as "high coverage" if it spans
-    most of BOTH windows (not just the shorter one).
-
-    Returns:
-      (similarity_class, coverage_min, coverage_max, local_alignment_length_aa, warning)
-    """
     if not wb or not wc:
         return "unresolved", float("nan"), float("nan"), 0, "missing_window_for_one_isoform"
     cov_min = min(local.coverage_q, local.coverage_t)
@@ -274,12 +206,6 @@ def classify_iii_region_similarity(fixed_id: float, local: "LocalAlignment", wb:
 
 
 def similarity_to_window(candidate_window: str, reference_window: str) -> float:
-    """Conservative fixed-window similarity used for species-calibrated scoring.
-
-    Local alignment alone can return 1.0 for long conserved subsegments even when
-    the complete alternative window differs. Here we reward equal-position matches
-    over the shared window and penalize length differences.
-    """
     n = min(len(candidate_window), len(reference_window))
     if n == 0:
         return 0.0
@@ -303,13 +229,6 @@ def unique_kmer_support(query: str, ref: str, other_ref: str, k: int = 8) -> flo
 
 
 def reference_preference_by_local_alignment(candidate_window: str, seg_b: str, seg_c: str) -> Tuple[str, float, float, float, float]:
-    """Return whether a candidate window is more IIIb-like or IIIc-like.
-
-    FGFR2 IIIb/IIIc references share substantial flanking sequence. For the
-    human positive control we therefore prioritize reference-specific k-mers
-    from the mutually exclusive exon-coded core, and use local alignment only as
-    a small tie-breaker/context term.
-    """
     aln_b = smith_waterman(seg_b, candidate_window)
     aln_c = smith_waterman(seg_c, candidate_window)
     marker_b = unique_kmer_support(candidate_window, seg_b, seg_c, k=8)
@@ -340,7 +259,6 @@ def get_col(df: pd.DataFrame, aliases: Iterable[str]) -> Optional[str]:
 
 
 def norm_key(x: object) -> str:
-    """Normalize transcript/protein identifiers for cross-table joins."""
     x = str(x or "").strip()
     if not x or x.lower() in {"nan", "none", "unknown"}:
         return ""
@@ -364,13 +282,6 @@ def species_norm(x: object) -> str:
 
 
 class EvidenceIndex:
-    """Robust lookup object for exon/isoform evidence rows.
-
-    Evidence tables and FASTA headers often use slightly different transcript IDs
-    (source IDs vs internal IDs, versioned vs unversioned RefSeq IDs, Ensembl IDs
-    with/without version suffixes). This index stores several biologically safe
-    join keys and records which key was used.
-    """
     def __init__(self, evidence: pd.DataFrame):
         self.evidence = evidence.copy() if evidence is not None else pd.DataFrame()
         self.by_species_tx: Dict[Tuple[str, str], dict] = {}
@@ -484,18 +395,6 @@ def normalize_exons(exons: pd.DataFrame) -> pd.DataFrame:
 # ----------------------------- core analysis -----------------------------
 
 def choose_candidate(records: List[FastaRecord], species: str, isoform: str, ev_index: Optional[EvidenceIndex] = None) -> Optional[FastaRecord]:
-    """Choose the IIIb/IIIc protein candidate using exon-structure evidence first.
-
-    Previous versions picked the longest candidate protein within a species/isoform
-    class. That is dangerous for FGFR2 IIIb/IIIc because NCBI/Ensembl can export
-    multiple transcript/protein candidates, and the longest protein is not
-    necessarily the transcript carrying the exon-structure-classified IIIb/IIIc
-    cassette exon.
-
-    New rule: prefer a candidate whose transcript joins to fgfr2_isoform_evidence
-    and whose exon-derived isoform call matches the requested role. Protein-region
-    alignment is then used to anchor the region, not to choose the transcript.
-    """
     cands = [r for r in records if r.species == species and norm_iso(r.isoform) == isoform]
     if not cands:
         return None
@@ -525,14 +424,6 @@ def choose_candidate(records: List[FastaRecord], species: str, isoform: str, ev_
 
 
 def human_candidate_protein_qc(record: FastaRecord, expected: str, seg_b: str, seg_c: str, fallback_w0: int, fallback_w1: int) -> dict:
-    """Protein-level validation for the human positive-control candidates.
-
-    The exon evidence can be structurally correct while a selected transcript/protein
-    is not usable for isoform-sequence claims, e.g. because the relevant D3/IgIII
-    protein segment is weakly represented or aligns better to the opposite curated
-    segment. This function makes that failure explicit instead of letting the
-    downstream plots silently use the wrong human control.
-    """
     window, w0, w1, mode, anch = extract_dynamic_window(record.seq, seg_b, seg_c, fallback_w0, fallback_w1)
     pref, to_b, to_c, cov_b, cov_c = reference_preference_by_local_alignment(window, seg_b, seg_c)
     expected = norm_iso(expected)
@@ -608,12 +499,6 @@ def anchor_human_region(seq: str, seg_b: str, seg_c: str, plausible_min: int, pl
 
 def dynamic_region_bounds(seq: str, seg_b: str, seg_c: str, fallback_w0: int, fallback_w1: int, flank: int = 12,
                           min_identity: float = 0.35, min_coverage: float = 0.55) -> Tuple[int, int, str, dict]:
-    """Return per-protein III-region bounds from local alignment to curated human IIIb/IIIc segments.
-
-    Coordinates are Python half-open [start, end). The fallback fixed window is retained only
-    when the alignment is too weak to define a credible local region. This prevents the main
-    pair audit from assuming that amino acids 250-430 are homologous in every exported model.
-    """
     anch = anchor_human_region(seq, seg_b, seg_c, plausible_min=1, plausible_max=max(len(seq), 1))
     start = safe_int(anch.get("human_full_anchor_start"), None)
     end = safe_int(anch.get("human_full_anchor_end"), None)
@@ -814,14 +699,6 @@ def join_exon_evidence(record: FastaRecord, ev_index: EvidenceIndex) -> dict:
     }
 
 def final_status(row: dict) -> str:
-    """Final evidence status for v5.2.
-
-    Important design choice: exon/sequence agreement is considered the strongest
-    isoform-level evidence. A weak human full-region anchor is retained as a
-    warning, not allowed to overwrite a concordant exon + species-calibrated
-    sequence call. This makes the status labels match the biological evidence
-    more closely.
-    """
     call = row.get("species_motif_call", "")
     exon_call = row.get("exon_isoform_call", "not_available")
     exp = row.get("expected_isoform", "unclassified")
@@ -865,7 +742,6 @@ def final_status(row: dict) -> str:
 
 
 def simplify_final_status(status: str) -> str:
-    """Collapse detailed statuses into figure-friendly classes."""
     status = str(status)
     if status.startswith("exon_sequence_supported_anchor_weak"):
         return "exon+sequence supported; human anchor weak"
@@ -908,14 +784,6 @@ def plot_counts(series: pd.Series, outdir: Path, name: str, title: str, xlabel: 
 
 
 def ensure_pair_audit_plot_columns(audit: pd.DataFrame) -> pd.DataFrame:
-    """Return a copy of pair-audit table with plotting identity columns present.
-
-    Some upstream QC paths, especially after protein-aware candidate re-selection, may
-    produce an audit table where the old plotting column name is absent. The scientific
-    values are still present under related names, or can be safely set to NaN so that
-    plotting does not stop the analysis. This function does not change biological calls;
-    it only makes downstream plots robust.
-    """
     if audit is None or audit.empty:
         return audit
     audit = audit.copy()
@@ -1132,7 +1000,6 @@ def plot_simplified_status_counts(df: pd.DataFrame, outdir: Path, prefix: str):
 
 
 def plot_evidence_agreement_storyboard(df: pd.DataFrame, audit: pd.DataFrame, outdir: Path, prefix: str):
-    """Clean thesis-style 4-panel overview focused on the positive evidence story."""
     _fig, axes = plt.subplots(2, 2, figsize=(13, 10))
 
     # A simplified classes
@@ -1180,7 +1047,6 @@ def parse_species_list(species_arg: str) -> List[str]:
 
 
 def plot_representative_exon_motif_tracks(records: List[FastaRecord], exons: pd.DataFrame, ev_lookup: EvidenceIndex, df: pd.DataFrame, outdir: Path, prefix: str, representative_species: List[str]):
-    """Readable main-figure exon + motif tracks for selected representative species."""
     if exons.empty or not getattr(ev_lookup, "loaded", False) or not representative_species:
         return
     tx_col = get_col(exons, ["transcript_id_internal", "internal_transcript_id", "tx_internal_id"])

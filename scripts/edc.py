@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""Compatibility launcher for the installed :command:`edc` CLI."""
 from pathlib import Path
 import sys
 

@@ -1,24 +1,4 @@
 #!/usr/bin/env python3
-"""
-Validate final pre-InterPro inputs.
-
-Single validation gate used by all final plotting/report scripts.
-
-Before any figure or report is generated, this module verifies that every
-required final pre-InterPro file exists, is non-empty, and contains the
-required columns. If anything is missing or inconsistent, it fails with a
-clear error message instead of silently producing misleading figures.
-
-Importable API:
-    locate_files(base) -> dict
-    run_validation(base, outdir=None) -> (ok: bool, rows: list[dict], summary: dict)
-    validate_or_raise(base) -> dict   # raises RuntimeError on hard failure
-
-Outputs (when --outdir / metadata dir is provided):
-    final_pre_interpro_validation_report.tsv
-    final_pre_interpro_validation_report.json
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -30,8 +10,6 @@ from typing import Dict, List, Optional, Tuple
 
 SCRIPT_VERSION = "1.0"
 
-# logical filename -> (required columns, dir hint substring, kind)
-# kind: "tsv" | "fasta" | "text"
 REQUIRED_SPEC: List[Tuple[str, List[str], str, str]] = [
     ("species_qc_master.tsv",
      ["species", "final_display_class", "recommended_use", "phylo_order", "taxon_group", "fgfr2_ortholog_status"],
@@ -184,7 +162,6 @@ def run_validation(base: Path, outdir: Optional[Path] = None) -> Tuple[bool, Lis
             "warning": warning,
         })
 
-    # ---- cross-file consistency checks (do not silently pass) ----
     extra: List[Dict[str, object]] = []
 
     master = paths.get("species_qc_master.tsv")

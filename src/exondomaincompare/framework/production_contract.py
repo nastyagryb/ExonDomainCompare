@@ -1,28 +1,3 @@
-"""production_contract.py — the one router from gene symbol to production contract.
-
-``analysis_router`` answers "which *analysis* workflow does this gene use?".  This
-module answers the second half of that question — "which *production* architecture
-does the run's Explorer and Figure Gallery use?" — and it answers it in exactly one
-place, from exactly one input: the canonical normalized gene symbol.
-
-    FGFR2          → analysis_family = "fgfr2"   (modern 30-species FGFR2 architecture)
-    every other    → analysis_family = "generic" (modern BCL2L1 generic architecture)
-
-Nothing else may participate in the decision. In particular the routing must not
-consult the run id, the run date, figure filenames on disk, the presence of a
-historical manifest, a validated-dataset path, a migration marker, the number of
-figures already rendered, the first species that happened to succeed, an old
-registry entry, or the current frontend route. Those inputs all describe how a
-run was *produced in the past*; the production architecture is a property of the
-gene, so a run created today and a run repaired today must resolve identically.
-
-The resolved contract is written into the run (``run_config.json`` and
-``status.json``) and exposed on every Gallery card, so that "which architecture is
-this run using" is an answerable question rather than an inference from layout.
-
-Unknown analysis-family values fail loudly via :class:`UnknownAnalysisFamily`;
-there is deliberately no fallback branch to a legacy implementation.
-"""
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field
@@ -99,13 +74,11 @@ _FGFR2_EXPLORER_COMPONENTS = _GENERIC_EXPLORER_COMPONENTS + (
 
 
 class UnknownAnalysisFamily(ValueError):
-    """Raised when an analysis-family value is not one this build can produce."""
+    pass
 
 
 @dataclass
 class ProductionContract:
-    """What a run's Explorer and Gallery must look like, derived from the gene."""
-
     gene_symbol: str
     analysis_family: str
     gallery_schema_version: int
@@ -122,7 +95,6 @@ class ProductionContract:
         return self.analysis_family == FAMILY_FGFR2
 
     def scopes(self, species_ids: Optional[List[str]]) -> List[str]:
-        """Gallery scopes for a species inventory, in canonical display order."""
         species = [s for s in (species_ids or []) if s]
         if len(species) >= 2:
             return [SCOPE_COMPARATIVE, *species]
@@ -133,7 +105,6 @@ class ProductionContract:
         return scopes[0] if scopes else ""
 
     def identity(self) -> Dict[str, Any]:
-        """The schema-identity block stamped onto runs and Gallery cards."""
         return {
             "analysis_family": self.analysis_family,
             "gallery_schema_version": self.gallery_schema_version,
@@ -146,17 +117,14 @@ class ProductionContract:
 
 
 def normalize_gene_symbol(symbol: Optional[str]) -> str:
-    """Canonical upper-case gene symbol (``fgfr2`` → ``FGFR2``)."""
     return _ar.normalize_gene_symbol(symbol)
 
 
 def analysis_family_for_gene(gene_symbol: Optional[str]) -> str:
-    """The routing decision itself: canonical gene symbol → analysis family."""
     return FAMILY_FGFR2 if normalize_gene_symbol(gene_symbol) == "FGFR2" else FAMILY_GENERIC
 
 
 def require_supported_family(family: Optional[str]) -> str:
-    """Return ``family`` normalized, or fail loudly if this build cannot produce it."""
     value = str(family or "").strip().lower()
     if value not in SUPPORTED_FAMILIES:
         raise UnknownAnalysisFamily(
@@ -168,7 +136,6 @@ def require_supported_family(family: Optional[str]) -> str:
 
 
 def resolve(gene_symbol: Optional[str]) -> ProductionContract:
-    """THE production routing function. Gene symbol in, full contract out."""
     sym = normalize_gene_symbol(gene_symbol)
     family = analysis_family_for_gene(sym)
     fgfr2 = family == FAMILY_FGFR2
@@ -193,12 +160,6 @@ def resolve(gene_symbol: Optional[str]) -> ProductionContract:
 
 
 def resolve_for_run(run_config: Optional[Dict[str, Any]]) -> ProductionContract:
-    """Resolve the contract for a run from its configuration.
-
-    Only ``gene_symbol`` is read. If a run already carries an ``analysis_family``
-    it is verified against the gene rather than trusted, so a stale or hand-edited
-    value cannot pin a run to the wrong architecture.
-    """
     config = run_config or {}
     contract = resolve(config.get("gene_symbol"))
     recorded = config.get("analysis_family")
@@ -212,7 +173,6 @@ def resolve_for_run(run_config: Optional[Dict[str, Any]]) -> ProductionContract:
 
 
 def stamp(run_config: Dict[str, Any]) -> Dict[str, Any]:
-    """Write the resolved contract into a run-config-shaped dict (in place)."""
     contract = resolve_for_run(run_config)
     run_config.update(contract.identity())
     run_config["production_template"] = contract.template_run

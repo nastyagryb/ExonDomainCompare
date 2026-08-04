@@ -1,13 +1,3 @@
-"""Export validation for the single-species publication figures.
-
-These tests inspect the actual exported artefacts — a standalone SVG, a vector
-PDF and a 300 dpi PNG — rather than the source code that produces them, because
-the defect being guarded against was invisible in the source: the figures looked
-correct on screen and exported as a single full-page JPEG.
-
-The reference dataset is the real post-cluster FGFR1 / Gallus gallus run.
-"""
-
 from __future__ import annotations
 
 import json
@@ -53,7 +43,6 @@ def _coordinate_model(run_dir: Path) -> Path:
 
 
 def _render(run_dir: Path, out_dir: Path, selected: str = "E4 → E5") -> Path:
-    """Render the main figures and normalise the per-species stems for the tests."""
     if shutil.which("node") is None:
         pytest.skip("node is required to render the figure specifications")
     model = _coordinate_model(run_dir)
@@ -82,7 +71,6 @@ def _render(run_dir: Path, out_dir: Path, selected: str = "E4 → E5") -> Path:
 
 
 def _context(run_dir: Path) -> dict:
-    """The real dataset facts the figures are expected to depict."""
     doc = json.loads(_coordinate_model(run_dir).read_text())
     primary = next((m for m in doc["models"] if m.get("role") == "primary"), doc["models"][0])
     boundaries = [b for b in primary.get("exon_boundaries") or []
@@ -192,7 +180,6 @@ def test_pdf_opens_and_is_a_single_well_formed_page(figures, name):
 
 @pytest.mark.parametrize("name", MAIN_FIGURES)
 def test_pdf_contains_no_raster_image(figures, name):
-    """The defining defect: the page was one embedded JPEG."""
     info = probe_pdf(figures / f"{name}.pdf")
     assert info.images == [], f"{name}.pdf embeds raster data: {info.images}"
     assert not info.is_single_raster_page
@@ -264,7 +251,6 @@ def test_signed_distance_pdf_shows_signed_values_and_the_zero_reference(figures)
 
 
 def test_no_exported_pdf_is_a_full_page_seventy_two_dpi_raster(figures):
-    """Regression guard for the exact failure mode that was replaced."""
     for name in MAIN_FIGURES:
         info = probe_pdf(figures / f"{name}.pdf")
         assert not info.has_raster_image
@@ -287,7 +273,6 @@ def test_svg_is_valid_xml_with_explicit_dimensions(figures, name):
 
 @pytest.mark.parametrize("name", MAIN_FIGURES)
 def test_svg_carries_no_stylesheet_dependency(figures, name):
-    """Every mark must paint itself; a CSS-only fill renders black when exported."""
     svg = probe_svg(figures / f"{name}.svg")
     assert not svg["has_css_var"], f"{name}.svg contains an unresolved var(--…)"
     assert not svg["has_foreign_object"]
@@ -312,7 +297,6 @@ def test_svg_text_declares_its_own_font(figures, name):
 
 @pytest.mark.parametrize("name", MAIN_FIGURES)
 def test_svg_has_no_black_fallback_blocks(figures, name):
-    """A black fill on a feature block is the signature of the old export bug."""
     raw = (figures / f"{name}.svg").read_text(encoding="utf-8")
     root = ET.fromstring(raw)
     for el in root.iter():
@@ -385,7 +369,6 @@ def _svg_text(path: Path) -> str:
 
 
 def test_exon_map_carries_no_domain_track(figures):
-    """The exon map answers the exon-to-protein question only."""
     text = _svg_text(figures / "primary_exon_projection.svg")
     assert "Coding exons" in text
     for forbidden in ("Ig-like", "kinase", "Representative domains", "TM helix"):
@@ -439,7 +422,6 @@ def test_domain_figure_uses_cautious_candidate_wording(figures):
 
 
 def test_boundary_figure_keeps_interpretation_out_of_the_architecture(figures):
-    """Distances and identifiers belong to the subtitle, not the plot area."""
     root = ET.fromstring((figures / "selected_boundary_detail.svg")
                          .read_text(encoding="utf-8"))
     texts = [(float(el.get("y")), el.text or "") for el in root.iter()
@@ -476,7 +458,6 @@ def test_signed_distance_figure_shows_the_near_edge_band_and_edge_symbols(figure
 
 
 def test_signed_distance_figure_reproduces_the_real_signed_values(figures):
-    """The seven documented FGFR1 boundaries, read back out of the figure."""
     text = _svg_text(figures / "signed_boundary_distances.svg")
     for value in ("-2", "+1", "+2", "-39", "+3", "-45", "+4"):
         assert value in text.splitlines() or value in text, \
@@ -492,7 +473,6 @@ def test_boundary_class_summary_reports_the_real_distribution(figures):
 
 
 def test_absolute_distance_histogram_is_not_among_the_main_figures(figures):
-    """The signed plot replaced it; keeping both would be redundant."""
     names = {p.stem for p in figures.glob("*.svg")}
     assert not any("histogram" in n for n in names)
     assert "signed_boundary_distances" in names
@@ -504,7 +484,6 @@ def test_absolute_distance_histogram_is_not_among_the_main_figures(figures):
 
 @pytest.fixture(scope="module")
 def pngs(figures) -> Path:
-    """Rasterise the exported SVGs at 300 dpi, as the download path does."""
     if shutil.which("rsvg-convert") is None:
         pytest.skip("rsvg-convert is required to rasterise the SVG exports")
     out = figures / "png"

@@ -1,12 +1,3 @@
-"""Minimal PDF inspector for export validation, using only the standard library.
-
-Enough of the PDF structure is parsed to answer the questions the export tests
-ask: is this a genuine vector figure at a sensible physical size, or is it a
-single full-page raster screenshot?
-
-Deliberately dependency-free so the export tests run anywhere the project runs.
-"""
-
 from __future__ import annotations
 
 import re
@@ -56,7 +47,6 @@ class PdfInfo:
 
     @property
     def is_single_raster_page(self) -> bool:
-        """True for a page whose visible content is one embedded bitmap."""
         return bool(self.images) and self.n_text_ops == 0
 
     @property
@@ -64,12 +54,10 @@ class PdfInfo:
         return self.n_text_ops > 0 and bool(self.fonts)
 
     def contains(self, needle: str) -> bool:
-        """Case-insensitive search of the extracted text layer."""
         return needle.lower() in self.text.lower()
 
 
 def _decode_streams(raw: bytes) -> str:
-    """Concatenate every content stream we can decode, as latin-1 text."""
     out = []
     for match in re.finditer(rb"stream\r?\n(.*?)\r?\nendstream", raw, re.DOTALL):
         body = match.group(1)
@@ -155,7 +143,6 @@ def probe_pdf(path) -> PdfInfo:
 
 
 def probe_svg(path) -> dict:
-    """Structural checks for an exported standalone SVG."""
     import xml.etree.ElementTree as ET
 
     path = Path(path)
@@ -197,7 +184,6 @@ def probe_svg(path) -> dict:
 
 
 def probe_png(path) -> dict:
-    """Dimensions, dpi (pHYs) and simple contrast statistics for a PNG."""
     from PIL import Image
 
     path = Path(path)

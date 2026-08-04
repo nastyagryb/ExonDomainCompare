@@ -1,13 +1,4 @@
 #!/usr/bin/env python3
-"""
-Run FGFR2 MAFFT alignments.
-
-Run MAFFT (--auto) on the four prepared MSA inputs and report alignment-quality
-statistics. MAFFT is REQUIRED for final analysis: if it is missing the module fails
-with a clear message and writes metadata/msa_dependency_check_failed.txt. A trivial
-pad-to-length fallback exists ONLY for smoke tests and is always labelled
-not_for_final_analysis (never used unless --allow_fallback is given).
-"""
 
 from __future__ import annotations
 
@@ -70,7 +61,6 @@ def run_mafft(mafft_bin: str, inp: Path, out: Path, timeout: int) -> Tuple[bool,
 
 
 def fallback_align(inp: Path, out: Path) -> None:
-    """Smoke-test only: right-pad sequences with gaps to equal length. NOT an alignment."""
     items = M.read_fasta(inp)
     maxlen = max((len(M.clean_alignment_seq(s)) for _, s in items), default=0)
     padded = [(i, M.clean_alignment_seq(s) + "-" * (maxlen - len(M.clean_alignment_seq(s))))

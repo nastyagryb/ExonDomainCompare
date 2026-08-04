@@ -1,13 +1,4 @@
 #!/usr/bin/env python3
-"""
-fgfr2_plot_style.py — shared paper-level plotting style for FGFR2 synteny figures (and others).
-
-Colour-blind-safe (Okabe-Ito based), no rainbow, no red/green-only coding, compact legends, clean
-vector export (SVG/PDF/PNG). Deterministic per-orthology-group colours so the same gene keeps the
-same colour across every figure. Helpers for rounded gene arrows, evidence badges, panel labels and
-taxon ordering.
-"""
-
 from __future__ import annotations
 
 import hashlib
@@ -87,7 +78,6 @@ TAXON_ORDER = ["Primates", "Rodentia", "Carnivora", "Cetartiodactyla", "Artiodac
 
 
 def ortholog_color(group: str, assigned: Dict[str, str]) -> str:
-    """Deterministic colour for an orthology group symbol; stable across figures via a hash fallback."""
     if not group:
         return UNRESOLVED_COLOR
     g = group.upper()
@@ -107,7 +97,6 @@ def ortholog_color(group: str, assigned: Dict[str, str]) -> str:
 
 
 def build_color_map(groups: Sequence[str]) -> Dict[str, str]:
-    """Assign palette colours to orthology groups in a stable, frequency-then-alpha order."""
     assigned: Dict[str, str] = {"FGFR2": FGFR2_COLOR}
     for g in sorted({(x or "").upper() for x in groups if x and x.upper() != "FGFR2"}):
         ortholog_color(g, assigned)
@@ -129,7 +118,6 @@ def taxon_sort_key(taxon: str, phylo_order) -> Tuple[int, int]:
 # ---------------------------------------------------------------------------
 def gene_arrow(ax, x_center, y, width, height, strand_rel, facecolor, *, edgecolor=INK,
                lw=LW["gene_edge"], alpha=1.0, zorder=3):
-    """Rounded gene arrow (pentagon) centred at x_center, pointing right if strand_rel>=0."""
     w, h = width / 2.0, height / 2.0
     tip = 0.32 * width
     if strand_rel >= 0:
@@ -143,13 +131,11 @@ def gene_arrow(ax, x_center, y, width, height, strand_rel, facecolor, *, edgecol
 
 
 def ribbon(ax, x0, y0, x1, y1, color, *, alpha=0.30, lw=LW["ribbon"], zorder=1):
-    """Thin connector between conserved neighbors in consecutive rows."""
     ax.plot([x0, x1], [y0, y1], color=color, alpha=alpha, lw=lw, zorder=zorder,
             solid_capstyle="round")
 
 
 def badge(ax, x, y, label, kind="neutral", *, fontsize=FONT["badge"]):
-    """Small rounded evidence badge."""
     col = BADGE_COLOR.get(kind, BADGE_COLOR["neutral"])
     ax.add_patch(FancyBboxPatch((x, y - 0.12), 0.02, 0.24, boxstyle="round,pad=0.16,rounding_size=0.12",
                                 facecolor=col, edgecolor="none", alpha=0.16, zorder=4,
@@ -186,7 +172,6 @@ def legend_line(color, label, ls="-", lw=LW["outline"]):
 
 
 def gene_label_style(method: str) -> Tuple[str, str]:
-    """Return (suffix, fontstyle) for a neighbor label given its resolution method."""
     if method in ("reciprocal_best_hit", "rbh_supported_neighbor_ortholog"):
         return "", "italic"
     if method in ("high_confidence_one_way_blast", "blast_supported_probable_neighbor"):

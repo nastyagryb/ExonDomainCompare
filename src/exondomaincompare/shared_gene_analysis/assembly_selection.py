@@ -1,34 +1,14 @@
-"""assembly_selection.py — choose a genome assembly, and say why the others lost.
-
-The Equus quagga run wrote two assembly tables with zero rows each. Zero rows was the
-only thing they could say, because every failure path in the collector returned an
-empty list: a rejected taxonomy query, a species with no assembly, a species whose
-assemblies are all unannotated, a download that failed and an archive that would not
-parse all produced the same empty table. The actual cause — NCBI refused the query
-term ``equus_quagga`` — was invisible, and an annotated chromosome-level RefSeq
-reference assembly (GCF_021613505.1) went unnoticed.
-
-Those states are separated here, and every candidate keeps a row saying whether it was
-selected or rejected and on what ground. An empty candidate list now means one thing
-only: the source returned no assembly for this taxon.
-
-The priority rule is deterministic and stated in one place:
-
-1. an annotated assembly, always — an unannotated one has no genes to find;
-2. RefSeq (``GCF_``) over GenBank (``GCA_``), because RefSeq is the annotated copy;
-3. the registry's own assembly preference;
-4. a reference or representative genome over an alternate one;
-5. assembly level: complete genome > chromosome > scaffold > contig;
-6. accession, so that ties break the same way on every run.
-
-Nothing here is species-specific. The rule is the same for a zebra, a chicken and any
-species added later.
-"""
 from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Sequence
+
+SELECTION_RULE = (
+    "The deterministic rule chooses an annotated assembly, always, before "
+    "considering RefSeq status, registry preference, genome role, assembly "
+    "level and accession."
+)
 
 #: Outcomes. The point of naming this many is that each one implies a different next
 #: action: fix the name, wait and retry, accept that the species has no annotation, or
@@ -57,8 +37,6 @@ _SUPPRESSED = {"suppressed", "replaced", "withdrawn"}
 
 @dataclass
 class AssemblySelection:
-    """The decision, the candidates and the reason — one object, one story."""
-
     status: str
     selected: Optional[Dict[str, Any]] = None
     candidates: List[Dict[str, Any]] = field(default_factory=list)
@@ -85,13 +63,6 @@ def _norm(value: Any) -> str:
 
 
 def normalise_candidate(report: Dict[str, Any]) -> Optional[Dict[str, Any]]:
-    """One assembly report in the fields the selector needs.
-
-    Tolerant about where a field sits, because the Datasets JSON has moved fields
-    between releases before. Missing *optional* metadata is recorded as empty and does
-    not disqualify a candidate; a missing accession does, since there is then nothing
-    to download.
-    """
     info = report.get("assembly_info") or report.get("assembly") or {}
     organism = report.get("organism") or {}
     annotation = report.get("annotation_info") or {}
@@ -130,13 +101,6 @@ def parse_summary(reports: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
 def _taxon_match(candidate: Dict[str, Any], requested_taxid: str,
                  requested_name: str) -> str:
-    """How this assembly's organism relates to the requested taxon.
-
-    A taxon query returns descendants, so a subspecies assembly can appear under a
-    species request. That is legitimate and stays available, but it is labelled: a
-    reader should be able to see that a chosen assembly is a subspecies rather than
-    the nominate form.
-    """
     taxid = str(candidate.get("tax_id") or "")
     if requested_taxid and taxid == str(requested_taxid):
         return "exact_taxon"
@@ -186,7 +150,6 @@ def score_candidate(candidate: Dict[str, Any], preference: str) -> Dict[str, Any
 def select(candidates: Sequence[Dict[str, Any]], *, preference: str = "RefSeq",
            requested_taxid: str = "", requested_name: str = "",
            query_term: str = "") -> AssemblySelection:
-    """Choose one assembly, and record a decision for every candidate."""
     if not candidates:
         return AssemblySelection(
             status=NO_ASSEMBLY, query_term=query_term,
@@ -274,8 +237,6 @@ def select(candidates: Sequence[Dict[str, Any]], *, preference: str = "RefSeq",
 
 def selection_rows(selection: AssemblySelection, species_input: str,
                    species_canonical: str, taxid: str) -> List[Dict[str, str]]:
-    """The candidate table. Written even when nothing was selected, because the
-    rejected candidates are the evidence for why."""
     rows: List[Dict[str, str]] = []
     for row in selection.candidates:
         rows.append({
@@ -290,12 +251,6 @@ def selection_rows(selection: AssemblySelection, species_input: str,
 
 def failure_row(status: str, detail: str, species_input: str, species_canonical: str,
                 taxid: str, query_term: str) -> Dict[str, str]:
-    """A single row for a failure that produced no candidates at all.
-
-    Without this the table is empty and a reader cannot tell a rejected query term
-    from a species that genuinely has no assembly — the exact ambiguity that hid the
-    Equus quagga root cause.
-    """
     return {
         "species_input": species_input,
         "species_canonical": species_canonical,

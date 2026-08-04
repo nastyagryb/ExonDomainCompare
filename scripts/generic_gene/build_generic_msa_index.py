@@ -1,14 +1,3 @@
-"""Generic gene-agnostic MSA handling.
-
-Rules:
-  * multiple protein isoforms present  -> build an isoform-level MSA (MAFFT --auto)
-  * multiple species present           -> (future) cross-species primary MSA
-  * only one primary sequence          -> msa_status = unavailable_single_sequence
-
-Never fabricates an alignment. Writes ``msa_index.tsv`` with an explicit status,
-and (when built) the alignment file under ``msa/``. Uses the plain MAFFT call
-extracted conceptually from the FGFR2 MAFFT wrapper (no cassette specifics).
-"""
 from __future__ import annotations
 
 import argparse
@@ -40,10 +29,6 @@ def _run_mafft(in_fasta: Path, out_aln: Path, timeout: int = 600) -> bool:
 
 
 def _fasta_species(all_faa: Path) -> Dict[str, str]:
-    """Map protein_id -> species_id from headers like '>PROTEIN GENE|species_id'.
-
-    Gene-agnostic: species come from the FASTA header, never hard-coded.
-    """
     out: Dict[str, str] = {}
     if not all_faa.is_file():
         return out
@@ -58,7 +43,6 @@ def _fasta_species(all_faa: Path) -> Dict[str, str]:
 
 
 def _write_species_fasta(all_faa: Path, pids: List[str], dest: Path) -> None:
-    """Write a per-species FASTA subset preserving original records for the given pids."""
     want = set(pids)
     keep: List[str] = []
     emit = False
@@ -91,13 +75,9 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
 
     rows: List[Dict[str, Any]] = []
     result: Dict[str, Any] = {"msa_status": "", "alignment_file": ""}
-    # Per-species within-species isoform alignments. We NEVER build one alignment
-    # mixing isoforms from different species; each species is aligned on its own so
-    # the hierarchy stays "species -> isoforms within that species".
     per_species: Dict[str, str] = {}
     msa_dir = ctx.generic_dir / "msa"
 
-    # protein ids grouped by species (order preserved as encountered in the FASTA)
     by_species: Dict[str, List[str]] = {}
     for pid in seqs:
         sid = pid_species.get(pid, "")
@@ -135,8 +115,6 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
                 "reason": (f"Within-species isoform MSA for {tag} built with MAFFT --auto."
                            if ok else "MAFFT not available or failed; alignment not built."),
             })
-        # Back-compat: expose the reference (first) species' alignment under the
-        # historical flat name so the stage copy + single-species readers keep working.
         ref_sid = ordered_species[0]
         ref_aln = per_species.get(ref_sid, "")
         if ref_aln:
@@ -158,9 +136,6 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
         result["msa_status"] = "unavailable_single_sequence"
     result["per_species_isoform_alignments"] = per_species
 
-    # Cross-species primary MSA: when >=2 species are analysed, align exactly one
-    # primary protein per species (from proteins_primary.faa). This is the headline
-    # comparative alignment for a multi-species run (generic, gene-agnostic).
     primary_faa = ctx.core("proteins_primary.faa")
     primary_seqs = read_fasta(primary_faa)
     result["cross_species_alignment_file"] = ""
@@ -195,7 +170,7 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description='Generic gene-agnostic MSA handling.')
     ap.add_argument("--run-id", required=True)
     args = ap.parse_args()
     ctx = load_context(args.run_id)

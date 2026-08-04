@@ -1,4 +1,3 @@
-"""Regression coverage for completed generic runs stored outside the repository."""
 from __future__ import annotations
 
 import json

@@ -1,4 +1,3 @@
-"""Journaled, checksum-first legacy run registration/copy/move service."""
 from __future__ import annotations
 
 import csv

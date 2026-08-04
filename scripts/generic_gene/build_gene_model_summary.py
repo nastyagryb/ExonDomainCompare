@@ -1,9 +1,3 @@
-"""Generic gene/transcript/protein model summary (gene-agnostic).
-
-Reads the standardized ``gene_model_index.tsv`` + ``protein_isoform_index.tsv``
-and writes canonical ``gene_model_summary.tsv`` and ``protein_isoform_summary.tsv``.
-No FGFR2 / event assumptions.
-"""
 from __future__ import annotations
 
 import argparse
@@ -65,7 +59,7 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description='Generic gene/transcript/protein model summary (gene-agnostic).')
     ap.add_argument("--run-id", required=True)
     args = ap.parse_args()
     ctx = load_context(args.run_id)

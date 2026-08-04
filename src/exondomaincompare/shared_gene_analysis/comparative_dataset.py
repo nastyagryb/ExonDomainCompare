@@ -1,13 +1,4 @@
 #!/usr/bin/env python3
-"""Shared comparative dataset layer for multi-species runs.
-
-Builds ``comparative_dataset_index.json`` plus the normalised TSV tables that the
-Comparative Figure Gallery and the Data & Downloads package builder both read.
-Nothing here invents cross-species equivalence: MSA columns are geometry, domain
-annotation matrix states distinguish ``not detected`` from ``pending`` /
-``unavailable``, and comparable-boundary groups are taken from the canonical
-``boundary_dashboard`` contract rather than recomputed.
-"""
 from __future__ import annotations
 
 import csv
@@ -171,12 +162,6 @@ def _msa_aligned_domains(models: Sequence[Dict[str, Any]],
 def _domain_annotation_matrix(models: Sequence[Dict[str, Any]],
                               aligned_domains: Sequence[Dict[str, Any]]
                               ) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
-    """Build a species × comparable-domain-group matrix.
-
-    Groups are formed by InterPro accession *and* order along the protein (and,
-    when available, overlapping MSA intervals). Accession alone is never enough:
-    FGFR1 has three Ig-like domains that share IPR007110.
-    """
     # Bucket instances by (accession, instance_number) when numbers agree across
     # species; otherwise fall back to MSA-interval proximity for the same accession.
     by_key: Dict[Tuple[str, int], List[Dict[str, Any]]] = defaultdict(list)
@@ -284,10 +269,6 @@ def _pairwise_identity(alignment_path: Path) -> List[Dict[str, Any]]:
 
 def _isoform_diversity(models: Sequence[Dict[str, Any]],
                        run_dir: Path) -> List[Dict[str, Any]]:
-    """Compact per-species isoform diversity summary.
-
-    Complements within-species isoform alignments; does not replace them.
-    """
     isoform_index = _load_json(
         run_dir / "website_indices" / "isoform_alignment_index.json") or {}
     by_sp = {}
@@ -338,12 +319,6 @@ def _isoform_diversity(models: Sequence[Dict[str, Any]],
 
 def _synteny_blocks(run_dir: Path,
                     models: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Canonical per-species synteny rows for the comparative dataset.
-
-    The locus index already speaks the shared ``shared_synteny_v1`` contract, so
-    the comparative figure and the interactive viewer draw the identical loci in
-    the identical order instead of each re-deriving a neighbourhood.
-    """
     rows = (_load_json(run_dir / "website_indices" / "synteny_locus_index.json")
             or {}).get("species") or []
     name_by_id = {m.get("species_id"): m.get("scientific_name") for m in models}
@@ -354,7 +329,6 @@ def _synteny_blocks(run_dir: Path,
 
 
 def _synteny_rows(blocks: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Flat source table: exactly the loci the figure draws, target included."""
     rows: List[Dict[str, Any]] = []
     for block in blocks:
         sid = block.get("species_id") or block.get("species") or ""
@@ -409,7 +383,6 @@ _COMPARABLE_BOUNDARY_COLUMNS = [
 
 def _comparable_boundary_rows(groups: Sequence[Dict[str, Any]],
                               run_id: str) -> List[Dict[str, Any]]:
-    """Flatten comparable-boundary groups into one row per contributing species."""
     rows: List[Dict[str, Any]] = []
     for g in groups:
         observations = g.get("per_species_native_positions") or []
@@ -451,7 +424,6 @@ def _comparable_boundary_rows(groups: Sequence[Dict[str, Any]],
 def build_comparative_dataset(run_dir: Path,
                               coordinate_index: Optional[Dict[str, Any]] = None,
                               project_root: Optional[Path] = None) -> Dict[str, Any]:
-    """Build the comparative dataset index and write supporting TSV tables."""
     run_dir = Path(run_dir)
     root = Path(project_root or ROOT)
     pcm_path = run_dir / "website_indices" / "generic" / "protein_coordinate_model.json"
@@ -631,7 +603,7 @@ def build_comparative_dataset(run_dir: Path,
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
     import argparse
-    p = argparse.ArgumentParser(description=__doc__)
+    p = argparse.ArgumentParser(description='Shared comparative dataset layer for multi-species runs.')
     p.add_argument("--run-id", required=True)
     p.add_argument("--runs-root", type=Path, default=None)
     args = p.parse_args(argv)

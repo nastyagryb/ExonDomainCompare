@@ -1,34 +1,4 @@
 #!/usr/bin/env python3
-"""
-build_website_indices.py
-
-Website data generator for ExonDomainCompare.
-
-Reads a *finished* FGFR2 pre-InterPro closure run directory (the
-``13_final_pre_interpro_closure`` folder, which carries the truth table, the
-evidence stack, the freeze, figures, tables, reports, the consistency gate and
-the run/step metadata) and emits six compact JSON indices that the web frontend
-consumes:
-
-    run_index.json        run id, mode, gate, KPI counts, step timeline
-    species_index.json    per-species IIIb/IIIc final status (truth table)
-    evidence_stack.json   normalized per-row evidence layers (heatmap source)
-    figure_index.json     curated, grouped figure catalogue with captions
-    download_index.json    key downloadable artefacts
-    freeze_index.json     reproducibility / InterPro-ready export view
-
-Hard rules honoured:
-  * FINAL biological status comes ONLY from final_pre_interpro_truth_table.tsv
-    (and the closure evidence stack derived from it). Provenance/legacy columns
-    are surfaced as detail, never as decision logic.
-  * No invented data: every value is read from the run folder; missing inputs
-    degrade gracefully (empty/absent rather than fabricated).
-  * Rescued-and-validated rows are reported as accepted; only review/excluded
-    rows are flagged.
-
-The indices use project-root-relative POSIX file paths so the backend can serve
-them through its sandboxed /api/download endpoint.
-"""
 from __future__ import annotations
 
 import argparse
@@ -51,9 +21,6 @@ from exondomaincompare.contracts import write_freshness_contract, write_payload_
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
-# --------------------------------------------------------------------------- #
-# small IO helpers
-# --------------------------------------------------------------------------- #
 def read_tsv(path: Path) -> List[Dict[str, str]]:
     if not path or not Path(path).exists():
         return []
@@ -74,7 +41,6 @@ def read_json(path: Path, fallback: Any = None) -> Any:
 
 
 def rel(path: Path) -> str:
-    """project-root-relative POSIX path (for the /api/download endpoint)."""
     try:
         return Path(path).resolve().relative_to(PROJECT_ROOT).as_posix()
     except Exception:
@@ -91,14 +57,6 @@ def file_meta(path: Path) -> Optional[Dict[str, Any]]:
 
 def _availability_block(label: str, source: Path, has_payload: bool,
                         extra_sources: Sequence[Path] = ()) -> Dict[str, Any]:
-    """Why this index is or is not usable, in the index itself.
-
-    A bare ``available: false`` forces the reader to guess between "this species has no
-    such result" and "this file was never written". The frontend guessed biology and told
-    users a cassette was absent when the cassette table had merely not been rebuilt. The
-    distinction is knowable here — the source table is either missing, present but empty,
-    or present with rows — so it is recorded here.
-    """
     sources = [Path(source), *[Path(p) for p in extra_sources]]
     missing = [rel(p) for p in sources if not p.is_file()]
     if has_payload:
@@ -149,11 +107,6 @@ def to_int(v: Any) -> Optional[int]:
     except Exception:
         return None
 
-
-# --------------------------------------------------------------------------- #
-# status semantics (single place so frontend + backend agree)
-# --------------------------------------------------------------------------- #
-# Normalized evidence-stack cell tokens -> colour class.
 TOKEN_CLASS = {
     "pass": "accepted", "strong": "accepted", "robust": "accepted",
     "rescued_ok": "accepted", "high": "accepted", "true_ok": "accepted",
@@ -170,7 +123,6 @@ def token_class(token: str) -> str:
 
 
 def readiness_class(value: str) -> str:
-    """Row-level readiness -> {accepted, minor, review, excluded}."""
     v = (value or "").lower()
     if not v:
         return "unknown"
@@ -198,22 +150,6 @@ def claim_class(value: str) -> str:
     return "neutral"
 
 
-# --------------------------------------------------------------------------- #
-# Final-truth-driven UI status semantics
-# --------------------------------------------------------------------------- #
-# Every evidence layer is expressed as a small UI cell:
-#   {"class": colour-family, "tone": optional refinement, "value": short label,
-#    "note": one-sentence explanation}
-# Colour family is one of {accepted, minor, review, excluded, neutral}; "minor"
-# is an ACCEPTED-family colour (accepted with minor flags), never a warning.
-# The tone drives a small provenance/offset icon (corrected / rescued / offset).
-#
-# HARD RULE: a native/reference coordinate offset or an upstream-label swap is a
-# framework CORRECTION, not biological uncertainty. Only genuine hard failures
-# (AA1/unsafe mapping, missing protein link) or a final review/supplement row
-# may downgrade a layer to review/excluded.
-
-# Known status tokens -> (colour family, short label, one-sentence note).
 SHORT_STATUS: Dict[str, tuple] = {
     "fgfr2_ortholog_high_confidence": ("accepted", "high-confidence ortholog",
                                        "FGFR2 orthology confidently established."),
@@ -246,7 +182,6 @@ def _humanize(token: str) -> str:
 
 
 def status_from_token(raw: str) -> Dict[str, Any]:
-    """Generic evidence layer (orthology / MSA / synteny / integrity)."""
     t = (raw or "").strip().lower()
     if not t:
         return {"class": "neutral", "tone": "", "value": "—", "note": ""}
@@ -265,7 +200,6 @@ def status_from_token(raw: str) -> Dict[str, Any]:
 
 
 def label_assignment_status(consistency_raw: str, readiness_cls: str) -> Dict[str, Any]:
-    """Final isoform assignment / annotation reconciliation (NOT upstream label)."""
     v = (consistency_raw or "").lower()
     if "swapped" in v:
         return {"class": "accepted", "tone": "corrected", "value": "corrected",
@@ -285,9 +219,7 @@ def label_assignment_status(consistency_raw: str, readiness_cls: str) -> Dict[st
 
 
 def coordinate_status(coord_raw: str, readiness_cls: str, integrity_raw: str = "") -> Dict[str, Any]:
-    """Coordinate mapping: a native/reference offset is a note, not a failure."""
     v = (coord_raw or "").lower()
-    # hard mapping failures dominate and are NEVER weakened
     if any(k in v for k in ("aa1", "unsafe", "mapping_bug", "no_protein",
                             "no_native_mapping", "unmapped", "missing")):
         return {"class": "excluded", "tone": "", "value": "mapping failed",
@@ -345,7 +277,6 @@ def readiness_status_ui(readiness_raw: str) -> Dict[str, Any]:
     return {"class": "neutral", "tone": "", "value": _humanize(readiness_raw), "included": "", "note": ""}
 
 
-# User-facing evidence layers (scientific decision layers, not internal enums).
 EVIDENCE_LAYERS = [
     ("label", "Final isoform assignment"),
     ("rescue", "Rescue / provenance"),
@@ -370,12 +301,7 @@ def _evidence_sources(run_dir: Path) -> Dict[str, str]:
 
 
 def compute_layers(r: Dict[str, str], ref: Dict[str, str], sources: Dict[str, str]) -> Dict[str, Any]:
-    """Single source of truth for the per-row evidence layers (stack + summary).
 
-    ``r``   = truth-table row (authoritative final columns + provenance)
-    ``ref`` = matching framework-evidence-stack row (carries the *_raw tokens and
-              the numeric reference_agreement); may be empty.
-    """
     rcls = readiness_class(r.get("pre_interpro_readiness_class", ""))
 
     def raw(name: str) -> str:
@@ -418,9 +344,7 @@ def compute_layers(r: Dict[str, str], ref: Dict[str, str], sources: Dict[str, st
     return out
 
 
-# Neutral residue-agreement colour classes (no functional-effect claims).
 def residue_class(value: str) -> str:
-    """agreement_class / substitution_class -> {identical, conservative, nonconservative, gap}."""
     v = (value or "").strip().lower()
     if not v:
         return "gap"
@@ -430,7 +354,7 @@ def residue_class(value: str) -> str:
         return "identical"
     if "nonconservative" in v or "non_conservative" in v or "non-conservative" in v:
         return "nonconservative"
-    if "conservative" in v or "semi" in v:  # conservative + semi_conservative
+    if "conservative" in v or "semi" in v:
         return "conservative"
     return "nonconservative"
 
@@ -465,7 +389,6 @@ def truthy(v: Any) -> bool:
 
 
 def _synteny_source_dir(run_dir: Path) -> Optional[Path]:
-    """Locate the sibling step-12 MSA/synteny directory (synteny tables live there)."""
     parent = Path(run_dir).parent
     for cand in sorted(parent.glob("12_*")):
         if (cand / "synteny").exists() or (cand / "tables").exists():
@@ -474,7 +397,6 @@ def _synteny_source_dir(run_dir: Path) -> Optional[Path]:
 
 
 def _review_lookup(run_dir: Path) -> Dict[tuple, str]:
-    """(species, isoform) -> readiness colour class, the single biological truth."""
     out: Dict[tuple, str] = {}
     for r in _truth(run_dir):
         out[(r.get("species", ""), r.get("isoform", ""))] = \
@@ -483,7 +405,6 @@ def _review_lookup(run_dir: Path) -> Dict[tuple, str]:
 
 
 def _parse_alignment(path: Path) -> Dict[str, Any]:
-    """Read a wrapped FASTA alignment (>species|isoform|protein|tag) into rows."""
     p = Path(path)
     if not p.exists():
         return {}
@@ -518,9 +439,6 @@ def _parse_alignment(path: Path) -> Dict[str, Any]:
     return {"rows": rows, "n_columns": n_cols}
 
 
-# --------------------------------------------------------------------------- #
-# index builders
-# --------------------------------------------------------------------------- #
 def _truth(run_dir: Path) -> List[Dict[str, str]]:
     return read_tsv(run_dir / "final_pre_interpro_truth_table.tsv")
 
@@ -532,7 +450,6 @@ def build_run_index(run_dir: Path) -> Dict[str, Any]:
     gate_fail = [c for c in gate_checks if str(c.get("status", "")).lower() not in ("pass", "ok", "")]
 
     steps_raw = read_tsv(run_dir / "final_pre_interpro_step_status.tsv")
-    # Friendly phase labels for the canonical A-step ids (never fabricate granularity).
     phase_label = {
         "A0": "Resolve species list",
         "A1": "Collect models · select · classify · coordinates (steps 1–11)",
@@ -685,12 +602,6 @@ def build_species_index(run_dir: Path) -> List[Dict[str, Any]]:
 
 
 def build_evidence_stack(run_dir: Path) -> Dict[str, Any]:
-    """Per-row biological decision layers.
-
-    Driven by the FINAL truth table (authoritative status + provenance) and
-    enriched with the framework evidence stack's raw tokens + numeric reference
-    agreement. Upstream/legacy labels are provenance only and never set status.
-    """
     truth = _truth(run_dir)
     stack = read_tsv(run_dir / "tables" / "figure_final_framework_evidence_stack.tsv")
     ref_by = {(x.get("species", ""), x.get("isoform", "")): x for x in stack}
@@ -734,7 +645,6 @@ def build_evidence_stack(run_dir: Path) -> Dict[str, Any]:
     return {"columns": columns, "rows": rows}
 
 
-# --- figures ---------------------------------------------------------------- #
 def _parse_captions(run_dir: Path) -> Dict[str, str]:
     md = run_dir / "reports" / "final_pre_interpro_figure_captions.md"
     out: Dict[str, str] = {}
@@ -768,13 +678,6 @@ def _figure_number(stem: str) -> Optional[str]:
 
 
 def _withdrawn_figure_stems() -> set:
-    """Figures the FGFR2 catalogue has withdrawn from every visible Gallery.
-
-    Imported lazily from the catalogue module so the list lives in exactly one
-    place; if it cannot be imported the index is built unfiltered rather than
-    failing, because a missing filter is a cosmetic regression and a failed index
-    build takes the whole dataset offline.
-    """
     try:
         from fgfr2.gallery_catalogue import withdrawn_figure_stems
         return withdrawn_figure_stems()
@@ -801,9 +704,6 @@ def build_figure_index(run_dir: Path) -> Dict[str, Any]:
 
     figures: List[Dict[str, Any]] = []
     for stem, entry in by_stem.items():
-        # A withdrawn figure is still on disk and still readable as validated output;
-        # it simply is not a Gallery card any more. Skipping it here rather than
-        # deleting the file is what keeps downloads and QC intact.
         if stem in withdrawn:
             continue
         num = _figure_number(stem)
@@ -813,7 +713,6 @@ def build_figure_index(run_dir: Path) -> Dict[str, Any]:
         caption = captions.get(num or "", "") if num else ""
         if not caption and is_supp:
             caption = captions.get("SUPP", "")
-        # match a source table by figure number prefix (figure3B..., figure6...)
         src_table = ""
         if num:
             key = f"figure{num.lower()}_"
@@ -833,7 +732,6 @@ def build_figure_index(run_dir: Path) -> Dict[str, Any]:
             "source_table": src_table,
         })
 
-    # stable, reader-friendly ordering
     def sort_key(f):
         n = f["number"]
         m = re.match(r"(\d+)([A-Za-z]?)", n)
@@ -841,11 +739,10 @@ def build_figure_index(run_dir: Path) -> Dict[str, Any]:
         minor = m.group(2) if m else ""
         return (0 if f["kind"] == "main" else 1, major, minor, f["title"])
 
-    # Post-InterPro / pyTMHMM domain architecture figures (sibling step-15 folder)
+
     arch_group = "Domain & exon-boundary"
     has_arch = _append_architecture_figures(run_dir, figures, arch_group)
 
-    # Module 1 — exon-domain boundary consistency (sibling step-16 folder)
     bc_group = "Boundary consistency"
     has_bc = _append_boundary_consistency_figures(run_dir, figures, bc_group)
 
@@ -865,13 +762,6 @@ def build_figure_index(run_dir: Path) -> Dict[str, Any]:
 
 def _append_architecture_figures(run_dir: Path, figures: List[Dict[str, Any]],
                                  group: str) -> bool:
-    """Add step-15 domain/exon-boundary overview + per-species plots to the gallery.
-
-    Overview panels are 'main' (always visible); per-species plots are
-    'supplement' (shown when the gallery's supplement toggle is on). Static
-    figures are downloadable previews; the interactive Domain architecture tab
-    is the primary view (UI rule).
-    """
     arch = _post_interpro_dir(run_dir)
     if not arch:
         return False
@@ -937,9 +827,6 @@ def _append_architecture_figures(run_dir: Path, figures: List[Dict[str, Any]],
 
 def _append_boundary_consistency_figures(run_dir: Path, figures: List[Dict[str, Any]],
                                           group: str) -> bool:
-    """Add the Module 1 boundary-consistency static figures (heatmap + distance
-    distribution) to the gallery as downloadable thesis previews. The interactive
-    Boundary Consistency explorer is the primary web experience (UI rule)."""
     bc = _boundary_consistency_dir(run_dir)
     if not bc:
         return False
@@ -1017,9 +904,6 @@ def build_download_index(run_dir: Path) -> List[Dict[str, Any]]:
     add("Reports", "Figure captions", run_dir / "reports" / "final_pre_interpro_figure_captions.md")
     add("Gate", "Cross-table consistency gate", run_dir / "gates" / "final_pre_interpro_cross_table_consistency_gate.tsv")
 
-    # The scientific tables and alignments the views are drawn from. Offering only the
-    # closure summary meant a finished run exposed its conclusion and none of the
-    # evidence: no gene models, no cassette map, no alignment, no domain annotation.
     add("Tables", "Cassette coordinate map (exon → protein)",
         run_dir / "tables" / "figure3C_exon_to_protein_cassette_coordinate_map.tsv")
     add("Tables", "Cassette amino-acid motif map",
@@ -1044,8 +928,6 @@ def build_download_index(run_dir: Path) -> List[Dict[str, Any]]:
                         "Isoform-discriminating residues")):
         add("Alignment", label, run_dir / "MSA" / key)
 
-    # Stages outside the closure directory. The closure is a freeze of conclusions; the
-    # run's own model tables and returned cluster annotation live beside it.
     results = _results_root(run_dir)
     if results is not None:
         for rel_path, group, label in (
@@ -1063,11 +945,6 @@ def build_download_index(run_dir: Path) -> List[Dict[str, Any]]:
             ("05b_selection_with_isoforms_v2_7_marker_validated/"
              "fgfr2_III_final_selected_protein_validation_summary.tsv",
              "Selected models", "Selected-protein validation"),
-            # The header of this file carries the *upstream* selection role, assigned
-            # before marker-based reconciliation. In this dataset that role is
-            # systematically inverted relative to the final label, so the file is
-            # offered as provenance and the name says so. The final label lives in the
-            # truth table and in the alignment headers.
             ("06_protein_export_v2_7_marker_validated/selected_fgfr2_proteins.faa",
              "Selected models",
              "Exported proteins with upstream selection role (provenance — final "
@@ -1099,8 +976,6 @@ def build_download_index(run_dir: Path) -> List[Dict[str, Any]]:
             else:
                 add(group, label, target)
 
-    # Figures and the source table behind each, so a figure can be checked rather than
-    # only looked at.
     figures = run_dir / "figures"
     if figures.is_dir():
         for svg in sorted(figures.glob("*.svg")):
@@ -1115,12 +990,6 @@ def build_download_index(run_dir: Path) -> List[Dict[str, Any]]:
 
 
 def _results_root(run_dir: Path) -> Optional[Path]:
-    """The ``results/`` directory a closure directory belongs to.
-
-    Indices are built from the closure directory, but a run's evidence is spread across
-    its sibling stage folders. Deriving the root from the closure keeps the builder
-    callable with a single argument, exactly as before.
-    """
     parent = Path(run_dir).parent
     return parent if (parent / "02_models").is_dir() else None
 
@@ -1186,24 +1055,16 @@ def build_freeze_index(run_dir: Path) -> Dict[str, Any]:
 
 # Interactive indices derived from final run outputs.
 def build_cassette_residue_index(run_dir: Path) -> Dict[str, Any]:
-    """Module 1 source: reproduce Figure 6B interactively + human-reference + discriminating."""
     fig6b = read_tsv(run_dir / "tables" / "figure6B_species_resolved_IIIb_IIIc_cassette_residue_map.tsv")
     agree = read_tsv(run_dir / "MSA" / "final_human_referenced_residue_agreement.tsv")
     motif = read_tsv(run_dir / "tables" / "figure3B_IIIb_IIIc_cassette_amino_acid_motif_map.tsv")
     review = _review_lookup(run_dir)
 
-    # enrichment join key: (species, isoform, human_reference_residue_index)
     agree_idx: Dict[tuple, Dict[str, str]] = {}
     for r in agree:
         agree_idx[(r.get("species", ""), r.get("isoform", ""),
                    r.get("human_reference_residue_index", ""))] = r
 
-    # Human reference per panel. IIIb is 46 cassette residues and IIIc is 48, and each
-    # numbers its own cassette. Deriving both from one shared index (one `seen_ref` set
-    # over the motif map's single index column) forced them onto the same axis: IIIc was
-    # truncated to IIIb's length, which destroyed its GVNTTDKEI marker, and positions
-    # where one panel has an alignment gap lost the other panel's residue. The reference
-    # therefore comes from the validated control, which stores the two panels separately.
     human_ref: Dict[str, List[Dict[str, Any]]] = {"IIIb": [], "IIIc": []}
     reference_status = "unavailable"
     try:
@@ -1215,16 +1076,11 @@ def build_cassette_residue_index(run_dir: Path) -> Dict[str, Any]:
     except human_reference_control.ReferenceControlError:
         control = None
 
-    # The discriminating layer is a IIIb-vs-IIIc comparison, so it lives on the combined
-    # cassette alignment column — the one axis both panels genuinely share.
+
     discriminating: Dict[str, Dict[str, Any]] = {}
     seen_ref: set = set()
     _has_human_index = any(to_int(r.get("human_reference_residue_index")) is not None for r in motif)
     residue_index_basis = "combined_cassette_alignment_column"
-    # A motif map that predates the two per-panel index columns (the read-only freeze,
-    # and every run whose closure reused it) has them recovered from the combined
-    # alignment first, so both the per-column payload below and the per-panel marker
-    # sets speak the same coordinate systems.
     motif_indexed = motif if human_reference_control.has_panel_indices(motif) \
         else human_reference_control.panel_indices_from_combined_alignment(
             motif, column_fields=("MSA_column", "combined_alignment_col", "alignment_col"),
@@ -1254,10 +1110,6 @@ def build_cassette_residue_index(run_dir: Path) -> Dict[str, Any]:
             }
     human_ref["IIIb"].sort(key=lambda x: x["i"])
     human_ref["IIIc"].sort(key=lambda x: x["i"])
-    # Species cells are keyed by each panel's OWN reference index, so the marker set
-    # (`disc_by_panel`, derived above) is per panel too. Taking the union marked IIIb at
-    # 16 and 17 — combined columns that exist only in IIIc, because of its two-residue
-    # insertion — and shifted every IIIc mark behind it. The same rule serves Figure 6B.
     species: Dict[str, Dict[str, Any]] = {}
     for r in fig6b:
         sp = r.get("species", "")
@@ -1266,11 +1118,6 @@ def build_cassette_residue_index(run_dir: Path) -> Dict[str, Any]:
             continue
         hri = to_int(r.get("human_reference_residue_index"))
         enr = agree_idx.get((sp, iso, r.get("human_reference_residue_index", "")), {})
-        # The panel a row is drawn on decides which coordinate system its position is
-        # in — the final label, since that is the biology the cell reports. The motif
-        # map is the authority whenever it carries the per-panel indices; the table's
-        # own flag is only a fallback for a run whose motif map predates them, and it
-        # must not override the per-panel answer.
         panel = r.get("final_isoform_label") or iso
         is_disc = (hri in disc_by_panel.get(panel, set())) if any(disc_by_panel.values()) \
             else truthy(r.get("is_discriminating_position"))
@@ -1318,23 +1165,14 @@ def build_cassette_residue_index(run_dir: Path) -> Dict[str, Any]:
         out_species.append(node)
     out_species.sort(key=lambda x: x["display_species_name"])
 
-    # Sequence / marker level cassette evidence. Always built so that runs which have
-    # no residue-level human-referenced agreement table (figure6B empty — typical for
-    # small custom runs) still expose cassette coordinates, length and marker status.
     sequence_evidence = _build_cassette_sequence_evidence(run_dir, review)
 
     human_reference_role = None
     comparison_source = ""
     note = ""
     if fig6b:
-        # Full run with its own residue-level human-referenced agreement (example dataset):
-        # keep the exact original behaviour.
         evidence_level = "residue_map"
     else:
-        # Custom / single-species run: try to build a human-vs-species residue comparison by
-        # aligning each run-local species cassette to the validated human FGFR2 reference
-        # (allowed reference/control layer). This renders with the same Human-comparison,
-        # heatmap and discriminating UI as the example dataset.
         cassette_ref = _human_reference_cassette(run_dir)
         comparison = _build_cassette_human_comparison(run_dir, cassette_ref, review) if cassette_ref else None
         if comparison:
@@ -1364,9 +1202,6 @@ def build_cassette_residue_index(run_dir: Path) -> Dict[str, Any]:
                            or bool(sequence_evidence))
     return {
         "available": _cassette_available,
-        # The cassette layer has three source tables and degrades between them, so its
-        # diagnosis names the coordinate map: the one table that must exist for any
-        # cassette evidence at all, residue-level or marker-level.
         "availability": _availability_block(
             "cassette",
             run_dir / "tables" / "figure3C_exon_to_protein_cassette_coordinate_map.tsv",
@@ -1394,13 +1229,6 @@ def build_cassette_residue_index(run_dir: Path) -> Dict[str, Any]:
 
 
 def _build_cassette_sequence_evidence(run_dir: Path, review: Dict[tuple, str]) -> List[Dict[str, Any]]:
-    """Per species/isoform cassette evidence from the sequence/marker layer.
-
-    Sources (all run-local, no cross-run reuse):
-      * figure3C exon→protein cassette coordinate map — cassette AA span + protein length
-      * figure3 cassette zoom — cassette length (aa) and MSA column span
-      * final pre-InterPro truth table — transcript / protein IDs + validation status
-    """
     fig3c = read_tsv(run_dir / "tables" / "figure3C_exon_to_protein_cassette_coordinate_map.tsv")
     zoom = read_tsv(run_dir / "tables" / "figure3_final_IIIb_IIIc_cassette_zoom_pre_interpro.tsv")
     truth = _truth(run_dir)
@@ -1459,17 +1287,6 @@ def _build_cassette_sequence_evidence(run_dir: Path, review: Dict[tuple, str]) -
     return out
 
 
-# --------------------------------------------------------------------------- #
-# Run-local human-vs-species cassette comparison.
-#
-# Custom / single-species runs do not carry the residue-level human-referenced
-# agreement table (figure6B is empty) because the human reference is NOT part of
-# the run's cassette MSA. To still render the same Human-comparison UI as the
-# validated example, we align each species cassette to the *validated human
-# FGFR2 IIIb/IIIc reference* (the only allowed reused layer) with BLOSUM62 and
-# emit the exact schema the frontend already consumes. No non-human example
-# result rows are used; the comparison is computed fresh from run-local cassettes.
-# --------------------------------------------------------------------------- #
 _ALIGNER_CACHE: Dict[str, Any] = {}
 
 
@@ -1485,7 +1302,7 @@ def _cassette_aligner():
         al.extend_gap_score = -0.5
         al.mode = "global"
         res = (al, mat)
-    except Exception:  # noqa: BLE001 — Biopython missing → graceful fallback to cards
+    except Exception:
         res = (None, None)
     _ALIGNER_CACHE["a"] = res
     return res
@@ -1512,14 +1329,13 @@ def _read_fasta(path: Path) -> Dict[str, str]:
 
 
 def _human_reference_cassette(run_dir: Path) -> Optional[Dict[str, Any]]:
-    """Locate the curated human IIIb/IIIc cassette reference layer (control only)."""
     p = Path(run_dir).resolve()
     for base in [p, *p.parents]:
         cand = base / "results" / "web_state" / "human_reference_control.json"
         if cand.exists():
             try:
                 data = json.loads(cand.read_text(encoding="utf-8"))
-            except Exception:  # noqa: BLE001
+            except Exception:
                 return None
             cass = data.get("cassette") or {}
             hr = cass.get("human_reference") or {}
@@ -1530,7 +1346,6 @@ def _human_reference_cassette(run_dir: Path) -> Optional[Dict[str, Any]]:
 
 
 def _classify_cassette_residue(h_aa: str, sp_aa: str, blosum_fn) -> tuple:
-    """(agreement_class, cls, blosum, substitution_class) — mirrors the pipeline classifier."""
     if not sp_aa or sp_aa in ("-", ".", "*"):
         return "gap_or_missing", "gap", None, "gap"
     if not h_aa or h_aa in ("-", ".", "*"):
@@ -1549,8 +1364,6 @@ def _classify_cassette_residue(h_aa: str, sp_aa: str, blosum_fn) -> tuple:
 
 def _pairwise_positions(aligner, ref_seq: str, ref_ng: List[tuple], sp_seq: str,
                         discriminating: Dict[str, Any], blosum_fn) -> List[Dict[str, Any]]:
-    """Align one species cassette to the human reference cassette; emit per-position rows
-    keyed by the human reference residue index (same coordinate as the example UI)."""
     try:
         aln = aligner.align(ref_seq, sp_seq)[0]
         ref_aln, sp_aln = str(aln[0]), str(aln[1])
@@ -1658,7 +1471,6 @@ def _build_cassette_human_comparison(run_dir: Path, cassette_ref: Dict[str, Any]
     if n_aligned == 0:
         return None
 
-    # pass the curated human reference rows through unchanged (keeps aa + property for tooltips)
     human_reference = {
         p: sorted((r for r in human_ref_in.get(p, []) if r.get("i") is not None), key=lambda r: r["i"])
         for p in ("IIIb", "IIIc")
@@ -1673,7 +1485,6 @@ def _build_cassette_human_comparison(run_dir: Path, cassette_ref: Dict[str, Any]
 
 
 def build_coordinate_track_index(run_dir: Path) -> Dict[str, Any]:
-    """Module 2 source: exon/CDS blocks + cassette span on protein AA coordinates (Figure 3C)."""
     rows = read_tsv(run_dir / "tables" / "figure3C_exon_to_protein_cassette_coordinate_map.tsv")
     review = _review_lookup(run_dir)
     by: Dict[tuple, Dict[str, Any]] = {}
@@ -1690,7 +1501,6 @@ def build_coordinate_track_index(run_dir: Path) -> Dict[str, Any]:
             "display_species_name": sp.replace("_", " ").title(),
             "final_isoform_label": r.get("final_isoform_label", ""),
             "protein_length": to_int(r.get("protein_length")),
-            # never default an unresolved cassette to AA1: keep None when absent
             "cassette_start_aa": cass_start,
             "cassette_end_aa": cass_end,
             "cassette_available": cass_start is not None and cass_end is not None and cass_end > 0,
@@ -1736,7 +1546,6 @@ def build_coordinate_track_index(run_dir: Path) -> Dict[str, Any]:
 
 
 def build_msa_index(run_dir: Path) -> Dict[str, Any]:
-    """Module 3 source: parsed alignments + conservation summary + discriminating columns."""
     msa = run_dir / "MSA"
     files = {
         "full_length": ("Full-length FGFR2", msa / "final_fgfr2_full_length_protein_msa.aln.faa"),
@@ -1821,14 +1630,6 @@ SHARED_HUMAN_SYNTENY_REFERENCE = (
 
 
 def _shared_human_synteny_reference_node() -> Optional[Dict[str, Any]]:
-    """Build a Homo sapiens FGFR2-neighborhood node from the curated shared reference.
-
-    This is the SAME allowed human reference/control layer used elsewhere: it lets the
-    "Compare to human" synteny view work for ANY custom run (where homo_sapiens is not an
-    analysed species) without copying non-human Example results. Returns None if the shared
-    reference file is unavailable, so the caller can signal "human reference not available"
-    rather than render an empty view.
-    """
     rows = read_tsv(SHARED_HUMAN_SYNTENY_REFERENCE)
     if not rows:
         return None
@@ -1863,7 +1664,6 @@ def _shared_human_synteny_reference_node() -> Optional[Dict[str, Any]]:
 
 
 def _with_legacy_keys(row: Dict[str, Any]) -> Dict[str, Any]:
-    """Add the historical neighbour keys next to the canonical contract fields."""
     legacy = sc.legacy_nodes(row)
     row.update({
         "n_resolved": sum(1 for n in legacy if n["resolved"] and not n["is_anchor"]),
@@ -1876,7 +1676,6 @@ def _with_legacy_keys(row: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def build_synteny_locus_index(run_dir: Path) -> Dict[str, Any]:
-    """Module 4 source: local FGFR2 gene neighborhood (resolved 5-neighbor + raw 10-neighbor)."""
     sdir = _synteny_source_dir(run_dir)
     if sdir is None:
         return {
@@ -1936,13 +1735,6 @@ def build_synteny_locus_index(run_dir: Path) -> Dict[str, Any]:
     all_species = sorted(set(list(curated) + list(raw)))
 
     def _merged_neighbours(sp: str) -> List[Dict[str, Any]]:
-        """One locus per real neighbour, raw genomics plus the curated symbol.
-
-        The supplement holds the assembly facts and the curated panel holds the
-        orthology assignment for the innermost five slots. Merging them means the
-        displayed neighbourhood carries curated symbols and confidence classes
-        instead of collapsing to raw identifiers.
-        """
         out: List[Dict[str, Any]] = []
         seen: set = set()
         for r in raw.get(sp, []):
@@ -2008,22 +1800,12 @@ def build_synteny_locus_index(run_dir: Path) -> Dict[str, Any]:
                    "has_resolved": sp in curated})
         return _with_legacy_keys(row)
 
-    # The canonical taxonomic order, shared with every other comparative view.
-    # Sorting by (taxon_group, name) put Amphibians before Birds before Other
-    # mammals — alphabetical group names, not a taxonomic sequence.
     species = [assemble(sp) for sp in _species_order.order_species(all_species)]
 
-    # Count neighbours that actually resolved to a gene. Small custom runs
-    # frequently produce a synteny table where every neighbour is `missing`
-    # because the local genome-neighbourhood annotation was not available —
-    # that is "not computed", not a failure.
     totals = sc.summarise(species)
     n_resolved = totals["n_resolved_neighbours"]
     extraction_statuses = {(r.get("extraction_status", "") or "").strip() for r in supp10}
     extraction_warnings = [w for w in ((r.get("extraction_warning", "") or "").strip() for r in supp10) if w]
-    # exact run-local raw input the synteny extractor needs (genome-wide NCBI Datasets GFF).
-    # Surfaced in the UI Technical details when synteny could not be computed. This is a
-    # RAW INPUT path, never an example result — custom runs must fetch their own annotation.
     source_files = [s for s in ((r.get("source_file", "") or "").strip() for r in supp10) if s]
     models_cache = rel(run_dir.parent / "02_models" / "_ncbi_datasets_cache")
     synteny_missing_source = "" if source_files else (
@@ -2049,10 +1831,6 @@ def build_synteny_locus_index(run_dir: Path) -> Dict[str, Any]:
                           "locus/orthology and is not required for IIIb/IIIc identity, which is "
                           "based on sequence and marker evidence.")
 
-    # Human reference/control row for the "Compare to human" view. If homo_sapiens is an
-    # analysed species (Example dataset) use its own run-local node; otherwise fall back to
-    # the curated shared human FGFR2 neighborhood (the only allowed reusable reference layer),
-    # so custom runs can compare-to-human without copying non-human Example results.
     human_ref = next((s for s in species if s["species"] == "homo_sapiens"), None)
     human_ref_role = "analysed_species" if human_ref else ""
     if human_ref is None:
@@ -2096,7 +1874,6 @@ def build_synteny_locus_index(run_dir: Path) -> Dict[str, Any]:
 
 
 def build_species_story_index(run_dir: Path) -> Dict[str, Any]:
-    """Module 5 source: per species/isoform evidence story (truth table + review + projection)."""
     truth = _truth(run_dir)
     review_expl = {(r.get("species", ""), r.get("isoform", "")): r
                    for r in read_tsv(run_dir / "tables" / "final_review_case_explanation.tsv")}
@@ -2198,7 +1975,6 @@ def build_species_story_index(run_dir: Path) -> Dict[str, Any]:
 
 
 def statusify(value: str) -> str:
-    """Map an arbitrary status token to a colour class (re-uses readiness_class + token_class)."""
     rc = readiness_class(value)
     if rc not in ("neutral", "unknown"):
         return rc
@@ -2239,35 +2015,10 @@ def rescue_text(rescue_dec: str, final_src: str, rescue_required: bool, expl: Di
         return "Current candidate confirmed after exhaustive screen / sequence reconciliation; no external rescue required."
     return rescue_dec or "—"
 
-
-# --------------------------------------------------------------------------- #
-# orchestration
-# --------------------------------------------------------------------------- #
-# --------------------------------------------------------------------------- #
-# Post-InterPro / pyTMHMM domain-architecture indices (step 15)
-#
-# These are derived from the fixed post-InterProScan analysis folder
-# (15_exon_domain_boundary_post_interpro), a *sibling* of the closure run dir.
-# The post-InterPro step is not part of the interactive web pipeline, so these
-# indices are only populated for a run that has the folder next to it (the
-# example freeze); for fresh web runs they degrade to {"available": False}.
-#
-# Hard rules honoured here:
-#   * IIIb/IIIc labels ALWAYS come from the final truth table
-#     (final_isoform_label); InterProScan and pyTMHMM never relabel a cassette.
-#   * pyTMHMM is the transmembrane layer because InterProScan does not annotate
-#     TM helices for these proteins.
-#   * The 3 review_unusual_domain_order cases were audited
-#     (post_interpro_qc_review_case_audit.tsv) and shown to be low-confidence
-#     coordinate artifacts, not biological anomalies: their web *display* status
-#     is softened to a minor flag with an explicit note, but the raw QC status
-#     and primary/review membership are never mutated.
-# --------------------------------------------------------------------------- #
 _ARCH_STEP_NAME = "15_exon_domain_boundary_post_interpro"
 
 
 def _post_interpro_dir(run_dir: Path) -> Optional[Path]:
-    """Locate the sibling step-15 post-InterPro/pyTMHMM architecture folder."""
     parent = Path(run_dir).parent
     cand = parent / _ARCH_STEP_NAME
     if (cand / "tables" / "fgfr2_domain_architecture_qc.tsv").exists():
@@ -2287,7 +2038,6 @@ def _exon_number(label: str) -> Optional[int]:
 
 
 def _arch_qc_class(status: str) -> str:
-    """final_qc_status -> {accepted, minor, review}."""
     s = (status or "").lower()
     if s == "architecture_supported":
         return "accepted"
@@ -2303,7 +2053,6 @@ def _split_warnings(raw: str) -> List[str]:
 
 
 def _arch_audit_lookup(arch: Path) -> Dict[tuple, Dict[str, str]]:
-    """(species, isoform) -> review-case audit row, if the audit table exists."""
     rows = read_tsv(arch / "tables" / "post_interpro_qc_review_case_audit.tsv")
     out: Dict[tuple, Dict[str, str]] = {}
     for r in rows:
@@ -2312,7 +2061,6 @@ def _arch_audit_lookup(arch: Path) -> Dict[tuple, Dict[str, str]]:
 
 
 def _arch_recon_lookup(arch: Path) -> Dict[tuple, Dict[str, str]]:
-    """(species, isoform) -> exon-block reconstruction audit row, if present."""
     rows = read_tsv(arch / "tables" / "exon_block_coordinate_reconstruction_audit.tsv")
     out: Dict[tuple, Dict[str, str]] = {}
     for r in rows:
@@ -2351,12 +2099,6 @@ _RECON_NOTES = {
 
 def _arch_display_status(final_status: str, audit: Optional[Dict[str, str]],
                          exon_block_status: str = "") -> tuple:
-    """(display_status, display_class, display_note).
-
-    The exon-block reconstruction status (from the generator) is the primary source
-    of the explanatory note. The legacy review-case audit softening is retained as a
-    fallback for any run whose raw QC still carries review_unusual_domain_order.
-    """
     note = _RECON_NOTES.get(exon_block_status or "", "")
     if final_status == "review_unusual_domain_order":
         soft_issues = {"fallback_coordinate_used", "coordinate_join_error"}
@@ -2371,7 +2113,6 @@ def _arch_display_status(final_status: str, audit: Optional[Dict[str, str]],
 
 
 def _load_arch_features(arch: Path) -> Dict[tuple, Dict[str, Any]]:
-    """Assemble per-(species, isoform) domains / TM / exons / cassette / warnings."""
     rows = read_tsv(arch / "tables" / "exon_domain_architecture_features.tsv")
     feat_src = rel(arch / "tables" / "exon_domain_architecture_features.tsv")
     by: Dict[tuple, Dict[str, Any]] = {}
@@ -2438,7 +2179,6 @@ def _arch_figure_paths(arch: Path, species: str, isoform: str) -> Dict[str, Any]
 
 
 def build_species_domain_architecture(run_dir: Path) -> Dict[str, Any]:
-    """Per (species, isoform) protein domain architecture for the interactive tab."""
     arch = _post_interpro_dir(run_dir)
     if not arch:
         return {"available": False, "tm_layer": "pyTMHMM",
@@ -2522,7 +2262,6 @@ def build_species_domain_architecture(run_dir: Path) -> Dict[str, Any]:
 
 
 def build_domain_architecture_qc(run_dir: Path) -> Dict[str, Any]:
-    """Flat per-protein QC view (raw status + audited display status)."""
     arch = _post_interpro_dir(run_dir)
     if not arch:
         return {"available": False, "rows": []}
@@ -2577,7 +2316,6 @@ def build_domain_architecture_qc(run_dir: Path) -> Dict[str, Any]:
 
 
 def build_domain_architecture_summary(run_dir: Path) -> Dict[str, Any]:
-    """Compact counts for the Overview 'Post-InterPro architecture' card."""
     arch = _post_interpro_dir(run_dir)
     if not arch:
         return {"available": False}
@@ -2604,8 +2342,6 @@ def build_domain_architecture_summary(run_dir: Path) -> Dict[str, Any]:
     with_tm = len({(r.get("species"), r.get("isoform")) for r in tm_rows
                    if r.get("status") == "receptor_tm"})
 
-    # coordinate-artifact cases: previously review_unusual_domain_order, now
-    # resolved via native exon-block reconstruction / validated cassette slot.
     recon_rows = read_tsv(arch / "tables" / "exon_block_coordinate_reconstruction_audit.tsv")
     resolved_cases = [{
         "species": r.get("species", ""),
@@ -2643,7 +2379,6 @@ def build_domain_architecture_summary(run_dir: Path) -> Dict[str, Any]:
 
 
 def build_domain_architecture_index(run_dir: Path) -> Dict[str, Any]:
-    """Top-level catalogue for the Domain architecture tab + Figure Gallery group."""
     arch = _post_interpro_dir(run_dir)
     if not arch:
         return {"available": False, "species": [], "overview_figures": [], "tables": []}
@@ -2749,9 +2484,6 @@ def build_domain_architecture_index(run_dir: Path) -> Dict[str, Any]:
     }
 
 
-# --------------------------------------------------------------------------- #
-# Module 1 — exon-domain boundary consistency (step 16 final thesis analysis)
-# --------------------------------------------------------------------------- #
 _BOUNDARY_CLASS_UI = {
     "aligned_to_domain_boundary": {"label": "Aligned", "color": "#1B7837",
         "tooltip": "Boundary coincides with a protein-domain boundary (0-3 aa)."},
@@ -2770,7 +2502,6 @@ _TAXON_ORDER = _species_order.TAXON_GROUP_ORDER
 
 
 def _boundary_consistency_dir(run_dir: Path) -> Optional[Path]:
-    """Locate the sibling step-16 exon-domain boundary consistency folder."""
     parent = Path(run_dir).parent
     cand = parent / "16_final_thesis_analyses" / "exon_domain_boundary_consistency"
     if (cand / "tables" / "exon_domain_boundary_distances.tsv").exists():
@@ -2783,7 +2514,6 @@ def _boundary_consistency_dir(run_dir: Path) -> Optional[Path]:
 
 
 def _bc_species_order() -> Dict[str, int]:
-    """The one canonical species order, shared with every other view."""
     return _species_order.reference_panel_order()
 
 
@@ -3044,14 +2774,6 @@ INDEX_BUILDERS = {
 
 
 def write_all(run_dir: Path, outdir: Optional[Path] = None) -> Path:
-    """Build and write every website index.
-
-    Each index is built independently and tolerant of missing inputs: a builder
-    that fails (e.g. post-InterPro domain/boundary indices for a run that has only
-    completed pre-InterPro) is skipped instead of aborting the whole build. This
-    makes partial exploration possible after pre-InterPro, before cluster
-    annotation, while a full closure run still writes all indices.
-    """
     run_dir = Path(run_dir)
     outdir = Path(outdir) if outdir else (run_dir / "website_indices")
     outdir.mkdir(parents=True, exist_ok=True)
@@ -3059,7 +2781,7 @@ def write_all(run_dir: Path, outdir: Optional[Path] = None) -> Path:
     for name, builder in INDEX_BUILDERS.items():
         try:
             payload = builder(run_dir)
-        except Exception as exc:  # partial run: skip indices whose inputs are absent
+        except Exception as exc:
             errors[name] = f"{type(exc).__name__}: {exc}"
             continue
         payload = sanitize_public_payload(payload)
@@ -3067,9 +2789,6 @@ def write_all(run_dir: Path, outdir: Optional[Path] = None) -> Path:
             json.dumps(payload, indent=2, ensure_ascii=False) + "\n",
             encoding="utf-8",
         )
-    # The curated FGFR2 Gallery, written last so it replaces the per-file listing above.
-    # This is the production path every FGFR2 run goes through, which is what makes the
-    # modern catalogue automatic rather than something a migration command has to apply.
     gallery = _write_fgfr2_gallery(run_dir, outdir)
     if gallery:
         errors["figure_index.json"] = gallery
@@ -3079,8 +2798,6 @@ def write_all(run_dir: Path, outdir: Optional[Path] = None) -> Path:
         errors_path.write_text(json.dumps(errors, indent=2, ensure_ascii=False), encoding="utf-8")
     elif errors_path.exists():
         errors_path.unlink()
-    # Raw run metadata remains a runtime record. The website receives only
-    # portable projections of the two JSON files offered in its Files view.
     run_base = run_dir.parent.parent
     write_public_download_projections(run_base)
     write_freshness_contract(
@@ -3092,16 +2809,6 @@ def write_all(run_dir: Path, outdir: Optional[Path] = None) -> Path:
 
 
 def _write_fgfr2_gallery(closure_dir: Path, outdir: Path) -> str:
-    """Overwrite ``figure_index.json`` with the curated FGFR2 catalogue.
-
-    Returns "" when the catalogue was written or does not apply, and the cause when writing
-    it failed. A failure is reported and the per-file index is left in place: a plain Gallery
-    is a cosmetic regression, whereas aborting the build takes the whole dataset offline.
-
-    ``closure_dir`` is the closure, so the run base is two levels up. The validated dataset
-    is not built through here — its catalogue is produced into the derived overlay by
-    ``rebuild_dataset_indices`` and the freeze itself is never written to.
-    """
     run_dir = Path(closure_dir).parent.parent
     if not (run_dir / "run_config.json").is_file():
         return ""

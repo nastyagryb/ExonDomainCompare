@@ -1,25 +1,4 @@
 #!/usr/bin/env python3
-"""Cluster / rank the exploratory event-region evidence into candidate regions.
-
-Raw pairwise isoform comparisons are noisy: the same biological region shows up
-once per isoform pair. This groups overlapping / nearby regions (within the same
-gene + species + similar candidate type) into a small number of candidate
-CLUSTERS, and records how many isoform pairs support each one.
-
-The output stays EXPLORATORY: nothing here validates an event region or turns on
-any event-specific analysis. It only summarises evidence so a user sees a few
-meaningful candidate regions instead of dozens of raw rows.
-
-Input (from a core run's results/core_gene_analysis/):
-  * event_region_evidence.tsv    (produced by build_event_region_evidence.py)
-
-Output (same directory):
-  * event_region_candidate_clusters.tsv   (always written; header-only if empty)
-
-Usage:
-  python -m exondomaincompare.framework.cluster_event_region_evidence --run-id <run_id>
-  python -m exondomaincompare.framework.cluster_event_region_evidence --core-dir <dir> [--gap 5]
-"""
 from __future__ import annotations
 
 import argparse
@@ -87,12 +66,10 @@ def _family(event_type: str) -> str:
 
 
 def _overlap_or_near(a_start: int, a_end: int, b_start: int, b_end: int, gap: int) -> bool:
-    """True if [a] and [b] overlap or are within `gap` aa of each other."""
     return (a_start - gap) <= b_end and (b_start - gap) <= a_end
 
 
 def cluster_rows(evidence: List[Dict[str, str]], gap: int) -> List[Dict[str, Any]]:
-    """Greedy 1-D interval clustering per (gene, species, type family)."""
     # bucket by (gene, species, family)
     buckets: Dict[Any, List[Dict[str, Any]]] = {}
     for r in evidence:

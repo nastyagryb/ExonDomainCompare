@@ -1,24 +1,3 @@
-"""The two withdrawn FGFR2 Gallery cards, and the generic boundary analysis that
-replaces one of them in the catalogue.
-
-Two failures motivated this. First, the Gallery offered two cards that did not earn a
-reader's attention: a framework evidence stack, which documents how the analysis
-reached its own conclusions rather than answering a biological question, and a
-per-neighbour synteny conservation matrix, which asks what the main synteny
-neighbourhood figure already answers while presenting single-assembly annotation gaps
-as blank cells. Both were withdrawn. Withdrawn means no card — not renamed, not
-demoted to a supplement — while the files and tables behind them stay readable,
-because downloads, QC and the validation record still cite them.
-
-Second, FGFR2 had only the *validated cassette* boundary analysis. That analysis
-answers a narrow question about the IIIb/IIIc cassette and carries the freeze's
-conclusions. It says nothing about the rest of the protein. The generic whole-protein
-analysis — every supported internal coding-exon boundary against the nearest
-representative domain edge, compared across species — was available to FGFR1 and every
-other multi-species gene but not to FGFR2. It is now, through the same shared
-contract, and the tests below hold the two analyses apart: the generic one must never
-be presented as validated or conserved, and the validated one must not change.
-"""
 from __future__ import annotations
 
 import json
@@ -79,7 +58,6 @@ def catalogue():
 
 @pytest.fixture(scope="module")
 def cards(catalogue):
-    """Every card a reader can reach, in any scope."""
     return (catalogue["comparative_cards"] + catalogue["supplements"]
             + [c for s in catalogue["species_scopes"].values() for c in s["cards"]])
 
@@ -109,15 +87,11 @@ def test_synteny_neighbour_conservation_is_not_a_visible_card(cards):
 
 
 def test_neither_withdrawn_card_reappears_as_a_supplement(catalogue):
-    """Withdrawing a card and hiding it behind the supplements toggle are different
-    things. A supplement is still a card a reader can open."""
     supplements = {c["title"] for c in catalogue["supplements"]}
     assert not supplements & set(WITHDRAWN)
 
 
 def test_the_withdrawal_is_recorded_with_its_reason(catalogue):
-    """A card that simply disappears leaves a reader wondering whether the analysis
-    failed. The catalogue states which cards were withdrawn and why."""
     withdrawn = {w["title"]: w for w in catalogue["withdrawn_cards"]}
     assert set(withdrawn) == set(WITHDRAWN)
     for title, stems in WITHDRAWN.items():
@@ -126,8 +100,6 @@ def test_the_withdrawal_is_recorded_with_its_reason(catalogue):
 
 
 def test_the_source_data_behind_the_withdrawn_cards_is_still_there(catalogue):
-    """The evidence did not stop existing. Downloads, QC and the validated record
-    still read these tables, so withdrawing the card must not remove them."""
     retained = catalogue["retained_source_data"]
     assert retained, "no retained source data recorded"
     for rel in retained.values():
@@ -135,8 +107,6 @@ def test_the_source_data_behind_the_withdrawn_cards_is_still_there(catalogue):
 
 
 def test_the_withdrawn_figure_files_are_not_deleted():
-    """Only the card is withheld. Deleting validated output to hide a card would
-    break the downloads and checksums that cite it."""
     for stems in WITHDRAWN.values():
         for stem in stems:
             hits = list(FREEZE.rglob(f"{stem}.*")) if FREEZE.is_dir() else []
@@ -146,7 +116,6 @@ def test_the_withdrawn_figure_files_are_not_deleted():
 
 
 def test_the_main_comparative_synteny_figure_survives(catalogue):
-    """Removing the conservation matrix must not remove genomic context entirely."""
     genomic = [c for c in catalogue["comparative_cards"]
                if c["category"] == "Comparative genomic context"]
     assert genomic, "no comparative genomic-context card left"
@@ -163,8 +132,6 @@ def test_the_generic_boundary_figures_are_registered(catalogue):
 
 
 def test_the_generic_figures_come_from_the_shared_renderer(catalogue):
-    """A second FGFR2-specific implementation would drift from the generic one. Each
-    card must be backed by the stem the shared comparative renderer writes."""
     for card in catalogue["comparative_cards"]:
         if card["category"] != GENERIC_BOUNDARY_CATEGORY:
             continue
@@ -174,8 +141,6 @@ def test_the_generic_figures_come_from_the_shared_renderer(catalogue):
 
 
 def test_every_generic_boundary_card_offers_the_vector_safe_export_set(catalogue):
-    """Self-contained vector, 300-dpi raster and the numbers behind the figure. A
-    reader who wants to check a plotted distance needs the table, not the picture."""
     for card in catalogue["comparative_cards"]:
         if card["category"] != GENERIC_BOUNDARY_CATEGORY:
             continue
@@ -195,8 +160,6 @@ def test_the_generic_boundary_analysis_uses_real_comparable_groups(multi_species
 
 
 def test_boundaries_are_never_matched_by_exon_number_alone(multi_species):
-    """The fourth coding exon of two species is not the same exon. Grouping by rank
-    would manufacture comparisons between unrelated junctions."""
     if not multi_species.get("available"):
         pytest.skip("no comparative boundary evidence")
     allowed = {"shared_exon_group", "msa_aligned_position"}
@@ -207,9 +170,6 @@ def test_boundaries_are_never_matched_by_exon_number_alone(multi_species):
 
 
 def test_every_observation_names_a_real_domain_instance_and_signed_distance(multi_species):
-    """A cell shows one species' own measurement against one specific domain
-    instance. Where no representative domain is annotated near the boundary, that gap
-    must stay visible instead of being read as a distance of zero."""
     if not multi_species.get("available"):
         pytest.skip("no comparative boundary evidence")
     classes = {"exact_domain_boundary", "near_domain_edge", "inside_domain",
@@ -226,8 +186,6 @@ def test_every_observation_names_a_real_domain_instance_and_signed_distance(mult
 
 
 def test_the_generic_boundary_panel_is_one_model_per_species(multi_species):
-    """A comparable group counts species. FGFR2 has two isoform models per species,
-    so comparing both would count every species twice and inflate every group."""
     dashboard = _json(MODEL_INDEX)["boundary_dashboard"]
     panel = dashboard["comparative_panel"]
     assert panel["n_models_compared"] < panel["n_models_in_dataset"]
@@ -244,9 +202,6 @@ def test_the_generic_boundary_species_order_is_canonical(multi_species):
 
 
 def test_the_gallery_and_the_interactive_view_read_one_index(multi_species):
-    """Two independently derived versions of the same analysis would let a figure and
-    the page beside it disagree. The comparative dataset the interactive Boundary
-    Explorer reads must quote the same group ids as the figures."""
     dataset = INDICES / "comparative_dataset.json"
     if not dataset.is_file():
         pytest.skip("comparative dataset not built")
@@ -284,8 +239,6 @@ def test_the_two_boundary_analyses_are_separate_sections(catalogue):
 
 
 def test_every_generic_card_states_that_it_is_not_the_cassette_analysis(catalogue):
-    """A reader who lands on a boundary figure should not have to infer which of the
-    two analyses it belongs to from the section heading above it."""
     from fgfr2.gallery_catalogue import GENERIC_BOUNDARY_SCOPE_NOTE
 
     for card in catalogue["comparative_cards"]:
@@ -295,9 +248,6 @@ def test_every_generic_card_states_that_it_is_not_the_cassette_analysis(catalogu
 
 
 def test_the_generic_boundaries_are_not_called_validated_or_conserved(catalogue):
-    """These are positional observations across species. Calling them validated or
-    conserved would borrow the standing of the cassette analysis, which rests on
-    evidence this analysis does not have."""
     for card in catalogue["comparative_cards"]:
         if card["category"] != GENERIC_BOUNDARY_CATEGORY:
             continue
@@ -312,8 +262,6 @@ def test_the_generic_boundaries_are_not_called_validated_or_conserved(catalogue)
 
 
 def test_no_two_cards_in_one_scope_share_a_title(catalogue):
-    """Titles repeat across species scopes by design — every species has an exon-
-    structure card — so uniqueness is asked of each scope a reader sees at once."""
     scopes = {"comparative": catalogue["comparative_cards"],
               "supplements": catalogue["supplements"]}
     for species_id, scope in catalogue["species_scopes"].items():
@@ -324,7 +272,6 @@ def test_no_two_cards_in_one_scope_share_a_title(catalogue):
 
 
 def test_no_rendered_comparative_figure_backs_two_cards(catalogue):
-    """Two cards over one file is the duplication the catalogue exists to remove."""
     stems = [m["mode_id"] for c in catalogue["comparative_cards"] + catalogue["supplements"]
              for m in c.get("modes") or []]
     assert len(stems) == len(set(stems)), "one rendered figure backs two cards"
@@ -364,8 +311,6 @@ def test_no_other_fgfr2_dataset_still_shows_the_withdrawn_cards():
 
 
 def test_the_withdrawal_list_has_one_definition():
-    """Two lists would drift, and a card withdrawn from one dataset would reappear in
-    another."""
     from fgfr2.gallery_catalogue import withdrawn_figure_stems
     from build_website_indices import _withdrawn_figure_stems
 
@@ -374,8 +319,6 @@ def test_the_withdrawal_list_has_one_definition():
 
 
 def test_a_one_species_fgfr2_dataset_registers_no_comparative_card(tmp_path):
-    """One row is not a comparison. A cross-species card over a single species would
-    invite a reader to draw a conclusion from an empty contrast."""
     from plotting.generate_comparative_gallery_figures import generate
 
     model = tmp_path / "model.json"
@@ -389,8 +332,6 @@ def test_a_one_species_fgfr2_dataset_registers_no_comparative_card(tmp_path):
 
 
 def test_a_future_multi_species_fgfr2_run_withholds_the_conservation_matrix():
-    """The withdrawal must hold for FGFR2 datasets built through the generic
-    pipeline too, and must not silently change any other gene's gallery."""
     from plotting.generate_comparative_gallery_figures import (
         _withdrawn_comparative_stems)
 
@@ -403,8 +344,6 @@ def test_a_future_multi_species_fgfr2_run_withholds_the_conservation_matrix():
 
 
 def test_a_future_multi_species_fgfr2_run_registers_the_boundary_figures():
-    """Registration is driven by the presence of real comparable evidence, not by a
-    per-run hand edit, so a future run gets the figures on its own."""
     from plotting.generate_comparative_gallery_figures import FIGURE_META
 
     for stem in GENERIC_BOUNDARY_FIGURES.values():
@@ -415,8 +354,6 @@ def test_a_future_multi_species_fgfr2_run_registers_the_boundary_figures():
 # 5. nothing validated moved
 # --------------------------------------------------------------------------- #
 def test_the_validated_cassette_boundary_values_are_unchanged():
-    """The generic analysis measures every boundary of the whole protein. It must not
-    have reached back into the cassette boundaries the freeze validated."""
     index = _json(MODEL_INDEX)
     cassette = [b for m in index["models"] for b in m.get("exon_boundaries") or []
                 if b.get("is_cassette_boundary")]

@@ -1,35 +1,3 @@
-"""model_roles.py — the analysis-model hierarchy a species can carry.
-
-A species is not the same thing as a protein model. Most genes analysed here have
-one selected primary protein per species, so the two collapse and nothing is lost
-by treating a species as its model. A gene whose analysis is *about* alternative
-proteins does not collapse: FGFR2's IIIb and IIIc are two real, mutually exclusive
-proteins of the same species, and a figure that silently drew one of them while
-labelling it with the species would be wrong.
-
-The hierarchy this module fixes is therefore:
-
-    species
-      └── analysis models
-            ├── the one model marked as the primary reference
-            └── further isoform-specific / reconstructed / exploratory models
-
-Two independent facts, kept in two fields, because collapsing them loses one of
-them:
-
-``model_role``
-    What the model *is*. ``validated_isoform_IIIc`` says the protein is the
-    validated IIIc form; it does not say any figure chose it.
-
-``is_primary_reference``
-    What the model is *used as*. Exactly one model per species carries it, and it
-    is the model a comparative figure puts in that species' row. Which model that
-    is must be a stated rule, never iteration order.
-
-Nothing here changes how a generic single-primary gene behaves: its one model gets
-``primary_reference`` and ``is_primary_reference``, which is what it already meant
-implicitly.
-"""
 from __future__ import annotations
 
 from typing import Any, Dict, List, Optional, Sequence
@@ -56,7 +24,6 @@ ROLE_LABEL = {
 
 
 def validated_isoform_role(isoform_label: str) -> str:
-    """``IIIb`` -> ``validated_isoform_IIIb``."""
     return f"{VALIDATED_ISOFORM_PREFIX}{str(isoform_label).strip()}"
 
 
@@ -82,24 +49,12 @@ def known_role(role: Optional[str]) -> bool:
 
 
 def model_id(gene_symbol: str, species_id: str, discriminator: str = "") -> str:
-    """A model's stable, explicit identity.
-
-    Deliberately not derived from a file name or a list position: a renderer that
-    infers which protein it is drawing from where the model happened to sit in an
-    array will keep drawing the right picture right up until the order changes.
-    """
     gene = str(gene_symbol or "gene").strip().lower()
     disc = str(discriminator or "primary").strip().replace(" ", "_")
     return f"{gene}:{species_id}:{disc}"
 
 
 def role_errors(models: Sequence[Dict[str, Any]]) -> List[str]:
-    """Check the hierarchy: every model named, one primary reference per species.
-
-    A second model for one species is legitimate — it is the whole point of an
-    isoform analysis — but it has to say what it is and which of the two the
-    comparative figures speak for.
-    """
     errors: List[str] = []
     by_species: Dict[str, List[Dict[str, Any]]] = {}
     seen_ids: Dict[str, str] = {}

@@ -1,22 +1,4 @@
 #!/usr/bin/env python3
-"""
-Build the multi-vertebrate FGFR paralog reference panel.
-
-Build a multi-vertebrate FGFR1/2/3/4 paralog reference panel for the FGFR2
-orthology / paralog screen. Sequences are fetched with NCBI ``datasets`` for a
-small, curated set of vertebrate groups (mammal, bird, amphibian, teleost fish,
-reptile). The human-only panel remains the legacy control; this panel is the
-preferred orthology evidence layer.
-
-Outputs:
-  references/fgfr_paralog_panel_multi_vertebrate.fasta
-      headers: ">FGFR2|species=gallus_gallus|accession=NP_...|source=NCBI_RefSeq"
-  <outdir>/fgfr2_paralog_reference_panel_manifest.tsv
-
-A per-gene/per-species download cache avoids repeated network calls. If a
-download fails, that entry is skipped and recorded as a manifest warning so the
-panel is still usable (and reproducible) from whatever was retrievable.
-"""
 
 from __future__ import annotations
 
@@ -66,7 +48,6 @@ def parse_fasta(text: str) -> List[Tuple[str, str]]:
 
 def fetch_gene_protein(gene: str, species: str, datasets_bin: str, cache_dir: Path,
                        timeout: int) -> Tuple[Optional[str], Optional[str], str]:
-    """Return (accession, sequence, note). Picks the longest protein as canonical."""
     cache_dir.mkdir(parents=True, exist_ok=True)
     cache = cache_dir / f"{gene}_{canon(species)}.faa"
     if cache.exists() and cache.stat().st_size > 0:

@@ -1,18 +1,3 @@
-"""How a run is named, identified and ordered.
-
-Two names, deliberately separate:
-
-* ``run_id`` is the technical identifier. It is a directory name, so it stays
-  timestamped and filesystem-safe, and it never changes.
-* ``run_name`` is what the user typed. It may contain spaces, capitals and
-  ordinary punctuation, it is never used as a path, and two runs may share one.
-
-When a user gives no name the interface still needs a title, so
-:func:`display_label` builds a readable one from the biology of the run — the
-gene and its species — rather than falling back on a placeholder like
-``custom_run``, which tells a reader nothing and used to be written into the
-stored metadata as if the user had chosen it.
-"""
 from __future__ import annotations
 
 import re
@@ -43,16 +28,6 @@ _GENERATED_SUFFIXES = ("_core_pilot", "_pilot", "_run", "_twospecies", "_core_on
 
 
 def is_generated_name(name: str, gene_symbol: str = "") -> bool:
-    """Whether a stored name was produced by the pipeline rather than by a user.
-
-    Older runs recorded a default such as ``fgfr1_gallus_mus_core_pilot`` in the
-    same field a user types into. Those names describe the run the way a
-    directory does, and re-deriving the label from the gene and species reads
-    better, so they are treated as "no name given". A name is taken as generated
-    only when it is already a bare slug — no spaces, no capitals — and it either
-    starts with the gene symbol or carries one of the old suffixes. Anything a
-    person is likely to have typed keeps its exact wording.
-    """
     text = (name or "").strip()
     if not text or text != slugify(text):
         return False
@@ -62,13 +37,6 @@ def is_generated_name(name: str, gene_symbol: str = "") -> bool:
 
 
 def clean_run_name(raw: Optional[str], gene_symbol: str = "") -> str:
-    """Normalise a user-entered run name for storage.
-
-    Trims, collapses internal whitespace, drops characters that have no place in
-    a label, and caps the length. Returns "" when nothing meaningful is left, so
-    an empty name, a placeholder and a pipeline-generated default are the same
-    thing downstream.
-    """
     # Collapse whitespace after dropping characters too, so removing a dash from
     # "TP53 — mammals" does not leave a double space behind.
     text = _WHITESPACE.sub(" ", _DISALLOWED.sub("", str(raw or ""))).strip()
@@ -80,19 +48,12 @@ def clean_run_name(raw: Optional[str], gene_symbol: str = "") -> str:
 
 
 def slugify(text: str) -> str:
-    """A filesystem-safe fragment for a run directory name."""
     slug = re.sub(r"[^a-z0-9]+", "_", str(text or "").lower()).strip("_")
     return re.sub(r"_{2,}", "_", slug)
 
 
 def run_id_slug(run_name: str = "", *, gene_symbol: str = "",
                 species: Sequence[str] = ()) -> str:
-    """The descriptive part of a ``run_id``.
-
-    A user-entered name wins, because that is what its author will look for in
-    the directory listing. Otherwise the slug describes the run: gene plus one
-    or two species, or gene plus a species count.
-    """
     named = slugify(clean_run_name(run_name))
     if named:
         return named[:60].strip("_") or "run"
@@ -108,7 +69,6 @@ def run_id_slug(run_name: str = "", *, gene_symbol: str = "",
 
 
 def short_species(species_id: str) -> str:
-    """`gallus_gallus` -> `Gallus gallus`; only the genus is capitalised."""
     parts = [p for p in str(species_id or "").replace(" ", "_").split("_") if p]
     if not parts:
         return ""
@@ -116,7 +76,6 @@ def short_species(species_id: str) -> str:
 
 
 def species_summary(species: Sequence[str], limit: int = 2) -> str:
-    """A concise species phrase: two names, or the first plus a remainder count."""
     names = [short_species(s) for s in species if s]
     if not names:
         return ""
@@ -128,12 +87,6 @@ def species_summary(species: Sequence[str], limit: int = 2) -> str:
 def display_label(run_name: Optional[str] = None, *, gene_symbol: str = "",
                   species: Sequence[str] = (), species_count: int = 0,
                   run_id: str = "") -> str:
-    """The title a run card shows.
-
-    The user's name when there is one; otherwise a readable description built
-    from the gene and its species. Never a placeholder, and never the bare
-    ``run_id`` unless there is genuinely nothing else to say.
-    """
     name = clean_run_name(run_name, gene_symbol)
     if name:
         return name
@@ -154,7 +107,6 @@ def analysis_mode(species_count: int) -> str:
 
 
 def run_id_timestamp(run_id: str) -> Optional[datetime]:
-    """The creation time encoded in a legacy ``run_id``, if it has one."""
     match = _RUN_ID_STAMP.match(str(run_id or ""))
     if not match:
         return None
@@ -180,13 +132,6 @@ _EPOCH = datetime(1970, 1, 1, tzinfo=timezone.utc)
 
 
 def creation_time(run: Dict[str, Any]) -> datetime:
-    """The best available creation time, in the order the ordering rule requires.
-
-    ``created_at`` first; the timestamp encoded in a legacy ``run_id`` second;
-    a registry timestamp third. Filesystem modification time is never used — it
-    changes whenever a run is refreshed or re-indexed and would reorder the list
-    behind the user's back.
-    """
     for key in ("created_at", "registry_created_at"):
         parsed = _parse_iso(run.get(key))
         if parsed:
@@ -196,7 +141,6 @@ def creation_time(run: Dict[str, Any]) -> datetime:
 
 
 def sort_runs(runs: Iterable[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Newest first, with ``run_id`` as the stable tie-breaker."""
     return sorted(runs, key=lambda r: (creation_time(r), str(r.get("run_id", ""))),
                   reverse=True)
 
@@ -222,7 +166,6 @@ def run_group(status: str) -> str:
 def completion_summary(*, primary_fasta_count: int = 0,
                        available_views: Optional[Dict[str, Any]] = None,
                        species_count: int = 0) -> str:
-    """One sentence replacing the completed-stage checklist on a finished run."""
     views = available_views or {}
     protein = (f"{primary_fasta_count} primary protein"
                f"{'' if primary_fasta_count == 1 else 's'} analysed"
@@ -242,7 +185,6 @@ def completion_summary(*, primary_fasta_count: int = 0,
 
 def describe_failure(*, failed_stage: str = "", failed_species: str = "",
                      last_error: str = "") -> str:
-    """A concise, actionable failure line for a card — not a terminal log."""
     stage_label = {
         "core_model_collection": "gene and protein model collection",
         "gene_locus_resolution": "gene locus resolution",
@@ -262,7 +204,6 @@ def describe_failure(*, failed_stage: str = "", failed_species: str = "",
 def run_display_fields(cfg: Dict[str, Any], *, run_id: str, species_count: int,
                        gene_symbol: str, species: Sequence[str] = (),
                        status: str = "") -> Dict[str, Any]:
-    """The label fields a run summary exposes, derived once for every caller."""
     name = clean_run_name(cfg.get("run_name"), gene_symbol)
     return {
         "run_name": name,

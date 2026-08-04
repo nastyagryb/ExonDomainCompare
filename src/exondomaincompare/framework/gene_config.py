@@ -1,22 +1,4 @@
 #!/usr/bin/env python3
-"""Gene/event analysis configuration loader.
-
-Loads a gene_config.yaml (e.g. configs/genes/FGFR2_IIIb_IIIc.yaml) and exposes a
-small, stable, gene/event-agnostic view of it. This is a DESCRIPTION layer only:
-it does not run or change the FGFR2 pipeline and never touches the example freeze.
-
-Usage (validation CLI):
-
-    python -m exondomaincompare.framework.gene_config \
-        --config configs/genes/FGFR2_IIIb_IIIc.yaml --validate
-
-Programmatic:
-
-    from scripts.framework.gene_config import load_gene_config, DEFAULT_GENE_CONFIG
-    cfg = load_gene_config("configs/genes/FGFR2_IIIb_IIIc.yaml")
-    cfg.analysis_id      # "FGFR2_IIIb_IIIc"
-    cfg.event_labels     # [{"id": "IIIb", ...}, {"id": "IIIc", ...}]
-"""
 from __future__ import annotations
 
 import argparse
@@ -77,13 +59,11 @@ _DEFAULT_UI_LABELS: Dict[str, str] = {
 
 
 class GeneConfigError(ValueError):
-    """Raised when a gene_config file is missing required fields or is malformed."""
+    pass
 
 
 @dataclass
 class GeneConfig:
-    """A validated, gene/event-agnostic view over a gene_config.yaml."""
-
     raw: Dict[str, Any]
     source_path: Optional[str] = None
 
@@ -98,7 +78,6 @@ class GeneConfig:
 
     @property
     def status(self) -> str:
-        """Lifecycle status: 'active' (runnable) or e.g. 'draft_not_runnable'."""
         return str(self.raw.get("status", "active") or "active").strip()
 
     @property
@@ -107,13 +86,10 @@ class GeneConfig:
 
     @property
     def is_core_only_pilot(self) -> bool:
-        """A Core-only proof-of-concept: core gene analysis, no configured event."""
         return self.status == "core_only_pilot"
 
     @property
     def experimental(self) -> bool:
-        """Experimental analyses are not offered as normal runnable choices, but may
-        be exposed behind an explicit 'experimental' label (e.g. core-only pilots)."""
         r = self.raw.get("runnable")
         if isinstance(r, str) and r.strip().lower() in ("experimental", "false_or_experimental"):
             return True
@@ -121,12 +97,6 @@ class GeneConfig:
 
     @property
     def runnable(self) -> bool:
-        """Whether this analysis may be offered as a *normal* runnable choice.
-
-        Only 'active' configs default to runnable. Draft / pilot / experimental
-        configs stay non-runnable unless a real boolean 'runnable: true' is set.
-        A string 'runnable: experimental' means experimental, i.e. NOT normally runnable.
-        """
         if "runnable" in self.raw:
             r = self.raw.get("runnable")
             if isinstance(r, str):
@@ -136,10 +106,6 @@ class GeneConfig:
 
     @property
     def support_level(self) -> str:
-        """Coarse support level used across docs, probe and API.
-
-        validated_event_analysis | core_only_pilot | draft_not_runnable
-        """
         if self.is_core_only_pilot:
             return "core_only_pilot"
         if self.status == "active" and self.runnable and self.has_event:
@@ -172,12 +138,6 @@ class GeneConfig:
     # --- analysis modes ---------------------------------------------------- #
     @property
     def event_status(self) -> str:
-        """Event lifecycle status. Explicit event.status wins; otherwise inferred.
-
-        Backward compatible: FGFR2 (has a real event.type + labels) infers
-        'configured'; a draft with type == requires_gene_specific_event_detector
-        (or no event type) infers 'not_configured'.
-        """
         e = self.raw.get("event", {}) or {}
         st = str(e.get("status", "") or "").strip().lower()
         if st:
@@ -189,11 +149,6 @@ class GeneConfig:
 
     @property
     def analysis_modes(self) -> Dict[str, Any]:
-        """The core/event analysis-mode block, with backward-compatible defaults.
-
-        core_gene_analysis defaults to True (every supported gene can run core
-        analysis). event_analysis is inferred from event.status when not given.
-        """
         am = self.raw.get("analysis_modes", {}) or {}
         core = am.get("core_gene_analysis", True)
         ev = am.get("event_analysis")
@@ -217,8 +172,6 @@ class GeneConfig:
 
     @property
     def has_event(self) -> bool:
-        """True iff a usable event region is configured (configured/user_defined
-        with a concrete event type). Core-only genes return False."""
         if self.event_analysis_mode == "disabled":
             return False
         if self.event_status not in _EVENT_PRESENT_STATUSES:
@@ -228,7 +181,6 @@ class GeneConfig:
 
     @property
     def event_region_bounds(self) -> Dict[str, Any]:
-        """User-defined event region coordinates, if provided (else empty)."""
         e = self.raw.get("event", {}) or {}
         return {
             "reference_protein": str(e.get("reference_protein", "") or "").strip(),
@@ -352,7 +304,6 @@ def _resolve_path(path: str | Path) -> Path:
 
 
 def load_gene_config(path: str | Path) -> GeneConfig:
-    """Load and validate a gene_config.yaml. Raises GeneConfigError on problems."""
     if yaml is None:  # pragma: no cover
         raise GeneConfigError(
             f"PyYAML is required to read gene configs but could not be imported: {_YAML_IMPORT_ERROR}. "
@@ -379,7 +330,6 @@ def load_gene_config(path: str | Path) -> GeneConfig:
 
 
 def validate_gene_config(cfg: GeneConfig) -> List[str]:
-    """Validate required fields. Returns a list of warnings; raises on hard errors."""
     problems: List[str] = []
     for field_name, getter in _REQUIRED:
         try:
@@ -425,12 +375,10 @@ def validate_gene_config(cfg: GeneConfig) -> List[str]:
 
 
 def default_gene_config() -> GeneConfig:
-    """Load the canonical FGFR2 config; the backward-compatible default."""
     return load_gene_config(DEFAULT_GENE_CONFIG)
 
 
 def load_gene_config_lenient(path: str | Path) -> GeneConfig:
-    """Load a config WITHOUT hard validation (for drafts with undefined events)."""
     if yaml is None:  # pragma: no cover
         raise GeneConfigError("PyYAML is required to read gene configs.")
     p = _resolve_path(path)
@@ -453,17 +401,6 @@ def build_generic_gene_config(
     reference_species: str = "",
     extra_provenance: Optional[Dict[str, Any]] = None,
 ) -> GeneConfig:
-    """Synthesize a generic *core-only* gene config from just a gene symbol.
-
-    This is what makes the framework truly generic: a user can pick ANY protein-
-    coding gene symbol and we build a valid, no-event core-only analysis config
-    in memory — no pre-existing ``configs/genes/**`` YAML is required. FGFR2 keeps
-    its validated, hand-authored specialization; every other gene routes here.
-
-    The resulting config has ``source_path=None`` (it did not come from a file);
-    callers that want a run-local copy should serialize it with
-    :func:`gene_config_to_yaml`.
-    """
     sym = str(gene_symbol or "").strip().upper()
     if not sym:
         raise GeneConfigError("A gene symbol is required to build a generic gene config.")
@@ -518,11 +455,6 @@ def build_generic_gene_config(
 
 
 def gene_config_to_yaml(cfg: GeneConfig) -> str:
-    """Serialize a GeneConfig's raw mapping to YAML text (with a provenance header).
-
-    Used to drop a run-local ``gene_config.yaml`` for generated configs so a run
-    is fully self-describing and reproducible without any repo-level YAML.
-    """
     if yaml is None:  # pragma: no cover
         raise GeneConfigError("PyYAML is required to serialize gene configs.")
     prov = cfg.raw.get("provenance", {}) if isinstance(cfg.raw, dict) else {}
@@ -540,7 +472,6 @@ def gene_config_to_yaml(cfg: GeneConfig) -> str:
 
 
 def load_module_capabilities() -> Dict[str, Any]:
-    """Load configs/framework/module_capabilities.yaml (best-effort, {} on failure)."""
     if yaml is None:
         return {}
     p = _resolve_path(MODULE_CAPABILITIES_PATH)
@@ -554,7 +485,6 @@ def load_module_capabilities() -> Dict[str, Any]:
 
 
 def capability_summary() -> Dict[str, Any]:
-    """Reusability roll-up derived from the module capability inventory."""
     caps = load_module_capabilities()
     modules = caps.get("modules", {}) if isinstance(caps, dict) else {}
     reusable, gene_specific, needs_work = [], [], []
@@ -579,7 +509,6 @@ def capability_summary() -> Dict[str, Any]:
 
 
 def load_event_detectors() -> Dict[str, Any]:
-    """Load configs/framework/event_detectors.yaml (best-effort, {} on failure)."""
     if yaml is None:
         return {}
     p = _resolve_path(EVENT_DETECTORS_PATH)
@@ -593,25 +522,18 @@ def load_event_detectors() -> Dict[str, Any]:
 
 
 def supported_detectors() -> Dict[str, Dict[str, Any]]:
-    """Detector name -> spec, for detectors with status == 'supported'."""
     dets = (load_event_detectors().get("detectors", {}) or {})
     return {k: v for k, v in dets.items()
             if isinstance(v, dict) and str(v.get("status", "")).lower() == "supported"}
 
 
 def planned_detectors() -> Dict[str, Dict[str, Any]]:
-    """Detector name -> spec, for detectors that are not yet supported."""
     dets = (load_event_detectors().get("detectors", {}) or {})
     return {k: v for k, v in dets.items()
             if isinstance(v, dict) and str(v.get("status", "")).lower() != "supported"}
 
 
 def detector_for_analysis(analysis_id: str) -> Optional[Dict[str, Any]]:
-    """Return the detector spec (with its registry name) for an analysis_id, or None.
-
-    Prefers a supported detector; only returns a supported one so that callers can
-    treat "has detector" as "is runnable".
-    """
     if not analysis_id:
         return None
     for name, spec in supported_detectors().items():
@@ -621,7 +543,6 @@ def detector_for_analysis(analysis_id: str) -> Optional[Dict[str, Any]]:
 
 
 def load_event_detector_contract() -> Dict[str, Any]:
-    """Load the machine-readable detector contract (best-effort, {} on failure)."""
     if yaml is None:
         return {}
     p = _resolve_path(EVENT_DETECTOR_CONTRACT_PATH)
@@ -635,7 +556,6 @@ def load_event_detector_contract() -> Dict[str, Any]:
 
 
 def load_core_analysis_contract() -> Dict[str, Any]:
-    """Load the machine-readable core gene-analysis contract (best-effort)."""
     if yaml is None:
         return {}
     p = _resolve_path(CORE_ANALYSIS_CONTRACT_PATH)
@@ -649,7 +569,6 @@ def load_core_analysis_contract() -> Dict[str, Any]:
 
 
 def discover_analyses() -> Dict[str, Any]:
-    """List configured analyses: supported (active/runnable) vs drafts."""
     supported: List[Dict[str, Any]] = []
     drafts: List[Dict[str, Any]] = []
 
@@ -723,13 +642,6 @@ def discover_analyses() -> Dict[str, Any]:
 
 
 def resolve_run_config_path(run_config: Dict[str, Any], run_dir: Optional[Path] = None) -> str:
-    """Determine the gene_config path for a run, defaulting to FGFR2 for old runs.
-
-    Order of preference:
-      1. runs/<run_id>/gene_config.yaml (run-local copy), if present
-      2. run_config.json["gene_config"]
-      3. DEFAULT_GENE_CONFIG (FGFR2 IIIb/IIIc)
-    """
     if run_dir is not None:
         local = Path(run_dir) / "gene_config.yaml"
         if local.is_file():
@@ -744,7 +656,6 @@ def resolve_run_config_path(run_config: Dict[str, Any], run_dir: Optional[Path] 
 
 
 def resolve_run_analysis(run_config: Dict[str, Any], run_dir: Optional[Path] = None) -> GeneConfig:
-    """Return the GeneConfig for a run, defaulting to FGFR2 for backward compat."""
     try:
         return load_gene_config(resolve_run_config_path(run_config, run_dir))
     except GeneConfigError:

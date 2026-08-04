@@ -1,22 +1,4 @@
 #!/usr/bin/env python3
-"""
-Build the FGFR2 orthology evidence table.
-
-Build a dedicated FGFR2 orthology evidence table that integrates:
-  * gene-symbol evidence (Step 2 genes.tsv),
-  * paralog-panel evidence (multi-vertebrate FGFR1/2/3/4 screen),
-  * protein QC (Step 5b validation, used as QC only),
-  * sequence-calibrated IIIb/IIIc direction status (Step 4),
-  * joint detection of both isoforms (Step 10 pair QC).
-
-This table does NOT change IIIb/IIIc labels. It only summarises orthology
-confidence and a recommended use per transcript/protein.
-
-Outputs:
-  fgfr2_orthology_evidence.tsv          (one row per species/isoform/transcript/protein)
-  fgfr2_orthology_species_summary.tsv   (one row per species)
-"""
-
 from __future__ import annotations
 
 import argparse

@@ -1,26 +1,4 @@
 #!/usr/bin/env python3
-"""
-Build the phylogenetic species display order.
-
-Derive a reproducible, taxonomy-based species display order for all FGFR2
-figures (never silent alphabetical order).
-
-Method priority:
-  1. NCBI Taxonomy via ETE (ete3/ete4 NCBITaxa) if installed AND the local taxa
-     database is available -> order_source = ncbi_taxonomy_ete (topology/lineage).
-  2. Otherwise a documented curated fallback taxonomic order for the vertebrate
-     FGFR2 panel -> order_source = curated_fallback_taxonomic_order.
-  3. Any species not covered by either -> unresolved_fallback_order (only such
-     rows may be alphabetized, and they are flagged).
-
-Outputs:
-  species_phylogenetic_order.tsv
-  species_taxonomy_metadata.tsv
-
-Broad taxon groups (in biological display order):
-  Primates, Other mammals, Birds, Reptiles, Amphibians, Teleost fish
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -43,9 +21,6 @@ GROUP_ORDER: Dict[str, Tuple[int, str, str]] = {
 # Primate taxids in the panel (used to split mammals into Primates vs Other mammals).
 PRIMATE_TAXIDS = {"9606", "9598", "9595", "9601", "9544", "9483"}
 
-# Documented curated within-panel order following standard vertebrate phylogeny.
-# (Group placement is biologically standard; within-group order follows accepted
-# higher-level relationships for this specific 30-species panel.)
 CURATED_ORDER: List[str] = [
     # Primates: great apes -> OWM -> NWM
     "homo_sapiens", "pan_troglodytes", "gorilla_gorilla_gorilla", "pongo_abelii",
@@ -95,7 +70,6 @@ def taxon_group_for(taxid: str, clade: str) -> str:
 
 
 def try_ncbi_taxa():
-    """Return an NCBITaxa instance if ete is installed and the DB exists, else None."""
     for mod in ("ete3", "ete4"):
         if importlib.util.find_spec(mod) is None:
             continue
@@ -146,7 +120,7 @@ def main() -> int:
         if sp in lineage_by_sp:
             order_source = "ncbi_taxonomy_ete"
             order_conf = "high"
-            within = curated_rank.get(sp, 9999)  # ete gives lineage; keep curated within-group tie-break
+            within = curated_rank.get(sp, 9999)
             lineage = lineage_by_sp[sp]
             warn = ""
         elif sp in curated_rank:
@@ -169,7 +143,6 @@ def main() -> int:
             "order_source": order_source, "order_confidence": order_conf, "order_warning": warn,
         })
 
-    # Sort: group order, then within-group order, then species name (only matters for unresolved).
     entries.sort(key=lambda e: (e["_g_order"], e["_within"], e["species"]))
     for i, e in enumerate(entries, start=1):
         e["phylo_order"] = i

@@ -1,33 +1,4 @@
 #!/usr/bin/env python3
-"""Optional, EXPLORATORY isoform-specific region scan (never blocking).
-
-For a gene without a configured event region, this helps a user SEE whether
-there might be isoform-specific regions worth investigating. It compares the
-protein isoforms of one gene within the same species and records every contiguous
-block where isoforms differ — an insertion, a deletion or a substitution block,
-down to a single amino acid. Nothing is dropped for being short; length, the number
-of supporting comparisons and exon support only decide the confidence a block is
-reported with.
-
-IMPORTANT — these are CANDIDATE regions only:
-  * They are NOT validated events.
-  * They do NOT enable event-specific boundary consistency.
-  * No markers are invented; nothing here changes the run's status or views.
-
-The run succeeds with or without this scan. FGFR2 IIIb/IIIc remains the only
-validated event-specific analysis.
-
-Input (from a core run's results/core_gene_analysis/):
-  * protein_isoform_index.tsv
-  * proteins FASTA (primary + any additional isoform FASTA, if present)
-  * exon_protein_map.tsv (optional; enables exon-aligned candidates)
-
-Output:
-  results/core_gene_analysis/event_candidate_regions.tsv
-
-Usage:
-  python -m exondomaincompare.framework.scan_isoform_event_candidates --run-id <run_id>
-"""
 from __future__ import annotations
 
 import argparse
@@ -81,21 +52,6 @@ def load_fasta(p: Path) -> Dict[str, str]:
 
 
 def _diff_regions(a: str, b: str) -> List[Tuple[str, int, int]]:
-    """Every contiguous block where b differs from a, down to a single residue.
-
-    Returns ``(type, start_aa, end_aa)`` with 1-based protein coordinates, relative to
-    sequence *a* for a deletion or substitution block and to *b* for an insertion.
-
-    There is deliberately no length threshold. A four-residue cassette is a real
-    alternative-splicing product — mouse and rat PTPN11 differ by exactly one such
-    block between their two curated isoforms — and a scan that drops it because it is
-    shorter than some minimum reports "no candidate" for a difference the alignment
-    plainly shows. Length is a *confidence* input (see :func:`_confidence`), never a
-    filter: a short block may rank last, but it is always in the raw evidence.
-
-    Insertions/deletions and substitution blocks stay separate types; nothing here
-    calls any block a validated splicing event.
-    """
     out: List[Tuple[str, int, int]] = []
     sm = difflib.SequenceMatcher(a=a, b=b, autojunk=False)
     for tag, i1, i2, j1, j2 in sm.get_opcodes():
@@ -114,14 +70,6 @@ _SUBSTANTIAL_AA = 6
 
 
 def _confidence(length_aa: int, n_comparisons: int, exon_aligned: bool) -> str:
-    """Rank a candidate by the evidence behind it — this never removes anything.
-
-    Three independent signals, each worth one point except exon support which is the
-    strongest and worth two: the block coincides with an annotated coding-exon block
-    (exon support), several isoform comparisons report the very same block
-    (reproducibility), and the block is long enough to be a plausible coding cassette
-    on its own. A short, singly-observed block scores "low" and is still written out.
-    """
     score = (2 if exon_aligned else 0)
     score += 1 if n_comparisons >= 2 else 0
     score += 1 if length_aa >= _SUBSTANTIAL_AA else 0

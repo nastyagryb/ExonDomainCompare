@@ -1,4 +1,3 @@
-"""Checksum-backed canonical scientific output identities."""
 from __future__ import annotations
 
 import hashlib

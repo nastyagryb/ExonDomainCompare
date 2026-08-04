@@ -1,17 +1,4 @@
 #!/usr/bin/env python3
-"""
-Render FGFR2 MSA boundary figures.
-
-Publication-level MSA figures (exported as SVG, PDF and PNG):
-  Figure 6 — MSA-projected IIIb/IIIc boundary map (main new MSA figure)
-  Figure 7 — Isoform-discriminating residues
-  Figure 8 — Boundary robustness evidence stack
-  Supplement — MSA review-case diagnostics
-  Supplement — Full-length MSA / protein integrity overview
-
-No fake InterPro domains. Species are ordered phylogenetically; IIIb/IIIc colors are stable;
-review species are marked subtly. MSA is a QC/robustness evidence layer and does not relabel.
-"""
 
 from __future__ import annotations
 
@@ -226,8 +213,6 @@ def _fig8_sorted(master, scores):
 
 
 def fig8_table_only(dirs, master, scores):
-    """Write the figure-8 evidence-stack table (all species/isoform with post-rescue claim columns
-    already injected upstream) before the cross-table consistency gate runs."""
     all_rows = _fig8_sorted(master, scores)
     M.write_tsv(dirs["tables"] / "figure8_boundary_robustness_evidence_stack.tsv", all_rows,
                 list(all_rows[0].keys()) if all_rows else ["species"])

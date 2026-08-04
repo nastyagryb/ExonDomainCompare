@@ -8,7 +8,6 @@ GAP_CHARS = "-."
 
 
 def read_aligned_fasta(path: Path) -> List[Tuple[str, str]]:
-    """Read an aligned FASTA as ``[(header, gapped_sequence), …]`` in file order."""
     entries: List[Tuple[str, List[str]]] = []
     with open(path, "r", encoding="utf-8") as fh:
         for line in fh:
@@ -23,11 +22,6 @@ def read_aligned_fasta(path: Path) -> List[Tuple[str, str]]:
 
 
 def parse_header(header: str) -> Dict[str, str]:
-    """Split ``NP_034336.2 FGFR1|mus_musculus`` into its parts.
-
-    The pipeline writes ``<protein_id> <gene>|<species_id>``. Both separators are
-    treated as optional so a plain ``>NP_034336.2`` still yields a protein id.
-    """
     head = header.strip()
     species = ""
     if "|" in head:
@@ -42,7 +36,6 @@ def parse_header(header: str) -> Dict[str, str]:
 
 
 def column_map(aligned: str) -> Dict[int, int]:
-    """Map native 1-based residue position → 1-based alignment column."""
     out: Dict[int, int] = {}
     native = 0
     for col, ch in enumerate(aligned, start=1):
@@ -54,12 +47,6 @@ def column_map(aligned: str) -> Dict[int, int]:
 
 
 def build_msa_coordinate_map(alignment_path: Path) -> Dict[str, Any]:
-    """Build the per-species coordinate mapping for a cross-species primary MSA.
-
-    Returns a serialisable dict. ``species`` holds one entry per aligned sequence with
-    ``native_to_column`` as a list of ``[native, column]`` pairs — a list rather than a
-    dict because JSON object keys are strings and would silently stringify positions.
-    """
     path = Path(alignment_path)
     if not path.is_file():
         # Only the file name, never the absolute path: this dict is published in the
@@ -115,7 +102,6 @@ def build_msa_coordinate_map(alignment_path: Path) -> Dict[str, Any]:
 
 
 def lookup_tables(coord_map: Dict[str, Any]) -> Dict[str, Dict[int, int]]:
-    """``{species_id: {native_position: column}}`` for in-process use."""
     return {
         s["species_id"]: {int(n): int(c) for n, c in s.get("native_to_column") or []}
         for s in coord_map.get("species") or []
@@ -124,16 +110,6 @@ def lookup_tables(coord_map: Dict[str, Any]) -> Dict[str, Dict[int, int]]:
 
 def annotate_boundaries_with_columns(models: Sequence[Dict[str, Any]],
                                      coord_map: Dict[str, Any]) -> Dict[str, Any]:
-    """Attach ``msa_column`` to every exon boundary of every model, in place.
-
-    A boundary sits *between* two exons, so its protein position is the first residue
-    of the downstream exon. That residue is what gets mapped. When the position has no
-    column — the species is absent from the alignment, or the model's protein is not the
-    aligned one — the boundary keeps ``msa_column = None`` and is reported as unmapped
-    rather than being given a neighbouring column.
-
-    Returns a per-species report of how many boundaries were mapped.
-    """
     tables = lookup_tables(coord_map)
     aligned_protein = {s["species_id"]: s["protein_id"]
                        for s in coord_map.get("species") or []}

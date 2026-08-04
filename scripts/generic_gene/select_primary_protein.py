@@ -1,17 +1,3 @@
-"""Generic primary-protein selection (gene-agnostic).
-
-Documented, scientifically defensible hierarchy (transparent about what is and is
-not available):
-  1. MANE Select
-  2. APPRIS principal
-  3. Ensembl canonical
-  4. curated RefSeq NM/NP over predicted XM/XP
-  5. UniProt reviewed / canonical (if mapped)
-  6. longest protein (fallback only)
-
-Reuses ``framework.primary_selection`` (same hierarchy) and writes the canonical
-``primary_selection_evidence.tsv`` + ``primary_selection_report.json``.
-"""
 from __future__ import annotations
 
 import argparse
@@ -19,9 +5,9 @@ from typing import Any, Dict
 
 from exondomaincompare.generic_gene.common import GenericContext, load_context, read_json, read_tsv
 
-try:  # framework is importable when scripts/ is on sys.path
+try:
     from exondomaincompare.framework import primary_selection as _ps
-except Exception:  # pragma: no cover
+except Exception:
     import sys
     sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parents[1]))
     from exondomaincompare.framework import primary_selection as _ps
@@ -45,7 +31,7 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description='Generic primary-protein selection (gene-agnostic).')
     ap.add_argument("--run-id", required=True)
     args = ap.parse_args()
     ctx = load_context(args.run_id)

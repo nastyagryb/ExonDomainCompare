@@ -1,16 +1,3 @@
-"""Shared, gene-agnostic website indices.
-
-Reads the canonical ``generic_gene_analysis/`` products and writes the shared
-conceptual indices into ``website_indices/`` (same names for every gene):
-
-  overview_index.json, evidence_stack.json, gene_explorer_index.json,
-  protein_architecture_index.json, synteny_index.json, event_evidence_index.json,
-  domain_architecture_index.json, exon_domain_boundaries_index.json,
-  figures_index.json, available_views.json
-
-Also writes the richer ``analysis_evidence_stack.json`` into the canonical layer.
-No FGFR2 / IIIb / IIIc terminology.
-"""
 from __future__ import annotations
 
 import argparse
@@ -30,7 +17,6 @@ SCHEMA_VERSION = 2
 
 
 def _gene_identity(ctx: GenericContext) -> Dict[str, Any]:
-    """The requested-versus-source symbol record the core runner wrote, if any."""
     import json
     cfg = ctx.run_dir / "run_config.json"
     if not cfg.is_file():
@@ -89,17 +75,11 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
         "dataset_id": ctx.run_id,
         "analysis_id": ctx.analysis_id,
         "gene_symbol": ctx.gene_symbol,
-        # How the requested symbol reached the assembly locus, so a gene annotated as
-        # LOC… is explained rather than silently renamed.
         "gene_identity": _gene_identity(ctx),
         **routing,
-        # Schema identity on every index (and therefore on every Gallery card built
-        # from one), so a card can be checked against the run that produced it instead
-        # of being trusted because its file happens to exist.
         **production_contract.resolve(ctx.gene_symbol).identity(),
     }
 
-    # ---- protein_architecture_index ----
     by_protein: Dict[str, List[Dict[str, Any]]] = {}
     for b in arch:
         by_protein.setdefault(b.get("protein_id", ""), []).append({
@@ -113,7 +93,6 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
                           "proteins": [{"protein_id": pid, "n_blocks": len(v), "blocks": v}
                                        for pid, v in by_protein.items()]}
 
-    # ---- synteny_index ----
     synteny_index = {**base_meta,
                      "n_neighbours": len(syn),
                      "n_resolved": len([r for r in syn if r.get("status") == "resolved"]),
@@ -125,7 +104,6 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
                          "status": r.get("status", ""),
                      } for r in syn]}
 
-    # ---- event_evidence_index (per-source breakdown per cluster) ----
     def _cluster_sources(c: Dict[str, str]) -> List[Dict[str, str]]:
         out = []
         srcs = (c.get("evidence_sources", "") or "").split(";")
@@ -149,7 +127,6 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
                                 "sources": _cluster_sources(c),
                             } for c in clusters]}
 
-    # ---- figures_index ----
     figures_index = {**base_meta, "figures": [{
         "figure_id": f.get("figure_id", ""), "title": f.get("title", ""),
         "stage": f.get("stage", ""), "status": f.get("status", ""),
@@ -157,7 +134,6 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
         "caption": f.get("caption", ""),
     } for f in figman]}
 
-    # ---- domain + boundary indices (pending until cluster) ----
     domain_index = {**base_meta, "status": domain_status,
                     "reason": ("Domain architecture from InterProScan/pyTMHMM."
                                if cluster_complete else
@@ -167,12 +143,11 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
                                  if cluster_complete else
                                  "Pending the InterProScan/pyTMHMM cluster step.")}
 
-    # Rich evidence stack.
+
     stack_items = _evidence_stack(ctx, routing, gm, iso, sel, arch, syn, clusters,
                                   msa_status, domain_status, boundary_status)
     evidence_stack = {**base_meta, "items": stack_items}
 
-    # ---- gene_explorer_index ----
     gene_explorer_index = {**base_meta,
         "n_species": len(species), "n_gene_models": len(gm),
         "n_protein_isoforms": len(iso), "n_primary_proteins": len([r for r in iso
@@ -186,18 +161,16 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
                       "primary_status": r.get("primary_status", ""),
                       "source_kind": r.get("source_kind", "")} for r in iso]}
 
-    # ---- available_views (shared concept; event-specific FGFR2 views off) ----
     views = {
         "overview": True,
         "gene_explorer": bool(gm),
         "protein_architecture": bool(arch),
         "synteny": bool(syn),
-        "event_evidence": True,          # always present (exploratory or validated)
+        "event_evidence": True,
         "msa": msa_status == "available",
         "figures": any(f.get("status") == "available" for f in figman),
         "domain_architecture": domain_status == "available",
         "exon_domain_boundaries": boundary_status == "available",
-        # FGFR2-only event-specific views are never enabled for generic genes:
         "cassette": False,
         "iiib_iiic_markers": False,
         "human_comparison": False,
@@ -207,7 +180,6 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
                        "pending": {"domain_architecture": domain_status,
                                    "exon_domain_boundaries": boundary_status}}
 
-    # ---- overview_index ----
     overview_index = {**base_meta,
         "kpis": {
             "species_analysed": len(species),
@@ -242,7 +214,6 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
     for name, data in outputs.items():
         write_json(wi / name, sanitize_public_payload(data))
 
-    # The canonical rich stack also lives in the analysis layer.
     write_json(ctx.out("analysis_evidence_stack.json"), evidence_stack)
     write_public_download_projections(ctx.run_dir)
     write_freshness_contract(
@@ -331,7 +302,7 @@ def _evidence_stack(ctx, routing, gm, iso, sel, arch, syn, clusters, msa_status,
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description='Shared, gene-agnostic website indices.')
     ap.add_argument("--run-id", required=True)
     args = ap.parse_args()
     ctx = load_context(args.run_id)

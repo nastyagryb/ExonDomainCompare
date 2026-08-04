@@ -66,8 +66,6 @@ WEBSITE_INDICES = "website_indices"
 
 @dataclass
 class ViewRequirement:
-    """One frontend view and the artefacts it cannot be drawn without."""
-
     view: str
     label: str
     index: str
@@ -139,7 +137,6 @@ REQUIRED_FOR_READY_WITH_DOMAINS: Tuple[str, ...] = (
 
 
 def _newest_mtime(path: Path, ignore: Sequence[str] = ()) -> Optional[float]:
-    """Newest modification time under ``path``, or None when it holds no file."""
     if path.is_file():
         return path.stat().st_mtime
     if not path.is_dir():
@@ -166,12 +163,6 @@ def _read_json(path: Path) -> Any:
 
 
 def _has_payload(data: Any) -> bool:
-    """Whether an index actually carries content, as opposed to merely existing.
-
-    An index written as a placeholder parses fine and has the right keys; only its
-    collections are empty. Treating that as available is how an empty view came to be
-    reported as a complete one.
-    """
     if isinstance(data, list):
         return len(data) > 0
     if not isinstance(data, dict):
@@ -232,12 +223,6 @@ def stage_states(run_dir: Path,
 
 def indices_are_stale(run_dir: Path, tolerance_s: float = 1.0,
                       ) -> Tuple[bool, str]:
-    """Whether the website indices predate the outputs they summarize.
-
-    Returns the verdict and the stage that overtook them. The tolerance absorbs the
-    sub-second spread of a single build; anything larger means a later pipeline run
-    rewrote a stage while the indices stayed behind.
-    """
     run_dir = Path(run_dir)
     indices = run_dir / WEBSITE_INDICES
     freshness = indices / "_freshness.json"
@@ -285,8 +270,6 @@ class ViewState:
 
 
 def _cluster_outputs_present(run_dir: Path) -> bool:
-    """Whether usable cluster results exist for this run's current proteins.
-    """
     ips = (run_dir / "results" / "14_interproscan" / "primary" / "output")
     tm = (run_dir / "results" / "15_exon_domain_boundary_post_interpro"
           / "pytmhmm_primary" / "output")
@@ -322,7 +305,6 @@ def _fasta_has_records(path: Path) -> bool:
 
 
 def _input_state(path: Path) -> str:
-    """``available`` / ``empty`` / ``missing`` for one closure artefact."""
     if not path.is_file():
         return "missing"
     if path.suffix in (".faa", ".fasta", ".fa"):
@@ -336,12 +318,6 @@ def view_states(run_dir: Path, n_species: int = 0, has_event: bool = True,
                 views: Sequence[ViewRequirement] = FGFR2_VIEWS,
                 pre_interpro_complete: bool = True,
                 ) -> List[ViewState]:
-    """Why each view is or is not available for this run.
-
-    ``n_species`` and ``has_event`` decide what the run is *entitled* to; the
-    filesystem decides what it *has*. Keeping the two apart is what lets a missing
-    file be reported as missing instead of as a biological finding.
-    """
     run_dir = Path(run_dir)
     closure = run_dir / "results" / "13_final_pre_interpro_closure"
     indices = run_dir / WEBSITE_INDICES
@@ -447,32 +423,12 @@ class Readiness:
 
 
 def models_run(run_dir: Path) -> bool:
-    """Whether this contract describes the given run's layout.
-
-    ``FGFR2_VIEWS`` names the closure directory and the index filenames of the
-    event-pipeline layout. A generic core-only run keeps its outputs elsewhere and writes a
-    different set of indices, so evaluating it against this table would report every view
-    as missing — a verdict about the wrong layout, not about the run. Such runs are judged
-    by ``framework.core_run_milestones`` instead.
-
-    The test is the closure's own truth table rather than the directory, because the shared
-    orchestrator materialises the numbered stage folders for every gene — an empty
-    ``13_final_pre_interpro_closure/`` says nothing about which pipeline produced the run.
-    """
     closure = Path(run_dir) / "results" / "13_final_pre_interpro_closure"
     return (closure / "final_pre_interpro_truth_table.tsv").is_file()
 
 
 def readiness(run_dir: Path, n_species: int = 0, has_event: bool = True,
               pre_interpro_complete: bool = True) -> Readiness:
-    """Whether a run may be shown as finished.
-
-    Previously a single persisted ``post_interpro_status: complete`` was enough, and it
-    survived every later change to the run. A run could therefore advertise finished
-    results while the views that carry those results had nothing to draw.
-
-    Only call this for a run ``models_run`` accepts.
-    """
     run_dir = Path(run_dir)
     states = view_states(run_dir, n_species=n_species, has_event=has_event,
                          pre_interpro_complete=pre_interpro_complete)

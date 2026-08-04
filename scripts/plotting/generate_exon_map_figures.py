@@ -1,23 +1,4 @@
 #!/usr/bin/env python3
-"""Single-species Gallery figures for transcript structure, genomic context and
-exploratory candidates, drawn from the validated protein-coordinate model.
-
-Figures produced per species model (nothing is drawn that the data do not support):
-
-  A  transcript structure and translated protein product   two panels: nucleotides
-                                                           and amino acids
-  B1 transcript-model comparison, all protein models
-  B2 transcript-model comparison, differences from the primary model
-  D  local genomic neighbourhood
-  E1 exploratory candidate ranking
-  E2 exploratory candidates in their domain context
-
-Each figure is exported as SVG, a true-vector PDF, a 300 dpi PNG and the source
-table behind it, and registers exactly ONE Gallery card — the formats are formats
-of that one card. The five integrated main figures are owned by
-``generate_shared_main_figures``; this stage deliberately produces no competing
-version of them and retires the cards they replaced.
-"""
 from __future__ import annotations
 
 import argparse
@@ -30,16 +11,12 @@ from typing import Any, Dict, List, Sequence
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from exondomaincompare.presentation import figure_captions as fc  # noqa: E402
-from exondomaincompare.presentation import shared_gene_plots as sgp  # noqa: E402
+from exondomaincompare.presentation import figure_captions as fc
+from exondomaincompare.presentation import shared_gene_plots as sgp
 
 FIGURE_DIR = "results/generic_gene_analysis/figures/exon_map"
 ANALYSIS_DIR = "results/generic_gene_analysis"
 
-# Cards and files this stage replaces. Only ids are matched, so no other generator's
-# cards can be affected; the redesigned figures below take their place. The primary
-# exon-to-protein projection is a shared main figure now, so this stage stops drawing
-# its own version of it — retiring that card is the shared stage's business.
 SUPERSEDED_FIGURE_IDS = (
     "exon_map_{sp}_primary_projection",
     "exon_map_{sp}_selected_candidate_detail",
@@ -52,8 +29,6 @@ RETIRED_STEMS = (
     "exon_map_{sp}_selected_candidate_detail",
 )
 
-# The scientific figure types this stage owns. In a multi-species run each becomes
-# one card per species, so the species-independent id has to be retired.
 FIGURE_TYPES = (
     "transcript_exon_structure",
     "transcript_model_comparison",
@@ -81,13 +56,6 @@ def _read_tsv(path: Path) -> List[Dict[str, Any]]:
 
 
 def _candidate_rows(run_dir: Path, model: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """Exploratory candidates with their evidence, keyed by amino-acid interval.
-
-    The ranking table carries the evidence scores, the candidate clusters carry the
-    supporting comparison counts and the coordinate model carries the affected
-    protein models and the display label. All three describe the same candidate, so
-    they are merged on the amino-acid interval rather than shown separately.
-    """
     ranking = _read_tsv(run_dir / ANALYSIS_DIR / "event_candidate_ranking.tsv")
     clusters = _read_tsv(run_dir / ANALYSIS_DIR / "event_region_candidate_clusters.tsv")
     by_interval = {(sgp._int(c.get("representative_start_aa")),
@@ -125,7 +93,6 @@ def _candidate_rows(run_dir: Path, model: Dict[str, Any]) -> List[Dict[str, Any]
 
 
 def _footnote(doc: Dict[str, Any], sources: Sequence[str]) -> str:
-    """Provenance line under a figure: what the numbers came from."""
     return ("Source: " + fc.join_sources([s for s in sources if s])
             + (f" · run {doc.get('run_id')}" if doc.get("run_id") else ""))
 
@@ -146,9 +113,6 @@ def generate(run_dir: Path, model_json: Path) -> dict:
     cards: List[Dict[str, Any]] = []
     drop: List[str] = []
 
-    # In a multi-species run one card per species per figure type is registered, so
-    # the card id has to carry the species. A single-species run keeps the bare id
-    # the accepted Gallery was validated with.
     multi_species = len(models) > 1
     if multi_species:
         drop += list(FIGURE_TYPES)
@@ -200,7 +164,6 @@ def generate(run_dir: Path, model_json: Path) -> dict:
                                      "title": title, "format": ext,
                                      "protein_id": protein_id, "path": _rel(path)})
 
-        # ---- A. transcript structure and translated protein product ---------
         stem = f"exon_map_{sp}_transcript_and_protein_structure"
         emit("transcript_exon_structure", stem,
              sgp.plot_transcript_exon_structure(
@@ -231,7 +194,6 @@ def generate(run_dir: Path, model_json: Path) -> dict:
              columns=sgp.EXON_IDENTITY_TABLE_COLUMNS,
              sources=[EXON_SOURCE])
 
-        # ---- B. transcript-model comparison ---------------------------------
         top_candidate = None
         for region in model.get("candidate_regions") or []:
             top_candidate = region
@@ -272,7 +234,6 @@ def generate(run_dir: Path, model_json: Path) -> dict:
                  columns=sgp.EXON_IDENTITY_TABLE_COLUMNS,
                  sources=[EXON_SOURCE])
 
-        # ---- D. local genomic neighbourhood --------------------------------
         stem = f"exon_map_{sp}_local_gene_neighbourhood"
         layout = sgp.neighbourhood_layout(gene, neighbours, strand)
         emit("local_gene_neighbourhood", stem,
@@ -307,7 +268,6 @@ def generate(run_dir: Path, model_json: Path) -> dict:
              columns=sgp.NEIGHBOURHOOD_TABLE_COLUMNS,
              sources=[f"{ANALYSIS_DIR}/synteny_neighbourhood.tsv"])
 
-        # ---- E1. exploratory candidate ranking ------------------------------
         stem = f"exon_map_{sp}_exploratory_candidate_ranking"
         emit("exploratory_candidate_ranking", stem,
              sgp.plot_evidence_regions_on_protein(
@@ -338,7 +298,6 @@ def generate(run_dir: Path, model_json: Path) -> dict:
              sources=[f"{ANALYSIS_DIR}/event_candidate_ranking.tsv",
                       f"{ANALYSIS_DIR}/event_region_candidate_clusters.tsv"])
 
-        # ---- E2. exploratory candidates in their domain context -------------
         stem = f"exon_map_{sp}_candidate_domain_context"
         context_rows = [{
             "candidate_label": (r.get("candidate_label")
@@ -379,8 +338,6 @@ def generate(run_dir: Path, model_json: Path) -> dict:
              sources=[f"{ANALYSIS_DIR}/event_candidate_ranking.tsv",
                       "results/core_gene_analysis/domain_features.tsv"])
 
-    # The served coordinate model carries the export manifest for the Gene Explorer
-    # export bar; cards other generators registered are preserved.
     own_kinds = {m["kind"] for m in manifest}
     other = [f for f in (index.get("publication_figures") or [])
              if f.get("group") != "exon_map" and f.get("kind") not in own_kinds]
@@ -391,7 +348,7 @@ def generate(run_dir: Path, model_json: Path) -> dict:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description='Single-species Gallery figures for transcript structure, genomic context and')
     ap.add_argument("run_dir", type=Path)
     ap.add_argument("--model", type=Path, default=None,
                     help="coordinate model JSON (default: "

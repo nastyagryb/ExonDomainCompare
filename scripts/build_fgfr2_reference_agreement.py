@@ -1,18 +1,4 @@
 #!/usr/bin/env python3
-"""
-Build FGFR2 reference-agreement evidence.
-
-Reference-guided, position-level cassette comparison built on the high-accuracy L-INS-i
-cassette alignments:
-
-  Part B — human-reference coordinate maps (IIIb / IIIc / combined)
-  Part C — per-position agreement / substitution classification + summaries (by species, by position)
-  Part D — improved IIIb-vs-IIIc discriminating residues (human-reference coordinates, informative subset)
-  Part E — segment-level agreement maps (left boundary / core / right boundary / insertion / full)
-
-MSA does NOT relabel IIIb/IIIc. Conservative substitutions are sequence-comparison evidence only
-and are not interpreted as functional claims. BLOSUM62 is used for substitution grouping.
-"""
 
 from __future__ import annotations
 
@@ -70,7 +56,7 @@ def blosum(a: str, b: str) -> Optional[float]:
     for k in ((a, b), (b, a)):
         try:
             return float(_BLOSUM[k])
-        except Exception:  # noqa: BLE001
+        except Exception:
             continue
     return None
 
@@ -134,7 +120,6 @@ def main() -> int:
     comb_aln = (aln("fgfr2_IIIb_IIIc_combined_cassette_msa_linsi.aln.faa")
                 or aln("fgfr2_IIIb_IIIc_combined_cassette_msa.aln.faa"))
 
-    # ============ Parts B + C for single-isoform cassettes ============
     all_agree_rows: Dict[str, List[Dict[str, object]]] = {"IIIb": [], "IIIc": [], "combined": []}
     all_map_rows: Dict[str, List[Dict[str, object]]] = {"IIIb": [], "IIIc": [], "combined": []}
 
@@ -142,11 +127,6 @@ def main() -> int:
         return "false" if M.is_main_use(ruse) else "true"
 
     def process_single(items, manifest, isoform, msa_name, ref_label):
-        # The reference is whichever human model is actually available: the analysed
-        # human row when the run includes Homo sapiens, otherwise the validated
-        # canonical control projected onto this run's cassette columns. Deriving it
-        # from the run alone left human-free datasets with an empty reference and
-        # therefore zero agreement rows.
         projection = RP.resolve(isoform, items)
         href = projection.by_column
         seq_idx = {sid: col_to_ungapped(s) for sid, s in items}
@@ -198,10 +178,6 @@ def main() -> int:
     process_single(iiib_aln, man_iiib, "IIIb", "IIIb_cassette_linsi", "IIIb")
     process_single(iiic_aln, man_iiic, "IIIc", "IIIc_cassette_linsi", "IIIc")
 
-    # ============ combined map + agreement (per-row isoform reference) ============
-    # The combined alignment holds both panels, so each panel's reference is resolved
-    # against the rows that actually belong to it; a panel without an analysed human
-    # row still gets the canonical control rather than an empty map.
     comb_proj = {iso: RP.resolve(iso, [(i, s) for i, s in comb_aln
                                        if (man_comb.get(i, {}).get("isoform")
                                            or (i.split("|")[1] if "|" in i else "")) == iso])
@@ -261,7 +237,6 @@ def main() -> int:
     M.write_tsv(cons / "fgfr2_IIIc_human_reference_residue_agreement.tsv", all_agree_rows["IIIc"], AGREE_COLS)
     M.write_tsv(cons / "fgfr2_combined_human_reference_residue_agreement.tsv", all_agree_rows["combined"], AGREE_COLS)
 
-    # ============ Part C summaries by species ============
     def summary_by_species(agree_rows) -> List[Dict[str, object]]:
         by = defaultdict(list)
         for r in agree_rows:
@@ -299,7 +274,6 @@ def main() -> int:
     M.write_tsv(cons / "fgfr2_IIIc_reference_agreement_summary_by_species.tsv",
                 summary_by_species(all_agree_rows["IIIc"]), SP_SUM_COLS)
 
-    # ============ Part C summary by position ============
     pos_rows = []
     for iso, rows in (("IIIb", all_agree_rows["IIIb"]), ("IIIc", all_agree_rows["IIIc"])):
         by = defaultdict(list)
@@ -325,7 +299,6 @@ def main() -> int:
                              "position_agreement_class": pclass})
     M.write_tsv(cons / "fgfr2_reference_agreement_summary_by_position.tsv", pos_rows, POS_SUM_COLS)
 
-    # ============ Part E segment-level agreement ============
     LH = {"IIIb": 51, "IIIc": 42}
     seg_rows = []
     for iso, agree_rows, map_rows in (("IIIb", all_agree_rows["IIIb"], all_map_rows["IIIb"]),
@@ -384,7 +357,6 @@ def main() -> int:
                                  "segment_warning": "residues inserted relative to human reference"})
     M.write_tsv(cons / "fgfr2_cassette_segment_agreement_summary.tsv", seg_rows, SEG_COLS)
 
-    # ============ Part D improved discriminating residues (combined linsi, human-ref) ============
     main_ids = {sid for sid, _ in comb_aln
                 if M.is_main_use(man_comb.get(sid, {}).get("recommended_use", ""))}
 

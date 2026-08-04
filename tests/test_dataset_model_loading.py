@@ -1,5 +1,3 @@
-"""Regression tests for canonical dataset-model request loading."""
-
 from __future__ import annotations
 
 from concurrent.futures import Future, ThreadPoolExecutor

@@ -1,20 +1,4 @@
 #!/usr/bin/env python3
-"""
-make_fgfr2_synteny_figures_paper.py  (synteny paper-level figures, Parts E-H)
-
-Redesigned, paper-level FGFR2 local-synteny figures using the shared style module and the v2
-neighbor-identity resolution (LOC resolver v2):
-
-  Figure 9A  — FGFR2 local synteny map (equal-spacing, representative species, orthology ribbons,
-               compact rescue/claim badges).            ...local_synteny_map_paper.{svg,pdf,png}
-  Supplement — FGFR2 local synteny, TRUE genomic scale, all species (coordinate-level evidence).
-  Figure 9B  — FGFR2 neighbor conservation matrix (clean, all species, 10 reference anchors).
-  Figure 9C  — FGFR2 synteny rescue-case cards (narrative badges + one-line interpretation).
-
-Synteny validates the FGFR2 locus / orthology context only; it never assigns or relabels IIIb/IIIc.
-BLAST/RBH-inferred names are shown as probable (italic + "?"); unresolved LOCs are shown as "LOC?"
-and never forced into a false ortholog name.
-"""
 
 from __future__ import annotations
 
@@ -90,7 +74,6 @@ def ref_symbols(href) -> List[str]:
 
 
 def disp_for(idr, raw) -> Tuple[str, str, str]:
-    """Return (label, style_kind, group) for a neighbor. style_kind in {ref,probable,nonref,ambig,unresolved,fgfr2}."""
     status = (idr or {}).get("identity_resolution_status", "")
     method = (idr or {}).get("identity_resolution_method", "")
     sym = (idr or {}).get("normalized_neighbor_symbol", "") or raw
@@ -141,14 +124,6 @@ def neighbor_slots(neigh, idv2, species, max_n, equal=True):
 
 
 def dataset_species(master):
-    """Every species this dataset actually analysed, in the thesis reading order first.
-
-    ``MAIN_SPECIES`` is the nine-species reading order of the 30-species thesis panel, and
-    using it as a *filter* meant a dataset containing any other species drew that species
-    nowhere. On the two-species human/cat run that left a single human row presented as a
-    cross-species comparison. The list is therefore an ordering preference, not a membership
-    test: species it names come first, and every other species the run analysed follows.
-    """
     named = [s for s in MAIN_SPECIES if s in master]
     return named + [s for s in master if s not in set(named)]
 

@@ -1,14 +1,3 @@
-"""The interactive viewers and the publication renderer are one figure.
-
-These tests enforce the contract in `docs/architecture/figure_parity_contract.md`.
-They compare the *semantic* representation — style keys, labels, class vocabulary,
-feature identity — rather than DOM trees, because the two sides legitimately use
-different rendering technology and only the science has to agree.
-
-Deliberately not asserted: identical markup, identical pixel geometry. See the
-contract for why, and for what remains convention.
-"""
-
 from __future__ import annotations
 
 import json
@@ -53,7 +42,6 @@ FROZEN_VOCABULARY = {"boundary.js", "fgfr2Styles.js"}
 # --------------------------------------------------------------------------- #
 
 def _node(expr: str) -> dict:
-    """Evaluate an expression against the shared spec and return its JSON."""
     script = (
         f"import * as S from {json.dumps(SPEC.resolve().as_uri())};\n"
         f"process.stdout.write(JSON.stringify({expr}));\n"
@@ -113,7 +101,6 @@ def test_the_declared_key_list_matches_the_implemented_styles(spec):
 
 
 def test_an_unknown_key_raises_instead_of_painting_a_default():
-    """A silent default is how a feature ends up black in an exported SVG."""
     text = SPEC.read_text(encoding="utf-8")
     body = text.split("export function featureStyle", 1)[1].split("\n}", 1)[0]
     assert "throw new Error" in body, "featureStyle falls back instead of failing loudly"
@@ -149,7 +136,6 @@ def _strip_comments(text: str) -> str:
 
 
 def test_no_component_hardcodes_a_colour_the_shared_spec_owns(spec):
-    """Duplicated literals are how the two sides drifted apart in the first place."""
     owned = {v.lower() for s in spec["styles"].values()
              for v in (s["fill"], s["stroke"], s["text"]) if isinstance(v, str)
              and v.startswith("#")}
@@ -226,7 +212,6 @@ def _svg_of(run_id: str, needle: str) -> str:
 
 
 def _primary_model(run_id: str) -> dict:
-    """The primary protein model of a single-species run, as the figures read it."""
     p = (ROOT / "runs" / run_id / "website_indices" / "generic"
          / "protein_coordinate_model.json")
     if not p.is_file():
@@ -284,7 +269,6 @@ def test_candidate_labels_come_from_the_coordinate_model(run_id):
 
 
 def test_the_frozen_vocabularies_are_centralised_too():
-    """A frozen palette is still a palette: it may not be scattered over components."""
     for name in FROZEN_VOCABULARY:
         assert (VIEWERS / name).is_file(), f"{name} is missing"
     fgfr2 = (VIEWERS / "fgfr2Styles.js").read_text(encoding="utf-8")

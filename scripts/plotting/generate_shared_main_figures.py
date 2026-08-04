@@ -1,25 +1,4 @@
 #!/usr/bin/env python3
-"""Generate the Figure Gallery's main single-species figures.
-
-These figures are rendered by the *same* code the Gene Explorer exports through:
-this stage shells out to ``scripts/plotting/render_main_figures.mjs``, which imports
-the shared figure builders (``webapp/frontend/src/pages/viewers/mainFigures.js``)
-through the shared adapter (``figureData.js``) and is handed the same coordinate
-model objects the React views receive. A Gallery figure and the corresponding Gene
-Explorer figure are therefore one figure with one implementation, rather than two
-renderers that have to be kept in agreement by hand.
-
-Figures produced per species (only what the data supports — nothing is fabricated):
-  1. primary exon-to-protein projection      (also available pre-cluster)
-  2. integrated domain architecture          (needs the InterPro layer)
-  3. boundary-on-architecture                (needs classified boundaries)
-  4. signed boundary distances               (       "                    )
-  5. boundary-class summary                  (       "                    )
-
-Formats: standalone SVG, true vector PDF, 300 dpi PNG, and a source TSV where the
-figure has an underlying table. The PDFs contain real path and text operators — no
-embedded raster and no page sized from pixel counts.
-"""
 from __future__ import annotations
 
 import argparse
@@ -36,8 +15,7 @@ FIGURE_SUBDIR = Path("results") / "generic_gene_analysis" / "figures" / "main"
 GROUP = "main_figures"
 EXPORT_DPI = 300
 
-# One card per figure, in reading order. Each states the single scientific question
-# the figure answers and a deliberately cautious interpretation.
+
 FIGURE_META = {
     "primary_exon_projection": {
         "title": "Primary exon-to-protein projection",
@@ -99,11 +77,7 @@ FIGURE_META = {
     },
 }
 
-# Cards superseded by the figures above, or scientifically redundant with them.
-# They are removed from the Gallery rather than left as duplicate entry points; the
-# relationships they showed are all present in the integrated main figures.
 SUPERSEDED_FIGURE_IDS = {
-    # replaced by the shared main figures
     "generic_domain_architecture",
     "generic_exon_domain_boundary_distribution",
     "primary_protein_exon_projection",
@@ -111,11 +85,9 @@ SUPERSEDED_FIGURE_IDS = {
     "boundary_{sp}_boundary_on_architecture",
     "boundary_{sp}_signed_boundary_distances",
     "boundary_{sp}_boundary_class_summary",
-    # pairwise overlays already contained in the integrated architecture figure
     "domain_arch_{sp}_domain_exon_projection",
     "domain_arch_{sp}_domain_boundary_overlay",
     "domain_arch_{sp}_domain_candidate_overlay",
-    # a table rendered as a plot, and an on-demand export that was pinned as a card
     "boundary_{sp}_boundary_evidence_supplement",
     "boundary_{sp}_selected_boundary_detail",
 }
@@ -139,11 +111,6 @@ def _class_counts(model: dict) -> dict[str, int]:
 
 
 def _caption(kind: str, model: dict, gene: str, species: str) -> str:
-    """Compose the figure caption from the figure's own data.
-
-    Captions are derived rather than written per run, so the numbers a reader sees
-    underneath a figure are the numbers the figure was drawn from.
-    """
     protein = model.get("protein_id") or "the primary protein"
     transcript = model.get("transcript_id")
     length = model.get("protein_length")
@@ -211,11 +178,6 @@ def _api(run_id: str, rel_to_run: str, inline: bool = False) -> str:
 
 
 def _stamp_dpi(png: Path, dpi: int) -> None:
-    """Record the physical resolution in the PNG's pHYs chunk.
-
-    Neither rsvg-convert nor sips writes it, so a downstream tool would otherwise
-    have to guess the figure's physical size from the pixel count alone.
-    """
     try:
         from PIL import Image
 
@@ -226,11 +188,6 @@ def _stamp_dpi(png: Path, dpi: int) -> None:
 
 
 def _rasterise_png(svg: Path, png: Path, dpi: int = EXPORT_DPI) -> bool:
-    """Rasterise a figure SVG at publication resolution.
-
-    The figure is specified in points, so the pixel size follows from the physical
-    geometry and the requested resolution — never from an arbitrary zoom factor.
-    """
     zoom = dpi / 72.0
     if shutil.which("rsvg-convert"):
         result = subprocess.run(
@@ -241,8 +198,8 @@ def _rasterise_png(svg: Path, png: Path, dpi: int = EXPORT_DPI) -> bool:
         if result.returncode == 0 and png.exists():
             _stamp_dpi(png, dpi)
             return True
-    try:  # optional dependency; used when the CLI tool is unavailable
-        import cairosvg  # type: ignore
+    try:
+        import cairosvg
 
         cairosvg.svg2png(url=str(svg), write_to=str(png), scale=zoom)
         if png.exists():
@@ -251,7 +208,6 @@ def _rasterise_png(svg: Path, png: Path, dpi: int = EXPORT_DPI) -> bool:
         return False
     except Exception:
         pass
-    # Last resort on macOS: rasterise the vector PDF that accompanies the SVG.
     pdf = svg.with_suffix(".pdf")
     if pdf.exists() and shutil.which("sips"):
         result = subprocess.run(
@@ -279,7 +235,6 @@ def _render(model_json: Path, out_dir: Path) -> list[dict]:
 
 
 def _register_gallery(run_dir: Path, cards: list[dict], species_ids: list[str]) -> int:
-    """Insert the main cards and drop every superseded card."""
     drop = set()
     for template in SUPERSEDED_FIGURE_IDS:
         if "{sp}" in template:
@@ -389,7 +344,6 @@ def generate(run_dir: Path, model_json: Path) -> dict:
         if entry.get("warnings"):
             warnings.extend(f"{stem}: {w}" for w in entry["warnings"])
 
-    # Order the cards the way the Gallery reads them.
     order = list(FIGURE_META)
     cards.sort(key=lambda c: (c["species_id"] or "",
                               order.index(next(k for k in order
@@ -406,7 +360,7 @@ def generate(run_dir: Path, model_json: Path) -> dict:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description="Generate the Figure Gallery's main single-species figures.")
     ap.add_argument("run_dir", type=Path)
     ap.add_argument("--model", type=Path, default=None)
     args = ap.parse_args()

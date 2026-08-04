@@ -1,14 +1,3 @@
-"""Audit which SVG marks in the React viewers depend on the page stylesheet.
-
-An exported SVG is a standalone document: the application stylesheet is not
-attached. Any shape that receives its `fill` only from a CSS class therefore
-falls back to the SVG initial value, which is opaque black — this is the reason
-exported exon blocks render as solid black rectangles.
-
-Run:
-    ./venv/bin/python tests/audit_svg_css_dependencies.py
-"""
-
 from __future__ import annotations
 
 import json
@@ -34,7 +23,6 @@ SPREAD_NAME_RE = re.compile(r"\{\s*\.\.\.\s*([A-Za-z_$][\w$]*)\s*\}")
 
 
 def paint_constants(text: str) -> set[str]:
-    """Names bound to a paint helper's result, e.g. `const AXIS = textProps("axis")`."""
     pattern = (r"(?:const|let|var)\s+([A-Za-z_$][\w$]*)\s*=\s*(?:"
                + "|".join(PAINT_HELPERS) + r")\s*\(")
     return set(re.findall(pattern, text))
@@ -47,7 +35,6 @@ def spreads_paint(attrs: str, constants: set[str]) -> bool:
 
 
 def css_paint_rules() -> dict[str, dict[str, str]]:
-    """class name -> {property: value} for fill/stroke declared in the stylesheet."""
     text = CSS.read_text(encoding="utf-8")
     rules: dict[str, dict[str, str]] = {}
     for selector, body in re.findall(r"([^{}]+)\{([^{}]*)\}", text):

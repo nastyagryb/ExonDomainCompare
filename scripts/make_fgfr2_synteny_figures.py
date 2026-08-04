@@ -1,22 +1,4 @@
 #!/usr/bin/env python3
-"""
-Render FGFR2 synteny figures.
-
-Paper-level FGFR2 local gene-neighborhood / synteny figures (SVG/PDF/PNG):
-  Figure 9A — FGFR2 local gene-neighborhood map (5 neighbors, representative species)
-  Figure 9B — FGFR2 5/10-neighbor conservation matrix
-  Figure 9C — Rescue-case locus panels (Gorilla / Canis / Pongo + high-risk)
-  Supplement — FGFR2 local gene-neighborhood (10 neighbors, all species)
-
-Synteny validates the FGFR2 locus / orthology context only; it never assigns or relabels IIIb/IIIc.
-Neighbor labels use the normalized identity (symbol > curated > RBH > one-way BLAST > raw). BLAST/RBH
-inferred names are shown as probable (italic + "?"). MCScanX block-level synteny (and Figure 9D) is
-intentionally omitted from this build; the optional-figure slot is reported as unavailable.
-
-Preferred backend: pyGenomeViz (recorded if importable); the comparative multi-row arrow maps use a
-colour-blind-safe custom matplotlib renderer for full control of orthology colouring and review/rescue
-outlines. DNA Features Viewer availability is also recorded.
-"""
 
 from __future__ import annotations
 
@@ -122,7 +104,6 @@ def load(base, dirs):
 
 
 def neighbor_layout(rows, ident, species, max_n) -> List[Dict[str, object]]:
-    """Ordered display slots: upstream rank max..1, FGFR2 (0), downstream 1..max."""
     sp = species.lower()
     spr = [r for r in rows if (r["species"] or "").lower() == sp and r.get("neighbor_rank")]
     by = {(r["neighbor_side"], M.to_int(r["neighbor_rank"], 0)): r for r in spr}

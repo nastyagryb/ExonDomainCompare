@@ -1,12 +1,3 @@
-"""Canonical, gene-agnostic plotting API.
-
-Import plotting functions from this package, not from the implementation module
-``shared_gene_plots``.  The implementation is built on the validated visual
-primitives in :mod:`fgfr2_plot_style`; keeping this boundary explicit lets
-generic figures share the established style without changing FGFR2 event-layer
-figure scripts.
-"""
-
 from exondomaincompare.presentation.shared_gene_plots import (
     apply_style,
     figure_title,

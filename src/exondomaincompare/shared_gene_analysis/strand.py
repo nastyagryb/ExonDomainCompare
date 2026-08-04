@@ -19,14 +19,6 @@ _UNKNOWN_TOKENS = frozenset({"", ".", "?", "na", "n/a", "none", "null", "unknown
 
 
 def normalize_strand(value: Any) -> Optional[int]:
-    """The strand as ``PLUS``, ``MINUS``, or ``None`` when the source does not say.
-
-    Accepts the integers, floats and strings the adapters actually produce, in any case and
-    with surrounding whitespace. ``None`` means unknown, and callers must decide what an
-    unknown strand implies for them rather than defaulting it to forward here: silently
-    treating "no information" as "forward" is how an unordered transcript passes for an
-    ordered one.
-    """
     if value is None or isinstance(value, bool):
         return None
     if isinstance(value, (int, float)):
@@ -51,38 +43,24 @@ def normalize_strand(value: Any) -> Optional[int]:
 
 
 def is_reverse(value: Any) -> bool:
-    """Whether the feature is on the reverse strand. Unknown counts as not reverse.
-
-    Use this only where "unknown" and "forward" genuinely lead to the same handling, such as
-    drawing an arrow. Where the answer changes the biology — the order in which CDS parts are
-    concatenated — call ``normalize_strand`` and handle ``None`` explicitly.
-    """
     return normalize_strand(value) == MINUS
 
 
 def is_forward(value: Any) -> bool:
-    """Whether the feature is on the forward strand. Unknown counts as not forward."""
     return normalize_strand(value) == PLUS
 
 
 def strand_symbol(value: Any) -> str:
-    """``"+"``, ``"-"`` or ``""``, for display and for tables that store the symbol."""
     normalized = normalize_strand(value)
     return "" if normalized is None else ("+" if normalized == PLUS else "-")
 
 
 def strand_sign(value: Any, default: int = PLUS) -> int:
-    """``+1`` or ``-1`` for use as a multiplier, falling back to ``default`` when unknown."""
     normalized = normalize_strand(value)
     return default if normalized is None else normalized
 
 
 def same_strand(*values: Any) -> bool:
-    """Whether all given values describe one strand, across source spellings.
-
-    ``"-"`` and ``-1`` are the same strand; an unknown value matches nothing, including
-    another unknown, because two absences of information are not an agreement.
-    """
     normalized = [normalize_strand(v) for v in values]
     if not normalized or any(n is None for n in normalized):
         return False

@@ -1,22 +1,3 @@
-"""Feed the validated FGFR2 dataset into the shared comparative builder.
-
-The shared comparative layer works on one protein per species: a matrix row, an
-alignment column and a species-ordered axis all assume that a species contributes
-one sequence. FGFR2 contributes two, so the panel has to be reduced to one model
-per species before it can enter that layer — and *which* model is a scientific
-choice, not a filtering detail.
-
-The reduction here is the stated primary-reference rule from
-``scripts/fgfr2/coordinate_model.py``: each species is represented by its IIIc
-model where it has one, otherwise by its IIIb model. Both models remain in the
-coordinate index and both remain reachable in that species' Gallery scope; only the
-comparative row is a single protein, because a comparative row can only be one.
-
-The alignment is restricted the same way, to the reference proteins, keeping the
-original columns. Restricting an alignment does not move the residues that stay in
-it, so the columns still mean what they meant — some become all-gap, which the
-shared code already handles.
-"""
 from __future__ import annotations
 
 import json
@@ -37,12 +18,6 @@ DERIVED = ROOT / "results" / "derived" / "example"
 
 def write_reference_alignment(model_index: Dict[str, Any], source_path: Path,
                               out_path: Path) -> Path:
-    """The full-length alignment restricted to each species' reference protein.
-
-    Headers are rewritten to ``<protein_id> <gene>|<species_id>``, the form the
-    shared alignment parser reads, so no FGFR2-specific header handling leaks into
-    the shared code.
-    """
     # Species and isoform together prevent duplicate rows for shared protein IDs.
     reference = {(m["species_id"], m["isoform"]): m
                  for m in cm.primary_reference_models(model_index)}
@@ -64,7 +39,6 @@ def write_reference_alignment(model_index: Dict[str, Any], source_path: Path,
 
 
 def build(derived: Path = DERIVED) -> Dict[str, Any]:
-    """Build the FGFR2 comparative dataset from the primary reference models."""
     from exondomaincompare.shared_gene_analysis.comparative_dataset import build_comparative_dataset
 
     # Resolved against the project root, because the alignment path is later reported
@@ -135,7 +109,7 @@ def build(derived: Path = DERIVED) -> Dict[str, Any]:
 
 def main(argv: Optional[List[str]] = None) -> int:
     import argparse
-    ap = argparse.ArgumentParser(description=__doc__,
+    ap = argparse.ArgumentParser(description='Feed the validated FGFR2 dataset into the shared comparative builder.',
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--derived", default=str(DERIVED))
     args = ap.parse_args(argv)

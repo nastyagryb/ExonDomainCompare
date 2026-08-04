@@ -25,8 +25,6 @@ OFFLINE = "taxonomy_lookup_skipped_offline"
 
 @dataclass
 class TaxonIdentity:
-    """One resolved (or unresolved) species identity, as recorded in the registry."""
-
     submitted_name: str
     species_id: str = ""
     status: str = NOT_FOUND
@@ -44,10 +42,6 @@ class TaxonIdentity:
         return self.status in (RESOLVED, RESOLVED_VIA_SYNONYM)
 
     def query_term(self) -> str:
-        """ The numeric taxid where it is known, because it cannot be misspelled and
-        cannot drift when a name is revised. Otherwise the accepted name, never the
-        underscored slug, which is what broke the original run.
-        """
         return self.taxid or self.accepted_name or self.submitted_name
 
     def as_row(self) -> Dict[str, str]:
@@ -67,10 +61,6 @@ class TaxonIdentity:
 
 
 def normalise_name(name: str) -> str:
-    """ Underscores become spaces and the genus is capitalised. Anything that
-    already looks like a scientific name is left alone, so a caller cannot damage a
-    correctly spelled subspecies trinomial by passing it through here.
-    """
     cleaned = re.sub(r"[_\s]+", " ", (name or "").strip())
     if not cleaned:
         return ""
@@ -82,7 +72,6 @@ def normalise_name(name: str) -> str:
 
 
 def species_id(name: str) -> str:
-    """The pipeline's internal identifier: lowercase, underscored, filesystem-safe."""
     return re.sub(r"[^a-z0-9]+", "_", (name or "").strip().lower()).strip("_")
 
 
@@ -138,14 +127,6 @@ def _names_from(node: ET.Element) -> Dict[str, Any]:
 
 def resolve(name: str, *, timeout: float = 20.0, offline: bool = False,
             known: Optional[Dict[str, Dict[str, str]]] = None) -> TaxonIdentity:
-    """Resolve one submitted species name.
-
-    ``known`` is consulted first purely as a cache: the validated panel's taxids are
-    already recorded and re-querying them on every run would be thirty needless
-    requests against a service that rate-limits. It is a shortcut to the same answer,
-    never a substitute for resolution — a name the cache does not hold still gets
-    resolved rather than being echoed back as though it were a scientific name.
-    """
     submitted = (name or "").strip()
     identity = TaxonIdentity(submitted_name=submitted, species_id=species_id(submitted))
     if not submitted:

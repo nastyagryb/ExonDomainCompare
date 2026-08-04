@@ -1,23 +1,4 @@
 #!/usr/bin/env python3
-"""
-maximal_rescue_fgfr2_labels.py  (maximal suspicious-case rescue & final biological correction)
-
-Stronger than the warning-only validation/rescue layer: for EVERY suspicious species/isoform it
-actively tries to find and validate the biologically correct FGFR2 IIIb/IIIc candidate, and only
-if all local and external rescue attempts fail does the row remain supplement/review or excluded.
-
-  Part A  fgfr2_all_suspicious_cases_for_rescue.tsv          (global suspicious detection)
-  Part B  fgfr2_exhaustive_local_rescue_candidate_screen.tsv (all local candidate sources)
-  Part C  fgfr2_exhaustive_pair_rescue_decision.tsv          (pair-aware decision per species)
-  Part D  fgfr2_external_rescue_candidate_screen.tsv         (RefSeq datasets cache + live REST)
-  Part E  fgfr2_maximal_rescue_final_decision.tsv            (final decision, isoform + pair rows)
-  Part H  fgfr2_maximal_rescue_validation_gate.tsv/.json     (hard gate)
-  + fgfr2_rescue_overrides.tsv + inputs/fgfr2_rescued_candidate_proteins.faa (propagation inputs)
-
-Evidence-/sequence-/provenance-driven only (never species-name-driven). Upstream/legacy labels are
-preserved as provenance; final_isoform_label / validated_exon_type carry final biology. Human is a
-hard positive control. No InterProScan; no fake domain annotations; no silent release mixing.
-"""
 
 from __future__ import annotations
 
@@ -131,7 +112,6 @@ def load_selected_full(base: Path) -> Dict[str, str]:
 
 
 def load_refseq_pool(base: Path, taxid_by_sp: Dict[str, str]) -> Dict[str, List[Tuple[str, str]]]:
-    """Per-species RefSeq FGFR2 proteins (acc, seq) from the local NCBI datasets cache."""
     pool: Dict[str, List[Tuple[str, str]]] = defaultdict(list)
     cache_root = M.locate(base, "_ncbi_datasets_cache")
     if not cache_root:
@@ -241,7 +221,6 @@ def detect_suspicious(recon, rob, refagr, orth, master) -> List[Dict[str, object
 # ---------------------------------------------------------------------------
 def screen_local(sp, expected, validated, cand_rows, selected_full, cur_pid, cur_tx,
                  group, orth, par):
-    """Score all local pipeline candidates for one (species, expected type)."""
     thr = VR.THRESHOLDS.get(group, VR.THRESHOLDS["standard_species"])
     seen, rows = {}, []
     for c in cand_rows:
@@ -328,7 +307,6 @@ def screen_local(sp, expected, validated, cand_rows, selected_full, cur_pid, cur
 
 
 def screen_external(sp, expected, validated, refseq, group, src_db, assembly, release, orth, par):
-    """Score RefSeq FGFR2 proteins from the local NCBI datasets cache (external source)."""
     thr = VR.THRESHOLDS.get(group, VR.THRESHOLDS["standard_species"])
     pm = par.get(VR._key(sp, expected), {})
     om = orth.get(VR._key(sp, expected), {})
@@ -670,9 +648,6 @@ def main() -> int:
 
 
 def propagate_post_rescue(base, dirs, recon, final_rows, rob, refagr, master) -> None:
-    """Part A + B: build the single post-rescue truth table and inject the post-rescue
-    claim/provenance columns into every downstream major table so that
-    final_claim_status_after_rescue is the single source of truth for primary/supplement."""
     maps = dirs["maps"]
     fin_by = {(f["species"], f["final_isoform_label"]): f for f in final_rows
               if f["isoform_or_pair"] != "pair"}

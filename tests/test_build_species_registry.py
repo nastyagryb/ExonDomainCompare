@@ -21,7 +21,6 @@ def test_slug_species_normalizes_spaces_and_punctuation():
 
 
 def test_known_species_row_contains_taxid_and_status():
-    """A cached species needs no lookup, so this holds without network access."""
     result = mod.build_registry_rows(["Homo sapiens"], "ensembl_first", "RefSeq",
                                      offline=True)
     assert result.rows[0]["taxid"] == "9606"
@@ -31,11 +30,6 @@ def test_known_species_row_contains_taxid_and_status():
 
 
 def test_unresolvable_species_is_kept_but_carries_no_invented_identity():
-    """The registry must not echo the submitted slug back as a scientific name.
-
-    Doing so is what sent ``equus_quagga`` to NCBI Datasets as if it were a taxon
-    name. An unresolved species keeps its row, but with empty identity fields.
-    """
     result = mod.build_registry_rows(["Example vertebrata"], "ensembl_first", "RefSeq",
                                      offline=True)
     row = result.rows[0]

@@ -1,26 +1,4 @@
 #!/usr/bin/env python3
-"""
-Validate the FGFR2 local synteny neighbourhood.
-
-Independent local synteny / gene-neighborhood validation around the FGFR2 locus. Validates that
-the final post-rescue FGFR2 candidates lie in the expected FGFR2 genomic neighborhood (locus /
-orthology context) rather than paralogous, fragmented or annotation-artifact loci.
-
-IMPORTANT BIOLOGY:
-  * Synteny validates the FGFR2 locus / orthology context only.
-  * Synteny does NOT assign or relabel IIIb/IIIc; isoform labels remain sequence-calibrated.
-  * Neighbor identities are normalized (symbol > curated orthology > reciprocal best hit >
-    high-confidence one-way BLAST > raw ID). BLAST/RBH names are PROBABLE orthologs, not curated.
-  * Uses final post-rescue transcript/protein IDs as input; upstream/legacy labels are provenance.
-  * No InterProScan, no fake domain annotations.
-
-Source annotation: local NCBI Datasets / RefSeq genomic.gff per assembly (source-compatible per
-species). Neighbor protein identity is resolved with DIAMOND (preferred) or BLASTP against a human
-FGFR2 5/10-neighbor reference. MCScanX block-level synteny is intentionally NOT part of this layer.
-
-Parts implemented here: A (extraction), B (human reference), C (identity tiers), D (BLAST/RBH),
-E (conservation matrix + synteny scoring/classes), I (local 5-neighbor synteny validation gate).
-"""
 
 from __future__ import annotations
 
@@ -68,9 +46,6 @@ def _safe_int(v: str, default: int = 0) -> int:
 
 
 def load_shared_human_reference() -> "Tuple[Dict[str, object], Dict[str, str]]":
-    """Reconstruct the human FGFR2 neighborhood dict + protein map from the shared curated
-    HUMAN reference files. Used when the run has no run-local human genome (human is not an
-    analysed species) so neighbor identity/orthology classification matches the Example."""
     if not SHARED_HUMAN_NEIGHBORHOOD.exists():
         return {}, {}
     neighbors: List[Dict[str, object]] = []
@@ -148,9 +123,6 @@ def _geneid(attrs: Dict[str, str]) -> str:
 
 
 def parse_gff_for_fgfr2(gff: Path) -> Dict[str, object]:
-    """Single streaming pass: collect protein-coding gene features genome-wide and a
-    GeneID->protein_id map (first CDS protein per gene). Then localize the FGFR2 gene and the
-    surrounding protein-coding genes on the same seqid. Returns a dict with fgfr2 + neighbors."""
     genes: List[Tuple[str, int, int, str, str, str]] = []  # seqid,start,end,strand,geneid,symbol
     pid_by_gene: Dict[str, str] = {}
     fgfr2_geneid = ""
@@ -312,7 +284,6 @@ OUTFMT = "6 qseqid sseqid pident length qlen slen evalue bitscore"
 
 def prebuild_db(db_faa: Path, diamond: Optional[str], makeblastdb: Optional[str],
                 out_dir: Path) -> Dict[str, str]:
-    """Build a reusable search DB once (persistent). Returns {'engine', 'db': stem} or {}."""
     out_dir.mkdir(parents=True, exist_ok=True)
     if diamond:
         stem = out_dir / (db_faa.stem + "_dmnd")
@@ -332,7 +303,6 @@ def prebuild_db(db_faa: Path, diamond: Optional[str], makeblastdb: Optional[str]
 def search_vs_prebuilt(query_faa: Path, prebuilt: Dict[str, str], out_tsv: Path,
                        diamond: Optional[str], blastp: Optional[str], evalue: str = "1e-3",
                        sensitivity: str = "--more-sensitive") -> str:
-    """Search a query against an already-built DB (no per-call makedb)."""
     if prebuilt.get("engine") == "diamond" and diamond:
         subprocess.run([diamond, "blastp", "-q", str(query_faa), "-d", prebuilt["db"], "-o",
                         str(out_tsv), "--outfmt"] + OUTFMT.split() +
@@ -349,7 +319,6 @@ def search_vs_prebuilt(query_faa: Path, prebuilt: Dict[str, str], out_tsv: Path,
 
 def run_search(query_faa: Path, db_faa: Path, out_tsv: Path, diamond: Optional[str],
                blastp: Optional[str], makeblastdb: Optional[str], workdir: Path) -> str:
-    """Run protein search query->db (all hits), building the DB in workdir. Returns engine or ''."""
     try:
         pre = prebuild_db(db_faa, diamond, makeblastdb, workdir)
         if pre:
@@ -490,8 +459,6 @@ def _passes(h: Dict[str, object], thr: Dict[str, float]) -> bool:
 
 def run_identity(base, dirs, nbh, master, human_ref5, human_ref10, h10_fa, diamond, blastp,
                  makeblastdb, refresh=False):
-    """Parts C + D: resolve every neighbor's identity via symbol > RBH > one-way BLAST > raw,
-    using DIAMOND/BLASTP against the human FGFR2 10-neighbor reference."""
     syn = dirs["synteny"]
     human_db = syn / "human_fgfr2_10neighbor_reference_proteins.faa"
     hpid2sym = {n["protein_id"]: sym for sym, n in human_ref10.items() if n.get("protein_id")}
@@ -600,7 +567,6 @@ def run_identity(base, dirs, nbh, master, human_ref5, human_ref10, h10_fa, diamo
 
 
 def human_pid2sym(gff: Path) -> Dict[str, str]:
-    """Map every human RefSeq protein_id -> its gene symbol (first occurrence) from CDS lines."""
     out: Dict[str, str] = {}
     with open(gff, encoding="utf-8", errors="replace") as fh:
         for line in fh:
@@ -627,8 +593,6 @@ def human_pid2sym(gff: Path) -> Dict[str, str]:
 
 
 def build_human_proteome_db(base: Path, dirs, refresh: bool) -> Optional[Path]:
-    """Whole human RefSeq proteome FASTA with 'SYMBOL|protein_id' headers (cached) — the broad
-    reference for naming uncharacterized (LOC...) / unresolved neighbors by best human homolog."""
     cache = dirs["synteny"] / "_cache" / "human_proteome_named.faa"
     if cache.exists() and cache.stat().st_size > 0 and not refresh:
         return cache
@@ -663,10 +627,6 @@ def build_human_proteome_db(base: Path, dirs, refresh: bool) -> Optional[Path]:
 
 
 def run_broad_homology(base, dirs, nbh, identity_rows, diamond, blastp, makeblastdb, refresh):
-    """For every generic (LOC.../uncharacterized) or still-unresolved neighbor, find the best human
-    proteome homolog (even loose) and record symbol + percent identity + query/subject coverage.
-    Adopted only as a PROBABLE/loose name; it is never treated as an FGFR2-neighborhood ortholog
-    (orthology_group stays empty) so local synteny scoring is unaffected."""
     have_engine = bool(diamond or (blastp and makeblastdb))
     if not have_engine:
         return []
@@ -770,7 +730,6 @@ def run_broad_homology(base, dirs, nbh, identity_rows, diamond, blastp, makeblas
 
 
 def _resolve(sym, sp, human_ref5, human_ref10, hpid2sym, fb, rbh, thr, competing):
-    """Return (method, status, confidence, href_sym, href_pid, normalized, orthology_group)."""
     # 1. exact / high-confidence gene symbol match to human FGFR2 neighborhood (case-insensitive)
     if not is_generic_symbol(sym) and sym.upper() in human_ref10:
         hn = human_ref10[sym.upper()]
@@ -952,9 +911,6 @@ SYN_INTEGRATE_COLS = ["synteny_validation_class", "combined_synteny_validation_c
 
 
 def integrate_synteny(base, dirs, valid_rows) -> None:
-    """Part G: add per-species synteny evidence columns to the master evidence tables. No MCScanX
-    columns are added (the optional MCScanX block-level layer is intentionally omitted). Synteny
-    never assigns/relabels IIIb/IIIc; it only annotates locus/orthology context."""
     by_sp = {}
     for r in valid_rows:
         payload = {c: r.get(c, "") for c in SYN_INTEGRATE_COLS if c in r}

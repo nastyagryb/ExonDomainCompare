@@ -1,5 +1,3 @@
-"""Run discovery precedence for bundled examples and user-owned runs."""
-
 from pathlib import Path
 
 import pytest

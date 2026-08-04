@@ -1,15 +1,4 @@
 #!/usr/bin/env python3
-"""Canonical exon–domain boundary observation table.
-
-One row per species-specific Boundary observation, built from the canonical
-per-species Boundary index inside ``protein_coordinate_model.json`` and — when
-the run has more than one species — enriched with the comparative mapping from
-the comparable-boundary groups.
-
-The table therefore exists whenever the canonical JSON exists: it is never
-required that somebody produced a TSV beforehand, and it is available for a
-single-species run as well as for a multi-species run.
-"""
 from __future__ import annotations
 
 import csv
@@ -56,12 +45,6 @@ def coordinate_model_path(run_dir: Path) -> Path:
 
 
 def _comparable_groups(run_dir: Path, model_doc: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """Comparable-boundary groups from the canonical comparative sources.
-
-    The comparative dataset index is preferred because it is the layer the UI and
-    the packages read; the boundary dashboard inside the coordinate model is the
-    fallback so the table also works before the comparative index was written.
-    """
     comparative = _load(
         Path(run_dir) / "website_indices" / "generic"
         / "comparative_dataset_index.json") or {}
@@ -73,7 +56,6 @@ def _comparable_groups(run_dir: Path, model_doc: Dict[str, Any]) -> List[Dict[st
 
 
 def _group_lookup(groups: Iterable[Dict[str, Any]]) -> Dict[tuple, Dict[str, Any]]:
-    """(species_id, boundary_id) -> the group observation for that boundary."""
     out: Dict[tuple, Dict[str, Any]] = {}
     for g in groups:
         gid = g.get("comparable_boundary_group_id")
@@ -96,10 +78,6 @@ def _group_lookup(groups: Iterable[Dict[str, Any]]) -> Dict[tuple, Dict[str, Any
 
 def build_rows(run_dir: Path,
                species_ids: Optional[Sequence[str]] = None) -> List[Dict[str, Any]]:
-    """One row per Boundary observation of the requested species.
-
-    ``species_ids`` of ``None`` means every species in the run.
-    """
     doc = _load(coordinate_model_path(run_dir)) or {}
     models = doc.get("models") or doc.get("coordinate_models") or []
     if species_ids is not None:
@@ -160,7 +138,6 @@ def build_rows(run_dir: Path,
 
 
 def write_tsv(rows: Sequence[Dict[str, Any]], path: Path) -> Path:
-    """Write the observation rows; the header is always the full contract."""
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8", newline="") as fh:
@@ -174,7 +151,6 @@ def write_tsv(rows: Sequence[Dict[str, Any]], path: Path) -> Path:
 
 
 def table_path(run_dir: Path, species_id: Optional[str] = None) -> Path:
-    """Where the observation table for a run (or one of its species) lives."""
     base = Path(run_dir) / "results" / "generic_gene_analysis" / "boundaries"
     name = (f"exon_domain_boundaries__{species_id}.tsv" if species_id
             else "exon_domain_boundaries_long.tsv")
@@ -182,11 +158,6 @@ def table_path(run_dir: Path, species_id: Optional[str] = None) -> Path:
 
 
 def ensure_table(run_dir: Path, species_id: Optional[str] = None) -> Optional[Path]:
-    """Write the observation table from the canonical JSON and return its path.
-
-    Returns ``None`` when the run has no Boundary observation at all, so a caller
-    can report an exact reason instead of offering an empty download.
-    """
     rows = build_rows(run_dir, [species_id] if species_id else None)
     if not rows:
         return None
@@ -194,14 +165,13 @@ def ensure_table(run_dir: Path, species_id: Optional[str] = None) -> Optional[Pa
 
 
 def label_for(multi_species: bool) -> str:
-    """Return the visible download label."""
     return ("All species Boundary observations (TSV)" if multi_species
             else "Boundary observations (TSV)")
 
 
 def main() -> int:  # pragma: no cover - operator entry point
     import argparse
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description='Canonical exon–domain boundary observation table.')
     ap.add_argument("run_dir", type=Path)
     ap.add_argument("--out", type=Path, default=None)
     args = ap.parse_args()

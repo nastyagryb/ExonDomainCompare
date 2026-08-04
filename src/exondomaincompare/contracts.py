@@ -1,4 +1,3 @@
-"""Shared additive payload metadata, compatibility, and content identity."""
 from __future__ import annotations
 
 import copy
@@ -15,7 +14,7 @@ SELF_HASH_EXCLUDED_FIELDS = frozenset({"content_sha256", "generated_at"})
 
 
 class ContractIdentityError(ValueError):
-    """A payload belongs to a different run or dataset."""
+    pass
 
 
 def file_sha256(path: Path | str, chunk_size: int = 1024 * 1024) -> str:
@@ -50,7 +49,6 @@ def canonical_json_sha256(value: Any) -> str:
 def tree_content_identity(root: Path | str, *,
                           suffixes: Iterable[str] | None = None,
                           ignored_parts: Iterable[str] = ()) -> dict[str, Any]:
-    """Deterministic content identity; mtimes are deliberately not inputs."""
     base = Path(root)
     allowed = {suffix.lower() for suffix in suffixes} if suffixes else None
     ignored = set(ignored_parts)
@@ -209,7 +207,6 @@ def stamp_payload(payload: Mapping[str, Any], *, payload_type: str,
 
 def normalize_payload(payload: Any, *, payload_type: str,
                       expected_run_id: str = "", expected_dataset_id: str = "") -> Any:
-    """Accept legacy unversioned values and validate identity on versioned values."""
     if not isinstance(payload, dict):
         return payload
     metadata = payload.get(RESERVED_KEY)
@@ -256,7 +253,6 @@ def portable_path_reference(path: Path | str, *, repository_root: Path,
 
 def portable_runtime_record(value: Any, *, repository_root: Path,
                             run_root: Path | None = None) -> Any:
-    """Remove execution-machine paths from metadata written for future reuse."""
     if isinstance(value, dict):
         return {
             key: portable_runtime_record(

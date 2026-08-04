@@ -1,16 +1,3 @@
-"""Phase 1B tests: generic InterPro annotation semantics and domain layering.
-
-Covers:
-  * InterPro entry-type -> layer mapping (domain / family / feature / raw)
-  * integrated vs unintegrated hits
-  * duplicate / overlap collapse into representative domains
-  * representative-domain selection (member-DB consensus rule)
-  * separation of domains, families, features and (external) topology
-  * TP53 is rendered from its real p53 entry types, with NO FGFR keywords
-  * no alternative-protein selector when only the primary is annotated
-  * Gene-Explorer summary and global Boundary page use identical boundary rows
-  * FGFR2 specialization (IIIb/IIIc panels) is untouched by the generic layer
-"""
 from __future__ import annotations
 
 import json

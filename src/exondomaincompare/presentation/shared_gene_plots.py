@@ -1,22 +1,3 @@
-"""shared_gene_plots.py — gene-agnostic figure functions on the FGFR2 style.
-
-These are the reusable plotting *functions* (not just style constants) shared by
-FGFR2 figures and the generic gene pipeline. They are built on the actual FGFR2
-plotting primitives in ``fgfr2_plot_style`` (``ps``): the same palette, typography
-(``ps.FONT``), gene arrows (``ps.gene_arrow``), legends (``ps.compact_legend`` /
-``ps.legend_patch``), panel titles (``ps.title``) and multi-format export
-(``ps.savefig``). Callers pass plain data structures + a gene label, so no
-gene-specific vocabulary lives here.
-
-Contract:
-* Every function returns True when a figure file was written, False otherwise.
-* Every function writes SVG + PDF + PNG via :func:`save_figure_all_formats`.
-* Colours/typography/line weights are inherited from ``fgfr2_plot_style`` so the
-  output matches FGFR2 figures.
-
-The freeze figures are never rewritten by this module; it is used for new run
-outputs and safe preview artifacts only.
-"""
 from __future__ import annotations
 
 import csv
@@ -63,18 +44,11 @@ ALN_IDENTITY = "#117733"
 # shared style / export helpers (thin, explicit re-exports of the FGFR2 style)
 # --------------------------------------------------------------------------- #
 def apply_style() -> None:
-    """Apply the shared FGFR2 rcParams (typography, vector export defaults)."""
     ps.apply_rcparams()
 
 
 def save_figure_all_formats(fig, fig_dir: Path, stem: str, *,
                             dpi: int = EXPORT_DPI) -> None:
-    """Export a figure to SVG + true-vector PDF + a publication-resolution PNG.
-
-    ``ps.savefig`` owns the vector formats and the shared export flags. Its PNG is
-    a 220 dpi screen preview, so the raster is rewritten at ``dpi`` afterwards —
-    downloaded figures have to be usable in print, not just on screen.
-    """
     fig_dir = Path(fig_dir)
     fig_dir.mkdir(parents=True, exist_ok=True)
     ps.savefig(fig, fig_dir, stem)
@@ -84,7 +58,6 @@ def save_figure_all_formats(fig, fig_dir: Path, stem: str, *,
 
 def write_source_table(fig_dir: Path, stem: str, columns: Sequence[str],
                        rows: Sequence[Dict[str, Any]]) -> Optional[Path]:
-    """Write ``<stem>.tsv``, the numbers behind one figure, next to the figure."""
     if not rows:
         return None
     path = Path(fig_dir) / f"{stem}.tsv"
@@ -100,12 +73,6 @@ def write_source_table(fig_dir: Path, stem: str, columns: Sequence[str],
 
 def figure_title(ax, text: str, subtitle: Optional[str] = None,
                  note: Optional[str] = None) -> None:
-    """Title + optional subtitle + optional italic note, stacked without overlap.
-
-    ``ps.title`` places the subtitle at a fixed axes fraction, which collides
-    with the bold title on tall axes. Here every line is offset in *points* from
-    the axes, and the title pad grows with the number of lines.
-    """
     note_lines = _wrap_for_axes(ax, note, ps.FONT["small"]) if note else []
     sub_lines = _wrap_for_axes(ax, subtitle, ps.FONT["subtitle"]) if subtitle else []
     ps.title(ax, safe_text(text))
@@ -156,12 +123,10 @@ def _axes_size_in(ax) -> Tuple[float, float]:
 
 
 def _below_axes(ax, points: float) -> float:
-    """Axes-fraction y for an artist ``points`` below the axes bottom."""
     return -points / (72.0 * _axes_size_in(ax)[1])
 
 
 def _wrap_for_axes(ax, text: str, fontsize: float, factor: float = 1.15) -> List[str]:
-    """Wrap text so it never widens the tight-bbox export beyond the plot."""
     safe = safe_text(text)
     width_pts = _axes_size_in(ax)[0] * 72.0 * factor
     chars = max(48, int(width_pts / (0.52 * fontsize)))
@@ -169,7 +134,6 @@ def _wrap_for_axes(ax, text: str, fontsize: float, factor: float = 1.15) -> List
 
 
 def _footnote(ax, text: str, points: float = 58.0) -> None:
-    """Provenance/definition footnote under the legend, in points-space."""
     if not text:
         return
     lines = _wrap_for_axes(ax, text, ps.FONT["small"])
@@ -200,7 +164,6 @@ def _glyph_ok(ch: str) -> bool:
 
 
 def safe_text(text: str) -> str:
-    """Text with glyphs the active font cannot render replaced by ASCII."""
     out = str(text or "")
     for ch, replacement in _GLYPH_FALLBACK.items():
         if ch in out and not _glyph_ok(ch):
@@ -209,14 +172,11 @@ def safe_text(text: str) -> str:
 
 
 def _clip(text: str, chars: int) -> str:
-    """Shorten one label to ``chars`` so a long name cannot run into its neighbour."""
     out = safe_text(text)
     return out if len(out) <= chars else out[:chars - 3].rstrip() + "..."
 
 
 def _readable_aa_axis(ax, length: int, label: str, *, lo: int = 0) -> None:
-    """Amino-acid ticks that stay readable, never stray into the row-label margin
-    and always name the unit."""
     ticks = MaxNLocator(nbins=10, steps=[1, 2, 5, 10], integer=True).tick_values(lo, length)
     ax.set_xticks([t for t in ticks if lo <= t <= length])
     ax.set_xlabel(label, fontsize=ps.FONT["label"])
@@ -230,14 +190,6 @@ def _place_block_labels(ax, items: Sequence[Tuple[float, float, str]], *, y: flo
                         color: str = None, outside_color: str = None,
                         leader: bool = True, levels: int = 2,
                         above_only: bool = False) -> int:
-    """Draw a label per block: inside if it fits, otherwise staggered, else omitted.
-
-    ``items`` are ``(start, end, text)`` in data coordinates. Text is never drawn on
-    top of other text: every slot — the inside slot and ``levels`` stagger rows on
-    each side of the track — tracks the right edge it has already consumed, and a
-    label that finds no free slot is omitted rather than printed over a neighbour.
-    Returns the number of labels actually drawn.
-    """
     lo, hi = ax.get_xlim()
     span = max(1e-9, hi - lo)
     pts_per_unit = (_axes_size_in(ax)[0] * 72.0) / span
@@ -281,7 +233,6 @@ def _place_block_labels(ax, items: Sequence[Tuple[float, float, str]], *, y: flo
 
 
 def _readable_nucleotide_axis(ax, lo: float, hi: float, label: str) -> None:
-    """Genomic/nucleotide tick axis in kilobases — never labelled in amino acids."""
     ticks = MaxNLocator(nbins=8, steps=[1, 2, 5, 10]).tick_values(lo, hi)
     ax.set_xticks([t for t in ticks if lo <= t <= hi])
     ax.xaxis.set_major_formatter(FuncFormatter(lambda v, _p: f"{v / 1000.0:,.0f}"))
@@ -292,11 +243,6 @@ def _readable_nucleotide_axis(ax, lo: float, hi: float, label: str) -> None:
 
 
 def _pack_rows(intervals: Sequence[Tuple[float, float]]) -> List[int]:
-    """Genome-browser style packing: lowest free sub-row per interval.
-
-    Features that merely touch (an exon ending where the next one starts) are
-    treated as non-overlapping so contiguous exon chains stay on one row.
-    """
     ends: List[float] = []
     rows: List[int] = []
     for start, end in intervals:
@@ -330,7 +276,6 @@ _SHORT_KEYS = (
 
 
 def _pretty_domain_name(raw: str) -> str:
-    """Human-readable InterPro entry name (``Ig-like_dom`` → ``Ig-like domain``)."""
     name = (raw or "").replace("_", " ").strip()
     for pattern, full in _NAME_EXPANSIONS:
         name = re.sub(pattern, full, name, flags=re.IGNORECASE)
@@ -347,15 +292,6 @@ def _short_domain_label(pretty: str) -> str:
 
 
 def number_domain_instances(domains: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Coordinate-specific, numbered representative-domain instances.
-
-    Repeated InterPro accessions are never merged: each occurrence keeps its own
-    coordinates and is numbered by ascending start position, so an FGFR-type
-    protein yields ``Ig-like domain 1/2/3`` plus the single kinase domain. When the
-    coordinate model already carries the resolved instance identity
-    (``domain_instance_id``, ``short_label``, ``full_label``, ``instance_number``)
-    those authoritative fields win over the names derived here.
-    """
     rows = []
     for d in domains:
         start, end = _span(d)
@@ -408,7 +344,6 @@ def number_domain_instances(domains: Sequence[Dict[str, Any]]) -> List[Dict[str,
 # --------------------------------------------------------------------------- #
 def plot_gene_model_overview(fig_dir: Path, stem: str, *, gene_symbol: str,
                              isoforms: Sequence[Dict[str, Any]]) -> bool:
-    """Horizontal isoform-length overview; primary isoform highlighted (ps.INK)."""
     rows = sorted(isoforms, key=lambda r: _int(r.get("protein_length")), reverse=True)
     if not rows:
         return False
@@ -480,7 +415,6 @@ EXON_IDENTITY_TABLE_COLUMNS = (
 
 
 def _genomic_span(block: Dict[str, Any]) -> Optional[Tuple[int, int]]:
-    """Genomic CDS interval of one exon block, normalised to (low, high)."""
     for lo_key, hi_key in (("genomic_start", "genomic_end"), ("cds_start", "cds_end")):
         lo, hi = block.get(lo_key), block.get(hi_key)
         if lo is not None and hi is not None:
@@ -494,7 +428,6 @@ def _overlaps(a: Tuple[int, int], b: Tuple[int, int]) -> bool:
 
 
 def derive_strand(blocks: Sequence[Dict[str, Any]]) -> str:
-    """Transcription direction implied by the CDS coordinate order ('+', '-', '')."""
     declared = {str(b.get("strand") or "").strip() for b in blocks} - {""}
     if declared == {"+"} or declared == {"-"}:
         return declared.pop()
@@ -505,7 +438,6 @@ def derive_strand(blocks: Sequence[Dict[str, Any]]) -> str:
 
 
 def _exon_rows(model: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """Exon blocks of one transcript in transcript order, with both coordinates."""
     out = []
     for i, b in enumerate(model.get("blocks") or model.get("exons") or [], start=1):
         genomic = _genomic_span(b)
@@ -525,18 +457,6 @@ def _exon_rows(model: Dict[str, Any]) -> List[Dict[str, Any]]:
 
 
 def classify_transcript_models(models: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Per-model exon identity relative to the primary model, on genomic CDS spans.
-
-    Each exon of every alternative model is classified as a *shared genomic exon*
-    (identical CDS interval), a *shifted exon boundary* (overlaps the corresponding
-    primary exon with a different start or end), an *alternative exon* (no genomic
-    overlap with any primary exon, standing in for a primary exon the model skips)
-    or an *inserted protein region* (no genomic overlap and nothing skipped).
-    Primary exons that no exon of the model overlaps become *missing protein
-    regions*, anchored at the amino-acid junction where they are absent, and a
-    first/last exon with no overlap of the primary terminus is an *alternative
-    terminus*. Amino-acid offsets are never used to decide identity.
-    """
     ordered = sorted(models, key=lambda m: (0 if m.get("is_primary") else 1,
                                             str(m.get("protein_id") or "")))
     primary = next((m for m in ordered if m.get("is_primary")),
@@ -635,7 +555,6 @@ def classify_transcript_models(models: Sequence[Dict[str, Any]]) -> List[Dict[st
 
 
 def exon_identity_table(rows: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Flat source table behind the transcript figures — one row per exon block."""
     out = []
     for model in rows:
         for e in model["exons"]:
@@ -686,7 +605,6 @@ def _strand_sentence(strand: str) -> str:
 
 
 def _margin_chars(ax, x: float, fontsize: float, right: float = 0.0) -> int:
-    """How many characters fit between ``x`` and the start of the plotting area."""
     lo, hi = ax.get_xlim()
     pts_per_unit = (_axes_size_in(ax)[0] * 72.0) / max(1e-9, hi - lo)
     return max(10, int(((right - x) * pts_per_unit - 5.0) / (0.62 * fontsize)))
@@ -695,11 +613,6 @@ def _margin_chars(ax, x: float, fontsize: float, right: float = 0.0) -> int:
 def _stacked_labels(ax, x: float, y: float,
                     lines: Sequence[Tuple[str, str, str]], *, right: float = 0.0,
                     step: float = 0.215) -> None:
-    """Stacked row label inside the reserved left margin, never over a feature block.
-
-    Every line is shortened to what the margin between ``x`` and ``right`` can hold,
-    so a long row summary cannot run into the track it describes.
-    """
     rows = [(t, c, w) for t, c, w in lines if t]
     chars = _margin_chars(ax, x, ps.FONT["small"], right)
     top = y + step * (len(rows) - 1) / 2.0
@@ -710,7 +623,6 @@ def _stacked_labels(ax, x: float, y: float,
 
 def _model_row_labels(ax, x: float, y: float, model: Dict[str, Any],
                       *details: str, right: float = 0.0) -> None:
-    """Protein/transcript row label: identifiers first, then the model summary."""
     marker = "  (primary)" if model["is_primary"] else ""
     lines = [(f"{model['protein_id']}{marker}", ps.INK,
               "bold" if model["is_primary"] else "normal"),
@@ -723,16 +635,6 @@ def plot_transcript_exon_structure(fig_dir: Path, stem: str, *, gene_symbol: str
                                    transcripts: Sequence[Dict[str, Any]],
                                    species_name: str = "",
                                    footnote: Optional[str] = None) -> bool:
-    """Two-panel transcript structure and translated protein product.
-
-    Panel A carries the annotated transcripts on a genomic NUCLEOTIDE axis: coding
-    exons, non-coding exons where the annotation really provides them, the introns
-    between them and the annotated transcription direction. Panel B carries the
-    translated protein models on an AMINO-ACID axis, with each coding exon
-    projected onto the sequence it encodes. The two coordinate systems are kept in
-    separate panels with separate axis labels, because a nucleotide interval and an
-    amino-acid interval are not interchangeable quantities.
-    """
     models = list(transcripts)
     if not models:
         return False
@@ -883,7 +785,6 @@ def plot_transcript_exon_structure(fig_dir: Path, stem: str, *, gene_symbol: str
 
 
 def _difference_phrase(model: Dict[str, Any], *, include_shared: bool = False) -> str:
-    """Compact, honest summary of how one model's exon set differs from the primary."""
     parts = []
     kinds = (("shared", "shared"),) if include_shared else ()
     for kind, word in kinds + (("shifted", "shifted"),
@@ -912,7 +813,6 @@ def _difference_phrase(model: Dict[str, Any], *, include_shared: bool = False) -
 # --------------------------------------------------------------------------- #
 def alignment_rows(sequences: Sequence[Dict[str, Any]],
                    primary_id: str = "") -> List[Dict[str, Any]]:
-    """Normalise index ``sequences`` into ordered figure rows (primary first)."""
     rows = []
     for s in sequences:
         seq = s.get("aligned_sequence") or s.get("seq") or ""
@@ -973,7 +873,6 @@ def _identity_pct(seq: str, primary: str) -> Optional[int]:
 
 
 def aa_to_column(primary_aligned: str, aa: Optional[int]) -> Optional[int]:
-    """0-based alignment column of the 1-based primary-protein residue ``aa``."""
     if not primary_aligned or aa is None:
         return None
     residue = 0
@@ -1008,7 +907,6 @@ def _candidate_columns(rows, candidates) -> List[Dict[str, Any]]:
 
 
 def candidate_affected_proteins(cand: Dict[str, Any]) -> List[str]:
-    """Protein IDs an exploratory candidate is supported by (never fabricated)."""
     listed = cand.get("affected_proteins") or cand.get("affected") or []
     if listed:
         return sorted({str(p) for p in listed})
@@ -1028,13 +926,6 @@ def plot_isoform_alignment_overview(fig_dir: Path, stem: str, *, gene_symbol: st
                                     tool: str = "MAFFT",
                                     alignment_length: Optional[int] = None,
                                     footnote: Optional[str] = None) -> bool:
-    """Full within-species isoform alignment overview.
-
-    One row per protein isoform over the complete alignment-column axis with a
-    global variability track, per-row occupancy (aligned residues vs gaps),
-    residues that differ from the primary, major gap/variable block counts,
-    subtle exploratory-candidate overlays and identity-to-primary per row.
-    """
     rows = alignment_rows(sequences, primary_id)
     if len(rows) < 2:
         return False
@@ -1157,14 +1048,6 @@ def plot_protein_exon_architecture(fig_dir: Path, stem: str, *, gene_symbol: str
                                    species_name: str = "",
                                    protein_length: Optional[int] = None,
                                    footnote: Optional[str] = None) -> bool:
-    """Primary exon-to-protein projection: coding exons, boundaries, candidates.
-
-    ``exon_blocks``: dicts with ``protein_start_aa``/``protein_end_aa`` (or
-    ``start``/``end``) and ``exon_number``/``label``. ``candidate_regions``: dicts
-    with ``start_aa``/``end_aa`` (or ``start``/``end``). This figure carries no
-    domain overlay — the integrated domain-architecture figure owns that layer —
-    but ``domains`` is still honoured when a caller explicitly supplies it.
-    """
     blocks = []
     for b in exon_blocks:
         start = b.get("protein_start_aa", b.get("start"))
@@ -1264,20 +1147,6 @@ def plot_transcript_model_comparison(fig_dir: Path, stem: str, *, gene_symbol: s
                                      diff_only: bool = False,
                                      species_name: str = "",
                                      footnote: Optional[str] = None) -> bool:
-    """Every protein model on a common amino-acid scale, primary model first.
-
-    Each row shows one protein model in its own amino-acid coordinates, and every
-    coding exon is coloured by how its genomic CDS interval relates to the primary
-    model: identical interval, shifted boundary, alternative exon or inserted
-    region. Primary exons a model does not use are marked at the amino-acid
-    junction where they are absent, and a first or last exon that does not overlap
-    the primary terminus is marked as an alternative terminus.
-
-    With ``diff_only`` only models whose exon set really differs are kept — a model
-    that merely has a different protein length is not enough, and a model whose
-    downstream exons are shifted in amino-acid space by an upstream deletion is not
-    a difference at all.
-    """
     rows = classify_transcript_models(models)
     if not rows:
         return False
@@ -1381,7 +1250,6 @@ def plot_transcript_model_comparison(fig_dir: Path, stem: str, *, gene_symbol: s
 def plot_selected_candidate_detail(fig_dir: Path, stem: str, *, gene_symbol: str,
                                    primary_id: str, exon_blocks: Sequence[Dict[str, Any]],
                                    candidate: Dict[str, Any]) -> bool:
-    """Zoomed detail of one exploratory candidate against the primary exon blocks."""
     blocks = list(exon_blocks)
     if not blocks or not candidate:
         return False
@@ -1430,18 +1298,11 @@ _PLACEHOLDER_SYMBOL = re.compile(r"^(?:LOC\d+|GENE\d+|ENS\w*G\d+)$", re.IGNORECA
 
 
 def is_placeholder_locus(symbol: str) -> bool:
-    """True for an annotation placeholder identifier rather than a gene name.
-
-    NCBI assigns ``LOC…`` identifiers to loci that have no approved symbol yet, so
-    such a neighbour is drawn and labelled as a placeholder rather than presented
-    as a named gene.
-    """
     return not str(symbol or "").strip() or bool(_PLACEHOLDER_SYMBOL.match(str(symbol).strip()))
 
 
 def neighbourhood_layout(gene_symbol: str, neighbours: Sequence[Dict[str, Any]],
                          target_orientation: str = "+") -> List[Dict[str, Any]]:
-    """Ordered loci around the target: upstream, the target itself, downstream."""
     def _symbol(row):
         return (row.get("neighbor_symbol") or row.get("locus_symbol")
                 or row.get("gene_symbol") or "")
@@ -1475,14 +1336,6 @@ def plot_synteny_neighbourhood(fig_dir: Path, stem: str, *, gene_symbol: str,
                                species_name: str = "",
                                target_orientation: str = "+",
                                footnote: Optional[str] = None) -> bool:
-    """Local genomic neighbourhood of the target locus in one assembly.
-
-    The target gene is centred between its annotated upstream and downstream
-    neighbours, each drawn as a gene arrow in its annotated transcription
-    direction. Loci that the annotation identifies only by a placeholder
-    identifier are drawn and labelled as placeholders. This is a single-species
-    locus map: no orthology is asserted, and no orthology confidence is encoded.
-    """
     loci = neighbourhood_layout(gene_symbol, list(neighbours), target_orientation)
     if len(loci) < 2:
         return False
@@ -1562,13 +1415,6 @@ CANDIDATE_RANKING_TABLE_COLUMNS = (
 
 
 def candidate_ranking_rows(clusters: Sequence[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Normalise exploratory candidate rows into one ranked table.
-
-    The same rows feed the ranking figure and its source table, so the figure can
-    never disagree with the numbers shipped next to it. Ranking is by evidence
-    score; the score summarises how much transparent support was found and is not a
-    validation result.
-    """
     rows = []
     for c in clusters:
         start = c.get("aa_start", c.get("start_aa", c.get("start")))
@@ -1611,14 +1457,6 @@ def plot_evidence_regions_on_protein(fig_dir: Path, stem: str, *, gene_symbol: s
                                      species_name: str = "", protein_id: str = "",
                                      n_models: Optional[int] = None,
                                      footnote: Optional[str] = None) -> bool:
-    """Ranked exploratory candidate regions with their evidence, as a figure table.
-
-    One row per candidate: rank, identifier, amino-acid interval, length, how many
-    protein isoforms carry the difference, how many pairwise comparisons support it,
-    the evidence score, the evidence strength — and, always, the biological
-    validation status. The score is a transparent summary of support counts and is
-    never presented as validation.
-    """
     rows = candidate_ranking_rows(clusters)
     if not rows:
         return False
@@ -1698,7 +1536,6 @@ def plot_domain_architecture(fig_dir: Path, stem: str, *, gene_symbol: str,
                              tm_regions: Sequence[Dict[str, Any]] = (),
                              exon_boundaries: Sequence[int] = (),
                              candidates: Sequence[Dict[str, Any]] = ()) -> bool:
-    """Real post-cluster feature architecture using InterPro/pyTMHMM coordinates."""
     if not domains or not protein_length:
         return False
     fig, ax = plt.subplots(figsize=(12, 3.2))
@@ -1771,17 +1608,6 @@ def plot_domain_feature_stack(fig_dir: Path, stem: str, *, gene_symbol: str,
                               subtitle: Optional[str] = None,
                               note: Optional[str] = None,
                               footnote: Optional[str] = None) -> bool:
-    """One integrated protein-feature figure: every track on a shared aa axis.
-
-    Each requested lane that carries data becomes its own well-separated row, so
-    a single figure answers "which domains, which families, which membrane
-    topology, which coding exons, which boundaries and which candidate regions"
-    without needing per-track variant figures.
-
-    Representative domains are numbered per repeated InterPro accession
-    (``Ig-like domain 1/2/3``) and never merged; the block carries a short label
-    and the legend the full entry name plus accession.
-    """
     if not protein_length:
         return False
     order = [ln for ln in ("domains", "families", "signatures", "tms",
@@ -1950,11 +1776,6 @@ UNINTEGRATED_SIGNATURE_COLOR = "#FFFFFF"
 
 def member_signature_groups(signatures: Sequence[Dict[str, Any]]
                             ) -> List[Tuple[str, List[Dict[str, Any]]]]:
-    """Member-database signatures grouped by their source database.
-
-    Groups are ordered by database name and each group by ascending start position,
-    so the same protein always produces the same reading order.
-    """
     groups: Dict[str, List[Dict[str, Any]]] = {}
     for s in signatures:
         start, end = _span(s)
@@ -2000,14 +1821,6 @@ def plot_member_signature_supplement(fig_dir: Path, stem: str, *, gene_symbol: s
                                      protein_length: int,
                                      signatures: Sequence[Dict[str, Any]],
                                      footnote: Optional[str] = None) -> bool:
-    """Supplement: every member-database signature, grouped by its source database.
-
-    Each signature keeps its own row and its own coordinates on the shared
-    amino-acid axis, so the raw evidence behind the representative domains stays
-    inspectable. Signatures already integrated into an InterPro entry are filled;
-    signatures with no InterPro integration are drawn open, because they carry a
-    different evidential weight and must not be read as annotated domains.
-    """
     groups = member_signature_groups(signatures)
     if not groups or not protein_length:
         return False
@@ -2156,14 +1969,6 @@ def _boundary_label(b) -> str:
 
 def _resolve_nearest_edge(b: Dict[str, Any],
                           numbered: Sequence[Dict[str, Any]]) -> Tuple[Optional[int], str, str]:
-    """Return (edge position, edge type, domain-instance name) for one boundary.
-
-    The boundary table stores only the InterPro accession of the nearest domain,
-    so repeated accessions (three Ig-like instances in FGFR1) can point at the
-    wrong instance. The signed distance is instance-specific, so the edge is
-    re-derived from ``position - signed distance`` and matched back onto the
-    numbered domain instances; the stored fields are only a fallback.
-    """
     pos = _int(b.get("boundary_position_aa") or b.get("protein_position") or b.get("start"))
     edge_type = str(b.get("nearest_edge") or b.get("nearest_edge_type") or "").lower()
     signed = b.get("signed_distance_aa")
@@ -2192,7 +1997,6 @@ def _resolve_nearest_edge(b: Dict[str, Any],
 def boundary_definition_footnote(threshold: int, protein_id: str,
                                  domain_source: str = "representative InterPro domains "
                                                       "(InterProScan)") -> str:
-    """The four provenance facts every quantitative boundary figure must state."""
     return (
         "Distance definition: signed amino-acid distance from the internal coding-exon "
         "boundary to the nearest edge of the nearest representative domain; negative = "
@@ -2208,13 +2012,6 @@ def plot_signed_boundary_distances(fig_dir: Path, stem: str, *, gene_symbol: str
                                    threshold: int = 5,
                                    domains: Sequence[Dict[str, Any]] = (),
                                    footnote: Optional[str] = None) -> bool:
-    """Zero-centred signed-distance lollipop: one exon boundary per row.
-
-    X = signed aa distance to the nearest representative-domain edge (0 = the
-    edge itself), the near-edge interval is marked around zero, colour encodes the
-    mutually exclusive boundary class and the marker direction distinguishes a
-    nearest start edge from a nearest end edge.
-    """
     rows = [b for b in boundaries if b.get("signed_distance_aa") is not None
             or b.get("signed_distance") is not None]
     if not rows:
@@ -2290,13 +2087,6 @@ def plot_boundary_on_architecture(fig_dir: Path, stem: str, *, gene_symbol: str,
                                   exon_blocks: Sequence[Dict[str, Any]] = (),
                                   threshold: int = 5,
                                   footnote: Optional[str] = None) -> bool:
-    """Exon boundaries drawn on the protein/domain architecture with class colours.
-
-    Representative domains (numbered instances), coding exons and internal
-    coding-exon boundaries share one amino-acid axis; boundary markers carry the
-    class colour and a connector to the nearest domain edge. Feature names live in
-    the legend, never as long inline text inside the tracks.
-    """
     if not protein_length or not exon_boundaries:
         return False
     numbered = number_domain_instances(domains) if domains else []
@@ -2369,7 +2159,6 @@ def plot_boundary_class_summary(fig_dir: Path, stem: str, *, gene_symbol: str,
                                 boundaries: Sequence[Dict[str, Any]],
                                 threshold: int = 5,
                                 footnote: Optional[str] = None) -> bool:
-    """Compact composition panel of the mutually-exclusive boundary classes."""
     rows = list(boundaries)
     if not rows:
         return False
@@ -2434,8 +2223,6 @@ def plot_selected_boundary_detail(fig_dir: Path, stem: str, *, gene_symbol: str,
                                   domains: Sequence[Dict[str, Any]] = (),
                                   exon_blocks: Sequence[Dict[str, Any]] = (),
                                   threshold: int = 5) -> bool:
-    """Local architecture zoom around one selected boundary (nearest domain edge,
-    adjacent exons and the signed-distance connector)."""
     if not boundary:
         return False
     pos = _int(boundary.get("protein_position") or boundary.get("boundary_position_aa") or boundary.get("start"))
@@ -2491,8 +2278,6 @@ def plot_boundary_evidence_supplement(fig_dir: Path, stem: str, *, gene_symbol: 
                                       species_name: str, protein_id: str,
                                       boundaries: Sequence[Dict[str, Any]],
                                       threshold: int = 5) -> bool:
-    """Per-boundary evidence supplement: one row per boundary with signed distance,
-    nearest domain edge and class colour (a compact provenance figure)."""
     rows = list(boundaries)
     if not rows:
         return False
@@ -2539,13 +2324,6 @@ def resolve_candidate_domain_context(start: int, end: int,
                                      numbered_domains: Sequence[Dict[str, Any]],
                                      boundaries: Sequence[Dict[str, Any]] = ()
                                      ) -> Dict[str, Any]:
-    """Resolve which domain INSTANCE a candidate interval actually sits in.
-
-    Domain instances are addressed by ``domain_instance_id`` and their own
-    coordinates. Resolving by InterPro accession alone would collapse the three
-    Ig-like instances of an FGFR-type protein onto one another, so the nearest edge
-    and the overlap are both derived from the instance coordinates.
-    """
     overlapping = [d for d in numbered_domains
                    if min(end, d["end"]) >= max(start, d["start"])]
     inside = [d for d in overlapping if d["start"] <= start and end <= d["end"]]
@@ -2615,14 +2393,6 @@ def plot_candidate_domain_context(fig_dir: Path, stem: str, *, gene_symbol: str,
                                   protein_length: Optional[int] = None,
                                   species_name: str = "",
                                   footnote: Optional[str] = None) -> bool:
-    """Exploratory candidate regions against the real annotated protein architecture.
-
-    Every candidate is shown on the primary protein's amino-acid axis together with
-    the coding exons, the internal coding-exon boundaries and the representative
-    domain instances it actually overlaps — resolved by domain instance, not by
-    InterPro accession, so repeated domains stay distinct. Each candidate carries a
-    connector to the nearest domain edge and the distance to it.
-    """
     table = candidate_context_table(contexts, domains, boundaries)
     if not table:
         return False

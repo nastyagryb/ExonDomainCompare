@@ -1,36 +1,3 @@
-"""The validated FGFR2 dataset, expressed in the shared coordinate-model contract.
-
-The FGFR2 analysis was written before the shared, gene-agnostic figure system
-existed, so it grew its own plotting code and its own card catalogue. That is why
-its Figure Gallery looks nothing like the one a FGFR1 or TP53 run gets, and why a
-species inside the 30-species panel has no gallery of its own.
-
-Nothing here re-analyses FGFR2. It reads the frozen result tables and restates
-them in the structure ``src/exondomaincompare/shared_gene_analysis/protein_coordinate_model.py``
-produces for every other gene, so the accepted shared renderer — the same one the
-Gene Explorer exports through — can draw the validated FGFR2 features. One
-renderer, one set of semantic styles, one export path.
-
-What is read, and what is deliberately not derived:
-
-* Coding exons, the IIIb/IIIc cassette slot, the representative Ig and kinase
-  domains and the pyTMHMM helix come from
-  ``15_exon_domain_boundary_post_interpro/tables/exon_domain_architecture_features.tsv``.
-  Those intervals are the validated selection and are copied, never recomputed.
-* Member-database signatures come from ``interpro_domain_features_normalized.tsv``
-  and are attached to the representative instance they support.
-* Internal exon boundaries are *not* in the freeze, because the FGFR2 analysis
-  classified cassette boundaries only. They are derived here with the shared
-  generic classifier (``boundary_classification.py``), which is a different
-  vocabulary from the frozen FGFR2 Boundary Consistency classes and is kept
-  separate from them: the frozen cassette values are never touched, recomputed or
-  overwritten.
-
-One model per (species, isoform), because that is the unit the FGFR2 analysis
-works in: IIIb and IIIc are two real proteins, not two views of one. Where a
-comparative figure needs one row per species, :func:`comparative_primary_ids`
-states the rule it uses instead of leaving the choice to iteration order.
-"""
 from __future__ import annotations
 
 import csv
@@ -62,21 +29,11 @@ INTERPRO_TSV = ARCHITECTURE / "tables" / "interpro_domain_features_normalized.ts
 TRUTH_TSV = CLOSURE / "final_pre_interpro_truth_table.tsv"
 FULL_MSA = CLOSURE / "MSA" / "final_fgfr2_full_length_protein_msa.aln.faa"
 
-#: Which model of a species is its primary reference — the one a comparative figure
-#: puts in that species' row. FGFR2's reference-database canonical protein is the
-#: IIIc form (RefSeq NM_000141 / Ensembl ENST00000358487), so IIIc is the stated
-#: default rather than whichever isoform a dictionary happened to yield first. Where
-#: a species has no IIIc model the IIIb model is the reference and says so.
+
 PRIMARY_REFERENCE_PREFERENCE = ("IIIc", "IIIb")
 
-#: The isoforms the FGFR2 analysis validates. Used to enumerate what a species
-#: *should* have, so a combination that is absent is reported as absent with its
-#: reason rather than silently missing from the inventory.
 VALIDATED_ISOFORMS = ("IIIb", "IIIc")
 
-#: Curated display names for the FGFR2 representative domain labels. The stored
-#: label stays alongside, so nothing is renamed — this only controls what a reader
-#: sees on a figure.
 _DOMAIN_DISPLAY = {
     "Ig1": "Ig-like domain 1",
     "Ig2": "Ig-like domain 2",
@@ -84,9 +41,6 @@ _DOMAIN_DISPLAY = {
     "kinase": "Ser-Thr/Tyr kinase domain",
 }
 
-#: Member-database preference, identical to the one the freeze used to pick a
-#: representative interval, so the accession this model reports for an instance is
-#: the one the validated selection was based on.
 _DB_PRIORITY = {
     "CDD": 1, "Pfam": 2, "ProSiteProfiles": 3, "SMART": 4, "PRINTS": 5,
     "Gene3D": 6, "SUPERFAMILY": 7, "FunFam": 8, "PANTHER": 9, "PIRSF": 10,
@@ -127,16 +81,6 @@ def _rel(path: Path) -> str:
 # --------------------------------------------------------------------------- #
 def _signature_support(interpro_rows: Sequence[Dict[str, str]], pid: str,
                        start: int, end: int) -> Tuple[str, List[str], List[Dict[str, Any]]]:
-    """The signatures that support one validated representative interval.
-
-    An interval the freeze produced by taking the union of a cluster — the kinase
-    region is one — matches no single signature exactly, so an accession cannot be
-    read off by equality. Every signature of the protein that overlaps the interval
-    is reported instead, and the accession named as *the* accession is the one from
-    the highest-priority member database, which is the rule the freeze itself used
-    to choose the interval. Where no overlapping signature carries an InterPro
-    accession the field stays empty rather than being filled with a guess.
-    """
     overlapping = []
     for r in interpro_rows:
         if r.get("protein_id") != pid:
@@ -168,19 +112,6 @@ def _signature_support(interpro_rows: Sequence[Dict[str, str]], pid: str,
 def _representative_domains(rows: Sequence[Dict[str, str]],
                             interpro_rows: Sequence[Dict[str, str]],
                             pid: str) -> List[Dict[str, Any]]:
-    """The validated representative domains, as identified feature instances.
-
-    The identity of an instance is its label and its interval, not its InterPro
-    accession: three Ig-like domains of one protein share an accession, so an
-    accession alone can never name one of them.
-
-    Two numberings coexist here on purpose, and conflating them would misstate the
-    freeze. ``positional_label`` is the validated FGFR2 Ig1/Ig2/Ig3 numbering,
-    which the freeze assigns N→C and explicitly documents as positional only.
-    ``instance_number`` is the shared contract's per-accession index. They differ
-    because Ig1 and Ig3 share ``IPR007110`` while Ig2 is ``IPR013098``, so the
-    second Ig-like domain by position is the first instance of its accession.
-    """
     parsed = []
     for r in rows:
         if r.get("status") != "representative":
@@ -248,19 +179,12 @@ def _representative_domains(rows: Sequence[Dict[str, str]],
 # exons, cassette and transmembrane helix
 # --------------------------------------------------------------------------- #
 def _exon_number(label: str) -> Optional[int]:
-    """`exon 9 (IIIb cassette)` -> 9."""
     parts = str(label or "").split()
     return _int(parts[1]) if len(parts) > 1 else None
 
 
 def _exons_and_cassette(rows: Sequence[Dict[str, str]], pid: str,
                         ) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
-    """The coding exon series, with the cassette slot in its place within it.
-
-    The cassette is exon 9 of the series, not a feature beside it. Keeping it in
-    the exon track is what lets a reader see IIIb or IIIc in the context of all
-    coding exons, which is the whole point of the FGFR2 architecture figure.
-    """
     collected: List[Tuple[int, Dict[str, Any]]] = []
     cassettes: List[Dict[str, Any]] = []
     for r in rows:
@@ -340,12 +264,6 @@ def _tm_regions(rows: Sequence[Dict[str, str]], pid: str) -> List[Dict[str, Any]
 
 def _families(rows: Sequence[Dict[str, str]], pid: str,
               interpro_rows: Sequence[Dict[str, str]]) -> List[Dict[str, Any]]:
-    """Family-level fingerprints, kept in their own neutral layer.
-
-    A family fingerprint spans most of the protein and is not a structural domain,
-    so it must not sit in the representative track where a reader would read it as
-    one.
-    """
     out = []
     for r in rows:
         if r.get("status") != "family_level":
@@ -369,21 +287,10 @@ def _families(rows: Sequence[Dict[str, str]], pid: str,
     return out
 
 
-# --------------------------------------------------------------------------- #
-# internal exon boundaries
-# --------------------------------------------------------------------------- #
 def _boundaries(exons: Sequence[Dict[str, Any]], domains: Sequence[Dict[str, Any]],
                 pid: str, transcript_id: str,
                 threshold: int = bc.DEFAULT_NEAR_EDGE_THRESHOLD_AA,
                 ) -> List[Dict[str, Any]]:
-    """Internal coding-exon boundaries, classified with the shared generic rule.
-
-    The FGFR2 freeze classified the two cassette boundaries only, in its own
-    vocabulary and against its own thresholds. Those values are validated and are
-    not read, recomputed or contradicted here. This is the generic exon-boundary
-    analysis every other gene gets, applied to the FGFR2 proteins, and it is
-    labelled as such in every figure and table it reaches.
-    """
     out: List[Dict[str, Any]] = []
     for left, right in zip(exons, exons[1:]):
         position = left.get("end")
@@ -457,18 +364,8 @@ def _boundaries(exons: Sequence[Dict[str, Any]], domains: Sequence[Dict[str, Any
     return out
 
 
-# --------------------------------------------------------------------------- #
-# the index
-# --------------------------------------------------------------------------- #
 @dataclass(frozen=True)
 class Sources:
-    """The four tables this index is derived from.
-
-    Held in one object rather than read from module constants, so the same builder can
-    describe the validated freeze and an individual FGFR2 run. The pre-InterPro pipeline
-    writes the same table names for both, which is what makes one builder sufficient.
-    """
-
     features: Path
     interpro: Path
     truth: Path
@@ -479,23 +376,15 @@ class Sources:
 
     @property
     def post_cluster_available(self) -> bool:
-        """Whether the domain layer exists.
-
-        Without it a model has no domains, no exon series and no boundaries — but it still
-        has an identity, a protein and a validated isoform label. That is the difference
-        between a dataset with no models and a dataset whose models are awaiting a layer.
-        """
         return self.features.is_file()
 
 
 def freeze_sources() -> Sources:
-    """The validated 30-species dataset — this module's original and default subject."""
     return Sources(features=FEATURES_TSV, interpro=INTERPRO_TSV,
                    truth=TRUTH_TSV, msa=FULL_MSA)
 
 
 def run_sources(run_dir: Path) -> Sources:
-    """One FGFR2 run's own tables, in the layout its pipeline writes."""
     run_dir = Path(run_dir)
     results = run_dir / "results"
     closure = results / "13_final_pre_interpro_closure"
@@ -516,17 +405,11 @@ def _truth_by_protein(truth: Path) -> Dict[str, Dict[str, str]]:
 
 
 def _truth_by_combination(truth: Path) -> Dict[Tuple[str, str], Dict[str, str]]:
-    """``{(species, isoform): truth row}`` for every validated combination."""
     return {(r.get("species", ""), r.get("isoform", "")): r
             for r in _read_tsv(truth) if r.get("species")}
 
 
 def _review_status(row: Dict[str, str]) -> str:
-    """The review state of one combination, from the freeze's own status columns.
-
-    Reported as the freeze recorded it. A flag that the freeze raised is not
-    downgraded here, and none is invented.
-    """
     flags = []
     for column in ("coordinate_validation_status", "protein_integrity_status",
                    "MSA_full_length_status", "MSA_cassette_status",
@@ -543,14 +426,6 @@ def _review_status(row: Dict[str, str]) -> str:
 
 
 def _exon_block_status(rows: Sequence[Dict[str, str]]) -> str:
-    """How the architecture's exon blocks were obtained, from the freeze's own status.
-
-    The freeze distinguishes three outcomes, and they decide what can honestly be
-    drawn for a protein: ``coordinate_mapped`` (the projection is direct),
-    ``native_exon_blocks_reconstructed`` (the blocks were reconstructed) and
-    ``cassette_only_high_confidence`` (only the cassette coordinate was validated
-    and there is no coding-exon series at all).
-    """
     statuses = {(r.get("status") or "").strip() for r in rows
                 if r.get("track") == "cassette"}
     for candidate in ("cassette_only_high_confidence",
@@ -561,12 +436,6 @@ def _exon_block_status(rows: Sequence[Dict[str, str]]) -> str:
 
 
 def _msa_columns(msa: Path) -> Dict[str, Dict[int, int]]:
-    """Native position → alignment column, per protein.
-
-    The shared MSA helper keys on species, because a generic run has one primary
-    per species. FGFR2 has two, so the mapping is built per protein here; the
-    alignment file and the column arithmetic are the shared ones.
-    """
     from exondomaincompare.shared_gene_analysis.msa_coordinates import column_map, read_aligned_fasta
     if not msa.is_file():
         return {}
@@ -581,17 +450,9 @@ def _msa_columns(msa: Path) -> Dict[str, Dict[int, int]]:
 
 def build_index(threshold: int = bc.DEFAULT_NEAR_EDGE_THRESHOLD_AA,
                 sources: Optional[Sources] = None) -> Dict[str, Any]:
-    """One FGFR2 dataset as a shared coordinate-model index.
-
-    ``sources`` defaults to the validated 30-species freeze, which is what every existing
-    caller means.
-    """
     src = sources or freeze_sources()
     features = _read_tsv(src.features)
     if not features:
-        # No domain layer yet. The proteins and their validated labels do exist, and the
-        # Gallery needs them to lay out its scopes, so the models are built from the truth
-        # table with the domain-derived layers stated as pending rather than as empty.
         return _pre_cluster_index(src)
     interpro = _read_tsv(src.interpro)
     truth = _truth_by_protein(src.truth)
@@ -648,8 +509,6 @@ def build_index(threshold: int = bc.DEFAULT_NEAR_EDGE_THRESHOLD_AA,
             "species_id": species,
             "scientific_name": so.scientific_name(species),
             "gene_symbol": GENE_SYMBOL,
-            # The model's own identity and role. A renderer is handed these; it never
-            # infers which protein it is drawing from a file name or an array index.
             "model_id": mr.model_id(GENE_SYMBOL, species, isoform),
             "model_role": mr.validated_isoform_role(
                 tr.get("final_isoform_label") or isoform),
@@ -667,11 +526,6 @@ def build_index(threshold: int = bc.DEFAULT_NEAR_EDGE_THRESHOLD_AA,
             # proteins of one species, so the isoform is part of the model's identity.
             "isoform": isoform,
             "final_isoform_label": tr.get("final_isoform_label") or isoform,
-            # What this model can actually support. A protein whose coding-exon
-            # series could not be reconstructed still has a validated cassette and a
-            # validated domain architecture, so it stays a real model — but the exon
-            # and boundary figures do not exist for it, and saying so is the whole
-            # point of carrying the status.
             "availability_status": ("cassette_only_no_exon_series"
                                     if not coding_exons else "model_available"),
             "unavailable_layers": ([] if coding_exons else
@@ -800,21 +654,6 @@ def build_index(threshold: int = bc.DEFAULT_NEAR_EDGE_THRESHOLD_AA,
 
 
 def _boundary_dashboard(index: Dict[str, Any]) -> Dict[str, Any]:
-    """The shared exon–domain boundary dashboard, over the primary reference panel.
-
-    This is the *generic whole-protein* boundary analysis: every supported internal
-    coding-exon boundary of every species, measured against the nearest
-    representative domain edge. It is a different question from the validated
-    IIIb/IIIc cassette-boundary analysis the freeze answers, and it makes no claim
-    about the cassette; the two are reported side by side, never merged.
-
-    The cross-species part is built from one model per species — each species'
-    primary reference — because a comparable-boundary group counts species, and
-    letting a species contribute both its isoforms would count it twice. Attaching
-    the result to the canonical model index is what makes the Figure Gallery and the
-    interactive Comparative Boundary Explorer read the same group ids, distances,
-    classes and species order rather than two independently derived versions.
-    """
     from exondomaincompare.shared_gene_analysis.boundary_dashboard import build_boundary_dashboard
 
     reduced = dict(index)
@@ -844,16 +683,7 @@ _PENDING_LAYER_REASON = (
 
 
 def _pre_cluster_index(src: Sources) -> Dict[str, Any]:
-    """The models of a dataset whose cluster round-trip has not run.
 
-    A protein selected by the pre-InterPro pipeline is a real model: it has an identity, a
-    transcript, a length and a validated isoform label, all recorded in the closure's truth
-    table. What it does not yet have are the three layers derived from cluster annotation.
-
-    Building this instead of returning an empty index is what lets the Gallery show its
-    scopes and its post-cluster sections as pending. Nothing is invented: every field comes
-    from the truth table, and the missing layers are named as missing.
-    """
     rows = [r for r in _read_tsv(src.truth) if r.get("protein_id") and r.get("species")]
     combinations = _truth_by_combination(src.truth)
 
@@ -1004,14 +834,6 @@ def _pre_cluster_index(src: Sources) -> Dict[str, Any]:
 def _availability(models: Sequence[Dict[str, Any]], species_ids: Sequence[str],
                   combinations: Dict[Tuple[str, str], Dict[str, str]],
                   ) -> Dict[str, Any]:
-    """Which species–isoform combinations have a model, and why the others do not.
-
-    The FGFR2 panel is 30 species and two validated isoforms, so 60 combinations
-    are *expected*. 58 have an architecture model. The other two are not a gap in
-    the data to be papered over: the freeze kept them for review only, with a
-    stated reason, and a species that is missing one isoform model still belongs in
-    the panel with the model it does have.
-    """
     has_model = {(m["species_id"], m["isoform"]) for m in models}
     protein_of_model = {(m["species_id"], m["isoform"]): m["protein_id"]
                         for m in models}
@@ -1021,10 +843,6 @@ def _availability(models: Sequence[Dict[str, Any]], species_ids: Sequence[str],
             if (species, isoform) in has_model:
                 continue
             row = combinations.get((species, isoform), {})
-            # Where the absent slot names the same protein as the species' available
-            # slot, the isoform could not be told apart from sequence at all. That is
-            # a different situation from a protein simply being missing, and a reader
-            # deciding whether to trust the species needs to see which one it is.
             shared_with = next(
                 (iso for iso in VALIDATED_ISOFORMS
                  if protein_of_model.get((species, iso)) == (row.get("protein_id") or "")
@@ -1111,12 +929,10 @@ def _availability(models: Sequence[Dict[str, Any]], species_ids: Sequence[str],
 
 
 def primary_reference_models(index: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """The one-model-per-species subset a comparative figure draws."""
     return [m for m in index.get("models") or [] if m.get("is_primary_reference")]
 
 
 def models_by_species(index: Dict[str, Any]) -> Dict[str, List[Dict[str, Any]]]:
-    """``{species_id: [model, …]}`` in canonical species order."""
     out: Dict[str, List[Dict[str, Any]]] = {}
     for m in index.get("models") or []:
         out.setdefault(m["species_id"], []).append(m)
@@ -1131,12 +947,6 @@ INVENTORY_COLUMNS = [
 
 
 def inventory_rows(index: Dict[str, Any]) -> List[Dict[str, str]]:
-    """One row per expected species–isoform combination, present or not.
-
-    A combination without a model gets a row too. A table that simply omitted it
-    would make a species look like a one-isoform species, which is not what the
-    freeze says about it.
-    """
     rows: List[Dict[str, str]] = []
     for m in index.get("models") or []:
         rows.append({
@@ -1151,9 +961,6 @@ def inventory_rows(index: Dict[str, Any]) -> List[Dict[str, str]]:
             "availability_status": m.get("availability_status") or "model_available",
             "reconstruction_status": m.get("reconstruction_status") or "",
             "review_status": m.get("review_status") or "",
-            # Empty for a complete model. For a model whose exon series is missing
-            # this states which layers it cannot support and why, so a reader of the
-            # table never has to guess whether an absent figure is a bug.
             "omission_reason": m.get("unavailable_reason") or "",
         })
     for u in (index.get("availability") or {}).get("unavailable_combinations") or []:
@@ -1178,7 +985,6 @@ def inventory_rows(index: Dict[str, Any]) -> List[Dict[str, str]]:
 
 
 def write_inventory(index: Dict[str, Any], outdir: Path) -> Path:
-    """Write ``fgfr2_model_inventory.tsv``."""
     outdir = Path(outdir)
     outdir.mkdir(parents=True, exist_ok=True)
     path = outdir / "fgfr2_model_inventory.tsv"
@@ -1190,7 +996,6 @@ def write_inventory(index: Dict[str, Any], outdir: Path) -> Path:
 
 
 def write_index(outdir: Path, sources: Optional[Sources] = None) -> Tuple[Path, Path]:
-    """Write the coordinate model and the model inventory into ``outdir``."""
     outdir = Path(outdir)
     outdir.mkdir(parents=True, exist_ok=True)
     index = build_index(sources=sources)
@@ -1202,7 +1007,7 @@ def write_index(outdir: Path, sources: Optional[Sources] = None) -> Tuple[Path, 
 
 def main(argv: Optional[List[str]] = None) -> int:
     import argparse
-    ap = argparse.ArgumentParser(description=__doc__,
+    ap = argparse.ArgumentParser(description='The validated FGFR2 dataset, expressed in the shared coordinate-model contract.',
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", default=str(ROOT / "results" / "derived" / "example"
                                         / "website_indices"),

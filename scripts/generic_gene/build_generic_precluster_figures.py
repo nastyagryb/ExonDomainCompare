@@ -1,17 +1,3 @@
-"""Generic gene-agnostic pre-cluster figure files.
-
-Generates real, reusable figure files (SVG + PDF + PNG) by delegating ALL drawing
-to the canonical ``plotting`` package API. Its implementation uses the same
-functions/primitives as FGFR2-style figures (palette, typography, gene arrows,
-legends, savefig). No FGFR2-specific labels. Produced figures:
-
-  1. Figure_generic_gene_model_overview
-  2. Figure_generic_exon_protein_architecture_primary
-  3. Figure_generic_synteny_neighbourhood
-  4. Figure_generic_exploratory_event_candidates
-
-Also writes ``figure_manifest.tsv`` describing each generated figure.
-"""
 from __future__ import annotations
 
 import argparse
@@ -156,7 +142,7 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
         error = ""
         try:
             ok = fn(ctx, stem)
-        except Exception as exc:  # keep the manifest honest, never fake a figure
+        except Exception as exc:
             ok = False
             error = str(exc)
         manifest.append({
@@ -213,7 +199,7 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description='Generic gene-agnostic pre-cluster figure files.')
     ap.add_argument("--run-id", required=True)
     args = ap.parse_args()
     ctx = load_context(args.run_id)

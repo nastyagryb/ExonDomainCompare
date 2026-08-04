@@ -1,21 +1,4 @@
 #!/usr/bin/env python3
-"""
-Build refined uncertainty classes.
-
-Collapses the many low-level QC flags into a small set of explainable uncertainty
-classes and a plot-visibility level, so figures stop overstating uncertainty:
-split codons and phase-unavailable-but-coordinate-resolved cases are NOT errors and
-must be shown subtly, while true missing data / conflicts / hard fails stay prominent.
-
-Reads final tables only (no biological QC recomputed):
-  cds_phase_rescue_audit.tsv, fgfr2_cassette_cds_block_map.tsv,
-  fgfr2_cassette_coordinate_sanity_audit.tsv, fgfr2_current_stage_..._coordinate_audit.tsv,
-  species_qc_master.tsv
-
-Output:
-  fgfr2_refined_uncertainty_classes.tsv  (one row per resolved IIIb/IIIc mapping)
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -88,7 +71,6 @@ def protein_state(summary: str) -> str:
 
 
 def annotation_state(sanity_status: str, native_sanity: str, iii_sim: str):
-    """Return (state, severity) where severity in {hard, major, minor, none}."""
     if ("implausible" in (sanity_status or "") or "first_cds_block" in (sanity_status or "")):
         return "hard_coordinate_fail_review", "hard"
     ns = native_sanity or ""

@@ -68,12 +68,10 @@ PYTHON = LOCAL_PYTHON_RUNTIME.selected
 
 
 def _local_python_command(script: Path, *args: str) -> List[str]:
-    """Build every backend-owned local Python child command from one runtime."""
     return [PYTHON, str(script), *map(str, args)]
 
 
 def _local_python_module_command(module: str, *args: str) -> List[str]:
-    """Run installed application logic through its canonical module path."""
     return [PYTHON, "-m", module, *map(str, args)]
 
 
@@ -142,7 +140,6 @@ except Exception:  # pragma: no cover
 
 
 def _resolve_workflow(gene_symbol: Optional[str], mode: str = "auto") -> Dict[str, Any]:
-    """Wrapper around the central router with a safe FGFR2/shared fallback."""
     if _router is not None:
         try:
             return _router.resolve_gene_workflow(gene_symbol, mode=mode).to_dict()
@@ -779,10 +776,6 @@ _CORE_NEXT_LABELS = {
 
 
 def _run_species_count(run_dir: Path) -> int:
-    """Number of analysed species for a run (dataset property, never assumed = 1).
-
-    Reads species_list.txt (authoritative), else the per-species primary selection.
-    """
     slist = run_dir / "species_list.txt"
     if slist.is_file():
         n = len([ln for ln in slist.read_text(encoding="utf-8").splitlines() if ln.strip()])
@@ -1100,11 +1093,6 @@ def derive_status_model(run_dir: Path) -> Dict[str, Any]:
 
 
 def _run_readiness(run_dir: Path, has_event: bool = True):
-    """Readiness judged from the run's artefacts, or None when unavailable.
-
-    Returning None on import or evaluation failure keeps the previous status logic as
-    the fallback, so a defect here can only lose the extra precision, never a run.
-    """
     if _readiness is None:
         return None
     try:
@@ -1326,7 +1314,6 @@ def _local_run_summary(run_dir: Path) -> Dict[str, Any]:
 
 
 def _local_run_summaries(*, include_bundled: bool) -> List[Dict[str, Any]]:
-    """List registered runs, optionally including bundled example datasets."""
     records, collisions = discover_runs(RUNTIME_CONFIG)
     runs_out = []
     for record in records:
@@ -1360,13 +1347,11 @@ def _local_run_summaries(*, include_bundled: bool) -> List[Dict[str, Any]]:
 
 @app.get("/api/local-runs")
 def local_runs() -> List[Dict[str, Any]]:
-    """List user-owned canonical and registered legacy runs."""
     return _local_run_summaries(include_bundled=False)
 
 
 @app.get("/api/local-runs/{run_id}")
 def local_run_detail(run_id: str) -> Dict[str, Any]:
-    """Return normalized identity/status for one unambiguous registered run."""
     run_dir = _safe_local_run_dir(run_id)
     if not run_dir.is_dir():
         raise HTTPException(status_code=404, detail=f"Local run '{run_id}' not found.")
@@ -1564,11 +1549,6 @@ def _local_run_file_checks(run_dir: Path) -> Dict[str, Any]:
 
 
 def _req_gene_symbol(req: CreateLocalRunRequest) -> str:
-    """Effective gene symbol for a create request (defaults to FGFR2).
-
-    Backward-compatible: existing callers send only ``case_study`` and no
-    ``gene_symbol``; those keep resolving to FGFR2 → the validated workflow.
-    """
     if (req.gene_symbol or "").strip():
         return req.gene_symbol.strip().upper()
     cs = (req.case_study or "").strip().upper()
@@ -1579,7 +1559,6 @@ def _req_gene_symbol(req: CreateLocalRunRequest) -> str:
 
 
 def _species_from_req(req: CreateLocalRunRequest) -> List[str]:
-    """Resolve the species list for a create request (preset or free text)."""
     inline = (req.species_file_content or "").strip() or (req.species_text or "").strip()
     ns = cnr.argparse.Namespace(preset=None, species_list=None, species=None)
     if req.preset in ("full30", "pilot"):
@@ -1611,14 +1590,6 @@ def _is_plausible_gene_symbol(symbol: str) -> bool:
 
 def _launch_shared_run(gene_symbol: str, species: List[str], run_name: str,
                        mode: str = "auto", reuse_run_id: str = "") -> Dict[str, Any]:
-    """Create + start a shared exploratory run via the gene-agnostic core runner.
-
-    The core runner (run_core_gene_analysis.py) is the authoritative creator for
-    non-FGFR2 genes: it builds the same unified run-stage structure and an
-    exploratory event-evidence layer. It never fakes results — with no cached
-    annotation it writes an honest 'blocked' status. We launch it in the
-    background (like pre-InterPro) and detect the run folder it creates.
-    """
     runner = PROJECT_ROOT / "src" / "exondomaincompare" / "framework" / \
         "run_core_gene_analysis.py"
     if not runner.exists():
@@ -1707,11 +1678,6 @@ def _launch_shared_run(gene_symbol: str, species: List[str], run_name: str,
 
 
 def _do_create_local_run(req: CreateLocalRunRequest) -> Path:
-    """Create a runs/<run_id>/ folder from the request. No pipeline execution.
-
-    This is the validated (FGFR2) creation path only. Non-FGFR2 genes are routed
-    to the shared exploratory workflow by the central router before reaching here.
-    """
     if "FGFR2" not in (req.case_study or "").upper().replace(" ", ""):
         raise HTTPException(status_code=400,
                             detail="This workflow supports the FGFR2 IIIb/IIIc case study.")
@@ -1760,12 +1726,6 @@ def _do_create_local_run(req: CreateLocalRunRequest) -> Path:
 
 
 def _launch_pre_interpro(run_dir: Path, mode: str = "cached") -> Dict[str, Any]:
-    """Start the local pre-InterPro wrapper for run_dir. Fresh compute for new runs.
-
-    For a freshly created run the run-local cache is empty, so 'cached' already
-    means a full fresh computation (SKIP_V3=0 / SKIP_MSA=0). Only writes under
-    runs/<run_id>/; never LRZ/SSH/SLURM.
-    """
     run_id = run_dir.name
     _require_writable_run(run_id)
     wrapper = SCRIPTS_DIR / "run_pre_interpro_for_run.py"
@@ -1809,11 +1769,6 @@ def _launch_pre_interpro(run_dir: Path, mode: str = "cached") -> Dict[str, Any]:
 @app.get("/api/analysis-router")
 def analysis_router(gene: str = Query(default="FGFR2"),
                     mode: str = Query(default="auto")) -> Dict[str, Any]:
-    """THE authoritative gene → workflow decision, exposed for the frontend.
-
-    The New Run form calls this so it never re-implements gene checks: the
-    backend and frontend share one routing source of truth.
-    """
     wf = _resolve_workflow(gene, mode)
     wf["validated_genes"] = (_router.list_validated_genes()
                              if _router is not None else ["FGFR2"])
@@ -1821,13 +1776,6 @@ def analysis_router(gene: str = Query(default="FGFR2"),
 
 
 def _resolve_species_preview(species_text: str) -> Dict[str, Any]:
-    """Resolve free-text species input into a per-species preview.
-
-    Mirrors the CLI normalization (create_new_run) and adds an offline
-    scientific-name / Taxonomy-ID lookup so the UI can show a resolved panel
-    before launch. De-duplicates, flags invalid entries, and never blocks on
-    unknown-but-syntactically-valid species (they run with an empty taxid).
-    """
     resolved: List[Dict[str, Any]] = []
     invalid: List[Dict[str, str]] = []
     seen: set = set()
@@ -1879,13 +1827,6 @@ class ResolveInputsRequest(BaseModel):
 
 @app.post("/api/runs/resolve-inputs")
 def resolve_run_inputs(req: ResolveInputsRequest) -> Dict[str, Any]:
-    """Validate + preview a run request WITHOUT creating anything.
-
-    Returns the gene validity, the workflow routing decision (validated FGFR2 vs
-    generic exploratory), and a resolved species panel (scientific name +
-    Taxonomy ID + normalized identifier). The frontend uses this to show a
-    friendly, biology-oriented preview instead of any internal-file error.
-    """
     sym = (req.gene_symbol or "").strip().upper()
     gene_valid = _is_plausible_gene_symbol(sym)
     gene_msg = "" if gene_valid or not sym else (
@@ -1933,17 +1874,6 @@ def create_local_run(req: CreateLocalRunRequest) -> Dict[str, Any]:
 
 @app.post("/api/local-runs/start")
 def create_and_start_local_run(req: CreateLocalRunRequest) -> Dict[str, Any]:
-    """Create a custom run AND immediately start it (one action).
-
-    The central analysis router decides the workflow from the gene symbol:
-
-    * FGFR2 (validated) → normalize species, write runs/<run_id>/, launch the
-      local pre-InterPro wrapper. This validated path is unchanged and never
-      touches the freeze or LRZ/SSH.
-    * every other gene (shared exploratory) → launch the gene-agnostic core
-      runner, which builds the same unified run structure with an exploratory
-      event-evidence layer.
-    """
     other = _any_local_run_running()
     if other:
         raise HTTPException(status_code=409,
@@ -1997,10 +1927,6 @@ def local_run_status(run_id: str) -> Dict[str, Any]:
 
 @app.post("/api/local-runs/{run_id}/refresh")
 def local_run_refresh(run_id: str) -> Dict[str, Any]:
-    """Re-read status.json / run_config.json and re-check expected files.
-
-    Read-only: never submits cluster jobs and never mutates source data.
-    """
     run_dir = _safe_local_run_dir(run_id)
     if not run_dir.is_dir():
         raise HTTPException(status_code=404, detail=f"Local run '{run_id}' not found.")
@@ -2020,11 +1946,6 @@ def local_run_refresh(run_id: str) -> Dict[str, Any]:
 
 @app.get("/api/web-runs/legacy")
 def legacy_web_runs() -> Dict[str, Any]:
-    """Detect leftover runs from the REMOVED web-run queue (results/web_runs/).
-
-    Read-only. These folders are NOT part of the new runs/<run_id>/ system and
-    are never created or executed by the webapp anymore.
-    """
     items: List[Dict[str, Any]] = []
     if WEB_RUNS_ROOT.exists():
         for p in sorted(WEB_RUNS_ROOT.glob("run_*"), reverse=True):
@@ -2065,11 +1986,6 @@ def _pid_alive(pid: Optional[int]) -> bool:
 
 
 def _proc_running(run_id: str, pid: Optional[int]) -> bool:
-    """True iff the local pre-InterPro wrapper for run_id is still running.
-
-    Prefers the tracked Popen (poll() reaps finished children) and falls back to
-    a raw PID liveness check for processes launched by a previous server run.
-    """
     proc = _LOCAL_PROCS.get(run_id)
     if proc is not None:
         if proc.poll() is None:
@@ -2080,7 +1996,6 @@ def _proc_running(run_id: str, pid: Optional[int]) -> bool:
 
 
 def append_local_run_log(run_dir: Path, message: str) -> None:
-    """Append a timestamped line to runs/<run_id>/logs/web_actions.log (best-effort)."""
     try:
         logs_dir = run_dir / "logs"
         logs_dir.mkdir(parents=True, exist_ok=True)
@@ -2106,7 +2021,6 @@ def _preinterpro_running(run_dir: Path) -> Optional[Dict[str, Any]]:
 
 
 def _postinterpro_running(run_dir: Path) -> bool:
-    """True iff a local Post-InterPro subprocess we started for this run is alive."""
     run_id = run_dir.name
     proc = _LOCAL_POST_PROCS.get(run_id)
     if proc is not None:
@@ -2197,7 +2111,6 @@ def stop_preinterpro(run_id: str) -> Dict[str, Any]:
 
 
 def _terminate_pid(pid: Optional[int]) -> bool:
-    """Best-effort SIGTERM→SIGKILL of a local process group. Returns True if we signalled."""
     if not _pid_alive(pid):
         return False
 
@@ -2222,12 +2135,6 @@ def _terminate_pid(pid: Optional[int]) -> bool:
 
 @app.post("/api/local-runs/{run_id}/stop")
 def stop_local_run(run_id: str) -> Dict[str, Any]:
-    """Stop whichever local pre-/post-InterPro subprocess the backend started.
-
-    Only terminates local processes we track/started. LRZ/SLURM cluster jobs are
-    NEVER touched here — those must be stopped from the user's terminal / SLURM.
-    Partial run-local outputs are preserved; nothing is deleted.
-    """
     run_dir = _require_writable_run(run_id)
     if not run_dir.is_dir():
         raise HTTPException(status_code=404, detail=f"Local run '{run_id}' not found.")
@@ -2300,13 +2207,6 @@ def stop_local_run(run_id: str) -> Dict[str, Any]:
 
 @app.post("/api/local-runs/{run_id}/refresh-all")
 def local_run_refresh_all(run_id: str) -> Dict[str, Any]:
-    """Full refresh: rebuild run-local website indices from the closure (if present)
-    and recompute the whole status model + file checks.
-
-    Read-only w.r.t. source data and the example freeze: it only (re)writes indices
-    under runs/<run_id>/website_indices/ from that run's own closure outputs. Never
-    submits cluster jobs and never touches the example dataset.
-    """
     run_dir = _safe_local_run_dir(run_id)
     if not run_dir.is_dir():
         raise HTTPException(status_code=404, detail=f"Local run '{run_id}' not found.")
@@ -2326,15 +2226,6 @@ def local_run_refresh_all(run_id: str) -> Dict[str, Any]:
 
 @app.delete("/api/local-runs/{run_id}")
 def delete_local_run(run_id: str) -> Dict[str, Any]:
-    """Archive a canonical run; unregister external legacy data without moving it.
-
-    Safety:
-      * strict run_id validation + path containment inside runs/,
-      * never touches the example dataset / freeze,
-      * refuses to delete the reserved _deleted trash folder,
-      * stops any local subprocess we started for the run first,
-      * archives (move) rather than hard-deleting so a mistake is recoverable.
-    """
     if not run_id or run_id in ("example", "current") or "/" in run_id or "\\" in run_id \
             or run_id.startswith(".") or run_id.startswith("_"):
         raise HTTPException(status_code=400, detail="Invalid run id.")
@@ -2421,12 +2312,6 @@ def local_run_preinterpro_logs(run_id: str,
 @app.get("/api/local-runs/{run_id}/logs/core")
 def local_run_core_logs(run_id: str,
                         tail: int = Query(400, ge=1, le=8000)) -> Dict[str, Any]:
-    """Full technical log for a shared/core (gene-agnostic) run.
-
-    Surfaces the core runner log, the shared launcher log and any NCBI Datasets
-    download logs so the UI can show the real, expandable failure reason instead
-    of only 'Pre-InterPro pipeline'.
-    """
     run_dir = _safe_local_run_dir(run_id)
     if not run_dir.is_dir():
         raise HTTPException(status_code=404, detail=f"Local run '{run_id}' not found.")
@@ -2457,13 +2342,6 @@ def local_run_core_logs(run_id: str,
 
 @app.get("/api/local-runs/{run_id}/diagnostics")
 def local_run_diagnostics(run_id: str) -> FileResponse:
-    """Every log this run wrote, as one download.
-
-    Logs are kept for diagnostics, failure investigation and reproducibility, but
-    they are not part of the normal interface. A user who needs them — or who is
-    reporting a failure — downloads the bundle instead of reading a terminal dump
-    inside a run card.
-    """
     run_dir = _safe_local_run_dir(run_id)
     if not run_dir.is_dir():
         raise HTTPException(status_code=404, detail=f"Local run '{run_id}' not found.")
@@ -2486,17 +2364,6 @@ def local_run_diagnostics(run_id: str) -> FileResponse:
 
 @app.post("/api/local-runs/{run_id}/retry-local-preparation")
 def retry_local_preparation(run_id: str) -> Dict[str, Any]:
-    """Rebuild the failed local pre-InterPro stage for *this* run.
-
-    The older retry starts a fresh run with the same input, which leaves the user with
-    two runs for one request and refuses the validated FGFR2 workflow outright. When
-    the failure was in local data acquisition — a name that would not resolve, a source
-    that was unreachable — the repair belongs to the run that failed.
-
-    Safe to repeat: the wrapper runs the pipeline from step 1 in live mode, so the
-    stages that produced nothing are rebuilt rather than reused. Nothing outside
-    runs/<run_id>/ is written, and the validated freeze is not touched.
-    """
     run_dir = _require_writable_run(run_id)
     if not run_dir.is_dir():
         raise HTTPException(status_code=404, detail=f"Local run '{run_id}' not found.")
@@ -2525,13 +2392,6 @@ def retry_local_preparation(run_id: str) -> Dict[str, Any]:
 
 @app.post("/api/local-runs/{run_id}/retry-precluster")
 def retry_precluster(run_id: str) -> Dict[str, Any]:
-    """Safely retry a FAILED shared/core pre-cluster run, in place.
-
-    Re-runs the shared exploratory workflow with the same gene, species and run id. The
-    run's own derived stages are rebuilt; the species registry and the cached genome
-    annotation are kept, so a retry after an upstream repair costs seconds rather than
-    another multi-hundred-megabyte download. Other runs are untouched.
-    """
     run_dir = _require_writable_run(run_id)
     if not run_dir.is_dir():
         raise HTTPException(status_code=404, detail=f"Local run '{run_id}' not found.")
@@ -2573,12 +2433,6 @@ _LOCAL_POST_PROCS: Dict[str, "subprocess.Popen"] = {}
 
 @app.post("/api/local-runs/{run_id}/start-post-interpro")
 def start_post_interpro(run_id: str) -> Dict[str, Any]:
-    """Run local Post-InterPro analysis if the cluster outputs have been fetched.
-
-    Safe local execution only (scripts/run_post_interpro_for_run.py). Normally the
-    one-command cluster round-trip runs this automatically after fetch; this is
-    the manual fallback exposed on the run dashboard.
-    """
     run_dir = _require_writable_run(run_id)
     if not run_dir.is_dir():
         raise HTTPException(status_code=404, detail=f"Local run '{run_id}' not found.")
@@ -2622,7 +2476,6 @@ def start_post_interpro(run_id: str) -> Dict[str, Any]:
 # --------------------------------------------------------------------------- #
 @app.get("/api/datasets")
 def list_datasets() -> Dict[str, Any]:
-    """List the example dataset plus every local custom run (for the switcher)."""
     datasets: List[Dict[str, Any]] = []
     if EXAMPLE_RUN_DIR.exists():
         datasets.append({
@@ -2697,10 +2550,6 @@ def dataset_human_reference(rebuild: bool = False) -> Dict[str, Any]:
 
 @app.get("/api/analysis-capabilities")
 def analysis_capabilities() -> Dict[str, Any]:
-    """Read-only: which gene/event analyses are supported (runnable) vs draft,
-    plus the module capability summary. Draft genes are NEVER runnable and get
-    no run buttons in the UI.
-    """
     if _gene_config is None:
         return {
             "supported": ["FGFR2_IIIb_IIIc"],
@@ -2821,15 +2670,6 @@ def open_run(req: OpenRunRequest) -> Dict[str, Any]:
 
 @app.post("/api/runs")
 def create_run(req: RunRequest) -> Dict[str, Any]:
-    """DEPRECATED / DISABLED.
-
-    The old web-run queue wrote to results/web_runs/ and executed the full
-    pre-InterPro pipeline (optionally FORCE=1) in a background thread directly
-    from the API. That behavior is removed: the webapp must never auto-run the
-    pipeline or LRZ/SLURM. Use POST /api/local-runs/create (writes runs/<run_id>/)
-    and run the pipeline explicitly via the copyable command
-    `python scripts/run_pre_interpro_for_run.py --run-id <run_id>`.
-    """
     raise HTTPException(
         status_code=410,
         detail=("Automatic web runs are disabled. Create a run with "
@@ -2880,7 +2720,6 @@ _DATASET_MODEL_INFLIGHT: Dict[str, Future[Dict[str, Any]]] = {}
 
 @app.get("/api/runs/current/dataset-model")
 def current_dataset_model(dataset: Optional[str] = Query(None)) -> Dict[str, Any]:
-    """Return one versioned model without duplicating concurrent builds."""
     selected = dataset or DATASET_EXAMPLE
     with _DATASET_MODEL_INFLIGHT_LOCK:
         pending = _DATASET_MODEL_INFLIGHT.get(selected)
@@ -3029,8 +2868,6 @@ def current_species_domain_architecture(species: str, dataset: Optional[str] = Q
 
 # Core-only datasets read their generic run-local indices.
 def _resolve_shared_index(run_base: Path, name: str) -> Any:
-    """Prefer the shared website_indices/ root (new conceptual layer), then fall
-    back to the legacy website_indices/generic/ location."""
     for p in (run_base / "website_indices" / name,
               run_base / "website_indices" / "generic" / name):
         data = read_json(p, None)
@@ -3080,9 +2917,6 @@ def _shared_index(name: str, dataset: Optional[str]) -> Any:
 
 @app.get("/api/runs/current/shared/{name}")
 def current_shared_index(name: str, dataset: Optional[str] = Query(None)) -> Any:
-    """Conceptual shared-pipeline index by name (overview, evidence-stack,
-    gene-explorer, protein-architecture, synteny, event-evidence,
-    domain-architecture, exon-domain-boundaries, figures, available-views)."""
     return _shared_index(name, dataset)
 
 
@@ -3093,7 +2927,6 @@ def current_core_summary(dataset: Optional[str] = Query(None)) -> Any:
 
 @app.get("/api/runs/current/core/evidence-stack")
 def current_core_evidence_stack(dataset: Optional[str] = Query(None)) -> Any:
-    """FGFR2-parity evidence stack (source/status/confidence/explanation/file)."""
     return _core_generic_index("evidence_stack.json", dataset)
 
 
@@ -3104,7 +2937,6 @@ def current_core_primary_selection(dataset: Optional[str] = Query(None)) -> Any:
 
 @app.get("/api/runs/current/core/protein-architecture")
 def current_core_protein_architecture(dataset: Optional[str] = Query(None)) -> Any:
-    """Prebuilt exon/protein architecture index (falls back to on-the-fly build)."""
     ds = resolve_dataset(dataset)
     if ds["kind"] == "run":
         data = _resolve_shared_index(ds["run_base"], "protein_architecture_index.json")
@@ -3115,13 +2947,11 @@ def current_core_protein_architecture(dataset: Optional[str] = Query(None)) -> A
 
 @app.get("/api/runs/current/core/event-evidence-index")
 def current_core_event_evidence_index(dataset: Optional[str] = Query(None)) -> Any:
-    """Return the source-by-source exploratory candidate model."""
     return _core_generic_index("event_evidence_index.json", dataset)
 
 
 @app.get("/api/runs/current/core/figures")
 def current_core_figures(dataset: Optional[str] = Query(None)) -> Any:
-    """Return the stage-aware figure index for a core-only dataset."""
     return _core_generic_index("figures_index.json", dataset)
 
 
@@ -3147,8 +2977,6 @@ def current_core_exon_domain_boundaries(dataset: Optional[str] = Query(None)) ->
 
 @app.get("/api/runs/current/core/event-candidates")
 def current_core_event_candidates(dataset: Optional[str] = Query(None)) -> Any:
-    """Exploratory isoform-specific region candidates, if a scan was run.
-    Returns available=false when no candidate scan exists (never an error)."""
     ds = resolve_dataset(dataset)
     if ds["kind"] != "run":
         return {"available": False, "candidates": [], "reason": "not_a_run"}
@@ -3176,14 +3004,6 @@ def current_core_event_candidates(dataset: Optional[str] = Query(None)) -> Any:
 
 @app.get("/api/runs/current/core/exon-protein-map")
 def current_core_exon_protein_map(dataset: Optional[str] = Query(None)) -> Any:
-    """Return generic exon/protein tracks for a core-only dataset.
-
-    Returns, per species and protein, the exon blocks (aa coordinates from the
-    exon→protein map), any exploratory candidate regions (from the clustered
-    event evidence, overlaid — NOT validated events), plus domain / TM regions
-    once the cluster step is complete. Works before the cluster step: domains are
-    empty with domain_status="pending_cluster". No FGFR2/cassette assumptions.
-    """
     ds = resolve_dataset(dataset)
     if ds["kind"] != "run":
         raise HTTPException(status_code=404, detail="Exon/protein track is only available for runs.")
@@ -3314,10 +3134,6 @@ def current_core_exon_protein_map(dataset: Optional[str] = Query(None)) -> Any:
 
 
 def _read_core_tsv(dataset: Optional[str], filename: str) -> Dict[str, Any]:
-    """Read a core_gene_analysis TSV for a run dataset into a list of dict rows.
-
-    Returns {"available": bool, "rows": [...], "reason": str}. Never raises for a
-    missing file (a valid-but-empty layer is a normal state, not an error)."""
     ds = resolve_dataset(dataset)
     if ds["kind"] != "run":
         return {"available": False, "rows": [], "reason": "not_a_run"}
@@ -3335,13 +3151,6 @@ def _read_core_tsv(dataset: Optional[str], filename: str) -> Dict[str, Any]:
 
 @app.get("/api/runs/current/core/event-evidence")
 def current_core_event_evidence(dataset: Optional[str] = Query(None)) -> Any:
-    """Exploratory event-region EVIDENCE layer (summarised) + candidate clusters.
-
-    This is NOT an event-region page and does NOT activate event-specific
-    analysis. Isoform A and Isoform B are two protein isoforms of the same gene;
-    candidate regions are sequence differences between them — exploratory only,
-    never validated event regions.
-    """
     ev = _read_core_tsv(dataset, "event_region_evidence.tsv")
     clusters = _read_core_tsv(dataset, "event_region_candidate_clusters.tsv")
     # legacy raw pairwise table kept available for transparency
@@ -3376,7 +3185,6 @@ def current_core_event_evidence(dataset: Optional[str] = Query(None)) -> Any:
 
 @app.get("/api/runs/current/core/capability")
 def current_core_capability(dataset: Optional[str] = Query(None)) -> Any:
-    """Return the capability report for a core-only run."""
     ds = resolve_dataset(dataset)
     if ds["kind"] != "run":
         raise HTTPException(status_code=404, detail="Capability report is only available for runs.")
@@ -3389,8 +3197,6 @@ def current_core_capability(dataset: Optional[str] = Query(None)) -> Any:
 
 @app.get("/api/local-runs/{run_id}/core-validate")
 def local_run_core_validate(run_id: str) -> Dict[str, Any]:
-    """Milestone validation report for a Core Gene Analysis run (same logic as
-    src/exondomaincompare/framework/validate_core_gene_run.py)."""
     run_dir = _safe_local_run_dir(run_id)
     if not run_dir.is_dir():
         raise HTTPException(status_code=404, detail=f"Run not found: {run_id}")
@@ -3436,7 +3242,6 @@ class PackageSelection(BaseModel):
 
 
 def _resolve_active_run_dir(dataset: Optional[str] = None) -> Path:
-    """Resolve the filesystem run directory for the active / requested dataset."""
     if dataset:
         desc = resolve_dataset(dataset)
         if desc.get("kind") == "example":
@@ -3459,12 +3264,6 @@ def _resolve_active_run_dir(dataset: Optional[str] = None) -> Path:
 @app.get("/api/runs/current/package-capabilities")
 def package_capabilities(scope: Optional[str] = Query(None),
                          dataset: Optional[str] = Query(None)) -> Any:
-    """Return canonical availability for one Data & Downloads scope.
-
-    Every item states whether it is available, where it comes from, and the exact
-    reason when it is not. The frontend renders exactly this and never infers
-    availability from a filename.
-    """
     sys.path.insert(0, str(SCRIPTS_DIR / "shared_gene_analysis"))
     from exondomaincompare.shared_gene_analysis.package_builder import capabilities  # type: ignore
     return capabilities(_resolve_active_run_dir(dataset), scope)
@@ -3473,7 +3272,6 @@ def package_capabilities(scope: Optional[str] = Query(None),
 @app.get("/api/runs/current/package-catalogue")
 def package_catalogue(scope: Optional[str] = Query(None),
                       dataset: Optional[str] = Query(None)) -> Any:
-    """Backwards-compatible alias of the capability endpoint."""
     return package_capabilities(scope=scope, dataset=dataset)
 
 
@@ -3503,7 +3301,6 @@ def package_status(job_id: str) -> Any:
 
 
 def _job_payload(job: Any) -> Dict[str, Any]:
-    """One shape for create and poll, so the frontend has a single state machine."""
     return {
         "job_id": job.job_id,
         "run_id": job.run_id,
@@ -3531,7 +3328,6 @@ def _job_payload(job: Any) -> Dict[str, Any]:
 # file serving (sandboxed to project root)
 # --------------------------------------------------------------------------- #
 def _resolve_dataset_file_path(path: str, dataset: str) -> Optional[Path]:
-    """Resolve a file within the selected dataset roots."""
     logical = Path(path)
     if not dataset:
         return None
@@ -3668,7 +3464,6 @@ def _file_link_available(path: str, dataset: str,
 
 def _prune_missing_file_links(value: Any, dataset: str,
                               availability: Optional[Dict[str, bool]] = None) -> Any:
-    """Remove derived-view download links whose target file is unavailable."""
     if availability is None:
         availability = {}
     if isinstance(value, list):
@@ -3710,11 +3505,6 @@ def _prune_missing_file_links(value: Any, dataset: str,
 
 @app.get("/api/runs/{run_id}/files")
 def run_local_file(run_id: str, path: str, inline: bool = False):
-    """Serve only an existing file inside one run folder.
-
-    Figure indices use this route so a typo or stale manifest entry produces a
-    clear 404 instead of exposing an arbitrary project file.
-    """
     if not re.fullmatch(r"[A-Za-z0-9_.-]+", run_id or ""):
         raise HTTPException(status_code=400, detail="Invalid run id")
     base = _safe_local_run_dir(run_id).resolve()
@@ -3741,7 +3531,6 @@ def download(path: str, inline: bool = False,
 
 @app.get("/api/file-preview")
 def file_preview(path: str, max_bytes: int = 20000) -> Dict[str, Any]:
-    """Capped text preview of a small project file (provenance hub previews)."""
     p = _resolve_public_file_path(path)
     if not p.exists() or not p.is_file():
         raise HTTPException(status_code=404, detail="File not found")

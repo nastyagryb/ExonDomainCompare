@@ -1,49 +1,4 @@
 #!/usr/bin/env python3
-"""
-assign_unclassified_fgfr2_isoform_fallback.py
-
-Robustness fallback for fresh-remote FGFR2 IIIb/IIIc cassettes whose protein
-interval is UNRESOLVED before Step-11 coordinate mapping.
-
-Why this exists
----------------
-Fresh Ensembl retrieval can return an FGFR2 protein as ``isoform=unclassified``.
-When that happens the resolved cassette row has no linked protein
-(``protein_id`` empty), so the upstream coordinate audit fills the cassette
-protein interval with a SYNTHETIC placeholder layout (IIIb -> aa[1..],
-IIIc -> aa[56..]). The Step-11 hard gate then correctly rejects
-``cassette protein_start_aa == 1``.
-
-This module applies the project's *existing* sequence-calibrated exon-type
-assignment (Smith-Waterman local alignment to the curated human IIIb/IIIc
-cassette references, identical scoring to
-``classify_fgfr2_IIIb_IIIc_by_exon_structure_v2_3_human_calibrated.py``) BEFORE
-the cassette coordinate mapping, to:
-
-  1. confirm/assign the cassette exon type by sequence evidence, and
-  2. derive a REAL mid-protein cassette coordinate (the IIIb/IIIc slot position)
-     from the species' available protein instead of defaulting to aa 1.
-
-Fallback evidence order (each recorded in the audit table):
-  1. final rescue override table (if present AND validated);
-  2. curated human IIIb/IIIc cassette reference similarity;
-  3. B-type / IIIb marker support  (protein-validation summary);
-  4. A-type / IIIc marker support  (protein-validation summary);
-  5. MSA discriminating-residue support (if available);
-  6. local protein/cassette sequence identity and coverage.
-
-Hard rules (never violated):
-  * unresolved cassette coordinates are NEVER defaulted to aa 1;
-  * a row is only kept as a coordinate-resolved (primary-eligible) cassette when
-    a biologically plausible mid-protein slot is found (>= MIN_CASSETTE_START in
-    a full-length protein); otherwise the row is marked review/unresolved with an
-    explicit reason and its synthetic coordinate is blanked;
-  * validated labels are not relabelled — the exon-structure isoform call is
-    preserved; sequence evidence only confirms it or flags it for review.
-
-The coordinate audit is patched IN PLACE (only the protein-interval / protein-id
-fields of affected rows). Two audit tables are written for provenance.
-"""
 from __future__ import annotations
 
 import argparse
@@ -52,7 +7,6 @@ import sys
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
-# Conservative coordinate-sanity bounds (must match build_cds_block_cassette_map.py).
 MIN_CASSETTE_START = 150
 
 # Sequence-calibrated decision thresholds (mirror the human-calibrated classifier).
@@ -79,16 +33,8 @@ ALLOWED_DECISIONS = {
     "unresolved_no_safe_mapping",
 }
 
-
-# --------------------------------------------------------------------------- #
-# Bounded local alignment (Smith-Waterman) returning the TARGET match span.
-# Same scoring as the human-calibrated classifier's direction calibration.
-# --------------------------------------------------------------------------- #
 def smith_waterman(query: str, target: str, match: int = 2, mismatch: int = -1,
                    gap: int = -2) -> Tuple[int, int, float, float]:
-    """Return (target_start_1based, target_end_1based, identity, query_coverage)
-    for the best local alignment of ``query`` (cassette reference) against
-    ``target`` (species protein)."""
     q = (query or "").upper()
     t = (target or "").upper()
     n, m = len(q), len(t)
@@ -144,9 +90,6 @@ def _score(identity: float, coverage: float) -> float:
     return round(identity * coverage, 6)
 
 
-# --------------------------------------------------------------------------- #
-# IO helpers
-# --------------------------------------------------------------------------- #
 def read_single_fasta(path: Path) -> str:
     parts: List[str] = []
     with path.open(encoding="utf-8") as fh:
@@ -169,7 +112,6 @@ def parse_header_kv(header: str) -> Dict[str, str]:
 
 
 def load_proteins_by_species(path: Optional[Path]):
-    """species_canonical(lower) -> list of dict(protein_id, transcript, isoform, role, seq)."""
     by_sp: Dict[str, List[Dict[str, str]]] = {}
     if not path or not Path(path).exists():
         return by_sp
@@ -229,11 +171,7 @@ def to_int(v) -> Optional[int]:
         return None
 
 
-# --------------------------------------------------------------------------- #
-# Optional evidence loaders (rescue override, markers, MSA discriminating)
-# --------------------------------------------------------------------------- #
 def load_rescue_overrides(path: Optional[Path]):
-    """(species_lower, isoform) -> validated_exon_type, when override is validated."""
     out: Dict[Tuple[str, str], str] = {}
     for r in read_tsv(path):
         sp = (r.get("species") or r.get("species_canonical") or "").lower()
@@ -250,8 +188,6 @@ def load_rescue_overrides(path: Optional[Path]):
 
 
 def load_markers(path: Optional[Path]):
-    """species_lower -> (IIIb_marker_support, IIIc_marker_support) from the protein
-    validation summary (protein_prefers + human identities)."""
     out: Dict[str, Dict[str, str]] = {}
     for r in read_tsv(path):
         sp = (r.get("species") or r.get("species_canonical") or "").lower()
@@ -260,7 +196,6 @@ def load_markers(path: Optional[Path]):
         prefers = (r.get("protein_prefers") or "").strip()
         idb = r.get("human_IIIb_identity", "")
         idc = r.get("human_IIIc_identity", "")
-        # keep the most informative (decisive) row per species
         if sp not in out or r.get("protein_validation_is_decisive", "").lower() in ("true", "1", "yes"):
             out[sp] = {
                 "IIIb_marker_support": f"prefers={prefers};human_IIIb_identity={idb}" if prefers else "",
@@ -274,9 +209,6 @@ def load_msa_discriminating(path: Optional[Path]) -> bool:
     return bool(read_tsv(path))
 
 
-# --------------------------------------------------------------------------- #
-# Core
-# --------------------------------------------------------------------------- #
 def needs_fallback(row: Dict[str, str]) -> bool:
     iso = (row.get("inferred_isoform") or "").strip()
     if iso not in ISO:
@@ -284,13 +216,10 @@ def needs_fallback(row: Dict[str, str]) -> bool:
     pid = (row.get("protein_id") or "").strip()
     start = to_int(row.get("native_protein_start_aa"))
     plen = to_int(row.get("protein_length_aa"))
-    # unresolved protein interval => synthetic placeholder coordinate likely
     return (not pid) or (start is None) or (start <= 1) or (plen is None)
 
 
 def best_protein_for_iso(prots: List[Dict[str, str]], ref: str):
-    """Return (protein_dict, t_start, t_end, identity, coverage, score) best match
-    of cassette ``ref`` across the species' proteins."""
     best = None
     for p in prots:
         ts, te, ident, cov = smith_waterman(ref, p["seq"])
@@ -301,7 +230,6 @@ def best_protein_for_iso(prots: List[Dict[str, str]], ref: str):
 
 
 def assign_row(row, prots, iiib_ref, iiic_ref, rescue, markers, msa_avail):
-    """Compute fallback decision + resolved coordinate for one cassette row."""
     sp = (row.get("species_canonical") or row.get("species") or "").lower()
     iso = (row.get("inferred_isoform") or "").strip()
     upstream = (row.get("upstream_label") or row.get("isoform")
@@ -332,7 +260,6 @@ def assign_row(row, prots, iiib_ref, iiic_ref, rescue, markers, msa_avail):
         audit["fallback_warning"] = "no_species_protein_available_for_sequence_fallback"
         return audit, None
 
-    # (2) curated human cassette similarity for BOTH isoforms (decisive evidence)
     best_b = best_protein_for_iso(prots, iiib_ref)
     best_c = best_protein_for_iso(prots, iiic_ref)
     sb = best_b[5] if best_b else 0.0
@@ -349,33 +276,24 @@ def assign_row(row, prots, iiib_ref, iiic_ref, rescue, markers, msa_avail):
 
     evidence = []
 
-    # (1) validated rescue override has top priority when present
     decision = None
     if (sp, iso) in rescue:
         decision = "assigned_by_validated_rescue_override"
         evidence.append("validated_rescue_override")
 
-    # Resolve the cassette SLOT coordinate using THIS row's isoform reference. IIIb and
-    # IIIc are mutually-exclusive exons occupying the SAME protein slot, so even when the
-    # only available protein encodes the alternative isoform, the row-isoform reference
-    # still localises the slot (the flanking IgIII context is shared). Coverage of the
-    # row-isoform reference therefore drives CONFIDENCE, not the resolved/unresolved call.
     ref = iiib_ref if iso == "IIIb" else iiic_ref
     p, ts, te, _ident, cov, score = best_protein_for_iso(prots, ref)
-    best_overall = max(sb, sc)  # is this protein region a genuine FGFR2 IIIb/IIIc cassette?
+    best_overall = max(sb, sc)
 
     if mk.get("prefers"):
         evidence.append("protein_marker_support")
-    # sequence vs exon-structure label agreement (do NOT relabel a validated exon call;
-    # a single available protein often encodes only one isoform, so a lower row-isoform
-    # similarity is expected and is not evidence against the genomic exon-structure call).
     if seq_prefers in ISO and seq_prefers != iso:
         audit["fallback_warning"] = (
             f"sequence_prefers_{seq_prefers}_(single_available_protein);"
             f"exon_structure_call_{iso}_preserved")
 
     audit["fallback_validated_exon_type"] = seq_prefers if seq_prefers in ISO else iso
-    audit["fallback_final_isoform_label"] = iso  # preserve validated exon-structure call
+    audit["fallback_final_isoform_label"] = iso
     audit["cassette_reference_coverage"] = cov
     audit["evidence_used"] = ";".join(evidence) or "none"
 
@@ -395,8 +313,6 @@ def assign_row(row, prots, iiib_ref, iiic_ref, rescue, markers, msa_avail):
         else:
             conf = "low"
     elif plausible_slot and not real_cassette_region:
-        # a mid-protein position exists but it does not look like an FGFR2 cassette ->
-        # do not assert; flag for manual review (never aa 1).
         decision = "manual_review_required"
         conf = "low"
     else:
@@ -421,7 +337,6 @@ def assign_row(row, prots, iiib_ref, iiic_ref, rescue, markers, msa_avail):
         return audit, patch
 
     if decision == "manual_review_required":
-        # keep a plausible (non-aa1) coordinate but mark for review (excluded from primary)
         audit["resolved_cassette_protein_start_aa"] = ts
         audit["resolved_cassette_protein_end_aa"] = te
         patch = {
@@ -434,7 +349,6 @@ def assign_row(row, prots, iiib_ref, iiic_ref, rescue, markers, msa_avail):
         }
         return audit, patch
 
-    # unresolved: blank the synthetic coordinate (never leave aa 1) and downgrade
     if not audit["fallback_warning"]:
         audit["fallback_warning"] = "no_plausible_mid_protein_cassette_slot_found"
     patch = {
@@ -507,9 +421,7 @@ def main() -> int:
             if k in row:
                 row[k] = v
             else:
-                # only write into existing columns to keep schema stable
                 pass
-        # annotate provenance into existing free-text columns where present
         note = f"unclassified_isoform_fallback:{audit['fallback_decision']}"
         for col in ("iii_slot_coordinate_note", "coordinate_warning", "resolver_warning"):
             if col in row:
@@ -518,22 +430,18 @@ def main() -> int:
                 break
         if review == "true":
             n_review += 1
-            # downgrade markers so downstream excludes from the primary claim
             for col in ("display_uncertainty_class", "annotation_review_state"):
                 if col in row:
                     row[col] = "review_unclassified_isoform_fallback"
         else:
             n_patched += 1
 
-    # patch coordinate audit in place
     write_tsv(args.coordinate_audit, rows, fieldnames)
 
-    # provenance tables
     write_tsv(args.outdir / "unclassified_isoform_fallback_audit.tsv", audit_rows, AUDIT_COLS)
     write_tsv(args.outdir / "unclassified_isoform_fallback_summary.tsv",
               summarise(audit_rows), ["fallback_decision", "n_rows"])
 
-    # safety assertion: no surviving aa-1 cassette coordinate among fallback rows
     aa1 = [a["species"] for a in audit_rows
            if str(a.get("resolved_cassette_protein_start_aa")) == "1"]
     print(f"[OK] unclassified-isoform fallback: {len(audit_rows)} cassette rows examined "

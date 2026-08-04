@@ -1,12 +1,4 @@
 #!/usr/bin/env python3
-"""
-Run FGFR2 cassette L-INS-i alignments.
-
-Add high-accuracy MAFFT L-INS-i (`--localpair --maxiterate 1000`) alignments for the short
-IIIb / IIIc / combined cassette inputs. The previous `--auto` alignments are kept as
-reproducibility/sensitivity outputs. L-INS-i is used for the main cassette comparison figures
-when it passes validation.
-"""
 
 from __future__ import annotations
 

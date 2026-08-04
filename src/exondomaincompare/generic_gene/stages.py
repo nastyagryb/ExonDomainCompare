@@ -1,14 +1,3 @@
-"""Canonical shared pipeline-stage contract (single source of truth).
-
-Every gene run uses the SAME stage folders and the SAME conceptual per-stage
-outputs. Only the *event layer* implementation differs:
-
-  * FGFR2 -> validated_fgfr2_iiib_iiic  (IIIb/IIIc, markers, cassette, human comp.)
-  * other -> exploratory_event_evidence (isoform-difference candidates only)
-
-FGFR2's historical folders remain unchanged to preserve the validated pipeline
-and freeze.
-"""
 from __future__ import annotations
 
 # Canonical, gene-agnostic stage folders (order matters for display).
@@ -39,7 +28,6 @@ PIPELINE_SHARED = "shared_gene_pipeline"
 
 
 def event_layer_for_gene(gene_symbol: str) -> dict:
-    """Routing: same pipeline for all; only the event layer differs."""
     if (gene_symbol or "").upper() == "FGFR2":
         return {
             "pipeline_type": PIPELINE_SHARED,

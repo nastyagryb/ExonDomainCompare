@@ -1,48 +1,4 @@
 #!/usr/bin/env python3
-"""
-sanitize_exon_block_coordinates.py
-
-Coordinate-DISPLAY sanitation for the post-InterPro exon-domain architecture
-plots. Ensures that every displayed coding-exon block is protein-length
-consistent and source-traceable, WITHOUT touching biology:
-
-    * FASTA files, final truth table and primary/review membership are read-only.
-    * IIIb/IIIc labels are never changed.
-    * Domain-architecture QC (domain order, cassette position, TM/kinase) is not
-      weakened. This only fixes / flags exon-block *display* coordinates.
-
-Background:
-    The coding-exon block coordinates displayed in
-    15_.../tables/exon_domain_architecture_features.tsv originate from a
-    figure3C block table. For a number of proteins the final displayed block
-    ends a few aa past the protein length (+1/+2 codon-boundary rounding), and a
-    few proteins carry blocks projected from a *different* transcript, so the
-    overflow is large (e.g. oreochromis_niloticus IIIc +54, mus_musculus IIIb
-    +19).
-
-Policy per protein (max coding-exon overflow = max(exon_end) - protein_length):
-    overflow <= 0 .......... no_issue                         -> keep
-    overflow in {1,2} ...... minor_plus1_plus2_rounding       -> clamp last block
-    overflow in 3..15 ...... moderate_overflow                -> reconstruct/hide
-    overflow  > 15 ......... severe_overflow                  -> reconstruct/hide
-
-Reconstruction uses the *native* CDS features of the exact final transcript
-(02_models/cds_features.tsv: per-CDS protein_start_aa / protein_end_aa /
-cds_rank / genomic coords). The native cassette exon is identified by genomic
-overlap with the resolved cassette locus (fgfr2_cassette_cds_block_map.tsv).
-If native CDS coordinates are unavailable, the untrusted coding blocks are
-hidden and the validated cassette slot / domains / TM / kinase are kept.
-
-Minor clamping (+1/+2) is applied by the figure generator as a universal safety
-net; this script records the decision in the audit table so audit and plots
-agree.
-
-Outputs:
-    * tables/exon_block_length_consistency_audit.tsv      (per-exon audit)
-    * tables/exon_block_reconstruction_overrides.json     (merged; consumed by
-      make_fgfr2_post_interpro_exon_domain_figures.py)
-    * printed summary counts (used for the sanitation report)
-"""
 
 from __future__ import annotations
 
@@ -55,8 +11,6 @@ REPO = Path(__file__).resolve().parent.parent
 
 
 def display_path(path) -> str:
-    """Repo-relative path for display/logging only; falls back to the raw path when
-    BASE is a run-local relative path. Never raises and never affects outputs."""
     p = Path(path)
     try:
         return str(p.resolve().relative_to(REPO.resolve()))
@@ -105,13 +59,11 @@ def to_int(v, default=None):
 
 
 def _norm_tx(tx: str) -> str:
-    """Normalise a transcript id for matching: drop 'rna-' prefix + version."""
     return (tx or "").replace("rna-", "").split(".")[0]
 
 
 def load_native(cds_rows: List[dict], transcript_id: str,
                 protein_id: str) -> List[dict]:
-    """Native coding-exon blocks (protein AA + genomic) for an exact transcript."""
     base = _norm_tx(transcript_id)
     pid_base = (protein_id or "").split(".")[0]
     blocks: List[dict] = []

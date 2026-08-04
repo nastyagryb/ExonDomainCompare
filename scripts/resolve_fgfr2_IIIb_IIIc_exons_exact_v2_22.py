@@ -1,25 +1,4 @@
 #!/usr/bin/env python3
-"""
-resolve_fgfr2_IIIb_IIIc_exons_exact_v1.py
-
-Multi-evidence resolver for current-stage FGFR2 IIIb/IIIc exon-to-protein mapping.
-No InterPro/domain mapping is performed.
-
-Goal:
-  Resolve the biologically most consistent IIIb/IIIc CDS/exon interval per species
-  by combining:
-    1) human-calibrated IIIb/IIIc protein-region anchors from pair audit,
-    2) selected transcript/protein identity,
-    3) CDS features exported by collect_fgfr2_models_dual_source_v3.py,
-    4) optional mutually-exclusive exon structure metadata,
-    5) pair-level distinctness of IIIb and IIIc genomic/CDS intervals.
-
-This resolver intentionally DOES NOT use the structure exon as the only source of
-truth, because annotation tables and protein-anchor tables can refer to different
-transcript/protein versions. Instead, structure metadata contributes evidence;
-the final candidate must still be transcript/protein compatible and overlap the
-expected dynamic IIIb/IIIc protein window.
-"""
 from __future__ import annotations
 
 import argparse
@@ -42,16 +21,6 @@ VERSION = "v2.22_refined_evidence_native_normalized_resolver"
 
 def classify_resolver_evidence(ov: int, txm: bool, prm: bool, same_pair_key: bool,
                                identity_incomplete: bool, has_candidate: bool) -> Dict[str, str]:
-    """Return refined resolver evidence labels for a single IIIb/IIIc CDS choice.
-
-    Rules:
-      * transcript AND protein match -> gold_exact_transcript_and_protein_CDS_pair
-      * transcript match only         -> gold_exact_transcript_specific_CDS_pair
-      * protein match only            -> silver_exact_protein_specific_CDS_pair
-      * candidate CDS in window only  -> bronze_candidate_CDS_in_window
-      * identity incomplete           -> review_identity_incomplete
-      * otherwise                     -> unresolved_no_CDS_match
-    """
     if not has_candidate:
         return {
             "resolver_evidence_level": "unresolved",
@@ -103,13 +72,6 @@ def classify_resolver_evidence(ov: int, txm: bool, prm: bool, same_pair_key: boo
 
 
 def codon_boundary_precision(phase: str, coordinate_source: str, warning: str) -> Tuple[str, str]:
-    """Return explicit CDS codon-phase and boundary precision.
-
-    NCBI/Ensembl CDS phase indicates how many bases of the first codon lie in the
-    previous exon. Phase 0 means the exon boundary coincides with a codon boundary;
-    phase 1/2 means the IIIb/IIIc protein-axis start falls inside a split codon, so
-    the amino-acid boundary is approximate.
-    """
     p = str(phase or "").strip()
     warn = str(warning or "").strip()
     if p in ("", "nan", "None", "-1", "."):
@@ -143,16 +105,6 @@ def _phase_int(phase: str) -> Optional[int]:
 
 def cds_boundary_precision_lr(phase: str, cds_len_bp: Optional[int], coordinate_source: str,
                               warning: str, strand: str) -> Dict[str, str]:
-    """Return left/right CDS-boundary precision from GFF3 phase.
-
-    GFF3 phase is defined in transcript/translation order (not raw genomic order),
-    so it is correct on the negative strand without flipping. ``phase`` is the
-    number of bases of the first codon that lie in the previous exon, i.e. the
-    transcript-5' (left) boundary is codon-aligned iff phase == 0. The transcript-3'
-    (right) boundary is codon-aligned iff (phase + coding_length) % 3 == 0. A single
-    exon's genomic length equals its coding length, so both boundaries are derived
-    from the start phase plus the CDS-exon length.
-    """
     p = _phase_int(phase)
     out = {
         "cds_left_phase": "", "cds_right_phase": "",
@@ -332,15 +284,6 @@ def subset_species(df: pd.DataFrame, species: str, source: str = "") -> pd.DataF
 
 
 def normalize_pair_audit(pair: pd.DataFrame) -> pd.DataFrame:
-    """Normalize either long or wide 6e pair-audit/anchor tables to one row per species+isoform.
-
-    The original 6e fgfr2_III_pair_audit.tsv is WIDE: one row per species with
-    IIIb_transcript, IIIc_transcript, IIIb_protein, IIIc_protein,
-    IIIb_window_start_1based, IIIc_window_start_1based, etc.
-    Earlier plotting code expected LONG rows. v2.20 returned an empty resolver
-    table when it received the wide table. This function fixes that at the
-    mapping layer, not only at plotting.
-    """
     pair = norm_col(pair)
     if pair.empty:
         return pair
@@ -905,7 +848,6 @@ def _iii_slot_coordinate_sanity(dist: Optional[float], confidence_ok: bool) -> s
 
 
 def build_pair_qc(resolved: pd.DataFrame) -> pd.DataFrame:
-    """Return one row per species with native and normalized III-slot pair QC."""
     if resolved.empty:
         return pd.DataFrame()
     sp_col = col_first(resolved, ["species_canonical", "species"])

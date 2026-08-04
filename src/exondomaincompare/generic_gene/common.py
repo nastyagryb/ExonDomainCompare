@@ -1,9 +1,3 @@
-"""Shared helpers for the generic gene-analysis layer.
-
-Gene-agnostic only. Reads a run's standardized model tables (produced by the
-core gene-analysis runner) and writes the canonical generic output layer under
-``runs/<run_id>/results/generic_gene_analysis/``.
-"""
 from __future__ import annotations
 
 import csv
@@ -56,7 +50,6 @@ def read_json(path: Path, default: Any = None) -> Any:
 
 
 def read_fasta(path: Path) -> Dict[str, str]:
-    """Minimal FASTA reader -> {header_id: sequence}. header_id = first token."""
     seqs: Dict[str, str] = {}
     if not path.exists():
         return seqs
@@ -77,7 +70,6 @@ def read_fasta(path: Path) -> Dict[str, str]:
 
 @dataclass
 class GenericContext:
-    """Everything the generic builders need, resolved once per run."""
     run_dir: Path
     run_id: str
     analysis_id: str = ""
@@ -140,11 +132,6 @@ def load_context(run_id: str) -> GenericContext:
 
 
 def _cluster_status(ctx: GenericContext) -> str:
-    """pending | complete | failed, from on-disk domain-annotation artifacts.
-
-    Complete requires REAL InterProScan/pyTMHMM results (domain rows or output
-    files), not merely the presence of empty stage sub-folders.
-    """
     dom = ctx.core("domain_features.tsv")
     if dom.exists() and read_tsv(dom):
         return "complete"

@@ -1,25 +1,3 @@
-"""model_recovery.py — the contract between model collection and transcript selection.
-
-Step 2 used to hand Step 3 four TSV files and nothing else. When it recovered no model
-it wrote those files with headers and no rows, printed ``[OK] genes.tsv rows: 0`` and
-exited 0. Step 3 then read an empty transcript table and did the only honest thing
-available to it, in the worst possible form:
-
-    raise ValueError("No transcripts found. Check --transcripts input.")
-
-That traceback became the user's explanation for the Equus quagga run. It named the
-wrong file, pointed at the wrong stage, and said nothing about the zebra, the assembly
-or the misspelled taxonomy query four stages upstream.
-
-So Step 2 now states an outcome, and the outcome is the thing Step 3 reads first. Each
-status carries a sentence a user can act on and a next action the interface can offer.
-An empty transcript table stops being a mystery to be diagnosed from a traceback and
-becomes a reported result with a reason.
-
-The statuses are deliberately more numerous than "worked" and "failed", because they
-imply different next steps: correct a name, wait for a service, accept that a genome
-has no annotation, review an ambiguous paralog, or investigate a parser.
-"""
 from __future__ import annotations
 
 import json
@@ -96,8 +74,6 @@ _NEXT_ACTIONS = {
 
 @dataclass
 class RouteAttempt:
-    """One rung of the cascade: what was tried, what came back."""
-
     route: str
     status: str
     detail: str = ""
@@ -116,8 +92,6 @@ class RouteAttempt:
 
 @dataclass
 class SpeciesOutcome:
-    """The recovery story for one species, in the order it happened."""
-
     species_id: str
     species_input: str
     gene_symbol: str
@@ -184,11 +158,6 @@ class SpeciesOutcome:
 
 
 def status_from_assembly(selection_status: str) -> str:
-    """Map an assembly-selection outcome onto a collection status.
-
-    Kept as an explicit mapping so that "the name was rejected" and "the species has no
-    annotated genome" stay different answers all the way to the interface.
-    """
     from exondomaincompare.shared_gene_analysis import assembly_selection as asel
 
     return {
@@ -216,8 +185,6 @@ def status_from_identification(identification_status: str) -> str:
 
 @dataclass
 class CollectionContract:
-    """What Step 2 tells the rest of the pipeline, and the interface."""
-
     gene_symbol: str
     outcomes: List[SpeciesOutcome] = field(default_factory=list)
 
@@ -278,7 +245,6 @@ class CollectionContract:
 
 
 def read_contract(path: Path) -> Optional[Dict[str, Any]]:
-    """Read the contract, or ``None`` when a step ran before it existed."""
     try:
         return json.loads(Path(path).read_text(encoding="utf-8"))
     except (OSError, ValueError):
@@ -287,12 +253,6 @@ def read_contract(path: Path) -> Optional[Dict[str, Any]]:
 
 def explain_empty_input(contract: Optional[Dict[str, Any]], gene_symbol: str,
                         stage: str) -> str:
-    """The message a downstream step shows instead of raising on empty input.
-
-    A step that finds no transcripts is not the place where the run went wrong; it is
-    the place where the earlier failure became visible. Its job is to quote the recorded
-    reason, not to invent one from the shape of its own input.
-    """
     if not contract:
         return (f"{stage} received no {gene_symbol} transcripts and no collection "
                 "status was recorded, so the reason could not be determined. See the "
@@ -307,14 +267,6 @@ def explain_empty_input(contract: Optional[Dict[str, Any]], gene_symbol: str,
 
 def consistency_checks(n_genes: int, n_transcripts: int, n_exons: int,
                        n_cds: int) -> List[Dict[str, str]]:
-    """Checks that cannot pass vacuously.
-
-    The failed run's ``internal_consistency_checks.tsv`` reported six of six PASS over
-    four empty tables — ``orphan_transcripts=0``, ``genes_without_transcripts=0`` — so
-    the one artefact whose job is to catch an inconsistent result actively reassured
-    the reader that an empty run was sound. A check over no data is reported as
-    NOT_APPLICABLE.
-    """
     if n_genes == 0 and n_transcripts == 0:
         return [{
             "check_name": "model_tables_are_populated",

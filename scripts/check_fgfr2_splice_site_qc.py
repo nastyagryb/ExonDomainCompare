@@ -1,16 +1,4 @@
 #!/usr/bin/env python3
-"""
-Check FGFR2 splice-site motif QC.
-
-Splice-site motif QC for resolved IIIb/IIIc cassette boundaries — ONLY where
-source-compatible genomic sequence is available. Splice-site motifs are NEVER faked,
-and genome assemblies are never mixed silently. When no compatible local genome FASTA
-is available, the table honestly reports sequence_unavailable with the genomic
-coordinates that would be required.
-
-This is an annotation-support layer and does NOT override IIIb/IIIc assignment.
-"""
-
 from __future__ import annotations
 
 import argparse

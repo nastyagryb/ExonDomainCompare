@@ -1,36 +1,4 @@
 #!/usr/bin/env python3
-"""Per-species completion contract and run-level status aggregation.
-
-A run's status used to be derived from whether stage *files* existed. That is not the
-same question as whether every species reached the requested analysis stage, and the
-difference is not academic: the two-species FGFR1 run advertised ``results_ready`` while
-*Mus musculus* had no domain and no boundary results at all. The stage file existed and
-covered both species — one of them simply had nothing in it.
-
-This module answers the per-species question directly by reading the artifacts each
-species must have, and then aggregates a run status from those answers:
-
-``results_ready``
-    every required species is complete for the requested stage.
-``post_cluster_partial``
-    at least one species is complete and at least one is not.
-``pre_cluster_ready``
-    local analysis is complete but no real post-cluster results exist for anyone.
-``failed``
-    a required stage failed technically.
-
-The per-species states are ``available``, ``pending``, ``missing``, ``partial``,
-``failed``, ``unavailable`` and ``not_applicable``. ``missing`` and ``unavailable`` are
-kept distinct on purpose: a missing artifact is a pipeline gap that can be repaired by
-rerunning, whereas unavailable means the analysis cannot apply to this species at all.
-Neither is ever reported as a biological absence.
-
-``not_applicable`` is stronger than ``unavailable``: the prerequisite was counted and the
-count rules the analysis out. A protein encoded by one coding exon has zero internal
-coding-exon boundaries, so no boundary analysis can exist for it — rerunning the pipeline
-would not change that, and treating it as a missing artifact reported chicken MC1R as a
-partial run for having the exon structure it has.
-"""
 from __future__ import annotations
 
 import csv
@@ -92,7 +60,6 @@ def _rows_for(rows: List[Dict[str, str]], species_id: str,
 
 
 def build_species_completion(run_dir: Path) -> Dict[str, Dict[str, Any]]:
-    """One completion object per species, derived from the run's real artifacts."""
     run_dir = Path(run_dir)
     core = run_dir / "results" / "core_gene_analysis"
     status_doc = _read_json(run_dir / "status.json", {}) or {}
@@ -236,12 +203,6 @@ def aggregate_run_status(completion: Dict[str, Dict[str, Any]],
                          cluster_complete: bool = True,
                          failed_reasons: Optional[List[str]] = None,
                          ) -> Tuple[str, List[str]]:
-    """Derive the run-level status from the per-species completion objects.
-
-    Returns ``(status, reasons)``. A run is never ``results_ready`` while any species
-    is incomplete: the dataset selector reads this, and advertising completeness for a
-    partial run is how the missing Mus results stayed invisible.
-    """
     reasons = list(failed_reasons or [])
     if reasons:
         return RUN_FAILED, reasons
@@ -266,7 +227,6 @@ def aggregate_run_status(completion: Dict[str, Dict[str, Any]],
 
 
 def species_status_summary(completion: Dict[str, Dict[str, Any]]) -> Dict[str, Any]:
-    """The compact ``species_status`` block published in ``status.json``."""
     return {
         sid: {"domain_architecture": r.get("representative_domains"),
               "boundary": r.get("boundary_analysis"),

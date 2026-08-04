@@ -1,30 +1,4 @@
 #!/usr/bin/env python3
-"""Build the generic, EXPLORATORY event-region evidence layer (never blocking).
-
-This converts the raw pairwise isoform-difference table
-(``event_candidate_regions.tsv``) into a stable, user-facing evidence schema
-(``event_region_evidence.tsv``). The evidence layer is intentionally
-gene/event-AGNOSTIC and never asserts a validated event region:
-
-  * every row has ``evidence_status = exploratory`` (unless a later, curated
-    collector such as UniProt appends ``curated_annotation`` rows),
-  * confidence stays conservative (copied from the raw scan),
-  * NO candidate is ever labelled a validated event and NO event views are
-    activated by this file.
-
-Isoform A and Isoform B are simply two protein isoforms of the SAME gene that
-were compared; a "candidate region" is a sequence difference between them.
-
-Input (from a core run's results/core_gene_analysis/):
-  * event_candidate_regions.tsv  (optional; produced by scan_isoform_event_candidates.py)
-
-Output (same directory):
-  * event_region_evidence.tsv    (always written; header-only if no candidates)
-
-Usage:
-  python -m exondomaincompare.framework.build_event_region_evidence --run-id <run_id>
-  python -m exondomaincompare.framework.build_event_region_evidence --core-dir <dir> [--analysis-id ID] [--gene-symbol SYM]
-"""
 from __future__ import annotations
 
 import argparse
@@ -83,14 +57,12 @@ def _is_exon_aligned(candidate_type: str, evidence: str) -> bool:
 
 
 def _base_event_type(candidate_type: str) -> str:
-    """Strip the exon_aligned_ prefix so the biological difference type is explicit."""
     ct = (candidate_type or "").strip()
     return ct[len("exon_aligned_"):] if ct.startswith("exon_aligned_") else ct
 
 
 def convert_candidates(rows: List[Dict[str, str]], analysis_id: str,
                        gene_symbol: str) -> List[Dict[str, Any]]:
-    """Convert raw pairwise candidate rows into the exploratory evidence schema."""
     out: List[Dict[str, Any]] = []
     for i, r in enumerate(rows, start=1):
         candidate_type = (r.get("candidate_type", "") or "").strip()
@@ -137,11 +109,6 @@ def convert_candidates(rows: List[Dict[str, str]], analysis_id: str,
 
 
 def build_evidence(core_dir: Path, analysis_id: str, gene_symbol: str) -> Dict[str, Any]:
-    """Write event_region_evidence.tsv from event_candidate_regions.tsv.
-
-    Always writes the file (header-only when there are no candidates), so a
-    valid-but-empty evidence file is produced for genes with no differences.
-    """
     raw = read_tsv(core_dir / RAW_CANDIDATES_FILE)
     rows = convert_candidates(raw, analysis_id, gene_symbol)
     out = core_dir / EVIDENCE_FILE

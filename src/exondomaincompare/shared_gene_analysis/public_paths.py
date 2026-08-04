@@ -44,13 +44,11 @@ def contains_personal_absolute_path(value: str) -> bool:
 
 
 def is_machine_absolute_path(value: str) -> bool:
-    """Recognise POSIX and Windows absolute paths without treating URLs as paths."""
     stripped = value.strip()
     return stripped.startswith("/") or bool(_WINDOWS_ABSOLUTE_RE.match(stripped))
 
 
 def portable_path(value: str, project_root: Path | None = None) -> str:
-    """Return a non-personal representation of one path-like value."""
     project_root = project_root or REPO_ROOT
     if not value or not (
         is_machine_absolute_path(value) or contains_personal_absolute_path(value)
@@ -68,7 +66,6 @@ def portable_path(value: str, project_root: Path | None = None) -> str:
 
 
 def portable_command(value: str, project_root: Path | None = None) -> str:
-    """Sanitise path-bearing command tokens without rewriting arbitrary text."""
     project_root = project_root or REPO_ROOT
     if not value:
         return value
@@ -106,7 +103,6 @@ def _is_path_key(key: str) -> bool:
 def sanitize_public_payload(
     value: Any, key: str = "", project_root: Path | None = None
 ) -> Any:
-    """Copy a JSON-compatible payload while sanitising path-specific fields."""
     project_root = project_root or REPO_ROOT
     if isinstance(value, dict):
         return {
@@ -127,7 +123,6 @@ def sanitize_public_payload(
 
 
 def write_public_download_projections(run_dir: Path) -> list[Path]:
-    """Write sanitised copies of raw records that are intentionally downloadable."""
     run_dir = Path(run_dir)
     public_dir = run_dir / "website_indices" / "public"
     sources = {
@@ -153,7 +148,6 @@ def write_public_download_projections(run_dir: Path) -> list[Path]:
 
 
 def rebuild_existing_public_projections(run_dir: Path) -> list[Path]:
-    """Sanitise existing website JSON and refresh downloadable projections only."""
     run_dir = Path(run_dir)
     indices_dir = run_dir / "website_indices"
     written: list[Path] = []

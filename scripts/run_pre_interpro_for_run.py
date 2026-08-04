@@ -1,25 +1,4 @@
 #!/usr/bin/env python3
-"""Run the existing pre-InterPro FGFR2 pipeline inside a ``runs/<run_id>/`` folder.
-
-This wrapper runs the local pre-InterPro pipeline (Steps 1-11 + MSA/rescue/synteny
-+ closure/FASTA freeze) for a selected run and directs ALL outputs into
-``runs/<run_id>/results/`` via the pipeline's existing ``BASE`` parameter. It
-never writes into the validated example freeze
-(``results/final_30_until_interpro_prepare/``), never runs InterProScan or
-pyTMHMM, and never submits to LRZ/SLURM.
-
-CLI
----
-    python scripts/run_pre_interpro_for_run.py --run-id <run_id>
-
-Flags
------
-    --force          pass FORCE=1 to the pipeline (recompute)
-    --dry-run        print the command + environment and validate only
-    --skip-existing  reuse an already-present primary FASTA (no rerun)
-    --env cached     reuse existing run-folder outputs, no remote download (default)
-    --env live       full clean run with remote data fetches
-"""
 from __future__ import annotations
 
 import argparse
@@ -74,12 +53,6 @@ REQUIRED_V3_OUTPUTS = [
 
 
 def has_required_v3_outputs(results_dir: Path):
-    """Return (all_present, found, missing) for the essential Step 1-11 outputs.
-
-    A file counts as present only if it exists and is non-empty. A fresh/empty
-    run-local results/ folder therefore reports the cache as incomplete, so
-    cached mode will NOT skip v3.
-    """
     return _check_required(results_dir, REQUIRED_V3_OUTPUTS)
 
 
@@ -104,14 +77,6 @@ def _check_required(results_dir: Path, rel_paths: List[str]):
 
 
 def has_required_msa_outputs(results_dir: Path):
-    """Return (all_present, found, missing) for the essential module-12 MSA outputs.
-
-    A subtle trap: the MSA module writes the post-rescue truth table + robustness
-    scores BEFORE its final maximal-rescue validation gate. A run that failed the
-    gate therefore leaves those files behind. We must NOT treat such a partial/failed
-    module-12 as a reusable cache (that would silently reuse stale, failed outputs of
-    a previous attempt). So the cache only counts as complete when the required files
-    exist AND the maximal-rescue gate recorded a pass (hard_fail == false)."""
     ok, found, missing = _check_required(results_dir, REQUIRED_MSA_OUTPUTS)
     if not ok:
         return ok, found, missing
@@ -199,12 +164,6 @@ SPECIES_ID_RE = re.compile(r"^[a-z][a-z0-9]+_[a-z0-9_]+$")
 
 
 def preflight_species_list(species: List[str]) -> None:
-    """Refuse to launch the pipeline on invalid species identifiers.
-
-    Guards against legacy/bad runs whose species_list.txt still contains names
-    with spaces (e.g. 'gallus gallus') instead of Ensembl-style ids
-    ('gallus_gallus'). Fails clearly before Step A1; nothing is executed.
-    """
     for name in species:
         if name != name.strip() or " " in name or "\t" in name:
             suggestion = re.sub(r"\s+", "_", name.strip().lower())
@@ -245,13 +204,6 @@ HUMAN_REFERENCE_FILES = [
 
 def record_human_reference_control(run_dir: Path, species: List[str],
                                    human_in_panel: bool) -> None:
-    """Record how human FGFR2 IIIb/IIIc is used for this run.
-
-    * If homo_sapiens IS in the user panel: human is a normal analysed species.
-    * If homo_sapiens is ABSENT: the species list is left unchanged and the curated
-      human reference files are used only as a fixed reference/control layer,
-      labelled human_reference_control (never added to the analysed panel).
-    """
     present = [p for p in HUMAN_REFERENCE_FILES if (REPO / p).is_file()]
     info: Dict[str, Any] = {
         "enabled": True,
@@ -293,15 +245,6 @@ def _tail(text: str, n: int) -> str:
 def dump_failure_context(run_dir: Path, results_dir: Path, env: Dict[str, str],
                          species: List[str], logs_dir: Path,
                          log_path: Path, err_path: Path) -> Dict[str, str]:
-    """Part C: never leave an opaque 'FAILED step A1'.
-
-    The closure runner redirects each substep's stdout/stderr into its own
-    closure log (results/13_.../final_pre_interpro_run_log.txt), so the wrapper
-    log only shows the terse 'FAILED step Ax' banner. Here we surface the real
-    cause: the failing step, its command, the last 100 lines of substep output,
-    BASE, SPECIES_LIST, and the parsed species. We also carve out dedicated
-    per-step logs (e.g. logs/step_A1_v3.log) for easy inspection.
-    """
     closure_log = results_dir / "13_final_pre_interpro_closure" / "final_pre_interpro_run_log.txt"
     step_status = results_dir / "13_final_pre_interpro_closure" / "final_pre_interpro_step_status.tsv"
     ctx_path = logs_dir / "pre_interpro_failure_context.log"
@@ -752,14 +695,6 @@ def main(argv: Optional[List[str]] = None) -> None:
 
 
 def invalidate_derived_layer(run_dir: Path) -> None:
-    """Mark everything downstream of the closure as out of date.
-
-    This run has just rewritten the closure directory. Every artefact derived from it —
-    the post-cluster tables, the website indices the views read — now describes a state
-    the run has left behind. Leaving ``post_interpro_status: complete`` in place is how a
-    repaired run kept serving its pre-repair answer: three empty views over data that
-    was fully present on disk, and a badge that said the results were ready.
-    """
     update_status(
         run_dir,
         post_interpro_status="stale",
@@ -769,15 +704,6 @@ def invalidate_derived_layer(run_dir: Path) -> None:
 
 
 def refresh_derived_layer(run_dir: Path, run_id: str) -> Dict[str, Any]:
-    """Rebuild the derived layer so the views match the closure that just changed.
-
-    When the cluster has already returned valid InterProScan and pyTMHMM output, those
-    results are reused: the proteins are the same sequences, so re-submitting them would
-    cost cluster time and return the same annotation. Only the local post-cluster
-    analysis and the indices are recomputed. Without returned cluster output the indices
-    are still rebuilt, which is what makes the pre-cluster views (exon map, cassette,
-    alignment) correct before any domain layer exists.
-    """
     invalidate_derived_layer(run_dir)
     info: Dict[str, Any] = {"cluster_outputs_reused": False, "indices_rebuilt": False}
     py = detect_python()
@@ -817,7 +743,6 @@ def refresh_derived_layer(run_dir: Path, run_id: str) -> Dict[str, Any]:
 
 
 def _cluster_outputs_valid(run_dir: Path) -> bool:
-    """Whether returned InterProScan and pyTMHMM output can be reused as they are."""
     ips = run_dir / "results" / "14_interproscan" / "primary" / "output"
     tm = (run_dir / "results" / "15_exon_domain_boundary_post_interpro"
           / "pytmhmm_primary" / "output")

@@ -1,12 +1,4 @@
 #!/usr/bin/env python3
-"""
-Analyse FGFR2 isoform-discriminating residues.
-
-Identify cassette alignment positions that are conserved within IIIb, conserved within
-IIIc, and different between IIIb and IIIc, using the COMBINED IIIb+IIIc cassette MSA as a
-shared coordinate frame. This SUPPORTS the sequence-calibrated IIIb/IIIc distinction; it
-NEVER relabels any isoform. Both main-only and all-species versions are produced.
-"""
 
 from __future__ import annotations
 

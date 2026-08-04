@@ -1,25 +1,4 @@
 #!/usr/bin/env python3
-"""Which locus in a genome annotation is the gene the user asked for.
-
-The generic resolver had two routes: the exact symbol on the annotation's gene row, and a
-``gene_synonym`` attribute on that same row. Both fail for a large class of assemblies, and
-they fail silently in a way that reads like biology.
-
-*Panthera leo* is the example. The user asks for HBA. The RefSeq assembly annotates the
-locus as ``LOC122209636`` and — like every one of the 32 109 gene rows in that annotation —
-carries neither ``description=`` nor ``gene_synonym=``. The product name lives on the child
-mRNA rows, and the alias HBA exists only in NCBI Gene. So both routes miss, and the run
-reported "no locus with this symbol or synonym", which is true of the GFF3 attribute and
-false about the species: NCBI Gene resolves HBA to GeneID 122209636, and that GeneID sits in
-the annotation's own ``Dbxref``.
-
-Matching on the description would not have saved it, and would have been worse than failing.
-The alpha-globin cluster on that chromosome holds ``LOC122209634`` "hemoglobin subunit
-alpha", ``LOC122209636`` "hemoglobin subunit alpha-like", two zeta loci, ``HBM`` and
-``HBQ1``. A description route looking for "hemoglobin subunit alpha" prefers the locus that
-is *not* the one NCBI calls HBA. Only the GeneID is decisive; the description is at most
-corroboration.
-"""
 from __future__ import annotations
 
 import json
@@ -105,8 +84,6 @@ EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
 # --------------------------------------------------------------------------- #
 @dataclass
 class AnnotationLocus:
-    """One gene row of the annotation plus what its children say about it."""
-
     gene_id: str                      # GFF3 ID, e.g. gene-LOC122209636
     symbol: str
     source_gene_id: str = ""          # numeric GeneID from Dbxref
@@ -177,12 +154,6 @@ def _split_aliases(attr: Dict[str, str]) -> List[str]:
 
 
 def scan_annotation(gff_path: Path) -> Dict[str, AnnotationLocus]:
-    """Every gene locus of the annotation, keyed by GFF3 ID.
-
-    One pass. Child transcripts contribute their product names and their counts, because on
-    a Gnomon annotation the gene row itself carries no description at all — which is
-    precisely why a resolver that only reads gene rows cannot see what the locus is.
-    """
     loci: Dict[str, AnnotationLocus] = {}
     products: Dict[str, List[str]] = {}
     transcripts: Dict[str, int] = {}
@@ -256,7 +227,6 @@ class NcbiGeneRecord:
 
     @property
     def is_live(self) -> bool:
-        """A replaced or discontinued record must not be treated as current."""
         return not (self.status or "").strip() and not (self.current_id or "").strip()
 
     def mentions(self, symbol: str) -> bool:
@@ -286,12 +256,6 @@ def _fetch_json(url: str, timeout: float, sleep_s: float) -> Any:
 def query_ncbi_gene(gene_symbol: str, scientific_name: str = "", taxid: str = "",
                     *, timeout: float = 30.0, sleep_s: float = 0.34,
                     retmax: int = 25) -> Tuple[List[NcbiGeneRecord], str]:
-    """Species-qualified NCBI Gene lookup for a symbol, and how the lookup went.
-
-    The query is qualified by organism so a symbol cannot resolve against another species.
-    Both the official symbol and the source-provided aliases are returned, because the
-    symbol the user knows is frequently only an alias — that is the whole point.
-    """
     organism = (scientific_name or "").strip()
     if not organism and taxid:
         organism = f"txid{taxid}"
@@ -350,8 +314,6 @@ GeneLookup = Callable[[str, str, str], Tuple[List[NcbiGeneRecord], str]]
 # --------------------------------------------------------------------------- #
 @dataclass
 class Candidate:
-    """One plausible locus and every reason for and against it."""
-
     locus: AnnotationLocus
     routes: List[str] = field(default_factory=list)
     ncbi_gene_id: str = ""
@@ -384,13 +346,6 @@ class Candidate:
 
 @dataclass
 class GeneIdentity:
-    """What the user asked for and what the source calls it — kept apart on purpose.
-
-    Overwriting the requested symbol with ``LOC122209636`` would hide the question the user
-    asked; hiding the source symbol would make the result unverifiable against NCBI. Both
-    are recorded, and the display symbol stays the user's.
-    """
-
     requested_gene_symbol: str
     resolved_gene_id: str = ""
     resolved_official_symbol: str = ""
@@ -468,7 +423,6 @@ def _describes(text: str, needle: str) -> bool:
 
 
 def _family_stem(description: str) -> str:
-    """The family part of a product name, with a trailing '-like' or variant dropped."""
     text = re.sub(r"\s*,?\s*transcript variant.*$", "", description or "",
                   flags=re.IGNORECASE)
     text = re.sub(r"[\s-]*like$", "", text.strip(), flags=re.IGNORECASE)
@@ -480,11 +434,6 @@ def resolve_gene_locus(gff_path: Path, gene_symbol: str, *,
                        gene_lookup: Optional[GeneLookup] = None,
                        allow_network: bool = True,
                        assembly_accession: str = "") -> Resolution:
-    """Resolve ``gene_symbol`` to one locus of ``gff_path``, or say why not.
-
-    The cascade is ordered by how much the evidence can be trusted: an identifier beats a
-    symbol, a symbol beats a name similarity, and a name similarity never decides alone.
-    """
     requested = (gene_symbol or "").strip()
     identity = GeneIdentity(requested_gene_symbol=requested,
                             resolved_display_symbol=requested)
@@ -679,12 +628,6 @@ def resolve_gene_locus(gff_path: Path, gene_symbol: str, *,
 
 def _family_inventory(loci: Dict[str, AnnotationLocus], record: NcbiGeneRecord,
                       exclude: str = "") -> List[Candidate]:
-    """The related loci that were considered and why each was not chosen.
-
-    Recorded even on success: the reason the lion HBA locus is defensible is that the four
-    other alpha-like loci on that chromosome were seen and rejected on identifier grounds,
-    not overlooked.
-    """
     stem = _family_stem(record.description)
     if not stem:
         return []

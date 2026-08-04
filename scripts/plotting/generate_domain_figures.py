@@ -1,20 +1,4 @@
 #!/usr/bin/env python3
-"""Domain-architecture supplement figure for the single-species Gallery.
-
-The integrated domain architecture itself — representative domains, families,
-transmembrane topology, coding exons, boundaries and candidate overlays on one
-protein axis — is a main figure owned by ``generate_shared_main_figures``, which
-the Gene Explorer exports through as well. This stage therefore produces only what
-that integrated figure deliberately leaves out:
-
-  C  member-database signature supplement   every signature behind the
-                                            representative domains, grouped by its
-                                            source database
-
-The supplement is exported as SVG, a true-vector PDF, a 300 dpi PNG and its source
-table, and registers exactly one Gallery card marked as a supplement. The cards of
-the overlay figures it replaced are retired by id.
-"""
 from __future__ import annotations
 
 import argparse
@@ -34,8 +18,6 @@ CATEGORY = "Domain architecture"
 DOMAIN_SOURCE = "results/core_gene_analysis/domain_features.tsv"
 SIGNATURE_SOURCE = "results/core_gene_analysis/interpro_annotations.tsv"
 
-# Overlay cards this stage no longer produces: each relationship they showed is
-# present in the integrated main domain-architecture figure. Matched by id only.
 SUPERSEDED_FIGURE_IDS = (
     "domain_arch_{sp}_representative_architecture",
     "domain_arch_{sp}_domain_exon_projection",
@@ -141,7 +123,7 @@ def generate(run_dir: Path, model_json: Path) -> dict:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description='Domain-architecture supplement figure for the single-species Gallery.')
     ap.add_argument("run_dir", type=Path)
     ap.add_argument("--model", type=Path, default=None)
     args = ap.parse_args()

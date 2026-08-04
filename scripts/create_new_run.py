@@ -1,25 +1,4 @@
 #!/usr/bin/env python3
-"""Create a new, self-contained FGFR2 IIIb/IIIc run folder under ``runs/``.
-
-This is step 1 of the new run logic: SAFE local run-folder creation only. It
-
-  * never touches the validated example freeze
-    (``results/final_30_until_interpro_prepare/`` stays read-only),
-  * creates ``runs/<run_id>/`` with the full step layout, config/status files,
-    a normalized species list, and copy-paste command templates,
-  * does NOT run any pipeline, InterProScan, pyTMHMM, SSH, or SLURM command.
-
-Cluster jobs are always submitted explicitly from the local terminal using the
-scripts referenced in ``00_README_NEXT_STEPS.md``; the webapp never collects
-LRZ passwords or 2FA codes.
-
-Examples
---------
-    python scripts/create_new_run.py --preset full30 --run-name fgfr2_test
-    python scripts/create_new_run.py --preset pilot  --run-name fgfr2_pilot
-    python scripts/create_new_run.py --species-list path/to/species.txt --run-name custom_species
-    python scripts/create_new_run.py --species "homo_sapiens,mus_musculus,gallus_gallus" --run-name custom3
-"""
 from __future__ import annotations
 
 import argparse
@@ -58,11 +37,7 @@ EVENT_ID = "FGFR2_IIIb_IIIc_cassette"
 EVENT_TYPE = "mutually_exclusive_cassette"
 GENE_CONFIG_REL = "configs/genes/FGFR2_IIIb_IIIc.yaml"
 
-# --------------------------------------------------------------------------- #
-# helpers
-# --------------------------------------------------------------------------- #
 def _rel(path: Path) -> str:
-    """Portable logical path; never serialize a personal absolute path."""
     resolved = path.resolve()
     try:
         return str(resolved.relative_to(REPO))
@@ -93,7 +68,6 @@ def generate_run_id(run_name: str, when: Optional[datetime] = None) -> str:
 
 
 def unique_run_dir(run_id: str) -> tuple[str, Path]:
-    """Return a (run_id, path) pair that does not collide, appending _2, _3 …"""
     candidate = run_id
     path = RUNS_ROOT / candidate
     n = 2
@@ -109,12 +83,7 @@ SPECIES_ID_RE = re.compile(r"^[a-z][a-z0-9]+_[a-z0-9_]+$")
 
 
 def normalize_species_token(raw: str) -> str:
-    """Normalize one species entry to an Ensembl-style identifier.
 
-    'Gallus gallus' -> 'gallus_gallus'; 'homo_sapiens' -> 'homo_sapiens'.
-    Lowercases, converts internal whitespace to underscores, collapses repeats
-    and strips leading/trailing underscores. Does not validate.
-    """
     s = (raw or "").strip().lower()
     s = re.sub(r"\s+", "_", s)
     s = re.sub(r"_{2,}", "_", s).strip("_")
@@ -122,13 +91,6 @@ def normalize_species_token(raw: str) -> str:
 
 
 def human_reference_info(species: List[str]) -> dict:
-    """Describe how curated human FGFR2 IIIb/IIIc is used for this run.
-
-    Human is ALWAYS available as a curated reference/control layer taken from the
-    validated example dataset (marker comparison, IIIb/IIIc orientation, calibration).
-    It is only counted as an analysed species when the user explicitly selected
-    homo_sapiens; otherwise the analysed species panel is left unchanged.
-    """
     in_panel = any((s or "").strip().lower() == "homo_sapiens" for s in species)
     if in_panel:
         return {
@@ -154,12 +116,6 @@ def human_reference_info(species: List[str]) -> dict:
 
 
 def species_error_message(raw: str) -> str:
-    """Clear, actionable error for an invalid species entry.
-
-    Only offers "Did you mean X?" when the normalized suggestion is itself a
-    valid identifier (e.g. legacy 'gallus gallus' -> 'gallus_gallus');
-    otherwise explains the expected format.
-    """
     suggestion = normalize_species_token(raw)
     if suggestion and SPECIES_ID_RE.match(suggestion):
         return f'Invalid species identifier: "{raw}". Did you mean "{suggestion}"?'
@@ -168,11 +124,6 @@ def species_error_message(raw: str) -> str:
 
 
 def passthrough_species_lines(raw_lines: List[str]) -> List[str]:
-    """Trim, drop empties/comments, de-duplicate — NO case/space transform.
-
-    Used for curated preset files (e.g. the validated full30 reference list),
-    which must be written exactly as maintained so preset runs stay unchanged.
-    """
     seen = set()
     out: List[str] = []
     for line in raw_lines:
@@ -186,12 +137,6 @@ def passthrough_species_lines(raw_lines: List[str]) -> List[str]:
 
 
 def normalize_species_lines(raw_lines: List[str]) -> List[str]:
-    """Normalize, drop empties/comments, validate, and de-duplicate (order kept).
-
-    Used for user-supplied custom input. Raises SystemExit with a clear,
-    actionable message if any entry is not a valid lowercase-underscore
-    identifier after normalization.
-    """
     seen = set()
     out: List[str] = []
     for line in raw_lines:
@@ -228,7 +173,6 @@ def find_pilot_list() -> Optional[Path]:
 
 
 def resolve_species(args: argparse.Namespace) -> tuple[List[str], str]:
-    """Return (species_lines, source_label). Exactly one source is required."""
     sources = [bool(args.preset), bool(args.species_list), bool(args.species)]
     if sum(sources) != 1:
         raise SystemExit(
@@ -237,8 +181,6 @@ def resolve_species(args: argparse.Namespace) -> tuple[List[str], str]:
         )
 
     if args.preset:
-        # Curated preset files are written through unchanged (no normalization),
-        # so the validated full30 preset run stays byte-identical to the freeze.
         if args.preset == "full30":
             return (species_from_file(FULL30_LIST, normalize=False),
                     f"preset:full30 ({_rel(FULL30_LIST)})")
@@ -261,9 +203,7 @@ def resolve_species(args: argparse.Namespace) -> tuple[List[str], str]:
     return species_from_inline(args.species), "species:inline"
 
 
-# --------------------------------------------------------------------------- #
-# folder + file creation
-# --------------------------------------------------------------------------- #
+
 
 
 
@@ -299,13 +239,8 @@ def build_run_config(run_id: str, run_name: str, run_dir: Path,
             "results/final_30_until_interpro_prepare/ is untouched."
         ),
     }
-    # Stamp the production architecture at creation time, resolved from the gene symbol
-    # alone. Every later stage reads it from here instead of re-deciding, so no run can
-    # acquire a different Explorer or Gallery architecture than the one it was created
-    # with, and no run needs a migration command to get the modern one.
+
     production_contract.stamp(cfg)
-    # Record logical provenance; a user list's absolute location is only an
-    # execution-time detail and must not become part of the run contract.
     portable_source_label = source_label
     if source_label.startswith("species_list:"):
         portable_source_label = f"species_list:external:{species_list_path.name}"
@@ -374,11 +309,6 @@ def script_status_label(rel_path: str) -> str:
     return "available" if (REPO / rel_path).exists() else "planned"
 
 
-
-
-# --------------------------------------------------------------------------- #
-# validation + summary
-# --------------------------------------------------------------------------- #
 def validate_run(run_dir: Path, species: List[str]) -> None:
     problems: List[str] = []
     if not (run_dir / "config" / "species.tsv").exists():

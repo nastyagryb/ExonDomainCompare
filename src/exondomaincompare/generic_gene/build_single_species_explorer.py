@@ -1,18 +1,3 @@
-"""Build the stage-aware scientific explorer products (species-aware).
-
-This module composes existing shared pipeline outputs into the frontend indices
-for the exploratory Gene Explorer. It is fully generic and species-aware: every
-product (transcript structure, exploratory candidates, isoform alignment,
-protein architecture) is built PER SPECIES from the per-species core tables
-(``exon_protein_map.tsv``, ``protein_isoform_index.tsv``, the candidate cluster
-TSV and the per-species MAFFT alignments). It never mixes isoforms from
-different species into one alignment and never assumes a single species.
-
-Each index carries a top-level ``species: [...]`` array (one entry per analysed
-species) plus reference-species fields at the top level for backward
-compatibility. It never infers domain/TM evidence before real cluster outputs
-have been parsed and contains no gene- or species-specific hard-coding.
-"""
 from __future__ import annotations
 
 import shutil
@@ -51,7 +36,6 @@ def _display_species(sid: str) -> str:
 
 
 def _species_order(ctx: GenericContext, iso_rows: List[Mapping[str, Any]]) -> List[str]:
-    """Analysed species in a stable order (species_list.txt is authoritative)."""
     slist = ctx.run_dir / "species_list.txt"
     order: List[str] = []
     if slist.is_file():
@@ -64,11 +48,6 @@ def _species_order(ctx: GenericContext, iso_rows: List[Mapping[str, Any]]) -> Li
 
 
 def _species_primaries(ctx: GenericContext) -> Dict[str, Dict[str, Any]]:
-    """Map species_id -> {primary_protein_id, primary_transcript_id, primary_length_aa}.
-
-    Prefers the multi-species ``primary_selection_index.json`` (species_primaries);
-    falls back to the single primary report so a one-species run still works.
-    """
     out: Dict[str, Dict[str, Any]] = {}
     idx = read_json(ctx.run_dir / "website_indices" / "primary_selection_index.json", {}) or {}
     for sp in idx.get("species_primaries") or []:
@@ -498,7 +477,6 @@ def _write_model_evidence(ctx: GenericContext, species_ids: List[str],
                           primaries: Mapping[str, Dict[str, Any]],
                           iso_all: List[Mapping[str, Any]],
                           tx_sections: List[Mapping[str, Any]]) -> None:
-    """Per-species protein/transcript model evidence tables (generic)."""
     tx_len_by_pid: Dict[str, Any] = {}
     for sec in tx_sections:
         for t in sec.get("transcripts", []):

@@ -1,17 +1,4 @@
 #!/usr/bin/env python3
-"""Retire the superseded exon–domain-boundary figure cards of a run.
-
-All five boundary figures this stage used to draw are now main figures produced by
-``generate_shared_main_figures`` — boundary-on-architecture, signed boundary
-distances and the boundary-class summary — or are on-demand exports of the Boundary
-page rather than Gallery cards: the selected-boundary detail and the per-boundary
-evidence supplement. Keeping a second matplotlib version of them would give the
-reader two entry points to the same analysis that could silently disagree.
-
-This stage therefore draws nothing. It removes the cards it used to own, by
-``figure_id`` only, so no other generator's cards can be affected, and drops the
-matching entries from the export manifest in the coordinate model.
-"""
 from __future__ import annotations
 
 import argparse
@@ -27,8 +14,6 @@ from exondomaincompare.presentation import figure_captions as fc  # noqa: E402
 
 LEGACY_GROUP = "exon_domain_boundaries"
 
-# Cards this stage retires. The first three live on as shared main figures; the last
-# two are exports the Boundary page produces on request for a selected boundary.
 SUPERSEDED_FIGURE_IDS = (
     "boundary_{sp}_boundary_on_architecture",
     "boundary_{sp}_signed_boundary_distances",
@@ -66,7 +51,7 @@ def generate(run_dir: Path, model_json: Path) -> dict:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description='Retire the superseded exon–domain-boundary figure cards of a run.')
     ap.add_argument("run_dir", type=Path)
     ap.add_argument("--model", type=Path, default=None)
     args = ap.parse_args()

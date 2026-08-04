@@ -1,11 +1,3 @@
-"""Tests for the global Exon–Domain-Boundaries dashboard contract.
-
-Covers page-mode resolution (Part 1), the single-species dashboard for TP53
-Danio (Parts 2–4, 9, 20), the honest FGFR1 pending state (Part 11), the
-multi-species comparative data contract + comparable-boundary matching evidence
-priority (Parts 12–16), caption generation (Part 20) and FGFR2 freeze/regression
-protection (page mode never routes the validated event to the generic dashboard).
-"""
 from __future__ import annotations
 
 import json
@@ -48,8 +40,6 @@ def fgfr1_index():
 
 
 def _synthetic_pending_index():
-    """An FGFR1-like *pre-cluster* index (no live run needed): coding-exon
-    boundary positions exist, but domains/classifications are honestly pending."""
     bnds = [{
         "id": f"b{i}", "protein_position": 40 * i + 10,
         "left_exon_label": f"E{i}", "right_exon_label": f"E{i + 1}",

@@ -1,32 +1,4 @@
 #!/usr/bin/env python3
-"""Build generic website indices from CORE gene-analysis contract outputs.
-
-This is the gene/event-AGNOSTIC index builder for the Core-only path. It reads
-the core contract TSVs (see docs/core_gene_analysis_contract.md) produced by a
-core runner/adapter and writes the generic website indices — WITHOUT requiring
-any event region, cassette, IIIb/IIIc logic, or marker reconciliation.
-
-When the gene config has no configured event region:
-  * event_region_index.json is written with available=false,
-    reason="no_event_configured"
-  * event-specific "Boundary Consistency" is disabled in available_views
-  * the generic "Exon–Domain Boundaries" view is enabled when exon+domain data exist
-
-Inputs (one of):
-  --run-id <id>     read runs/<id>/results/core_gene_analysis/, config from run
-  --core-dir <dir>  read core contract TSVs from an explicit directory (e.g. a mock)
-
-Output:
-  --out <dir>       default: runs/<id>/website_indices/generic (for --run-id)
-
-Examples:
-  python -m exondomaincompare.framework.build_core_gene_indices --run-id <run_id>
-  python -m exondomaincompare.framework.build_core_gene_indices \
-      --core-dir artifacts/core_gene_analysis/mock \
-      --config configs/genes/drafts/TPM1_core_only_pilot.yaml \
-      --dataset-id mock:tpm1_core_only \
-      --out artifacts/generic_indices/mock_core_only
-"""
 from __future__ import annotations
 
 import argparse
@@ -102,12 +74,6 @@ class CoreSource:
 # index builders (generic; no event assumptions)
 # --------------------------------------------------------------------------- #
 def _gene_identity_for(src: "CoreSource") -> Dict[str, Any]:
-    """The requested-versus-source symbol record, read from the run's own config.
-
-    ``core_dir`` is ``runs/<id>/results/core_gene_analysis``, so the run root is two levels
-    up. Absent for runs created before the identity record existed, and for genes whose
-    annotation symbol already matches the request.
-    """
     run_dir = src.core_dir.parent.parent
     data = read_json(run_dir / "run_config.json", {}) or {}
     identity = data.get("gene_identity")
@@ -463,12 +429,6 @@ def _capability_report(src: CoreSource, gene_idx: Dict[str, Any],
                        domain_idx: Dict[str, Any], synteny_idx: Dict[str, Any],
                        boundary_idx: Dict[str, Any],
                        n_evidence: int, n_clusters: int) -> Dict[str, Any]:
-    """Build the single capability report used by the UI.
-
-    Domain-dependent milestones are reported as ``pending`` (not ``failed``)
-    before the cluster InterProScan/pyTMHMM step, and only become ``available``
-    once real cluster outputs exist.
-    """
     cfg = src.cfg
     report = src.report or {}
     n_models = gene_idx["n_gene_models"]
@@ -522,12 +482,6 @@ def _capability_report(src: CoreSource, gene_idx: Dict[str, Any],
 
 
 def _ensure_primary_selection(src: CoreSource) -> Dict[str, Any]:
-    """Load (or build+persist) the primary-selection evidence report.
-
-    If primary_selection_report.json is absent it is derived from the isoform
-    index + collection report using the documented selection hierarchy and
-    written next to the other core outputs (so the UI + TSV stay in sync).
-    """
     report = read_json(src.core_dir / "primary_selection_report.json", None)
     if isinstance(report, dict) and report.get("proteins"):
         return report
@@ -557,8 +511,6 @@ def _evidence_stack_index(src: CoreSource, gene_idx: Dict[str, Any],
                           synteny_idx: Dict[str, Any], domain_idx: Dict[str, Any],
                           sel: Dict[str, Any], n_evidence: int, n_clusters: int,
                           uniprot: Optional[Dict[str, Any]]) -> Dict[str, Any]:
-    """Ordered evidence-stack items (source / status / confidence / explanation /
-    file), mirroring the FGFR2 evidence-stack concept for a generic gene."""
     cd = src.core_dir
     lengths = [i.get("protein_length") for i in gene_idx.get("isoforms", []) if i.get("protein_length")]
     len_span = f"{min(lengths)}–{max(lengths)} aa" if lengths else "—"
@@ -652,8 +604,6 @@ def _evidence_stack_index(src: CoreSource, gene_idx: Dict[str, Any],
 
 
 def _protein_architecture_index(src: CoreSource, gene_idx: Dict[str, Any]) -> Dict[str, Any]:
-    """Exon/protein track data (generic). Candidate regions are exploratory
-    overlays on the primary protein; domains/TM appear after the cluster step."""
     gm = src.tsv("gene_model_index.tsv")
     iso = src.tsv("protein_isoform_index.tsv")
     exon_map = src.tsv("exon_protein_map.tsv")
@@ -731,9 +681,6 @@ def _protein_architecture_index(src: CoreSource, gene_idx: Dict[str, Any]) -> Di
 
 def _event_evidence_index(src: CoreSource, domain_available: bool,
                           uniprot: Optional[Dict[str, Any]]) -> Dict[str, Any]:
-    """Build the source-by-source exploratory candidate model. Each cluster gets an
-    isoform-difference / exon-alignment / external-curated / domain evidence
-    breakdown plus a cautious interpretation. NOT a validated event."""
     clusters = src.tsv("event_region_candidate_clusters.tsv")
     evidence = src.tsv("event_region_evidence.tsv")
     gene = src.cfg.gene_symbol
@@ -824,8 +771,6 @@ def _event_evidence_index(src: CoreSource, domain_available: bool,
 
 def _figures_index(src: CoreSource, arch_idx: Dict[str, Any], synteny_idx: Dict[str, Any],
                    event_idx: Dict[str, Any], domain_available: bool) -> Dict[str, Any]:
-    """Build stage-aware generic figures. Pre-cluster plots are generic and
-    computable locally; domain/boundary plots are pending until the cluster step."""
     has_arch = any((s.get("proteins") for s in arch_idx.get("species", [])))
     available = []
     if has_arch:

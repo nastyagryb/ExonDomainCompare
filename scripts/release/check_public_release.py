@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""Check the files intended for the public repository."""
 from __future__ import annotations
 
 import hashlib

@@ -1,13 +1,4 @@
 #!/usr/bin/env python3
-"""
-Project validated FGFR2 cassette boundaries onto MSA columns.
-
-Build validated residue-to-alignment coordinate maps and project IIIb/IIIc boundaries
-        (full-length and cassette-only), with gap-aware projection status/confidence.
-
-MSA projection is independent robustness/QC evidence: it NEVER changes IIIb/IIIc labels.
-Uncertain projections are reported as such and never forced to "exact".
-"""
 
 from __future__ import annotations
 
@@ -59,7 +50,6 @@ def manifest_lookup(inp: Path, name: str) -> Dict[str, Dict[str, str]]:
 
 
 def ungapped_to_col(aligned: str) -> Dict[int, int]:
-    """ungapped 1-based residue index -> alignment column (1-based)."""
     m: Dict[int, int] = {}
     idx = 0
     for col, ch in enumerate(aligned, start=1):

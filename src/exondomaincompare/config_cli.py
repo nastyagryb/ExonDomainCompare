@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""Offline configuration doctor and dry-run profile renderer."""
 from __future__ import annotations
 
 import argparse

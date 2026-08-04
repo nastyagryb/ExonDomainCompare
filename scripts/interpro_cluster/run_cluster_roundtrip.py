@@ -1,37 +1,5 @@
 #!/usr/bin/env python3
-"""One local terminal command for the external cluster-dependent phase.
 
-Runs the whole LRZ round-trip for a run created under ``runs/<run_id>/``:
-
-    submit  ->  poll (check)  ->  fetch  ->  local post-InterPro analysis
-
-by reusing the existing wrappers:
-
-    scripts/interpro_cluster/submit_cluster_analysis.py
-    scripts/interpro_cluster/check_cluster_analysis.py
-    scripts/interpro_cluster/fetch_cluster_analysis.py
-    scripts/run_post_interpro_for_run.py
-
-IMPORTANT
----------
-* This script runs LOCALLY in a terminal, never from the webapp.
-* Submit/fetch may prompt for SSH login / 2FA in THIS terminal — that is expected.
-* It stores NO credentials and never asks for passwords in a UI.
-* SLURM polling is gentle (default: no more often than every 2 minutes).
-
-Usage
------
-    .venv/bin/edc cluster roundtrip --run-id <run_id>
-
-Options
--------
-    --poll-minutes 2       polling interval for check (default 2, floor 0.5)
-    --max-hours 12         overall deadline before giving up (default 12)
-    --no-post-interpro     stop after fetch (skip local post-InterPro analysis)
-    --submit-only          only submit, then exit
-    --check-only           only run one status check, then exit
-    --fetch-only           only fetch (+ post-InterPro unless --no-post-interpro)
-"""
 from __future__ import annotations
 
 import argparse
@@ -68,7 +36,6 @@ CORE_POST_MODULE = "exondomaincompare.framework.run_core_gene_analysis"
 
 
 def _require_cluster_profile(config: RuntimeConfig) -> None:
-    """Stop before SSH when the one-time cluster setup is incomplete."""
     try:
         config.require_cluster()
     except ConfigurationError as exc:
@@ -118,39 +85,21 @@ class Roundtrip:
         self.py = config.local_python().selected
         self.control_path: Optional[Path] = None  # SSH ControlMaster socket, if enabled
 
-    # -- SSH connection multiplexing (PART 7) ----------------------------- #
     def cm_log(self, msg: str) -> None:
-        """Dedicated ControlMaster diagnostics log (in addition to the round-trip log)."""
         p = self.run_dir / "logs" / "ssh_controlmaster.log"
         p.parent.mkdir(parents=True, exist_ok=True)
         with p.open("a", encoding="utf-8") as fh:
             fh.write(f"[{now_iso()}] {msg}\n")
 
     def _control_socket_path(self) -> Path:
-        """A SHORT control-socket path.
-
-        macOS caps a unix-domain socket path (``sun_path``) at ~104 bytes. The default
-        per-user temp dir (``/var/folders/…/T/``) is already long, so a socket created there
-        frequently exceeds the limit and ssh refuses to open the master ("unix_listener: cannot
-        bind … too long"). A short, run-specific path under ``/tmp`` avoids that entirely.
-        """
         h = hashlib.sha1(self.run_id.encode("utf-8")).hexdigest()[:8]
         return Path("/tmp") / f"fgfr2_{h}_cm.sock"
 
     def open_ssh_master(self) -> None:
-        """Open ONE shared SSH master connection so login/MFA happens once.
-
-        On success, exports the control socket via the environment so the submit / check /
-        fetch child processes reuse the same authenticated connection (fewer MFA prompts).
-        If it cannot be established (LRZ policy, MFA, path issues, ssh missing), we log the
-        exact command and reason to ``logs/ssh_controlmaster.log`` and fall back to normal
-        ssh/scp — behavior is never broken by multiplexing. No credentials are ever stored.
-        """
         sock = self._control_socket_path()
         opts = ["-o", "ControlMaster=auto", "-o", f"ControlPath={sock}",
                 "-o", "ControlPersist=30m", "-o", "ConnectTimeout=30"]
 
-        # Clear any stale socket from a previous interrupted run.
         if sock.exists():
             subprocess.run([self.config.executable_token("ssh"), "-O", "exit",
                             "-o", f"ControlPath={sock}", self.config.ssh_target],
@@ -161,7 +110,7 @@ class Roundtrip:
                 pass
 
         self.cm_log(f"control_path={sock} (len={len(str(sock))})")
-        if len(str(sock)) > 100:  # sun_path safety margin
+        if len(str(sock)) > 100:
             reason = f"control socket path too long ({len(str(sock))} chars): {sock}"
             self.cm_log(reason)
             self.log(f"SSH multiplexing could not be established: {reason}. "
@@ -173,17 +122,15 @@ class Roundtrip:
                       *opts, self.config.ssh_target, "true"]
         self.cm_log(f"opening master: {' '.join(master_cmd)}")
         self.log("Opening a shared SSH connection (aim: one login / MFA for the whole round-trip)…")
-        # TTY is inherited so the interactive LRZ password / MFA prompt works here.
         try:
             proc = subprocess.run(master_cmd, cwd=str(REPO))
             open_rc = proc.returncode
-        except Exception as exc:  # ssh not available etc.
+        except Exception as exc:
             self.cm_log(f"master open raised: {exc!r}")
             self.log(f"SSH multiplexing could not be established: {exc}. "
                      "Multiple LRZ password/MFA prompts may be required.")
             return
 
-        # Verify the master is actually alive (non-interactive, safe to capture).
         check = subprocess.run(
             [self.config.executable_token("ssh"), "-O", "check",
              "-o", f"ControlPath={sock}", self.config.ssh_target],
@@ -217,7 +164,6 @@ class Roundtrip:
         os.environ.pop(CONTROL_PATH_ENV, None)
         self.control_path = None
 
-    # -- logging / status ------------------------------------------------- #
     def log(self, msg: str) -> None:
         line = f"[{now_iso()}] {msg}"
         print(line, flush=True)
@@ -259,7 +205,6 @@ class Roundtrip:
         st["last_updated"] = now_iso()
         write_json(self.status_path, st)
 
-    # -- sub-command execution (inherits TTY so SSH/2FA works) ------------ #
     def run(self, script: Path, *args: str) -> int:
         cmd = [
             self.py, str(script), "--run-id", self.run_id,
@@ -291,7 +236,6 @@ class Roundtrip:
         jobs = (read_json(self.status_path, {}) or {}).get("cluster_jobs", {}) or {}
         return bool(jobs.get("interproscan_job_id") or jobs.get("pytmhmm_job_id"))
 
-    # -- phases ----------------------------------------------------------- #
     def submit(self) -> None:
         if self.has_job_ids():
             self.log("Cluster job IDs already present in status.json — skipping submit.")
@@ -346,15 +290,6 @@ class Roundtrip:
         return rc.get("has_event") is False
 
     def post_interpro(self) -> None:
-        """Derive the post-cluster layer from the fetched annotation, then finalize.
-
-        Core-only (no-event) runs use the gene-agnostic core post builder; the FGFR2
-        IIIb/IIIc post pipeline is only for the validated event analysis. Both branches
-        must run their builder before ``finalize`` judges the result — a ``finalize()``
-        placed outside the branch left the FGFR2 builder below it unreachable, so an
-        FGFR2 run fetched its cluster annotation and was then judged without ever
-        deriving the domain and boundary layers from it. It could only fail.
-        """
         core_only = self._is_core_only()
         label = "core post-InterPro" if core_only else "post-InterPro"
         if not core_only and not POST.exists():
@@ -369,19 +304,6 @@ class Roundtrip:
         self.finalize()
 
     def finalize(self) -> None:
-        """Decide the end state from the run's artefacts, then record it.
-
-        The order matters. This previously read ``status`` and demanded one of
-        ``results_ready`` / ``results_partial`` / ``post_cluster_partial`` — but the
-        post-cluster runner writes ``complete``, and ``finalize`` is the step that turns
-        that into a ready state. So it read a field before it had been set, in a
-        vocabulary it did not accept, and reported "did not produce a valid scientific
-        end state" for runs whose every post-cluster stage had in fact succeeded.
-
-        The end state is now derived from whether the required views have current data,
-        which is the same verdict the API and the badge use. Written first, phase set
-        afterwards, so the persisted roundtrip phase can never contradict it.
-        """
         st = read_json(self.status_path, {}) or {}
         scientific_status, reason = self._end_state(st)
 
@@ -403,9 +325,6 @@ class Roundtrip:
             "readiness_reason": reason,
             "last_updated": now_iso(),
         })
-        # A finished run must not keep a failure note from an earlier attempt. MC1R kept
-        # "boundary_analysis=missing" after the analysis had been correctly resolved as not
-        # applicable, which contradicted the ready state it was published with.
         for stale in ("failed_reason", "failed_step", "failed_species", "error", "detail"):
             st.pop(stale, None)
         write_json(self.status_path, st)
@@ -414,13 +333,10 @@ class Roundtrip:
                  f"next_action=open_results ({reason}).")
 
     def _end_state(self, st: Dict[str, Any]) -> Tuple[Optional[str], str]:
-        """The run's end state, or None plus the reason it has none."""
         if st.get("post_interpro_status") == "failed" or st.get("error"):
             return None, (st.get("failed_reason") or st.get("error")
                           or "Post-cluster processing failed.")
 
-        # The shared contract first, so a generic and an FGFR2 run reach the same
-        # verdict from the same evidence and neither needs its own rule here.
         shared = self._shared_verdict()
         if shared is not None:
             return shared
@@ -430,18 +346,12 @@ class Roundtrip:
             ready, reason = verdict
             if ready:
                 return "results_ready", reason
-            # The stages ran without error but a required view has no current data.
-            # That is a real defect and must not be dressed up as a ready result.
             return None, reason
 
-        # A generic core-only run is judged by its own milestone evaluator, which reads
-        # that layout's artefacts.
         core = self._core_milestone_state()
         if core is not None:
             return core
 
-        # Without either evaluator, fall back to the pre-existing vocabulary rather than
-        # blocking the roundtrip.
         legacy = st.get("status")
         if legacy in ("results_ready", "results_partial", "post_cluster_partial",
                       "complete", "post_interpro_complete"):
@@ -451,7 +361,6 @@ class Roundtrip:
                       "end state.")
 
     def _shared_verdict(self) -> Optional[Tuple[Optional[str], str]]:
-        """The canonical status verdict shared with the post-cluster runner."""
         try:
             sys.path.insert(0, str(REPO / "scripts"))
             from exondomaincompare.shared_gene_analysis.finalize_run_status import evaluate_run
@@ -465,7 +374,6 @@ class Roundtrip:
         return None, report["reason"]
 
     def _core_milestone_state(self) -> Optional[Tuple[Optional[str], str]]:
-        """The end state of a generic core-only run, from its own milestone evaluator."""
         try:
             sys.path.insert(0, str(REPO / "scripts"))
             from exondomaincompare.framework.core_run_milestones import evaluate_core_run, is_core_only_run
@@ -489,9 +397,6 @@ class Roundtrip:
             from exondomaincompare.shared_gene_analysis.run_availability import models_run, readiness
         except Exception:
             return None
-        # The availability contract describes the event-pipeline layout. A generic
-        # core-only run keeps its outputs elsewhere, so judging it here would report every
-        # view as missing; its own milestone evaluator decides instead.
         if not models_run(self.run_dir):
             return None
         try:
@@ -577,7 +482,6 @@ def main(argv: Optional[List[str]] = None) -> None:
             "Registered legacy run is read-only; copy it before retry/resume/roundtrip.")
 
     if args.finalize_only:
-        # No cluster contact, so the wrappers are irrelevant and no SSH master is opened.
         rt.log("=" * 66)
         rt.log(f"Re-deriving end state for run {args.run_id} (finalize only)")
         rt.finalize()
@@ -618,7 +522,6 @@ def main(argv: Optional[List[str]] = None) -> None:
             _final_message(rt, args)
             return
 
-        # full round-trip
         rt.submit()
         rt.poll(args.poll_minutes, args.max_hours)
         rt.fetch()

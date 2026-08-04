@@ -1,14 +1,3 @@
-"""Cross-cutting scientific validation for the single-species figure phase.
-
-Where `test_single_species_figure_exports.py` validates one figure at a time, this
-suite checks the properties that only hold across the whole system:
-
-* the Gene Explorer figure and the Figure Gallery figure are the *same* figure,
-* the Gallery carries one card per figure and none of the removed ones,
-* every card is scientifically self-describing,
-* the immutable FGFR2 reference and the freeze are untouched.
-"""
-
 from __future__ import annotations
 
 import hashlib
@@ -86,12 +75,6 @@ def cards(gallery) -> list[dict]:
 # --------------------------------------------------------------------------- #
 
 def test_shipped_gallery_figures_are_reproduced_byte_for_byte(fgfr1, tmp_path):
-    """Re-rendering from the coordinate model must reproduce the shipped SVG.
-
-    The Gene Explorer exports through the same builders via the same adapter, so
-    byte equality here is what guarantees a downloaded Gene Explorer figure and the
-    corresponding Gallery figure are the same figure rather than two lookalikes.
-    """
     if shutil.which("node") is None:
         pytest.skip("node is required to re-render the figures")
     result = subprocess.run(
@@ -113,7 +96,6 @@ def test_shipped_gallery_figures_are_reproduced_byte_for_byte(fgfr1, tmp_path):
 
 
 def test_every_shared_main_figure_ships_all_formats_and_a_source_table(fgfr1):
-    """Part 20: one card offers SVG, PDF, PNG and the table it was drawn from."""
     fig_dir = fgfr1 / FIGURE_DIR
     for kind in SHARED_MAIN_FIGURES:
         stem = f"main_gallus_gallus_{kind}"
@@ -216,7 +198,6 @@ def test_every_main_card_is_scientifically_self_describing(cards):
 
 
 def test_every_main_card_carries_a_caption_derived_from_its_own_data(cards, primary):
-    """A caption must state the figure's real quantities, not generic prose."""
     by_id = {c["figure_id"]: c for c in cards}
     length = str(primary["protein_length"])
     protein = primary["protein_id"]
@@ -242,7 +223,6 @@ def test_every_main_card_carries_a_caption_derived_from_its_own_data(cards, prim
 
 
 def test_candidate_related_cards_use_cautious_wording(cards):
-    """A score is not validation, and a candidate is not a finding."""
     for card in cards:
         blob = " ".join(str(card.get(k, "")) for k in
                         ("title", "scientific_question", "interpretation", "caption"))
@@ -277,14 +257,6 @@ def test_no_absolute_personal_paths_leak_into_the_indices(fgfr1):
 # --------------------------------------------------------------------------- #
 
 def test_every_figure_names_a_candidate_the_same_way(fgfr1, primary):
-    """One region must not be "C2" in one figure and "C5" in another.
-
-    Candidate identity is assigned once, by position, in the validated coordinate
-    model. The isoform-alignment index lists the same candidates in scan order and
-    carries no rank, so a figure that numbers them by list position renames four of
-    the five — and a reader cross-referencing a candidate between two figures of the
-    same Gallery then lands on the wrong region.
-    """
     canonical = {(int(c["start"]), int(c["end"])): c["id"]
                  for c in primary.get("candidate_regions") or []}
     assert canonical, "the coordinate model lists no candidate regions"
@@ -412,7 +384,6 @@ def test_tp53_domain_instances_and_boundaries_are_internally_consistent():
 
 
 def test_the_fgfr2_figure_index_is_untouched_by_this_phase():
-    """FGFR2 remains an immutable scientific regression target."""
     result = subprocess.run(
         ["git", "status", "--porcelain", "results/final_30_until_interpro_prepare"],
         capture_output=True, text=True, cwd=ROOT,
@@ -423,7 +394,6 @@ def test_the_fgfr2_figure_index_is_untouched_by_this_phase():
 
 
 def test_no_run_figure_directory_contains_a_full_page_raster_pdf():
-    """The failure mode this phase removed must not exist anywhere any more."""
     offenders = []
     for run in (FGFR1_RUN, TP53_RUN):
         if not run.exists():

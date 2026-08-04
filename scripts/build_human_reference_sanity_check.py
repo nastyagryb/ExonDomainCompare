@@ -1,11 +1,4 @@
 #!/usr/bin/env python3
-"""Human FGFR2 reference boundary sanity-check (read-only).
-
-Summarizes the human IIIb and IIIc architecture using ONLY existing pipeline
-outputs (the step-16 exon-domain boundary distances table). No biological data,
-FASTA, truth table, or membership is changed. The output is a small human
-sanity-check report (Markdown + TSV) with calm, scientific wording.
-"""
 from __future__ import annotations
 
 import csv
@@ -16,8 +9,6 @@ REPO = Path(__file__).resolve().parent.parent
 
 
 def display_path(path) -> str:
-    """Repo-relative path for display/logging only; falls back to the raw path when
-    BASE is a run-local relative path. Never raises and never affects outputs."""
     p = Path(path)
     try:
         return str(p.resolve().relative_to(REPO.resolve()))

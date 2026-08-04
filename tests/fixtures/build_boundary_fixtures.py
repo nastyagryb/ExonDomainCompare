@@ -1,17 +1,4 @@
 #!/usr/bin/env python3
-"""Rebuild the compact Boundary-dashboard fixtures from a real run directory.
-
-The dashboard tests used to read two live production runs, so deleting a run broke
-the suite and editing one silently changed what was asserted. The fixtures below are
-verbatim copies of the *scientific* Core tables of those runs — no value is rewritten
-— reduced to the files ``protein_coordinate_model.build_models_for_run`` actually
-reads, with the run config and status trimmed to their read keys and all absolute
-personal paths dropped.
-
-Usage (only needed when a fixture must be regenerated from a run that still exists):
-
-    python tests/fixtures/build_boundary_fixtures.py <run_dir> <fixture_dir>
-"""
 from __future__ import annotations
 
 import hashlib
@@ -113,6 +100,6 @@ def build(run_dir: Path, dst: Path) -> None:
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        raise SystemExit(__doc__)
+        raise SystemExit('Rebuild the compact Boundary-dashboard fixtures from a real run directory.')
     build(Path(sys.argv[1]), Path(sys.argv[2]))
     print(f"wrote {sys.argv[2]}")

@@ -1,19 +1,3 @@
-"""The FGFR2 model inventory and the curated Gallery catalogue.
-
-Two claims are under test here, and both were previously wrong in ways that a
-reader could not have detected from the interface.
-
-The first is arithmetic. The dataset was described as "58 models = 30 species ×
-IIIb/IIIc", which cannot be true because 30 × 2 is 60. The two missing combinations
-are not a rounding detail: they are the two proteins the freeze declined to admit to
-the primary set, each with a recorded reason, and a description that multiplies them
-away is a description that hides them.
-
-The second is that a rendered file is not a Gallery card. 287 derived files became
-90-odd cards, so a reader looking for the cassette evidence had to scroll past sixty
-near-identical per-species thumbnails and four filter variants of one figure. The
-tests below pin the curated shape: what a reader actually sees, per scope.
-"""
 from __future__ import annotations
 
 import csv
@@ -108,7 +92,6 @@ def test_the_model_inventory_totals_are_exact(model_index):
 
 
 def test_the_58_models_are_not_explained_as_30_times_2(model_index):
-    """58 is 60 expected combinations minus 2 the freeze did not admit."""
     a = model_index["availability"]
     assert a["n_species"] * N_ISOFORMS == N_EXPECTED_COMBINATIONS
     assert a["n_models"] + len(a["unavailable_combinations"]) == N_EXPECTED_COMBINATIONS
@@ -130,12 +113,6 @@ def test_the_missing_combinations_are_named_with_their_reason(model_index):
 
 
 def test_a_model_without_an_exon_series_says_which_layers_it_cannot_support(model_index):
-    """One protein has a validated cassette and domains but no coding-exon series.
-
-    Reporting it as a complete model would put an empty exon figure in the Gallery;
-    dropping it would lose a validated architecture. It is a real model that cannot
-    support two of the layers, and it says so.
-    """
     cassette_only = [m for m in model_index["models"]
                      if m["availability_status"] == "cassette_only_no_exon_series"]
     assert {m["model_id"] for m in cassette_only} == CASSETTE_ONLY_MODELS
@@ -223,7 +200,6 @@ def test_isoform_models_are_roles_not_two_unlabelled_primaries(model_index):
 
 
 def test_a_generic_gene_still_has_one_primary_reference_per_species():
-    """The stricter rule must not have changed how a normal gene behaves."""
     from exondomaincompare.shared_gene_analysis import model_roles
 
     runs = sorted((ROOT / "runs").glob("*/website_indices/generic/"
@@ -242,7 +218,6 @@ def test_a_generic_gene_still_has_one_primary_reference_per_species():
 
 
 def test_the_renderer_refuses_a_model_without_an_explicit_identity(tmp_path):
-    """Identity may not be inferred from array order or file name."""
     index = json.loads(MODEL_INDEX.read_text(encoding="utf-8")) \
         if MODEL_INDEX.is_file() else None
     if index is None:
@@ -397,7 +372,6 @@ def test_known_duplicates_are_merged_into_the_card_they_duplicate(catalogue):
 
 
 def test_the_byte_identical_pairs_really_are_byte_identical():
-    """The merge is justified by the files, not by their names."""
     figures = FREEZE / "13_final_pre_interpro_closure" / "figures"
     if not figures.is_dir():
         pytest.skip("freeze figures unavailable")
@@ -440,7 +414,6 @@ def test_species_scopes_follow_the_canonical_order(catalogue, model_index):
 
 
 def test_there_is_no_flat_per_species_appendix(catalogue):
-    """The 62 per-species architecture files are one card per species, not 62."""
     validated = [c for s in catalogue["species_scopes"].values() for c in s["cards"]
                  if c["figure_type"] == "validated_exon_domain_architecture"]
     assert len(validated) == N_SPECIES
@@ -527,7 +500,6 @@ def test_no_derived_output_is_written_into_the_freeze(catalogue):
 
 
 def test_the_freeze_figure_index_is_untouched():
-    """The catalogue is served from the derived overlay, not by editing the freeze."""
     frozen = FREEZE / "13_final_pre_interpro_closure" / "website_indices" \
         / "figure_index.json"
     if not frozen.is_file():

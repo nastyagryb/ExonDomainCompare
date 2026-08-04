@@ -1,10 +1,4 @@
 #!/usr/bin/env python3
-"""Synthetic end-to-end smoke test for the FGFR2 pipeline steps completed so far.
-
-This does not contact Ensembl or NCBI. It uses a tiny artificial FGFR2-like data set
-with two mutually exclusive internal exons so the local selection and IIIb/IIIc
-classification logic can be checked quickly and reproducibly.
-"""
 from __future__ import annotations
 
 import argparse

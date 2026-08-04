@@ -1,12 +1,3 @@
-"""API tests for the current ExonDomainCompare backend.
-
-The original version of this file exercised the first-phase backend, which
-served a fixed set of static JSON files from a copied project tree
-(``/api/dashboard``, ``DEFAULT_DATA_DIR``). That surface no longer exists: the
-backend now builds a canonical dataset model per run. The tests below therefore
-target the real module and the endpoints the web UI actually consumes.
-"""
-
 from __future__ import annotations
 
 from pathlib import Path

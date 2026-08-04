@@ -1,4 +1,3 @@
-"""Release E3 contracts for setup and remote tool onboarding."""
 from __future__ import annotations
 
 import os

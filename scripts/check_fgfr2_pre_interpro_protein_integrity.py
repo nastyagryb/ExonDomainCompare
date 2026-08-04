@@ -1,11 +1,4 @@
 #!/usr/bin/env python3
-"""
-Check pre-InterPro protein integrity.
-
-Pre-InterPro protein integrity QC: validate that selected FGFR2 proteins are biologically
-plausible InterProScan inputs (valid alphabet, no internal stop, plausible length, cassette
-within bounds). Feeds the boundary robustness score, master and readiness reports.
-"""
 
 from __future__ import annotations
 
@@ -16,7 +9,7 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from exondomaincompare.scientific import fgfr2_msa_common as M  # noqa: E402
+from exondomaincompare.scientific import fgfr2_msa_common as M
 
 
 COLS = ["species", "isoform", "protein_id", "transcript_id", "sequence_length",
@@ -57,12 +50,6 @@ def main() -> int:
     cmap = {(r["species"].lower(), r["isoform"]): r
             for r in M.read_tsv(M.require(base, "fgfr2_cassette_cds_block_map.tsv"))}
     by_key, by_pid = build_protein_lookup(M.require(base, "selected_fgfr2_proteins.faa"))
-    # The upstream exon-structure classifier's ``inferred_isoform`` is provisional: where
-    # the marker-validated sequence contradicts it, the reconciliation stage corrects it.
-    # Upstream FASTA headers and the cassette map are keyed by that provisional label, so
-    # it stays the *join* key — but the label this QC table reports must be the same final
-    # biological label the MSA manifests, truth table, boundary model and Gallery carry,
-    # otherwise a downstream join by (species, isoform) silently swaps IIIb and IIIc.
     recon = M.load_label_reconciliation(base)
 
     # duplicate groups by sequence hash

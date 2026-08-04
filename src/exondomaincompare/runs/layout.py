@@ -1,9 +1,3 @@
-"""Central, versioned run-path service.
-
-Canonical runs are deliberately lazy: initialization writes four files and no
-empty analysis directory. Historical paths remain descriptors only and are
-interpreted by :mod:`framework.legacy_run_adapter`.
-"""
 from __future__ import annotations
 
 import csv
@@ -22,7 +16,7 @@ RUN_ID_PATTERN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 
 
 class RunLayoutError(ValueError):
-    """A run path or initialization request violates the layout contract."""
+    pass
 
 
 class RunLayoutVersion(str, Enum):
@@ -61,7 +55,6 @@ class RunLayout:
 
     @property
     def config(self) -> Path:
-        """Compatibility alias for the run identity file."""
         return self.run
 
     @property
@@ -156,11 +149,6 @@ class RunLayout:
 
     @property
     def packages(self) -> Path:
-        """Legacy-only package location.
-
-        Canonical packages require ``AppPaths.packages/<run_id>`` and therefore
-        intentionally have no in-run location.
-        """
         if self.version is RunLayoutVersion.LEGACY_V1:
             return self.root / "results" / "generic_gene_analysis" / "packages"
         raise RunLayoutError("Canonical packages live under AppPaths.packages.")
@@ -175,7 +163,6 @@ class RunLayout:
         return "run:" + relative.as_posix()
 
     def ensure_parent_for(self, path: Path) -> Path:
-        """Create only the parent needed immediately before a real write."""
         resolved_root = self.root.resolve()
         candidate = path.resolve(strict=False)
         try:

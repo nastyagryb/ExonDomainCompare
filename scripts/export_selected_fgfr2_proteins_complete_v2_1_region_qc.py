@@ -1,22 +1,4 @@
 #!/usr/bin/env python3
-"""
-Export selected FGFR2 protein sequences for InterProScan.
-
-Version 2: robust, annotation-aware protein export for mixed Ensembl/NCBI
-transcript selections.
-
-Key design choices
-------------------
-- one FASTA record per selected transcript role, not one record per unique protein,
-  so InterProScan results can be traced back to reference/IIIb/IIIc roles;
-- short unique FASTA IDs (fgfr2prot_000001) with a separate mapping table;
-- high-confidence NCBI export only for exact accession matches;
-- product/species/length rescue for NCBI is retained but explicitly marked as
-  medium confidence;
-- all missing, fallback or suspicious cases are written to a warnings table;
-- protein sequence and length checks are explicit and reproducible.
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -198,7 +180,6 @@ def choose_gff_paths(cache: Path) -> List[Path]:
 
 
 def parse_gff3_transcript_to_protein(cache: Path) -> Dict[str, GffProteinMap]:
-    """Map NCBI transcript accession -> protein accession/product from GFF3 CDS features."""
     mapping: Dict[str, GffProteinMap] = {}
     for gff in choose_gff_paths(cache):
         try:
@@ -495,10 +476,6 @@ def write_html_report(path: Path, md_path: Path) -> None:
     path.write_text("\n".join(html_lines), encoding="utf-8")
 
 
-
-
-# ----------------------------- III-region export QC helpers -----------------------------
-
 def _norm_isoform(value: object) -> str:
     v = str(value or "").strip().lower()
     if "iiib" in v or v == "3b":
@@ -525,12 +502,6 @@ def _hamming_identity(a: str, b: str) -> Tuple[float, int, int]:
 
 
 def make_iii_region_export_qc(report_rows: List[dict], seq_by_output_id: Dict[str, str], start_1based: int, end_1based: int) -> List[dict]:
-    """Create a fixed-window III-region QC table from exported protein sequences.
-
-    This is intentionally simple and deterministic: it does not classify biology,
-    but tells downstream steps whether the exported protein contains the expected
-    local window and whether IIIb/IIIc candidate windows are locally distinct.
-    """
     w0 = max(0, int(start_1based) - 1)
     w1 = max(w0, int(end_1based))
     rows: List[dict] = []

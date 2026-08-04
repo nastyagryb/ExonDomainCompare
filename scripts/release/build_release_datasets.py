@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""Build the validated FGFR2 dataset and one exploratory example dataset."""
 
 from __future__ import annotations
 

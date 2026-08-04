@@ -1,32 +1,4 @@
 #!/usr/bin/env python3
-"""Do the returned cluster results still describe the run's proteins?
-
-A run's domain and topology layers are produced off-machine, so the only honest
-way to decide whether they may be used is to compare what the cluster scored
-against what the run currently asks about. File presence cannot answer that: a
-repaired coordinate model can change a protein sequence while every output file
-stays exactly where it was, and the run would then present domain calls for a
-sequence it no longer analyses.
-
-InterProScan records the MD5 of each scored sequence, and pyTMHMM output is keyed
-by the same protein ids, so both can be checked against the primary FASTA
-directly. The result is one of:
-
-``fresh``
-    every primary protein was scored, and the scored sequence is byte-identical
-    to the current one.
-``stale``
-    at least one protein was scored under a different sequence. The outputs stay
-    on disk for diagnostics but must not be used.
-``incomplete``
-    a primary protein was never scored.
-``missing``
-    no cluster output exists yet.
-
-Usage::
-
-    python -m shared_gene_analysis.cluster_output_freshness --run-id <run_id>
-"""
 from __future__ import annotations
 
 import argparse
@@ -74,7 +46,6 @@ def _repo_relative(path: Path) -> str:
 
 
 def sequence_md5(seq: str) -> str:
-    """InterProScan's sequence digest: uppercase residues, no whitespace."""
     return hashlib.md5("".join(seq.split()).upper().encode()).hexdigest()
 
 
@@ -100,7 +71,6 @@ def primary_fasta(run_dir: Path) -> Optional[Path]:
 
 
 def _interpro_scored(run_dir: Path) -> Dict[str, str]:
-    """protein id -> MD5 of the sequence InterProScan actually scored."""
     scored: Dict[str, str] = {}
     for rel in _INTERPRO_DIRS:
         for fp in sorted((run_dir / rel).glob("*.json")) if (run_dir / rel).is_dir() else []:
@@ -120,7 +90,6 @@ def _interpro_scored(run_dir: Path) -> Dict[str, str]:
 
 
 def _tmhmm_scored(run_dir: Path) -> List[str]:
-    """Protein ids present in the returned topology tables."""
     ids: List[str] = []
     for rel in _TMHMM_FILES:
         fp = run_dir / rel
@@ -143,7 +112,6 @@ def _tmhmm_scored(run_dir: Path) -> List[str]:
 
 
 def evaluate(run_dir: Path) -> Dict[str, Any]:
-    """Compare the returned cluster outputs against the current primary FASTA."""
     fasta = primary_fasta(run_dir)
     report: Dict[str, Any] = {
         "run_id": run_dir.name,
@@ -190,7 +158,7 @@ def evaluate(run_dir: Path) -> Dict[str, Any]:
 
 
 def main(argv: Sequence[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description=__doc__,
+    ap = argparse.ArgumentParser(description="Do the returned cluster results still describe the run's proteins?",
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--run-id", required=True)
     args = ap.parse_args(argv)

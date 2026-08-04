@@ -1,21 +1,4 @@
 #!/usr/bin/env python3
-"""Regenerate the website indices of a dataset from its stored results.
-
-    python scripts/rebuild_dataset_indices.py --dataset example
-    python scripts/rebuild_dataset_indices.py --run-id <run_id>
-    python scripts/rebuild_dataset_indices.py --gene FGFR2
-    python scripts/rebuild_dataset_indices.py --all
-
-One command for every dataset, whatever its gene. Rebuilding is how a change to
-an index builder — a new figure scope, a canonical species order — reaches
-datasets that were computed before it existed, without re-running any analysis:
-only the derived JSON is written, never a result table or a FASTA.
-
-The validated 30-species FGFR2 dataset is a read-only scientific record. Its
-indices are read from the freeze and written to ``results/derived/example/``,
-which the backend prefers when it exists, and the freeze is then verified
-byte-for-byte. Ordinary runs are rebuilt in place.
-"""
 from __future__ import annotations
 
 import argparse
@@ -79,16 +62,6 @@ def _rebuild(closure: Path, outdir: Path) -> Tuple[List[str], Dict[str, str]]:
 
 
 def _render_derived_figures(indices: Path, figures: Path) -> Dict[str, object]:
-    """Render the FGFR2 dataset's shared-renderer figures into the derived tree.
-
-    The same vector-safe renderer every other gene uses: self-contained SVG, vector
-    PDF, a 300-dpi raster for the web, and the source table beside each figure. No
-    export depends on page CSS and none is a screenshot.
-
-    The comparative figures are rendered from the reduced index — one model per
-    species — because a comparative row can only be one protein; the per-species
-    figures are rendered from the full index, where both isoform models are real.
-    """
     import subprocess
 
     out: Dict[str, object] = {}
@@ -141,7 +114,6 @@ def _render_derived_figures(indices: Path, figures: Path) -> Dict[str, object]:
 
 
 def rebuild_freeze_dataset(derived_root: Path = DERIVED_ROOT) -> Dict[str, object]:
-    """Rebuild the validated dataset's indices outside the freeze and verify it."""
     before = _digest(FREEZE_CLOSURE)
     derived_root = Path(derived_root).expanduser().resolve()
     outdir = derived_root / "example" / "website_indices"
@@ -201,14 +173,6 @@ def run_gene(run_dir: Path) -> str:
 
 
 def rebuild_coordinate_model(run_dir: Path) -> Dict[str, object]:
-    """Rebuild a run's protein coordinate model from its stored result tables.
-
-    The coordinate model is otherwise only written while a run executes, so a
-    change to its contract — a new required field, a stricter rule — would reach
-    new runs and leave existing ones behind. Rebuilding it here is what makes such
-    a change a migration rather than a fork. No analysis is re-run: the model is
-    derived from tables that already exist.
-    """
     model_path = run_dir / "website_indices" / "generic" / "protein_coordinate_model.json"
     if not model_path.is_file():
         return {"rebuilt": False, "reason": "run has no coordinate model"}
@@ -228,14 +192,6 @@ def rebuild_coordinate_model(run_dir: Path) -> Dict[str, object]:
 
 
 def rebuild_exploratory_candidates(run_dir: Path) -> Dict[str, object]:
-    """Re-derive a run's exploratory isoform-difference layer from its own sequences.
-
-    The scan itself is a contract too: it once dropped any difference block shorter
-    than six residues, which hid the real four-residue block between the two curated
-    PTPN11 isoforms of mouse and rat. Re-deriving here is what makes removing that
-    threshold a migration for existing runs instead of a rule that only new runs get.
-    No analysis is re-run — the isoform sequences and the exon map already exist.
-    """
     core = run_dir / "results" / "core_gene_analysis"
     if not (core / "event_candidate_regions.tsv").is_file():
         return {"rebuilt": False, "reason": "run has no exploratory candidate layer"}
@@ -261,15 +217,6 @@ def rebuild_exploratory_candidates(run_dir: Path) -> Dict[str, object]:
 
 
 def _mirror_exploratory_layer(run_dir: Path) -> Dict[str, object]:
-    """Carry a re-derived core candidate layer into the layers the pages read.
-
-    ``core_gene_analysis/`` is where the scan writes, but a generic run serves its
-    pages from ``generic_gene_analysis/`` and from the numbered stage folders, which
-    are copies. Re-deriving only the core table would leave a run whose raw evidence
-    holds the four-residue PTPN11 block while its Candidate page still says the
-    isoforms are identical. Nothing is re-analysed here: the copies and the
-    single-species indices are recomposed from the tables that were just written.
-    """
     generic = run_dir / "results" / "generic_gene_analysis"
     if not generic.is_dir():
         return {"generic_layer": "absent"}
@@ -333,7 +280,6 @@ def rebuild_run(run_id: str) -> Dict[str, object]:
 
 
 def _run_gallery_summary(run_dir: Path) -> Dict[str, object]:
-    """Write the run's FGFR2 Gallery and report it, or {} when the run has none."""
     try:
         from fgfr2 import run_gallery
         if not run_gallery.is_fgfr2_closure_run(run_dir):
@@ -345,7 +291,6 @@ def _run_gallery_summary(run_dir: Path) -> Dict[str, object]:
 
 
 def run_ids(gene: str = "") -> List[str]:
-    """Run directories, optionally restricted to one gene."""
     wanted = gene.strip().upper()
     out: List[str] = []
     records, _collisions = discover_runs(RUNTIME_CONFIG)
@@ -362,12 +307,11 @@ def run_ids(gene: str = "") -> List[str]:
 
 
 def fgfr2_run_ids_compat() -> List[str]:
-    """Kept for the deprecated scripts/fgfr2/rebuild_fgfr2_gallery.py wrapper."""
     return run_ids("FGFR2")
 
 
 def main(argv: Optional[List[str]] = None) -> int:
-    ap = argparse.ArgumentParser(description=__doc__,
+    ap = argparse.ArgumentParser(description='Regenerate the website indices of a dataset from its stored results.',
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     group = ap.add_mutually_exclusive_group(required=True)
     group.add_argument("--run-id", help="Run directory name under runs/")

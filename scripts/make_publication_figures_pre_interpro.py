@@ -1,21 +1,4 @@
 #!/usr/bin/env python3
-"""
-Render publication-level pre-InterPro figures.
-
-Publication-level pre-InterPro figure engine.
-
-Strict rules:
-  * Reads final tables only (species_qc_master.tsv is canonical QC/display).
-  * Uses species_phylogenetic_order.tsv / phylo_order for species ordering.
-  * Does NOT recompute biological QC, main_analysis_eligible, same_slot_or_adjacent,
-    IIIb/IIIc labels, III-region similarity, or review classification.
-  * Fails clearly if required fields are missing.
-  * No fake InterPro domain calls. Any architecture guide is explicitly labelled
-    "canonical FGFR2 architecture guide / InterProScan pending".
-
-This module is normally driven by scripts/make_all_figures.py (--base).
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -102,8 +85,6 @@ DISPLAY_RANK_FIG4 = {
 
 
 def refined_fig4_state(display_class: str, protein_evidence: str) -> str:
-    """Map a refined display_uncertainty_class (+ protein evidence) onto a calm,
-    color-blind-safe visual state for the evidence matrix."""
     d = display_class or ""
     if d == "hard_fail_excluded":
         return "hard_fail"
@@ -225,8 +206,6 @@ class FinalData:
         return self.coords.get((species.lower(), isoform))
 
     def cds_blocks(self, species: str, isoform: str) -> List[Dict[str, str]]:
-        """Return real CDS blocks (with protein_start_aa/protein_end_aa) for the
-        resolved transcript of (species, isoform); empty if unavailable."""
         c = self.coord(species, isoform)
         if not c:
             return []
@@ -234,22 +213,17 @@ class FinalData:
         return self.cds_by_tx.get(tx, [])
 
     def cassette(self, species: str, isoform: str) -> Dict[str, str]:
-        """Canonical coordinate-overlap cassette mapping for (species, isoform)."""
         return self.cassette_map.get((species.lower(), isoform), {})
 
     def cassette_rank(self, species: str, isoform: str) -> Optional[int]:
-        """Unique CDS rank of the resolved cassette block (cds_rank is unique within a
-        transcript, unlike the repeated NCBI cds_id)."""
         return _to_int(self.cassette(species, isoform).get("matched_cds_rank"))
 
     def refined(self, species: str, isoform: str) -> Dict[str, str]:
-        """Refined uncertainty/display classes for (species, isoform)."""
         return self.refined_map.get((species.lower(), isoform), {})
 
 
 
 def group_spans(master_rows: List[Dict[str, str]]) -> List[Tuple[str, int, int]]:
-    """Return [(taxon_group, first_idx, last_idx)] for consecutive species blocks."""
     spans: List[Tuple[str, int, int]] = []
     cur = None
     start = 0
@@ -267,11 +241,6 @@ def group_spans(master_rows: List[Dict[str, str]]) -> List[Tuple[str, int, int]]
 
 def draw_taxon_bands(ax, master_rows: List[Dict[str, str]], y_of, x0: float, x1: float,
                      bar_x: Optional[float] = None, label: bool = True) -> None:
-    """Subtle horizontal background bands + thin left color bar per taxon group.
-
-    y_of(idx) maps a species index (0=top) to its row center y. Bands span the
-    full row height; coloring is desaturated so IIIb/IIIc remain dominant.
-    """
     n = len(master_rows)
     row_h = abs(y_of(0) - y_of(1)) if n > 1 else 1.0
     for gi, (g, a, b) in enumerate(group_spans(master_rows)):
@@ -310,14 +279,6 @@ def _save(fig, figdir: Path, stem: str) -> Dict[str, str]:
 def _skip_optional_figure(*, figure_id: str, func_name: str, figdir: Path,
                           reason: str, main_message: str, log_message: str,
                           n_species: int = 0, source_tables: str = "") -> Dict[str, object]:
-    """Gracefully skip an OPTIONAL publication/display figure whose drawable
-    subset is empty (e.g. a small custom run with zero review-case groups).
-
-    This never calls plt.subplots. It writes a small placeholder note explaining
-    the skip and returns a manifest entry marked ``status=skipped_empty`` so the
-    pre-InterPro pipeline can continue. Only optional display figures may be
-    skipped here — required validation gates are unaffected.
-    """
     print(f"[SKIP optional figure] {func_name}: {log_message} (reason={reason})")
     figdir.mkdir(parents=True, exist_ok=True)
     placeholder = figdir / f"{figure_id}_SKIPPED_EMPTY.txt"
@@ -510,9 +471,6 @@ def fig1_framework(data: FinalData, figdir: Path, tabledir: Path) -> Dict[str, o
 
 def _cassette_block_index(blocks: List[Dict[str, str]], cassette_rank: Optional[int],
                           native_start: Optional[int], native_end: Optional[int]) -> Optional[int]:
-    """Identify which CDS block is the resolved cassette by its UNIQUE cds_rank
-    (from the coordinate-overlap cassette map). cds_rank is unique within a transcript,
-    unlike repeated NCBI cds_id values. Fall back to protein-coordinate overlap."""
     if cassette_rank is not None:
         for i, b in enumerate(blocks):
             if (_to_int(b.get("cds_rank")) == cassette_rank):
@@ -531,8 +489,6 @@ def _cassette_block_index(blocks: List[Dict[str, str]], cassette_rank: Optional[
 
 
 def _architecture_table(data: FinalData):
-    """Return (track_rows, completeness_rows). One track row per real CDS block per
-    (species, isoform); a single fallback row where exon blocks are unavailable."""
     tracks: List[Dict[str, object]] = []
     completeness: List[Dict[str, object]] = []
     for r in data.master:
@@ -809,9 +765,6 @@ def _qc_icon(summary: str):
 
 
 def _igIII_segments(c: Dict[str, str]):
-    """Derive upstream_conserved / cassette / downstream_conserved within the IgIII
-    (III_region) window, normalized so the window starts at 0. Uses real coordinates;
-    returns [] if window/cassette coordinates are unavailable."""
     ws, we = _to_int(c.get("III_region_start_aa")), _to_int(c.get("III_region_end_aa"))
     cs, ce = _to_int(c.get("native_protein_start_aa")), _to_int(c.get("native_protein_end_aa"))
     if None in (ws, we, cs, ce) or we <= ws:
@@ -1512,10 +1465,6 @@ CONTROL_SPECIES = ("homo_sapiens", "pan_troglodytes", "macaca_mulatta")
 
 
 def cassette_sanity_gate(base: Path, data: "FinalData", metadir: Path) -> None:
-    """PART G — refuse to generate publication figures if biologically implausible
-    cassette positions remain for any MAIN-ANALYSIS species, if a control primate
-    cassette is N-terminal, or if figure-2 cassette rows disagree with the coordinate
-    audit. On failure, write publication_figure_validation_failed.tsv and raise."""
     failures: List[Dict[str, object]] = []
     for r in data.master:
         sp = r["species"]

@@ -1,29 +1,4 @@
 #!/usr/bin/env python3
-"""
-validate_and_rescue_fgfr2_labels.py  (general suspicious-case validation & rescue layer)
-
-After the sequence-calibrated IIIb/IIIc label reconciliation, this module runs a GENERAL,
-evidence-driven validation/rescue layer over ALL species/isoforms (not only close primates):
-
-  Part A  validation-group assignment (strictness, not a forced label)
-  Part E  group-specific validation thresholds (no single universal vertebrate threshold)
-  Part B  global suspicious-case triggers + rescue priority
-  Part C  general candidate rescue: search existing per-species candidate transcripts/proteins,
-          score against curated human IIIb/IIIc references + markers + MSA-discriminating support,
-          coordinate plausibility, protein integrity, orthology/paralog; rank and decide
-  Part D  targeted external candidate patch (local NCBI datasets cache only; provenance-tracked;
-          never silently mixes incompatible annotation releases)
-  Part F  update the label reconciliation tables with validation/rescue/claim columns
-  Part G  special known-risk species validation report (Mus, Canis, close primates, high/critical)
-  Part J  general rescue validation gate (hard checks)
-
-Principles (enforced): do not trust upstream labels; no hard-coded species swaps; MSA never
-auto-relabels; unresolved cases are not hidden and not forced to pass; rescue is evidence-driven;
-failed rescue -> review/excluded with explicit reason; upstream/legacy labels kept as provenance.
-
-Human is a hard positive control: if human cannot be a primary claim, the pipeline stops.
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -121,8 +96,6 @@ def load_evidence(base: Path, dirs: Dict[str, Path]):
 
 
 def load_candidate_pool(base: Path):
-    """Per-species candidate metadata pool (all marker-validated candidate transcripts/proteins),
-    enriched with full sequences where available (selected protein FASTA), keyed by species."""
     by_species: Dict[str, List[Dict[str, str]]] = defaultdict(list)
     p = M.locate(base, "fgfr2_III_candidate_protein_validation.tsv")
     for r in (M.read_tsv(p) if p else []):
@@ -263,9 +236,6 @@ def _marker(present_full: Optional[bool], score: Optional[float]) -> bool:
 
 def score_candidate(cand: Dict[str, str], expected: str, seq_by_pid: Dict[str, str],
                     orth: Dict, par: Dict, sp: str) -> Dict[str, object]:
-    """Score one candidate against curated human IIIb/IIIc; prefer recomputing from a full
-    sequence (same method as reconciliation) when available, else use precomputed validation
-    identities. Returns a fully populated rescue row (minus rank/decision)."""
     pid = cand.get("protein_id") or ""
     tx = cand.get("transcript_id") or ""
     prev = cand.get("expected_isoform_final") or cand.get("role") or ""
@@ -337,8 +307,6 @@ def RC_invalid(seq: str) -> bool:
 
 
 def current_passes(recon_row: Dict[str, str], expected: str, group: str) -> bool:
-    """Whether the CURRENTLY selected protein already passes its group threshold (using the
-    sequence-calibrated identities/markers already stored on the reconciliation row)."""
     thr = THRESHOLDS[group]
     own_id = M.to_float(recon_row.get("human_IIIb_identity" if expected == "IIIb"
                                       else "human_IIIc_identity"), 0.0)
@@ -351,14 +319,6 @@ def current_passes(recon_row: Dict[str, str], expected: str, group: str) -> bool
 def rescue_species_isoform(sp: str, expected: str, recon_row: Dict[str, str], group: str,
                            pool: List[Dict[str, str]], seq_by_pid: Dict[str, str],
                            orth: Dict, par: Dict, rob: Dict) -> Tuple[List[Dict[str, object]], str, str]:
-    """Return (ranked candidate rows, decision, best_protein_id) for one (species, expected type).
-
-    Conservative & propagation-safe policy: if the current selection already passes its group
-    threshold, KEEP it (triggers were minor flags). Only when the current selection FAILS do we
-    consider candidates; an automatic swap (use_rescued_candidate) requires a candidate that both
-    passes AND has a full sequence available locally (so it can be propagated and re-validated).
-    Better candidates known only from a cassette segment / precomputed identity are surfaced as
-    manual_review_required (evidence recorded) rather than silently swapped."""
     thr = THRESHOLDS[group]
     cur_pid = recon_row.get("protein_id") or ""
     cur_tx = recon_row.get("transcript_id") or ""
@@ -407,8 +367,6 @@ def rescue_species_isoform(sp: str, expected: str, recon_row: Dict[str, str], gr
 # Part D — targeted external candidate patch (local NCBI datasets cache only)
 # ---------------------------------------------------------------------------
 def find_ncbi_cache_fgfr2(base: Path, sp: str) -> List[Tuple[str, str]]:
-    """Stream the species' cached NCBI proteome (if present) and return FGFR2 (id, seq) records.
-    Uses ONLY the already-downloaded local datasets cache; no network access."""
     _cache = M.locate(base, "_ncbi_datasets_cache")
     out: List[Tuple[str, str]] = []
     # the cache is keyed by taxid; match by scanning protein.faa under any ncbi_* dir,
@@ -491,7 +449,6 @@ def external_patch(base: Path, sp: str, iso: str, group: str, decision: str,
 # ---------------------------------------------------------------------------
 def claim_status(group: str, recon_row: Dict[str, str], ev: Dict, decision: str,
                  ev_pass: bool) -> Tuple[str, str, str]:
-    """Return (final_claim_status, final_label_source, final_label_evidence_level)."""
     validated = recon_row.get("validated_exon_type", "")
     final = recon_row.get("final_isoform_label", "")
     status = recon_row.get("label_consistency_status", "")

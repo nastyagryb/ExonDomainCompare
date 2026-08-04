@@ -1,20 +1,4 @@
 #!/usr/bin/env python3
-"""One documented command must rebuild every species from the returned cluster outputs.
-
-The user-facing contract is a single command:
-
-    .venv/bin/edc cluster roundtrip --run-id <run_id>
-
-whose post-cluster half is ``run_core_gene_analysis.py --post``. This test starts from a
-run that has real InterProScan and pyTMHMM outputs but no derived tables, runs that one
-command, and checks that everything a two-species dataset needs comes back — for *both*
-species, plus the comparative layer.
-
-It is an integration test and takes about a minute and a half, because it really does
-regenerate the publication figures. That cost is the point: the defect it guards against
-was a rebuild that silently produced results for one species only, and a mocked test
-would not have caught it.
-"""
 from __future__ import annotations
 
 import csv
@@ -56,12 +40,6 @@ def _tsv(path: Path):
 
 @pytest.fixture(scope="module")
 def rebuilt(tmp_path_factory):
-    """Run the documented post-cluster command over a stripped copy of the run.
-
-    The copy lives under a disposable configured data root.  The repository reference
-    is read-only input and neither the repository runs root nor a user's real data root
-    is ever a write target.
-    """
     data_root = tmp_path_factory.mktemp("edc-roundtrip-data")
     sandbox = data_root / "runs" / SANDBOX_ID
     sandbox.parent.mkdir(parents=True)
@@ -107,7 +85,6 @@ def test_the_documented_command_succeeds(rebuilt):
 
 
 def test_no_undocumented_second_command_is_needed(rebuilt):
-    """Everything below is asserted after exactly one command has run."""
     sandbox, _ = rebuilt
     model = sandbox / "website_indices" / "generic" / "protein_coordinate_model.json"
     assert model.is_file(), (
@@ -142,7 +119,6 @@ def test_boundaries_are_rebuilt_for_each_species_separately(rebuilt):
 
 
 def test_no_species_overwrote_another(rebuilt):
-    """Long-format tables must keep both species' rows, not one species twice."""
     sandbox, _ = rebuilt
     rows = _tsv(sandbox / "results/core_gene_analysis/domain_features.tsv")
     by_species = {}
@@ -172,7 +148,6 @@ def test_the_returned_sequence_inventory_reports_every_species(rebuilt):
 
 
 def test_the_inventory_distinguishes_no_features_from_no_sequence():
-    """A protein with no predicted TM region is not a missing analysis."""
     from exondomaincompare.framework.run_core_gene_analysis import _returned_sequence_inventory
     core = REFERENCE / "results" / "core_gene_analysis"
     inv = _returned_sequence_inventory(
@@ -249,7 +224,6 @@ def test_the_run_status_is_ready_only_because_both_species_are_complete(rebuilt)
 
 
 def test_the_roundtrip_accepts_a_partial_run_as_an_end_state():
-    """``post_cluster_partial`` is a scientific outcome, not a roundtrip failure."""
     src = (ROOT / "scripts/interpro_cluster/run_cluster_roundtrip.py").read_text()
     assert "post_cluster_partial" in src, (
         "finalize() must accept the partial status the per-species model produces, "

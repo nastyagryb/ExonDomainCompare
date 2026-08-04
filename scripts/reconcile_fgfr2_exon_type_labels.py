@@ -1,22 +1,4 @@
 #!/usr/bin/env python3
-"""
-reconcile_fgfr2_exon_type_labels.py  (sequence-calibrated IIIb/IIIc label reconciliation)
-
-The upstream IIIb/IIIc labels are NOT blindly trusted: several entries (incl. human & mouse)
-carry swapped labels relative to the curated human FGFR2 / UniProt P21802 cassette evidence.
-This module determines the VALIDATED exon type from cassette SEQUENCE evidence (local alignment
-to curated UniProt-anchored IIIb/IIIc cassette references + isoform-marker residues) and sets the
-final biological isoform label from sequence — never from exon order or protein QC alone, and
-never from a hard-coded species list (the known species set is used only as a regression test).
-
-Outputs:
-  maps/fgfr2_exon_type_label_reconciliation.tsv
-  maps/fgfr2_exon_type_label_reconciliation_summary.tsv
-  maps/fgfr2_label_reconciliation_warnings.tsv
-  inputs/curated_human_FGFR2_IIIb_IIIc_cassette_reference.faa
-
-Human and mouse are positive controls: if their curated-anchor evidence fails, the pipeline stops.
-"""
 
 from __future__ import annotations
 
@@ -99,7 +81,6 @@ def protein_scores(protein: str) -> Dict[str, object]:
 
 
 def _resolve_member(sc: Dict[str, object], assigned: str, pairing_margin: float):
-    """Given a protein's scores and its pairing-assigned type, decide validated/status/conf."""
     own_id = sc["iiib_id"] if assigned == "IIIb" else sc["iiic_id"]
     own_cov = sc["iiib_cov"] if assigned == "IIIb" else sc["iiic_cov"]
     marker_ok = sc["b_marker"] if assigned == "IIIb" else sc["c_marker"]
@@ -120,8 +101,6 @@ def _resolve_member(sc: Dict[str, object], assigned: str, pairing_margin: float)
 
 
 def reconcile_species(members: List[Tuple[str, str]]):
-    """members = [(upstream_label, protein_seq)] for one species (typically IIIb + IIIc).
-    Returns per-member dict keyed by upstream_label with validated/final/status/conf/scores."""
     scores = {up: protein_scores(seq) for up, seq in members}
     ups = [up for up, _ in members]
     out: Dict[str, Dict[str, object]] = {}

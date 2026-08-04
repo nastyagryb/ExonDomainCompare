@@ -1,21 +1,3 @@
-"""Tests for the publication-quality plotting and Figure Gallery phase.
-
-Three kinds of check live here:
-
-* Source-level assertions on the React frontend, pinning the redesigned Candidate
-  Evidence layout, the full within-species Isoform Alignment (modes, navigation,
-  sequence selection, candidate overlay), the collapsed pairwise section and the
-  Figure Gallery information architecture. The repository has no component-test
-  runner for the frontend, so the visible surface is pinned here and complemented
-  by the browser pass.
-* Figure-source assertions that actually render the alignment figures with Node
-  and parse the produced SVG, so "self-contained vector output" is verified on
-  real output rather than asserted in prose.
-* Gallery-content assertions against the real reference runs, checking the final
-  single-species figure set, the absence of the removed cards and the presence of
-  one card per figure with several download formats.
-"""
-
 from __future__ import annotations
 
 import json
@@ -49,11 +31,6 @@ _LINE_COMMENT = re.compile(r"^\s*//.*$", re.MULTILINE)
 
 
 def rendered(rel: str) -> str:
-    """Source of a module with comments stripped.
-
-    Absence checks must judge what the user actually sees, so an explanatory
-    comment naming a removed element must not count as that element.
-    """
     return _LINE_COMMENT.sub("", _BLOCK_COMMENT.sub("", src(rel)))
 
 
@@ -73,7 +50,6 @@ def cards(run_id: str) -> list[dict]:
 # --------------------------------------------------------------------------- #
 
 def test_candidate_ranking_is_a_compact_strip_not_a_half_page_column():
-    """The ranking must not permanently reserve ~half the content width."""
     text = rendered("pages/GeneExplorer.jsx")
     css = (FRONTEND / "App.css").read_text(encoding="utf-8")
 
@@ -149,7 +125,6 @@ def test_alignment_offers_all_five_modes_and_does_not_default_to_the_candidate()
 
 
 def test_complete_alignment_is_not_cropped_to_the_candidate_interval():
-    """The full view must open at the N-terminus, not scrolled to the candidate."""
     text = rendered("pages/viewers/MsaExplorer.jsx")
     # The auto-scroll effect must be gated on the focused view.
     effect = re.search(r"useEffect\(\(\) => \{\s*if \(focusCandidate && rawBand\)", text)
@@ -169,11 +144,6 @@ def test_alignment_navigation_covers_blocks_termini_and_zoom():
 
 
 def test_block_navigation_actually_advances_the_viewport():
-    """A fractional lead silently swallows short jumps, so the lead is fixed.
-
-    Subtracting a third of a 120-column window from column 30 lands back at
-    offset 0, which makes the button look dead.
-    """
     text = rendered("pages/viewers/MsaExplorer.jsx")
     assert "const LEAD = 8" in text
     assert "goTo = (col) => setOffset(clampOffset(col - LEAD))" in text
@@ -293,7 +263,6 @@ def test_cross_species_msa_stays_a_separate_top_level_view():
 
 @pytest.fixture(scope="module")
 def rendered_alignment_figures(tmp_path_factory) -> dict:
-    """Render the alignment figure sources with Node and return the output dir."""
     if shutil.which("node") is None:
         pytest.skip("node is not available")
     index = run_dir(FGFR1_RUN_ID) / "website_indices" / "isoform_alignment_index.json"
@@ -347,7 +316,6 @@ def test_exported_svg_is_valid_and_self_contained(rendered_alignment_figures, na
 
 
 def test_full_alignment_figure_is_not_uniform_bars(rendered_alignment_figures):
-    """The overview must expose the isoform landscape, not one flat bar per model."""
     text = (rendered_alignment_figures["dir"] / "full_isoform_alignment.svg").read_text()
     assert text.count("<rect") > 100, "too few marks to show per-column structure"
     for label in ("alignment column", "identity", "Variable columns",
@@ -368,11 +336,6 @@ def test_candidate_detail_figure_carries_both_coordinate_systems(rendered_alignm
 
 
 def test_interactive_svg_components_carry_literal_colours():
-    """An exported SVG is a standalone document: var(--x) resolves to nothing.
-
-    A `stroke="var(--line-strong)"` therefore silently disappears from every
-    downloaded figure, so the SVG layers must use literal values.
-    """
     offenders = []
     for path in sorted(FRONTEND.rglob("*.jsx")):
         text = path.read_text(encoding="utf-8")
@@ -438,11 +401,6 @@ def test_one_card_per_figure_with_several_formats():
 
 
 def test_validated_fgfr2_gallery_keeps_its_curated_set_and_group_order():
-    """The FGFR2 index marks supplements with `kind`, not with a category.
-
-    Filtering on the category alone would expose all 90 figures as main cards and
-    reorder the curated groups, so both signals and the declared order must hold.
-    """
     text = rendered("pages/FigureGallery.jsx")
     assert 'f.kind !== "main" || f.category === SUPPLEMENTS' in text, \
         "the per-figure supplement kind is no longer honoured"
@@ -467,13 +425,6 @@ def test_validated_fgfr2_gallery_keeps_its_curated_set_and_group_order():
 
 
 def test_generic_indices_may_also_mark_a_card_as_a_supplement():
-    """A supplement inside a scientific category must stay a supplement.
-
-    The generic normaliser used to hardcode ``kind: "main"``, which silently
-    overrode the marking on the member-database signature card and presented it as
-    a main figure. Both supplement signals — the ``Supplements`` category and the
-    per-card ``kind`` — have to survive normalisation.
-    """
     text = rendered("pages/FigureGallery.jsx")
     assert 'kind: f.kind === "supplement" ? "supplement" : "main"' in text, \
         "the generic normaliser drops the per-card supplement marking"
@@ -592,7 +543,6 @@ REQUIRED_ANALYSES = {
 
 
 def test_single_species_figure_set_covers_the_required_analyses():
-    """FGFR1 Gallus must offer the Part-20 set without ballooning past it."""
     entries = [c for c in cards(FGFR1_RUN_ID) if c.get("status") == "available"]
     by_cat: dict[str, list[str]] = {}
     for c in entries:

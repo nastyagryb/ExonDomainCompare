@@ -1,27 +1,3 @@
-"""The SVG and the PDF of a figure must show the same picture.
-
-Both formats come from one figure specification but travel through two independent
-backends: the SVG backend writes an `opacity` attribute, while a minimal PDF has no
-soft mask and has to approximate translucency by blending the mark towards the
-paper. Nothing forces the two to agree, so a backend can silently drop a class of
-mark, and such a defect survives every per-format check — the PDF stays valid,
-vector, and full of text.
-
-The comparison happens on two levels, because neither alone is sufficient:
-
-* Structurally, every mark in the specification must be drawn by both backends.
-  This is the sensitive check. It was verified against an injected fault (the PDF
-  backend skipping translucent marks): it reports the exact primitive class that
-  went missing in all seven figures.
-* Visually, the two rasterised pages must have the same proportions, the same
-  inked area and no dark fallback paint. This catches distortion and clipping,
-  which the structural count cannot see.
-
-Global ink coverage is deliberately *not* asserted between the formats. Under the
-same injected fault it moved by only 11–12%, well inside the noise of two
-rasterisers at different resolutions, so it would have given false confidence.
-"""
-
 from __future__ import annotations
 
 import shutil
@@ -71,18 +47,12 @@ def _pdf_to_png(pdf: Path, out: Path, dpi: int = RENDER_DPI) -> None:
 
 
 def _ink(img) -> float:
-    """Fraction of pixels that carry ink, i.e. are not near-white."""
     grey = img.convert("L")
     dark = sum(c for v, c in enumerate(grey.histogram()) if v < 235)
     return dark / float(grey.width * grey.height)
 
 
 def _ink_bbox(img):
-    """Bounding box of the inked area, in fractions of the image size.
-
-    Expressed as fractions so the comparison holds even when the two rasterisers
-    disagree about the output resolution.
-    """
     # After thresholding, ink is non-zero and paper is zero, so getbbox() returns
     # the extent of the drawn content.
     mask = img.convert("L").point(lambda v: 0 if v > 235 else 255)
@@ -123,12 +93,6 @@ RUNS = [r for r in (FGFR1_RUN, TP53_RUN) if (r / MODEL).exists()]
 @pytest.mark.skipif(not RUNS, reason="no coordinate model available")
 @pytest.mark.parametrize("run", RUNS, ids=[r.name for r in RUNS])
 def test_both_backends_draw_every_mark_of_every_figure(run):
-    """The sensitive check: no primitive may be dropped by one backend.
-
-    Runs the same adapter and builders as the production renderer, then counts the
-    marks in each specification against the elements in the SVG and the operators
-    in the PDF.
-    """
     if not shutil.which("node"):
         pytest.skip("node is required to exercise the figure backends")
     proc = subprocess.run(["node", str(PARITY_HARNESS), str(run / MODEL)],
@@ -158,7 +122,6 @@ def test_neither_format_rasterises_to_a_blank_page(name, svg, pdf, tmp_path):
 @pytest.mark.skipif(not CASES, reason="no rendered main figures found")
 @pytest.mark.parametrize("name,svg,pdf", CASES, ids=IDS or None)
 def test_pdf_and_svg_place_their_content_in_the_same_area(name, svg, pdf, tmp_path):
-    """Same physical page and same inked bounding box, so nothing shifted or clipped."""
     _require_tools()
     from PIL import Image
 
@@ -186,7 +149,6 @@ def test_pdf_and_svg_place_their_content_in_the_same_area(name, svg, pdf, tmp_pa
 @pytest.mark.skipif(not CASES, reason="no rendered main figures found")
 @pytest.mark.parametrize("name,svg,pdf", CASES, ids=IDS or None)
 def test_neither_format_paints_a_dark_page(name, svg, pdf, tmp_path):
-    """Guards the historical failure mode: paint falling back to black."""
     _require_tools()
     from PIL import Image
 

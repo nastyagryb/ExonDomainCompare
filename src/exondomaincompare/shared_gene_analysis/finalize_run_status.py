@@ -1,29 +1,4 @@
 #!/usr/bin/env python3
-"""The one place a run's status.json is decided.
-
-Two pipelines finish a run, and each used to write the run-level status from a
-field it happened to have at hand. The post-cluster runner derived the overall
-status from the persisted ``pre_interpro_status`` — so a pre-cluster stage that
-had failed once and was then repaired kept the run out of ``results_ready``
-forever, even though every scientific view had current data and the roundtrip's
-own readiness evaluation said so. That is the FGFR2 human/cat readiness
-regression: a status field describing a superseded attempt outranked the run's
-artifacts.
-
-This module answers the question from the artifacts instead, for both layouts:
-
-* runs with the event-pipeline closure are judged by
-  ``shared_gene_analysis.run_availability.readiness``;
-* generic core runs are judged by ``framework.species_completion``.
-
-Both are gated on the cluster results actually describing the run's current
-proteins, so returned annotations for a superseded sequence can never carry a run
-to ``results_ready``.
-
-Usage::
-
-    python -m exondomaincompare.shared_gene_analysis.finalize_run_status --run-id <run_id>
-"""
 from __future__ import annotations
 
 import argparse
@@ -70,7 +45,6 @@ def _cluster_state(run_dir: Path) -> Tuple[str, Dict[str, Any]]:
 
 def _event_pipeline_verdict(run_dir: Path, status: Dict[str, Any],
                             ) -> Optional[Tuple[str, str, List[str]]]:
-    """Verdict for a run with the event-pipeline closure, or None."""
     from .run_availability import models_run, readiness
     if not models_run(run_dir):
         return None
@@ -86,7 +60,6 @@ def _event_pipeline_verdict(run_dir: Path, status: Dict[str, Any],
 
 
 def _core_verdict(run_dir: Path) -> Optional[Tuple[str, str, List[str]]]:
-    """Verdict for a generic core run, or None when the layout does not apply."""
     from exondomaincompare.framework.species_completion import (
         aggregate_run_status, build_species_completion,
     )
@@ -108,7 +81,6 @@ def _core_verdict(run_dir: Path) -> Optional[Tuple[str, str, List[str]]]:
 
 
 def evaluate_run(run_dir: Path) -> Dict[str, Any]:
-    """Derive the canonical run status without writing anything."""
     status = _read_json(run_dir / "status.json", {}) or {}
     cluster_status, cluster_report = _cluster_state(run_dir)
 
@@ -134,7 +106,6 @@ def evaluate_run(run_dir: Path) -> Dict[str, Any]:
 
 
 def finalize(run_dir: Path, dry_run: bool = False) -> Dict[str, Any]:
-    """Write the canonical run status derived from the run's artifacts."""
     report = evaluate_run(run_dir)
     if not report["decided"] or dry_run:
         return report
@@ -184,7 +155,7 @@ def finalize(run_dir: Path, dry_run: bool = False) -> Dict[str, Any]:
 
 
 def main(argv: Sequence[str] | None = None) -> int:
-    ap = argparse.ArgumentParser(description=__doc__,
+    ap = argparse.ArgumentParser(description="The one place a run's status.json is decided.",
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--run-id", required=True)
     ap.add_argument("--dry-run", action="store_true")

@@ -1,27 +1,4 @@
 #!/usr/bin/env python3
-"""
-analyze_exon_domain_boundary_consistency.py
-
-Central thesis-level analysis:
-    "Consistency and robustness of exon-domain boundary identification across
-     vertebrate FGFR2 orthologs (IIIb/IIIc case study)."
-
-Quantifies how consistently the IIIb/IIIc splice-cassette boundaries (and the
-coding-exon boundaries) sit relative to the InterProScan / pyTMHMM protein-domain
-architecture across the 58 primary FGFR2 proteins.
-
-Read-only. Uses the SANITIZED post-InterPro feature tables as the coordinate
-source (never the raw figure3C blocks where sanitation overrides exist).
-Never modifies FASTA, truth table, manifest or membership. Never relabels IIIb/IIIc.
-
-Outputs (results/.../16_final_thesis_analyses/exon_domain_boundary_consistency/):
-    tables/exon_domain_boundary_distances.tsv
-    tables/exon_domain_boundary_consistency_summary.tsv
-    tables/exon_domain_boundary_outliers.tsv
-    figures/Figure_11_exon_domain_boundary_consistency_heatmap.{svg,pdf,png}
-    figures/Figure_12_boundary_distance_distribution.{svg,pdf,png}
-    reports/exon_domain_boundary_consistency_report.md
-"""
 
 from __future__ import annotations
 
@@ -35,19 +12,17 @@ REPO = Path(__file__).resolve().parent.parent
 
 
 def display_path(path) -> str:
-    """Repo-relative path for display/logging only; falls back to the raw path when
-    BASE is a run-local relative path. Never raises and never affects outputs."""
     p = Path(path)
     try:
         return str(p.resolve().relative_to(REPO.resolve()))
     except Exception:
         return str(p)
 sys.path.insert(0, str(REPO / "scripts"))
-from exondomaincompare.presentation import fgfr2_plot_style as st  # noqa: E402
-import matplotlib.pyplot as plt  # noqa: E402
-from matplotlib.patches import Patch, Rectangle  # noqa: E402
+from exondomaincompare.presentation import fgfr2_plot_style as st
+import matplotlib.pyplot as plt
+from matplotlib.patches import Patch, Rectangle
 
-import os as _os  # run-folder path override (RESULTS_DIR/BASE); legacy default preserved
+import os as _os
 BASE = Path(_os.environ.get("FGFR2_RESULTS_DIR") or _os.environ.get("RESULTS_DIR")
             or _os.environ.get("BASE") or (REPO / "results" / "final_30_until_interpro_prepare"))
 CLOSURE = BASE / "13_final_pre_interpro_closure"
@@ -66,7 +41,6 @@ T_OUT = OUT / "tables"
 F_OUT = OUT / "figures"
 R_OUT = OUT / "reports"
 
-# thresholds (aa) documented in the report
 ALIGNED_MAX = 3      # 0-3 aa: aligned_to_domain_boundary
 NEAR_MAX = 15        # 4-15 aa: near_domain_boundary
 
@@ -93,9 +67,6 @@ TAXON_SHORT = {"Primates": "Primates", "Other mammals": "Mammals", "Birds": "Bir
 
 
 def _load_species_order() -> Dict[str, int]:
-    """Canonical species order from the reference list (biologically meaningful,
-    consistent with the other final project figures). Falls back to empty (then
-    taxon order + name is used)."""
     f = REPO / "reference" / "Species_list_final_30.txt"
     order: Dict[str, int] = {}
     if f.exists():
@@ -123,13 +94,8 @@ def to_int(v, default=None):
         return default
 
 
-# --------------------------------------------------------------------------- #
-# boundary classification
-# --------------------------------------------------------------------------- #
 def classify(x: Optional[int], domains: List[dict], *,
              aligned_max: int = ALIGNED_MAX, near_max: int = NEAR_MAX) -> dict:
-    """Classify a boundary position x against a list of domain intervals.
-    domains: [{"label","dclass","start","end"}]."""
     if x is None or not domains:
         return {"boundary_class": "review_or_missing", "label": "", "dclass": "",
                 "start": "", "end": "", "edge": "", "dist": ""}
@@ -160,9 +126,6 @@ def classify(x: Optional[int], domains: List[dict], *,
             "dist": best["dist"]}
 
 
-# --------------------------------------------------------------------------- #
-# load per-protein architecture from the sanitized feature table
-# --------------------------------------------------------------------------- #
 def load_architecture() -> Dict[Tuple[str, str], dict]:
     rows = read_tsv(FEATURES)
     by: Dict[Tuple[str, str], dict] = {}
@@ -241,7 +204,6 @@ def main() -> int:
         if tm_domains:
             n_tm += 1
 
-        # ---- cassette boundaries (thesis focus) ----
         cassette = node["cassette"]
         cell = {"species": sp, "isoform": iso, "final_isoform_label": iso_label,
                 "taxon_group": taxon, "eb_status": eb_status,
@@ -263,14 +225,12 @@ def main() -> int:
                         "species": sp, "isoform": iso, "taxon": taxon,
                         "btype": btype, "dist": c["dist"],
                         "class": c["boundary_class"], "eb_status": eb_status})
-            # landmark-specific relations (cassette_end vs each landmark class)
             cend = cassette["end"]
             cell["ig"] = classify(cend, ig_domains)["boundary_class"] if ig_domains else "review_or_missing"
             cell["tm"] = classify(cend, tm_domains)["boundary_class"] if tm_domains else "review_or_missing"
             cell["kinase"] = classify(cend, kin_domains)["boundary_class"] if kin_domains else "review_or_missing"
         heat[key] = cell
 
-        # ---- coding-exon boundaries (context) ----
         for ex in node["coding_exons"]:
             for btype, bpos in (("coding_exon_start", ex["start"]),
                                 ("coding_exon_end", ex["end"])):
@@ -390,10 +350,6 @@ def _write_summary(primary, heat, cass_recs, n_cassette, n_interpro, n_tm) -> di
 
 
 def _write_outliers(distance_rows, heat) -> List[dict]:
-    """A cassette boundary is an outlier only when its placement relative to the
-    domain architecture is genuinely unusual (outside domains / missing / very far)
-    or when the exon-block *display* is low-confidence. A cassette sitting inside
-    Ig3 (within_domain) is expected and is NOT an outlier."""
     LOW_CONF = {"cassette_only_high_confidence", "native_exon_blocks_reconstructed"}
     UNRESOLVED = {"cassette_only_display", "hide_untrusted_exon_block"}
     out: List[dict] = []
@@ -445,9 +401,6 @@ def _write_outliers(distance_rows, heat) -> List[dict]:
     return out
 
 
-# --------------------------------------------------------------------------- #
-# figures
-# --------------------------------------------------------------------------- #
 def _sort_key(cell) -> tuple:
     ti = TAXON_ORDER.index(cell["taxon_group"]) if cell["taxon_group"] in TAXON_ORDER else 99
     si = SPECIES_ORDER.get(cell["species"], 999)
@@ -562,8 +515,6 @@ def _figure12(cass_recs: List[dict]) -> None:
         ax.spines[sp].set_visible(False)
     st.savefig(fig, F_OUT, "Figure_12_boundary_distance_distribution")
 
-
-# --------------------------------------------------------------------------- #
 def _report(primary, summary, outliers, distance_rows) -> None:
     cc = summary["cassette_class_counts"]
     tot = sum(cc.values())

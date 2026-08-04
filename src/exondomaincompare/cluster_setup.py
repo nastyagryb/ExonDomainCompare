@@ -1,4 +1,3 @@
-"""Safe LRZ configuration, remote preflight and managed tool provisioning."""
 from __future__ import annotations
 
 import json

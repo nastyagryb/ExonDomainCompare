@@ -1,39 +1,3 @@
-"""The curated FGFR2 Figure Gallery catalogue.
-
-A rendered file and a Gallery card are not the same thing, and the FGFR2 gallery
-went wrong by treating them as one. Ninety cards had accumulated because every
-pre-rendered file became an entry point: 62 of them were one species-and-isoform
-architecture each, four were taxon and cassette filter variants of a single figure,
-and three pairs were byte-identical files listed twice under different names. A
-reader looking for the cassette evidence had to scroll past sixty near-identical
-thumbnails to find it.
-
-This module builds the catalogue the other way round. It starts from the canonical
-scientific questions the FGFR2 analysis answers, gives each one card, and attaches
-the rendered files to that card as export modes and interactive states. A filter, a
-coordinate system, a taxon subset, a file format and an isoform selection are all
-things a reader *does to* a card; none of them is a card.
-
-Levels, kept separate so a comparative claim can never be confused with a
-per-species one:
-
-``comparative_cards``
-    The curated main set: one card per comparative scientific question.
-
-``species_scopes``
-    One scope per real species, each listing the species' analysis models and the
-    curated card set the accepted single-species pipeline produces. A species whose
-    second isoform model does not exist stays in the list with an exact status for
-    the model it is missing — it is not dropped, and no second model is invented.
-
-``supplements``
-    Hidden by default. Review-case panels, QC histograms and figures superseded by
-    a main card live here rather than being deleted, because the thesis cites them.
-
-``availability``
-    What exists and what does not, for the whole dataset, so a missing figure is
-    always distinguishable from a broken one.
-"""
 from __future__ import annotations
 
 import json
@@ -63,7 +27,6 @@ BOUNDARY_TABLES = _BOUNDARY_ROOT / "tables"
 
 
 def _asset_reference(path: Path) -> str:
-    """Return a portable repository- or run-relative asset path."""
     resolved = Path(path).resolve()
     for parent in resolved.parents:
         if (parent / "run_config.json").is_file():
@@ -73,29 +36,17 @@ def _asset_reference(path: Path) -> str:
                 break
     return cm._rel(resolved)
 
-#: A card whose analysis needs the cluster round-trip and has not had it yet.
+
 PENDING_CLUSTER = "pending_cluster"
 
-#: The message such a card carries. The wording says what has not happened, never that the
-#: figure is missing or unavailable: the analysis is real and simply has not been performed.
 PENDING_CLUSTER_REASON = (
     "InterProScan and pyTMHMM annotation has not been returned from the cluster yet. "
     "This figure is produced by the cluster round-trip.")
 
-#: The per-model status ``coordinate_model`` records for a protein whose cluster-derived
-#: layers do not exist yet. Read here so a species scope can tell "waiting" from "will
-#: never have this layer".
+
 PENDING_ANNOTATION = "pending_cluster_annotation"
 
-#: Reading order of the comparative sections.
-#:
-#: Two boundary sections sit here, and keeping them apart is the point. The
-#: validated one answers a question about the IIIb/IIIc cassette and carries the
-#: freeze's own conclusions. The generic one asks a different question — where every
-#: supported internal coding-exon boundary of the whole protein falls relative to
-#: representative domain edges — and carries no validated claim at all. A single
-#: "boundaries" section would let a reader carry the confidence of the first
-#: analysis over to the second.
+
 COMPARATIVE_CATEGORY_ORDER = [
     "Comparative exon structure",
     "FGFR2 cassette evidence",
@@ -106,9 +57,6 @@ COMPARATIVE_CATEGORY_ORDER = [
     "Comparative genomic context",
 ]
 
-#: Printed on every card of the generic whole-protein boundary section, so the
-#: distinction travels with the figure rather than living only in a section heading
-#: the reader may have scrolled past.
 GENERIC_BOUNDARY_SCOPE_NOTE = (
     "This analysis evaluates supported internal coding-exon boundaries across the "
     "complete protein architecture. It is separate from the validated FGFR2 "
@@ -126,13 +74,6 @@ SPECIES_CATEGORY_ORDER = [
 
 SUPPLEMENTS = "Supplements"
 
-#: Sections whose figures the cluster round-trip produces. Before it has run they are
-#: represented as pending rather than dropped, so a reader can see that the analysis exists
-#: and what it is waiting for.
-#: Every one of these draws a domain edge, a projected coding-exon series or a distance to a
-#: domain boundary, so none of them can be rendered from pre-InterPro data alone. The
-#: pre-cluster sections — cassette evidence, sequence analysis, genomic context and the
-#: closure supplements — are absent from the list and remain available immediately.
 POST_CLUSTER_CATEGORIES = frozenset({
     "Comparative exon structure",
     "Comparative domain architecture",
@@ -148,19 +89,6 @@ POST_CLUSTER_CATEGORIES = frozenset({
 
 @dataclass(frozen=True)
 class Dataset:
-    """Where one FGFR2 dataset keeps the assets a Gallery card points at.
-
-    The catalogue used to read these from module constants bound to
-    ``results/final_30_until_interpro_prepare``, which is why the modern Gallery could only
-    ever describe the validated 30-species dataset: a run had the same closure layout and
-    the same figure names, but no way to say so. Passing the roots in makes the catalogue a
-    function of a dataset instead of a description of one.
-
-    ``cluster_ready`` is not derived from the paths on purpose. A pre-cluster run and a run
-    whose post-cluster figures failed to render both lack the files; only the caller knows
-    which of the two it is looking at.
-    """
-
     dataset_id: str
     closure: Path
     architecture: Path
@@ -168,8 +96,6 @@ class Dataset:
     #: The tables a card cites as its source data, by the keys the card definitions use.
     tables: Dict[str, str]
     cluster_ready: bool = True
-    #: The coordinate model a comparative boundary card cites. Differs per dataset because
-    #: the validated dataset's model lives in the derived overlay, a run's in its own tree.
     coordinate_model_path: Optional[Path] = None
 
     @property
@@ -199,14 +125,12 @@ class Dataset:
         return self.closure / "website_indices"
 
     def pending(self, category: str) -> str:
-        """The pending note for a card in this section, or "" when none applies."""
         if self.cluster_ready or category not in POST_CLUSTER_CATEGORIES:
             return ""
         return PENDING_CLUSTER_REASON
 
 
 def freeze_dataset() -> Dataset:
-    """The validated 30-species dataset — the catalogue's original and default subject."""
     return Dataset(
         dataset_id="example",
         closure=cm.CLOSURE,
@@ -225,12 +149,6 @@ def freeze_dataset() -> Dataset:
 
 
 def run_dataset(run_dir: Path, *, cluster_ready: Optional[bool] = None) -> Dataset:
-    """One FGFR2 run as a Gallery dataset.
-
-    A run's closure carries the same table and figure names as the freeze, because the same
-    pre-InterPro pipeline writes both. That is what makes the comparative card definitions
-    reusable without a second catalogue.
-    """
     run_dir = Path(run_dir)
     results = run_dir / "results"
     closure = results / "13_final_pre_interpro_closure"
@@ -258,21 +176,11 @@ def run_dataset(run_dir: Path, *, cluster_ready: Optional[bool] = None) -> Datas
                                / "protein_coordinate_model.json"),
     )
 
-#: A card offers its figure in every format the renderer wrote beside it. The source
-#: table is one of them: a reader who wants to check a plotted value, or replot it,
-#: needs the numbers the figure was drawn from, not only the picture.
+
 EXPORT_FORMATS = ("png", "svg", "pdf", "tsv")
 
 
-# --------------------------------------------------------------------------- #
-# assets
-# --------------------------------------------------------------------------- #
 def _formats(directory: Path, stem: str) -> Dict[str, str]:
-    """The export formats one rendered figure actually has.
-
-    A format is a way to download a card, never a card of its own, so the formats
-    of a figure are collected onto the single card that owns it.
-    """
     out: Dict[str, str] = {}
     for ext in EXPORT_FORMATS:
         path = directory / f"{stem}.{ext}"
@@ -283,11 +191,6 @@ def _formats(directory: Path, stem: str) -> Dict[str, str]:
 
 def _mode(stem: str, label: str, directory: Optional[Path], *, description: str = "",
           default: bool = False) -> Optional[Dict[str, Any]]:
-    """One view of a card: a filter, a coordinate system or a rendered variant.
-
-    A directory that does not exist yet is the same as one holding no matching file: the
-    mode is absent, and the card decides what that means.
-    """
     if directory is None:
         return None
     formats = _formats(directory, stem)
@@ -311,22 +214,6 @@ def _card(figure_id: str, *, title: str, category: str, scope: str,
           model_selection: Optional[Dict[str, Any]] = None,
           supersedes: Sequence[str] = (),
           availability: Optional[Dict[str, Any]] = None) -> Optional[Dict[str, Any]]:
-    """One canonical scientific figure, with everything a reader needs to judge it.
-
-    Returns ``None`` when the card has neither a rendered view nor a stated reason
-    for having none. A card with no figure and no reason is a placeholder, and a
-    placeholder is worse than an absence — but silently dropping a card whose data
-    genuinely does not exist is worse still, because then the reader cannot tell a
-    missing analysis from a broken page. So an empty card survives exactly when it
-    can say why it is empty.
-
-    A card in a post-cluster section has such a reason by construction: its figure is
-    produced by the cluster round-trip, so having none means the round-trip has not
-    delivered it. That card is kept and says so, which is what lets a run before the
-    round-trip show its full Gallery architecture without claiming any result.
-    ``build_catalogue`` refines the wording for a dataset whose round-trip *has* run,
-    because there the same empty card means something worse than "not yet".
-    """
     present = [m for m in modes if m]
     stated_absence = (availability or {}).get("unavailable_models")
     pending = PENDING_CLUSTER_REASON if category in POST_CLUSTER_CATEGORIES else ""
@@ -362,11 +249,6 @@ def _card(figure_id: str, *, title: str, category: str, scope: str,
     }
 
 
-# --------------------------------------------------------------------------- #
-# comparative cards
-# --------------------------------------------------------------------------- #
-#: The validated dataset's source tables, kept as a module constant because the withdrawn-
-#: card record cites them by name. Derived from the dataset so there is one definition.
 FREEZE_TABLES = freeze_dataset().tables
 
 _FREEZE_RENDERER = "scripts/make_all_figures.py (validated FGFR2 freeze)"
@@ -375,12 +257,6 @@ _SHARED_RENDERER = "scripts/plotting/render_comparative_gallery_figures.mjs"
 
 def _comparative_cards(comparative_dir: Optional[Path],
                        ds: Dataset) -> List[Dict[str, Any]]:
-    """The curated comparative main set: one card per comparative question.
-
-    Every asset root comes from ``ds``. The card definitions below name figures and tables
-    by the stems the pre-InterPro pipeline writes, and it writes the same stems for a run as
-    for the freeze — which is why one set of definitions serves both.
-    """
     F, A = ds.closure_figures, ds.arch_overview
     FREEZE_TABLES = ds.tables
     BOUNDARY_TABLES, BOUNDARY_FIGURES = ds.boundary_tables, ds.boundary_figures
@@ -392,8 +268,6 @@ def _comparative_cards(comparative_dir: Optional[Path],
             category="Comparative exon structure",
             scope="comparative",
             figure_type="all_species_exon_domain_architecture",
-            # The panel size is the dataset's, not a constant: a two-species run
-            # asking about "the 30-species panel" would misstate its own scope.
             question="How do coding-exon structure, domain architecture and the "
                      "IIIb/IIIc cassette slot line up across the species panel?",
             interpretation="Rows are one protein per species and isoform, ordered "
@@ -402,8 +276,6 @@ def _comparative_cards(comparative_dir: Optional[Path],
                            "helix is a pyTMHMM prediction.",
             renderer=_FREEZE_RENDERER,
             source_data=[FREEZE_TABLES["architecture"]],
-            # 10A–10D were four permanent cards. They are the same figure under a
-            # cassette or taxon filter, which is a thing the reader selects.
             modes=[
                 _mode("Figure_10_all_species_FGFR2_exon_domain_architecture_primary",
                       "All species", A, default=True,
@@ -589,8 +461,6 @@ def _comparative_cards(comparative_dir: Optional[Path],
 
     ]
 
-    # Shared exon identity or alignment columns define cross-species boundary groups.
-    # Missing post-cluster figures remain visible as pending catalogue entries.
     G = "Comparative exon–domain boundaries"
     boundary_source = ([_asset_reference(ds.coordinate_model_path)]
                        if ds.coordinate_model_path else [])
@@ -679,10 +549,7 @@ def _comparative_cards(comparative_dir: Optional[Path],
     return [c for c in cards if c]
 
 
-#: Cards withdrawn from the visible Gallery. They are recorded rather than simply
-#: deleted, because their source tables are still validated data that downloads,
-#: QC and regression tests depend on: the figure stopped being a Gallery entry
-#: point, the evidence behind it did not stop existing.
+
 WITHDRAWN_CARDS = [
     {
         "figure_id": "fgfr2_cmp_framework_evidence_stack",
@@ -710,9 +577,6 @@ WITHDRAWN_CARDS = [
 ]
 
 
-# --------------------------------------------------------------------------- #
-# supplements
-# --------------------------------------------------------------------------- #
 _SUPPLEMENT_DEFS = [
     ("Figure_1_framework_overview", "Framework overview",
      "Which analysis steps produced the final isoform assignments?",
@@ -790,12 +654,6 @@ def _supplement_cards(ds: Dataset) -> List[Dict[str, Any]]:
     return out
 
 
-# --------------------------------------------------------------------------- #
-# species scopes
-# --------------------------------------------------------------------------- #
-#: The single-species cards, in the order a reader works through them. Each entry
-#: is one scientific question; the isoform models of the species are *modes* of the
-#: card, never separate cards.
 _SPECIES_CARD_DEFS = [
     ("primary_exon_projection", "Coding exon projection", "Exon structure",
      "Which coding exons produce which regions of this protein?",
@@ -827,9 +685,6 @@ _SPECIES_CARD_DEFS = [
      "depends on the near-edge threshold stated in the figure."),
 ]
 
-#: Which model layers each species card needs. A card is offered for a model only
-#: when that model supports it, so a cassette-only protein does not get an exon
-#: figure with nothing in it.
 _CARD_REQUIRES = {
     "primary_exon_projection": "exon_structure",
     "integrated_domain_architecture": "domain_architecture",
@@ -853,11 +708,6 @@ def _model_supports(model: Dict[str, Any], layer: str) -> bool:
 
 
 def _model_stem(model: Dict[str, Any], figure_type: str) -> str:
-    """The rendered stem for one model and figure type.
-
-    Derived from the model's explicit role, mirroring the renderer. The catalogue
-    never parses a file name to work out which model a file belongs to.
-    """
     species = model["species_id"]
     key = species if model.get("is_primary_reference") else \
         f"{species}_{model.get('final_isoform_label') or model.get('isoform')}"
@@ -868,7 +718,6 @@ def _species_scope(species_id: str, models: Sequence[Dict[str, Any]],
                    main_dir: Optional[Path],
                    availability: Dict[str, Any],
                    ds: Dataset) -> Dict[str, Any]:
-    """One species' scope: its models, and one card per scientific question."""
     FREEZE_TABLES, ARCH_PER_SPECIES = ds.tables, ds.arch_per_species
     per_species = (availability.get("per_species") or {}).get(species_id) or {}
     unavailable = [u for u in availability.get("unavailable_combinations") or []
@@ -890,9 +739,6 @@ def _species_scope(species_id: str, models: Sequence[Dict[str, Any]],
         "review_status": m.get("review_status") or "",
     } for m in models]
 
-    # A combination with no model is listed as an unavailable model, with the
-    # freeze's own reason. Hiding it would make the species look like a
-    # one-isoform species, which is not what the analysis found.
     for u in unavailable:
         model_entries.append({
             "model_id": "",
@@ -911,9 +757,6 @@ def _species_scope(species_id: str, models: Sequence[Dict[str, Any]],
             "review_status": u.get("review_status") or "",
         })
 
-    # Whether every model of this species is simply waiting for cluster annotation, as
-    # opposed to lacking a layer the analysis will never produce for it. Both leave a card
-    # without a figure, and only the first will be resolved by running the round-trip.
     all_pending = bool(models) and not unavailable and all(
         m.get("availability_status") == PENDING_ANNOTATION for m in models)
 
@@ -934,8 +777,6 @@ def _species_scope(species_id: str, models: Sequence[Dict[str, Any]],
             "reason": m.get("unavailable_reason")
                       or f"this model has no {layer.replace('_', ' ')} layer",
         } for m in models if m not in supporting]
-        # A combination with no model at all cannot support any layer either, and
-        # the reader should read that on the card rather than infer it from a gap.
         withheld += [{
             "isoform": u["isoform"], "model_id": "", "reason": u["omission_reason"],
         } for u in unavailable]
@@ -970,9 +811,6 @@ def _species_scope(species_id: str, models: Sequence[Dict[str, Any]],
         if card:
             cards.append(card)
 
-    # One card that needs *both* models at once: how the two isoforms of this
-    # species differ. It exists only where the species really has two models, and
-    # it never merges their coordinates into one synthetic protein.
     combined = [m for m in models if _model_supports(m, "exon_structure")]
     if len(combined) > 1 and main_dir:
         modes = [_mode(_model_stem(m, "primary_exon_projection"),
@@ -1010,9 +848,6 @@ def _species_scope(species_id: str, models: Sequence[Dict[str, Any]],
         if card:
             cards.append(card)
 
-    # The validated per-species architecture figures of the freeze. These were 62
-    # flat supplement cards; here they are one card of this species, with its
-    # isoform models as modes.
     validated_modes = [
         _mode(f"{species_id}_{m.get('final_isoform_label') or m.get('isoform')}"
               f"_exon_domain_architecture",
@@ -1068,12 +903,6 @@ def _species_scope(species_id: str, models: Sequence[Dict[str, Any]],
     }
 
 
-# --------------------------------------------------------------------------- #
-# the catalogue
-# --------------------------------------------------------------------------- #
-#: Cards in this category can only be drawn from comparable cross-species boundary
-#: groups. A dataset that has none has nothing to draw, which is a statement about the
-#: evidence rather than a missing file.
 CROSS_SPECIES_BOUNDARY_CATEGORY = "Comparative exon–domain boundaries"
 
 NO_COMPARABLE_BOUNDARIES_REASON = (
@@ -1088,16 +917,6 @@ SINGLE_SPECIES_REASON = (
 
 def _refine_pending(cards: Sequence[Dict[str, Any]], ds: Dataset,
                     model_index: Optional[Dict[str, Any]] = None) -> None:
-    """Distinguish "not yet run" from "ran and produced nothing", and that from "nothing
-    to draw".
-
-    ``_card`` marks every figure-less post-cluster card ``pending_cluster``, because before
-    the round-trip that is exactly what it is. For a dataset whose round-trip *has* run the
-    same emptiness means either that the comparative evidence does not exist — an honest
-    scientific answer — or that a layer was not derived from annotation that does exist,
-    which is a defect. Reporting both as "missing output" would send a reader looking for a
-    broken file when the finding is that no boundary is comparable across their species.
-    """
     if not ds.cluster_ready:
         return
     comparable = (((model_index or {}).get("boundary_dashboard") or {})
@@ -1128,11 +947,6 @@ def build_catalogue(model_index: Dict[str, Any], *,
                     main_dir: Optional[Path] = None,
                     comparative_dir: Optional[Path] = None,
                     dataset: Optional[Dataset] = None) -> Dict[str, Any]:
-    """The curated FGFR2 gallery catalogue.
-
-    ``dataset`` names where the assets live. It defaults to the validated 30-species freeze,
-    which is the catalogue's original subject, so an existing caller is unaffected.
-    """
     ds = dataset or freeze_dataset()
     availability = model_index.get("availability") or {}
     species_ids = model_index.get("species_scope") or []
@@ -1163,8 +977,6 @@ def build_catalogue(model_index: Dict[str, Any], *,
         "species_scopes": scopes,
         "supplements": supplements,
         "filters": {
-            # Species order is the canonical taxonomic order, not alphabetical and
-            # not insertion order.
             "species": [{
                 "species_id": sid,
                 "scientific_name": so.scientific_name(sid),
@@ -1210,28 +1022,10 @@ def build_catalogue(model_index: Dict[str, Any], *,
 
 
 def withdrawn_figure_stems() -> set:
-    """The rendered figures no FGFR2 Gallery registers a card for.
-
-    One definition, read by both catalogue builders: the curated catalogue of the
-    validated 30-species dataset, and the per-file figure index that the smaller
-    FGFR2 closure runs still use. Without a shared definition, a card withdrawn from
-    one dataset would quietly reappear in another.
-
-    The files themselves stay where they are. They are validated output that
-    downloads, QC and regression tests read; what changes is that the Gallery no
-    longer offers them as a reader's entry point.
-    """
     return {stem for card in WITHDRAWN_CARDS for stem in card["source_figures"]}
 
 
 def flatten_for_gallery(catalogue: Dict[str, Any]) -> Dict[str, Any]:
-    """The catalogue as the Gallery's ``figure_index.json``.
-
-    The Gallery reads a flat card list and shows one scope at a time, so the flat
-    list is a transport, not the visible catalogue: a reader ever sees the twelve
-    comparative cards or one species' six-to-seven, never the union. Every card
-    keeps its scope and species id so that filter can do its work.
-    """
     figures: List[Dict[str, Any]] = []
     figures += catalogue["comparative_cards"]
     for scope in catalogue["species_scopes"].values():
@@ -1279,9 +1073,6 @@ def write_catalogue(outdir: Path, *, main_dir: Optional[Path] = None,
     path = outdir / "figure_catalogue.json"
     path.write_text(json.dumps(catalogue, indent=2, ensure_ascii=False) + "\n",
                     encoding="utf-8")
-    # The Gallery's own index, written from the catalogue rather than from a
-    # directory listing. It lands in the derived tree, so the read-only freeze keeps
-    # its original index untouched and the overlay serves this one.
     (outdir / "figure_index.json").write_text(
         json.dumps(flatten_for_gallery(catalogue), indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8")
@@ -1290,7 +1081,7 @@ def write_catalogue(outdir: Path, *, main_dir: Optional[Path] = None,
 
 def main(argv: Optional[List[str]] = None) -> int:
     import argparse
-    ap = argparse.ArgumentParser(description=__doc__,
+    ap = argparse.ArgumentParser(description='The curated FGFR2 Figure Gallery catalogue.',
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     derived = ROOT / "results" / "derived" / "example"
     ap.add_argument("--indices", default=str(derived / "website_indices"))

@@ -1,13 +1,3 @@
-"""The shared local-synteny contract, checked against real run data.
-
-The regression these tests exist for: the FGFR1 Mus musculus neighbourhood
-displayed five upstream loci, the target and only four downstream loci. All ten
-neighbours were present in ``synteny_neighbors.tsv`` and in the index; the tenth
-was lost in the browser, where the loci were laid out as a horizontally
-scrolling row of fixed-width buttons and the outermost one fell outside the
-visible area. So the assertions here run in both directions: every real locus
-reaches the contract, and no locus that is not in the source table appears in it.
-"""
 from __future__ import annotations
 
 import csv
@@ -63,7 +53,6 @@ def _source_counts(run_dir: Path, species_id: str) -> Counter:
 # The reported case: FGFR1 Mus musculus
 # --------------------------------------------------------------------------- #
 def test_fgfr1_mus_keeps_all_five_downstream_neighbours():
-    """The missing fifth downstream locus was a rendering loss, not missing data."""
     run_dir = _run_dir("fgfr1_two_species")
     source = _source_counts(run_dir, "mus_musculus")
     assert source["upstream"] == 5 and source["downstream"] == 5
@@ -138,7 +127,6 @@ def test_target_is_never_counted_as_a_neighbour(key):
 
 @pytest.mark.parametrize("key", list(RUNS))
 def test_no_fabricated_loci(key):
-    """Every displayed symbol traces back to a row of the source table."""
     run_dir = _run_dir(key)
     path = run_dir / "results" / "core_gene_analysis" / "synteny_neighbors.tsv"
     with path.open(newline="", encoding="utf-8") as fh:
@@ -164,7 +152,6 @@ def test_complete_five_and_five_case_is_reported_as_complete(key):
 
 
 def test_unequal_neighbour_counts_are_stated_rather_than_padded():
-    """A genome with fewer real loci on one side must say so, not invent a gene."""
     from exondomaincompare.shared_gene_analysis import synteny_contract as sc
     neighbours = (
         [sc.neighbour_locus(side="upstream", rank=i, source_symbol=f"UP{i}",
@@ -201,7 +188,6 @@ def test_upstream_reads_outward_to_inward_so_the_display_order_is_genomic():
 
 
 def test_status_and_orthology_strings_carry_readable_labels():
-    """Internal state strings never reach the interface as the primary label."""
     from exondomaincompare.shared_gene_analysis import synteny_contract as sc
     for status in sc.STATUS_DISPLAY:
         label, definition = sc.status_display(status)
@@ -246,7 +232,6 @@ HARNESS = Path(__file__).with_name("check_synteny_renderer.mjs")
 
 @pytest.mark.parametrize("key", list(RUNS))
 def test_renderer_centres_the_target_and_clips_nothing(key, tmp_path):
-    """The regression lived in the browser, so the layout is checked in Node."""
     import shutil
     if shutil.which("node") is None:
         pytest.skip("node is required for the renderer checks")
@@ -273,7 +258,6 @@ def test_renderer_handles_the_thirty_species_fgfr2_dataset(tmp_path):
 
 
 def test_the_frontend_has_exactly_one_synteny_renderer():
-    """A second drawing implementation is free to disagree with this one."""
     src = ROOT / "webapp" / "frontend" / "src"
     drawing = [p for p in src.rglob("*.jsx")
                if "st-genes" in p.read_text(encoding="utf-8")]

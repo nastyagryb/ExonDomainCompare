@@ -1,17 +1,4 @@
 #!/usr/bin/env python3
-"""
-Build the final pre-InterProScan closure.
-
-Builds the single final truth table, cross-table consistency gate, final MSA snapshot copies,
-InterProScan-ready FASTA freeze (primary + review), checksums, thesis-ready reports, and archive
-manifest. Does NOT run InterProScan or create fake domain annotations.
-
-Intended to run AFTER:
-  ./run_fgfr2_pipeline_current_v3.sh
-  python scripts/run_fgfr2_msa_boundary_module.py --base <base>
-  python scripts/make_fgfr2_synteny_figures_paper.py --base <base>   (optional polish)
-  python scripts/make_fgfr2_final_framework_figure.py --base <base>
-"""
 
 from __future__ import annotations
 
@@ -76,7 +63,6 @@ def _run_id() -> str:
 
 
 def load_protein_sequences(base: Path) -> Dict[str, Tuple[str, str, int]]:
-    """protein_id -> (sequence, md5, length). Parses composite MSA headers species|isoform|pid|tag."""
     md = M.module_dir(base)
     seqs: Dict[str, Tuple[str, str, int]] = {}
 
@@ -136,7 +122,6 @@ def msa_full_length_status(integ_row: Dict[str, str]) -> Tuple[str, str, str, fl
 
 
 def build_truth_table(base: Path) -> List[Dict[str, object]]:
-    """Part B — single final biological source of truth (one row per species/isoform)."""
     md = M.module_dir(base)
     post = M.read_tsv(md / "maps" / "fgfr2_post_rescue_final_truth_table.tsv")
     if not post:
@@ -234,7 +219,6 @@ def build_truth_table(base: Path) -> List[Dict[str, object]]:
 
 
 def final_consistency_gate(base: Path, truth: List[Dict[str, object]], cdir: Path) -> Tuple[bool, List[str]]:
-    """Run the cross-table consistency gate."""
     md = M.module_dir(base)
     tabd = md / "tables"
     checks: List[Dict[str, str]] = []
@@ -617,7 +601,6 @@ def final_consistency_gate(base: Path, truth: List[Dict[str, object]], cdir: Pat
 
 
 def finalize_msa_outputs(base: Path, cdir: Path) -> List[str]:
-    """Part D — copy current MSA layer outputs to final MSA/ snapshot with final_* names."""
     md = M.module_dir(base)
     written = []
     for src_rel, dst_rel in MSA_FINAL_MAP:
@@ -632,7 +615,6 @@ def finalize_msa_outputs(base: Path, cdir: Path) -> List[str]:
 
 
 def freeze_fasta(base: Path, truth: List[Dict[str, object]], cdir: Path) -> None:
-    """Part E — InterProScan-ready FASTA freeze with MD5 manifest."""
     seqs = load_protein_sequences(base)
     freeze = cdir / "freeze"
     freeze.mkdir(parents=True, exist_ok=True)
@@ -689,7 +671,6 @@ def write_checksums(cdir: Path) -> List[Dict[str, str]]:
 
 
 def assemble_final_figures(base: Path, cdir: Path) -> List[str]:
-    """Part G/H — copy/regenerate final paper figure set with closure naming."""
     fig_dir = cdir / "figures"
     fig_dir.mkdir(parents=True, exist_ok=True)
     pub = base / "11_publication_figures_pre_interpro" / "figures"
@@ -755,7 +736,6 @@ def assemble_final_figures(base: Path, cdir: Path) -> List[str]:
 def write_reports(base: Path, truth: List[Dict[str, object]], cdir: Path, run_id: str,
                   gate_ok: bool = True, gate_failures: Optional[List[str]] = None,
                   run_mode: Optional[Dict[str, object]] = None) -> None:
-    """Part I — thesis-ready closure reports."""
     rep = cdir / "reports"
     rep.mkdir(parents=True, exist_ok=True)
     from collections import Counter
@@ -927,7 +907,6 @@ CLOSURE_SCRIPT_NAMES = [
 
 
 def write_environment_report(cdir: Path) -> Path:
-    """Part J — dependency / tool versions for reproducibility."""
     import subprocess
 
     arch = cdir / "archive"
@@ -961,7 +940,6 @@ def write_environment_report(cdir: Path) -> Path:
 
 
 def stage_closure_scripts(cdir: Path) -> List[str]:
-    """Copy pipeline scripts into archive/scripts/ for freeze bundle."""
     scripts_root = Path(__file__).resolve().parent
     dest_root = cdir / "archive" / "scripts"
     dest_root.mkdir(parents=True, exist_ok=True)
@@ -987,7 +965,6 @@ def stage_closure_scripts(cdir: Path) -> List[str]:
 
 
 def create_archive(cdir: Path, run_id: str) -> Path:
-    """Part J — ZIP archive + manifest."""
     arch_dir = cdir / "archive"
     arch_dir.mkdir(parents=True, exist_ok=True)
     zip_path = arch_dir / f"FGFR2_final_pre_interpro_freeze_{run_id}.zip"

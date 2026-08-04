@@ -1,11 +1,3 @@
-"""Derived state must follow its inputs, and an empty view must name its own cause.
-
-The *Equus quagga* run showed three empty pages over data that was complete on disk: its
-website indices predated the closure directory they summarize, and nothing compared the
-two. These tests pin the two properties that would have caught it — a derived artefact
-older than its inputs is stale, and a view whose source table is missing says so instead
-of implying the species lacks the biology.
-"""
 from __future__ import annotations
 
 import ast
@@ -106,12 +98,6 @@ def run_dir(tmp_path: Path) -> Path:
 
 @pytest.fixture()
 def complete_run(tmp_path: Path) -> Path:
-    """A run that has been all the way through, cluster round-trip included.
-
-    ``run_dir`` stops before the round-trip, so it is not a finished run: its domain and
-    boundary views are still waiting for annotation. Treating it as complete is what let a
-    pre-cluster run be published as "Results ready".
-    """
     return _make_run(tmp_path, with_cluster=True)
 
 
@@ -124,7 +110,6 @@ def test_indices_built_after_their_inputs_are_current(run_dir: Path):
 
 
 def test_indices_older_than_the_closure_are_stale(run_dir: Path):
-    """Exactly the *Equus quagga* situation: the closure is rewritten, indices are not."""
     later = time.time() + 60
     target = (run_dir / "results" / "13_final_pre_interpro_closure"
               / "final_pre_interpro_truth_table.tsv")
@@ -146,7 +131,6 @@ def test_a_stale_index_is_not_reported_as_an_available_view(run_dir: Path):
 
 
 def test_an_upstream_rebuild_that_changed_nothing_downstream_is_not_stale(run_dir: Path):
-    """A registry rebuild alone must not condemn indices that still match the closure."""
     later = time.time() + 60
     registry = run_dir / "results" / "01_species_registry"
     registry.mkdir(parents=True, exist_ok=True)
@@ -183,7 +167,6 @@ def test_a_missing_source_table_is_technically_missing(run_dir: Path):
 
 
 def test_a_header_only_source_table_is_scientifically_unavailable(run_dir: Path):
-    """Written and empty is a finding about the data, not about the software."""
     (run_dir / "results" / "13_final_pre_interpro_closure" / "tables"
      / "figure3C_exon_to_protein_cassette_coordinate_map.tsv").write_text(
         "species\tisoform\n", encoding="utf-8")
@@ -228,7 +211,6 @@ def test_a_complete_run_is_ready(complete_run: Path):
 
 
 def test_a_run_awaiting_its_cluster_roundtrip_is_not_ready(run_dir: Path):
-    """The pre-cluster state is not a finished state, however complete its local stages."""
     verdict = ra.readiness(run_dir, n_species=1)
     assert verdict.ready is False
     assert "domain_architecture" in [v.view for v in verdict.blocking]
@@ -263,7 +245,6 @@ def test_domain_views_are_required_once_the_cluster_output_is_in(tmp_path: Path)
 
 
 def test_an_honest_scientific_absence_does_not_block_readiness(complete_run: Path):
-    """A run whose synteny found nothing is still a finished run."""
     (complete_run / "website_indices" / "synteny_locus_index.json").write_text(
         json.dumps({"available": False, "species": []}), encoding="utf-8")
 
@@ -324,7 +305,6 @@ def test_empty_cluster_output_files_do_not_count_as_valid(tmp_path: Path):
 # roundtrip finalize ordering
 # --------------------------------------------------------------------------- #
 def test_finalize_writes_the_state_before_setting_the_phase():
-    """The phase must not be set from a status the same method is about to write."""
     source = (ROOT / "scripts" / "interpro_cluster" / "run_cluster_roundtrip.py"
               ).read_text(encoding="utf-8")
     tree = ast.parse(source)
@@ -525,7 +505,6 @@ def test_downloads_reach_the_model_tables_and_cluster_results():
 
 
 def test_the_upstream_role_fasta_is_labelled_as_provenance():
-    """Its header role is inverted relative to the final label; the label must warn."""
     import build_website_indices as bwi
 
     closure = REAL_RUN / "results" / "13_final_pre_interpro_closure"
@@ -688,7 +667,6 @@ def test_the_validated_freeze_is_untouched():
 
 @pytest.mark.skipif(not FREEZE.is_dir(), reason="validated freeze not present")
 def test_the_validated_dataset_still_reports_every_view_as_available():
-    """The extended download index and availability blocks must not regress the freeze."""
     import build_website_indices as bwi
 
     closure = next((p for p in FREEZE.rglob("*final_pre_interpro_closure")

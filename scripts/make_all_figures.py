@@ -1,30 +1,4 @@
 #!/usr/bin/env python3
-"""
-Central entry point for final pre-InterPro figures.
-
-Single entry point for final pre-InterPro publication outputs:
-
-    python scripts/make_all_figures.py --base results/final_30_until_interpro_prepare
-
-This generates ALL final pre-InterPro figures, plotting tables, captions and
-manifests, and writes the completion reports. It:
-
-  * builds the reproducible phylogenetic/taxonomic species order,
-  * builds the CDS phase/boundary audit tables,
-  * ensures species_qc_master.tsv carries the phylo-order columns (canonical),
-  * runs the final validation gate and FAILS clearly if data are
-    missing/stale,
-  * renders the publication figures via
-    make_publication_figures_pre_interpro.render_all,
-  * writes publication_figure_manifest.tsv, output_file_manifest_pre_interpro.tsv
-    and the completion reports.
-
-Reads FINAL tables only and never recomputes biological QC.
-No real InterPro domains are generated or plotted.
-
-A table-driven compatibility mode is available through --tables/--outdir.
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -47,7 +21,7 @@ def _load(modname: str, filename: str):
     spec = importlib.util.spec_from_file_location(modname, _HERE / filename)
     mod = importlib.util.module_from_spec(spec)
     assert spec and spec.loader
-    spec.loader.exec_module(mod)  # type: ignore[union-attr]
+    spec.loader.exec_module(mod)
     return mod
 
 
@@ -86,10 +60,6 @@ def _require(base: Path, name: str, hint: str = "") -> Path:
         raise RuntimeError(f"Required input not found under {base}: {name}")
     return p
 
-
-# ---------------------------------------------------------------------------
-# Prerequisite builders
-# ---------------------------------------------------------------------------
 def build_phylo_order(base: Path, pub_tables: Path) -> Path:
     registry = _require(base, "species_registry.tsv", "01_species_registry")
     subprocess.run([PY, str(_HERE / "build_species_phylogenetic_order.py"),
@@ -117,11 +87,6 @@ def build_cds_audit(base: Path) -> Path:
 
 
 def build_unclassified_isoform_fallback(base: Path) -> Optional[Path]:
-    """Sequence-calibrated fallback for cassettes whose protein interval is unresolved
-    (e.g. fresh Ensembl returned isoform=unclassified). Patches the coordinate audit so
-    that the IIIb/IIIc cassette slot gets a REAL mid-protein coordinate instead of the
-    synthetic aa-1 placeholder, BEFORE the cassette coordinate mapping. Keeps the Step-11
-    aa-1 gate strict; never relabels validated calls."""
     coord = _require(base, "fgfr2_current_stage_IIIb_IIIc_coordinate_audit.tsv")
     proteins = locate(base, "selected_fgfr2_proteins.faa")
     if proteins is None:
@@ -145,8 +110,6 @@ def build_unclassified_isoform_fallback(base: Path) -> Optional[Path]:
 
 
 def build_cassette_map(base: Path) -> Path:
-    """Cassette-mapping correction (Parts A/B/C/E): unique CDS blocks + coordinate-
-    overlap cassette mapping + reconstruction + sanity audits."""
     coord = _require(base, "fgfr2_current_stage_IIIb_IIIc_coordinate_audit.tsv")
     cds_features = _require(base, "cds_features.tsv", "02_models")
     proteins = locate(base, "selected_fgfr2_proteins.faa")
@@ -166,8 +129,6 @@ def build_cassette_map(base: Path) -> Path:
 
 
 def build_phase_rescue(base: Path) -> Path:
-    """Attempt codon-phase rescue using cumulative CDS
-    reconstruction) for phase-unavailable cassettes before final classification."""
     coord = _require(base, "fgfr2_current_stage_IIIb_IIIc_coordinate_audit.tsv")
     d = coord.parent
     cds_features = _require(base, "cds_features.tsv", "02_models")
@@ -181,7 +142,6 @@ def build_phase_rescue(base: Path) -> Path:
 
 
 def build_refined_classes(base: Path) -> Path:
-    """Uncertainty-refinement Part A: refined, explainable uncertainty/display classes."""
     coord = _require(base, "fgfr2_current_stage_IIIb_IIIc_coordinate_audit.tsv")
     d = coord.parent
     master = _require(base, "species_qc_master.tsv", "11_pre_interpro_master")
@@ -196,8 +156,6 @@ def build_refined_classes(base: Path) -> Path:
 
 
 def build_patch_report(base: Path, enable_network: bool = False) -> Path:
-    """Uncertainty-refinement Part C: targeted NCBI patch provenance for TRUE missing
-    data only (never minor phase/split flags). Offline-safe."""
     coord = _require(base, "fgfr2_current_stage_IIIb_IIIc_coordinate_audit.tsv")
     d = coord.parent
     cache = base / "02_models" / "_ncbi_cds_boundary_patch_cache"
@@ -212,9 +170,6 @@ def build_patch_report(base: Path, enable_network: bool = False) -> Path:
     return d / "fgfr2_ncbi_cds_boundary_patch_report.tsv"
 
 
-# ---------------------------------------------------------------------------
-# Part D — propagate refined uncertainty/display classes into the final QC tables
-# ---------------------------------------------------------------------------
 DISPLAY_RANK = {
     "hard_fail_excluded": 6, "protein_overlay_only": 5, "review_protein": 4,
     "review_annotation": 3, "resolved_phase_not_available": 2,
@@ -248,9 +203,6 @@ def _merge_cols(path: Path, lookup: Dict, key_fn, cols: List[str]) -> None:
 
 
 def propagate_refined(base: Path, master: Path) -> None:
-    """Append refined uncertainty/display columns to the final QC tables and the
-    canonical master (per-isoform where keyed by isoform, aggregated per species
-    for pair-level and master)."""
     coord = _require(base, "fgfr2_current_stage_IIIb_IIIc_coordinate_audit.tsv")
     d = coord.parent
     refined = read_tsv(d / "fgfr2_refined_uncertainty_classes.tsv")
@@ -339,9 +291,6 @@ def _cds_explain_for_species(cds_rows: List[Dict[str, str]]) -> str:
 
 
 def ensure_master_phylo(base: Path, phylo_path: Path, cds_audit_path: Optional[Path] = None) -> Path:
-    """If species_qc_master.tsv lacks phylo / CDS-explainability columns, merge them
-    in (ordering + audit metadata only; no biological QC is recomputed). Keeps the
-    alias identical."""
     master = _require(base, "species_qc_master.tsv", "11_pre_interpro_master")
     rows = read_tsv(master)
     header = list(rows[0].keys()) if rows else []
@@ -383,9 +332,6 @@ def ensure_master_phylo(base: Path, phylo_path: Path, cds_audit_path: Optional[P
     return master
 
 
-# ---------------------------------------------------------------------------
-# Reports.
-# ---------------------------------------------------------------------------
 def _count(rows, col):
     return dict(Counter(str(r.get(col, "")) for r in rows))
 

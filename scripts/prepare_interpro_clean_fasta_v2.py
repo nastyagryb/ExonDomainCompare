@@ -1,26 +1,4 @@
 #!/usr/bin/env python3
-"""
-prepare_interpro_clean_fasta_v2.py
-
-Prepare selected FGFR2 protein FASTA records for InterProScan/Web submission.
-
-Rationale
----------
-InterProScan operates on submitted amino-acid sequences. For a comparative,
-role-aware FGFR2 workflow, protein FASTA records need short stable identifiers,
-non-redundant submission sets, and a mapping table that can expand InterPro
-results back to all selected transcript roles.
-
-This script therefore creates:
-  1. a clean all-record FASTA with short IDs,
-  2. a non-redundant clean FASTA deduplicated by exact amino-acid sequence,
-  3. optional split FASTA files for batch submission,
-  4. mapping tables from clean/unique IDs back to original selected proteins,
-  5. warnings, metadata and small HTML/Markdown reports.
-
-The script intentionally does not infer biology from InterPro results. It only
-prepares a reproducible, traceable input layer for downstream domain annotation.
-"""
 
 from __future__ import annotations
 
@@ -133,12 +111,6 @@ def sequence_hash(seq: str) -> str:
 
 
 def parse_header(header: str) -> Dict[str, str]:
-    """Parse both legacy and v2 protein-export headers.
-
-    Supported examples:
-      fgfr2prot_000001|species=homo_sapiens|source=Ensembl|role=reference|transcript=ENST...|protein=ENSP...|isoform=IIIb
-      homo_sapiens|Ensembl|reference|transcript=ENST...|protein=ENSP...|isoform=IIIb
-    """
     parts = header.split("|")
     out = {
         "original_header": header,
@@ -198,7 +170,6 @@ def parse_header(header: str) -> Dict[str, str]:
 
 
 def load_export_report(path: Optional[Path]) -> Dict[str, Dict[str, str]]:
-    """Load optional protein_export_report.tsv by FASTA/output ID when available."""
     if not path:
         return {}
     rows = read_tsv(path)
@@ -363,11 +334,6 @@ def write_reports(outdir: Path, prefix: str, records: List[FastaRecord], unique_
 def write_task9_outputs(outdir: Path, prefix: str, records: List[FastaRecord], unique_records: List[FastaRecord],
                         warnings: List[WarningRow], unique_fasta: Path, split_paths: List[str],
                         args: argparse.Namespace) -> Dict[str, str]:
-    """Write the pre-InterPro summary, run instructions and input manifest.
-
-    These outputs make the FASTA preparation a self-contained, reproducible input
-    layer for a *later* InterProScan run. No InterPro results are assumed here.
-    """
     low = prefix.lower()
     summary_tsv = outdir / f"{low}_interpro_prepare_summary.tsv"
     instructions_md = outdir / "interproscan_run_instructions.md"

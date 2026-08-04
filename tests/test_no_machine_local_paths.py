@@ -1,27 +1,3 @@
-"""Guard maintained source code against hardcoded machine-local absolute paths.
-
-Code that points at the throwaway sandbox mount used by an earlier authoring
-session, or at somebody's home directory, only runs in one checkout on one
-machine. This test scans the Python and JS/JSX source trees and fails if such a
-path reappears. See ``FORBIDDEN_PATTERNS`` below for the exact shapes covered.
-
-Scope, and why it is drawn this way
------------------------------------
-Only maintained *source code* is checked: ``.py``, ``.js``, ``.jsx``, ``.mjs``
-(and ``.ts``/``.tsx`` should any appear) under ``tests/``, ``scripts/`` and
-``webapp/``. Deliberately not checked:
-
-* ``artifacts/*.md`` reports, ``docs/`` and ``QC_migration_report_*.md`` — prose
-  that quotes the path a historical run used;
-* ``runs/``, ``results/`` (including the immutable freeze under
-  ``results/final_30_until_interpro_prepare/``) — run logs and provenance
-  metadata whose whole purpose is to record where a run happened.
-
-Rewriting those would falsify recorded provenance, so they stay as they are.
-
-The forbidden prefixes below are assembled from fragments on purpose: that way
-this file contains no literal machine-local path and does not flag itself.
-"""
 from __future__ import annotations
 
 import re
@@ -90,7 +66,6 @@ def test_source_trees_contain_no_machine_local_paths():
 
 
 def test_scan_covers_the_expected_source_trees():
-    """A filter bug must not turn the scan above into a vacuous pass."""
     by_tree = {tree: 0 for tree in SOURCE_TREES}
     for path in iter_source_files():
         by_tree[path.relative_to(REPO_ROOT).parts[0]] += 1
@@ -99,7 +74,6 @@ def test_scan_covers_the_expected_source_trees():
 
 
 def test_detector_recognises_each_forbidden_path_shape():
-    """The detector must react to all three path shapes it claims to cover."""
     samples = {
         "sandbox_mount": _SEP.join(["", "mnt", "data", "script.py"]),
         "macos_home_directory": _SEP.join(["", "Users", "someone", "project"]),

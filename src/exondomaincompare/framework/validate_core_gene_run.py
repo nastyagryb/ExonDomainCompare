@@ -1,15 +1,4 @@
 #!/usr/bin/env python3
-"""Validate a Core Gene Analysis run against the required milestones.
-
-Prints completed milestones, missing required/optional files, the inferred
-status and the suggested next action. Uses the exact same milestone logic as the
-webapp backend (src/exondomaincompare/framework/core_run_milestones.py), so a partial or empty
-run is classified identically in both places.
-
-Usage:
-  python -m exondomaincompare.framework.validate_core_gene_run --run-id <run_id>
-  python -m exondomaincompare.framework.validate_core_gene_run --run-id <run_id> --json
-"""
 from __future__ import annotations
 
 import argparse

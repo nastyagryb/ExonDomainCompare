@@ -1,18 +1,4 @@
 #!/usr/bin/env python3
-"""
-Render FGFR2 MSA reference figures.
-
-Paper-level reference-guided figures (SVG/PDF/PNG):
-  6C  Human-referenced IIIb/IIIc residue agreement map
-  6D  MSA cassette boundary map, local zoom (alignment-column space)
-  7C  Isoform-discriminating residues, informative positions
-  8C  Alignment evidence stack
-  Supplement  Per-species cassette difference panels
-
-All figures use the FINAL (sequence-calibrated) isoform labels. A validation gate enforces
-final_isoform_label == validated_exon_type for all plotted rows and that human/mouse controls
-pass; otherwise NO figure is generated. MSA does not relabel IIIb/IIIc; no InterPro domains.
-"""
 
 from __future__ import annotations
 
@@ -116,8 +102,6 @@ def species_in_order(species: List[str], order: Dict[str, int]) -> List[str]:
 
 
 def iso_primary(claims: Dict[Tuple[str, str], Dict[str, str]], sp: str, iso: str) -> bool:
-    """Whether the (species, isoform) cassette holds a primary claim after maximal rescue.
-    Part G: primary figures include only primary_claim_supported(_with_minor_flags) rows."""
     return M.claim_is_primary(M.claim_value(claims.get(((sp or "").lower(), iso), {})))
 
 

@@ -1,19 +1,3 @@
-"""Regression tests for the repeated-domain-instance bug.
-
-FGFR1 (Gallus gallus, NP_990841.2) carries **three** Ig-like domains that all
-share the InterPro accession ``IPR007110`` but are distinct feature instances at
-aa 33–118, 145–244 and 253–355. Resolving a domain by accession alone collapsed
-them onto one another, so the nearest-domain coordinates persisted on a boundary
-belonged to a different instance than the one the distance was measured against,
-and the Boundary "Advanced analysis" domain filter could return zero rows for two
-of the three instances while the third absorbed all Ig-like boundaries.
-
-Everything asserted here is checked against the real reference runs — the FGFR1
-Gallus core pilot and the TP53 Danio run — never against fixtures. The frontend
-assertions execute the real ``common.js`` filter module through node, so the
-option list and the filter resolution are tested as shipped, not as prose.
-"""
-
 from __future__ import annotations
 
 import csv
@@ -70,7 +54,6 @@ def build(run: Path) -> dict:
 
 
 def served(run: Path) -> dict:
-    """The coordinate model actually served to the frontend for this run."""
     path = run / "website_indices" / "generic" / "protein_coordinate_model.json"
     if not path.is_file():
         pytest.skip(f"served coordinate model missing for {run.name}")
@@ -146,7 +129,6 @@ def test_repeated_entry_gets_numbered_labels_and_coordinate_suffixed_full_labels
 
 
 def test_member_signatures_are_resolved_per_instance_not_per_accession(fgfr1):
-    """Each Ig-like instance owns its own real PS50835 hit at its own coordinates."""
     by_id = {d["domain_instance_id"]: d for d in fgfr1["representative_domains"]}
     for iid, (start, end) in ((IG1, (33, 118)), (IG2, (145, 244)), (IG3, (253, 355))):
         sigs = by_id[iid]["member_signatures"]
@@ -175,7 +157,6 @@ def test_fgfr1_ig_boundary_matches_the_real_reference_values(
 @pytest.mark.parametrize("label,pos,instance,edge,edge_pos,signed,cls", FGFR1_IG_BOUNDARIES)
 def test_fgfr1_ig_boundary_carries_the_coordinates_of_the_instance_used(
         fgfr1, label, pos, instance, edge, edge_pos, signed, cls):
-    """The bug: the persisted span belonged to a different IPR007110 instance."""
     b = by_label(fgfr1)[label]
     dom = next(d for d in fgfr1["representative_domains"]
                if d["domain_instance_id"] == instance)
@@ -188,7 +169,6 @@ def test_fgfr1_ig_boundary_carries_the_coordinates_of_the_instance_used(
 
 
 def test_all_three_ig_instances_own_boundaries(fgfr1):
-    """No instance may absorb the boundaries of its siblings."""
     per_instance: dict[str, list[str]] = {}
     for b in fgfr1["exon_boundaries"]:
         per_instance.setdefault(b["nearest_domain_instance_id"], []).append(b["label"])
@@ -254,9 +234,8 @@ def test_tp53_domain_instances_are_unique_and_numbered(tp53):
 
 
 def test_sign_convention_is_documented_and_applied(fgfr1):
-    """Negative before a start, positive after an end, negative inside vs the end."""
     assert "signed_distance = boundary_position - nearest_edge_position" in (
-        bc.__doc__ or "")
+        bc.SIGN_CONVENTION)
     b = by_label(fgfr1)
     assert b["E1 → E2"]["signed_distance"] < 0    # before the Ig-like 1 start
     assert b["E5 → E6"]["signed_distance"] > 0    # after the Ig-like 2 end
@@ -275,7 +254,6 @@ def test_validator_enforces_instance_identity_and_invariants(run):
 
 
 def test_validator_rejects_a_boundary_pointing_at_the_wrong_instance(fgfr1):
-    """The guard must actually fire — this is the shape of the original bug."""
     broken = json.loads(json.dumps(fgfr1))
     b = next(x for x in broken["exon_boundaries"] if x["label"] == "E1 → E2")
     b["nearest_domain_instance_id"] = IG3
@@ -309,7 +287,6 @@ def _resolved(rows: list[dict], domains: list[dict], exons: list[dict]) -> list[
 
 
 def test_explicit_instance_id_column_is_used_when_present():
-    """New Core runs persist nearest_domain_instance_id directly; honour it."""
     rows, domains, exons = _fgfr1_core_rows()
     by_edge = {(d["interpro_accession"], "start", d["start"]): d for d in domains}
     by_edge.update({(d["interpro_accession"], "end", d["end"]): d for d in domains})
@@ -327,7 +304,6 @@ def test_explicit_instance_id_column_is_used_when_present():
 
 
 def test_rows_without_any_geometry_are_re_resolved_instance_aware():
-    """A legacy row carrying only an accession must never collapse onto one instance."""
     rows, domains, exons = _fgfr1_core_rows()
     stripped = [{k: v for k, v in r.items()
                  if k not in ("signed_distance_aa", "absolute_distance_aa", "distance_aa")}
@@ -338,7 +314,6 @@ def test_rows_without_any_geometry_are_re_resolved_instance_aware():
 
 
 def test_served_coordinate_model_carries_the_repaired_instances():
-    """The JSON the webapp reads must agree with the freshly built model."""
     for run in (FGFR1_RUN, TP53_RUN):
         if not run.is_dir():
             continue
@@ -357,7 +332,6 @@ def test_served_coordinate_model_carries_the_repaired_instances():
 # Task D — the Boundary "Advanced analysis" filters (real frontend module)
 # --------------------------------------------------------------------------- #
 def _node(script: str) -> dict:
-    """Run a snippet against the real frontend modules and return its JSON result."""
     if not (FRONTEND / "node_modules").is_dir():
         pytest.skip("frontend node_modules not installed")
     proc = subprocess.run([  # noqa: S603 - fixed argv, no shell
@@ -375,7 +349,6 @@ def _model_literal(run: Path) -> str:
 
 @pytest.fixture(scope="module")
 def fgfr1_js() -> dict:
-    """Options + per-option filter results produced by the shipped common.js."""
     return _node(f"""
       const {{ domainFilterOptions, filterBoundaries }} =
         await import('./src/pages/viewers/common.js');
@@ -438,7 +411,6 @@ def test_all_ig_like_domains_option_returns_the_union_of_the_three_instances(fgf
 
 
 def test_filters_never_resolve_by_accession_alone(fgfr1_js):
-    """An accession-shaped filter value must select nothing, not every instance."""
     out = _node(f"""
       const {{ domainFilterOptions, filterBoundaries }} =
         await import('./src/pages/viewers/common.js');
@@ -455,7 +427,6 @@ def test_filters_never_resolve_by_accession_alone(fgfr1_js):
 
 
 def test_all_linked_filters_run_through_the_one_central_rule(fgfr1_js):
-    """mapping / boundary / |dist| bounds / candidate / class / sort all apply."""
     out = _node(f"""
       const {{ domainFilterOptions, filterBoundaries }} =
         await import('./src/pages/viewers/common.js');

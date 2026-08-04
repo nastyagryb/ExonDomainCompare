@@ -1,14 +1,4 @@
 #!/usr/bin/env python3
-"""
-Write FGFR2 MSA boundary reports and captions.
-
-Write captions, QC migration report, methods text and results summary for the pre-InterPro
-MSA / boundary-robustness module. All numbers are computed from the produced tables.
-
-The reports explicitly state what IS and what IS NOT claimed: MSA is a QC/robustness layer
-that does not relabel IIIb/IIIc, boundaries are projected from validated coordinates, review
-species are retained but not used for primary claims, and InterProScan has NOT been run.
-"""
 
 from __future__ import annotations
 

@@ -1,5 +1,3 @@
-"""Contract and call-graph checks for the canonical plotting boundary."""
-
 from __future__ import annotations
 
 import ast

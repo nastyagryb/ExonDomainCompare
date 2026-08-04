@@ -1,44 +1,5 @@
 #!/usr/bin/env python3
-"""
-validate_fgfr2_paralog_screen_and_paralogy.py
 
-Final pre-InterPro FGFR paralog identity screening layer for a comparative
-FGFR2 exon-domain pipeline.
-
-What this script tests
-----------------------
-1. Paralog-aware assignment:
-   Are exported candidate proteins most consistent with FGFR2 rather than
-   FGFR1, FGFR3 or FGFR4?
-
-2. Multi-reference robustness:
-   If the reference FASTA contains FGFR1-4 sequences from several vertebrates,
-   does the candidate still have strongest aggregate support for FGFR2?
-   A human-only FGFR1-4 panel also works, but a vertebrate panel is preferable.
-
-3. Reciprocal panel consistency:
-   The FGFR reference panel is also searched back against the candidate set.
-   This is not a full OrthoFinder replacement, but it is a useful reciprocal
-   sanity check for a curated candidate set.
-
-4. Visualization-ready uncertainty:
-   The script writes protein-level and species-level tables, status classes,
-   warnings, and multiple publication-style plots.
-
-Recommended final use
----------------------
-python scripts/validate_fgfr2_paralog_screen_and_paralogy.py \
-  --query_fasta results/final_30_until_interpro_prepare/06_protein_export/selected_fgfr2_proteins.faa \
-  --protein_report results/final_30_until_interpro_prepare/06_protein_export/protein_export_report.tsv \
-  --reference_fasta references/fgfr_paralog_panel_vertebrates.fasta \
-  --outdir results/final_30_until_interpro_prepare/06b_paralog_screen_validation \
-  --prefix fgfr2 \
-  --threads 4 \
-  --reciprocal_panel_test
-
-If you only have human FGFR1-4 references, use that FASTA first. The script is
-fully compatible with it.
-"""
 
 from __future__ import annotations
 
@@ -248,7 +209,6 @@ def run_blastp(query_fasta: Path, db_fasta: Path, out_tsv: Path, outdir: Path, d
 
 
 def simple_similarity_score(a: str, b: str) -> Tuple[float, float, float, int]:
-    """Debug fallback: ungapped best-window identity. Not a BLAST replacement."""
     a = a.replace("*", "")
     b = b.replace("*", "")
     if not a or not b:
@@ -528,7 +488,6 @@ def write_annotated_blast(hits: List[BlastHit], path: Path) -> None:
 
 
 def reciprocal_panel_test(refs: List[FastaRecord], queries: List[FastaRecord], reference_fasta: Path, query_fasta: Path, outdir: Path, prefix: str, threads: int, evalue: str, fallback: bool, sseq_to_gene: Dict[str, str], sseq_to_species: Dict[str, str]) -> Tuple[Path, Path, List[dict]]:
-    """Search reference FGFR panel back against candidate set and summarize per species."""
     raw = outdir / f"{prefix}_reciprocal_panel_blastp.tsv"
     annotated = outdir / f"{prefix}_reciprocal_panel_blastp_annotated.tsv"
     warnings: List[dict] = []

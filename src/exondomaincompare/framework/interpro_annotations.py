@@ -1,32 +1,4 @@
 #!/usr/bin/env python3
-"""Generic, gene-agnostic normalisation of InterProScan output.
-
-This module turns raw InterProScan results (JSON preferred, TSV fallback) into a
-single normalised annotation model and a small set of explicit display layers.
-
-It contains NO gene-specific logic: there is no search for "Ig-like", "kinase",
-"FGFR" or any particular domain name. Every decision is driven purely by the
-InterPro *entry type* (DOMAIN / REPEAT / FAMILY / HOMOLOGOUS_SUPERFAMILY /
-ACTIVE_SITE / BINDING_SITE / …) and by whether a member-database signature is
-integrated into an InterPro entry.
-
-Layers
-------
-* ``domain``   – integrated entries of a structural type (DOMAIN, REPEAT).
-                 These, after collapsing redundant overlaps, form the
-                 *representative domain layer* used by the default Domain
-                 Architecture view and the primary boundary analysis.
-* ``family``   – integrated FAMILY / HOMOLOGOUS_SUPERFAMILY entries. Shown
-                 separately; never counted as structural domains or edges.
-* ``feature``  – short/site annotations (ACTIVE_SITE, BINDING_SITE,
-                 CONSERVED_SITE, PTM) and disorder predictions (MobiDB-lite).
-                 Optional features; never used as domain edges by default.
-* ``raw``      – every remaining member-database hit (kept for provenance in the
-                 raw-signature layer / expandable table).
-
-pyTMHMM transmembrane topology is handled elsewhere and is never an InterPro
-domain.
-"""
 from __future__ import annotations
 
 import json
@@ -42,10 +14,6 @@ FEATURE_MEMBER_DBS = {"MOBIDB_LITE", "MOBIDBLITE", "COILS", "PHOBIUS", "SIGNALP"
 
 
 def layer_for(interpro_type: str, is_integrated: bool, member_database: str = "") -> str:
-    """Return the display layer for a single normalised hit.
-
-    Purely type-driven. Unintegrated hits stay in the raw layer unless they come
-    from a recognised feature predictor (e.g. MobiDB-lite disorder)."""
     t = (interpro_type or "").strip().upper()
     if is_integrated and t in DOMAIN_ENTRY_TYPES:
         return "domain"
@@ -70,12 +38,6 @@ def _num_str(v: Any) -> str:
 def parse_interproscan_json(path: Path,
                             species_resolver: Optional[Callable[[str], str]] = None
                             ) -> List[Dict[str, Any]]:
-    """Parse InterProScan JSON into normalised hits (one per match location).
-
-    Each hit carries: protein_accession, species, signature_accession,
-    signature_name, member_database, interpro_accession, interpro_name,
-    interpro_type, start, end, score_or_evalue, is_integrated, layer.
-    """
     data = json.loads(Path(path).read_text(encoding="utf-8"))
     hits: List[Dict[str, Any]] = []
     for result in data.get("results", []):
@@ -117,12 +79,6 @@ def parse_interproscan_tsv(path: Path,
                            species_resolver: Optional[Callable[[str], str]] = None,
                            type_lookup: Optional[Dict[str, str]] = None
                            ) -> List[Dict[str, Any]]:
-    """Fallback parser for the 15-column InterProScan TSV.
-
-    The TSV carries no InterPro *entry type*; when a ``type_lookup``
-    (interpro_accession -> type) is supplied (e.g. harvested from the JSON) it is
-    used, otherwise integrated hits are conservatively treated as raw so they are
-    never silently promoted to structural domains."""
     hits: List[Dict[str, Any]] = []
     type_lookup = type_lookup or {}
     with open(path, encoding="utf-8", errors="replace") as fh:
@@ -159,10 +115,6 @@ def parse_interproscan_tsv(path: Path,
 def load_normalized_annotations(ips_out: Path,
                                 species_resolver: Optional[Callable[[str], str]] = None
                                 ) -> List[Dict[str, Any]]:
-    """Load normalised annotations from an InterProScan output directory.
-
-    Prefers the JSON (authoritative entry types); falls back to the TSV, reusing
-    entry types harvested from any JSON present."""
     ips_out = Path(ips_out)
     jsons = sorted(p for p in ips_out.rglob("*.json")
                    if p.is_file() and p.stat().st_size > 0)
@@ -196,7 +148,6 @@ def load_normalized_annotations(ips_out: Path,
 # --------------------------------------------------------------------------- #
 def _cluster_overlaps(intervals: List[Tuple[int, int, Dict[str, Any]]]
                       ) -> List[List[Tuple[int, int, Dict[str, Any]]]]:
-    """Chain intervals that overlap into clusters (single-linkage on overlap)."""
     clusters: List[List[Tuple[int, int, Dict[str, Any]]]] = []
     cur_end = None
     for s, e, h in sorted(intervals, key=lambda x: (x[0], x[1])):
@@ -210,14 +161,6 @@ def _cluster_overlaps(intervals: List[Tuple[int, int, Dict[str, Any]]]
 
 
 def representative_domains(hits: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Collapse the DOMAIN/REPEAT hits of ONE protein into representative regions.
-
-    Overlapping structural-domain hits that describe the same region are merged.
-    Within each region the representative InterPro entry is the one supported by
-    the most independent member databases (a generic consensus signal), tie-broken
-    by widest span and then best (smallest) e-value. All contributing InterPro
-    entries and member databases are retained for the tooltip / provenance.
-    """
     dom = [(h["start"], h["end"], h) for h in hits if h.get("layer") == "domain"]
     reps: List[Dict[str, Any]] = []
     for cluster in _cluster_overlaps(dom):
@@ -272,7 +215,6 @@ def representative_domains(hits: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
 
 def family_annotations(hits: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Deduplicate FAMILY / HOMOLOGOUS_SUPERFAMILY hits by InterPro entry."""
     by_ipr: Dict[str, Dict[str, Any]] = {}
     for h in hits:
         if h.get("layer") != "family":
@@ -295,7 +237,6 @@ def family_annotations(hits: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
 
 def feature_annotations(hits: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Deduplicate feature-layer hits (sites, disorder) by (entry/signature, span)."""
     seen = set()
     out: List[Dict[str, Any]] = []
     for h in sorted((h for h in hits if h.get("layer") == "feature"),

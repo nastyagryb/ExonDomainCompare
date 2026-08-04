@@ -1,11 +1,3 @@
-"""Run creation, run naming and the My Runs list.
-
-Two things used to leak through here. A run whose name the user left empty was
-stored as ``custom_run`` — a placeholder written into the metadata as if it had
-been chosen — and the list was ordered by whatever string comparison of
-``created_at`` or ``run_id`` happened to produce, so a legacy run without a
-``created_at`` sorted by its directory name instead of its age.
-"""
 from __future__ import annotations
 
 import json
@@ -41,7 +33,6 @@ def test_new_run_form_has_no_advanced_section_or_species_preset():
 
 
 def test_new_run_form_does_not_explain_the_workflow_router():
-    """Routing is automatic, so it is not presented as a choice or a lecture."""
     text = src("pages/runworkflow/CreateRunPanel.jsx")
     rendered = text.split("return (", 1)[1]
     for phrase in ("validated IIIb/IIIc pipeline", "exploratory workflow",
@@ -62,7 +53,6 @@ def test_new_run_form_keeps_the_four_real_inputs():
 
 
 def test_an_empty_run_name_is_submitted_as_empty():
-    """The placeholder is gone: an unnamed run is titled from its biology."""
     text = src("pages/runworkflow/CreateRunPanel.jsx")
     assert "custom_run" not in text
     assert "run_name: runName.trim()," in text
@@ -84,7 +74,6 @@ def test_placeholder_names_count_as_no_name():
 
 
 def test_a_pipeline_generated_default_is_not_treated_as_a_user_name():
-    """Old runs stored the auto-generated slug in the field a user types into."""
     assert rl.clean_run_name("fgfr1_gallus_mus_core_pilot", "FGFR1") == ""
     assert rl.clean_run_name("tp53_human_core_pilot", "TP53") == ""
     assert rl.clean_run_name("tpm1_human_mouse_twospecies", "TPM1") == ""
@@ -107,7 +96,6 @@ def test_the_run_id_slug_is_filesystem_safe_and_never_the_raw_name():
 
 
 def test_duplicate_visible_run_names_are_allowed():
-    """Two runs may share a title; only the directory name has to be unique."""
     name = "FGFR1 validation"
     assert rl.clean_run_name(name) == rl.clean_run_name(name)
     # The uniqueness rule lives in the directory allocator, not in the label.
@@ -183,7 +171,6 @@ def test_a_legacy_run_falls_back_to_the_timestamp_in_its_run_id():
 
 
 def test_created_at_wins_over_the_run_id_timestamp():
-    """A run_id records when the directory was made; created_at is authoritative."""
     runs = [
         _run("2026-01-01_0000_old_id", "2026-07-29T10:00:00+00:00"),
         _run("2026-07-29_1200_new_id", "2026-02-01T10:00:00+00:00"),
@@ -302,7 +289,6 @@ def test_logs_are_preserved_and_downloadable():
 # Existing run creation still works
 # --------------------------------------------------------------------------- #
 def test_existing_runs_keep_their_stored_names():
-    """A legacy run's label is derived, not written back into its result files."""
     runs_root = ROOT / "runs"
     if not runs_root.is_dir():
         pytest.skip("no runs directory")

@@ -1,20 +1,5 @@
 #!/usr/bin/env python3
-"""
-make_fgfr2_exact_exon_to_protein_figures_v2_22.py
 
-Paper-oriented current-stage FGFR2 IIIb/IIIc plotting based on the v2.21
-multi-evidence resolver. No InterPro/domain mapping.
-
-Main change vs v2.19:
-  - The plot is driven by a resolver that actively searches the best CDS/exon
-    interval using protein anchor + transcript/protein identity + CDS features
-    + optional alternative exon architecture.
-  - The alternative exon structure is evidence, not an unsafe hard constraint,
-    so the human positive control is not broken by mismatched transcript/version
-    metadata.
-  - Main figure contains species with a resolved distinct IIIb/IIIc CDS pair.
-  - Supplement figure shows all selected species including review cases.
-"""
 from __future__ import annotations
 
 import argparse
@@ -264,12 +249,6 @@ def plot_architecture_v22(resolved: pd.DataFrame, cds: pd.DataFrame, selected: p
 
 
 def plot_status(resolved: pd.DataFrame, outpath: Path) -> None:
-    """Row-level coordinate-status QC plot.
-
-    This was accidentally omitted in the first v2.22 patch. It is intentionally
-    lightweight and tolerant of missing columns so that the main outputs are not
-    blocked by a plotting-only QC panel.
-    """
     if resolved is None or resolved.empty:
         fig, ax = plt.subplots(figsize=(10, 2.8))
         ax.text(0.5, 0.5, "No resolved IIIb/IIIc rows available", ha="center", va="center", transform=ax.transAxes)

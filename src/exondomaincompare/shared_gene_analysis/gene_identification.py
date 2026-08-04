@@ -1,26 +1,3 @@
-"""gene_identification.py — find the requested gene in an annotation, cautiously.
-
-The old matcher accepted a gene locus when any of ``gene``, ``Name``,
-``gene_synonym``, ``gene_name``, ``product`` or ``description`` held a token equal to
-``FGFR2``. That is too strict in one direction and too loose in the other.
-
-Too strict: a genome annotated before the symbol was assigned calls the locus
-``LOC124236178`` and puts "fibroblast growth factor receptor 2" only in the
-description. No token equals FGFR2, so the gene is invisible — even though it is the
-right gene, with transcripts and proteins.
-
-Too loose: it will accept a locus whose ``gene_synonym`` mentions FGFR2 while the
-locus itself is FGFR1, and it takes whatever matched first. FGFR1, FGFR3 and FGFR4 are
-close paralogs with the same domain architecture; confusing one for FGFR2 would not
-look like an error downstream. It would look like a result.
-
-So candidates are gathered through ordered routes, weakest evidence last, and each one
-carries the evidence that admitted it and the reason it was accepted or rejected. A
-candidate reached by a weak route must clear paralog discrimination before it can be
-used; a LOC-labelled locus is never accepted merely for being the first hit.
-
-Nothing here knows about any particular species.
-"""
 from __future__ import annotations
 
 import re
@@ -65,11 +42,6 @@ def _norm(value: Any) -> str:
 
 
 def paralog_family(symbol: str) -> Tuple[str, str]:
-    """Split a symbol like ``FGFR3`` into family and member number.
-
-    Used only to tell members of one family apart. It deliberately does not try to
-    interpret arbitrary gene names.
-    """
     match = re.fullmatch(r"([A-Za-z]+?)(\d+)([A-Za-z0-9\-]*)", str(symbol or "").strip())
     if not match:
         return (str(symbol or "").strip().upper(), "")
@@ -78,15 +50,6 @@ def paralog_family(symbol: str) -> Tuple[str, str]:
 
 def sibling_symbols(gene_symbol: str, members: Sequence[str] = ("1", "2", "3", "4")
                     ) -> List[str]:
-    """The paralogs a candidate must be told apart from.
-
-    For FGFR2 this is FGFR1, FGFR3 and FGFR4 — derived from the requested symbol
-    rather than listed, so the same logic protects any numbered family.
-
-    A symbol whose number is not one of the enumerated members has no such family:
-    TP53 is not the fifty-third of a series, and inventing TP1…TP4 would have the
-    discriminator reject loci for resembling genes that do not exist.
-    """
     family, number = paralog_family(gene_symbol)
     if not number or number not in members:
         return []
@@ -94,27 +57,11 @@ def sibling_symbols(gene_symbol: str, members: Sequence[str] = ("1", "2", "3", "
 
 
 def _product_variant(product_name: str, number: str) -> str:
-    """A sibling's product name: the same wording with the trailing number swapped.
-
-    "fibroblast growth factor receptor 2" → "fibroblast growth factor receptor 3".
-    Used to recognise a paralog's description, which is otherwise identical to this
-    gene's down to the last word.
-    """
     return re.sub(r"\d+\s*$", number, _norm(product_name)).strip()
 
 
 def _describes_product(text: str, gene_symbol: str,
                        product_name: str = "") -> bool:
-    """Whether free text names this gene's product rather than a sibling's.
-
-    Two ways to qualify: the symbol itself appears (``FGFR2``), or the source's own
-    spelled-out product name appears (``fibroblast growth factor receptor 2``).
-
-    There is deliberately no "…receptor 2" shortcut. That rule looked harmless and
-    admitted sixty-six loci from one zebra annotation — ADIPOR2, NPR2, GRM2, TGFBR2,
-    RYR2, TACR2 — every gene whose description happens to end in the number two. A
-    route that matches most of the genome is not evidence of anything.
-    """
     family, number = paralog_family(gene_symbol)
     if not number:
         return False
@@ -142,8 +89,6 @@ def _mentions_sibling(text: str, siblings: Sequence[str],
 
 @dataclass
 class GeneCandidate:
-    """One annotated locus considered as the requested gene."""
-
     source_gene_id: str = ""
     source_symbol: str = ""
     description: str = ""
@@ -215,10 +160,6 @@ def candidate_from_attributes(attr: Dict[str, str], *, seqid: str = "", strand: 
 def classify_route(candidate: GeneCandidate, gene_symbol: str,
                    expected_gene_ids: Sequence[str] = (),
                    product_name: str = "") -> Tuple[str, str]:
-    """The strongest route that admits this candidate, and the evidence for it.
-
-    Returns ``("", "")`` when nothing about the locus points at the requested gene.
-    """
     target = _norm(gene_symbol)
 
     if _norm(candidate.source_symbol) == target:
@@ -250,13 +191,6 @@ def classify_route(candidate: GeneCandidate, gene_symbol: str,
 
 def discriminate(candidate: GeneCandidate, gene_symbol: str,
                  product_name: str = "") -> Tuple[bool, str]:
-    """Whether this candidate is the requested paralog rather than a sibling.
-
-    Annotation-level discrimination only: text that names a sibling is disqualifying,
-    an exact symbol or an official identifier is conclusive. Anything weaker is left
-    undecided here and handed to the sequence step, because guessing between FGFR2 and
-    FGFR3 from a description is exactly the error that would not show up later.
-    """
     siblings = sibling_symbols(gene_symbol)
     haystack = " ".join([candidate.source_symbol, candidate.description,
                          *candidate.synonyms])
@@ -279,13 +213,6 @@ def discriminate(candidate: GeneCandidate, gene_symbol: str,
 
 def best_paralog_by_similarity(protein: str, panel: Dict[str, str]
                                ) -> Tuple[str, float, Dict[str, float]]:
-    """Which panel member a translated protein most resembles.
-
-    A k-mer containment score, not an alignment. It is used for one decision only —
-    which of a handful of paralogs a sequence is closest to — and for that a cheap
-    symmetric measure is enough and needs no external aligner. The absolute value is
-    not interpretable as identity, so it is never reported as one.
-    """
     def kmers(seq: str, k: int = 5) -> set:
         seq = re.sub(r"[^A-Za-z]", "", seq or "").upper()
         return {seq[i:i + k] for i in range(max(0, len(seq) - k + 1))}
@@ -306,7 +233,6 @@ def best_paralog_by_similarity(protein: str, panel: Dict[str, str]
 
 
 def read_panel(path) -> Dict[str, str]:
-    """Read a FASTA paralog panel into ``{header: sequence}``."""
     panel: Dict[str, str] = {}
     name = ""
     chunks: List[str] = []
@@ -328,7 +254,6 @@ def read_panel(path) -> Dict[str, str]:
 
 
 def panel_member_symbol(header: str, gene_symbol: str) -> str:
-    """The symbol a panel header stands for, e.g. ``human_FGFR3_UniProt_...`` → FGFR3."""
     family, _ = paralog_family(gene_symbol)
     match = re.search(rf"{re.escape(family)}\s*-?\s*(\d+)", header, re.IGNORECASE)
     return f"{family}{match.group(1)}" if match else ""
@@ -337,12 +262,6 @@ def panel_member_symbol(header: str, gene_symbol: str) -> str:
 def discriminate_by_sequence(candidate: GeneCandidate, gene_symbol: str,
                              protein: str, panel: Dict[str, str],
                              margin: float = 0.02) -> Tuple[bool, str]:
-    """Accept a weak-route candidate only if its protein is closest to this paralog.
-
-    The margin keeps a near-tie from being read as a decision. Two paralogs that score
-    within it are reported as ambiguous rather than resolved, because the run is better
-    off saying it could not tell than naming the wrong receptor.
-    """
     if not protein:
         return False, "no translated protein available for sequence discrimination"
     if not panel:
@@ -382,15 +301,6 @@ def identify(candidates: Sequence[GeneCandidate], gene_symbol: str, *,
              proteins: Optional[Dict[str, str]] = None,
              panel: Optional[Dict[str, str]] = None,
              product_name: str = "") -> Identification:
-    """Choose the locus that is the requested gene, recording every decision.
-
-    ``proteins`` maps a candidate's ``source_gene_id`` to a translated sequence, used
-    only for candidates whose annotation evidence is too weak to decide.
-
-    ``product_name`` is the source's spelled-out name for this gene's product, e.g.
-    "fibroblast growth factor receptor 2". It is what makes a description route
-    specific: without it, only the symbol itself counts as description evidence.
-    """
     considered: List[GeneCandidate] = []
     for cand in candidates:
         route, evidence = classify_route(cand, gene_symbol, expected_gene_ids,

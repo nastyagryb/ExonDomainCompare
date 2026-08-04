@@ -1,46 +1,4 @@
 #!/usr/bin/env python3
-"""
-make_fgfr2_post_interpro_exon_domain_figures.py
-
-Post-InterProScan visualization + QC for FGFR2 exon-domain architecture.
-
-Combines, per protein (species x isoform):
-  * InterProScan protein domains (real matches only, no invented domains)
-  * coding exon / CDS blocks mapped to protein amino-acid coordinates
-  * IIIb / IIIc splice-exon slot (cassette) coordinates
-  * protein length
-  * final isoform labels + transcript / protein IDs (from the FINAL truth table)
-
-Design contract
----------------
-* This is a POST-InterPro visualization + QC step. It does NOT modify the
-  pre-InterPro truth table, the FASTA files, or the primary/review membership.
-* InterProScan domain calls support the *architecture*. They must NOT relabel
-  IIIb/IIIc. Final IIIb/IIIc labels always come from the final truth table.
-* No coordinates are invented. If exon or cassette coordinates are missing for a
-  protein, that layer is marked missing and skipped for that protein.
-
-Transmembrane helix
--------------------
-InterProScan did not annotate the FGFR2 transmembrane helix. pyTMHMM predictions
-(step 15) are integrated as the authoritative TM layer. FGFR2 is a single-pass
-type-I receptor; where pyTMHMM reports an extra N-terminal helix it is treated as a
-signal anchor, and the membrane-spanning receptor TM is the helix between the
-extracellular Ig region and the kinase.
-
-Outputs (under results/final_30_until_interpro_prepare/15_exon_domain_boundary_post_interpro/):
-  tables/interpro_domain_features_normalized.tsv
-  tables/pytmhmm_tm_features_normalized.tsv
-  tables/exon_domain_architecture_features.tsv
-  tables/fgfr2_domain_architecture_qc.tsv
-  figures/per_species/{species}_{isoform}_exon_domain_architecture.{svg,pdf,png}
-  figures/overview/Figure_10_all_species_FGFR2_exon_domain_architecture_primary.{svg,pdf,png}
-  figures/overview/Figure_10A_IIIb_exon_domain_architecture_primary.{svg,pdf,png}
-  figures/overview/Figure_10B_IIIc_exon_domain_architecture_primary.{svg,pdf,png}
-  figures/overview/Figure_10C_mammals_exon_domain_architecture_primary.{svg,pdf,png}
-  figures/overview/Figure_10D_nonmammals_exon_domain_architecture_primary.{svg,pdf,png}
-  reports/post_interpro_exon_domain_architecture_summary.md
-"""
 
 from __future__ import annotations
 
@@ -66,8 +24,6 @@ REPO = Path(__file__).resolve().parent.parent
 
 
 def display_path(path) -> str:
-    """Repo-relative path for display/logging only; falls back to the raw path when
-    BASE is a run-local relative path. Never raises and never affects outputs."""
     p = Path(path)
     try:
         return str(p.resolve().relative_to(REPO.resolve()))
@@ -267,7 +223,6 @@ def classify_domain(db: str, sig_acc: str, sig_desc: str, interpro_desc: str) ->
 
 
 def fgfr_ig_number(sig_desc: str) -> Optional[int]:
-    """Canonical FGFR Ig number from CDD FGFR-specific signatures (IgI_1/2/3_FGFR)."""
     s = (sig_desc or "").lower()
     for n in (1, 2, 3):
         if f"igi_{n}_fgfr" in s:
@@ -300,14 +255,6 @@ def representative(cluster: List[DomainMatch]) -> DomainMatch:
 
 
 def select_receptor_tm(p: Protein) -> None:
-    """Pick the biologically relevant membrane-spanning TM from pyTMHMM segments.
-
-    FGFR2 is a single-pass type-I receptor. pyTMHMM often reports two helices: an
-    N-terminal signal-anchor (~aa 20-45) and the real receptor TM between the
-    extracellular Ig region and the kinase. We select the receptor TM as the last
-    non-N-terminal helix upstream of (or nearest to) the kinase, and record the
-    remaining N-terminal helix as a signal anchor.
-    """
     segs = sorted(p.tm_segments, key=lambda s: s["start"])
     if not segs:
         p.receptor_tm, p.tm_anchors = None, []
@@ -368,8 +315,6 @@ def build_representative_domains(p: Protein) -> None:
 
 
 def finalize_draw(p: Protein) -> None:
-    """Assemble the drawn domain list once Ig/kinase (InterProScan) and the receptor
-    TM (pyTMHMM) have been resolved."""
     draw = []
     for m in p.matches:
         if m.dclass == "signal_peptide":
@@ -392,9 +337,6 @@ def finalize_draw(p: Protein) -> None:
     p.draw_domains = draw
 
 
-# --------------------------------------------------------------------------- #
-# biological QC
-# --------------------------------------------------------------------------- #
 def run_qc(p: Protein, sp_predictor_present: bool) -> None:
     warnings: List[str] = []
     ig_count = len(p.ig_regions)
@@ -551,8 +493,6 @@ def find_interpro_tsv() -> Tuple[Path, Path]:
 
 
 def find_pytmhmm_source() -> Optional[Path]:
-    """Locate a pyTMHMM prediction file. Prefer an aggregate TSV; fall back to the
-    per-protein *.summary directory."""
     roots = [d for d in PYTMHMM_DIR_CANDIDATES if d.is_dir()] + [BASE]
     preferred = ["*transmembrane_hits*.tsv", "*tmhmm*summary*.tsv", "*pytmhmm*.tsv",
                  "*tmhmm*.tsv", "*topology*.tsv", "*transmembrane*.tsv",
@@ -573,7 +513,6 @@ def find_pytmhmm_source() -> Optional[Path]:
 
 
 def _parse_topology_line(text: str) -> List[Tuple[int, int]]:
-    """Parse a pyTMHMM topology line into TM (start,end) integer pairs (raw coords)."""
     tms: List[Tuple[int, int]] = []
     # supports either a single "start end label" segment or a whole "s e lab; s e lab" line
     for chunk in text.replace("\t", " ").split(";"):
@@ -586,7 +525,6 @@ def _parse_topology_line(text: str) -> List[Tuple[int, int]]:
 
 
 def load_pytmhmm(proteins: Dict[Tuple[str, str], Protein]) -> Optional[Path]:
-    """Attach normalized pyTMHMM TM segments (1-based aa) to each protein."""
     src = find_pytmhmm_source()
     if src is None:
         return None
@@ -649,9 +587,6 @@ def load_pytmhmm(proteins: Dict[Tuple[str, str], Protein]) -> Optional[Path]:
 
 
 def apply_exon_block_overrides(proteins: Dict[Tuple[str, str], Protein]) -> None:
-    """Replace template/offset exon blocks for the coordinate-artifact cases with
-    native CDS-derived blocks (or hide them) and pin the cassette slot to the
-    validated reference coordinate. Driven by RECON_OVERRIDES; no-op if absent."""
     if not RECON_OVERRIDES.exists():
         return
     try:
@@ -680,11 +615,6 @@ def apply_exon_block_overrides(proteins: Dict[Tuple[str, str], Protein]) -> None
 
 
 def clamp_exon_blocks(proteins: Dict[Tuple[str, str], Protein]) -> None:
-    """Display-coordinate safety net: no displayed coding-exon block or cassette
-    slot may end past the protein length. Blocks that end at most +2 aa past the
-    length are clamped (codon-boundary rounding). Blocks starting entirely past
-    the length are dropped. Reconstruction / hide decisions taken upstream are
-    preserved; only proteins with no prior status get the minor-clamp flag."""
     for p in proteins.values():
         L = p.protein_length
         if not L:

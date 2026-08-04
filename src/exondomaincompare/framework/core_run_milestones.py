@@ -1,26 +1,4 @@
 #!/usr/bin/env python3
-"""Canonical, file-based milestone checks for a Core Gene Analysis run.
-
-This is the SINGLE source of truth for classifying a core-only run's state,
-used by both:
-  * src/exondomaincompare/framework/validate_core_gene_run.py (CLI), and
-  * the webapp backend (webapp/backend/main.py) so a dashboard refresh uses the
-    exact same milestone logic.
-
-A run must NEVER look analysis-ready if required core outputs are missing. The
-inferred status is derived purely from on-disk artefacts (not from a possibly
-stale status.json), so empty/partial runs are always classified honestly.
-
-Inferred status values (core-only):
-  created_not_started        - run folder scaffolded, no core collection yet
-  running                    - pre-cluster pipeline actively collecting/retrieving
-  core_model_collection_failed - collection ran but produced no gene models
-  incomplete                 - some required core outputs missing unexpectedly
-  cluster_required           - core collection complete, cluster annotation pending
-  cluster_running            - cluster jobs submitted / running
-  post_interpro_incomplete   - cluster outputs present but domain build missing
-  results_ready              - domain architecture + generic indices built
-"""
 from __future__ import annotations
 
 import csv
@@ -46,14 +24,12 @@ def _read_json(p: Path, default: Any = None) -> Any:
 
 
 def _run_config(run_dir: Path) -> Dict[str, Any]:
-    """Read the canonical run record with legacy compatibility fields as fallback."""
     compatibility = _read_json(run_dir / "run_config.json", {}) or {}
     canonical = _read_json(run_dir / "run.json", {}) or {}
     return {**compatibility, **canonical}
 
 
 def _tsv_rows(p: Path) -> int:
-    """Number of data rows (excluding header). 0 if missing/empty/header-only."""
     if not Path(p).is_file():
         return -1  # sentinel: file missing
     try:
@@ -86,12 +62,6 @@ def _exists(p: Path) -> bool:
 
 
 def _boundary_applicability(run_dir: Path) -> Tuple[bool, str]:
-    """Whether an exon–domain boundary analysis can be performed at all.
-
-    Returns ``(applicable, reason)``. Falls back to applicable when the shared module
-    cannot be imported, which keeps the previous, stricter behaviour rather than declaring
-    something not applicable on the strength of an import error.
-    """
     try:
         from exondomaincompare.shared_gene_analysis import analysis_availability as aa
     except Exception:
@@ -120,7 +90,6 @@ def is_core_only_run(run_dir: Path) -> bool:
 
 
 def evaluate_core_run(run_dir: Path) -> Dict[str, Any]:
-    """Return a structured milestone report for a core-only run directory."""
     run_dir = Path(run_dir)
     run_id = run_dir.name
     core = run_dir / CORE_REL

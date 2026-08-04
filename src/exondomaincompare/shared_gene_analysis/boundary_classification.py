@@ -1,35 +1,8 @@
-"""boundary_classification.py — canonical exon-boundary vs domain classifier.
-
-Single source of truth for the **generic** (gene-agnostic) exon-boundary
-classification used by the coordinate model, the Exon–Domain Boundaries page and
-the signed-distance plots. It uses *representative / integrated InterPro domains*
-only (never raw member signatures), and a mutually-exclusive priority.
-
-This module does not touch the frozen FGFR2 Boundary Consistency vocabulary
-(`aligned_to_domain_boundary` / `near_domain_boundary` / …), which stays in
-`scripts/analyze_exon_domain_boundary_consistency.py`.
-
-Canonical classes (mutually exclusive, in priority order):
-    exact_domain_edge          absolute distance == 0
-    near_domain_edge           0 < absolute distance <= threshold (default 5 aa)
-    inside_domain              boundary strictly inside a representative domain
-    outside_annotated_domains  representative domains exist, boundary outside all
-    unavailable_or_uncertain   no representative domain / incomplete coordinates
-
-Sign convention (single definition for the whole project):
-    ``signed_distance = boundary_position - nearest_edge_position``
-so a boundary N-terminal of a domain start is negative, a boundary C-terminal of a
-domain end is positive, and a boundary inside a domain measured against that
-domain's end is negative.
-
-Repeated InterPro entries are distinct feature *instances*. Every domain passed in
-is identified by ``<accession>:<start>-<end>`` and the classifier always reports the
-instance it actually measured — an accession alone can never identify a feature.
-"""
 from __future__ import annotations
 
 from typing import Any, Dict, Optional, Sequence
 
+SIGN_CONVENTION = "signed_distance = boundary_position - nearest_edge_position"
 DEFAULT_NEAR_EDGE_THRESHOLD_AA = 5
 
 EXACT = "exact_domain_edge"
@@ -54,7 +27,6 @@ LEGACY_TO_CANONICAL = {
 
 
 def canonical_class(legacy_or_canonical: Optional[str]) -> str:
-    """Normalize any incoming class string to the canonical vocabulary."""
     v = (legacy_or_canonical or "").strip()
     if v in CANONICAL_CLASSES:
         return v
@@ -62,11 +34,6 @@ def canonical_class(legacy_or_canonical: Optional[str]) -> str:
 
 
 def domain_instance_id(accession: Optional[str], start: Any, end: Any) -> str:
-    """Stable identity of ONE domain feature instance: ``<accession>:<start>-<end>``.
-
-    Two instances of the same InterPro entry (e.g. FGFR1 ``IPR007110`` at 33–118 and
-    at 145–244) get different ids, so no lookup can ever collapse them.
-    """
     return f"{accession or 'NA'}:{start}-{end}"
 
 
@@ -76,13 +43,6 @@ def instance_id_of(domain: Dict[str, Any]) -> str:
 
 
 def _nearest_edge(pos: int, domains: Sequence[Dict[str, Any]]):
-    """Return (signed_distance, abs_distance, domain, edge_type) for nearest edge.
-
-    ``signed_distance = pos - edge``: negative means the boundary is N-terminal
-    (left) of that edge. Domains are scanned in start order and ties keep the
-    earlier-starting instance, so the result is deterministic per *instance* — the
-    winning entry is a concrete domain object, never an accession.
-    """
     best = None
     ordered = sorted(
         (d for d in domains if d.get("start") is not None and d.get("end") is not None),
@@ -102,11 +62,6 @@ def classify_boundary(
     *,
     threshold: int = DEFAULT_NEAR_EDGE_THRESHOLD_AA,
 ) -> Dict[str, Any]:
-    """Classify one exon boundary against representative domains.
-
-    ``domains``: sequence of dicts with ``start``/``end`` (1-based inclusive) and
-    optional ``id``/``label``. Returns the stored boundary record fields.
-    """
     rec: Dict[str, Any] = {
         "boundary_position": boundary_position,
         "nearest_domain_id": None,

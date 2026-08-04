@@ -1,34 +1,4 @@
 #!/usr/bin/env python3
-"""Optional, NON-BLOCKING UniProt curated-evidence collector.
-
-Looks for protein-level curated evidence (alternative products / alternative
-sequence features) for a gene's isoforms and, when found, appends CURATED rows to
-the exploratory evidence layer (``event_region_evidence.tsv``):
-
-  * evidence_source = uniprot_alternative_sequence
-  * evidence_status = curated_annotation
-
-This is strictly optional. It must NEVER fail a core run:
-  * no network / UniProt unavailable / no mapping  -> writes a report with
-    ``uniprot_evidence_unavailable`` and exits 0 (nothing appended),
-  * it does NOT assume every RefSeq/Ensembl protein maps to UniProt,
-  * it does NOT validate any event analysis; curated rows remain evidence only
-    and never activate event-specific views.
-
-Input (from a core run):
-  * gene symbol + taxon id (from run_config.json / core report)
-  * protein accessions (from protein_isoform_index.tsv)
-  * the run directory (results/core_gene_analysis/)
-
-Output:
-  * appended rows in event_region_evidence.tsv (only if evidence is found)
-  * uniprot_event_evidence_report.json  (always written; transparent status)
-
-Usage:
-  python -m exondomaincompare.framework.collect_uniprot_event_evidence --run-id <run_id>
-  python -m exondomaincompare.framework.collect_uniprot_event_evidence --run-id <run_id> --timeout 8
-  python -m exondomaincompare.framework.collect_uniprot_event_evidence --run-id <run_id> --offline
-"""
 from __future__ import annotations
 
 import argparse
@@ -105,7 +75,6 @@ def _http_get_json(url: str, timeout: float) -> Optional[Dict[str, Any]]:
 
 
 def query_uniprot(gene_symbol: str, taxid: str, timeout: float) -> Dict[str, Any]:
-    """Best-effort UniProt query. Returns {'ok': bool, 'entries': [...], 'error': str}."""
     if not gene_symbol:
         return {"ok": False, "entries": [], "error": "no_gene_symbol"}
     terms = [f'gene:{gene_symbol}']
@@ -130,7 +99,6 @@ def query_uniprot(gene_symbol: str, taxid: str, timeout: float) -> Dict[str, Any
 
 
 def _extract_var_seq_features(entry: Dict[str, Any]) -> List[Dict[str, Any]]:
-    """Extract 'Alternative sequence' (VAR_SEQ) features from a UniProt entry."""
     out: List[Dict[str, Any]] = []
     for feat in entry.get("features", []) or []:
         ftype = str(feat.get("type", "")).lower()

@@ -1,27 +1,3 @@
-"""Central analysis router (single source of truth for gene → workflow).
-
-This module answers exactly one question in exactly one place:
-
-    "Given a gene symbol, which analysis workflow does a new run use?"
-
-There are two workflows:
-
-* ``validated_event_analysis`` — the frozen, validated FGFR2 IIIb/IIIc pipeline.
-  This is immutable. Only genes that ship an *active, runnable* gene config with
-  a supported event detector are routed here. Today that is FGFR2 only.
-
-* ``shared_exploratory`` — the gene-agnostic core pipeline used for every other
-  gene (FGFR1, TPM1, …). It produces the same unified run-stage structure but
-  carries an *exploratory* event-evidence layer instead of validated events.
-
-Both the backend and the frontend must route through this module (the backend
-imports it directly; the frontend calls the ``/api/analysis-router`` endpoint
-that wraps it). No gene symbol should ever be hard-checked (``== "FGFR2"``)
-anywhere else. Future validated genes become routable purely by configuration:
-drop an active ``configs/genes/<GENE>.yaml`` with a supported detector and
-``discover_analyses()`` (and therefore this router) will treat it as validated.
-"""
-
 from __future__ import annotations
 
 from dataclasses import dataclass, field, asdict
@@ -50,8 +26,6 @@ _CANONICAL_VALIDATED = "FGFR2"
 
 @dataclass
 class GeneWorkflow:
-    """Immutable description of how a gene's new run should be created + shown."""
-
     gene_symbol: str
     workflow: str                     # WORKFLOW_VALIDATED | WORKFLOW_SHARED
     event_layer: str                  # EVENT_LAYER_VALIDATED | EVENT_LAYER_EXPLORATORY
@@ -71,17 +45,10 @@ class GeneWorkflow:
 
 
 def normalize_gene_symbol(symbol: Optional[str]) -> str:
-    """Canonical upper-case gene symbol (``fgfr2`` → ``FGFR2``)."""
     return str(symbol or "").strip().upper()
 
 
 def _validated_registry() -> Dict[str, Dict[str, Any]]:
-    """Map of validated gene symbols → their supported analysis detail.
-
-    Driven by :func:`gene_config.discover_analyses` (``supported_detail``): only
-    active, runnable configs with a supported event detector qualify. Falls back
-    to the canonical FGFR2 entry if the config layer is unavailable.
-    """
     registry: Dict[str, Dict[str, Any]] = {}
     if _gc is not None:
         try:
@@ -106,7 +73,6 @@ def _validated_registry() -> Dict[str, Dict[str, Any]]:
 
 
 def list_validated_genes() -> List[str]:
-    """All gene symbols currently routed to the validated workflow."""
     return sorted(_validated_registry().keys())
 
 
@@ -115,12 +81,6 @@ def resolve_gene_workflow(
     mode: str = "auto",
     species: Optional[List[str]] = None,
 ) -> GeneWorkflow:
-    """THE routing function. Map a gene symbol to its analysis workflow.
-
-    ``mode`` is passed through (``auto`` by default) so callers can record the
-    user's intent; the routing decision itself depends only on the gene symbol
-    and the config-driven validated registry.
-    """
     sym = normalize_gene_symbol(gene_symbol)
     registry = _validated_registry()
 

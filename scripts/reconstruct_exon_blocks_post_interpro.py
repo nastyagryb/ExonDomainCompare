@@ -1,43 +1,5 @@
 #!/usr/bin/env python3
-"""
-reconstruct_exon_blocks_post_interpro.py
 
-Fix exon-block coordinate artifacts for the three post-InterPro coordinate-artifact
-cases (canis_lupus_familiaris IIIb, gorilla_gorilla_gorilla IIIb,
-xenopus_tropicalis IIIb) WITHOUT touching the protein sequence, FASTA, final
-truth table, InterProScan domain calls, pyTMHMM TM prediction, or IIIb/IIIc
-identity.
-
-Root cause (established from local tables):
-  * The exon/CDS display coordinates and the drawn cassette slot came from a
-    *different* transcript than the final truth-table protein. The cassette was
-    resolved on a resolver transcript (e.g. gorilla ENSGGOT00000051097) and its
-    protein AA coordinates (394-461) were carried onto the final protein
-    (e.g. gorilla ENSGGOP00000051435, 670 aa), where 394-461 lands inside the
-    kinase. For gorilla/xenopus this template even matched byte-for-byte and/or
-    exceeded the final protein length.
-
-Fix strategy (native-if-available, else validated-cassette + low-confidence):
-  * gorilla / xenopus: rebuild the coding-exon blocks from the *native* CDS
-    features of the exact final transcript (02_models/cds_features.tsv, which
-    carries per-CDS protein_start_aa / protein_end_aa and cds_rank). These are
-    within protein length and monotonic and are NOT the shared template.
-  * canis (RefSeq NP_001003336.1): no local RefSeq CDS coordinates exist (only
-    unrelated Ensembl canis transcripts), so native blocks cannot be
-    reconstructed without re-downloading. Coding exon blocks are therefore
-    hidden and only the validated cassette slot is shown.
-  * In all three cases the cassette SLOT is taken from the validated reference
-    cassette coordinate (figure3C cassette_start_aa / cassette_end_aa), which is
-    upstream of the pyTMHMM TM and the kinase and does not overlap the kinase.
-
-Outputs:
-  * tables/exon_block_coordinate_reconstruction_audit.tsv  (human-auditable)
-  * tables/exon_block_reconstruction_overrides.json         (consumed by
-    make_fgfr2_post_interpro_exon_domain_figures.py so plots / feature table /
-    QC are regenerated consistently)
-
-Read-only w.r.t. FASTA, truth table and primary/review membership.
-"""
 
 from __future__ import annotations
 
@@ -66,10 +28,6 @@ OVERRIDE_OUT = POST / "tables" / "exon_block_reconstruction_overrides.json"
 
 
 def display_path(path) -> str:
-    """Best-effort repo-relative rendering for logs. BASE may be a run-local
-    RELATIVE path (runs/<id>/results), which cannot be made relative to the
-    absolute REPO — fall back to the raw path instead of raising ValueError.
-    Display only; never affects outputs."""
     p = Path(path)
     try:
         return str(p.resolve().relative_to(REPO.resolve()))
@@ -99,7 +57,6 @@ def to_int(v, default=None):
 
 
 def load_native_blocks(transcript_id: str) -> List[dict]:
-    """Native coding-exon blocks (protein AA) for an exact transcript, if present."""
     blocks: List[dict] = []
     for r in read_tsv(CDS_FEATURES):
         if r.get("transcript_id_source") != transcript_id:
@@ -124,7 +81,6 @@ def load_native_blocks(transcript_id: str) -> List[dict]:
 
 def native_cassette_rank(blocks: List[dict], gstart: Optional[int],
                          gend: Optional[int]) -> Optional[dict]:
-    """Which native CDS block overlaps the resolved cassette genomic interval."""
     if gstart is None or gend is None:
         return None
     best, best_ov = None, 0

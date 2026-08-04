@@ -169,9 +169,6 @@ def main() -> None:
     interpro_fasta = interpro_input_dir / "final_pre_interpro_proteins_primary.faa"
     freeze_fasta = run_dir / "results" / "13_final_pre_interpro_closure" / "freeze" / "final_pre_interpro_proteins_primary.faa"
 
-    # Resolve the source FASTA in a gene-agnostic way. FGFR2 runs keep using the
-    # freeze path; generic core-only runs may point run_config at a different
-    # primary FASTA via `cluster_input_fasta` / `primary_fasta_path`.
     def _resolve_source_fasta() -> Path | None:
         run_config = read_json(run_dir / "run_config.json")
         for key in ("cluster_input_fasta", "primary_fasta_path", "primary_fasta_expected_path"):

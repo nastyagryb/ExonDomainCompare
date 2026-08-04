@@ -1,15 +1,5 @@
 #!/usr/bin/env python3
-"""
-Prepare FGFR2 MSA inputs.
 
-Prepare full-length, IIIb-cassette, IIIc-cassette and combined cassette MSA inputs
-from the VALIDATED exon/cassette pipeline. Cassette peptides are extracted using the
-corrected coordinate-overlap cassette map (fgfr2_cassette_cds_block_map.tsv), falling
-back to native protein coordinates from the coordinate audit. Sequences are never
-invented: if a cassette cannot be extracted it is flagged, not faked.
-
-IIIb/IIIc labels come from the sequence-calibrated pipeline and are NOT changed here.
-"""
 
 from __future__ import annotations
 
@@ -35,9 +25,6 @@ MANIFEST_COLS = [
 
 
 def curated_cassette_span(seq: str, iso: str) -> Tuple[int, int]:
-    """Protein span (1-based, inclusive) of the IIIb/IIIc cassette in a rescued full protein,
-    anchored by local alignment to the curated UniProt-P21802 reference. Used only for rescued
-    candidates that lack pipeline cassette coordinates."""
     ref = RC.CURATED_IIIB_REF if iso == "IIIb" else RC.CURATED_IIIC_REF
     if RC._ALN is None or not seq:
         return (None, None)
@@ -51,7 +38,6 @@ def curated_cassette_span(seq: str, iso: str) -> Tuple[int, int]:
 
 
 def load_overrides(base: Path, dirs):
-    """Rescue overrides (species, final_label) -> override row, plus rescued full sequences."""
     ov, seqs = {}, {}
     p = dirs["maps"] / "fgfr2_rescue_overrides.tsv"
     for r in M.read_tsv(p):

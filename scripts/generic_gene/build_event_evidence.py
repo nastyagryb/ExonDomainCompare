@@ -1,10 +1,3 @@
-"""Generic exploratory event-evidence (gene-agnostic).
-
-Normalizes the standardized isoform-difference outputs into canonical
-``event_region_evidence.tsv`` + ``event_region_candidate_clusters.tsv``. These are
-EXPLORATORY isoform-difference candidates, never validated events. No marker /
-cassette / IIIb-IIIc logic.
-"""
 from __future__ import annotations
 
 import argparse
@@ -42,7 +35,7 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description='Generic exploratory event-evidence (gene-agnostic).')
     ap.add_argument("--run-id", required=True)
     args = ap.parse_args()
     ctx = load_context(args.run_id)

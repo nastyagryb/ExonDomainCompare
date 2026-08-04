@@ -1,22 +1,4 @@
 #!/usr/bin/env python3
-"""
-collect_fgfr2_models_dual_source_v3.py
-
-Improved dual-source FGFR2 model collector.
-
-Main improvements over earlier versions
----------------------------------------
-1. Separates model status from source-comparison conflict status.
-2. Uses deterministic NCBI Datasets workflow:
-   summary genome taxon -> choose best assembly -> download selected accession.
-3. Treats chromosome/seqid naming differences as minor label mismatches, not as
-   automatic moderate conflicts.
-4. Only computes gene_overlap_fraction when coordinate systems are plausibly comparable.
-5. Produces richer source_comparison.tsv and selection_decisions.tsv outputs.
-6. Writes compact ncbi_assembly_selected.tsv in addition to the full selection table.
-7. Adds internal_consistency_checks.tsv for end-of-run structural validation.
-8. Performs stricter validation of NCBI GFF3-derived models.
-"""
 
 from __future__ import annotations
 
@@ -54,10 +36,6 @@ from exondomaincompare.shared_gene_analysis import model_recovery as recovery  #
 ENSEMBL_REST = "https://rest.ensembl.org"
 EUTILS_BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
 
-
-# ---------------------------------------------------------------------
-# Data classes
-# ---------------------------------------------------------------------
 @dataclass
 class SpeciesRecord:
     input_name: str
@@ -154,10 +132,6 @@ class CDSFeature:
     coordinate_source: str = ""
     confidence: str = ""
     warning: str = ""
-    # How this part came to sit where it does, recorded rather than inferred. A reader (or a
-    # regression test) can see whether the transcript order was taken from the annotation's
-    # own ranks or derived from the normalised strand, and the source spelling is kept beside
-    # the normalised one so a spelling difference is visible instead of silent.
     normalized_strand: str = ""
     genomic_order: str = ""
     transcript_order: str = ""
@@ -165,9 +139,6 @@ class CDSFeature:
     source_ordering_method: str = ""
 
 
-# ---------------------------------------------------------------------
-# Generic helpers
-# ---------------------------------------------------------------------
 def to_str(x) -> str:
     return "" if x is None else str(x)
 
@@ -242,11 +213,6 @@ def write_json(obj, path: Path) -> None:
 # HTTP / JSON
 # ---------------------------------------------------------------------
 def fetch_json(url: str, headers: Optional[Dict[str, str]] = None, sleep_s: float = 0.25, retries: int = 2) -> Dict:
-    """Fetch JSON with a small retry loop.
-
-    Failures are re-raised after retries so caller functions can record
-    per-species warnings and continue.
-    """
     req_headers = {"User-Agent": "Mozilla/5.0"}
     if headers:
         req_headers.update(headers)
@@ -323,31 +289,6 @@ def build_cds_features_from_parts(
     coordinate_source: str,
     protein_length_aa: Optional[int] = None,
 ) -> List[CDSFeature]:
-    """Build an auditable CDS feature table and AA intervals from ordered CDS parts.
-
-    CDS parts must already be true CDS intervals, not whole exons. The function puts them in
-    transcript 5'→3' order, accumulates CDS offsets, and converts those offsets to 1-based
-    protein AA intervals. Codons split across CDS-part boundaries are represented by inclusive
-    AA intervals; downstream scripts can flag phase/split-codon cases rather than pretending
-    the part is a clean codon block.
-
-    Two properties are worth stating because getting either wrong is silent.
-
-    *Order.* Transcript order comes from the annotation's own ranks when the parts carry them,
-    and only otherwise from the normalised strand. Ranks are what the annotation asserts; a
-    coordinate sort is a reconstruction of it. Deriving the order from a raw strand comparison
-    is what reversed every Ensembl minus-strand transcript, because Ensembl spells that strand
-    ``-1`` and the comparison tested for ``-``. Parts already in transcript order are also
-    left alone rather than sorted twice.
-
-    *The stop codon.* An annotation's CDS features usually include the terminator, so the
-    nucleotide length is three more than the protein needs. Projected without allowance, the
-    last three bases become a residue the protein does not have — a phantom final position
-    one past the end, and, where a source splits the stop across two CDS features, a
-    degenerate trailing part covering that phantom alone. Pass ``protein_length_aa`` (from the
-    translated sequence) and the projection is truncated to the real protein; parts that fall
-    entirely in the terminator are marked and carry no protein interval.
-    """
     clean = []
     for r in parts or []:
         st, en = to_int(r.get("start", "")), to_int(r.get("end", ""))
@@ -419,13 +360,6 @@ def build_cds_features_from_parts(
 
 def _in_transcript_order(parts: List[Dict[str, str]],
                          normalized_strand: Optional[int]) -> Tuple[List[Dict[str, str]], str]:
-    """CDS parts in transcript 5'→3' order, plus the name of the method that got them there.
-
-    The annotation's own ranks win when present, because they are the assertion and a
-    coordinate sort is only a reconstruction of it. Parts that already ascend or descend
-    consistently with the strand are returned untouched, so a table produced in transcript
-    order is not reversed a second time.
-    """
     ranks = [to_int(r.get("exon_rank") or r.get("cds_rank") or r.get("rank") or "")
              for r in parts]
     if all(v is not None for v in ranks) and len(set(ranks)) == len(ranks):
@@ -451,13 +385,6 @@ def _in_transcript_order(parts: List[Dict[str, str]],
 def build_ensembl_cds_features_from_expanded_transcript(
     species: SpeciesRecord, gene_internal: str, tx: Dict, tx_id: str, translation_id: str
 ) -> List[CDSFeature]:
-    """Derive CDS pieces for an Ensembl expanded transcript when Translation start/end are present.
-
-    Ensembl expanded lookup returns exon intervals and, for translated transcripts,
-    a Translation object. When genomic translation start/end are available, the
-    CDS feature pieces are the intersections of transcript exons with that interval.
-    If these coordinates are absent, no CDS rows are emitted rather than guessing.
-    """
     translation = tx.get("Translation") or {}
     tstart, tend = to_int(translation.get("start", "")), to_int(translation.get("end", ""))
     if tstart is None or tend is None:
@@ -486,9 +413,6 @@ def build_ensembl_cds_features_from_expanded_transcript(
         parts=parts, coordinate_source="Ensembl_expanded_lookup_translation_exon_intersection",
     )
 
-# ---------------------------------------------------------------------
-# Ensembl adapter
-# ---------------------------------------------------------------------
 def try_ensembl_lookup(species: SpeciesRecord, gene_symbol: str, sleep_s: float) -> Tuple[Optional[Dict], str]:
     try:
         data = ensembl_get_json(
@@ -664,9 +588,6 @@ def normalize_ensembl_model(
     return gene_model, txs, exs, cds_features, warnings
 
 
-# ---------------------------------------------------------------------
-# NCBI evidence adapter
-# ---------------------------------------------------------------------
 def fetch_ncbi_gene_evidence(species: SpeciesRecord, gene_symbol: str, sleep_s: float) -> Dict[str, str]:
     term = f'{gene_symbol}[Gene Name] AND "{species.ncbi_species}"[Organism]'
     ids, search_status = esearch_safe("gene", term, retmax=5, sleep_s=sleep_s)
@@ -713,17 +634,8 @@ def fetch_ncbi_refseq_protein_evidence(species: SpeciesRecord, gene_symbol: str,
     }
 
 
-# ---------------------------------------------------------------------
-# NCBI Datasets helpers
-# ---------------------------------------------------------------------
-def gene_product_name(gene_config: Optional[Path], gene_symbol: str) -> str:
-    """The spelled-out product name from the gene config, as a fallback.
 
-    Preferred source is the annotation service's own description of the requested
-    gene, which needs no configuration. This is the offline fallback, so a run whose
-    E-utils lookup was unavailable can still tell a description of this gene's product
-    from a description of a paralog's.
-    """
+def gene_product_name(gene_config: Optional[Path], gene_symbol: str) -> str:
     if not gene_config:
         return ""
     try:
@@ -811,7 +723,6 @@ def pick_best_ncbi_assembly_from_summary(candidates: List[Dict[str, str]], assem
 
 
 def parse_gff3_attributes(attr_text: str) -> Dict[str, str]:
-    """Parse and URL-decode a GFF3 attribute column."""
     out: Dict[str, str] = {}
     for item in attr_text.split(";"):
         if "=" in item:
@@ -856,9 +767,6 @@ def classify_ncbi_model_status(tx_count: int, translated_tx_count: int, exon_cou
     return "no_model_found", "low"
 
 
-#: GFF3 feature types read as a transcript. Shared by the candidate tally and the
-#: parser so that a candidate's reported transcript count is the number the parser
-#: would actually read from that locus.
 TRANSCRIPT_FEATURE_TYPES = frozenset({"mRNA", "transcript"})
 
 
@@ -866,18 +774,7 @@ def collect_gene_candidates(gff_path: Path, gene_symbol: str,
                             expected_gene_ids: Sequence[str] = (),
                             product_name: str = "",
                             ) -> List[gid.GeneCandidate]:
-    """Every locus in the annotation that could be the requested gene.
-
-    A first pass over the file, before any transcript is read, because which locus to
-    read depends on a decision that needs all the candidates in hand. The old parser
-    decided on the spot from a token match and could not see a LOC-labelled locus at
-    all, which is how an annotated gene stays invisible in an annotated genome.
-    """
     seen: Dict[str, gid.GeneCandidate] = {}
-    # Transcripts and distinct proteins per locus, tallied in the same pass. These are
-    # part of what makes a candidate assessable — a locus annotated with no transcript
-    # cannot yield a model, and the difference has to be visible in the candidate
-    # inventory rather than inferred later from an empty transcript table.
     transcripts_of: Dict[str, int] = {}
     proteins_of: Dict[str, set] = {}
     tx_parent: Dict[str, str] = {}
@@ -922,12 +819,6 @@ def collect_gene_candidates(gff_path: Path, gene_symbol: str,
 
 def read_archive_proteins(gff_path: Path, candidates: Sequence[gid.GeneCandidate],
                           ) -> Dict[str, str]:
-    """One representative protein per candidate locus, from the package's protein FASTA.
-
-    Only needed for candidates whose annotation evidence is too weak to name the
-    paralog. NCBI protein FASTA headers carry the gene symbol in brackets, which is
-    what links a sequence back to its locus without re-deriving the translation.
-    """
     package = gff_path.parent
     faa = next((p for p in sorted(package.rglob("protein.faa"))), None)
     if faa is None:
@@ -973,20 +864,7 @@ def parse_ncbi_gff3_for_gene(
     identification_out: Optional[List[gid.Identification]] = None,
     product_name: str = "",
 ) -> Tuple[Optional[Tuple[GeneModel, List[TranscriptModel], List[ExonModel], List[CDSFeature]]], List[str]]:
-    """
-    Conservative parser for NCBI GFF3.
-
-    Strategy:
-    - find exactly one gene locus matching FGFR2
-    - collect mRNA/transcript features when available
-    - collect exon features if present; otherwise reconstruct exon-like intervals from CDS
-    - estimate protein length from CDS span sum / 3 if translation ids are unavailable
-    """
     warnings: List[str] = []
-
-    # Decide which locus is the requested gene before reading a single transcript.
-    # Deciding while scanning is what let a token match in a paralog's synonym list
-    # win, and what made a LOC-labelled locus unreachable.
     candidates = collect_gene_candidates(gff_path, gene_symbol, expected_gene_ids,
                                          product_name)
     proteins = (read_archive_proteins(gff_path, candidates)
@@ -1031,9 +909,6 @@ def parse_ncbi_gff3_for_gene(
                         "end": end,
                         "strand": strand,
                         "gene_id": gene_id,
-                        # The symbol the annotation actually uses, which for a
-                        # LOC-labelled locus is not the requested symbol. Recording the
-                        # requested one here would erase how the gene was identified.
                         "symbol": identification.accepted.source_symbol or gene_symbol,
                         "biotype": attr.get("gene_biotype", attr.get("gbkey", "")),
                     }
@@ -1138,7 +1013,6 @@ def parse_ncbi_gff3_for_gene(
 
         use_parts = exs if exs else cds_parts
         if not use_parts:
-            # maybe Parent references differ; skip but warn
             warnings.append(f"transcript {tx_id} has no exon or CDS child features")
             continue
 
@@ -1152,10 +1026,6 @@ def parse_ncbi_gff3_for_gene(
         if cds_parts:
             cds_bp = sum((to_int(c["end"]) or 0) - (to_int(c["start"]) or 0) + 1 for c in cds_parts)
             if cds_bp > 0:
-                # RefSeq/Gnomon CDS features include the terminator, so a complete CDS holds
-                # one codon more than the protein has residues. Counting it made every
-                # estimated length one too long, which in turn let the projection place a
-                # residue where the protein only has a stop.
                 codons = cds_bp // 3
                 complete = cds_bp % 3 == 0
                 protein_len = str(max(0, codons - 1 if complete else codons))
@@ -1310,11 +1180,6 @@ def fetch_ncbi_model_from_datasets(
         provenance["datasets_summary_status"] = "datasets_cli_not_found"
         return None, warnings, provenance, assembly_selection_rows
 
-    # The numeric taxid, or the *accepted* scientific name — never the submitted slug.
-    # Passing the slug is what produced "The taxonomy name 'equus_quagga' is not
-    # recognized" and ended the Equus quagga run before any assembly was listed. The
-    # registry now resolves the name, so an empty query term here means resolution
-    # failed and there is nothing worth asking the service.
     taxon = (species.taxid or "").strip() or (species.ncbi_species or "").strip()
     if not taxon:
         warnings.append(
@@ -1345,10 +1210,6 @@ def fetch_ncbi_model_from_datasets(
     provenance["datasets_used"] = "1"
     provenance["datasets_summary_status"] = f"exit_{code}"
     if code != 0:
-        # Two very different problems arrive on this branch: a query term the service
-        # will never accept, and a service that is temporarily unhappy. The first needs
-        # the name corrected, the second needs a retry, and the original run reported
-        # both as an empty table.
         rejected = "not recognized" in output.lower() or "not found" in output.lower()
         status = asel.TAXON_REJECTED if rejected else asel.SERVICE_FAILED
         provenance["datasets_summary_status"] = status
@@ -1404,9 +1265,6 @@ def fetch_ncbi_model_from_datasets(
         selection, species.input_name, species.ensembl_species, resolved_taxid))
 
     if selection.selected is None:
-        # An honest absence. The candidate rows above already say which assemblies exist
-        # and why none of them can yield a gene model, which is what the empty table
-        # could not say.
         warnings.append(f"{selection.status}: {selection.detail}")
         return None, warnings, provenance, assembly_selection_rows
 
@@ -1462,9 +1320,6 @@ def fetch_ncbi_model_from_datasets(
         with zipfile.ZipFile(zip_path, "r") as zf:
             zf.extractall(extract_dir)
     except Exception as exc:
-        # An archive that arrived and cannot be opened is a processing fault. Reporting
-        # it as a parser failure rather than as missing data is what keeps a user from
-        # being told their species has no annotation when in fact it has.
         warnings.append(f"datasets zip extraction failed: {exc}")
         provenance["assembly_selection_status"] = asel.PARSE_FAILED
         provenance["assembly_selection_detail"] = f"zip extraction failed: {exc}"
@@ -1489,9 +1344,6 @@ def fetch_ncbi_model_from_datasets(
             identification_out=identification_out,
             product_name=product_name)
     except Exception as exc:
-        # A parser exception must never reach the caller as "no model". That conversion
-        # is how a genuine defect ends up presented as an empty table, which is what
-        # made the original failure unreadable.
         warnings.append(f"GFF3 parsing raised {type(exc).__name__}: {exc}")
         provenance["assembly_selection_status"] = asel.PARSE_FAILED
         provenance["assembly_selection_detail"] = f"{type(exc).__name__}: {exc}"
@@ -1514,9 +1366,6 @@ def fetch_ncbi_model_from_datasets(
     return (gene_model, tx_models, ex_models, cds_features), warnings, provenance, assembly_selection_rows
 
 
-# ---------------------------------------------------------------------
-# Comparison helpers
-# ---------------------------------------------------------------------
 def seqid_normalization_status(chrom_a: str, chrom_b: str) -> Tuple[str, str]:
     a = to_str(chrom_a).strip()
     b = to_str(chrom_b).strip()
@@ -1574,10 +1423,6 @@ def compare_models(
     ncbi_exons: List[ExonModel],
     preferred_source: str = "ensembl_first",
 ) -> Tuple[str, str, str, Dict[str, str], List[str]]:
-    """
-    Returns:
-      selected_source, selected_confidence, detailed_reason, comparison_row, warnings
-    """
     warnings: List[str] = []
 
     row = {
@@ -1707,9 +1552,6 @@ def compare_models(
         return "NCBI", ncbi_gene.model_confidence, reason, row, warnings
 
 
-# ---------------------------------------------------------------------
-# Internal consistency checks
-# ---------------------------------------------------------------------
 def run_internal_consistency_checks(
     genes_rows: List[Dict[str, str]],
     transcripts_rows: List[Dict[str, str]],
@@ -1765,9 +1607,6 @@ def run_internal_consistency_checks(
         strand = rows[0].get("strand", "")
         sorted_by_rank = sorted(rows, key=lambda r: int(r["exon_rank"]))
         coords = [(to_int(r["start"]) or 0, to_int(r["end"]) or 0) for r in sorted_by_rank]
-        # Normalised, because this check only ever recognised the Ensembl spellings "1" and
-        # "-1". A RefSeq transcript spelling the same strand "-" matched neither branch, so
-        # the one check that would have caught a mis-ordered transcript silently skipped it.
         normalized = normalize_strand(strand)
         if normalized is not None:
             starts = [c[0] for c in coords]
@@ -1804,9 +1643,6 @@ def run_internal_consistency_checks(
     return checks
 
 
-# ---------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------
 def main() -> int:
     parser = argparse.ArgumentParser(description="Improved dual-source FGFR2 collector.")
     parser.add_argument("--species_registry", required=True, type=Path)
@@ -1950,15 +1786,7 @@ def main() -> int:
             "assembly_decision_notes": "",
         }
 
-        # The rescue evidence gathered a moment ago is an *input* to the structured
-        # route, not a note beside it. The Equus quagga run held the right GeneID
-        # (124236178, FGFR2, Equus quagga) in ncbi_rescue_candidates.tsv and never used
-        # it; passing it here is what lets a locus be recognised by identifier when its
-        # symbol is still LOC-labelled, before any step that assumes a non-empty table.
         expected_gene_ids = [ncbi_gene_ev["ncbi_gene_id"]] if ncbi_gene_ev.get("ncbi_gene_id") else []
-        # The source's own spelled-out product name, e.g. "fibroblast growth factor
-        # receptor 2". It makes the description route specific to this gene instead of
-        # to every locus whose description ends in the same number.
         product_name = ncbi_gene_ev.get("ncbi_gene_description", "") or gene_product_name(
             args.gene_config, args.gene_symbol)
         identifications: List[gid.Identification] = []
@@ -2007,8 +1835,6 @@ def main() -> int:
 
         per_species_ncbi_provenance[sp.input_name] = datasets_provenance
 
-        # The recovery story for this species, in the order it happened. This is what
-        # replaces the traceback as the run's explanation of itself.
         outcome = recovery.SpeciesOutcome(
             species_id=sp.ensembl_species, species_input=sp.input_name,
             gene_symbol=args.gene_symbol, taxid=sp.taxid,
@@ -2095,9 +1921,6 @@ def main() -> int:
             final_model_status = selected_gene.model_status
             selected_gene_conf = selected_gene.model_confidence
 
-        # Conclude this species. Deciding here — before any step that assumes a
-        # non-empty table — is the point: the run states what it recovered and why,
-        # instead of leaving a later step to infer it from an empty file.
         outcome.n_genes = 1 if selected_gene else 0
         outcome.n_transcripts = len(selected_txs)
         outcome.n_exons = len(selected_exons)
@@ -2193,10 +2016,6 @@ def main() -> int:
     # Final metadata
     run_meta["per_species_ncbi_provenance"] = per_species_ncbi_provenance
 
-    # Internal consistency checks on selected outputs
-    # Structural checks over the recovered tables, plus checks that cannot pass
-    # vacuously. The failed run reported six of six PASS over four empty tables, so the
-    # one artefact meant to catch an inconsistent result endorsed an empty one.
     internal_checks_rows = recovery.consistency_checks(
         len(genes_rows), len(transcripts_rows), len(exons_rows), len(cds_rows))
     if genes_rows or transcripts_rows:
@@ -2348,8 +2167,6 @@ def main() -> int:
         outdir / "ncbi_assembly_selection.tsv",
         [
             "species_input", "species_canonical", "taxid",
-            # The outcome of the selection as a whole, repeated on every candidate row,
-            # so that a table with rows still says why it has no selected assembly.
             "selection_status", "query_term",
             "accession", "assembly_name", "assembly_level", "refseq_category",
             "assembly_source", "assembly_status", "annotated", "organism_name",

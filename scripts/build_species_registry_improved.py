@@ -1,28 +1,4 @@
 #!/usr/bin/env python3
-"""
-build_species_registry.py
-
-Create a validated species_registry.tsv from a plain-text species list.
-
-The registry is the controlled entry point for downstream FGFR2 collection,
-transcript selection, and comparative exon-domain mapping. Its job is to turn
-whatever a user typed into identifiers the source services actually accept.
-
-It used to do that from ``KNOWN_SPECIES`` alone — thirty entries, the validated FGFR2
-panel — and for anything else it copied the submitted string into every name field and
-left the taxid empty. Since runs are created with Ensembl-style slugs, the field later
-used as an NCBI taxonomy query term became ``equus_quagga``, which no taxonomy service
-recognises. That is what killed the Equus quagga run, four stages upstream of the
-empty transcript table reported as its cause, and it would have killed every run for a
-species outside the table.
-
-Unknown species are now resolved against NCBI Taxonomy, which owns the answer. The
-built-in table is kept, but only as a cache of already-verified taxids so a
-thirty-species run does not make thirty needless requests. A species that resolves is
-recorded with its accepted name, numeric taxid and published synonyms. A species that
-does not resolve is recorded as unresolved with a reason — never as a different animal
-that happens to have a better genome.
-"""
 
 from __future__ import annotations
 
@@ -85,9 +61,6 @@ REGISTRY_FIELDS = [
     "assembly_preference",
     "status",
     "notes",
-    # How the identity was established, so a downstream reader (or a reviewer of a
-    # finished run) can see whether a name was verified against the source or merely
-    # echoed back. The original run had no way to express the difference.
     "taxon_resolution_status",
     "accepted_scientific_name",
     "taxon_synonyms",
@@ -95,10 +68,6 @@ REGISTRY_FIELDS = [
     "taxon_query_term",
 ]
 WARNING_FIELDS = ["input_name", "warning_code", "warning"]
-
-#: Registry statuses. ``unresolved_taxon`` is the honest outcome for a name the
-#: taxonomy service does not know: the run should stop and say so rather than proceed
-#: with a query term that cannot work.
 STATUS_VERIFIED = "taxon_verified"
 STATUS_VERIFIED_SYNONYM = "taxon_verified_via_synonym"
 STATUS_UNRESOLVED = "unresolved_taxon"
@@ -119,14 +88,6 @@ def slug_species(name: str) -> str:
 
 
 def _build_known_index() -> Dict[str, Tuple[str, Dict[str, str]]]:
-    """Map several normalized key forms -> (scientific_name, entry).
-
-    Users / the run workflow pass Ensembl-style slugs (e.g. ``gallus_gallus``), while the
-    built-in table is keyed by scientific name (``Gallus gallus``). Without this index a
-    cached species misses its cache entry and has to be resolved against NCBI Taxonomy
-    again on every run. Indexing by the scientific name, the Ensembl slug and a slugified
-    form makes the lookup format-robust.
-    """
     idx: Dict[str, Tuple[str, Dict[str, str]]] = {}
     for sci, entry in KNOWN_SPECIES.items():
         keys = {
@@ -146,7 +107,6 @@ _KNOWN_INDEX = _build_known_index()
 
 
 def lookup_known_species(name: str) -> Tuple[str, Dict[str, str]] | Tuple[None, None]:
-    """Resolve an input species name (scientific or Ensembl slug) to a known entry."""
     for key in (name.casefold(), slug_species(name)):
         hit = _KNOWN_INDEX.get(key)
         if hit:
@@ -191,19 +151,11 @@ def deduplicate_preserve_order(species_names: Sequence[str]) -> List[str]:
 
 
 def _resolve_taxon(name: str, offline: bool):
-    """Resolve one name against NCBI Taxonomy, or report why it could not be."""
     from exondomaincompare.shared_gene_analysis import taxon_resolution as tr
     return tr.resolve(name, offline=offline, known=_taxid_cache())
 
 
 def _taxid_cache() -> Dict[str, Dict[str, str]]:
-    """The built-in table as a lookup cache, keyed the several ways callers spell names.
-
-    These thirty taxids are already verified and belong to the validated panel, so
-    re-querying them on every run would be thirty requests for answers the project
-    already has. This is a shortcut to the same result, not a substitute for
-    resolution: a name that is not here is resolved against the service.
-    """
     cache: Dict[str, Dict[str, str]] = {}
     for sci, entry in KNOWN_SPECIES.items():
         for key in (sci, sci.casefold(), slug_species(sci),
@@ -232,14 +184,7 @@ def build_registry_rows(
         identity = _resolve_taxon(name, offline)
         _sci, entry = lookup_known_species(name)
 
-        # The Ensembl key stays the slug of the submitted name. Ensembl uses its own
-        # keys and does not carry every NCBI taxon, so a species can legitimately
-        # resolve at NCBI and be absent from Ensembl — as Equus quagga is.
         ensembl_key = entry["ensembl_species"] if entry else slug_species(name)
-        # The NCBI-facing name is the accepted one, or empty when unresolved. Writing
-        # the submitted slug here is precisely the bug that produced
-        # "The taxonomy name 'equus_quagga' is not recognized"; an empty field makes a
-        # downstream step stop with a clear reason instead of issuing a doomed query.
         ncbi_name = identity.accepted_name
 
         if identity.is_resolved:
@@ -249,9 +194,6 @@ def build_registry_rows(
                      f"(taxid {identity.taxid})")
         elif identity.status == tr.OFFLINE:
             status = STATUS_UNVERIFIED_OFFLINE
-            # Offline, the built-in table is all there is. A known species keeps its
-            # verified name; an unknown one gets no NCBI name, because guessing one is
-            # what caused the original failure.
             ncbi_name = entry["ncbi_species"] if entry else ""
             notes = identity.detail
         else:

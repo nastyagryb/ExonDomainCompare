@@ -1,24 +1,4 @@
 #!/usr/bin/env python3
-"""
-Rescue unresolved cassette codon phase where evidence permits.
-
-Attempts to rescue codon-phase / boundary precision for resolved IIIb/IIIc cassettes
-that are currently flagged unknown_codon_phase / phase_not_propagated_from_source.
-
-Key method (offline, evidence-based): when a transcript's CDS blocks reconstruct to a
-protein-length-consistent ORF, the reading frame at any block boundary is fully
-determined by the CUMULATIVE CDS nucleotide length in transcript 5'->3' (cds_rank)
-order: a boundary splits a codon iff (cumulative length at that boundary) % 3 != 0.
-This is validated against NCBI/RefSeq source phase (it reproduces the source-phase
-split/exact calls exactly) and is only applied when reconstruction is length-consistent.
-
-It NEVER forces a boundary to exact without evidence: rescue requires either an explicit
-source phase or a length-consistent CDS reconstruction.
-
-Output:
-  cds_phase_rescue_audit.tsv
-"""
-
 from __future__ import annotations
 
 import argparse

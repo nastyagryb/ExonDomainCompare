@@ -1,9 +1,3 @@
-"""Generic synteny neighbourhood table (gene-agnostic).
-
-Reads standardized ``synteny_neighbors.tsv`` and writes canonical
-``synteny_neighbourhood.tsv``. Synteny supports locus / orthology of the target
-gene; it does not by itself assign isoform identity. No FGFR2 anchor wording.
-"""
 from __future__ import annotations
 
 import argparse
@@ -42,7 +36,7 @@ def build(ctx: GenericContext) -> Dict[str, Any]:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description='Generic synteny neighbourhood table (gene-agnostic).')
     ap.add_argument("--run-id", required=True)
     args = ap.parse_args()
     ctx = load_context(args.run_id)

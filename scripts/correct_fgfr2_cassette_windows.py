@@ -1,20 +1,4 @@
 #!/usr/bin/env python3
-"""
-Correct FGFR2 cassette windows.
-
-Anchor-based correction of cassette extraction windows. Several upstream cassette windows
-are biologically offset (e.g. extending into the transmembrane helix, or starting in a
-flank), which would make a reference-guided comparison misleading. This step:
-
-  1. builds a within-isoform consensus anchor from CLEAN (canonical-length) cassettes,
-  2. locally realigns each species' FULL protein to that anchor (BLOSUM62),
-  3. re-extracts a consistent cassette window and flags corrected / unresolved cases.
-
-IMPORTANT: IIIb/IIIc LABELS are never changed. This only re-centers the comparison WINDOW
-to the conserved IgIII cassette block, keeping the original window for provenance. Cases whose
-selected protein does not contain the isoform consensus cassette are flagged as review
-(possible upstream isoform-selection/label inconsistency) and not silently "fixed".
-"""
 
 from __future__ import annotations
 
@@ -26,7 +10,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from exondomaincompare.scientific import fgfr2_msa_common as M  # noqa: E402
+from exondomaincompare.scientific import fgfr2_msa_common as M
 
 try:
     from Bio.Align import PairwiseAligner, substitution_matrices
@@ -35,7 +19,7 @@ try:
     _ALIGNER.substitution_matrix = substitution_matrices.load("BLOSUM62")
     _ALIGNER.open_gap_score = -11
     _ALIGNER.extend_gap_score = -1
-except Exception:  # noqa: BLE001
+except Exception:
     _ALIGNER = None
 
 
@@ -67,9 +51,6 @@ def build_protein_lookup(faa: Path):
 
 
 def consensus_anchor(cassettes: List[str], canon_len: int) -> str:
-    """Majority consensus over clean (canonical-length) cassettes via simple column stacking
-    after left-anchoring on the most common length; robust because the offset minority does
-    not dominate. We align clean cassettes with the aligner to the medoid, then take consensus."""
     clean = [c for c in cassettes if abs(len(c) - canon_len) <= CANON_TOL]
     if not clean:
         clean = cassettes
@@ -86,19 +67,18 @@ def consensus_anchor(cassettes: List[str], canon_len: int) -> str:
             for mi, ci in zip(idx[0], idx[1]):
                 if mi >= 0 and ci >= 0:
                     votes[mi][c[ci]] += 1
-        except Exception:  # noqa: BLE001
+        except Exception:
             continue
     cons = "".join((v.most_common(1)[0][0] if v else medoid[i]) for i, v in enumerate(votes))
     return cons
 
 
 def realign_extract(protein: str, anchor: str) -> Optional[Tuple[int, int, float, float]]:
-    """Return (start_aa, end_aa, identity, coverage) of best local match of anchor in protein."""
     if _ALIGNER is None or not protein or not anchor:
         return None
     try:
         aln = _ALIGNER.align(anchor, protein)[0]
-    except Exception:  # noqa: BLE001
+    except Exception:
         return None
     idx = aln.indices  # row0=anchor, row1=protein
     prot_positions = [p for p in idx[1] if p >= 0]

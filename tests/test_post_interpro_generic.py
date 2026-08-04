@@ -1,15 +1,3 @@
-"""Correctness tests for the generic post-InterPro data flow.
-
-Covers the bugs fixed in the Phase-1 post-InterPro audit:
-  * protein-ID normalisation between FASTA / InterProScan / pyTMHMM
-  * domain / TM attribution to the correct species and protein
-  * generic exon-domain boundary classification (exact/near/inside/outside/unknown)
-  * generic Domain Architecture index shape (no FGFR2 IIIb/IIIc panels)
-  * preservation of the FGFR2 specialization (validated example keeps IIIb/IIIc)
-
-The real two-species FGFR1 run (Gallus + Mus, real InterProScan/pyTMHMM) is used
-as an end-to-end fixture when present.
-"""
 from __future__ import annotations
 
 import csv
@@ -61,7 +49,6 @@ def test_protein_species_map(tmp_path):
 
 
 def test_species_assignment_does_not_collapse_to_one_species(tmp_path):
-    """Regression: a domain row for gallus's protein must not be labelled mus."""
     core = tmp_path / "core"
     core.mkdir()
     with open(core / "protein_isoform_index.tsv", "w", encoding="utf-8", newline="") as fh:

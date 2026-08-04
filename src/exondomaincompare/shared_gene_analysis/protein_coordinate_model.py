@@ -42,7 +42,6 @@ def _int(v: Any, default: Optional[int] = None) -> Optional[int]:
 
 
 def _rel(path: Path, root: Path) -> str:
-    """Project-root-relative POSIX path; never an absolute personal path."""
     try:
         return path.resolve().relative_to(root.resolve()).as_posix()
     except ValueError:
@@ -71,15 +70,6 @@ def _fasta_lengths(path: Path) -> Dict[str, int]:
 
 
 def _resolve_primary_ids(core: Path) -> Dict[str, str]:
-    """Map species → primary protein through the shared resolver.
-
-    The model must be built for the same protein the cluster analysed, otherwise every
-    domain, TM and boundary lookup — all of which filter on species *and* protein —
-    returns nothing and the species ships as ``pending_cluster`` with an empty
-    architecture. Resolution therefore goes through one shared module rather than a
-    local rule, and a species with no resolvable primary raises instead of receiving an
-    alphabetically chosen stand-in.
-    """
     from exondomaincompare.framework.primary_resolution import resolve_primaries  # local: optional dep
 
     return {sid: v["protein_id"] for sid, v in resolve_primaries(core).items()}
@@ -98,12 +88,6 @@ _CLADE_TO_TAXON_GROUP = {
 
 
 def _species_metadata(run_dir: Path) -> Dict[str, Dict[str, str]]:
-    """Clade and taxonomic group per species, from the run's own species registry.
-
-    Carried into the model provenance so the comparative contract is self-contained:
-    the taxonomic-group filter and the exported tables read it from the same place
-    rather than re-joining species metadata downstream.
-    """
     reg = run_dir / "results" / "01_species_registry" / "species_registry.tsv"
     meta: Dict[str, Dict[str, str]] = {}
     for row in _read_tsv(reg):
@@ -119,12 +103,6 @@ def _species_metadata(run_dir: Path) -> Dict[str, Dict[str, str]]:
 
 
 def build_models_for_run(run_dir: Path, project_root: Optional[Path] = None) -> Dict[str, Any]:
-    """Build one coordinate model per (species, selected primary protein).
-
-    Returns a versioned index dict with a ``models`` list. Missing post-cluster
-    inputs (pre-cluster runs) yield models with empty domain/boundary/tm tracks
-    and an honest ``status`` — never fabricated features.
-    """
     run_dir = Path(run_dir)
     project_root = Path(project_root) if project_root else run_dir.resolve().parents[1]
     core = run_dir / CORE_SUBDIR
@@ -388,11 +366,6 @@ _DOMAIN_DISPLAY_NAMES = {
 
 
 def _pretty_domain_name(label: Any) -> str:
-    """Readable form of the *real* InterPro short name — never a new name.
-
-    Mirrors ``prettyDomainName`` in ``webapp/frontend/src/pages/viewers/common.js``
-    so the numbered instance labels are identical in the model and in the UI.
-    """
     raw = str(label or "domain")
     if raw in _DOMAIN_DISPLAY_NAMES:
         return _DOMAIN_DISPLAY_NAMES[raw]
@@ -401,7 +374,6 @@ def _pretty_domain_name(label: Any) -> str:
 
 
 def _supporting_accessions(raw: Any) -> List[str]:
-    """Parse the real ``supporting_interpro`` column (``ACC:name;ACC:name``)."""
     out: List[str] = []
     for part in str(raw or "").split(";"):
         acc = part.split(":", 1)[0].strip()
@@ -411,14 +383,6 @@ def _supporting_accessions(raw: Any) -> List[str]:
 
 
 def _instance_member_signatures(interpro_rows, sp, pid, acc, supporting, start, end):
-    """Contributing member-database signatures of ONE domain feature instance.
-
-    A signature belongs to an instance when its integrated InterPro accession is
-    part of that instance's real ``supporting_interpro`` set and its own interval
-    lies mostly (>50 %) inside the instance span. This is what separates the three
-    FGFR1 Ig-like instances: each carries its own ``PS50835`` / ``SM00409`` hit at
-    its own coordinates, so the join is instance-resolving, not accession-wide.
-    """
     if start is None or end is None:
         return []
     accepted = {a for a in supporting if a} | ({acc} if acc else set())
@@ -448,12 +412,6 @@ def _instance_member_signatures(interpro_rows, sp, pid, acc, supporting, start, 
 
 def _features_from_domain_rows(rows, sp, pid, source_file,
                                interpro_rows=None) -> List[Dict[str, Any]]:
-    """Representative InterPro domains as individually identified feature instances.
-
-    Instance numbering is derived from the sorted start coordinates of the
-    instances that share an InterPro accession, so ``IPR007110`` at 33–118 / 145–244
-    / 253–355 becomes Ig-like domain 1 / 2 / 3 deterministically.
-    """
     raw: List[Dict[str, str]] = []
     for r in rows:
         if r.get("species_id") != sp or r.get("protein_id") != pid:
@@ -554,11 +512,6 @@ def _interpro_feature(r, kind, source_file) -> Dict[str, Any]:
 
 
 def _classify_interpro_layers(rows, sp, pid, source_file):
-    """Bucket real InterProScan annotation rows into scientific feature layers.
-
-    Purely rule-driven over the actual ``interpro_annotations.tsv`` columns
-    (``interpro_type`` / ``member_database`` / ``layer``); nothing is fabricated.
-    """
     families: List[Dict[str, Any]] = []
     member_sigs: List[Dict[str, Any]] = []
     sites: List[Dict[str, Any]] = []
@@ -616,12 +569,6 @@ def _exon_by_number(exons: List[Dict[str, Any]], n: Optional[int]) -> Optional[D
 
 def _left_right_exon(boundary_id: str, position: Optional[int],
                      exons: List[Dict[str, Any]]):
-    """Resolve the (left, right) coding exon flanking an internal boundary.
-
-    Boundaries are named ``…:cds{k}_end`` (the E{k}→E{k+1} junction) and are
-    positioned at the *left* exon's C-terminal aa. We map by exon number first,
-    then fall back to position ordering — never recomputing any coordinate.
-    """
     m = _CDS_RE.search(boundary_id or "")
     if m:
         k = int(m.group(1))
@@ -642,11 +589,6 @@ def _left_right_exon(boundary_id: str, position: Optional[int],
 
 def _emit_boundary(position, left, right, source_file, *, threshold, mapping_status,
                    boundary_class, signed, absd, nearest, provenance):
-    """Assemble one normalized boundary object.
-
-    Carries the canonical field names plus legacy ``*_aa`` / ``category`` aliases
-    so the shared SignedDistancePlot and evidence table consume it unchanged.
-    """
     left_lbl = left.get("label") if left else None
     right_lbl = right.get("label") if right else None
     label = f"{left_lbl} → {right_lbl}" if (left_lbl and right_lbl) else (
@@ -713,28 +655,6 @@ def _emit_boundary(position, left, right, source_file, *, threshold, mapping_sta
 def _boundary_features(boundary_rows, exons, rep_domains, sp, pid, source_file,
                        *, cluster_complete: bool,
                        threshold: int = DEFAULT_NEAR_EDGE_THRESHOLD_AA) -> List[Dict[str, Any]]:
-    """Build the normalized internal coding-exon boundary contract.
-
-    Three honest modes, all driven by the single coordinate model — no React-side
-    coordinate maths:
-
-    * **available + precomputed** — read the real classified rows from
-      ``exon_domain_boundary_distances.tsv`` (preserving the existing signed
-      distances) and enrich each with flanking exons, nearest-domain span, edge
-      position, near-edge threshold and mapping status.
-    * **available + no table** — recompute from exon junctions using the shared
-      classifier (robust fallback; identical vocabulary).
-    * **pending cluster** — emit exon-junction *positions only* (no signed
-      distance, no classification) so the axis is honest but no domain relation
-      is fabricated before InterProScan.
-
-    Sign convention (identical in all three modes and in
-    ``boundary_classification.classify_boundary``):
-    ``signed_distance = boundary_position - nearest_edge_position``. A boundary
-    N-terminal of a domain start is therefore negative, a boundary C-terminal of a
-    domain end is positive, and a boundary inside a domain measured against that
-    domain's end is negative.
-    """
     dom_by_instance = {d["domain_instance_id"]: d for d in rep_domains
                        if d.get("domain_instance_id")}
     dom_by_id = {d.get("id"): d for d in rep_domains if d.get("id")}
@@ -764,16 +684,6 @@ def _boundary_features(boundary_rows, exons, rep_domains, sp, pid, source_file,
         }
 
     def _instance_for_row(r, pos):
-        """Resolve the domain feature INSTANCE a stored boundary row was measured against.
-
-        The Core boundary table only persists the InterPro *accession*, which is
-        ambiguous whenever an entry is repeated (FGFR1 carries three IPR007110
-        Ig-like instances). The instance is therefore recovered from the geometry the
-        row does carry: the stored edge type plus signed distance pin the exact edge
-        coordinate ``edge = boundary_position - signed_distance``. Only when that
-        geometry is absent or matches no real instance do we fall back to a full
-        instance-aware recomputation. An accession is never used on its own.
-        """
         explicit = r.get("nearest_domain_instance_id")
         if explicit and explicit in dom_by_instance:
             return dom_by_instance[explicit], False
@@ -895,13 +805,6 @@ _CONFIDENCE_ORDER = {"high": 0, "medium": 1, "low": 2}
 
 
 def _raw_candidate_id(sp: str, row: Dict[str, str], s: int, e: int) -> str:
-    """Stable identifier for ONE raw ``event_candidate_regions.tsv`` row.
-
-    The table has no id column, so the id is built from the fields that identify the
-    row: the compared protein pair, the interval and the difference kind. It exists so
-    a display cluster can name every raw candidate it stands for without the raw table
-    being rewritten.
-    """
     a = (row.get("protein_a") or "").strip()
     b = (row.get("protein_b") or "").strip()
     kind = (row.get("candidate_type") or "").strip() or "candidate"
@@ -909,28 +812,6 @@ def _raw_candidate_id(sp: str, row: Dict[str, str], s: int, e: int) -> str:
 
 
 def _candidate_features(rows, sp, pid, protein_length=None) -> List[Dict[str, Any]]:
-    """Exploratory candidate regions as deterministic *display clusters*.
-
-    Two separate concerns, deliberately kept apart:
-
-    * **Coordinate validity.** Each candidate is a difference between *two* isoforms,
-      measured in that pair's own coordinate frame. Only a pair that includes the
-      primary protein has coordinates on the primary protein's axis; a difference
-      between two alternative isoforms is measured on an isoform that may be much
-      longer. Placing those on the primary axis anyway produced features past the end
-      of the protein, which failed coordinate validation and silently dropped the whole
-      model — for every species, not just the one with the long isoform.
-
-    * **Legibility.** PKM produces enough overlapping candidates that a single track
-      row drew boxes and labels on top of each other. The repair is a display
-      representation, never a change to the evidence: raw rows stay complete in the
-      TSV, and rows are grouped only when they describe the *same primary-protein
-      interval* in the *same alignment block* (difference kind + evidence source).
-      An insertion and a deletion reported over the same interval are distinct blocks
-      and stay distinct clusters. Every cluster then receives a deterministic rank
-      (from its support), a greedy lane assignment in rank order so no two boxes ever
-      share a lane, and the member ids and counts needed to state what it stands for.
-    """
     grouped: Dict[tuple, Dict[str, Any]] = {}
     off_axis = 0
     for r in rows:
@@ -1049,11 +930,6 @@ def _candidate_features(rows, sp, pid, protein_length=None) -> List[Dict[str, An
 
 
 def _transcript_models(index_dir: Path, sp: str) -> List[Dict[str, Any]]:
-    """Reuse the already-built rich coordinate_track_index for per-transcript models.
-
-    This keeps the coordinate model the single served source of truth for the Exon
-    Map without re-deriving genomic/strand/shared-exon-group fields.
-    """
     for name in ("coordinate_track_index.json", "generic/coordinate_track_index.json"):
         idx = _read_json(index_dir / name, None)
         if idx:

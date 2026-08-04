@@ -1,4 +1,3 @@
-"""Versioned, shared configuration and capability contract."""
 from __future__ import annotations
 
 import copy
@@ -85,7 +84,7 @@ _FORBIDDEN_KEYS = {
 
 
 class ConfigurationError(ValueError):
-    """The selected configuration cannot safely drive the requested operation."""
+    pass
 
 
 _GENERIC_LOCAL_PYTHON_TOKENS = frozenset({"python", "python3"})
@@ -93,8 +92,6 @@ _GENERIC_LOCAL_PYTHON_TOKENS = frozenset({"python", "python3"})
 
 @dataclass(frozen=True)
 class LocalPythonRuntime:
-    """Validated interpreter selected for local application child processes."""
-
     configured_token: str
     selected: str
     current: str
@@ -125,8 +122,6 @@ class LocalPythonRuntime:
 
 @dataclass(frozen=True)
 class AppPaths:
-    """All mutable application roots, separate from repository source."""
-
     repository: Path
     data: Path
     config: Path
@@ -204,7 +199,6 @@ def _user_config_path(repo_root: Path, explicit: Path | str | None,
 
 
 def user_config_path(env: Mapping[str, str] | None = None) -> Path:
-    """Return the personal configuration path used by setup and discovery."""
     env = env or os.environ
     if env.get(CONFIG_ENV):
         return Path(env[CONFIG_ENV]).expanduser()
@@ -218,7 +212,6 @@ def user_config_path(env: Mapping[str, str] | None = None) -> Path:
 
 
 def remote_shell_path(value: str) -> str:
-    """Quote a remote path while preserving a leading home-directory token."""
     raw = str(value or "").strip()
     if raw == "~":
         return '"$HOME"'
@@ -315,7 +308,6 @@ class RuntimeConfig:
         return shutil.which(token)
 
     def local_python(self, *, current_executable: str | None = None) -> LocalPythonRuntime:
-        """Resolve Python for local children without letting PATH replace the caller's venv."""
         current = str(Path(current_executable or sys.executable).expanduser().absolute())
         current_path = Path(current)
         if not current_path.is_file() or not os.access(current_path, os.X_OK):

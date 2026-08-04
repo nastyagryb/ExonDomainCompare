@@ -1,4 +1,3 @@
-"""One compatibility boundary for canonical and historical run layouts."""
 from __future__ import annotations
 
 import csv
@@ -54,8 +53,6 @@ class LegacyRunDescription:
 
 
 class LegacyRunAdapter:
-    """Normalize without rewriting and expose safe logical identities."""
-
     def __init__(self, root: Path, *, expected_run_id: str | None = None):
         self.root = Path(root).expanduser().resolve()
         if not self.root.is_dir():
@@ -218,7 +215,6 @@ class LegacyRunAdapter:
         return candidate
 
     def canonical_candidates(self) -> dict[str, list[Path]]:
-        """Known scientific identities; ambiguity is retained, never guessed."""
         names = {
             "cluster_primary_fasta": {
                 "final_pre_interpro_proteins_primary.faa", "proteins_primary.faa"},
@@ -251,7 +247,6 @@ class LegacyRunAdapter:
         return {key: sorted(values) for key, values in result.items() if values}
 
     def materialize_legacy_compatibility(self) -> tuple[Path, ...]:
-        """Create marked projections only when an unchanged producer needs them."""
         if not self._canonical:
             return ()
         created: list[Path] = []

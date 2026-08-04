@@ -1,14 +1,4 @@
 #!/usr/bin/env python3
-"""
-Make a paper-ready QC package for FGFR2 IIIb/IIIc analysis.
-
-This script does NOT change biological calls. It classifies species/records into:
-  - main_analysis_eligible: robust enough for primary claims/figures
-  - supplementary_review: shown as QC/supplement, not used for strong conclusions
-  - excluded_no_pair: cannot support IIIb/IIIc pair claims
-
-Inputs are the v5.9 marker-validated outputs plus paralog screen outputs.
-"""
 from __future__ import annotations
 
 import argparse

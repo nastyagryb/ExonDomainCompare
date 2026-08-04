@@ -1,19 +1,4 @@
 #!/usr/bin/env python3
-"""
-Build the pre-InterPro species QC master table.
-
-Build ``species_qc_master_pre_interpro.tsv`` -- the single, pre-InterProScan
-source of truth for per-species display and QC. It joins the already-validated
-per-step outputs (registry, Step 4 direction calibration, Step 6b paralog screen,
-Step 5b protein QC, Step 9 paper-ready QC, Step 10 pair-level resolver QC, Step 7
-InterPro preparation) into one tidy, stable table.
-
-This script performs **no** biological recomputation. It only aggregates and
-classifies existing, upstream-validated evidence so that figures, reports and the
-manuscript all read display classes from one place. InterProScan has not been run,
-so no domain calls are present; ``interpro_status`` only reflects input readiness.
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -35,7 +20,6 @@ COLUMNS = [
     "iii_region_similarity_class", "cds_boundary_precision_summary", "main_analysis_eligible",
     "final_display_class", "review_reason_short", "review_reason_long", "recommended_use",
     "interpro_status",
-    # Integrated phylogenetic and taxonomic ordering.
     "taxid", "taxon_group_display", "major_clade", "phylo_order",
     "phylo_order_source", "phylo_order_confidence",
     # Explainable codon-phase and boundary summary.
@@ -44,7 +28,6 @@ COLUMNS = [
 
 # Lowest-wins confidence ranking for aggregation.
 _CONF_RANK = {"high": 3, "medium": 2, "moderate": 2, "low": 1, "unresolved": 0, "": 0}
-# 5b validation statuses that should count as review (not clean validation).
 _REVIEW_PROTEIN = {
     "protein_conflicts_expected_isoform",
     "protein_ambiguous_inconclusive",
@@ -110,7 +93,6 @@ def main() -> int:
 
     paralog = {norm(r.get("species")): r for r in read_tsv(args.paralog_summary)}
 
-    # Step 4: aggregate direction status/confidence per species.
     dir_status: Dict[str, Set[str]] = defaultdict(set)
     dir_conf: Dict[str, List[str]] = defaultdict(list)
     for r in read_tsv(args.isoform_evidence):
@@ -124,7 +106,6 @@ def main() -> int:
         if cf:
             dir_conf[sp].append(cf)
 
-    # Step 5b: aggregate protein validation per species.
     prot_status: Dict[str, List[str]] = defaultdict(list)
     for r in read_tsv(args.protein_validation_summary):
         sp = norm(r.get("species"))
@@ -162,7 +143,6 @@ def main() -> int:
             parts.append(f"split_x{len(spl)}")
         return "; ".join(parts)
 
-    # Step 7: species with prepared InterPro input.
     interpro_species: Set[str] = set()
     interpro_available = bool(args.interpro_id_mapping and Path(args.interpro_id_mapping).exists())
     for r in read_tsv(args.interpro_id_mapping):
@@ -259,7 +239,6 @@ def main() -> int:
         review_short = "ok" if not reasons else reasons[0].split(":")[0]
         review_long = "; ".join(reasons) if reasons else "no_review_flags"
 
-        # The broad taxon group overrides the raw clade for display ordering.
         ph = phylo.get(sp, {})
         broad_group = str(ph.get("taxon_group", "")).strip() or (str(reg.get("clade", "")).strip() or "unknown")
 
@@ -302,9 +281,6 @@ def main() -> int:
     rows.sort(key=_po)
     out = args.outdir
     out.mkdir(parents=True, exist_ok=True)
-    # species_qc_master.tsv is the canonical display and QC table.
-    # species_qc_master_pre_interpro.tsv is an identical copy / documented alias
-    # for the pre-InterProScan stage (no InterPro domain calls present yet).
     canonical_path = out / "species_qc_master.tsv"
     master_path = out / "species_qc_master_pre_interpro.tsv"
     write_tsv(canonical_path, rows, COLUMNS)

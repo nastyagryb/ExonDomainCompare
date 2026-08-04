@@ -1,10 +1,3 @@
-"""Part 13 — Figure Gallery species Scope, comparative figure inventory and
-Data & Downloads correction.
-
-The reference datasets are the accepted standalone FGFR1 Gallus run and the real
-FGFR1 Gallus + Mus run. Where a run is absent the individual test skips rather
-than passing vacuously.
-"""
 from __future__ import annotations
 
 import io
@@ -70,11 +63,6 @@ def _figures(run_dir: Path) -> list:
 
 
 def _schema(run_dir: Path, species_id: str) -> list:
-    """The species-scoped card schema: what the Gallery groups and orders by.
-
-    Run-specific ids and data values are deliberately excluded — only the
-    scientific figure type, its category and its kind are compared.
-    """
     return sorted(
         (f.get("category"), f.get("kind"), f.get("figure_type") or f.get("figure_id"))
         for f in _figures(run_dir)
@@ -239,7 +227,6 @@ def test_msa_overview_reports_identity_as_a_metric():
 
 
 def test_boundary_matrix_matches_the_explorer_values():
-    """The Gallery matrix and the interactive Explorer read one canonical source."""
     if not MULTI.is_dir():
         pytest.skip("multi-species run required")
     tsv = (MULTI / "results" / "generic_gene_analysis" / "figures" / "comparative"
@@ -394,7 +381,6 @@ def test_multi_species_scopes_and_species_scope_files():
 
 
 def test_unavailable_items_are_excluded_from_presets_and_resolution(tmp_path):
-    """A run with no comparative artefacts must not preselect comparative items."""
     from exondomaincompare.shared_gene_analysis.package_builder import capabilities
     run = tmp_path / "2026-01-01_0000_empty"
     (run / "website_indices" / "generic").mkdir(parents=True)

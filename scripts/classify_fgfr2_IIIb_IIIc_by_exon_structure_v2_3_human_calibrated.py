@@ -1,49 +1,4 @@
 #!/usr/bin/env python3
-"""
-classify_fgfr2_IIIb_IIIc_by_exon_structure_v2.py
-
-Annotation-aware FGFR2 IIIb/IIIc isoform evidence generation from exon structure.
-
-Pipeline context
-----------------
-Expected upstream inputs are produced by collect_fgfr2_models_dual_source_v3.py and,
-optionally, select_fgfr2_transcripts_annotation_aware_v2.py. The main output
-fgfr2_isoform_evidence.tsv is intended to be supplied back to
-select_fgfr2_transcripts_annotation_aware_v2.py via --isoform_evidence.
-
-Biological rationale
---------------------
-FGFR2 IIIb/IIIc isoforms arise through mutually exclusive usage of two internal
-exons in the IgIII/D3 ligand-binding region. This script therefore classifies
-IIIb/IIIc candidates from transcript exon architecture rather than relying on
-transcript names alone.
-
-Design principles
------------------
-1. Conservative calls: IIIb/IIIc is assigned only when a mutually exclusive exon
-   slot can be detected within a species/source/gene model.
-2. Species-local inference: genomic coordinates are never compared across species.
-3. Auditable uncertainty: excluded transcripts, ambiguous slots and low-confidence
-   cases are written to warning and audit tables.
-4. Human-calibrated slot choice: exact two-exon slots are additionally ranked by
-   FGFR2-III biological plausibility. True IIIb/IIIc exons should be separate,
-   mutually exclusive cassette alternatives, not near-identical overlapping 5' or
-   3' splice-site variants. Non-overlapping separated alternatives are therefore
-   preferred over overlapping alternatives before applying the transcript-order
-   direction rule.
-
-Outputs
--------
-  fgfr2_isoform_evidence.tsv          Main evidence file for downstream selection
-  fgfr2_isoform_detection_audit.tsv   Candidate slot audit table
-  fgfr2_isoform_summary.tsv           Species/source/gene-level summary
-  fgfr2_isoform_warnings.tsv          Validation/exclusion/uncertainty warnings
-  run_metadata.json                   Parameters and input/output counts
-  fgfr2_isoform_report.md             Human-readable Markdown summary
-  fgfr2_isoform_report.html           Simple HTML summary
-  fgfr2_isoform_methods.txt           Thesis-ready methods paragraph
-  plots/isoform_summary_by_species.png  Optional summary plot if matplotlib exists
-"""
 from __future__ import annotations
 
 import argparse
@@ -67,10 +22,6 @@ from exondomaincompare.scientific import protein_lookup as PL  # noqa: E402
 SCRIPT_NAME = "classify_fgfr2_IIIb_IIIc_by_exon_structure_v2.py"
 SCRIPT_VERSION = "2.4.0_sequence_calibrated_direction"
 
-
-# ---------------------------------------------------------------------------
-# Bounded local alignment (Smith-Waterman + traceback) for direction calibration
-# ---------------------------------------------------------------------------
 @dataclass
 class AlignMetrics:
     score: int = 0
@@ -81,8 +32,6 @@ class AlignMetrics:
 
 
 def smith_waterman_local(query: str, ref: str, match: int = 2, mismatch: int = -1, gap: int = -2) -> AlignMetrics:
-    """Bounded local alignment. identity = matches/aligned columns;
-    coverage_query = aligned span on the query / query length."""
     q = (query or "").upper()
     t = (ref or "").upper()
     n, m = len(q), len(t)
@@ -160,7 +109,6 @@ def clean_id(value: str) -> str:
             v = v[len(prefix):]
     return v
 
-# ----------------------------- IO helpers -----------------------------
 
 def read_tsv(path: Optional[Path]) -> List[Dict[str, str]]:
     if path is None:
@@ -213,8 +161,6 @@ def truthy(value: object) -> bool:
     return str(value).strip().lower() in {"1", "true", "yes", "y", "selected", "canonical"}
 
 
-# ----------------------------- validation -----------------------------
-
 TRANSCRIPT_REQUIRED_ALIASES: Dict[str, Sequence[str]] = {
     "internal_transcript_id": ("internal_transcript_id", "transcript_id_internal", "tx_internal_id"),
     "transcript_id_source": ("transcript_id_source", "transcript_id", "id", "accession"),
@@ -252,7 +198,6 @@ def validate_alias_schema(rows: List[Dict[str, str]], aliases: Dict[str, Sequenc
     return warnings
 
 
-# ----------------------------- data model -----------------------------
 
 @dataclass(frozen=True)
 class Exon:
@@ -353,10 +298,7 @@ def is_complete_candidate_tx(
     return len(reasons) == 0, reasons
 
 
-# ----------------------------- cassette detection -----------------------------
-
 def transcript_order_position(exon: Exon) -> int:
-    """Coordinate increasing in transcript order."""
     return -exon.start if is_reverse(exon.strand) else exon.start
 
 
@@ -385,15 +327,15 @@ def build_slot_candidates(
             key = (left.sig, right.sig)
             if key not in slot_map:
                 slot_map[key] = {"left_flank": left, "right_flank": right, "alt_exons": {}, "tx_to_alt": defaultdict(set), "tx_seen": set()}
-            slot_map[key]["alt_exons"].setdefault(alt.sig, alt)  # type: ignore[index]
-            slot_map[key]["tx_to_alt"][tx_id].add(alt.sig)       # type: ignore[index]
-            slot_map[key]["tx_seen"].add(tx_id)                  # type: ignore[index]
+            slot_map[key]["alt_exons"].setdefault(alt.sig, alt)
+            slot_map[key]["tx_to_alt"][tx_id].add(alt.sig)
+            slot_map[key]["tx_seen"].add(tx_id)
 
     candidates: List[Dict[str, object]] = []
     for idx, ((left_sig, right_sig), obj) in enumerate(slot_map.items(), start=1):
-        alt_exons: Dict[str, Exon] = obj["alt_exons"]  # type: ignore[assignment]
-        tx_to_alt: Dict[str, set] = obj["tx_to_alt"]   # type: ignore[assignment]
-        tx_seen: set = obj["tx_seen"]                  # type: ignore[assignment]
+        alt_exons: Dict[str, Exon] = obj["alt_exons"]
+        tx_to_alt: Dict[str, set] = obj["tx_to_alt"]
+        tx_seen: set = obj["tx_seen"]
         if len(alt_exons) < 2:
             continue
         tx_fraction = len(tx_seen) / n_tx
@@ -423,15 +365,7 @@ def build_slot_candidates(
 
 
 def slot_geometry_features(slot: Dict[str, object]) -> Dict[str, object]:
-    """Summarise whether the two alternative exons look like true FGFR2 IIIb/IIIc cassettes.
-
-    The canonical FGFR2 IIIb/IIIc event uses two mutually exclusive, separated cassette
-    exons. Overlapping alternatives with the same start or end coordinate are usually
-    alternative splice-site variants, not the IIIb/IIIc exon-8/exon-9 event. This
-    geometry score prevents those splice-site variants from outranking the true III
-    cassette simply because they occur in more transcript models.
-    """
-    alt_exons: Dict[str, Exon] = slot.get("alt_exons", {})  # type: ignore[assignment]
+    alt_exons: Dict[str, Exon] = slot.get("alt_exons", {})
     alts = sorted(alt_exons.values(), key=transcript_order_position)
     out: Dict[str, object] = {
         "alt_pair_nonoverlapping": 0,
@@ -480,9 +414,6 @@ def choose_fgfr2_slot(candidates: List[Dict[str, object]]) -> Optional[Dict[str,
         c.update(slot_geometry_features(c))
     exact_two = [c for c in candidates if c.get("alt_count") == 2 and float(c.get("mutual_exclusivity", 0)) >= 0.95]
     if exact_two:
-        # Prioritise biological geometry first: true IIIb/IIIc cassette exons are separated.
-        # Transcript support remains a secondary criterion, because abundant overlapping
-        # splice-site variants should not displace the canonical III exon pair.
         exact_two.sort(key=lambda c: (
             int(c.get("fgfr2_iii_geometry_score", 0)),
             int(c.get("alt_pair_nonoverlapping", 0)),
@@ -507,8 +438,6 @@ def slot_confidence_and_reason(slot: Dict[str, object]) -> Tuple[str, str]:
         return "medium", "candidate_slot_detected_but_alt_count_or_mutual_exclusivity_not_ideal"
     return "low", "weak_candidate_slot_detected;manual_review_recommended"
 
-
-# ----------------------------- sequence-calibrated direction -----------------------------
 
 LEGACY_DIRECTION_RULE = ("order_rule:first_alternative_exon=IIIb;second_alternative_exon=IIIc "
                          "(transcript_order; provisional, requires sequence/domain validation)")
@@ -575,9 +504,6 @@ def get_protein_for_tx(ctx: DirectionContext, tx_internal: str) -> str:
 
 
 def extract_exon_aa(ctx: DirectionContext, tx_internal: str, exon: Exon) -> str:
-    """Priority A/B: translate the candidate CDS exon by mapping the alternative
-    exon's genomic interval to protein AA coordinates (cds_features) and slicing
-    the candidate protein. Returns '' if no usable sequence."""
     cds = ctx.cds_by_tx.get(tx_internal, [])
     if not cds:
         return ""
@@ -605,9 +531,6 @@ def _direction_score(m: AlignMetrics) -> float:
 
 
 def calibrate_exon(ctx: DirectionContext, exon: Exon, tx_ids: List[str]) -> Dict[str, object]:
-    """Classify a single candidate alternative exon by sequence similarity to the
-    curated human IIIb/IIIc cassette references. Direction never uses whole-protein
-    similarity: only the translated candidate exon segment is compared."""
     out: Dict[str, object] = {
         "prefers": "unresolved",
         "id_b": "", "id_c": "", "cov_b": "", "cov_c": "",
@@ -617,8 +540,6 @@ def calibrate_exon(ctx: DirectionContext, exon: Exon, tx_ids: List[str]) -> Dict
     if not ctx.enabled:
         out["method"] = "order_rule_provisional"
         return out
-    # NCBI-cache transcripts first to minimise network use; early-stop on a
-    # confident, well-discriminating extraction.
     ordered_tx = sorted(set(tx_ids), key=lambda t: 0 if str(get_any(ctx.tx_by_internal.get(t, {}),
                         ["source_db", "source"])).upper().startswith("N") else 1)
     candidates = []
@@ -666,10 +587,6 @@ def complement_iso(iso: str) -> str:
 
 
 def resolve_pair_direction(metA: Dict[str, object], metB: Dict[str, object]) -> Dict[str, str]:
-    """Pair-level direction rule for the two ordered cassette exons (A=first,
-    B=second in transcript order). Returns calibrated isoforms + status. Never
-    forces a swap when sequence evidence is weak; falls back to the order rule and
-    flags the case for review."""
     pa = str(metA.get("prefers", "unresolved"))
     pb = str(metB.get("prefers", "unresolved"))
     legacy_a, legacy_b = "IIIb", "IIIc"  # order rule
@@ -735,7 +652,6 @@ def classify_with_slot(
         "exon_structure_direction_provisional_requires_sequence_or_domain_validation"
         if canonical_two_alt_slot else "direction_not_assigned_noncanonical_slot")
 
-    # --- sequence-calibrated direction for the two ordered cassette exons -----
     metA: Dict[str, object] = {"prefers": "unresolved", "method": "order_rule_provisional"}
     metB: Dict[str, object] = {"prefers": "unresolved", "method": "order_rule_provisional"}
     direction = {"A_iso": "IIIb", "B_iso": "IIIc", "method": "order_rule_provisional",
@@ -801,8 +717,6 @@ def classify_with_slot(
             "internal_transcript_id": tx_id,
             "transcript_id_source": transcript_source_id(tx),
             "transcript_name": get_any(tx, ["transcript_name", "name"]),
-            # iii_isoform_assignment / isoform_class now carry the FINAL calibrated
-            # event role so downstream Step 5 + 5b consume the corrected isoform.
             "isoform_class": final_iso,
             "iii_isoform_assignment": final_iso,
             "confidence": conf,
@@ -839,7 +753,6 @@ def classify_with_slot(
     return rows
 
 
-# ----------------------------- reports / plots -----------------------------
 
 def make_markdown_report(summary_rows: List[Dict[str, object]], warning_rows: List[Dict[str, object]], metadata: Dict[str, object]) -> str:
     total_groups = len(summary_rows)
@@ -892,7 +805,7 @@ def markdown_to_simple_html(markdown_text: str) -> str:
 
 def create_summary_plot(summary_rows: List[Dict[str, object]], outdir: Path) -> Optional[str]:
     try:
-        import matplotlib.pyplot as plt  # type: ignore
+        import matplotlib.pyplot as plt
     except Exception:
         return None
     if not summary_rows:
@@ -925,8 +838,6 @@ def create_summary_plot(summary_rows: List[Dict[str, object]], outdir: Path) -> 
     return str(path)
 
 
-# ----------------------------- pipeline -----------------------------
-
 def run_pipeline(args: argparse.Namespace) -> Dict[str, object]:
     args.outdir.mkdir(parents=True, exist_ok=True)
     warnings: List[Dict[str, object]] = []
@@ -954,7 +865,6 @@ def run_pipeline(args: argparse.Namespace) -> Dict[str, object]:
 
     exons_by_tx = load_exons(exon_rows, warnings)
 
-    # --- sequence-calibrated direction context (Step 4 hotfix) ---------------
     cds_rows = read_tsv(args.cds_features) if getattr(args, "cds_features", None) else []
     cds_by_tx = load_cds_by_tx(cds_rows)
     tx_by_internal = {transcript_internal_id(t): t for t in merged_txs if transcript_internal_id(t)}
@@ -1025,10 +935,8 @@ def run_pipeline(args: argparse.Namespace) -> Dict[str, object]:
                 "alternative_exon_lengths_in_transcript_order": ";".join(str(e.length) for e in ordered),
                 "slot_confidence_reason": slot_confidence_and_reason(cand)[1],
             })
-            # Export a transcript-auditable alternative-exon metadata table.
-            # This gives downstream sequence anchoring direct access to the inferred
-            # IIIb/IIIc exon signatures, coordinates, lengths and participating transcripts.
-            tx_to_alt: Dict[str, set] = cand["tx_to_alt"]  # type: ignore[assignment]
+
+            tx_to_alt: Dict[str, set] = cand["tx_to_alt"]
             for alt_order, ex in enumerate(ordered, start=1):
                 if alt_order == 1:
                     inferred_isoform = "IIIb"

@@ -1,12 +1,4 @@
 #!/usr/bin/env python3
-"""
-_fgfr2_msa_common.py — shared helpers for the pre-InterPro MSA / boundary-robustness
-module (results/.../12_msa_boundary_robustness_pre_interpro).
-
-Pure stdlib. No biological QC is recomputed here; helpers only read final tables,
-FASTA and alignments, and provide consistent IO / locating / hashing.
-"""
-
 from __future__ import annotations
 
 import csv
@@ -86,7 +78,6 @@ def write_tsv(path: Path, rows: List[Dict[str, object]], fields: List[str]) -> N
 
 
 def read_fasta(path: Path) -> "List[Tuple[str, str]]":
-    """Return [(id, sequence)] preserving order; id = token after '>' up to whitespace."""
     path = Path(path)
     items: List[Tuple[str, str]] = []
     if not path.exists():
@@ -189,9 +180,6 @@ def is_main_use(recommended_use: str) -> bool:
 
 
 def load_label_reconciliation(base: Path) -> Dict[Tuple[str, str], Dict[str, str]]:
-    """Load the sequence-calibrated IIIb/IIIc label reconciliation, keyed by
-    (species_lower, upstream_label). Returns {} if the table is absent so that callers
-    can fall back to upstream labels (and warn)."""
     p = module_dir(base) / "maps" / "fgfr2_exon_type_label_reconciliation.tsv"
     out: Dict[Tuple[str, str], Dict[str, str]] = {}
     for r in read_tsv(p):
@@ -201,7 +189,6 @@ def load_label_reconciliation(base: Path) -> Dict[Tuple[str, str], Dict[str, str
 
 def final_label(recon: Dict[Tuple[str, str], Dict[str, str]], species: str,
                 upstream_label: str) -> str:
-    """Final biological isoform label from reconciliation; falls back to upstream label."""
     r = recon.get(((species or "").lower(), upstream_label or ""))
     fl = (r or {}).get("final_isoform_label") or ""
     return fl or upstream_label
@@ -209,12 +196,6 @@ def final_label(recon: Dict[Tuple[str, str], Dict[str, str]], species: str,
 
 def label_gate(base: Path, controls: Iterable[str] = ("homo_sapiens", "mus_musculus")
                ) -> Tuple[bool, List[str]]:
-    """Validate inputs for final figures:
-      - no plotted/used row may have final_isoform_label != validated_exon_type;
-      - human and mouse final labels must match curated reference evidence (resolved to IIIb/IIIc,
-        final == validated).
-    Returns (ok, messages). Rows flagged manual_review_required / exclude_from_primary_claim are
-    allowed to keep upstream labels (they must NOT enter primary figures and are excluded there)."""
     p = module_dir(base) / "maps" / "fgfr2_exon_type_label_reconciliation.tsv"
     rec = read_tsv(p)
     msgs: List[str] = []
@@ -240,8 +221,6 @@ def label_gate(base: Path, controls: Iterable[str] = ("homo_sapiens", "mus_muscu
 
 
 def load_claim_status(base: Path) -> Dict[Tuple[str, str], Dict[str, str]]:
-    """Final claim status / validation group / rescue status per (species_lower, final_isoform_label),
-    from the reconciliation table after the general validation/rescue layer. Returns {} if absent."""
     p = module_dir(base) / "maps" / "fgfr2_exon_type_label_reconciliation.tsv"
     out: Dict[Tuple[str, str], Dict[str, str]] = {}
     for r in read_tsv(p):
@@ -256,12 +235,10 @@ def claim_is_primary(claim: str) -> bool:
 
 
 def claim_value(r: Dict[str, str]) -> str:
-    """Post-rescue claim status of a reconciliation row, preferring the maximal-rescue result."""
     return r.get("final_claim_status_after_rescue") or r.get("final_claim_status") or ""
 
 
 def species_claim(claims: Dict[Tuple[str, str], Dict[str, str]], species: str) -> str:
-    """Worst (most conservative) post-rescue claim status across a species' cassettes."""
     rank = {"excluded_from_primary_claim": 3, "supplement_review": 2,
             "primary_claim_supported_with_minor_flags": 1, "primary_claim_supported": 0}
     vals = [claim_value(r) for (sp, _), r in claims.items()
@@ -270,7 +247,6 @@ def species_claim(claims: Dict[Tuple[str, str], Dict[str, str]], species: str) -
 
 
 def maximal_rescue_gate(base: Path) -> Tuple[bool, List[str]]:
-    """Read the maximal-rescue gate; a missing table means not yet run."""
     p = module_dir(base) / "maps" / "fgfr2_maximal_rescue_validation_gate.tsv"
     rows = read_tsv(p)
     if not rows:
@@ -281,7 +257,6 @@ def maximal_rescue_gate(base: Path) -> Tuple[bool, List[str]]:
 
 
 def load_post_rescue_truth(base: Path) -> Dict[Tuple[str, str], Dict[str, str]]:
-    """Single post-rescue truth table, keyed by (species_lower, final isoform label)."""
     p = module_dir(base) / "maps" / "fgfr2_post_rescue_final_truth_table.tsv"
     out: Dict[Tuple[str, str], Dict[str, str]] = {}
     for r in read_tsv(p):
@@ -293,8 +268,6 @@ def load_post_rescue_truth(base: Path) -> Dict[Tuple[str, str], Dict[str, str]]:
 
 
 def synteny_gate(base: Path) -> Tuple[bool, List[str]]:
-    """Local 5-neighbor synteny validation gate (Part I). Reads the gate table; ok iff no check
-    FAILed. Missing table => not-yet-run (ok=True) so the gate never blocks before synteny runs."""
     p = module_dir(base) / "synteny" / "fgfr2_5neighbor_synteny_validation_gate.tsv"
     rows = read_tsv(p)
     if not rows:
@@ -305,10 +278,6 @@ def synteny_gate(base: Path) -> Tuple[bool, List[str]]:
 
 
 def post_rescue_consistency_gate(base: Path, write: bool = True) -> Tuple[bool, List[str]]:
-    """Verify final cross-table consistency:
-    final_claim_status_after_rescue (post-rescue truth) is the single source of truth across the
-    reconciliation table, robustness scores, species_qc_master and the final figure tables, with
-    explicit Gorilla / Canis / Pongo / control checks. Writes the gate tsv/json when `write`."""
     md = module_dir(base)
     maps, tabd, robd = md / "maps", md / "tables", md / "robustness"
     truth = load_post_rescue_truth(base)
@@ -444,7 +413,6 @@ def _write_consistency_gate(maps: Path, checks: List[Dict[str, str]]) -> None:
 
 
 def general_rescue_gate(base: Path) -> Tuple[bool, List[str]]:
-    """Read the general-rescue gate; a missing table means not yet run."""
     p = module_dir(base) / "maps" / "fgfr2_general_rescue_validation_gate.tsv"
     rows = read_tsv(p)
     if not rows:
@@ -463,7 +431,6 @@ def ungapped(seq: str) -> str:
 
 
 def invalid_residues(seq: str) -> str:
-    """Return the distinct invalid (non-AA, non-ambiguous, non-gap) characters."""
     bad = set()
     for c in seq.upper():
         if c in AA_VALID or c in AA_AMBIG or c in GAP_CHARS or c == "*":

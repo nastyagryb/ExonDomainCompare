@@ -1,28 +1,4 @@
 #!/usr/bin/env python3
-"""
-Build the explainable CDS-boundary audit.
-
-Builds an explainable CDS phase / boundary audit for every resolved IIIb/IIIc
-mapping and makes the source of any codon-phase uncertainty auditable.
-
-Inputs (final tables only; no resolver re-run, no biology recomputed):
-  --coordinate_audit  fgfr2_current_stage_IIIb_IIIc_coordinate_audit.tsv  (60 rows)
-  --cds_features      02_models/cds_features.tsv  (all per-transcript CDS blocks)
-  --proteins          selected_fgfr2_proteins.faa (protein lengths for length check)
-
-Outputs (into --outdir):
-  cds_phase_boundary_audit.tsv                    (one row per resolved IIIb/IIIc)
-  cds_phase_boundary_legacy_vs_refined_counts.tsv
-  cds_phase_boundary_explainability_summary.tsv
-
-Optionally propagates the explainability columns back into the final coordinate
-outputs (join by species + isoform), without recomputing any biology:
-  --update_coordinate_audit, --update_exon_cds_mapping, --update_pair_qc
-
-Key principle: do NOT force uncertain cases to exact. Keep uncertainty, but
-record WHY (missing GFF3 phase, source not propagating phase, split codon, etc.).
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -72,7 +48,6 @@ def _int(v, default=None):
 
 
 def norm_tx(tx: str) -> str:
-    """Normalize transcript ids across sources (NCBI cds_features use an 'rna-' prefix)."""
     t = (tx or "").strip()
     for pref in ("rna-", "transcript:", "transcript-"):
         if t.lower().startswith(pref):
@@ -102,12 +77,6 @@ def parse_protein_lengths(fasta: Optional[Path]) -> Dict[str, int]:
 
 
 def reconstruct_transcript(cds_list: List[Dict[str, str]], protein_len: Optional[int]) -> Tuple[str, str]:
-    """Coordinate-based transcript-CDS reconstruction + protein-length consistency.
-
-    Full nucleotide translation is not performed offline (genome FASTA not retained);
-    instead we reconstruct CDS extent from the GFF3-derived CDS coordinate model and
-    validate the protein coordinate projection by total-length consistency.
-    """
     if not cds_list:
         return "no_cds_features_for_transcript", "protein_sequence_unavailable"
     total_bp = sum(_int(c.get("cds_length_bp"), 0) or 0 for c in cds_list)
@@ -120,7 +89,6 @@ def reconstruct_transcript(cds_list: List[Dict[str, str]], protein_len: Optional
     if protein_len is None or protein_len <= 0:
         return recon, "protein_sequence_unavailable"
     expected = total_bp // 3  # may include stop codon
-    # accept exact, or one residue difference (terminal stop codon)
     if abs(expected - protein_len) <= 1:
         trans = "cds_protein_length_consistent"
     else:
@@ -156,7 +124,6 @@ def reason_split(left_prec: str, right_prec: str) -> str:
 
 
 def species_explainability(rows: List[Dict[str, object]]) -> str:
-    """Concise per-species summary string for the QC master."""
     unknown = [r for r in rows if r["reason_if_unknown"] != "not_unknown"]
     split = [r for r in rows if r["reason_if_split"] != "not_split"]
     if not unknown and not split:
@@ -184,7 +151,6 @@ def main() -> int:
     coord = read_tsv(args.coordinate_audit)
     prot_len = parse_protein_lengths(args.proteins)
 
-    # group cds_features by normalized source transcript id
     cds_by_tx: Dict[str, List[Dict[str, str]]] = defaultdict(list)
     for c in read_tsv(args.cds_features):
         cds_by_tx[norm_tx(c.get("transcript_id_source"))].append(c)
@@ -248,7 +214,6 @@ def main() -> int:
     write_tsv(args.outdir / "cds_phase_boundary_legacy_vs_refined_counts.tsv", crows,
               ["precision_category", "legacy_count", "refined_count", "delta_refined_minus_legacy"])
 
-    # explainability summary (counts by category, with source breakdown)
     exp_rows: List[Dict[str, object]] = []
 
     def add_block(dim: str, counter: Counter):
@@ -272,7 +237,6 @@ def main() -> int:
     write_tsv(args.outdir / "cds_phase_boundary_explainability_summary.tsv", exp_rows,
               ["dimension", "category", "count", "fraction"])
 
-    # ---- propagate explainability into final coordinate outputs (join key) ----
     key = {(str(r["species"]).lower(), str(r["isoform"])): r for r in audit}
 
     def propagate_rowwise(path: Path):

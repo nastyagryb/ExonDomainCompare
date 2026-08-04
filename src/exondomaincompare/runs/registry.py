@@ -1,4 +1,3 @@
-"""Private run registry with deterministic union discovery and collision gates."""
 from __future__ import annotations
 
 import hashlib
@@ -146,7 +145,6 @@ def write_registry(config: RuntimeConfig, data: Mapping[str, Any]) -> Path:
 
 
 def write_initial_registry(config: RuntimeConfig) -> Path:
-    """Create or add required roots; never copy/move a run."""
     return write_registry(config, read_registry(config))
 
 
@@ -339,7 +337,6 @@ def register_run_binding(
 def unregister(
     config: RuntimeConfig, *, root_id: str | None = None, run_id: str | None = None
 ) -> dict[str, int]:
-    """Remove private registry records only; never touch a source root."""
     registry = read_registry(config)
     removed_roots = removed_runs = 0
     if run_id:
@@ -394,7 +391,6 @@ def unregister(
 def hide_discovered_run(
     config: RuntimeConfig, *, run_id: str, root_id: str
 ) -> dict[str, int]:
-    """Hide one discovered legacy run without unregistering or touching its root."""
     validate_run_id(run_id)
     if not root_id:
         raise RegistryError("A root id is required to hide a discovered run.")

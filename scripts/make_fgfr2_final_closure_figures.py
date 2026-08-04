@@ -1,30 +1,4 @@
 #!/usr/bin/env python3
-"""
-make_fgfr2_final_closure_figures.py — Parts B/C/D of the closure correction pass.
-
-Regenerates Figures 2, 3, 5 and 6 (paper versions) and their figure-input tables
-strictly from the FINAL single source of truth:
-
-    13_final_pre_interpro_closure/final_pre_interpro_truth_table.tsv
-    13_final_pre_interpro_closure/MSA/final_cassette_msa_boundary_projection.tsv
-    13_final_pre_interpro_closure/MSA/final_human_referenced_residue_agreement.tsv
-    13_final_pre_interpro_closure/MSA/final_fgfr2_full_length_protein_msa.aln.faa
-
-Inclusion / review styling is driven ONLY by final_claim_status_after_rescue and
-pre_interpro_readiness_class. Stale Step-11 recommended_use / is_review_species are
-NOT used as figure logic. Rescued-and-validated primary rows are drawn as accepted
-primary rows (no review outline). No domain boxes are drawn (pre-InterProScan).
-
-Outputs (into the closure dir):
-    figures/Figure_2_final_exon_to_protein_architecture_pre_interpro.{svg,pdf,png}
-    figures/Figure_3_final_IIIb_IIIc_cassette_zoom_pre_interpro.{svg,pdf,png}
-    figures/Figure_5_full_length_FGFR2_MSA_integrity_paper.{svg,pdf,png}
-    figures/Figure_6_human_referenced_IIIb_IIIc_residue_agreement.{svg,pdf,png}
-    tables/figure2_final_exon_to_protein_architecture_pre_interpro.tsv
-    tables/figure3_final_IIIb_IIIc_cassette_zoom_pre_interpro.tsv
-    tables/figure5_full_length_FGFR2_MSA_integrity_paper.tsv
-    tables/figure6_human_referenced_IIIb_IIIc_residue_agreement.tsv
-"""
 
 from __future__ import annotations
 
@@ -136,7 +110,6 @@ def _review_flag(row: Dict[str, str]) -> str:
 
 
 def _short(name: str) -> str:
-    """Abbreviate a binomial to 'G. species' for compact y labels."""
     parts = (name or "").replace("_", " ").split()
     if len(parts) >= 2:
         return f"{parts[0][0]}. {parts[1]}"
@@ -158,15 +131,11 @@ def load_boundary(cdir: Path) -> Dict[Tuple[str, str], Dict[str, str]]:
 
 
 def _order_rows(truth: List[Dict[str, str]]) -> List[Dict[str, str]]:
-    """Primary rows first (truth is already phylo-sorted), then supplement/excluded."""
     primary = [r for r in truth if _is_primary(r)]
     review = [r for r in truth if not _is_primary(r)]
     return primary, review
 
 
-# ---------------------------------------------------------------------------
-# Figure 2 — final exon-to-protein architecture
-# ---------------------------------------------------------------------------
 def figure2(base: Path, cdir: Path) -> List[Dict[str, str]]:
     truth = load_truth(cdir)
     boundary = load_boundary(cdir)
@@ -249,9 +218,6 @@ def figure2(base: Path, cdir: Path) -> List[Dict[str, str]]:
     return table
 
 
-# ---------------------------------------------------------------------------
-# Figure 3 — IIIb/IIIc cassette zoom
-# ---------------------------------------------------------------------------
 def figure3(base: Path, cdir: Path) -> List[Dict[str, str]]:
     truth = load_truth(cdir)
     boundary = load_boundary(cdir)
@@ -340,9 +306,6 @@ def figure3(base: Path, cdir: Path) -> List[Dict[str, str]]:
     return table
 
 
-# ---------------------------------------------------------------------------
-# Figure 5 — full-length MSA integrity (real alignment figure)
-# ---------------------------------------------------------------------------
 def _per_column_profiles(aln: List[Tuple[str, str]]) -> Tuple[List[float], List[float]]:
     if not aln:
         return [], []
@@ -457,17 +420,12 @@ def figure5(base: Path, cdir: Path) -> List[Dict[str, str]]:
     ax_prof.set_title("Full-length FGFR2 protein MSA integrity (primary sequences; green band = IIIb/IIIc cassette)",
                       fontsize=S.FONT["title"], fontweight="bold", loc="left", pad=22)
 
-    # Explicit sequence-state encoding. The previous version wrote residue-present as
-    # 0.0 into a "Greys" image, where 0 is *white*: every residue rendered invisible
-    # and only the gaps were drawn. States are now named and mapped to opaque colours,
-    # and the colormap's "bad" colour is set so no cell can fall through transparent.
     STATE_RESIDUE, STATE_INTERNAL_GAP, STATE_TERMINAL = 0, 1, 2
     state_cmap = ListedColormap(["#1A1A1A", "#FFFFFF", "#E4E7EB"])
     state_cmap.set_bad("#F3B0B0")  # loud, never transparent
     state_norm = BoundaryNorm([-0.5, 0.5, 1.5, 2.5], state_cmap.N)
 
     def sequence_states(seq: str) -> np.ndarray:
-        """Per-column state for one aligned row, separating internal from terminal gaps."""
         row = np.full(width, STATE_TERMINAL, dtype=float)
         residues = [j for j in range(min(len(seq), width)) if seq[j] not in ("-", ".", " ")]
         if not residues:
@@ -490,7 +448,6 @@ def figure5(base: Path, cdir: Path) -> List[Dict[str, str]]:
         return mat
 
     def row_label(header: str) -> str:
-        """species · isoform · accession, as far as the row height allows."""
         parts = header.split("|")
         species = _short((parts[0] if parts else header).replace("_", " ").title())
         isoform = parts[1] if len(parts) > 1 else ""
@@ -500,9 +457,6 @@ def figure5(base: Path, cdir: Path) -> List[Dict[str, str]]:
 
     primary_matrix = raster(ax_ras, primary_aln)
     if cas_end > cas_start > 0 and n_pri:
-        # The cassette is annotated as an outline plus a marker bar, not as a wash over
-        # the matrix: a translucent fill over residue cells would dim the very data the
-        # cassette region is there to point at.
         ax_ras.add_patch(Rectangle((cas_start, 0), cas_end - cas_start, n_pri, fill=False,
                                    edgecolor="#009E73", lw=1.6, zorder=4))
         ax_ras.add_patch(Rectangle((cas_start, -0.14 * n_pri), cas_end - cas_start, 0.08 * n_pri,
@@ -592,9 +546,6 @@ def figure5(base: Path, cdir: Path) -> List[Dict[str, str]]:
     return table
 
 
-# ---------------------------------------------------------------------------
-# Figure 6 — human-referenced IIIb/IIIc residue agreement
-# ---------------------------------------------------------------------------
 def figure6(base: Path, cdir: Path) -> List[Dict[str, str]]:
     truth = load_truth(cdir)
     _truth_k = {(r["species"].lower(), r["isoform"]): r for r in truth}
@@ -666,9 +617,6 @@ def figure6(base: Path, cdir: Path) -> List[Dict[str, str]]:
             cls = by_si.get(k, {})
             for idx in range(1, width + 1):
                 agreement = cls.get(idx, "")
-                # A position the run does not cover is drawn as an explicit
-                # "not covered" cell. Leaving it white made a populated matrix look
-                # like an empty one and hid whether data were missing at all.
                 colour = AGREE_COLOR.get(agreement, NOT_COVERED_COLOR) if agreement \
                     else NOT_COVERED_COLOR
                 ax.add_patch(Rectangle((idx - 1, yi), 1, 1, facecolor=colour,
@@ -732,9 +680,6 @@ def figure6(base: Path, cdir: Path) -> List[Dict[str, str]]:
     return table
 
 
-# ---------------------------------------------------------------------------
-# Part A — Pongo IIIb / Canis IIIc review-case explanation
-# ---------------------------------------------------------------------------
 def review_case_explanation(base: Path, cdir: Path) -> List[Dict[str, str]]:
     truth = load_truth(cdir)
     # focus rows: the two review cases plus their accepted isoform partners for contrast
@@ -797,9 +742,6 @@ def review_case_explanation(base: Path, cdir: Path) -> List[Dict[str, str]]:
     return rows
 
 
-# ---------------------------------------------------------------------------
-# Part B — amino-acid cassette motif map
-# ---------------------------------------------------------------------------
 def figure3B(base: Path, cdir: Path) -> List[Dict[str, str]]:
     disc = M.read_tsv(cdir / "MSA" / "final_isoform_discriminating_residues.tsv")
     if not disc:
@@ -921,9 +863,6 @@ def figure3B(base: Path, cdir: Path) -> List[Dict[str, str]]:
     return table
 
 
-# ---------------------------------------------------------------------------
-# Part C — exon-to-protein cassette coordinate map
-# ---------------------------------------------------------------------------
 def figure3C(base: Path, cdir: Path) -> List[Dict[str, str]]:
     truth = load_truth(cdir)
     _truth_k = {(r["species"].lower(), r["isoform"]): r for r in truth}
@@ -1036,9 +975,6 @@ def figure3C(base: Path, cdir: Path) -> List[Dict[str, str]]:
     return table
 
 
-# ---------------------------------------------------------------------------
-# Part D — positive label-reconciliation & rescue summary (Figure 4)
-# ---------------------------------------------------------------------------
 def figure4(base: Path, cdir: Path) -> List[Dict[str, str]]:
     truth = load_truth(cdir)
 
@@ -1150,9 +1086,6 @@ def figure4(base: Path, cdir: Path) -> List[Dict[str, str]]:
     return table
 
 
-# ---------------------------------------------------------------------------
-# Figure 6B — species-by-position IIIb/IIIc cassette residue conservation heatmap
-# ---------------------------------------------------------------------------
 GREEN_AGREE = {
     "identical_to_human": "#1B7837",
     "conservative_substitution": "#A6DBA0",
@@ -1166,15 +1099,6 @@ def figure6B(base: Path, cdir: Path) -> List[Dict[str, str]]:
     _truth_k = {(r["species"].lower(), r["isoform"]): r for r in truth}
     ag = M.read_tsv(cdir / "MSA" / "final_human_referenced_residue_agreement.tsv")
     disc = M.read_tsv(cdir / "MSA" / "final_isoform_discriminating_residues.tsv")
-    # One set per panel. `human_reference_residue_index` is a single collapsed column
-    # that repeats a number where IIIc carries its two-residue insertion, so using it
-    # for both panels marked IIIb at 16 and 17 — combined columns that exist only in
-    # IIIc — and shifted every later IIIc mark. Each column is mapped through the
-    # residue index of the panel it is drawn on instead.
-    # A closure whose MSA step predates the two per-panel index columns carries only the
-    # combined column, so the indices are recovered from that alignment first — the file
-    # holds every cassette column, which is what makes counting each panel's residues
-    # possible. Without it such a run simply loses its overlay.
     disc_indexed = disc if HRC.has_panel_indices(disc) \
         else HRC.panel_indices_from_combined_alignment(disc)
     discrim_by_panel = HRC.discriminating_positions_by_panel(disc_indexed)
@@ -1182,9 +1106,6 @@ def figure6B(base: Path, cdir: Path) -> List[Dict[str, str]]:
     # agreement keyed by (species, final_isoform_label, position)
     cell: Dict[Tuple[str, str, int], Dict[str, str]] = {}
     href: Dict[Tuple[str, int], str] = {}
-    # The axis is the cassette, so it starts at the validated cassette length and only
-    # grows if this run observes positions beyond it. Deriving it from the observations
-    # alone collapsed the axis to 0–1 whenever the agreement table came out empty.
     maxpos = dict(HRC.EXPECTED_LENGTHS)
     for r in ag:
         iso = r.get("final_isoform_label", "")  # final, not upstream
@@ -1200,9 +1121,6 @@ def figure6B(base: Path, cdir: Path) -> List[Dict[str, str]]:
         href[(iso, pos)] = r.get("human_reference_aa", "")
         maxpos[iso] = max(maxpos.get(iso, 0), pos)
 
-    # The human reference row is the canonical control wherever the run's own
-    # agreement rows do not supply it, so the row is never blank while a validated
-    # reference exists.
     try:
         control = HRC.load()
     except HRC.ReferenceControlError:
@@ -1221,9 +1139,6 @@ def figure6B(base: Path, cdir: Path) -> List[Dict[str, str]]:
         panel = "main" if _is_primary(r) else "supplement"
         for pos in range(1, maxpos.get(iso, 0) + 1):
             c = cell.get((sp, iso, pos))
-            # A position without an observation is written out as an explicit
-            # not-covered row rather than dropped, so the table and the figure agree
-            # on the cassette axis instead of the table quietly ending early.
             table.append({
                 "species": r["species"], "isoform": r["isoform"],
                 "final_isoform_label": iso,

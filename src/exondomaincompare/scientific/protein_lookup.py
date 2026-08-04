@@ -1,39 +1,4 @@
 #!/usr/bin/env python3
-"""
-protein_lookup.py
-
-Shared protein-sequence retrieval logic for the FGFR2 IIIb/IIIc pipeline.
-
-Why this module exists
-----------------------
-Historically, Step 5b (protein validation) and Step 6 (protein export) used two
-different, incompatible protein-retrieval strategies. Step 6 robustly resolved
-NCBI protein sequences from the NCBI ``datasets`` cache (GFF3 transcript->protein
-mapping + protein.faa indexing + product/species/length rescue), while Step 5b
-only looked up sequences by translation ID in a flat FASTA index and otherwise
-fell back to Ensembl REST. As a result Step 5b reported hundreds of
-``protein_sequence_unavailable`` rows for NCBI candidates that Step 6 could
-export without problems.
-
-This module centralises the retrieval so that both steps use *exactly* the same
-logic and report consistent, informative lookup statuses.
-
-Design
-------
-``ProteinCacheIndex`` is built once from a cache directory and reused for every
-lookup. ``lookup_protein`` resolves a single transcript/protein row to a
-``ProteinLookupResult`` describing the sequence, the database it came from, the
-method used, and a confidence level.
-
-The lookup order is deterministic and conservative:
-  1. Exact protein-accession match (NCBI XP_/NP_ or Ensembl translation ID).
-  2. Transcript-linked match (GFF3 CDS Parent -> protein accession -> FASTA).
-  3. Cache product/species/length rescue (clearly reported, lower confidence).
-  4. Ensembl REST fetch for ENSP* translation IDs (optional, network).
-
-It never silently "finds" an ambiguous sequence: rescue and REST matches are
-flagged with explicit lower-confidence method labels.
-"""
 from __future__ import annotations
 
 import re
@@ -202,22 +167,6 @@ _FGFR2_LINE_HINTS = ("FGFR2", "fibroblast growth factor receptor 2", "rowth fact
 
 
 class ProteinCacheIndex:
-    """Index protein sequences from an NCBI ``datasets`` cache directory.
-
-    Provides exact-accession lookup, transcript->protein mapping (from GFF3),
-    and species/product/length rescue identical to the Step 6 export logic.
-
-    Performance
-    -----------
-    NCBI ``datasets`` caches are large (tens of GB of genomic GFF3). To keep the
-    pipeline fast and reproducible we:
-      * index only protein FASTA records that are either explicitly requested
-        (``wanted_accessions``) or are FGFR2 products (needed for rescue);
-      * build the transcript->protein GFF3 mapping lazily and only scan GFF lines
-        that mention FGFR2 (a cheap substring pre-filter), since exact-accession
-        lookups resolve the overwhelming majority of candidates already.
-    """
-
     def __init__(self, cache: Optional[Path], wanted_accessions: Optional[set] = None,
                  wanted_transcripts: Optional[set] = None):
         self.cache = Path(cache) if cache else None
@@ -456,11 +405,6 @@ def lookup_protein(
     ensembl_sleep: float = 0.4,
     ensembl_timeout: int = 30,
 ) -> ProteinLookupResult:
-    """Resolve a single transcript/protein to a sequence using shared logic.
-
-    The same retrieval path is used by Step 5b (validation) and Step 6 (export)
-    so that protein availability is consistent across the pipeline.
-    """
     src = (source_db or "").strip()
     src_upper = src.upper()
     tx = clean_accession(transcript_id)

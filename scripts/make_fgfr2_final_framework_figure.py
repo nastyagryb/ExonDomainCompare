@@ -1,11 +1,4 @@
 #!/usr/bin/env python3
-"""
-make_fgfr2_final_framework_figure.py — Part F: integrated framework evidence-stack figure.
-
-Rows = species/isoform (phylogenetic order). Columns = evidence layers from the final truth table.
-Rescued-and-validated primary cases appear as calm accepted states; only genuinely
-unresolved/supplement/excluded rows get review styling.
-"""
 
 from __future__ import annotations
 

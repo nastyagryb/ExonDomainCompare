@@ -1,4 +1,3 @@
-"""Shared helpers for FGFR2-compatible index builders."""
 from __future__ import annotations
 
 import csv
@@ -46,15 +45,6 @@ def to_int(v: Any) -> Optional[int]:
 
 
 def shared_exon_group_id(genomic_start: Any, genomic_end: Any, strand: Any) -> str:
-    """Genomic identity of one coding exon, shared by every transcript that carries it.
-
-    Transcript-local exon numbers (E1, E2, …) are not identity: an alternative first
-    exon renumbers everything behind it. Identity is therefore the genomic CDS interval
-    plus the strand, which is invariant under upstream insertions and deletions — the
-    property "Compare transcript models" relies on to avoid reporting unchanged
-    downstream exons as different. Every builder must derive the id here so two paths
-    over the same exon cannot disagree.
-    """
     token = f"{genomic_start}:{genomic_end}:{strand or ''}".encode()
     return "SEG_" + hashlib.sha1(token).hexdigest()[:10]
 
@@ -67,11 +57,6 @@ def rel(run_dir: Path, path: Path) -> str:
 
 
 def display_species(species_id: str) -> str:
-    """``gallus_gallus`` -> ``Gallus gallus``.
-
-    A binomial capitalises the genus only, so title case would misspell every
-    species name the interface shows.
-    """
     if not species_id:
         return ""
     text = species_id.replace("_", " ").strip()

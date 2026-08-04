@@ -1,4 +1,3 @@
-"""Orchestrator: write FGFR2-compatible website indices for shared gene runs."""
 from __future__ import annotations
 
 import argparse
@@ -24,7 +23,6 @@ OUTPUT_FILES = {
 
 
 def build_fgfr2_compatible_indices(run_dir: Path) -> Dict[str, Any]:
-    """Build coordinate_track, msa and synteny_locus indices for one run."""
     ctx = SharedRunContext.from_run_dir(run_dir)
     out_dir = ctx.website_indices
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -47,7 +45,7 @@ def build_fgfr2_compatible_indices(run_dir: Path) -> Dict[str, Any]:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
+    ap = argparse.ArgumentParser(description='Orchestrator: write FGFR2-compatible website indices for shared gene runs.')
     ap.add_argument("--run-id", required=True, help="Run directory name under runs/")
     args = ap.parse_args()
     config = load_config(repository_root=ROOT)

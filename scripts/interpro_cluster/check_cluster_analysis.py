@@ -35,15 +35,13 @@ def run_cmd(cmd: list[str], capture: bool = True, check: bool = False) -> str:
 
 
 def ssh_run(remote_command: str) -> str:
-    """Run a remote command and return output with MFA-banner noise removed."""
     return clean_ssh_output(run_cmd(ssh_cmd(remote_command), capture=True))
 
 
 def _exit_ok(exit_code: str) -> bool:
-    """A SLURM ExitCode like '0:0' means success; anything non-zero is a failure."""
     code = (exit_code or "").strip()
     if not code:
-        return True  # unknown exit code: don't treat as failure on its own
+        return True
     first = code.split(":", 1)[0]
     try:
         return int(first) == 0
@@ -68,12 +66,6 @@ def write_json(path: Path, data: dict) -> None:
 
 
 def _squeue_row(job_id: str, cleaned: str):
-    """Return the squeue data row (fields) that starts with job_id, else None.
-
-    A finished job is not in squeue and prints 'slurm_load_jobs error: Invalid job
-    id specified'; after banner cleaning that leaves only the error line, which
-    does not start with the job id, so we correctly fall through to sacct.
-    """
     for line in cleaned.splitlines():
         parts = line.split("|")
         if parts and parts[0].strip() == str(job_id):
@@ -82,7 +74,6 @@ def _squeue_row(job_id: str, cleaned: str):
 
 
 def check_job(job_id: str) -> dict:
-    # First check squeue: running/pending jobs are most reliably visible there.
     squeue_cmd = f"squeue -j {job_id} -h -o '%i|%T|%M|%R|%j'"
     squeue_clean = ssh_run(squeue_cmd)
     row = _squeue_row(job_id, squeue_clean)
@@ -97,14 +88,11 @@ def check_job(job_id: str) -> dict:
             "raw": squeue_clean,
         }
 
-    # Not in squeue (finished / not yet visible): consult sacct, which is
-    # authoritative for completed jobs and carries the ExitCode.
     sacct_cmd = f"sacct -j {job_id} --format=JobID,JobName,State,Elapsed,ExitCode -P -n"
     sacct_clean = ssh_run(sacct_cmd)
 
     if sacct_clean:
         lines = sacct_clean.splitlines()
-        # Prefer the main job line (JobID == job_id, without .batch/.extern).
         main_line = None
         for line in lines:
             first = line.split("|", 1)[0].strip()
@@ -207,7 +195,6 @@ def main() -> None:
     def is_failed(s: str) -> bool:
         return any(tok in s for tok in failed_like)
 
-    # A COMPLETED job with a non-zero ExitCode is really a failure.
     completed_with_bad_exit = any(
         "COMPLETED" in v.get("state", "") and not _exit_ok(v.get("exit_code", ""))
         for v in result.values()
@@ -220,7 +207,6 @@ def main() -> None:
         overall = "error"
         print("Overall: at least one job appears to have failed. Check logs after fetching or on the cluster.")
     elif states and all("COMPLETED" in s for s in states):
-        # Both jobs COMPLETED and (where known) exit code 0:0 → done.
         overall = "completed"
         print("Overall: jobs completed successfully. You can fetch results now.")
     else:

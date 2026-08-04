@@ -1,21 +1,4 @@
 #!/usr/bin/env python3
-"""
-Render publication-quality pre-InterProScan figures.
-
-Render publication-quality figures from the prepared tidy tables.
-This script only visualises pre-computed tables; it performs no biological QC.
-
-Important
----------
-InterProScan has not been run. No real InterPro domains are drawn. Where an exon
-track could host a domain overlay, it is explicitly labelled "InterProScan pending".
-
-Colours
--------
-Okabe-Ito colour-blind-safe palette. IIIb and IIIc use stable colours across all
-figures (IIIb = blue #0072B2, IIIc = orange #E69F00). Review species are marked
-with a red edge / hatch and remain visible.
-"""
 
 from __future__ import annotations
 

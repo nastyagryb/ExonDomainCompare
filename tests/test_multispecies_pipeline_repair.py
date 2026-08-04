@@ -1,15 +1,4 @@
 #!/usr/bin/env python3
-"""Multi-species post-cluster processing: every species must be processed.
-
-These tests pin the repair of a defect that was invisible from the outside. The
-two-species FGFR1 run reported a completed cluster workflow and a ``results_ready``
-status while *Mus musculus* had no domain and no boundary results, because two stages
-disagreed about which protein represents Mus: the cluster analysed ``NP_034336.2`` and
-the canonical coordinate model was built for ``NP_001073377.1``, chosen alphabetically.
-
-The tests are written against the real reference run rather than fixtures wherever the
-claim is biological, so they fail if the pipeline stops reproducing the actual result.
-"""
 from __future__ import annotations
 
 import csv
@@ -120,13 +109,6 @@ def test_both_species_have_real_domain_and_boundary_results(models):
 
 
 def test_mus_musculus_reproduces_its_real_architecture(models):
-    """Mus values are asserted as *shape*, not as hardcoded biology.
-
-    The phase forbids hardcoding expected Mus features. What is checked is that Mus has
-    the same architecture class as its Gallus ortholog — three Ig-like domains and one
-    kinase domain — with its own coordinates, and that those coordinates are Mus-specific
-    rather than copied from Gallus.
-    """
     by_species, _ = models
     mus, gallus = by_species["mus_musculus"], by_species["gallus_gallus"]
 
@@ -224,7 +206,6 @@ def test_a_complete_two_species_run_is_results_ready():
 
 
 def test_one_incomplete_species_makes_the_run_partial(tmp_path: Path):
-    """The guard must catch exactly the state the run was in before the repair."""
     from exondomaincompare.framework.species_completion import aggregate_run_status, build_species_completion
 
     sandbox = tmp_path / "run"
@@ -246,7 +227,6 @@ def test_one_incomplete_species_makes_the_run_partial(tmp_path: Path):
 
 
 def test_an_analysis_that_ran_and_found_nothing_is_not_incomplete():
-    """TP53 has no transmembrane region; that is a result, not a missing analysis."""
     if not TP53_RUN.is_dir():
         pytest.skip("TP53 regression run not present")
     from exondomaincompare.framework.species_completion import aggregate_run_status, build_species_completion

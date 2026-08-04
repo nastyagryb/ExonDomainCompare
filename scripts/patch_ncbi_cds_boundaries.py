@@ -1,26 +1,5 @@
 #!/usr/bin/env python3
-"""
-Patch supported NCBI CDS boundaries.
 
-Targeted NCBI/RefSeq retrieval ONLY for true missing data, never for minor phase /
-split-codon flags. Patch candidates (from the refined uncertainty classes / audits):
-  - nucleotide_sequence_unavailable
-  - protein_overlay_no_cds_model
-  - coordinate_unresolved
-  - cds_feature_unmatched
-  - transcript_not_found_in_cds_model
-
-Explicitly NOT patched: known split-codon boundaries, phase-unavailable-but-coordinate-
-resolved cases, and cases already resolved by local CDS reconstruction.
-
-It retrieves only the necessary CDS/protein for the relevant accession via NCBI Datasets
-(if available + reachable) into a dedicated cache, never overwrites validated models,
-validates any fetched sequence by translation before use, and records full provenance.
-
-Outputs:
-  results/.../02_models/_ncbi_cds_boundary_patch_cache/
-  fgfr2_ncbi_cds_boundary_patch_report.tsv
-"""
 
 from __future__ import annotations
 

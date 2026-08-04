@@ -1,28 +1,4 @@
 #!/usr/bin/env python3
-"""Whether each analysis *can* be performed for the biology that was recovered.
-
-This is a different question from whether a run finished, and conflating the two made
-correct runs look broken. Chicken MC1R is encoded by a single coding exon, so it has zero
-internal coding-exon boundaries; there is nothing for an exon–domain boundary analysis to
-measure. The pipeline ran correctly, produced a boundary table with no rows because no
-boundary exists, and the milestone check — which demanded at least one row — concluded that
-the run was ``post_cluster_partial``. The gene's exon structure was reported as a pipeline
-defect.
-
-The same confusion applies to isoform comparison. Every one of the current single-species
-runs recovers exactly one distinct protein sequence, so there is no second sequence to
-compare against. That is an annotation property, not a missing output.
-
-So availability has two levels:
-
-* **Run level** — did every *applicable* stage complete? Answered in
-  ``framework.core_run_milestones`` and ``run_availability``.
-* **Analysis level** — is this view meaningful for the recovered model? Answered here.
-
-An analysis that resolves to ``not_applicable`` has been resolved *successfully*: the
-prerequisites were counted, the count was zero, and that is the answer. It must not block
-``results_ready``, and it must not be styled as a warning.
-"""
 from __future__ import annotations
 
 import csv
@@ -129,13 +105,6 @@ def _fasta(path: Path) -> Dict[str, str]:
 
 @dataclass
 class Prerequisites:
-    """The real counts each analysis depends on, per species and for the dataset.
-
-    Transcript diversity and protein diversity are counted separately throughout. Several
-    transcripts commonly encode one identical amino-acid sequence, and treating two
-    transcripts as two isoforms would invent a protein difference that does not exist.
-    """
-
     species_count: int = 0
     #: Distinct annotated transcript models, whether or not they are coding.
     transcript_model_count: int = 0
@@ -174,33 +143,16 @@ class Prerequisites:
 
 
 def has_core_tables(run_dir: Path) -> bool:
-    """Whether this run stores its models in the shared core layout.
-
-    The FGFR2 event pipeline keeps its models elsewhere, so reading the core tables for one
-    of those runs returns zero of everything — and zero coding exons would be reported as
-    "not applicable" for a run whose analyses are in fact complete. Runs without these
-    tables keep their own availability contract instead.
-    """
     core = Path(run_dir) / CORE
     return ((core / "exon_protein_map.tsv").is_file()
             and (core / "protein_isoform_index.tsv").is_file())
 
 
 def internal_boundary_count(coding_exon_count: int) -> int:
-    """Internal boundaries of an ordered coding-exon model.
-
-    Two coding exons meet at one boundary, so ``n`` exons have ``n - 1``; one exon has none.
-    Never derived from a total exon count, which includes untranslated exons.
-    """
     return max(int(coding_exon_count) - 1, 0)
 
 
 def prerequisites(run_dir: Path, species_id: str = "") -> Prerequisites:
-    """Count the prerequisites from the run's canonical tables.
-
-    ``species_id`` scopes the coding-exon count to one species' primary model; without it
-    the first species in the exon map is used, which is the reference species.
-    """
     run_dir = Path(run_dir)
     core = run_dir / CORE
     exon_map = _rows(core / "exon_protein_map.tsv")
@@ -278,8 +230,6 @@ def prerequisites(run_dir: Path, species_id: str = "") -> Prerequisites:
 # --------------------------------------------------------------------------- #
 @dataclass
 class AnalysisState:
-    """One row of the availability manifest."""
-
     analysis_name: str
     label: str
     status: str
@@ -337,12 +287,6 @@ CANONICAL_INPUT = "proteins_primary.faa"
 
 
 def _is_stale(run_dir: Path, output: str) -> bool:
-    """Whether an output predates the models it is supposed to describe.
-
-    Re-collecting the gene models rewrites the primary FASTA. Any analysis older than that
-    was computed from proteins that are no longer the run's proteins, so it must be rebuilt
-    rather than presented as a current result.
-    """
     core = Path(run_dir) / CORE
     models, produced = core / CANONICAL_INPUT, core / output
     if not (models.is_file() and produced.is_file()):
@@ -355,12 +299,6 @@ def _is_stale(run_dir: Path, output: str) -> bool:
 
 def boundary_analysis(run_dir: Path, pre: Prerequisites,
                       cluster_ready: Optional[bool] = None) -> AnalysisState:
-    """Exon–domain boundary analysis, which needs at least one internal boundary.
-
-    The order matters: applicability is decided *before* the cluster question. A single-exon
-    protein has nothing to measure whether or not domains have been annotated, so waiting
-    for the cluster would report ``pending`` forever.
-    """
     name, label = "boundary_analysis", "Exon–domain boundary analysis"
     count = pre.internal_coding_exon_boundary_count
     if count == 0:
@@ -394,7 +332,6 @@ def boundary_analysis(run_dir: Path, pre: Prerequisites,
 
 
 def protein_isoform_comparison(pre: Prerequisites) -> AnalysisState:
-    """Isoform comparison, which needs two distinct translated sequences."""
     name = "protein_isoform_comparison"
     label = "Protein isoform comparison"
     count = pre.unique_protein_sequence_count
@@ -406,12 +343,6 @@ def protein_isoform_comparison(pre: Prerequisites) -> AnalysisState:
 
 
 def candidate_analysis(pre: Prerequisites) -> AnalysisState:
-    """Protein-difference candidates, which need a protein difference to exist.
-
-    With one sequence the candidate count is zero because there is nothing to differ from.
-    Reporting that as "Exploratory Candidate Evidence unavailable" describes a normal
-    single-isoform gene as a shortfall.
-    """
     name = "protein_difference_candidate_analysis"
     label = "Protein-difference candidate analysis"
     count = pre.unique_protein_sequence_count
@@ -423,7 +354,6 @@ def candidate_analysis(pre: Prerequisites) -> AnalysisState:
 
 
 def exon_map_analysis(run_dir: Path, pre: Prerequisites) -> AnalysisState:
-    """The exon map, which needs one coding exon — a single-exon gene still has one."""
     name, label = "exon_map", "Exon map"
     count = pre.coding_exon_count
     if count == 0:
@@ -439,11 +369,6 @@ def exon_map_analysis(run_dir: Path, pre: Prerequisites) -> AnalysisState:
 
 def domain_architecture_analysis(run_dir: Path, pre: Prerequisites,
                                  cluster_ready: Optional[bool] = None) -> AnalysisState:
-    """Domain architecture, which needs the cluster annotation and a protein.
-
-    Applicable for a single-exon protein: domains are a property of the sequence, not of the
-    exon structure.
-    """
     name, label = "domain_architecture", "Domain architecture"
     run_dir = Path(run_dir)
     if cluster_ready is None:
@@ -489,12 +414,6 @@ class Manifest:
 
     @property
     def ready(self) -> bool:
-        """Every analysis has reached a settled state.
-
-        ``not_applicable`` and ``scientifically_unavailable`` count as settled: the question
-        was asked and answered. Only an applicable output that is missing, stale, pending or
-        failed keeps a run unfinished.
-        """
         return not self.blocking
 
     def reason(self) -> str:
@@ -528,7 +447,6 @@ class Manifest:
 
 def build_manifest(run_dir: Path, species_id: str = "",
                    cluster_ready: Optional[bool] = None) -> Manifest:
-    """The availability manifest for one run, derived only from its real outputs."""
     run_dir = Path(run_dir)
     pre = prerequisites(run_dir, species_id)
     if cluster_ready is None:
@@ -546,11 +464,6 @@ def build_manifest(run_dir: Path, species_id: str = "",
 
 
 def write_manifest(run_dir: Path, species_id: str = "") -> Path:
-    """Persist the manifest next to the run's indices.
-
-    A compact status record, not a scientific table: no boundary or candidate file is
-    fabricated to represent an analysis that does not apply.
-    """
     manifest = build_manifest(run_dir, species_id)
     out = Path(run_dir) / "website_indices" / "analysis_availability.json"
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -559,12 +472,6 @@ def write_manifest(run_dir: Path, species_id: str = "") -> Path:
 
 
 def index_version(run_dir: Path) -> str:
-    """A short digest of the run's website indices.
-
-    The frontend carries this with every scientific request so a response produced before a
-    rebuild can be told apart from one produced after it. Modification times are
-    deliberately excluded: touching a file does not change scientific content.
-    """
     import hashlib
 
     indices = Path(run_dir) / "website_indices"
@@ -605,13 +512,6 @@ FIGURE_MARKERS = {
 
 def _drop_inapplicable_figures(model: Dict[str, Any],
                                states: Dict[str, AnalysisState]) -> None:
-    """Remove figures for analyses that do not apply to this gene.
-
-    A figure that could not be drawn because the analysis does not apply is not a gap in the
-    publication output, so it is left out of the gallery rather than listed as unavailable.
-    Only ``not_applicable`` analyses are filtered: a figure that is genuinely pending or
-    missing must stay visible, because that *is* a gap.
-    """
     inapplicable = [name for name, state in states.items()
                     if state.status == NOT_APPLICABLE and name in FIGURE_MARKERS]
     if not inapplicable:
@@ -635,13 +535,6 @@ def _drop_inapplicable_figures(model: Dict[str, Any],
 
 
 def annotate_dataset_model(model: Dict[str, Any], run_dir: Path) -> Dict[str, Any]:
-    """Stamp the availability manifest and per-section availability onto a dataset model.
-
-    Applied where the model is assembled, so every run — generic or FGFR2, already on disk
-    or built in future — reports the same canonical states without its indices being
-    rewritten. Existing ``available`` sections are never downgraded: if a section really
-    produced output, that stands.
-    """
     run_dir = Path(run_dir)
     if not has_core_tables(run_dir):
         return model
@@ -675,7 +568,6 @@ def annotate_dataset_model(model: Dict[str, Any], run_dir: Path) -> Dict[str, An
 
 
 def availability_block(state: AnalysisState) -> Dict[str, Any]:
-    """The block a website index carries so the frontend need not re-derive anything."""
     return {
         "state": state.status,
         "label": state.label,

@@ -1,32 +1,4 @@
 #!/usr/bin/env python3
-"""Experimental CORE-ONLY live runner (gene-agnostic, no event region).
-
-First real Core-only proof of concept: run a gene-level analysis for ONE gene +
-ONE species WITHOUT any configured event region. This uses ONLY gene-agnostic
-machinery — it contains NO FGFR2 IIIb/IIIc / cassette logic and invents NO event
-markers. FGFR2 IIIb/IIIc remains the only validated event-specific analysis.
-
-It reuses the existing NCBI Datasets genome cache (genomic.gff + protein.faa)
-that the FGFR2 runs already downloaded, so a pilot can run fully offline. Any
-gene present in that whole-genome annotation can be extracted the same way.
-
-Two phases:
-
-  create  (default): scaffold a run folder, collect gene models + proteins into
-          the Core contract, build synteny neighbours, write the primary FASTA,
-          and set status to "cluster required".
-  --post           : after cluster InterProScan/pyTMHMM outputs are fetched,
-          build domain/TM features + all-exon boundary distances and rebuild the
-          core indices. (Experimental; not exercised without a cluster run.)
-
-Examples:
-  python -m exondomaincompare.framework.run_core_gene_analysis \
-      --gene-config configs/genes/drafts/FGFR1_core_only_pilot.yaml \
-      --species "Gallus gallus" --run-name fgfr1_gallus_core_pilot
-
-  python -m exondomaincompare.framework.run_core_gene_analysis \
-      --gene FGFR1 --species gallus_gallus --support-level core_only_pilot
-"""
 from __future__ import annotations
 
 import argparse
@@ -167,10 +139,6 @@ def build_species_registry(run_dir: Path, species_id: str) -> Dict[str, Any]:
 # locate a cached NCBI genome annotation for a taxid (offline reuse of raw data)
 # --------------------------------------------------------------------------- #
 def find_cached_annotation(taxid: str) -> Optional[Dict[str, str]]:
-    """Search existing NCBI Datasets caches for a taxid's genomic.gff + protein.faa.
-
-    This reuses RAW source data (not analysis outputs) and keeps the pilot offline.
-    """
     if not taxid:
         return None
     rel = f"_ncbi_datasets_cache/ncbi_{taxid}/*/unzipped/ncbi_dataset/data/*/genomic.gff"
@@ -198,16 +166,10 @@ def find_cached_annotation(taxid: str) -> Optional[Dict[str, str]]:
 # on-demand genome annotation retrieval (NCBI Datasets)
 # --------------------------------------------------------------------------- #
 def _datasets_bin() -> Optional[str]:
-    """Locate NCBI Datasets through the shared configured/PATH contract."""
     return RUNTIME_CONFIG.executable("datasets")
 
 
 def species_scientific_name(species_id: str, hint: str = "") -> str:
-    """Best-effort scientific name for an NCBI Datasets taxon query.
-
-    Prefers an explicit multi-word hint (a real scientific name); otherwise turns
-    an Ensembl-style slug (``salmo_salar``) into ``Salmo salar``.
-    """
     h = (hint or "").strip()
     if h and " " in h and h.lower() != species_id.lower():
         return h
@@ -220,13 +182,6 @@ def species_scientific_name(species_id: str, hint: str = "") -> str:
 def download_annotation(run_dir: Path, species_id: str, taxid: str,
                         scientific_name: str, logline, timeout_s: int = 1800
                         ) -> Optional[Dict[str, str]]:
-    """Download genome annotation (gff3 + protein) for a species via NCBI Datasets.
-
-    Downloads ONLY the annotation (no genome FASTA), unzips it into the run-local
-    ``_ncbi_datasets_cache`` in the SAME layout that :func:`find_cached_annotation`
-    expects, so future runs reuse it offline. Returns the annotation dict, or
-    ``None`` with an explanatory log line on any failure (never raises).
-    """
     dbin = _datasets_bin()
     if not dbin:
         logline(f"[{species_id}] NCBI Datasets CLI not found; cannot auto-retrieve genome annotation.")
@@ -333,17 +288,6 @@ def resolve_gene_locus(gff_path: Path, gene_symbol: str, *,
                        assembly_accession: str = "",
                        gene_lookup: Optional[Any] = None,
                        allow_network: bool = True) -> Dict[str, Any]:
-    """Resolve which gene locus in a whole-genome GFF3 corresponds to a symbol.
-
-    Delegates to the shared source-aware cascade, which consults the annotation's own
-    symbol and aliases and then NCBI Gene, mapping a returned GeneID back into the
-    annotation's ``Dbxref``. The two routes this function used to have — exact symbol and
-    a ``gene_synonym`` attribute — are both unavailable on Gnomon-annotated assemblies,
-    where the gene row carries no synonym and no description at all.
-
-    The returned shape is unchanged for existing callers: ``gene``, ``matched_by`` and
-    ``candidates``, with the full resolution record added under ``resolution``.
-    """
     result = glr.resolve_gene_locus(
         Path(gff_path), gene_symbol, scientific_name=scientific_name, taxid=taxid,
         gene_lookup=gene_lookup, allow_network=allow_network,
@@ -399,11 +343,6 @@ def parse_gene_models(gff_path: Path, gene_symbol: str, *,
                       assembly_accession: str = "",
                       gene_lookup: Optional[Any] = None,
                       allow_network: bool = True) -> Dict[str, Any]:
-    """Extract one gene's models (gene-agnostic) from a whole-genome GFF3.
-
-    Returns gene locus + transcripts (each with exons and CDS segments). The gene
-    locus is resolved by the shared source-aware cascade (see resolve_gene_locus).
-    """
     resolution = resolve_gene_locus(
         gff_path, gene_symbol, scientific_name=scientific_name, taxid=taxid,
         assembly_accession=assembly_accession, gene_lookup=gene_lookup,
@@ -465,15 +404,6 @@ def parse_gene_models(gff_path: Path, gene_symbol: str, *,
 def _exon_protein_map_for_transcript(tx: Dict[str, Any],
                                      protein_length_aa: Optional[int] = None
                                      ) -> List[Dict[str, Any]]:
-    """Map coding CDS segments using the validated FGFR2 CDS→AA implementation.
-
-    ``protein_length_aa`` is the length of the translated sequence, and passing it is what
-    keeps the annotation's stop codon out of the protein. Without it a transcript whose CDS
-    features include the terminator projects one residue past the end of its own protein —
-    and where the source splits that terminator across two CDS features, an extra
-    single-residue part covering nothing but the phantom position. Parts that encode only the
-    terminator are dropped here, because they are not coding exons of this protein.
-    """
     cds = [c for c in tx["cds"] if c.get("start") and c.get("end")]
     if not cds:
         return []
@@ -524,8 +454,6 @@ def load_fasta(protein_faa: Path) -> Dict[str, str]:
 # --------------------------------------------------------------------------- #
 def extract_synteny_neighbors(gff_path: Path, gene: Dict[str, Any],
                               per_side: int = SYNTENY_PER_SIDE) -> List[Dict[str, Any]]:
-    """Order protein-coding genes on the gene's seqid and take up/downstream
-    neighbours relative to the gene's strand. Gene-agnostic; no FGFR assumptions."""
     seqid = gene["seqid"]
     genes: List[Dict[str, Any]] = []
     with open(gff_path, encoding="utf-8") as fh:
@@ -576,7 +504,6 @@ def extract_synteny_neighbors(gff_path: Path, gene: Dict[str, Any],
 # --------------------------------------------------------------------------- #
 def _select_primary_pids(coding: List[Dict[str, Any]], lengths: Dict[str, int],
                          selection_method: str) -> Tuple[List[str], str, List[str]]:
-    """Gene-agnostic primary-protein selection for ONE species' coding transcripts."""
     warnings: List[str] = []
     if not coding:
         return [], selection_method, warnings
@@ -599,12 +526,6 @@ def _select_primary_pids(coding: List[Dict[str, Any]], lengths: Dict[str, int],
 
 def _collect_species_rows(cfg: GeneConfig, species_id: str, models: Dict[str, Any],
                           seqs: Dict[str, str], selection_method: str) -> Dict[str, Any]:
-    """Collect one species' contract rows + per-species primary selection.
-
-    Generic: the primary protein is chosen PER SPECIES so a multi-species run has
-    one primary isoform per species (used for the cross-species primary MSA), and
-    the same rules apply identically to a single-species run (length-1 case).
-    """
     gene = models["gene"]
     txs = models["transcripts"]
 
@@ -699,13 +620,6 @@ def _collect_species_rows(cfg: GeneConfig, species_id: str, models: Dict[str, An
 
 def build_core_contract(run_dir: Path, cfg: GeneConfig, per_species: List[Dict[str, Any]],
                         selection_method: str) -> Dict[str, Any]:
-    """Build the core contract for ONE OR MORE species (generic, gene-agnostic).
-
-    ``per_species`` is a list of {species_id, models, seqs}. Each species is
-    collected independently (its own primary protein), then all rows are merged
-    into the shared contract TSVs (every row carries species_id). A single-species
-    run is simply the length-1 case, so both paths share this code.
-    """
     core_dir = run_dir / "results" / "core_gene_analysis"
     core_dir.mkdir(parents=True, exist_ok=True)
 
@@ -1116,11 +1030,6 @@ def phase_create(args: argparse.Namespace) -> int:
 
 
 def _run_generic_pipeline(run_id: str, logline) -> None:
-    """Best-effort: run the shared, gene-agnostic pipeline orchestrator.
-
-    Materializes the canonical stage folders + generic_gene_analysis/ layer +
-    shared website_indices/. A failure here never breaks the core run.
-    """
     try:
         import sys as _sys
         scripts_dir = str(PROJECT_ROOT / "scripts")
@@ -1136,11 +1045,6 @@ def _run_generic_pipeline(run_id: str, logline) -> None:
 
 
 def _build_exploratory_evidence(run_dir: Path, cfg: GeneConfig, logline) -> None:
-    """Run the exploratory isoform scan + evidence/cluster layers (best-effort).
-
-    Every artefact here is EXPLORATORY: it never validates an event region and
-    never turns on event-specific analysis. Failures are logged, not fatal.
-    """
     try:
         from exondomaincompare.framework.scan_isoform_event_candidates import scan as _scan, COLUMNS as _CAND_COLS
         from exondomaincompare.framework.build_event_region_evidence import build_evidence as _build_ev
@@ -1158,11 +1062,6 @@ def _build_exploratory_evidence(run_dir: Path, cfg: GeneConfig, logline) -> None
 
 def _merged_gene_identity(gene_symbol: str,
                           identities: Dict[str, Dict[str, Any]]) -> Dict[str, Any]:
-    """One run-level identity summary from the per-species records.
-
-    The requested symbol is the same for every species; the annotation symbol need not be,
-    so the source symbols are listed per species rather than collapsed into one value.
-    """
     source_symbols = {sid: (rec.get("resolved_official_symbol") or "")
                       for sid, rec in identities.items()
                       if rec.get("symbol_differs_from_source")}
@@ -1274,11 +1173,6 @@ def _write_run_config(run_dir: Path, run_id: str, run_name: str, cfg: GeneConfig
 
 def _write_status_running(run_dir: Path, run_id: str, cfg: GeneConfig, step: str,
                           species_count: int = 1, detail: str = "") -> None:
-    """Explicit, unambiguous 'running' status while the pre-cluster pipeline works.
-
-    Written at the start of collection (and updated while retrieving genomes) so a
-    run in progress is never mistaken for 'created — not started' or 'failed'.
-    """
     write_json(run_dir / "status.json", {
         "run_id": run_id, "status": "running", "current_step": step,
         "run_mode": "core_only_pilot", "experimental": True,
@@ -1363,11 +1257,6 @@ _RETRY_PRESERVED = ("01_species_registry", "_ncbi_datasets_cache",
 
 
 def invalidate_derived_stages(run_dir: Path) -> List[str]:
-    """Drop the derived outputs of a failed run so a retry cannot inherit them.
-
-    Removes the stage folders and website indices built from, or blocked by, the failed
-    stage. Keeps everything in ``_RETRY_PRESERVED``.
-    """
     removed: List[str] = []
     results = run_dir / "results"
     if results.is_dir():
@@ -1396,11 +1285,6 @@ def invalidate_derived_stages(run_dir: Path) -> List[str]:
 
 def write_gene_resolution_report(run_dir: Path, species_id: str,
                                  resolution: Dict[str, Any]) -> Path:
-    """Persist the full resolution record, whether it succeeded or not.
-
-    A failed resolution is the case where the diagnostics matter most, so the candidate
-    inventory and the routes attempted are written before the run stops.
-    """
     out_dir = run_dir / "results" / "02_models"
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / f"gene_resolution_{species_id}.json"
@@ -1506,17 +1390,11 @@ def _classify_boundary(pos: int, domains: List[Dict[str, Any]], threshold: int):
 
 
 def _norm_acc(acc: str) -> str:
-    """Normalise a protein accession for matching: strip whitespace and a trailing
-    RefSeq/Ensembl version suffix (``NP_990841.2`` -> ``NP_990841``)."""
     a = (acc or "").strip()
     return re.sub(r"\.\d+$", "", a)
 
 
 def _protein_species_map(core_dir: Path) -> Dict[str, str]:
-    """Build an authoritative protein_id -> species_id map from the per-species core
-    TSVs. Keys are stored both versioned and version-stripped so a domain/TM row can
-    be attributed to the correct species regardless of how the cluster echoed the
-    accession. This is what prevents every row collapsing onto one arbitrary species."""
     mapping: Dict[str, str] = {}
     for name in ("protein_isoform_index.tsv", "gene_model_index.tsv", "exon_protein_map.tsv"):
         path = core_dir / name
@@ -1532,18 +1410,6 @@ def _protein_species_map(core_dir: Path) -> Dict[str, str]:
 
 
 def _build_coordinate_model_and_figures(run_dir: Path, logline) -> bool:
-    """Rebuild the validated protein-coordinate model — the single source of truth
-    for the Exon Map, Domain Architecture and Boundary pages — and regenerate the
-    publication figures from it.
-
-    This must run in BOTH the pre-cluster core phase and the post-cluster phase; if
-    it only ran pre-cluster the model would stay frozen at the pending stage while
-    the rest of the pipeline (domain/boundary tables, core/generic indices, status)
-    advances to results_ready, producing an inconsistent "Results ready" badge over
-    "pending cluster" Domain/Boundary pages. Best-effort: never fails the caller.
-
-    Returns True if a fresh model was written and validated, else False.
-    """
     try:
         from exondomaincompare.shared_gene_analysis.protein_coordinate_model import build_models_for_run
         from exondomaincompare.shared_gene_analysis.validate_protein_coordinate_model import validate_index
@@ -1904,14 +1770,6 @@ def phase_post(args: argparse.Namespace) -> int:
 # --------------------------------------------------------------------------- #
 def _returned_sequence_inventory(core_dir: Path, interpro_qc: Dict[str, Any],
                                  pytmhmm_qc: Dict[str, Any]) -> Dict[str, Any]:
-    """Per-species coverage of the sequences the cluster returned.
-
-    Answers, for every selected species: was its submitted primary protein analysed,
-    how many features came back, and did the identifier normalise. A species with a
-    returned sequence but zero features is reported as ``returned_no_features`` rather
-    than as missing — that is a legitimate biological result for some proteins, and
-    conflating the two is how an unprocessed species stays invisible.
-    """
     try:
         sys.path.insert(0, str(SCRIPTS_DIR))
         from exondomaincompare.framework.primary_resolution import resolve_primaries
@@ -1962,10 +1820,6 @@ def _primary_protein_ids(core_dir: Path) -> List[str]:
 
 
 def _resolve_seq_identity(raw_acc: str, primary_ids: List[str]) -> Tuple[str, str]:
-    """From a cluster sequence accession (which is the FASTA header token), recover
-    (species_id, protein_id). Core FASTA headers are just the protein id; the FGFR2
-    pipeline uses pipe-delimited headers 'species|label|...|protein_id|...'. Handle
-    both without any event/label assumptions."""
     import re
     acc = (raw_acc or "").strip()
     if "|" in acc:
@@ -1984,12 +1838,6 @@ def _resolve_seq_identity(raw_acc: str, primary_ids: List[str]) -> Tuple[str, st
 
 
 def _parse_interproscan(ips_out: Path, primary_ids: List[str]) -> List[Dict[str, Any]]:
-    """Return normalised InterProScan hits (JSON preferred, TSV fallback).
-
-    This is gene-agnostic: every hit is normalised and assigned a display layer
-    purely from its InterPro entry type (see framework.interpro_annotations).
-    Species is left blank here and resolved by the caller from the authoritative
-    protein->species map. ``protein_id`` is the raw protein accession."""
     if not ips_out.is_dir():
         return []
     hits = load_normalized_annotations(ips_out)
@@ -2012,12 +1860,6 @@ def _parse_interproscan(ips_out: Path, primary_ids: List[str]) -> List[Dict[str,
 
 
 def _curated_annotation_rows(raw_rows: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Build the curated display layers (representative domains, families,
-    features) from the per-protein normalised hits.
-
-    Emits ``domain_features.tsv`` rows carrying the normalised fields plus legacy
-    column names (domain_id/domain_name/feature_type/domain_source) so existing
-    consumers keep working. ``layer`` is authoritative."""
     by_prot: Dict[str, List[Dict[str, Any]]] = {}
     for r in raw_rows:
         by_prot.setdefault(r["protein_id"], []).append(r)
@@ -2075,11 +1917,6 @@ def _curated_annotation_rows(raw_rows: List[Dict[str, Any]]) -> List[Dict[str, A
 
 
 def _parse_pytmhmm(tm_out: Path, primary_ids: List[str]) -> List[Dict[str, Any]]:
-    """Parse pyTMHMM topology output into transmembrane-helix segments.
-
-    Preferred input: pytmhmm_transmembrane_hits.tsv / pytmhmm_summary_all.tsv with
-    columns (sequence_id, line) where line = 'start end topology'. Also falls back
-    to per-sequence .summary files. Only 'transmembrane' segments are recorded."""
     rows: List[Dict[str, Any]] = []
     seen: set = set()
     if not tm_out.is_dir():

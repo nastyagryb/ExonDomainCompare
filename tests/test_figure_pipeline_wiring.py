@@ -1,15 +1,3 @@
-"""A fresh run must produce the complete Figure Gallery by itself.
-
-The figure stages are correct in isolation and are exercised by their own suites,
-but that says nothing about whether the pipeline actually calls them. A stage that
-exists and is never invoked looks perfectly healthy in every unit test while a
-newly created run silently ships an incomplete Gallery — which is precisely what
-happened to the shared main figures and the isoform-alignment figures.
-
-These tests therefore check the wiring itself: that the pipeline names every stage,
-and that running those stages against an empty Gallery yields the full card set.
-"""
-
 from __future__ import annotations
 
 import importlib
@@ -57,12 +45,6 @@ EXPECTED_CARDS = {
 
 
 def test_the_pipeline_names_every_figure_stage():
-    """One shared stage list, used by the pipeline and by an existing-run rebuild.
-
-    The list lives in ``plotting.figure_sequence`` so a species Scope of a
-    multi-species run cannot be built by a different, reduced set of stages than
-    a standalone single-species run.
-    """
     from plotting.figure_sequence import FIGURE_STAGES as declared
     assert tuple(module for _label, module in declared) == FIGURE_STAGES
     assert "run_figure_stages" in RUNNER.read_text(), \
@@ -77,7 +59,6 @@ def test_the_shared_main_figures_run_before_the_supplements():
 
 
 def _phase_body(name: str) -> str:
-    """The source of one pipeline phase function, without the ones that follow."""
     text = RUNNER.read_text()
     assert f"def {name}(" in text, f"{RUNNER.name} has no {name}()"
     return text.split(f"def {name}(", 1)[1].split("\ndef ", 1)[0]
@@ -85,14 +66,6 @@ def _phase_body(name: str) -> str:
 
 @pytest.mark.parametrize("phase", ["phase_create", "phase_post"])
 def test_the_figure_stages_run_after_the_generic_pipeline(phase):
-    """The generic orchestrator rewrites the shared Gallery index.
-
-    ``_enrich_root_figures`` rebuilds ``figures_index.json`` from the pre-cluster
-    figure manifest, so figure stages that ran *before* it had their cards deleted
-    and the pre-cluster cards they replace reinstated. Both phases call the two, and
-    ``phase_create`` used to call them in exactly the wrong order — so the order is
-    asserted per phase rather than for the file as a whole.
-    """
     body = _phase_body(phase)
     generic = body.find("_run_generic_pipeline(")
     figures = body.find("_build_coordinate_model_and_figures(")
@@ -104,7 +77,6 @@ def test_the_figure_stages_run_after_the_generic_pipeline(phase):
 
 
 def test_the_generic_orchestrator_keeps_cards_it_does_not_own(tmp_path):
-    """Defence in depth: rewriting the index must not delete another stage's cards."""
     sys.path.insert(0, str(ROOT / "scripts"))
     from generic_gene.run_generic_gene_analysis import _keep_publication_cards
 
@@ -132,7 +104,6 @@ def test_the_generic_orchestrator_keeps_cards_it_does_not_own(tmp_path):
 
 @pytest.fixture(scope="module")
 def fresh_gallery(tmp_path_factory) -> list[dict]:
-    """Run every figure stage against a copy of a real run with an empty Gallery."""
     if not FGFR1_RUN.exists():
         pytest.skip(f"reference run missing: {FGFR1_RUN}")
     if shutil.which("node") is None:
@@ -191,7 +162,6 @@ def test_every_card_of_a_fresh_run_is_self_describing(fresh_gallery):
 
 
 def test_a_fresh_run_registers_the_main_figures_the_gene_explorer_exports(fresh_gallery):
-    """The Gallery's main cards must be the shared-renderer figures, not stand-ins."""
     main = [c for c in fresh_gallery if c["figure_id"].startswith("main_")]
     assert len(main) == 8, f"expected 8 shared main figures, got {len(main)}"
     for card in main:

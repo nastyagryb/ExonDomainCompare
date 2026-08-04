@@ -1,17 +1,3 @@
-"""Artefact validation for the redesigned single-species Gallery figures.
-
-These tests inspect the exported files — a standalone SVG, a vector PDF, a 300 dpi
-PNG and the source table — rather than the code that draws them, because the
-defects being guarded against were invisible in the source: labels that overlapped
-or were clipped, a genomic axis annotated in amino acids, "10/10 neighbours
-resolved" on a single-species locus map, and every downstream exon coloured as
-altered because an upstream deletion had shifted the protein coordinates.
-
-Every figure is regenerated into a throw-away copy of the real run, so the test
-also proves the generators still run end to end for both reference datasets:
-FGFR1 / Gallus gallus (post-cluster) and TP53 / Danio rerio.
-"""
-
 from __future__ import annotations
 
 import csv
@@ -96,16 +82,6 @@ MAX_PAGE_IN = 14.0
 # --------------------------------------------------------------------------- #
 
 def _sandbox_run(source: Path, dest: Path) -> Path:
-    """A minimal copy of a real run: the inputs the figure generators read.
-
-    The generators write figures, rewrite the export manifest inside the served
-    coordinate model and register Gallery cards, so they are pointed at a copy
-    rather than at the reference run itself.
-
-    The copy keeps the run's directory name. Card registration rejects a card whose
-    output paths name a different run, so renaming the copy would make every card
-    copied in from the reference index look like it came from somewhere else.
-    """
     dest = dest / source.name
     (dest / ANALYSIS).mkdir(parents=True, exist_ok=True)
     for tsv in (source / ANALYSIS).glob("*.tsv"):
@@ -142,8 +118,6 @@ def _species_id(run_dir: Path) -> str:
 
 
 class Figures:
-    """The regenerated artefacts of one run, addressed by figure id."""
-
     def __init__(self, run_dir: Path, cards_before: set | None = None):
         self.run_dir = run_dir
         self.cards_before = cards_before or set()
@@ -214,12 +188,10 @@ def tp53(tmp_path_factory) -> Figures:
 # --------------------------------------------------------------------------- #
 
 def _squeeze(text: str) -> str:
-    """Comparable text: matplotlib writes PDF strings as two-byte glyph codes."""
     return re.sub(r"[\s\x00]+", "", text).lower()
 
 
 def pdf_text(path: Path) -> str:
-    """The PDF text layer with whitespace removed, for substring assertions."""
     return _squeeze(probe_pdf(path).text)
 
 
@@ -385,7 +357,6 @@ def test_transcript_figure_has_a_nucleotide_and_an_amino_acid_axis(fgfr1):
 
 
 def test_transcript_figure_never_labels_the_nucleotide_axis_in_amino_acids(fgfr1):
-    """The original defect: one axis, labelled as both at once."""
     text = pdf_text(fgfr1.path("transcript_exon_structure", "pdf"))
     assert not has(text, "Amino-acid coordinate on the assembly")
     assert not has(text, "Genomic position (aa)")
@@ -404,7 +375,6 @@ def test_transcript_figure_names_the_transcript_and_the_protein(fgfr1):
 
 
 def test_transcript_figure_suppresses_labels_it_cannot_place(fgfr1):
-    """Narrow exons drop their label instead of overprinting the neighbour."""
     labels = [t.strip() for t
               in probe_svg(fgfr1.path("transcript_exon_structure", "svg"))["texts"]
               if re.fullmatch(r"E\d+", (t or "").strip())]
@@ -428,13 +398,6 @@ def _identity_counts(figures: Figures, figure_id: str) -> Counter:
 
 
 def test_fgfr1_exon_identity_counts_are_the_real_ones(fgfr1):
-    """The real FGFR1 numbers, per model, from the exported source table.
-
-    140 exon rows: 17 primary exons plus 123 rows for the 7 alternative models.
-    Only 14 of those 123 differ from the primary — 4 alternative exons, 4 shifted
-    boundaries and 6 absent exons. The pre-redesign figure marked whole tails of
-    exons as altered because it compared protein offsets.
-    """
     rows = fgfr1.table("transcript_model_comparison")
     assert len(rows) == 140
     per_model: dict[str, Counter] = {}
@@ -463,7 +426,6 @@ def test_fgfr1_exon_identity_counts_are_the_real_ones(fgfr1):
 
 
 def test_transcript_comparison_does_not_flag_every_downstream_exon(fgfr1):
-    """A protein-coordinate shift is not an exon difference."""
     counts = _identity_counts(fgfr1, "transcript_model_comparison")
     altered = counts["alternative"] + counts["shifted"] + counts["missing"]
     non_primary = sum(counts.values()) - counts["primary"]
@@ -493,7 +455,6 @@ def test_transcript_comparison_legend_names_every_identity_class(fgfr1):
 
 
 def test_differences_only_figure_drops_the_identical_models(fgfr1):
-    """XP_040507405.1 shares all 17 exons, so it belongs only in the all-models view."""
     all_text = pdf_text(fgfr1.path("transcript_model_comparison", "pdf"))
     diff_text = pdf_text(fgfr1.path("transcript_model_comparison_differences", "pdf"))
     assert has(all_text, "XP_040507405.1")
@@ -559,7 +520,6 @@ def test_neighbourhood_figure_titles_and_counts_come_from_the_data(fgfr1):
 
 
 def test_neighbourhood_figure_makes_no_orthology_claim(fgfr1):
-    """A single-species locus map cannot carry orthology confidence."""
     pdf = pdf_text(fgfr1.path("local_gene_neighbourhood", "pdf"))
     svg = svg_text(fgfr1.path("local_gene_neighbourhood", "svg"))
     for forbidden in ("neighbours resolved", "neighbors resolved", "ortholog",
@@ -638,7 +598,6 @@ def test_candidate_ranking_shows_every_ranking_column(fgfr1):
 
 
 def test_candidate_context_resolves_the_real_domain_instance(fgfr1):
-    """C1 overlaps Ig-like domain 1 (aa 33–118), not a collapsed "IPR007110"."""
     rows = fgfr1.table("generic_candidate_domain_context")
     c1 = next(r for r in rows if r["candidate_label"] == "C1")
     # The instance id carries the real coordinates of that one instance.
@@ -722,12 +681,6 @@ def test_retired_cards_do_not_reappear(fgfr1):
 
 
 def test_cards_owned_by_other_stages_survive(fgfr1):
-    """The alignment and integrated main figures belong to other stages.
-
-    A generator may replace its own cards and retire the ones it supersedes, but it
-    must never delete a card it does not own — an earlier version of this stage
-    wiped whole Gallery sections.
-    """
     sp = fgfr1.species_id
     retired = {t.format(sp=sp) for t in RETIRED_FIGURE_IDS}
     mine = {fgfr1.card_id(f) for f in FIGURE_IDS}
