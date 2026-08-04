@@ -6,7 +6,6 @@ import CassetteExplorer from "./viewers/CassetteExplorer";
 import CoordinateTrack from "./viewers/CoordinateTrack";
 import MsaExplorer from "./viewers/MsaExplorer";
 import SyntenyViewer from "./viewers/SyntenyViewer";
-import SpeciesStory from "./viewers/SpeciesStory";
 import HumanReferenceBadge from "./HumanReferenceBadge";
 
 const VIEWER_TITLES = {
@@ -14,12 +13,11 @@ const VIEWER_TITLES = {
   coordinates: "Exon → Protein Coordinate Track",
   msa: "MSA Explorer",
   synteny: "Synteny Locus Viewer",
-  story: "Evidence Story",
 };
 
 // which interactive viewer best matches each evidence layer
 const LAYER_VIEWER = {
-  label: "story", rescue: "story", readiness: "story",
+  label: "evidence", rescue: "evidence", readiness: "evidence",
   coordinates: "coordinates", full_msa: "msa",
   cassette_msa: "cassette", synteny: "synteny", orthology: "synteny",
 };
@@ -264,11 +262,6 @@ function UnifiedOverview({ model, datasetInfo, isExample, setPage, openGene }) {
               </Badge>
             </Field>
             <Field label="Taxon group">{cell.row.taxon_group}</Field>
-            {cell.data.source_table && (
-              <Field label="Source table" wide>
-                <a className="link" href={fileUrl(cell.data.source_table)}>{cell.data.source_table.split("/").pop()}</a>
-              </Field>
-            )}
 
             {cell.col.key === "label" && (
               <p className="drawer-lead sm">
@@ -283,12 +276,12 @@ function UnifiedOverview({ model, datasetInfo, isExample, setPage, openGene }) {
             {validated && <div className="drawer-actions">
               <span className="field-label">Open interactive evidence</span>
               <div className="action-chips">
-                {[["cassette", "Cassette"], ["coordinates", "Coordinates"], ["msa", "MSA"], ["synteny", "Synteny"], ["story", "Story"]].map(([k, l]) => (
+                {[["cassette", "Cassette"], ["coordinates", "Coordinates"], ["msa", "MSA"], ["synteny", "Synteny"]].map(([k, l]) => (
                   <button key={k} className="btn ghost sm" onClick={() => setViewer({ kind: k, species: cell.row.species, isoform: cell.row.isoform })}>{l}</button>
                 ))}
               </div>
             </div>}
-            <button className="btn ghost" onClick={() => { const kind = LAYER_VIEWER[cell.col.key] || "story"; setCell(null); openGene({ species: cell.row.species, isoform: cell.row.isoform, tab: kind === "story" ? "evidence" : kind }); }}>
+            <button className="btn ghost" onClick={() => { const kind = LAYER_VIEWER[cell.col.key] || "evidence"; setCell(null); openGene({ species: cell.row.species, isoform: cell.row.isoform, tab: kind }); }}>
               Open in Gene Explorer →
             </button>
           </>
@@ -302,7 +295,6 @@ function UnifiedOverview({ model, datasetInfo, isExample, setPage, openGene }) {
         {viewer?.kind === "coordinates" && <CoordinateTrack preloaded={vi.coordinates || vi.coordinate_track_index || {}} species={viewer.species} />}
         {viewer?.kind === "msa" && <MsaExplorer preloaded={vi.msa || vi.msa_index || {}} species={viewer.species} />}
         {viewer?.kind === "synteny" && <SyntenyViewer preloaded={vi.synteny || model?.synteny || {}} species={viewer.species} />}
-        {viewer?.kind === "story" && <SpeciesStory preloaded={vi.story || vi.species_story_index || {}} species={viewer.species} isoform={viewer.isoform} />}
       </Modal>
     </section>
   );
@@ -432,11 +424,6 @@ function BoundaryCard({ bc, setPage }) {
           </div>
         ))}
       </div>
-      <div className="arch-note info">
-        Cassette-end boundaries sit near the Ig-like domain boundary; cassette-start boundaries
-        usually lie within the Ig-like region — consistent with robust exon–domain boundary
-        identification across the primary vertebrate FGFR2 dataset.
-      </div>
     </div>
   );
 }
@@ -465,7 +452,7 @@ function Heatmap({ stack, rows, onCell }) {
                 return (
                   <td key={c.key} className="hm-cell">
                     <button
-                      className={`cell st-${d.class}${d.tone ? " tone-" + d.tone : ""}`}
+                      className={`cell st-${d.class}`}
                       title={`${c.label}: ${d.value}${d.note ? " — " + d.note : ""}`}
                       onClick={() => onCell({ row: r, col: c, data: d })}
                     >

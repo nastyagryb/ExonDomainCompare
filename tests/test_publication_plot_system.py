@@ -282,7 +282,7 @@ def test_cross_species_msa_stays_a_separate_top_level_view():
     # A within-species alignment must never be presented as conservation.
     msa = rendered("pages/viewers/MsaExplorer.jsx")
     assert "Within-species protein isoform alignment — not cross-species" in msa
-    assert "Cross-species primary-protein alignment — one primary isoform per species." in msa
+    assert "Cross-species primary-protein alignment — one primary isoform per species." not in msa
     assert "cross_species_msa" in msa
     assert '"msa"' in text
 

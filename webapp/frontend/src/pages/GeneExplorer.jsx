@@ -27,7 +27,6 @@ import ProteinArchitecture from "./viewers/ProteinArchitecture";
 import BoundaryExplorer from "./viewers/BoundaryExplorer";
 import MsaExplorer from "./viewers/MsaExplorer";
 import SyntenyViewer from "./viewers/SyntenyViewer";
-import SpeciesStory from "./viewers/SpeciesStory";
 import DomainArchitecture from "./viewers/DomainArchitecture";
 import DataDownloads from "./DataDownloads";
 import BoundaryDetailTrack from "./viewers/BoundaryDetailTrack";
@@ -69,13 +68,11 @@ export default function GeneExplorer({ model, target, labels, setPage }) {
     synteny: sharedEventIndices.synteny || model?.shared_indices?.synteny_locus_index,
     domainArch: sharedEventIndices.domainArch || model?.domain_architecture,
     boundaryMatrix: sharedEventIndices.boundaryMatrix || model?.boundary,
-    story: null,
   } : {
     cassette: eventIndices.cassette || eventIndices.cassette_residue_index,
     coordinates: eventIndices.coordinates || eventIndices.coordinate_track_index,
     msa: eventIndices.msa || eventIndices.msa_index,
     synteny: eventIndices.synteny || model?.synteny,
-    story: eventIndices.story || eventIndices.species_story_index,
     domainArch: eventIndices.domainArch || model?.legacy_fgfr2_indices?.species_domain_architecture,
     boundaryMatrix: eventIndices.boundaryMatrix || eventIndices.boundary_consistency_matrix,
   };
@@ -183,7 +180,6 @@ const PHASE2_TABS = [
   ["boundary", "Boundary"],
   ["msa", "MSA"],
   ["synteny", "Synteny"],
-  ["story", "Story"],
 ];
 
 function Workspace({ sp, tab, setTab, downloads, idx, labels, model, eventType, setPage }) {
@@ -202,7 +198,7 @@ function Workspace({ sp, tab, setTab, downloads, idx, labels, model, eventType, 
   // Boundary · Alignment · Synteny). The single Alignment tab resolves its mode
   // and visible label from the dataset (isoform_alignment vs cross_species_msa).
   // The only biological difference is that the validated FGFR2 event layer
-  // (Cassette, Story, IIIb/IIIc) is replaced by one optional exploratory tab.
+  // (Cassette and IIIb/IIIc) is replaced by one optional exploratory tab.
   // Transcript/Exon comparison lives inline inside Exon map; Figure Gallery is
   // the global navigation page only (never duplicated here).
   // Canonical status: the domain/boundary layers are "pending" iff the validated
@@ -271,7 +267,6 @@ function Workspace({ sp, tab, setTab, downloads, idx, labels, model, eventType, 
           {effTab === "boundary" && <BoundarySpeciesPanel sp={sp} idx={idx} />}
           {effTab === "msa" && <MsaExplorer preloaded={idx?.msa || {}} species={sp.species} embedded />}
           {effTab === "synteny" && <SyntenyViewer preloaded={idx?.synteny || {}} species={sp.species} embedded />}
-          {effTab === "story" && <SpeciesStory preloaded={idx?.story || {}} species={sp.species} embedded />}
         </> : <SharedTabBody sp={sp} tab={effTab} model={model} idx={idx} setPage={setPage} multiSpecies={multiSpecies} />}
       </div>
     </>

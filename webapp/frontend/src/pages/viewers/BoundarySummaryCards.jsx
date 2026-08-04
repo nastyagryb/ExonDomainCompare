@@ -44,10 +44,6 @@ export default function BoundarySummaryCards({ summary }) {
           {summary.median_distance ?? "—"} aa to nearest domain boundary
         </div>
       </div>
-
-      {summary.key_interpretation && (
-        <p className="bc-interpretation">{summary.key_interpretation}</p>
-      )}
     </div>
   );
 }

@@ -1,5 +1,8 @@
 # Installation
 
+Windows users should install and run the application inside WSL2. Follow
+[WINDOWS.md](WINDOWS.md) for the complete Windows procedure.
+
 ## 1. Install prerequisites
 
 Required:
@@ -59,3 +62,15 @@ Open <http://127.0.0.1:5173>. Stop both local servers with `Ctrl+C`.
 
 The bundled datasets can be viewed without an LRZ account. Continue with
 [LRZ.md](LRZ.md) only if new runs should use cluster annotation.
+
+## Local run folder
+
+Run outputs are kept outside the repository and are never committed. Use this
+command to display the exact folder selected for the current installation:
+
+```bash
+.venv/bin/edc doctor
+```
+
+The defaults are `~/.local/share/ExonDomainCompare/runs` on Linux and WSL2,
+and `~/Library/Application Support/ExonDomainCompare/runs` on macOS.

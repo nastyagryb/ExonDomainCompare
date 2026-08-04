@@ -226,10 +226,6 @@ export default function CoordinateTrack({ preloaded, species, embedded, genericP
         </div>
       )}
 
-      <div className="domain-placeholder">
-        <span className="dp-dot" /> Domain layer pending InterProScan — functional domains are added in a later phase.
-      </div>
-
       {compareModels && !isFgfr2Iso && (current?.models?.length > 1) && (
         <CompareTranscriptModels models={current.models} selection={scientificSelection} />
       )}

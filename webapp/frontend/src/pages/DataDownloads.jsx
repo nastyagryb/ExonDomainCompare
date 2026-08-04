@@ -95,7 +95,6 @@ function LegacyFgfr2Files({ downloads }) {
   const legacyItems = [primaryFasta, manifest, truth].filter(Boolean);
   return (
     <div className="files-tab">
-      <p className="muted">Run-level artefacts containing this species&apos; rows.</p>
       <div className="file-list">
         {legacyItems.map((d) => (
           <a key={d.path} className="file-row" href={fileUrl(d.path)}>

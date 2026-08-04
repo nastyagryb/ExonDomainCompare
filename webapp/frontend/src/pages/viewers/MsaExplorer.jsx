@@ -368,10 +368,11 @@ function IsoformMsaView({ data, focusCandidate }) {
   const isCrossSpecies = data.mode === "cross_species_msa";
   return (
     <div className="viewer msa-viewer iso-msa">
-      <div className="arch-note info">{data.disclaimer}
-        {" "}<b>{isCrossSpecies
-          ? "Cross-species primary-protein alignment — one primary isoform per species."
-          : "Within-species protein isoform alignment — not cross-species conservation."}</b></div>
+      {!isCrossSpecies && (
+        <div className="arch-note info">
+          <b>Within-species protein isoform alignment — not cross-species conservation.</b>
+        </div>
+      )}
       {/* Mode selector — the alignment view, not a set of independent toggles. */}
       <div className="seg aln-mode-seg">
         {ALN_MODES.map(([id, label, hint]) => (
@@ -592,9 +593,6 @@ function IsoformMsaView({ data, focusCandidate }) {
         {showGaps && <span className="legend-item"><span className="col-swatch gapbound" />gap boundary</span>}
         {showConserved && <span className="legend-item"><span className="col-swatch conserved" />conserved column</span>}
       </div>
-      <p className="muted sm">Column annotations are generic: a <b>variable</b>/<b>discriminating</b> column is one
-        where the shown models differ by residue or gap state; a <b>gap boundary</b> is a transition into or out
-        of a contiguous insertion/deletion block. Per-row % is identity to the primary protein.</p>
     </div>
   );
 }

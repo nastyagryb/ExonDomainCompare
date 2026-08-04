@@ -39,6 +39,16 @@ function FigureGalleryWithSelection({ model, openBoundary }) {
 
 const ACTIVE_DS_KEY = "edc.activeDataset";
 const DEV = Boolean(import.meta.env?.DEV);
+const VALID_PAGES = new Set(["start", "overview", "gene", "boundary", "figures", "runs", "freeze"]);
+
+function pageFromLocation() {
+  try {
+    const page = new URL(window.location.href).searchParams.get("page") || "start";
+    return VALID_PAGES.has(page) ? page : "start";
+  } catch {
+    return "start";
+  }
+}
 
 /**
  * Whether the model's availability manifest has settled this analysis.
@@ -72,7 +82,7 @@ const VIEW_PENDING_MSG = {
 };
 
 export default function App() {
-  const [page, setPage] = useState("start");
+  const [page, setPageState] = useState(pageFromLocation);
   const [health, setHealth] = useState(null);
   const [datasets, setDatasets] = useState([]);
   const [activeId, setActiveId] = useState("example");
@@ -90,10 +100,29 @@ export default function App() {
   const abortRef = useRef(null);
   const pendingRef = useRef("example");
 
+  const setPage = useCallback((nextPage) => {
+    const target = VALID_PAGES.has(nextPage) ? nextPage : "start";
+    setPageState(target);
+    try {
+      const current = pageFromLocation();
+      const url = new URL(window.location.href);
+      if (target === "start") url.searchParams.delete("page");
+      else url.searchParams.set("page", target);
+      const method = current === target ? "replaceState" : "pushState";
+      window.history[method]({ ...(window.history.state || {}), edcPage: target }, "", url);
+    } catch { /* Browser history is optional. */ }
+  }, []);
+
+  useEffect(() => {
+    const restorePage = () => setPageState(pageFromLocation());
+    window.addEventListener("popstate", restorePage);
+    return () => window.removeEventListener("popstate", restorePage);
+  }, []);
+
   const openGene = useCallback((target) => {
     setGeneTarget(target ? { ...target, _t: Date.now() } : null);
     setPage("gene");
-  }, []);
+  }, [setPage]);
 
   const refreshHealth = useCallback(async () => {
     try {
@@ -206,7 +235,7 @@ export default function App() {
     } finally {
       endLoad(epoch);
     }
-  }, [datasets, loadDatasets, beginLoad, endLoad, loadInto]);
+  }, [datasets, loadDatasets, beginLoad, endLoad, loadInto, setPage]);
 
   // Full refresh: reload the dataset list + the active dataset's status/summary,
   // then bump the remount nonce so every explore page refetches its own data

@@ -468,7 +468,7 @@ function ArchTrack({ pd, isoform, onFeature, species }) {
           {length} aa · <code>{pd.protein_id || "—"}</code>
           {qc.kinase_found ? " · kinase ✓" : ""}{qc.pytmhmm_tm_found ? " · TM ✓" : ""}
         </span>
-        <Badge cls={status.cls} soft title={qc.display_note || undefined}>
+        <Badge cls={status.cls} soft>
           {status.label}
         </Badge>
       </div>
@@ -573,20 +573,6 @@ function ArchTrack({ pd, isoform, onFeature, species }) {
           </g>
         ))}
       </svg>
-
-      {/* Annotation flags stay visible as scientific content; the collapsed
-          bookkeeping accordion that used to wrap them is gone (Part 1). */}
-      {(qc.display_note || (qc.warnings || []).length > 0) && (
-        <div className="arch-qc-note">
-          {qc.display_note && <p className="muted sm">{qc.display_note}</p>}
-          {(qc.warnings || []).length > 0 && (
-            <>
-              <span className="field-label">Annotation flags</span>
-              <ul className="tp-flags">{qc.warnings.map((w, i) => <li key={i}>{w}</li>)}</ul>
-            </>
-          )}
-        </div>
-      )}
 
       {/* Generated figure variants live in the Figure Gallery only (Part 17). */}
       <div className="arch-links">

@@ -62,7 +62,7 @@ export default function BoundaryDetailTrack({ pd, row, isoform, embedded }) {
           <span className="track-meta">{length} aa · <code>{pd?.protein_id || row?.protein_id || "—"}</code></span>
           {(row?.architecture_qc_status || qc.display_qc_status) && (() => {
             const st = architectureStatusLabel(qc.display_qc_status || row.architecture_qc_status);
-            return <Badge cls={st.cls} soft title={qc.display_note || undefined}>{st.label}</Badge>;
+            return <Badge cls={st.cls} soft>{st.label}</Badge>;
           })()}
         </div>
 
@@ -186,7 +186,6 @@ export default function BoundaryDetailTrack({ pd, row, isoform, embedded }) {
           })}
         </div>
 
-        {qc?.display_note && <div className="arch-note info"><b>Display note:</b> {qc.display_note}</div>}
         {!pd && (
           <div className="arch-note info">
             Cassette boundaries shown from the validated reference coordinates; full

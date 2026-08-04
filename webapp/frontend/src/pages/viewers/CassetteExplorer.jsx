@@ -370,16 +370,9 @@ function DiscriminatingView({ discriminating }) {
 
 function ResidueLegend() {
   return (
-    <div className="cassette-legend-wrap">
-      <div className="legend res-legend">
-        {RESIDUE_LEGEND.map(([c, l]) => <span key={c} className="legend-item"><span className={`res-swatch res-${c}`} />{l}</span>)}
-        <span className="legend-item"><span className="gold-tick" />IIIb/IIIc-discriminating column</span>
-      </div>
-      <p className="cassette-legend-note">
-        Gold markers indicate columns that distinguish human IIIb from human IIIc. The cell colour still
-        describes the selected species residue relative to the selected human isoform reference — a gold marker
-        does not mean the species residue is wrong.
-      </p>
+    <div className="legend res-legend">
+      {RESIDUE_LEGEND.map(([c, l]) => <span key={c} className="legend-item"><span className={`res-swatch res-${c}`} />{l}</span>)}
+      <span className="legend-item"><span className="gold-tick" />IIIb/IIIc-discriminating column</span>
     </div>
   );
 }

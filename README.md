@@ -16,6 +16,9 @@ validated splicing events.
 Requirements: Git, Python 3.13, Node.js 20.19+ or 22.12+, npm, MAFFT and the
 NCBI Datasets CLI.
 
+Windows users run ExonDomainCompare in WSL2. Follow the dedicated
+[Windows setup](docs/WINDOWS.md) instead of the commands below.
+
 ```bash
 git clone https://github.com/nastyagryb/ExonDomainCompare.git
 cd ExonDomainCompare
@@ -51,9 +54,22 @@ done once per computer and LRZ account, before creating the first cluster run.
 LRZ setup is required only for the cluster round trip. See
 [docs/LRZ.md](docs/LRZ.md).
 
+## Local run storage
+
+Run outputs are stored outside the Git checkout so that a fresh clone stays
+clean. Run `.venv/bin/edc doctor` to display the exact `runs_root` used by the
+current installation.
+
+- Linux and Windows/WSL2: `~/.local/share/ExonDomainCompare/runs`
+- macOS: `~/Library/Application Support/ExonDomainCompare/runs`
+
+These local results are not pushed to GitHub. Cluster results are downloaded
+into the same local run folder after the round trip finishes.
+
 ## Documentation
 
 - [Installation](docs/INSTALLATION.md)
+- [Windows setup](docs/WINDOWS.md)
 - [LRZ setup](docs/LRZ.md)
 - [Troubleshooting](docs/TROUBLESHOOTING.md)
 - [Release contents](docs/RELEASE_CONTENTS.md)

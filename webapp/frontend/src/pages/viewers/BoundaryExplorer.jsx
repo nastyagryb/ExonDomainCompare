@@ -647,29 +647,6 @@ function BoundaryDetail({ b, model, exons, domains, candidates, threshold, pendi
   const ZW = 620, ZPAD = 30, ZH = 96;
   const zx = (aa) => ZPAD + ((aa - zlo) / Math.max(1, zhi - zlo)) * (ZW - 2 * ZPAD);
 
-  // Name the domain feature INSTANCE, so a repeated InterPro entry can never make
-  // the interpretation read as if a different instance had been measured.
-  const domName = b.nearest_domain_full_label || b.nearest_domain_short_label
-    || b.nearest_domain_label;
-  const interp = pending
-    ? `Exon boundary ${b.label} lies at protein position ${pos}. Its distance to any representative `
-      + `domain edge is pending post-cluster InterProScan and is therefore not classified yet.`
-    : cls === "inside_domain"
-      ? `This coding-exon boundary lies ${b.absolute_distance ?? Math.abs(b.signed_distance)} amino acids inside `
-        + `${domName} and is therefore classified as inside_domain.`
-      : cls === "exact_domain_edge"
-        ? `This coding-exon boundary coincides exactly with the ${b.nearest_edge_type} edge of `
-          + `${domName} (0 aa) and is classified as exact_domain_edge.`
-        : cls === "near_domain_edge"
-          ? `This coding-exon boundary lies ${b.absolute_distance} amino acids from the ${b.nearest_edge_type} edge `
-            + `of ${domName} (≤ ${threshold} aa) and is classified as near_domain_edge.`
-          : cls === "outside_annotated_domains"
-            ? `This coding-exon boundary lies ${b.absolute_distance} amino acids `
-              + `${b.signed_distance < 0 ? "N-terminal of" : "C-terminal of"} the nearest edge of `
-              + `${domName}, outside all annotated representative domains `
-              + `(outside_annotated_domains).`
-            : `No representative domain is available for this boundary (unavailable_or_uncertain).`;
-
   return (
     <div className="card bnd-detail">
       <div className="card-head">
@@ -739,9 +716,6 @@ function BoundaryDetail({ b, model, exons, domains, candidates, threshold, pendi
           fill={FEAT.fill} fontSize={FEAT.fontSize}
           fontWeight={FEAT.fontWeight}>{b.label} @ {pos}</text>
       </svg>
-
-      <p className="cand-interp"><b>Interpretation:</b> {interp} This is a coordinate-level classification;
-        no functional consequence is inferred.</p>
     </div>
   );
 }
