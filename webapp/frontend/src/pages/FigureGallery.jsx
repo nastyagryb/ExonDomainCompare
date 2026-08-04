@@ -199,9 +199,11 @@ export default function FigureGallery({ model, openBoundary }) {
               <button className="btn primary sm" onClick={() => { const k = interactiveKind(lightbox); setLightbox(null); openInteractive(k); }}>Open interactive</button>
             )}
             {["png", "svg", "pdf"].map((fmt) => lightbox.formats[fmt] && (
-              <a key={fmt} className="btn ghost sm" href={assetUrl(lightbox.formats[fmt], false, runId)}>{fmt.toUpperCase()}</a>
+              <a key={fmt} className="btn ghost sm" href={assetUrl(lightbox.formats[fmt], false, runId)}
+                target="_blank" rel="noreferrer">{fmt.toUpperCase()}</a>
             ))}
-            {lightbox.source_table && <a className="btn ghost sm" href={assetUrl(lightbox.source_table, false, runId)}>Source table</a>}
+            {lightbox.source_table && <a className="btn ghost sm" href={assetUrl(lightbox.source_table, false, runId)}
+              target="_blank" rel="noreferrer">Source table</a>}
           </div>
         )}
       >
@@ -565,10 +567,10 @@ function FigCard({ f, gene, runId, onOpen, onInteractive }) {
       actions={<>
         {kind && !unavailable && <button className="btn primary sm" onClick={() => onInteractive(kind)}>Interactive</button>}
         {!unavailable && <button className="btn ghost sm" onClick={onOpen}>Open</button>}
-        {formats.svg && <a className="btn ghost sm" href={assetUrl(formats.svg, false, runId)}>SVG</a>}
-        {formats.pdf && <a className="btn ghost sm" href={assetUrl(formats.pdf, false, runId)}>PDF</a>}
-        {formats.png && <a className="btn ghost sm" href={assetUrl(formats.png, false, runId)}>PNG</a>}
-        {f.source_table && <a className="btn ghost sm" href={assetUrl(f.source_table, false, runId)}>TSV</a>}
+        {formats.svg && <a className="btn ghost sm" href={assetUrl(formats.svg, false, runId)} target="_blank" rel="noreferrer">SVG</a>}
+        {formats.pdf && <a className="btn ghost sm" href={assetUrl(formats.pdf, false, runId)} target="_blank" rel="noreferrer">PDF</a>}
+        {formats.png && <a className="btn ghost sm" href={assetUrl(formats.png, false, runId)} target="_blank" rel="noreferrer">PNG</a>}
+        {f.source_table && <a className="btn ghost sm" href={assetUrl(f.source_table, false, runId)} target="_blank" rel="noreferrer">TSV</a>}
       </>}
     />
   );

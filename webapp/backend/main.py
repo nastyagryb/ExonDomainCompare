@@ -12,8 +12,10 @@ import sys
 import time
 import uuid
 import zipfile
+from concurrent.futures import Future
 from datetime import datetime, timezone
 from pathlib import Path
+from threading import Lock
 from typing import Any, Dict, List, Mapping, Optional
 
 from fastapi import FastAPI, HTTPException, Query
@@ -2872,12 +2874,34 @@ def run_logs(run_id: str, tail: int = Query(400, ge=1, le=8000)) -> Dict[str, An
 
 
 # Dataset endpoints accept example or run:<run_id> selectors.
+_DATASET_MODEL_INFLIGHT_LOCK = Lock()
+_DATASET_MODEL_INFLIGHT: Dict[str, Future[Dict[str, Any]]] = {}
+
+
 @app.get("/api/runs/current/dataset-model")
 def current_dataset_model(dataset: Optional[str] = Query(None)) -> Dict[str, Any]:
-    """Return one versioned model without building or rewriting source indices."""
+    """Return one versioned model without duplicating concurrent builds."""
     selected = dataset or DATASET_EXAMPLE
-    model = build_canonical_dataset_model(resolve_dataset(selected))
-    return _prune_missing_file_links(model, selected)
+    with _DATASET_MODEL_INFLIGHT_LOCK:
+        pending = _DATASET_MODEL_INFLIGHT.get(selected)
+        owner = pending is None
+        if owner:
+            pending = Future()
+            _DATASET_MODEL_INFLIGHT[selected] = pending
+    if not owner:
+        return pending.result()
+    try:
+        model = build_canonical_dataset_model(resolve_dataset(selected))
+        result = _prune_missing_file_links(model, selected)
+        pending.set_result(result)
+        return result
+    except Exception as exc:
+        pending.set_exception(exc)
+        raise
+    finally:
+        with _DATASET_MODEL_INFLIGHT_LOCK:
+            if _DATASET_MODEL_INFLIGHT.get(selected) is pending:
+                _DATASET_MODEL_INFLIGHT.pop(selected, None)
 
 
 @app.get("/api/runs/current/summary")
@@ -3630,21 +3654,32 @@ def _looks_like_file_link(value: str) -> bool:
         in _DOWNLOAD_SUFFIXES
 
 
-def _prune_missing_file_links(value: Any, dataset: str) -> Any:
+def _file_link_available(path: str, dataset: str,
+                         availability: Dict[str, bool]) -> bool:
+    if path not in availability:
+        try:
+            availability[path] = _resolve_public_file_path(
+                path, dataset=dataset
+            ).is_file()
+        except HTTPException:
+            availability[path] = False
+    return availability[path]
+
+
+def _prune_missing_file_links(value: Any, dataset: str,
+                              availability: Optional[Dict[str, bool]] = None) -> Any:
     """Remove derived-view download links whose target file is unavailable."""
+    if availability is None:
+        availability = {}
     if isinstance(value, list):
         cleaned = []
         for item in value:
             if isinstance(item, dict) and item.get("path") and item.get("format"):
-                try:
-                    available = _resolve_public_file_path(
-                        str(item["path"]), dataset=dataset
-                    ).is_file()
-                except HTTPException:
-                    available = False
-                if not available:
+                if not _file_link_available(
+                    str(item["path"]), dataset, availability
+                ):
                     continue
-            cleaned.append(_prune_missing_file_links(item, dataset))
+            cleaned.append(_prune_missing_file_links(item, dataset, availability))
         return cleaned
     if not isinstance(value, dict):
         return value
@@ -3653,11 +3688,7 @@ def _prune_missing_file_links(value: Any, dataset: str) -> Any:
         if key in _DIRECT_FILE_LINK_KEYS and isinstance(item, str) and item \
                 and _looks_like_file_link(item) \
                 and not item.startswith(("/api/", "http://", "https://")):
-            try:
-                available = _resolve_public_file_path(item, dataset=dataset).is_file()
-            except HTTPException:
-                available = False
-            if not available:
+            if not _file_link_available(item, dataset, availability):
                 continue
         if key in _FILE_LINK_MAP_KEYS and isinstance(item, dict):
             mapped = {}
@@ -3669,17 +3700,11 @@ def _prune_missing_file_links(value: Any, dataset: str) -> Any:
                     continue
                 if not _looks_like_file_link(path):
                     continue
-                try:
-                    available = _resolve_public_file_path(
-                        path, dataset=dataset
-                    ).is_file()
-                except HTTPException:
-                    available = False
-                if available:
+                if _file_link_available(path, dataset, availability):
                     mapped[item_key] = path
             cleaned[key] = mapped
         else:
-            cleaned[key] = _prune_missing_file_links(item, dataset)
+            cleaned[key] = _prune_missing_file_links(item, dataset, availability)
     return cleaned
 
 

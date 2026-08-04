@@ -52,6 +52,16 @@ def test_page_navigation_is_restored_from_browser_history():
     assert 'window.addEventListener("popstate", restorePage)' in app
 
 
+def test_gallery_downloads_keep_the_application_loaded():
+    gallery = source("pages/FigureGallery.jsx")
+
+    assert gallery.count('target="_blank" rel="noreferrer"') >= 7
+    for label in ("SVG", "PDF", "PNG", "TSV"):
+        matching_lines = [line for line in gallery.splitlines() if f">{label}</a>" in line]
+        assert matching_lines
+        assert all('target="_blank"' in line for line in matching_lines)
+
+
 def test_public_docs_explain_windows_setup_and_local_run_storage():
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     windows = (ROOT / "docs" / "WINDOWS.md").read_text(encoding="utf-8")
