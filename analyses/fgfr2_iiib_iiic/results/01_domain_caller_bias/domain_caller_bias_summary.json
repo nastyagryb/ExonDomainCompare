@@ -1,0 +1,10 @@
+{
+  "n_aggregated_protein_database_observations": 290,
+  "n_proteins": 58,
+  "n_species": 30,
+  "n_member_databases": 5,
+  "database_partial_r2_controlling_species_and_isoform": 0.6221791428557758,
+  "reduced_model_r2": 0.06836226654904298,
+  "full_model_r2": 0.6480078329996571,
+  "all_leave_one_out_scenarios_pass_all_proteins": true
+}

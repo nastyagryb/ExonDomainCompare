@@ -1,0 +1,9 @@
+{
+  "distance_threshold_aa": 15.0,
+  "consensus_threshold": 0.8,
+  "n_selected_proteins_with_ig_calls": 32,
+  "n_proteins_passing_topology": 32,
+  "n_ncbi_ensembl_pairs": 16,
+  "n_pairs_same_topology_class": 16,
+  "cross_annotation_topology_agreement": 1.0
+}

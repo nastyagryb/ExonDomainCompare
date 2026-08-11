@@ -1,0 +1,784 @@
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	Pfam	PF07679	Immunoglobulin I-set domain	192	269	5.1E-12	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	502	778	1.1E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	163	271	1.6E-32	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	63	151	8.4E-19	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	458	587	6.8E-44	T	04-08-2026	-	-	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	588	783	7.5E-67	T	04-08-2026	-	-	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	ProSiteProfiles	PS50835	Ig-like domain profile.	175	268	11.315378	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	492	778	1.11E-81	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	ProSiteProfiles	PS50835	Ig-like domain profile.	277	379	10.0086	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	Pfam	PF13927	Immunoglobulin domain	67	131	2.3E-4	T	04-08-2026	-	-	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	Pfam	PF13927	Immunoglobulin domain	286	367	1.8E-6	T	04-08-2026	-	-	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	ProSiteProfiles	PS50835	Ig-like domain profile.	61	147	9.137415	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	SMART	SM00219	tyrkin_6	502	778	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	SUPERFAMILY	SSF48726	Immunoglobulin	67	149	7.67E-15	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	272	386	1.0E-30	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	SUPERFAMILY	SSF48726	Immunoglobulin	277	380	3.54E-21	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	SMART	SM00408	igc2_5	75	136	4.7E-11	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	SMART	SM00408	igc2_5	191	259	2.7E-13	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	SMART	SM00408	igc2_5	290	370	9.5E-7	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	SMART	SM00409	IG_3c	185	270	1.1E-7	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	SMART	SM00409	IG_3c	284	381	2.8E-14	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	SMART	SM00409	IG_3c	69	147	4.7E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	SUPERFAMILY	SSF48726	Immunoglobulin	188	271	2.65E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gallus_gallus|ensembl|IIIc|ENSGALP00010001719	489f352df036304959f52c6c76615468	842	ProSiteProfiles	PS50011	Protein kinase domain profile.	502	791	42.463497	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	Pfam	PF07679	Immunoglobulin I-set domain	192	269	5.1E-12	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	502	778	1.1E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	163	271	1.6E-32	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	63	151	8.4E-19	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	458	587	6.8E-44	T	04-08-2026	-	-	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	588	783	7.5E-67	T	04-08-2026	-	-	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	ProSiteProfiles	PS50835	Ig-like domain profile.	175	268	11.315378	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	492	778	1.11E-81	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	ProSiteProfiles	PS50835	Ig-like domain profile.	277	379	10.0086	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	Pfam	PF13927	Immunoglobulin domain	67	131	2.3E-4	T	04-08-2026	-	-	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	Pfam	PF13927	Immunoglobulin domain	286	367	1.8E-6	T	04-08-2026	-	-	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	ProSiteProfiles	PS50835	Ig-like domain profile.	61	147	9.137415	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	SMART	SM00219	tyrkin_6	502	778	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	SUPERFAMILY	SSF48726	Immunoglobulin	67	149	7.67E-15	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	272	386	1.0E-30	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	SUPERFAMILY	SSF48726	Immunoglobulin	277	380	3.54E-21	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	SMART	SM00408	igc2_5	75	136	4.7E-11	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	SMART	SM00408	igc2_5	191	259	2.7E-13	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	SMART	SM00408	igc2_5	290	370	9.5E-7	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	SMART	SM00409	IG_3c	185	270	1.1E-7	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	SMART	SM00409	IG_3c	284	381	2.8E-14	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	SMART	SM00409	IG_3c	69	147	4.7E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	SUPERFAMILY	SSF48726	Immunoglobulin	188	271	2.65E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gallus_gallus|ncbi|IIIc|NP_990650.2	489f352df036304959f52c6c76615468	842	ProSiteProfiles	PS50011	Protein kinase domain profile.	502	791	42.463497	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	567	762	6.0E-67	T	04-08-2026	-	-	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	SMART	SM00409	IG_3c	263	360	1.8E-13	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	SMART	SM00409	IG_3c	164	249	3.9E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	SMART	SM00409	IG_3c	47	125	1.8E-9	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	SMART	SM00408	igc2_5	170	238	8.3E-13	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	SMART	SM00408	igc2_5	53	114	2.7E-12	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	SMART	SM00408	igc2_5	269	349	8.7E-7	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	ProSiteProfiles	PS50835	Ig-like domain profile.	256	358	10.026751	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	471	757	9.58E-82	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	481	757	5.9E-99	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	ProSiteProfiles	PS50835	Ig-like domain profile.	39	125	8.484026	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	437	566	4.1E-44	T	04-08-2026	-	-	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	SUPERFAMILY	SSF48726	Immunoglobulin	44	127	5.99E-14	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	SUPERFAMILY	SSF48726	Immunoglobulin	256	359	8.63E-21	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	ProSiteProfiles	PS50835	Ig-like domain profile.	154	247	11.351679	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	41	129	2.4E-19	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	Pfam	PF13927	Immunoglobulin domain	266	346	1.5E-6	T	04-08-2026	-	-	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	Pfam	PF13927	Immunoglobulin domain	45	110	2.1E-4	T	04-08-2026	-	-	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	Pfam	PF07679	Immunoglobulin I-set domain	171	248	1.4E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	SUPERFAMILY	SSF48726	Immunoglobulin	167	250	4.6E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	SMART	SM00219	tyrkin_6	481	757	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	140	250	2.0E-34	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	ProSiteProfiles	PS50011	Protein kinase domain profile.	481	770	42.350422	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+homo_sapiens|ensembl|IIIc|ENSP00000351276	8278583234a3eda2a192d8bb50e1fab8	821	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	251	362	1.4E-30	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	567	762	6.0E-67	T	04-08-2026	-	-	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	SMART	SM00409	IG_3c	263	360	1.8E-13	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	SMART	SM00409	IG_3c	164	249	3.9E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	SMART	SM00409	IG_3c	47	125	1.8E-9	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	SMART	SM00408	igc2_5	170	238	8.3E-13	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	SMART	SM00408	igc2_5	53	114	2.7E-12	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	SMART	SM00408	igc2_5	269	349	8.7E-7	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	ProSiteProfiles	PS50835	Ig-like domain profile.	256	358	10.026751	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	471	757	9.58E-82	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	481	757	5.9E-99	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	ProSiteProfiles	PS50835	Ig-like domain profile.	39	125	8.484026	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	437	566	4.1E-44	T	04-08-2026	-	-	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	SUPERFAMILY	SSF48726	Immunoglobulin	44	127	5.99E-14	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	SUPERFAMILY	SSF48726	Immunoglobulin	256	359	8.63E-21	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	ProSiteProfiles	PS50835	Ig-like domain profile.	154	247	11.351679	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	41	129	2.4E-19	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	Pfam	PF13927	Immunoglobulin domain	266	346	1.5E-6	T	04-08-2026	-	-	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	Pfam	PF13927	Immunoglobulin domain	45	110	2.1E-4	T	04-08-2026	-	-	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	Pfam	PF07679	Immunoglobulin I-set domain	171	248	1.4E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	SUPERFAMILY	SSF48726	Immunoglobulin	167	250	4.6E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	SMART	SM00219	tyrkin_6	481	757	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	140	250	2.0E-34	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	ProSiteProfiles	PS50011	Protein kinase domain profile.	481	770	42.350422	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+homo_sapiens|ncbi|IIIc|NP_000132.3	8278583234a3eda2a192d8bb50e1fab8	821	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	251	362	1.4E-30	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	140	250	7.0E-34	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	40	129	1.2E-20	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	ProSiteProfiles	PS50835	Ig-like domain profile.	39	125	9.119265	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	Pfam	PF13927	Immunoglobulin domain	45	109	3.9E-5	T	04-08-2026	-	-	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	482	758	5.6E-99	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	SUPERFAMILY	SSF48726	Immunoglobulin	167	250	8.27E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	Pfam	PF07679	Immunoglobulin I-set domain	263	357	2.1E-5	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	Pfam	PF07679	Immunoglobulin I-set domain	171	248	1.6E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	ProSiteProfiles	PS50011	Protein kinase domain profile.	482	771	42.350422	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	ProSiteProfiles	PS50835	Ig-like domain profile.	256	356	10.117498	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	438	567	4.1E-44	T	04-08-2026	-	-	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	ProSiteProfiles	PS50835	Ig-like domain profile.	154	247	11.496876	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	472	758	8.5E-82	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	SMART	SM00219	tyrkin_6	482	758	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	251	364	1.3E-27	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	568	763	6.4E-67	T	04-08-2026	-	-	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	SMART	SM00408	igc2_5	53	114	7.3E-13	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	SMART	SM00408	igc2_5	269	347	2.1E-4	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	SMART	SM00408	igc2_5	170	238	5.2E-13	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	SUPERFAMILY	SSF48726	Immunoglobulin	256	357	2.4E-17	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	SUPERFAMILY	SSF48726	Immunoglobulin	39	124	8.11E-15	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	SMART	SM00409	IG_3c	263	358	1.3E-11	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	SMART	SM00409	IG_3c	164	249	5.9E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+mus_musculus|ensembl|IIIb|ENSMUSP00000113180	ff1488ed7ab1eeab2a2cd44c8fe373b8	822	SMART	SM00409	IG_3c	47	125	3.9E-10	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	SUPERFAMILY	SSF48726	Immunoglobulin	44	127	5.97E-14	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	482	758	5.9E-99	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	ProSiteProfiles	PS50835	Ig-like domain profile.	256	356	10.280846	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	ProSiteProfiles	PS50835	Ig-like domain profile.	39	125	8.484026	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	SUPERFAMILY	SSF48726	Immunoglobulin	256	357	1.02E-17	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	140	250	2.0E-34	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	438	567	4.1E-44	T	04-08-2026	-	-	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	SMART	SM00219	tyrkin_6	482	758	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	472	758	9.58E-82	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	41	129	2.4E-19	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	ProSiteProfiles	PS50835	Ig-like domain profile.	154	247	11.351679	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	Pfam	PF13927	Immunoglobulin domain	45	110	2.1E-4	T	04-08-2026	-	-	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	Pfam	PF07679	Immunoglobulin I-set domain	263	357	7.8E-6	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	Pfam	PF07679	Immunoglobulin I-set domain	171	248	1.4E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	ProSiteProfiles	PS50011	Protein kinase domain profile.	482	771	42.350422	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	568	763	6.0E-67	T	04-08-2026	-	-	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	SMART	SM00408	igc2_5	170	238	8.3E-13	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	SMART	SM00408	igc2_5	269	347	1.2E-4	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	SMART	SM00408	igc2_5	53	114	2.7E-12	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	SUPERFAMILY	SSF48726	Immunoglobulin	167	250	4.6E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	251	363	6.9E-28	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	SMART	SM00409	IG_3c	263	358	5.0E-12	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	SMART	SM00409	IG_3c	164	249	3.9E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+homo_sapiens|ensembl|IIIb|ENSP00000410294	7fcbbdc6f97d73587e959f6331bf4358	822	SMART	SM00409	IG_3c	47	125	1.8E-9	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	SUPERFAMILY	SSF48726	Immunoglobulin	44	127	5.97E-14	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	482	758	5.9E-99	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	ProSiteProfiles	PS50835	Ig-like domain profile.	256	356	10.280846	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	ProSiteProfiles	PS50835	Ig-like domain profile.	39	125	8.484026	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	SUPERFAMILY	SSF48726	Immunoglobulin	256	357	1.02E-17	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	140	250	2.0E-34	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	438	567	4.1E-44	T	04-08-2026	-	-	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	SMART	SM00219	tyrkin_6	482	758	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	472	758	9.58E-82	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	41	129	2.4E-19	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	ProSiteProfiles	PS50835	Ig-like domain profile.	154	247	11.351679	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	Pfam	PF13927	Immunoglobulin domain	45	110	2.1E-4	T	04-08-2026	-	-	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	Pfam	PF07679	Immunoglobulin I-set domain	263	357	7.8E-6	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	Pfam	PF07679	Immunoglobulin I-set domain	171	248	1.4E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	ProSiteProfiles	PS50011	Protein kinase domain profile.	482	771	42.350422	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	568	763	6.0E-67	T	04-08-2026	-	-	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	SMART	SM00408	igc2_5	170	238	8.3E-13	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	SMART	SM00408	igc2_5	269	347	1.2E-4	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	SMART	SM00408	igc2_5	53	114	2.7E-12	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	SUPERFAMILY	SSF48726	Immunoglobulin	167	250	4.6E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	251	363	6.9E-28	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	SMART	SM00409	IG_3c	263	358	5.0E-12	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	SMART	SM00409	IG_3c	164	249	3.9E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+homo_sapiens|ncbi|IIIb|NP_075259.4	7fcbbdc6f97d73587e959f6331bf4358	822	SMART	SM00409	IG_3c	47	125	1.8E-9	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	ProSiteProfiles	PS50835	Ig-like domain profile.	275	377	10.026751	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	500	776	5.8E-99	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	SUPERFAMILY	SSF48726	Immunoglobulin	275	378	8.92E-21	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	59	148	1.2E-20	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	ProSiteProfiles	PS50835	Ig-like domain profile.	58	144	9.119265	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	270	382	1.4E-30	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	Pfam	PF07679	Immunoglobulin I-set domain	190	267	1.6E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	SUPERFAMILY	SSF48726	Immunoglobulin	186	269	8.41E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	Pfam	PF13927	Immunoglobulin domain	285	365	1.6E-6	T	04-08-2026	-	-	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	Pfam	PF13927	Immunoglobulin domain	64	128	4.0E-5	T	04-08-2026	-	-	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	159	269	7.2E-34	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	456	585	4.3E-44	T	04-08-2026	-	-	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	SUPERFAMILY	SSF48726	Immunoglobulin	58	143	8.25E-15	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	586	781	6.7E-67	T	04-08-2026	-	-	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	SMART	SM00408	igc2_5	72	133	7.3E-13	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	SMART	SM00408	igc2_5	288	368	8.7E-7	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	SMART	SM00408	igc2_5	189	257	5.2E-13	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	490	776	8.9E-82	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	SMART	SM00409	IG_3c	66	144	3.9E-10	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	SMART	SM00409	IG_3c	183	268	5.9E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	SMART	SM00409	IG_3c	282	379	1.8E-13	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	ProSiteProfiles	PS50011	Protein kinase domain profile.	500	789	42.350422	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	ProSiteProfiles	PS50835	Ig-like domain profile.	173	266	11.496876	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+mus_musculus|ncbi|IIIc|NP_034337.2	a71b517a54c91bd74edf1e723bf60281	840	SMART	SM00219	tyrkin_6	500	776	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	ProSiteProfiles	PS50835	Ig-like domain profile.	275	377	10.026751	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	500	776	5.8E-99	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	SUPERFAMILY	SSF48726	Immunoglobulin	275	378	8.92E-21	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	59	148	1.2E-20	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	ProSiteProfiles	PS50835	Ig-like domain profile.	58	144	9.119265	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	270	382	1.4E-30	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	Pfam	PF07679	Immunoglobulin I-set domain	190	267	1.6E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	SUPERFAMILY	SSF48726	Immunoglobulin	186	269	8.41E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	Pfam	PF13927	Immunoglobulin domain	285	365	1.6E-6	T	04-08-2026	-	-	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	Pfam	PF13927	Immunoglobulin domain	64	128	4.0E-5	T	04-08-2026	-	-	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	159	269	7.2E-34	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	456	585	4.3E-44	T	04-08-2026	-	-	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	SUPERFAMILY	SSF48726	Immunoglobulin	58	143	8.25E-15	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	586	781	6.7E-67	T	04-08-2026	-	-	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	SMART	SM00408	igc2_5	72	133	7.3E-13	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	SMART	SM00408	igc2_5	288	368	8.7E-7	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	SMART	SM00408	igc2_5	189	257	5.2E-13	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	490	776	8.9E-82	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	SMART	SM00409	IG_3c	66	144	3.9E-10	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	SMART	SM00409	IG_3c	183	268	5.9E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	SMART	SM00409	IG_3c	282	379	1.8E-13	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	ProSiteProfiles	PS50011	Protein kinase domain profile.	500	789	42.350422	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	ProSiteProfiles	PS50835	Ig-like domain profile.	173	266	11.496876	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+mus_musculus|ensembl|IIIc|ENSMUSP00000112430	a71b517a54c91bd74edf1e723bf60281	840	SMART	SM00219	tyrkin_6	500	776	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	ProSiteProfiles	PS50011	Protein kinase domain profile.	490	779	42.053608	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	ProSiteProfiles	PS50835	Ig-like domain profile.	55	125	8.665523	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	ProSiteProfiles	PS50835	Ig-like domain profile.	267	367	10.498642	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	Pfam	PF00047	Immunoglobulin domain	68	129	0.26	T	04-08-2026	IPR013151	Immunoglobulin-like beta-sandwich domain	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	SUPERFAMILY	SSF48726	Immunoglobulin	267	368	9.48E-19	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	Pfam	PF07679	Immunoglobulin I-set domain	274	368	8.3E-6	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	Pfam	PF07679	Immunoglobulin I-set domain	181	259	4.5E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	SMART	SM00409	IG_3c	63	137	2.3E-5	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	SMART	SM00409	IG_3c	175	260	4.5E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	SMART	SM00409	IG_3c	274	369	4.7E-14	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	58	142	8.7E-13	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	480	766	4.05E-81	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	SUPERFAMILY	SSF48726	Immunoglobulin	55	126	1.02E-11	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	SUPERFAMILY	SSF48726	Immunoglobulin	178	261	8.22E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	153	261	2.0E-32	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	SMART	SM00408	igc2_5	69	130	1.6E-10	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	SMART	SM00408	igc2_5	181	249	8.2E-14	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	SMART	SM00408	igc2_5	280	358	0.0048	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	ProSiteProfiles	PS50835	Ig-like domain profile.	165	258	11.750971	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	490	766	1.6E-97	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	SMART	SM00219	tyrkin_6	490	766	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	262	375	3.0E-27	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	446	575	3.8E-41	T	04-08-2026	-	-	-	-
+xenopus_tropicalis|ensembl|IIIb|ENSXETP00000087394	45bc314c9aed9ddea08c7ffa01f6bdd1	832	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	576	771	4.0E-66	T	04-08-2026	-	-	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	62	174	3.1E-30	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	379	491	3.5E-30	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	SMART	SM00219	tyrkin_6	602	878	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	ProSiteProfiles	PS50011	Protein kinase domain profile.	602	891	41.41758	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	SUPERFAMILY	SSF48726	Immunoglobulin	67	168	4.3E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	ProSiteProfiles	PS50835	Ig-like domain profile.	67	155	10.60754	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	ProSiteProfiles	PS50835	Ig-like domain profile.	170	240	9.681906	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	SMART	SM00409	IG_3c	292	377	2.2E-6	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	SMART	SM00409	IG_3c	179	254	1.5E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	SMART	SM00409	IG_3c	74	169	3.0E-13	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	SMART	SM00409	IG_3c	391	486	2.8E-13	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	Pfam	PF07679	Immunoglobulin I-set domain	391	485	9.4E-8	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	Pfam	PF07679	Immunoglobulin I-set domain	299	376	1.4E-10	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	Pfam	PF07679	Immunoglobulin I-set domain	74	168	9.4E-8	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	593	878	7.42E-80	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	ProSiteProfiles	PS50835	Ig-like domain profile.	384	472	10.60754	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	688	883	7.3E-64	T	04-08-2026	-	-	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	175	258	1.1E-15	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	ProSiteProfiles	PS50835	Ig-like domain profile.	282	375	11.478725	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	SUPERFAMILY	SSF48726	Immunoglobulin	178	255	5.3E-13	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	561	687	5.8E-42	T	04-08-2026	-	-	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	SUPERFAMILY	SSF48726	Immunoglobulin	295	378	6.27E-18	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	Pfam	PF13927	Immunoglobulin domain	181	240	6.5E-6	T	04-08-2026	-	-	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	602	878	6.6E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	SUPERFAMILY	SSF48726	Immunoglobulin	384	485	4.01E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	272	378	3.4E-28	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	SMART	SM00408	igc2_5	80	158	2.3E-5	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	SMART	SM00408	igc2_5	185	246	1.4E-8	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	SMART	SM00408	igc2_5	397	475	2.3E-5	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gasterosteus_aculeatus|ncbi|IIIb|XP_077960652.1	8c2ea515b626b6bdb06d74d992433322	942	SMART	SM00408	igc2_5	298	366	2.7E-10	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	134	218	9.8E-13	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	ProSiteProfiles	PS50835	Ig-like domain profile.	131	201	8.665523	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	SMART	SM00219	tyrkin_6	568	844	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	524	653	4.4E-41	T	04-08-2026	-	-	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	SMART	SM00408	igc2_5	356	436	0.0021	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	SMART	SM00408	igc2_5	257	325	8.2E-14	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	SMART	SM00408	igc2_5	145	206	1.6E-10	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	SUPERFAMILY	SSF48726	Immunoglobulin	343	446	1.57E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	Pfam	PF07679	Immunoglobulin I-set domain	257	335	5.1E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	Pfam	PF07679	Immunoglobulin I-set domain	350	446	5.4E-6	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	SUPERFAMILY	SSF48726	Immunoglobulin	131	202	1.15E-11	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	229	337	2.3E-32	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	654	849	4.7E-66	T	04-08-2026	-	-	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	ProSiteProfiles	PS50835	Ig-like domain profile.	343	445	10.099348	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	ProSiteProfiles	PS50011	Protein kinase domain profile.	568	857	42.053608	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	SMART	SM00409	IG_3c	139	213	2.3E-5	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	SMART	SM00409	IG_3c	350	447	1.1E-12	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	SMART	SM00409	IG_3c	251	336	4.5E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	338	450	7.0E-29	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	558	844	4.86E-81	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	568	844	1.9E-97	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	Pfam	PF00047	Immunoglobulin domain	144	205	0.3	T	04-08-2026	IPR013151	Immunoglobulin-like beta-sandwich domain	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	ProSiteProfiles	PS50835	Ig-like domain profile.	241	334	11.750971	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+xenopus_tropicalis|ensembl|IIIc|ENSXETP00000069725	79f654f5cf4f51880d95b33c0874defd	910	SUPERFAMILY	SSF48726	Immunoglobulin	254	337	9.37E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	SMART	SM00406	igv1_8	226	285	0.27	T	04-08-2026	IPR013106	Immunoglobulin V-set domain	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	SMART	SM00406	igv1_8	325	394	0.1	T	04-08-2026	IPR013106	Immunoglobulin V-set domain	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	489	618	2.7E-43	T	04-08-2026	-	-	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	ProSiteProfiles	PS50835	Ig-like domain profile.	308	408	10.280846	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	Pfam	PF13927	Immunoglobulin domain	315	396	2.7E-6	T	04-08-2026	-	-	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	Pfam	PF13927	Immunoglobulin domain	102	166	4.8E-5	T	04-08-2026	-	-	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	533	809	4.5E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	SUPERFAMILY	SSF48726	Immunoglobulin	95	168	4.75E-14	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	ProSiteProfiles	PS50835	Ig-like domain profile.	206	299	11.859869	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	195	302	1.8E-31	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	Pfam	PF07679	Immunoglobulin I-set domain	223	300	4.1E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	619	814	1.2E-66	T	04-08-2026	-	-	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	SUPERFAMILY	SSF48726	Immunoglobulin	308	409	5.05E-19	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	SUPERFAMILY	SSF48726	Immunoglobulin	219	301	3.22E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	ProSiteProfiles	PS50011	Protein kinase domain profile.	533	822	42.180817	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	97	179	2.9E-17	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	303	414	7.5E-29	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	ProSiteProfiles	PS50835	Ig-like domain profile.	96	175	9.318913	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	SMART	SM00409	IG_3c	216	301	1.9E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	SMART	SM00409	IG_3c	315	410	4.5E-12	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	SMART	SM00409	IG_3c	104	181	7.5E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	SMART	SM00219	tyrkin_6	533	809	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	523	809	3.37E-81	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	SMART	SM00408	igc2_5	321	399	1.9E-5	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	SMART	SM00408	igc2_5	110	171	1.7E-8	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+anolis_carolinensis|ensembl|IIIb|ENSACAP00000022870	84aa8099d3b3e6d254c1d040e7194dfe	873	SMART	SM00408	igc2_5	222	290	1.2E-13	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	SMART	SM00406	igv1_8	226	285	0.27	T	04-08-2026	IPR013106	Immunoglobulin V-set domain	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	SMART	SM00406	igv1_8	325	394	0.1	T	04-08-2026	IPR013106	Immunoglobulin V-set domain	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	489	618	2.7E-43	T	04-08-2026	-	-	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	ProSiteProfiles	PS50835	Ig-like domain profile.	308	408	10.280846	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	Pfam	PF13927	Immunoglobulin domain	315	396	2.7E-6	T	04-08-2026	-	-	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	Pfam	PF13927	Immunoglobulin domain	102	166	4.8E-5	T	04-08-2026	-	-	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	533	809	4.5E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	SUPERFAMILY	SSF48726	Immunoglobulin	95	168	4.75E-14	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	ProSiteProfiles	PS50835	Ig-like domain profile.	206	299	11.859869	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	195	302	1.8E-31	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	Pfam	PF07679	Immunoglobulin I-set domain	223	300	4.1E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	619	814	1.2E-66	T	04-08-2026	-	-	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	SUPERFAMILY	SSF48726	Immunoglobulin	308	409	5.05E-19	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	SUPERFAMILY	SSF48726	Immunoglobulin	219	301	3.22E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	ProSiteProfiles	PS50011	Protein kinase domain profile.	533	822	42.180817	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	97	179	2.9E-17	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	303	414	7.5E-29	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	ProSiteProfiles	PS50835	Ig-like domain profile.	96	175	9.318913	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	SMART	SM00409	IG_3c	216	301	1.9E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	SMART	SM00409	IG_3c	315	410	4.5E-12	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	SMART	SM00409	IG_3c	104	181	7.5E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	SMART	SM00219	tyrkin_6	533	809	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	523	809	3.37E-81	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	SMART	SM00408	igc2_5	321	399	1.9E-5	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	SMART	SM00408	igc2_5	110	171	1.7E-8	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+anolis_carolinensis|ncbi|IIIb|XP_062832082.1	84aa8099d3b3e6d254c1d040e7194dfe	873	SMART	SM00408	igc2_5	222	290	1.2E-13	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	SMART	SM00409	IG_3c	71	149	7.7E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	SMART	SM00409	IG_3c	286	383	2.8E-15	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	SMART	SM00409	IG_3c	187	272	1.1E-7	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	460	585	3.2E-42	T	04-08-2026	-	-	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	70	153	9.6E-15	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	ProSiteProfiles	PS50835	Ig-like domain profile.	182	270	11.387978	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	Pfam	PF07679	Immunoglobulin I-set domain	193	271	3.9E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	Pfam	PF07679	Immunoglobulin I-set domain	75	137	7.5E-5	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	Pfam	PF07679	Immunoglobulin I-set domain	286	382	5.1E-7	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	586	781	5.9E-65	T	04-08-2026	-	-	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	SMART	SM00408	igc2_5	193	261	2.8E-11	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	SMART	SM00408	igc2_5	292	372	3.4E-5	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	SMART	SM00408	igc2_5	77	138	3.6E-8	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	SUPERFAMILY	SSF48726	Immunoglobulin	190	272	1.83E-18	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	500	776	6.4E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	490	776	1.75E-80	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	ProSiteProfiles	PS50835	Ig-like domain profile.	62	143	8.465876	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	SMART	SM00219	tyrkin_6	500	776	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	ProSiteProfiles	PS50011	Protein kinase domain profile.	500	789	41.304508	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	SUPERFAMILY	SSF48726	Immunoglobulin	279	382	1.27E-21	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	165	273	1.5E-28	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	ProSiteProfiles	PS50835	Ig-like domain profile.	279	381	10.244547	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	274	388	8.9E-32	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+danio_rerio|ncbi|IIIc|XP_068081038.1	466d34588f8d949eaf41561c50ee595c	840	SUPERFAMILY	SSF48726	Immunoglobulin	74	150	4.66E-13	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	SMART	SM00409	IG_3c	71	149	7.7E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	SMART	SM00409	IG_3c	286	383	2.8E-15	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	SMART	SM00409	IG_3c	187	272	1.1E-7	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	460	585	3.2E-42	T	04-08-2026	-	-	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	70	153	9.6E-15	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	ProSiteProfiles	PS50835	Ig-like domain profile.	182	270	11.387978	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	Pfam	PF07679	Immunoglobulin I-set domain	193	271	3.9E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	Pfam	PF07679	Immunoglobulin I-set domain	75	137	7.5E-5	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	Pfam	PF07679	Immunoglobulin I-set domain	286	382	5.1E-7	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	586	781	5.9E-65	T	04-08-2026	-	-	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	SMART	SM00408	igc2_5	193	261	2.8E-11	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	SMART	SM00408	igc2_5	292	372	3.4E-5	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	SMART	SM00408	igc2_5	77	138	3.6E-8	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	SUPERFAMILY	SSF48726	Immunoglobulin	190	272	1.83E-18	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	500	776	6.4E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	490	776	1.75E-80	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	ProSiteProfiles	PS50835	Ig-like domain profile.	62	143	8.465876	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	SMART	SM00219	tyrkin_6	500	776	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	ProSiteProfiles	PS50011	Protein kinase domain profile.	500	789	41.304508	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	SUPERFAMILY	SSF48726	Immunoglobulin	279	382	1.27E-21	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	165	273	1.5E-28	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	ProSiteProfiles	PS50835	Ig-like domain profile.	279	381	10.244547	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	274	388	8.9E-32	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+danio_rerio|ensembl|IIIc|ENSDARP00000124761	466d34588f8d949eaf41561c50ee595c	840	SUPERFAMILY	SSF48726	Immunoglobulin	74	150	4.66E-13	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	Pfam	PF07679	Immunoglobulin I-set domain	391	485	9.0E-8	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	Pfam	PF07679	Immunoglobulin I-set domain	299	376	1.3E-10	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	Pfam	PF07679	Immunoglobulin I-set domain	74	168	9.0E-8	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	SUPERFAMILY	SSF48726	Immunoglobulin	295	378	5.99E-18	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	272	378	3.3E-28	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	ProSiteProfiles	PS50835	Ig-like domain profile.	67	155	10.60754	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	ProSiteProfiles	PS50835	Ig-like domain profile.	170	240	9.681906	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	SMART	SM00219	tyrkin_6	600	876	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	SUPERFAMILY	SSF48726	Immunoglobulin	67	168	3.73E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	686	881	7.0E-64	T	04-08-2026	-	-	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	62	175	3.5E-30	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	379	491	3.4E-30	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	SUPERFAMILY	SSF48726	Immunoglobulin	178	255	5.16E-13	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	559	685	5.5E-42	T	04-08-2026	-	-	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	ProSiteProfiles	PS50835	Ig-like domain profile.	384	472	10.60754	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	ProSiteProfiles	PS50835	Ig-like domain profile.	282	375	11.478725	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	ProSiteProfiles	PS50011	Protein kinase domain profile.	600	880	41.375179	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	176	258	1.1E-15	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	600	876	6.2E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	SUPERFAMILY	SSF48726	Immunoglobulin	384	485	3.87E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	Pfam	PF13927	Immunoglobulin domain	181	240	6.3E-6	T	04-08-2026	-	-	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	591	876	7.01E-80	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	SMART	SM00409	IG_3c	74	169	2.8E-13	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	SMART	SM00409	IG_3c	391	486	2.8E-13	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	SMART	SM00409	IG_3c	179	254	1.5E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	SMART	SM00409	IG_3c	292	377	2.2E-6	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	SMART	SM00408	igc2_5	80	158	2.3E-5	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	SMART	SM00408	igc2_5	185	246	1.4E-8	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	SMART	SM00408	igc2_5	397	475	2.3E-5	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gasterosteus_aculeatus|ensembl|IIIb|ENSGACP00000047216	8cbeae50e1b3e3611fd8cd037f1ae632	915	SMART	SM00408	igc2_5	298	366	2.7E-10	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	492	768	1.6E-97	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	ProSiteProfiles	PS50835	Ig-like domain profile.	55	125	8.665523	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	ProSiteProfiles	PS50835	Ig-like domain profile.	267	367	10.498642	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	Pfam	PF00047	Immunoglobulin domain	68	129	0.26	T	04-08-2026	IPR013151	Immunoglobulin-like beta-sandwich domain	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	SUPERFAMILY	SSF48726	Immunoglobulin	267	368	9.48E-19	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	SMART	SM00409	IG_3c	63	137	2.3E-5	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	SMART	SM00409	IG_3c	175	260	4.5E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	SMART	SM00409	IG_3c	274	369	4.7E-14	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	SMART	SM00219	tyrkin_6	492	768	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	482	768	4.05E-81	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	SUPERFAMILY	SSF48726	Immunoglobulin	55	126	1.02E-11	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	SUPERFAMILY	SSF48726	Immunoglobulin	178	261	8.22E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	153	261	2.0E-32	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	578	773	4.1E-66	T	04-08-2026	-	-	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	SMART	SM00408	igc2_5	69	130	1.6E-10	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	SMART	SM00408	igc2_5	181	249	8.2E-14	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	SMART	SM00408	igc2_5	280	358	0.0048	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	ProSiteProfiles	PS50835	Ig-like domain profile.	165	258	11.750971	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	58	142	8.8E-13	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	262	375	3.0E-27	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	448	577	3.8E-41	T	04-08-2026	-	-	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	Pfam	PF07679	Immunoglobulin I-set domain	181	259	4.6E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	Pfam	PF07679	Immunoglobulin I-set domain	274	368	8.3E-6	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+xenopus_tropicalis|ncbi|IIIb|XP_012821352.1	1072d5814b10976c36bff809e39a81f6	834	ProSiteProfiles	PS50011	Protein kinase domain profile.	492	781	42.053608	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	ProSiteProfiles	PS50835	Ig-like domain profile.	278	380	10.534941	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	SMART	SM00219	tyrkin_6	498	774	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	SUPERFAMILY	SSF48726	Immunoglobulin	189	272	9.68E-19	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	ProSiteProfiles	PS50011	Protein kinase domain profile.	498	787	41.389313	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	456	583	2.3E-42	T	04-08-2026	-	-	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	SUPERFAMILY	SSF48726	Immunoglobulin	69	147	2.52E-12	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	ProSiteProfiles	PS50835	Ig-like domain profile.	176	269	11.696522	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	167	272	4.3E-29	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	64	150	2.2E-15	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	SMART	SM00408	igc2_5	77	138	3.0E-7	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	SMART	SM00408	igc2_5	291	371	1.0E-6	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	SMART	SM00408	igc2_5	192	260	5.4E-11	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	Pfam	PF13927	Immunoglobulin domain	71	132	1.3E-4	T	04-08-2026	-	-	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	ProSiteProfiles	PS50835	Ig-like domain profile.	45	132	9.355211	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	SMART	SM00409	IG_3c	285	382	7.1E-15	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	SMART	SM00409	IG_3c	186	271	1.3E-6	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	SMART	SM00409	IG_3c	71	146	3.2E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	SUPERFAMILY	SSF48726	Immunoglobulin	278	381	5.54E-22	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	273	387	2.0E-32	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	Pfam	PF07679	Immunoglobulin I-set domain	285	381	4.6E-7	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	Pfam	PF07679	Immunoglobulin I-set domain	192	270	5.0E-12	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	584	779	1.2E-64	T	04-08-2026	-	-	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	498	774	4.4E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+takifugu_rubripes|ensembl|IIIc|ENSTRUP00000045145	e48859d9a763c90b91be928e29f9eb0c	838	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	488	774	5.53E-80	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	ProSiteProfiles	PS50835	Ig-like domain profile.	278	380	10.534941	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	SMART	SM00219	tyrkin_6	498	774	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	SUPERFAMILY	SSF48726	Immunoglobulin	189	272	9.68E-19	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	ProSiteProfiles	PS50011	Protein kinase domain profile.	498	787	41.389313	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	456	583	2.3E-42	T	04-08-2026	-	-	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	SUPERFAMILY	SSF48726	Immunoglobulin	69	147	2.52E-12	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	ProSiteProfiles	PS50835	Ig-like domain profile.	176	269	11.696522	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	167	272	4.3E-29	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	64	150	2.2E-15	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	SMART	SM00408	igc2_5	77	138	3.0E-7	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	SMART	SM00408	igc2_5	291	371	1.0E-6	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	SMART	SM00408	igc2_5	192	260	5.4E-11	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	Pfam	PF13927	Immunoglobulin domain	71	132	1.3E-4	T	04-08-2026	-	-	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	ProSiteProfiles	PS50835	Ig-like domain profile.	45	132	9.355211	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	SMART	SM00409	IG_3c	285	382	7.1E-15	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	SMART	SM00409	IG_3c	186	271	1.3E-6	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	SMART	SM00409	IG_3c	71	146	3.2E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	SUPERFAMILY	SSF48726	Immunoglobulin	278	381	5.54E-22	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	273	387	2.0E-32	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	Pfam	PF07679	Immunoglobulin I-set domain	285	381	4.6E-7	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	Pfam	PF07679	Immunoglobulin I-set domain	192	270	5.0E-12	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	584	779	1.2E-64	T	04-08-2026	-	-	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	498	774	4.4E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+takifugu_rubripes|ncbi|IIIc|XP_011601188.1	e48859d9a763c90b91be928e29f9eb0c	838	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	488	774	5.53E-80	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	475	751	6.0E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	ProSiteProfiles	PS50835	Ig-like domain profile.	256	344	9.790804	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	47	130	9.2E-15	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	SMART	SM00408	igc2_5	54	115	3.6E-8	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	SMART	SM00408	igc2_5	269	347	0.016	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	SMART	SM00408	igc2_5	170	238	2.8E-11	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	465	751	1.62E-80	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	SUPERFAMILY	SSF48726	Immunoglobulin	51	127	4.51E-13	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	SMART	SM00219	tyrkin_6	475	751	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	SMART	SM00409	IG_3c	263	358	1.7E-12	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	SMART	SM00409	IG_3c	164	249	1.1E-7	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	SMART	SM00409	IG_3c	48	126	7.7E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	561	756	5.6E-65	T	04-08-2026	-	-	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	435	560	3.1E-42	T	04-08-2026	-	-	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	SUPERFAMILY	SSF48726	Immunoglobulin	167	249	1.83E-18	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	ProSiteProfiles	PS50835	Ig-like domain profile.	39	120	8.465876	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	142	250	1.4E-28	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	SUPERFAMILY	SSF48726	Immunoglobulin	256	357	8.97E-19	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	ProSiteProfiles	PS50835	Ig-like domain profile.	159	247	11.387978	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	Pfam	PF07679	Immunoglobulin I-set domain	52	114	7.2E-5	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	Pfam	PF07679	Immunoglobulin I-set domain	263	357	5.9E-7	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	Pfam	PF07679	Immunoglobulin I-set domain	170	248	3.8E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	251	363	5.6E-28	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+danio_rerio|ensembl|IIIb|ENSDARP00000123845	1e64637c662d5fcaf32e3055b7a9dc91	815	ProSiteProfiles	PS50011	Protein kinase domain profile.	475	764	41.304508	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+mus_musculus|ncbi|IIIb|NP_963895.2	ca60ca22ec51180ca48fc3414b40af8e	726	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	342	471	3.4E-44	T	04-08-2026	-	-	-	-
+mus_musculus|ncbi|IIIb|NP_963895.2	ca60ca22ec51180ca48fc3414b40af8e	726	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	386	662	4.3E-99	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+mus_musculus|ncbi|IIIb|NP_963895.2	ca60ca22ec51180ca48fc3414b40af8e	726	ProSiteProfiles	PS50835	Ig-like domain profile.	160	260	10.117498	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+mus_musculus|ncbi|IIIb|NP_963895.2	ca60ca22ec51180ca48fc3414b40af8e	726	SMART	SM00219	tyrkin_6	386	662	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+mus_musculus|ncbi|IIIb|NP_963895.2	ca60ca22ec51180ca48fc3414b40af8e	726	Pfam	PF07679	Immunoglobulin I-set domain	167	261	1.8E-5	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+mus_musculus|ncbi|IIIb|NP_963895.2	ca60ca22ec51180ca48fc3414b40af8e	726	Pfam	PF07679	Immunoglobulin I-set domain	75	152	1.3E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+mus_musculus|ncbi|IIIb|NP_963895.2	ca60ca22ec51180ca48fc3414b40af8e	726	SMART	SM00408	igc2_5	74	142	5.2E-13	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+mus_musculus|ncbi|IIIb|NP_963895.2	ca60ca22ec51180ca48fc3414b40af8e	726	SMART	SM00408	igc2_5	173	251	2.1E-4	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+mus_musculus|ncbi|IIIb|NP_963895.2	ca60ca22ec51180ca48fc3414b40af8e	726	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	376	662	6.2E-82	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+mus_musculus|ncbi|IIIb|NP_963895.2	ca60ca22ec51180ca48fc3414b40af8e	726	SMART	SM00409	IG_3c	167	262	1.3E-11	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+mus_musculus|ncbi|IIIb|NP_963895.2	ca60ca22ec51180ca48fc3414b40af8e	726	SMART	SM00409	IG_3c	68	153	5.9E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+mus_musculus|ncbi|IIIb|NP_963895.2	ca60ca22ec51180ca48fc3414b40af8e	726	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	47	154	6.4E-32	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+mus_musculus|ncbi|IIIb|NP_963895.2	ca60ca22ec51180ca48fc3414b40af8e	726	ProSiteProfiles	PS50011	Protein kinase domain profile.	386	675	42.350422	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+mus_musculus|ncbi|IIIb|NP_963895.2	ca60ca22ec51180ca48fc3414b40af8e	726	SUPERFAMILY	SSF48726	Immunoglobulin	69	154	4.39E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+mus_musculus|ncbi|IIIb|NP_963895.2	ca60ca22ec51180ca48fc3414b40af8e	726	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	155	268	1.1E-27	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+mus_musculus|ncbi|IIIb|NP_963895.2	ca60ca22ec51180ca48fc3414b40af8e	726	SUPERFAMILY	SSF48726	Immunoglobulin	160	261	2.0E-17	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+mus_musculus|ncbi|IIIb|NP_963895.2	ca60ca22ec51180ca48fc3414b40af8e	726	ProSiteProfiles	PS50835	Ig-like domain profile.	42	151	11.569475	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+mus_musculus|ncbi|IIIb|NP_963895.2	ca60ca22ec51180ca48fc3414b40af8e	726	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	472	667	5.2E-67	T	04-08-2026	-	-	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	589	784	7.5E-67	T	04-08-2026	-	-	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	459	588	6.8E-44	T	04-08-2026	-	-	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	ProSiteProfiles	PS50011	Protein kinase domain profile.	503	792	42.463497	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	ProSiteProfiles	PS50835	Ig-like domain profile.	175	268	11.315378	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	493	779	1.11E-81	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	Pfam	PF13927	Immunoglobulin domain	67	131	2.3E-4	T	04-08-2026	-	-	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	503	779	1.1E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	63	151	8.4E-19	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	ProSiteProfiles	PS50835	Ig-like domain profile.	61	147	9.137415	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	ProSiteProfiles	PS50835	Ig-like domain profile.	277	377	10.843487	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	SUPERFAMILY	SSF48726	Immunoglobulin	277	378	8.61E-19	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	SUPERFAMILY	SSF48726	Immunoglobulin	67	149	7.67E-15	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	272	382	9.6E-29	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	SMART	SM00409	IG_3c	69	147	4.7E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	SMART	SM00409	IG_3c	284	379	1.9E-13	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	SMART	SM00409	IG_3c	185	270	1.1E-7	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	Pfam	PF07679	Immunoglobulin I-set domain	192	269	5.1E-12	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	Pfam	PF07679	Immunoglobulin I-set domain	284	378	1.7E-6	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	SUPERFAMILY	SSF48726	Immunoglobulin	188	271	2.65E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	163	271	1.6E-32	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	SMART	SM00219	tyrkin_6	503	779	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	SMART	SM00408	igc2_5	290	368	1.1E-5	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	SMART	SM00408	igc2_5	191	259	2.7E-13	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gallus_gallus|ncbi|IIIb|XP_015144070.1	7affd6233ed8e09571e2b5a22d9c292e	843	SMART	SM00408	igc2_5	75	136	4.7E-11	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	153	261	2.0E-32	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	ProSiteProfiles	PS50835	Ig-like domain profile.	55	125	8.665523	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	SMART	SM00409	IG_3c	63	137	2.3E-5	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	SMART	SM00409	IG_3c	274	371	1.1E-12	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	SMART	SM00409	IG_3c	175	260	4.5E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	Pfam	PF00047	Immunoglobulin domain	68	129	0.26	T	04-08-2026	IPR013151	Immunoglobulin-like beta-sandwich domain	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	SUPERFAMILY	SSF48726	Immunoglobulin	267	370	1.41E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	SMART	SM00219	tyrkin_6	492	768	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	482	768	4.05E-81	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	Pfam	PF07679	Immunoglobulin I-set domain	181	259	4.6E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	Pfam	PF07679	Immunoglobulin I-set domain	274	370	4.8E-6	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	SUPERFAMILY	SSF48726	Immunoglobulin	55	126	1.02E-11	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	578	773	4.1E-66	T	04-08-2026	-	-	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	ProSiteProfiles	PS50835	Ig-like domain profile.	165	258	11.750971	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	492	768	1.6E-97	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	SMART	SM00408	igc2_5	280	360	0.0021	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	SMART	SM00408	igc2_5	69	130	1.6E-10	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	SMART	SM00408	igc2_5	181	249	8.2E-14	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	SUPERFAMILY	SSF48726	Immunoglobulin	178	261	8.25E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	58	142	8.8E-13	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	448	577	3.8E-41	T	04-08-2026	-	-	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	262	374	6.2E-29	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	ProSiteProfiles	PS50835	Ig-like domain profile.	267	369	10.099348	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+xenopus_tropicalis|ncbi|IIIc|XP_012821350.1	c421d0999bd5f7a80bbde3b46778c88f	834	ProSiteProfiles	PS50011	Protein kinase domain profile.	492	781	42.053608	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	ProSiteProfiles	PS50835	Ig-like domain profile.	67	169	10.444193	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	SMART	SM00409	IG_3c	181	256	1.5E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	SMART	SM00409	IG_3c	294	379	2.2E-6	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	SMART	SM00409	IG_3c	393	490	6.9E-15	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	SMART	SM00409	IG_3c	74	171	9.2E-15	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	SUPERFAMILY	SSF48726	Immunoglobulin	180	257	5.31E-13	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	SUPERFAMILY	SSF48726	Immunoglobulin	386	489	4.73E-22	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	SUPERFAMILY	SSF48726	Immunoglobulin	67	170	6.57E-22	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	SUPERFAMILY	SSF48726	Immunoglobulin	297	380	6.29E-18	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	SMART	SM00408	igc2_5	300	368	2.7E-10	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	SMART	SM00408	igc2_5	399	479	1.3E-6	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	SMART	SM00408	igc2_5	80	160	8.3E-7	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	SMART	SM00408	igc2_5	187	248	1.4E-8	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	Pfam	PF13927	Immunoglobulin domain	183	242	6.6E-6	T	04-08-2026	-	-	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	597	882	7.42E-80	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	274	380	3.4E-28	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	178	260	1.1E-15	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	Pfam	PF07679	Immunoglobulin I-set domain	301	378	1.4E-10	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	Pfam	PF07679	Immunoglobulin I-set domain	393	489	3.1E-7	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	Pfam	PF07679	Immunoglobulin I-set domain	74	170	1.1E-6	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	606	882	6.6E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	ProSiteProfiles	PS50835	Ig-like domain profile.	284	377	11.478725	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	SMART	SM00219	tyrkin_6	606	882	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	565	691	5.8E-42	T	04-08-2026	-	-	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	ProSiteProfiles	PS50011	Protein kinase domain profile.	606	895	41.41758	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	381	495	1.4E-32	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	62	177	2.1E-31	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	692	887	7.4E-64	T	04-08-2026	-	-	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	ProSiteProfiles	PS50835	Ig-like domain profile.	386	488	10.407894	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gasterosteus_aculeatus|ncbi|IIIc|XP_077960645.1	97973840d73ce0a6dc02fe8782bb1574	946	ProSiteProfiles	PS50835	Ig-like domain profile.	172	242	9.681906	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	489	618	2.7E-43	T	04-08-2026	-	-	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	SUPERFAMILY	SSF48726	Immunoglobulin	95	168	4.75E-14	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	533	809	4.5E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	Pfam	PF13927	Immunoglobulin domain	102	166	4.8E-5	T	04-08-2026	-	-	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	SMART	SM00408	igc2_5	222	290	1.2E-13	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	SMART	SM00408	igc2_5	321	401	4.9E-7	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	SMART	SM00408	igc2_5	110	171	1.7E-8	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	Pfam	PF07679	Immunoglobulin I-set domain	223	300	4.1E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	Pfam	PF07679	Immunoglobulin I-set domain	315	411	2.2E-6	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	303	414	6.5E-31	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	ProSiteProfiles	PS50835	Ig-like domain profile.	206	299	11.859869	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	SUPERFAMILY	SSF48726	Immunoglobulin	308	411	2.54E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	619	814	1.2E-66	T	04-08-2026	-	-	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	97	179	2.9E-17	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	ProSiteProfiles	PS50835	Ig-like domain profile.	308	410	9.808954	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	SUPERFAMILY	SSF48726	Immunoglobulin	219	301	3.22E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	ProSiteProfiles	PS50011	Protein kinase domain profile.	533	822	42.180817	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	ProSiteProfiles	PS50835	Ig-like domain profile.	96	175	9.318913	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	SMART	SM00219	tyrkin_6	533	809	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	195	302	1.8E-31	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	SMART	SM00409	IG_3c	216	301	1.9E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	SMART	SM00409	IG_3c	104	181	7.5E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	SMART	SM00409	IG_3c	315	412	4.7E-13	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+anolis_carolinensis|ncbi|IIIc|XP_062832081.1	6825301cc132ae3b5c360bd4bc63dca3	873	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	523	809	3.37E-81	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	489	618	2.7E-43	T	04-08-2026	-	-	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	SUPERFAMILY	SSF48726	Immunoglobulin	95	168	4.75E-14	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	533	809	4.5E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	Pfam	PF13927	Immunoglobulin domain	102	166	4.8E-5	T	04-08-2026	-	-	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	SMART	SM00408	igc2_5	222	290	1.2E-13	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	SMART	SM00408	igc2_5	321	401	4.9E-7	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	SMART	SM00408	igc2_5	110	171	1.7E-8	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	Pfam	PF07679	Immunoglobulin I-set domain	223	300	4.1E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	Pfam	PF07679	Immunoglobulin I-set domain	315	411	2.2E-6	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	303	414	6.5E-31	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	ProSiteProfiles	PS50835	Ig-like domain profile.	206	299	11.859869	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	SUPERFAMILY	SSF48726	Immunoglobulin	308	411	2.54E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	619	814	1.2E-66	T	04-08-2026	-	-	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	97	179	2.9E-17	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	ProSiteProfiles	PS50835	Ig-like domain profile.	308	410	9.808954	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	SUPERFAMILY	SSF48726	Immunoglobulin	219	301	3.22E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	ProSiteProfiles	PS50011	Protein kinase domain profile.	533	822	42.180817	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	ProSiteProfiles	PS50835	Ig-like domain profile.	96	175	9.318913	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	SMART	SM00219	tyrkin_6	533	809	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	195	302	1.8E-31	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	SMART	SM00409	IG_3c	216	301	1.9E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	SMART	SM00409	IG_3c	104	181	7.5E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	SMART	SM00409	IG_3c	315	412	4.7E-13	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+anolis_carolinensis|ensembl|IIIc|ENSACAP00000016963	6825301cc132ae3b5c360bd4bc63dca3	873	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	523	809	3.37E-81	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	41	123	8.6E-16	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	SUPERFAMILY	SSF48726	Immunoglobulin	43	120	4.35E-13	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	SMART	SM00409	IG_3c	256	353	6.9E-15	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	SMART	SM00409	IG_3c	157	242	2.2E-6	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	SMART	SM00409	IG_3c	44	119	1.5E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	ProSiteProfiles	PS50835	Ig-like domain profile.	147	240	11.478725	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	244	358	9.9E-33	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	ProSiteProfiles	PS50835	Ig-like domain profile.	21	105	9.899702	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	SMART	SM00219	tyrkin_6	447	723	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	Pfam	PF07679	Immunoglobulin I-set domain	164	241	1.0E-10	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	Pfam	PF07679	Immunoglobulin I-set domain	256	352	2.3E-7	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	SUPERFAMILY	SSF48726	Immunoglobulin	249	352	3.54E-22	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	534	728	5.1E-64	T	04-08-2026	-	-	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	447	723	4.3E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	ProSiteProfiles	PS50835	Ig-like domain profile.	249	351	10.407894	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	441	533	2.0E-35	T	04-08-2026	-	-	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	Pfam	PF13927	Immunoglobulin domain	46	105	5.0E-6	T	04-08-2026	-	-	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	446	723	1.75E-78	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	137	243	2.5E-28	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	ProSiteProfiles	PS50011	Protein kinase domain profile.	447	727	41.375179	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	SMART	SM00408	igc2_5	262	342	1.3E-6	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	SMART	SM00408	igc2_5	50	111	1.4E-8	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	SMART	SM00408	igc2_5	163	231	2.7E-10	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gasterosteus_aculeatus|ensembl|IIIc|ENSGACP00000042484	90cde2d48e50ad9903c0cd59da5ea020	762	SUPERFAMILY	SSF48726	Immunoglobulin	160	243	4.74E-18	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	501	777	1.1E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	491	777	1.11E-81	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	ProSiteProfiles	PS50835	Ig-like domain profile.	175	268	11.315378	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	Pfam	PF13927	Immunoglobulin domain	67	131	2.3E-4	T	04-08-2026	-	-	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	ProSiteProfiles	PS50835	Ig-like domain profile.	61	147	9.137415	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	ProSiteProfiles	PS50835	Ig-like domain profile.	277	377	10.843487	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	SUPERFAMILY	SSF48726	Immunoglobulin	277	378	8.61E-19	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	SUPERFAMILY	SSF48726	Immunoglobulin	67	149	7.67E-15	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	Pfam	PF07679	Immunoglobulin I-set domain	192	269	5.1E-12	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	Pfam	PF07679	Immunoglobulin I-set domain	284	378	1.7E-6	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	272	382	9.6E-29	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	ProSiteProfiles	PS50011	Protein kinase domain profile.	501	790	42.463497	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	SMART	SM00409	IG_3c	69	147	4.7E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	SMART	SM00409	IG_3c	284	379	1.9E-13	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	SMART	SM00409	IG_3c	185	270	1.1E-7	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	163	271	1.6E-32	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	457	586	6.8E-44	T	04-08-2026	-	-	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	587	782	7.5E-67	T	04-08-2026	-	-	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	SUPERFAMILY	SSF48726	Immunoglobulin	188	271	2.65E-20	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	SMART	SM00219	tyrkin_6	501	777	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	63	151	8.4E-19	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	SMART	SM00408	igc2_5	290	368	1.1E-5	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	SMART	SM00408	igc2_5	191	259	2.7E-13	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+gallus_gallus|ensembl|IIIb|ENSGALP00010001717	1283e35fadd67394035c5ab48a3eb6a7	841	SMART	SM00408	igc2_5	75	136	4.7E-11	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	274	386	5.9E-28	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	ProSiteProfiles	PS50835	Ig-like domain profile.	182	270	11.387978	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	ProSiteProfiles	PS50011	Protein kinase domain profile.	498	787	41.304508	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	Pfam	PF07679	Immunoglobulin I-set domain	286	380	6.1E-7	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	Pfam	PF07679	Immunoglobulin I-set domain	75	137	7.5E-5	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	Pfam	PF07679	Immunoglobulin I-set domain	193	271	3.9E-11	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	498	774	6.4E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	SUPERFAMILY	SSF48726	Immunoglobulin	190	272	1.83E-18	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	SMART	SM00408	igc2_5	292	370	0.016	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	SMART	SM00408	igc2_5	77	138	3.6E-8	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	SMART	SM00408	igc2_5	193	261	2.8E-11	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	488	774	1.75E-80	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	ProSiteProfiles	PS50835	Ig-like domain profile.	62	143	8.465876	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	SUPERFAMILY	SSF48726	Immunoglobulin	279	380	9.26E-19	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	165	273	1.5E-28	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	584	779	5.9E-65	T	04-08-2026	-	-	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	70	153	9.6E-15	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	ProSiteProfiles	PS50835	Ig-like domain profile.	279	367	9.790804	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	458	583	3.2E-42	T	04-08-2026	-	-	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	SUPERFAMILY	SSF48726	Immunoglobulin	74	150	4.66E-13	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	SMART	SM00219	tyrkin_6	498	774	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	SMART	SM00409	IG_3c	71	149	7.7E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	SMART	SM00409	IG_3c	187	272	1.1E-7	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+danio_rerio|ncbi|IIIb|XP_068081039.1	ab0460f24b3523b1e5eb4658be97a062	838	SMART	SM00409	IG_3c	286	381	1.7E-12	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	Pfam	PF07679	Immunoglobulin I-set domain	192	270	5.0E-12	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	Pfam	PF07679	Immunoglobulin I-set domain	285	379	2.3E-8	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	SUPERFAMILY	SSF48726	Immunoglobulin	189	272	9.62E-19	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	SUPERFAMILY	SSF48726	Immunoglobulin	69	147	2.51E-12	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	ProSiteProfiles	PS50835	Ig-like domain profile.	278	378	11.496876	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	273	385	1.4E-31	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	SMART	SM00219	tyrkin_6	496	772	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	SMART	SM00408	igc2_5	291	369	4.0E-8	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	SMART	SM00408	igc2_5	192	260	5.4E-11	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	SMART	SM00408	igc2_5	77	138	3.0E-7	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	ProSiteProfiles	PS50835	Ig-like domain profile.	176	269	11.696522	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	SMART	SM00409	IG_3c	285	380	1.6E-14	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	SMART	SM00409	IG_3c	186	271	1.3E-6	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	SMART	SM00409	IG_3c	71	146	3.2E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	ProSiteProfiles	PS50835	Ig-like domain profile.	45	132	9.355211	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	ProSiteProfiles	PS50011	Protein kinase domain profile.	496	785	41.389313	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	454	581	2.2E-42	T	04-08-2026	-	-	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	Pfam	PF13927	Immunoglobulin domain	71	132	1.3E-4	T	04-08-2026	-	-	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	64	150	2.2E-15	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	496	772	4.4E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	486	772	5.53E-80	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	SUPERFAMILY	SSF48726	Immunoglobulin	278	379	6.05E-21	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	582	777	1.2E-64	T	04-08-2026	-	-	-	-
+takifugu_rubripes|ensembl|IIIb|ENSTRUP00000045146	fab4e354750af012d6d72742f6e75634	836	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	167	272	4.2E-29	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	Pfam	PF07679	Immunoglobulin I-set domain	192	270	5.0E-12	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	Pfam	PF07679	Immunoglobulin I-set domain	285	379	2.3E-8	T	04-08-2026	IPR013098	Immunoglobulin I-set	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	SUPERFAMILY	SSF48726	Immunoglobulin	189	272	9.62E-19	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	SUPERFAMILY	SSF48726	Immunoglobulin	69	147	2.51E-12	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	ProSiteProfiles	PS50835	Ig-like domain profile.	278	378	11.496876	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	273	385	1.4E-31	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	SMART	SM00219	tyrkin_6	496	772	0.0	T	04-08-2026	IPR020635	Tyrosine-protein kinase, catalytic domain	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	SMART	SM00408	igc2_5	291	369	4.0E-8	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	SMART	SM00408	igc2_5	192	260	5.4E-11	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	SMART	SM00408	igc2_5	77	138	3.0E-7	T	04-08-2026	IPR003598	Immunoglobulin subtype 2	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	ProSiteProfiles	PS50835	Ig-like domain profile.	176	269	11.696522	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	SMART	SM00409	IG_3c	285	380	1.6E-14	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	SMART	SM00409	IG_3c	186	271	1.3E-6	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	SMART	SM00409	IG_3c	71	146	3.2E-8	T	04-08-2026	IPR003599	Immunoglobulin domain subtype	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	ProSiteProfiles	PS50835	Ig-like domain profile.	45	132	9.355211	T	04-08-2026	IPR007110	Immunoglobulin-like domain	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	ProSiteProfiles	PS50011	Protein kinase domain profile.	496	785	41.389313	T	04-08-2026	IPR000719	Protein kinase domain	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	Gene3D	G3DSA:3.30.200.20	Phosphorylase Kinase; domain 1	454	581	2.2E-42	T	04-08-2026	-	-	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	Pfam	PF13927	Immunoglobulin domain	71	132	1.3E-4	T	04-08-2026	-	-	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	64	150	2.2E-15	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	Pfam	PF07714	Protein tyrosine and serine/threonine kinase	496	772	4.4E-98	T	04-08-2026	IPR001245	Serine-threonine/tyrosine-protein kinase, catalytic domain	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	SUPERFAMILY	SSF56112	Protein kinase-like (PK-like)	486	772	5.53E-80	T	04-08-2026	IPR011009	Protein kinase-like domain superfamily	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	SUPERFAMILY	SSF48726	Immunoglobulin	278	379	6.05E-21	T	04-08-2026	IPR036179	Immunoglobulin-like domain superfamily	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	Gene3D	G3DSA:1.10.510.10	Transferase(Phosphotransferase) domain 1	582	777	1.2E-64	T	04-08-2026	-	-	-	-
+takifugu_rubripes|ncbi|IIIb|XP_011601191.1	fab4e354750af012d6d72742f6e75634	836	Gene3D	G3DSA:2.60.40.10	Immunoglobulins	167	272	4.2E-29	T	04-08-2026	IPR013783	Immunoglobulin-like fold	-	-

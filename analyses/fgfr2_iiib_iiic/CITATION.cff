@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite this thesis case study when reusing the FGFR2 analysis material."
+title: "FGFR2 IIIb/IIIc exon-domain boundary case study"
+type: dataset
+authors:
+  - family-names: Gryb
+    given-names: Anastasija
+version: 1.0.0
+date-released: 2026-08-11

@@ -1,0 +1,7 @@
+excluded_database	n_proteins	n_pass	pass_fraction	exact_ci_low	exact_ci_high	distance_threshold_aa	consensus_threshold	min_remaining_databases
+none	58	58	1.0	0.9383789910960795	1.0	15.0	0.8	5
+Gene3D	58	58	1.0	0.9383789910960795	1.0	15.0	0.8	4
+Pfam	58	58	1.0	0.9383789910960795	1.0	15.0	0.8	4
+ProSiteProfiles	58	58	1.0	0.9383789910960795	1.0	15.0	0.8	4
+SMART	58	58	1.0	0.9383789910960795	1.0	15.0	0.8	4
+SUPERFAMILY	58	58	1.0	0.9383789910960795	1.0	15.0	0.8	4

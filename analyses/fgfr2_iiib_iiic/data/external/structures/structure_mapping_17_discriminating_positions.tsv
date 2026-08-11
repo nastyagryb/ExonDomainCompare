@@ -1,0 +1,18 @@
+human_reference_residue_index	combined_alignment_col	alignment_col	human_IIIb_aa	human_IIIc_aa	human_IIIb_aa_if_available	human_IIIc_aa_if_available	IIIb_major_aa	IIIc_major_aa	IIIb_major_aa_fraction	IIIc_major_aa_fraction	IIIb_gap_fraction	IIIc_gap_fraction	between_isoform_difference	discriminating_score	position_class	informative_column	gap_rich_excluded_from_main_plot	position_warning	IIIb_abs_position	IIIc_abs_position	IIIb_PDB_1NUN_chain	IIIb_PDB_1NUN_resi	IIIc_PDB_1EV2_chain	IIIc_PDB_1EV2_resi	IIIc_PDB_2FDB_chain	IIIc_PDB_2FDB_resi_P	IIIc_PDB_2FDB_resi_R	structural_evidence
+1	1	1	H	A	H	A	H	A	1.0	1.0	0.25	0.2083	1	0.75	isoform_discriminating_conserved	True	False		314.0	314.0	B	314.0	E/F/G/H	314.0	P/R	2314.0	3314.0	alternative_D3_segment
+2	2	2	S	A	S	A	S	A	1.0	1.0	0.0	0.0	1	1.0	isoform_discriminating_conserved	True	False		315.0	315.0	B	315.0	E/F/G/H	315.0	P/R	2315.0	3315.0	FGFR2b D3 cleft contact highlighted in FGF10 complex
+4	4	4	I	V	I	V	I	V	1.0	1.0	0.0	0.0	1	1.0	isoform_discriminating_conserved	True	False		317.0	317.0	B	317.0	E/F/G/H	317.0	P/R	2317.0	3317.0	FGFR2b hydrophobic D3-cleft residue in FGF10 interface; FGFR2c Val317 is part of the alternatively spliced ligand-contact loop
+6	6	6	S	T	S	T	S	T	1.0	1.0	0.0	0.0	1	1.0	isoform_discriminating_conserved	True	False		319.0	319.0	B	319.0	E/F/G/H	319.0	P/R	2319.0	3319.0	alternative_D3_segment
+7	7	7	S	T	S	T	S	T	1.0	1.0	0.0	0.0	1	1.0	isoform_discriminating_conserved	True	False		320.0	320.0	B	320.0	E/F/G/H	320.0	P/R	2320.0	3320.0	alternative_D3_segment
+8	8	8	N	D	N	D	N	D	0.8333	1.0	0.0	0.0	1	0.8333	isoform_discriminating_conserved	True	False		321.0	321.0	B	321.0	E/F/G/H	321.0	P/R	2321.0	3321.0	alternative_D3_segment
+9	11	11	A	I	A	I	A	I	0.7917	1.0	0.0	0.0	1	0.7917	isoform_discriminating_conserved	True	False		322.0	324.0	B	322.0	E/F/G/H	324.0	P/R	2324.0	3324.0	alternative_D3_segment
+14	16	16	L	I	L	I	L	I	1.0	0.7917	0.0	0.0	1	0.7917	isoform_discriminating_conserved	True	False		327.0	329.0	B	327.0	E/F/G/H	329.0	P/R	2329.0	3329.0	alternative_D3_segment
+19	21	21	E	F	E	F	E	F	0.9583	0.9583	0.0	0.0	1	0.9583	isoform_discriminating_conserved	True	False		332.0	334.0	B	332.0	E/F/G/H	334.0	P/R	2334.0	3334.0	alternative_D3_segment
+26	28	28	I	T	I	T	I	T	0.875	1.0	0.0	0.0	1	0.875	isoform_discriminating_conserved	True	False		339.0	341.0	B	339.0	E/F/G/H	341.0	P/R	2341.0	3341.0	alternative_D3_segment
+28	30	30	K	L	K	L	K	L	1.0	1.0	0.0	0.0	1	1.0	isoform_discriminating_conserved	True	False		341.0	343.0	B	341.0	E/F/G/H	343.0	P/R	2343.0	3343.0	alternative_D3_segment
+29	31	31	V	A	V	A	V	A	0.9583	1.0	0.0	0.0	1	0.9583	isoform_discriminating_conserved	True	False		342.0	344.0	B	342.0	E/F/G/H	344.0	P/R	2344.0	3344.0	alternative_D3_segment
+30	32	32	S	G	S	G	S	G	1.0	1.0	0.0	0.0	1	1.0	isoform_discriminating_conserved	True	False		343.0	345.0	B	343.0	E/F/G/H	345.0	P/R	2345.0	3345.0	alternative_D3_segment
+32	46	46	Y	S	Y	S	Y	S	1.0	1.0	0.0	0.0	1	1.0	isoform_discriminating_conserved	True	False		345.0	347.0	B	345.0	E/F/G/H	347.0	P/R	2347.0	3347.0	FGFR2b Tyr345 contacts FGF10 Arg155; specificity hotspot
+36	50	50	A	S	A	S	A	S	0.9583	1.0	0.0	0.0	1	0.9583	isoform_discriminating_conserved	True	False		349.0	351.0	B	349.0	E/F/G/H	351.0	P/R	2351.0	3351.0	alternative_D3_segment
+37	51	51	N	F	N	F	N	F	0.875	0.8333	0.0	0.0	1	0.8333	isoform_discriminating_conserved	True	False		350.0	352.0	B	350.0	E/F/G/H	352.0	P/R	2352.0	3352.0	alternative_D3_segment
+38	52	52	Q	H	Q	H	Q	H	0.9583	1.0	0.0	0.0	1	0.9583	isoform_discriminating_conserved	True	False		351.0	353.0	B	351.0	E/F/G/H	353.0	P/R	2353.0	3353.0	alternative_D3_segment

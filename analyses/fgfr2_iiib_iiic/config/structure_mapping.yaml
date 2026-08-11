@@ -1,0 +1,18 @@
+structures:
+  - pdb_id: 1NUN
+    enabled: true
+    isoform: IIIb
+    receptor_chain: B
+    ligand_chains: [A]
+    mapping_column: IIIb_PDB_1NUN_resi
+    cassette_start_resi: 314
+    cassette_end_resi: 359
+
+  - pdb_id: 2FDB
+    enabled: true
+    isoform: IIIc
+    receptor_chain: P
+    ligand_chains: [M]
+    mapping_column: IIIc_PDB_2FDB_resi_P
+    cassette_start_resi: 2314
+    cassette_end_resi: 2361

@@ -1,0 +1,70 @@
+human_reference_residue_index	combined_alignment_col	alignment_col	human_IIIb_aa	human_IIIc_aa	human_IIIb_aa_if_available	human_IIIc_aa_if_available	IIIb_major_aa	IIIc_major_aa	IIIb_major_aa_fraction	IIIc_major_aa_fraction	IIIb_gap_fraction	IIIc_gap_fraction	between_isoform_difference	discriminating_score	position_class	informative_column	gap_rich_excluded_from_main_plot	position_warning
+1	1	1	H	A	H	A	H	A	1.0	1.0	0.25	0.2083	1	0.75	isoform_discriminating_conserved	true	false
+2	2	2	S	A	S	A	S	A	1.0	1.0	0.0	0.0	1	1.0	isoform_discriminating_conserved	true	false
+3	3	3	G	G	G	G	G	G	1.0	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+4	4	4	I	V	I	V	I	V	1.0	1.0	0.0	0.0	1	1.0	isoform_discriminating_conserved	true	false
+5	5	5	N	N	N	N	N	N	1.0	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+6	6	6	S	T	S	T	S	T	1.0	1.0	0.0	0.0	1	1.0	isoform_discriminating_conserved	true	false
+7	7	7	S	T	S	T	S	T	1.0	1.0	0.0	0.0	1	1.0	isoform_discriminating_conserved	true	false
+8	8	8	N	D	N	D	N	D	0.8333	1.0	0.0	0.0	1	0.8333	isoform_discriminating_conserved	true	false
+9	9	9		K		K		K	0.0	1.0	1.0	0.0	0	0.0	IIIc_specific_conserved	false	true
+10	10	10		E		E		E	0.0	1.0	1.0	0.0	0	0.0	IIIc_specific_conserved	false	true
+9	11	11	A	I	A	I	A	I	0.7917	1.0	0.0	0.0	1	0.7917	isoform_discriminating_conserved	true	false
+10	12	12	E	E	E	E	E	E	1.0	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+11	13	13	V	V	V	V	V	V	0.9583	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+12	14	14	L	L	L	L	L	L	1.0	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+13	15	15	A	Y	A	Y	A	Y	0.5	0.9167	0.0	0.0	1	0.5	variable	true	false
+14	16	16	L	I	L	I	L	I	1.0	0.7917	0.0	0.0	1	0.7917	isoform_discriminating_conserved	true	false
+15	17	17	F	R	F	R	F	R	0.5	0.7917	0.0	0.0	1	0.5	variable	true	false
+16	18	18	N	N	N	N	N	N	1.0	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+17	19	19	V	V	V	V	V	V	1.0	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+18	20	20	T	T	T	T	T	T	0.9583	0.9583	0.0	0.0	0	0.0	shared_conserved	true	false
+19	21	21	E	F	E	F	E	F	0.9583	0.9583	0.0	0.0	1	0.9583	isoform_discriminating_conserved	true	false
+20	22	22	A	E	A	E	A	E	0.6667	1.0	0.0	0.0	1	0.6667	variable	true	false
+21	23	23	D	D	D	D	D	D	1.0	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+22	24	24	A	A	A	A	A	A	0.9583	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+23	25	25	G	G	G	G	G	G	1.0	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+24	26	26	E	E	E	E	E	E	0.9583	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+25	27	27	Y	Y	Y	Y	Y	Y	0.9583	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+26	28	28	I	T	I	T	I	T	0.875	1.0	0.0	0.0	1	0.875	isoform_discriminating_conserved	true	false
+27	29	29	C	C	C	C	C	C	1.0	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+28	30	30	K	L	K	L	K	L	1.0	1.0	0.0	0.0	1	1.0	isoform_discriminating_conserved	true	false
+29	31	31	V	A	V	A	V	A	0.9583	1.0	0.0	0.0	1	0.9583	isoform_discriminating_conserved	true	false
+30	32	32	S	G	S	G	S	G	1.0	1.0	0.0	0.0	1	1.0	isoform_discriminating_conserved	true	false
+	33	33							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+	34	34							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+	35	35							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+	36	36							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+	37	37							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+	38	38							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+	39	39							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+	40	40							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+	41	41							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+	42	42							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+	43	43							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+	44	44							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+31	45	45	N	N	N	N	N	N	1.0	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+32	46	46	Y	S	Y	S	Y	S	1.0	1.0	0.0	0.0	1	1.0	isoform_discriminating_conserved	true	false
+33	47	47	I	I	I	I	I	I	1.0	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+34	48	48	G	G	G	G	G	G	1.0	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+35	49	49	Q	I	Q	I	E	I	0.5	1.0	0.0	0.0	1	0.5	variable	true	false
+36	50	50	A	S	A	S	A	S	0.9583	1.0	0.0	0.0	1	0.9583	isoform_discriminating_conserved	true	false
+37	51	51	N	F	N	F	N	F	0.875	0.8333	0.0	0.0	1	0.8333	isoform_discriminating_conserved	true	false
+38	52	52	Q	H	Q	H	Q	H	0.9583	1.0	0.0	0.0	1	0.9583	isoform_discriminating_conserved	true	false
+39	53	53	S	S	S	S	S	S	1.0	0.6667	0.0	0.0	0	0.0	variable	true	false
+40	54	54	A	A	A	A	A	A	0.8333	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+41	55	55	W	W	W	W	W	W	1.0	0.9583	0.0	0.0	0	0.0	shared_conserved	true	false
+42	56	56	L	L	L	L	L	L	1.0	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+43	57	57	T	T	T	T	T	T	0.8333	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+44	58	58	V	V	V	V	V	V	0.9583	1.0	0.0	0.0	0	0.0	shared_conserved	true	false
+45	59	59	L	L	L	L	L	L	0.7826	0.9583	0.0417	0.0	0	0.0	shared_conserved	true	false
+	60	60							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+	61	61							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+	62	62							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+	63	63							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+	64	64							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+	65	65							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+	66	66							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+	67	67							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+	68	68							0.0	0.0	1.0	1.0	0	0.0	gap_rich_review	false	true
+46	69	69	P	P	P	P	P	P	1.0	1.0	0.0833	0.0	0	0.0	shared_conserved	true	false

@@ -1,0 +1,12 @@
+{
+  "n_complete_species_pairs": 28,
+  "n_sequences": 56,
+  "alignment_length": 69,
+  "run_executed": true,
+  "best_model": "LG+G4",
+  "hypotheses": [
+    "unconstrained",
+    "isoform_monophyly",
+    "species_pairs"
+  ]
+}

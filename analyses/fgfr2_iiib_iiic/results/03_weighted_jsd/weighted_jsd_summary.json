@@ -1,0 +1,11 @@
+{
+  "n_species_pairs": 28,
+  "n_sequences": 56,
+  "n_alignment_columns": 69,
+  "weighting": "henikoff",
+  "n_permutations": 10000,
+  "global_sum_jsd": 21.150589232101147,
+  "global_paired_permutation_p": 9.999000099990002e-05,
+  "n_fdr_significant_positions": 25,
+  "fdr_threshold": 0.05
+}

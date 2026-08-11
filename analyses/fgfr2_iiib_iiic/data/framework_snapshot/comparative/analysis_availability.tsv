@@ -1,0 +1,31 @@
+species_id	scientific_name	exon_structure	domain_architecture	exon_domain_boundaries	isoform_models	primary_protein
+ambystoma_mexicanum	Ambystoma mexicanum	available	available	available	unavailable	available
+xenopus_tropicalis	Xenopus tropicalis	available	available	available	unavailable	available
+gallus_gallus	Gallus gallus	available	available	available	unavailable	available
+meleagris_gallopavo	Meleagris gallopavo	available	available	available	unavailable	available
+taeniopygia_guttata	Taeniopygia guttata	available	available	available	unavailable	available
+bos_taurus	Bos taurus	available	available	available	unavailable	available
+canis_lupus_familiaris	Canis lupus familiaris	available	available	pending	unavailable	available
+equus_caballus	Equus caballus	available	available	available	unavailable	available
+felis_catus	Felis catus	available	available	available	unavailable	available
+monodelphis_domestica	Monodelphis domestica	available	available	available	unavailable	available
+mus_musculus	Mus musculus	available	available	available	unavailable	available
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	available	available	available	unavailable	available
+oryctolagus_cuniculus	Oryctolagus cuniculus	available	available	available	unavailable	available
+ovis_aries	Ovis aries	available	available	available	unavailable	available
+rattus_norvegicus	Rattus norvegicus	available	available	available	unavailable	available
+sus_scrofa	Sus scrofa	available	available	available	unavailable	available
+callithrix_jacchus	Callithrix jacchus	available	available	available	unavailable	available
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	available	available	available	unavailable	available
+homo_sapiens	Homo sapiens	available	available	available	unavailable	available
+macaca_mulatta	Macaca mulatta	available	available	available	unavailable	available
+pan_troglodytes	Pan troglodytes	available	available	available	unavailable	available
+pongo_abelii	Pongo abelii	available	available	available	unavailable	available
+alligator_mississippiensis	Alligator mississippiensis	available	available	available	unavailable	available
+anolis_carolinensis	Anolis carolinensis	available	available	available	unavailable	available
+chrysemys_picta_bellii	Chrysemys picta bellii	available	available	available	unavailable	available
+danio_rerio	Danio rerio	available	available	available	unavailable	available
+gasterosteus_aculeatus	Gasterosteus aculeatus	available	available	available	unavailable	available
+oreochromis_niloticus	Oreochromis niloticus	available	available	available	unavailable	available
+oryzias_latipes	Oryzias latipes	available	available	available	unavailable	available
+takifugu_rubripes	Takifugu rubripes	available	available	available	unavailable	available

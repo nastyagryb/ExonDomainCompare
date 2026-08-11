@@ -1,0 +1,6 @@
+held_out_clade	n_training_species	n_test_species	n_test_sequences	n_de_novo_positions	canonical_positions_recovered	canonical_positions_total	canonical_recovery_fraction	additional_positions	canonical_positions_missed	accuracy	minimum_signed_margin	median_signed_margin
+Mammals	13	15	30	15	12	17	0.7058823529411765	15,49,53	1,8,11,16,51	1.0	40.18046786610035	41.6925134325258
+Birds	25	3	6	16	16	17	0.9411764705882353		1	1.0	57.09407693917275	58.2656878936602
+Reptiles	25	3	6	17	17	17	1.0			1.0	51.793489424090176	60.322559268758454
+Amphibians	26	2	4	17	17	17	1.0			1.0	46.21266327460139	51.89568018912682
+Teleosts	23	5	10	18	17	17	1.0	22		1.0	31.518023338248454	49.66605067452855

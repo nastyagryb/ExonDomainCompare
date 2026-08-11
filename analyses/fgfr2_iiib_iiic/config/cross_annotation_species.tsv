@@ -1,0 +1,9 @@
+species	ncbi_taxon	ensembl_species	include	high_priority_reason
+homo_sapiens	Homo sapiens	homo_sapiens	true	human reference and large previous coordinate discrepancy
+mus_musculus	Mus musculus	mus_musculus	true	mammalian validation and previous coordinate discrepancy
+gallus_gallus	Gallus gallus	gallus_gallus	true	avian representative
+anolis_carolinensis	Anolis carolinensis	anolis_carolinensis	true	reptile and marginal SMART boundary call
+xenopus_tropicalis	Xenopus tropicalis	xenopus_tropicalis	true	amphibian and previous coordinate discrepancy
+danio_rerio	Danio rerio	danio_rerio	true	teleost reference
+gasterosteus_aculeatus	Gasterosteus aculeatus	gasterosteus_aculeatus	true	large previous coordinate discrepancy
+takifugu_rubripes	Takifugu rubripes	takifugu_rubripes	true	teleost and previous coordinate discrepancy

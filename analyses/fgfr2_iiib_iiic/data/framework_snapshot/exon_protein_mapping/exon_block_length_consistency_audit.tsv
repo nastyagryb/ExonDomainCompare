@@ -1,0 +1,912 @@
+species	isoform	transcript_id	protein_id	protein_length	exon_number	exon_start_aa	exon_end_aa	overflow_aa	source	phase_or_rounding_info_if_available	issue_class	action	final_exon_start_aa	final_exon_end_aa	notes
+alligator_mississippiensis	IIIb	XM_059730070.1	XP_059586053.1	869	1	1	59	0	figure3C		no_issue	keep	1	59
+alligator_mississippiensis	IIIb	XM_059730070.1	XP_059586053.1	869	2	59	148	0	figure3C		no_issue	keep	59	148
+alligator_mississippiensis	IIIb	XM_059730070.1	XP_059586053.1	869	3	148	173	0	figure3C		no_issue	keep	148	173
+alligator_mississippiensis	IIIb	XM_059730070.1	XP_059586053.1	869	4	173	229	0	figure3C		no_issue	keep	173	229
+alligator_mississippiensis	IIIb	XM_059730070.1	XP_059586053.1	869	5	230	271	0	figure3C		no_issue	keep	230	271
+alligator_mississippiensis	IIIb	XM_059730070.1	XP_059586053.1	869	6	271	334	0	figure3C		no_issue	keep	271	334
+alligator_mississippiensis	IIIb	XM_059730070.1	XP_059586053.1	869	7	383	450	0	figure3C		no_issue	keep	383	450
+alligator_mississippiensis	IIIb	XM_059730070.1	XP_059586053.1	869	8	451	501	0	figure3C		no_issue	keep	451	501
+alligator_mississippiensis	IIIb	XM_059730070.1	XP_059586053.1	869	9	501	542	0	figure3C		no_issue	keep	501	542
+alligator_mississippiensis	IIIb	XM_059730070.1	XP_059586053.1	869	10	542	579	0	figure3C		no_issue	keep	542	579
+alligator_mississippiensis	IIIb	XM_059730070.1	XP_059586053.1	869	11	579	642	0	figure3C		no_issue	keep	579	642
+alligator_mississippiensis	IIIb	XM_059730070.1	XP_059586053.1	869	12	643	683	0	figure3C		no_issue	keep	643	683
+alligator_mississippiensis	IIIb	XM_059730070.1	XP_059586053.1	869	13	684	707	0	figure3C		no_issue	keep	684	707
+alligator_mississippiensis	IIIb	XM_059730070.1	XP_059586053.1	869	14	707	753	0	figure3C		no_issue	keep	707	753
+alligator_mississippiensis	IIIb	XM_059730070.1	XP_059586053.1	869	15	753	788	0	figure3C		no_issue	keep	753	788
+alligator_mississippiensis	IIIb	XM_059730070.1	XP_059586053.1	869	16	789	814	0	figure3C		no_issue	keep	789	814
+alligator_mississippiensis	IIIb	XM_059730070.1	XP_059586053.1	869	17	814	869	0	figure3C		no_issue	keep	814	869
+alligator_mississippiensis	IIIc	XM_006266126.4	XP_006266188.1	868	1	1	59	0	figure3C		no_issue	keep	1	59
+alligator_mississippiensis	IIIc	XM_006266126.4	XP_006266188.1	868	2	59	148	0	figure3C		no_issue	keep	59	148
+alligator_mississippiensis	IIIc	XM_006266126.4	XP_006266188.1	868	3	148	173	0	figure3C		no_issue	keep	148	173
+alligator_mississippiensis	IIIc	XM_006266126.4	XP_006266188.1	868	4	173	229	0	figure3C		no_issue	keep	173	229
+alligator_mississippiensis	IIIc	XM_006266126.4	XP_006266188.1	868	5	230	271	0	figure3C		no_issue	keep	230	271
+alligator_mississippiensis	IIIc	XM_006266126.4	XP_006266188.1	868	6	271	334	0	figure3C		no_issue	keep	271	334
+alligator_mississippiensis	IIIc	XM_006266126.4	XP_006266188.1	868	7	384	451	0	figure3C		no_issue	keep	384	451
+alligator_mississippiensis	IIIc	XM_006266126.4	XP_006266188.1	868	8	452	502	0	figure3C		no_issue	keep	452	502
+alligator_mississippiensis	IIIc	XM_006266126.4	XP_006266188.1	868	9	502	543	0	figure3C		no_issue	keep	502	543
+alligator_mississippiensis	IIIc	XM_006266126.4	XP_006266188.1	868	10	543	580	0	figure3C		no_issue	keep	543	580
+alligator_mississippiensis	IIIc	XM_006266126.4	XP_006266188.1	868	11	580	643	0	figure3C		no_issue	keep	580	643
+alligator_mississippiensis	IIIc	XM_006266126.4	XP_006266188.1	868	12	644	684	0	figure3C		no_issue	keep	644	684
+alligator_mississippiensis	IIIc	XM_006266126.4	XP_006266188.1	868	13	685	708	0	figure3C		no_issue	keep	685	708
+alligator_mississippiensis	IIIc	XM_006266126.4	XP_006266188.1	868	14	708	754	0	figure3C		no_issue	keep	708	754
+alligator_mississippiensis	IIIc	XM_006266126.4	XP_006266188.1	868	15	754	789	0	figure3C		no_issue	keep	754	789
+alligator_mississippiensis	IIIc	XM_006266126.4	XP_006266188.1	868	16	790	815	0	figure3C		no_issue	keep	790	815
+alligator_mississippiensis	IIIc	XM_006266126.4	XP_006266188.1	868	17	815	870	2	figure3C	codon_boundary_rounding	minor_plus1_plus2_rounding	clamp_to_protein_length_with_minor_flag	815	868	final block end clamped 870->868 (+2 aa rounding)
+ambystoma_mexicanum	IIIb	XM_069611953.1	XP_069468054.1	840	1	1	56	0	figure3C		no_issue	keep	1	56
+ambystoma_mexicanum	IIIb	XM_069611953.1	XP_069468054.1	840	2	56	145	0	figure3C		no_issue	keep	56	145
+ambystoma_mexicanum	IIIb	XM_069611953.1	XP_069468054.1	840	3	145	170	0	figure3C		no_issue	keep	145	170
+ambystoma_mexicanum	IIIb	XM_069611953.1	XP_069468054.1	840	4	170	226	0	figure3C		no_issue	keep	170	226
+ambystoma_mexicanum	IIIb	XM_069611953.1	XP_069468054.1	840	5	227	268	0	figure3C		no_issue	keep	227	268
+ambystoma_mexicanum	IIIb	XM_069611953.1	XP_069468054.1	840	6	268	331	0	figure3C		no_issue	keep	268	331
+ambystoma_mexicanum	IIIb	XM_069611953.1	XP_069468054.1	840	7	380	447	0	figure3C		no_issue	keep	380	447
+ambystoma_mexicanum	IIIb	XM_069611953.1	XP_069468054.1	840	8	447	497	0	figure3C		no_issue	keep	447	497
+ambystoma_mexicanum	IIIb	XM_069611953.1	XP_069468054.1	840	9	497	538	0	figure3C		no_issue	keep	497	538
+ambystoma_mexicanum	IIIb	XM_069611953.1	XP_069468054.1	840	10	538	575	0	figure3C		no_issue	keep	538	575
+ambystoma_mexicanum	IIIb	XM_069611953.1	XP_069468054.1	840	11	575	638	0	figure3C		no_issue	keep	575	638
+ambystoma_mexicanum	IIIb	XM_069611953.1	XP_069468054.1	840	12	639	679	0	figure3C		no_issue	keep	639	679
+ambystoma_mexicanum	IIIb	XM_069611953.1	XP_069468054.1	840	13	680	703	0	figure3C		no_issue	keep	680	703
+ambystoma_mexicanum	IIIb	XM_069611953.1	XP_069468054.1	840	14	703	749	0	figure3C		no_issue	keep	703	749
+ambystoma_mexicanum	IIIb	XM_069611953.1	XP_069468054.1	840	15	749	784	0	figure3C		no_issue	keep	749	784
+ambystoma_mexicanum	IIIb	XM_069611953.1	XP_069468054.1	840	16	785	839	0	figure3C		no_issue	keep	785	839
+ambystoma_mexicanum	IIIc	XM_069611955.1	XP_069468056.1	838	1	1	56	0	figure3C	native_cds_rank_CDS1	moderate_overflow	reconstruct_from_native_cds	1	56	coding-exon blocks reconstructed from native local CDS features (figure3C blocks projected from a different transcript, overflow +3 aa); native max end 838 <= length 838
+ambystoma_mexicanum	IIIc	XM_069611955.1	XP_069468056.1	838	2	56	145	0	figure3C	native_cds_rank_CDS2	moderate_overflow	reconstruct_from_native_cds	56	145	reconstructed native block
+ambystoma_mexicanum	IIIc	XM_069611955.1	XP_069468056.1	838	3	145	170	0	figure3C	native_cds_rank_CDS3	moderate_overflow	reconstruct_from_native_cds	145	170	reconstructed native block
+ambystoma_mexicanum	IIIc	XM_069611955.1	XP_069468056.1	838	4	170	226	0	figure3C	native_cds_rank_CDS4	moderate_overflow	reconstruct_from_native_cds	170	226	reconstructed native block
+ambystoma_mexicanum	IIIc	XM_069611955.1	XP_069468056.1	838	5	227	268	0	figure3C	native_cds_rank_CDS5	moderate_overflow	reconstruct_from_native_cds	227	268	reconstructed native block
+ambystoma_mexicanum	IIIc	XM_069611955.1	XP_069468056.1	838	6	268	331	0	figure3C	native_cds_rank_CDS6	moderate_overflow	reconstruct_from_native_cds	268	331	reconstructed native block
+ambystoma_mexicanum	IIIc	XM_069611955.1	XP_069468056.1	838	7	382	449	0	figure3C	native_cds_rank_CDS7	moderate_overflow	reconstruct_from_native_cds	332	380	reconstructed native block
+ambystoma_mexicanum	IIIc	XM_069611955.1	XP_069468056.1	838	8	449	499	0	figure3C	native_cds_rank_CDS8	moderate_overflow	reconstruct_from_native_cds	380	447	reconstructed native block
+ambystoma_mexicanum	IIIc	XM_069611955.1	XP_069468056.1	838	9	499	540	0	figure3C	native_cds_rank_CDS9	moderate_overflow	reconstruct_from_native_cds	447	497	reconstructed native block
+ambystoma_mexicanum	IIIc	XM_069611955.1	XP_069468056.1	838	10	540	577	0	figure3C	native_cds_rank_CDS10	moderate_overflow	reconstruct_from_native_cds	497	538	reconstructed native block
+ambystoma_mexicanum	IIIc	XM_069611955.1	XP_069468056.1	838	11	577	640	0	figure3C	native_cds_rank_CDS11	moderate_overflow	reconstruct_from_native_cds	538	575	reconstructed native block
+ambystoma_mexicanum	IIIc	XM_069611955.1	XP_069468056.1	838	12	641	681	0	figure3C	native_cds_rank_CDS12	moderate_overflow	reconstruct_from_native_cds	575	638	reconstructed native block
+ambystoma_mexicanum	IIIc	XM_069611955.1	XP_069468056.1	838	13	682	705	0	figure3C	native_cds_rank_CDS13	moderate_overflow	reconstruct_from_native_cds	639	679	reconstructed native block
+ambystoma_mexicanum	IIIc	XM_069611955.1	XP_069468056.1	838	14	705	751	0	figure3C	native_cds_rank_CDS14	moderate_overflow	reconstruct_from_native_cds	680	703	reconstructed native block
+ambystoma_mexicanum	IIIc	XM_069611955.1	XP_069468056.1	838	15	751	786	0	figure3C	native_cds_rank_CDS15	moderate_overflow	reconstruct_from_native_cds	703	749	reconstructed native block
+ambystoma_mexicanum	IIIc	XM_069611955.1	XP_069468056.1	838	16	787	841	3	figure3C	native_cds_rank_CDS16	moderate_overflow	reconstruct_from_native_cds	749	784	reconstructed native block
+anolis_carolinensis	IIIb	XM_062976012.1	XP_062832082.1	873	1	1	7	0	figure3C		no_issue	keep	1	7
+anolis_carolinensis	IIIb	XM_062976012.1	XP_062832082.1	873	2	7	94	0	figure3C		no_issue	keep	7	94
+anolis_carolinensis	IIIb	XM_062976012.1	XP_062832082.1	873	3	94	179	0	figure3C		no_issue	keep	94	179
+anolis_carolinensis	IIIb	XM_062976012.1	XP_062832082.1	873	4	179	204	0	figure3C		no_issue	keep	179	204
+anolis_carolinensis	IIIb	XM_062976012.1	XP_062832082.1	873	5	204	260	0	figure3C		no_issue	keep	204	260
+anolis_carolinensis	IIIb	XM_062976012.1	XP_062832082.1	873	6	261	302	0	figure3C		no_issue	keep	261	302
+anolis_carolinensis	IIIb	XM_062976012.1	XP_062832082.1	873	7	302	365	0	figure3C		no_issue	keep	302	365
+anolis_carolinensis	IIIb	XM_062976012.1	XP_062832082.1	873	8	414	482	0	figure3C		no_issue	keep	414	482
+anolis_carolinensis	IIIb	XM_062976012.1	XP_062832082.1	873	9	482	532	0	figure3C		no_issue	keep	482	532
+anolis_carolinensis	IIIb	XM_062976012.1	XP_062832082.1	873	10	532	573	0	figure3C		no_issue	keep	532	573
+anolis_carolinensis	IIIb	XM_062976012.1	XP_062832082.1	873	11	573	610	0	figure3C		no_issue	keep	573	610
+anolis_carolinensis	IIIb	XM_062976012.1	XP_062832082.1	873	12	610	673	0	figure3C		no_issue	keep	610	673
+anolis_carolinensis	IIIb	XM_062976012.1	XP_062832082.1	873	13	674	714	0	figure3C		no_issue	keep	674	714
+anolis_carolinensis	IIIb	XM_062976012.1	XP_062832082.1	873	14	715	738	0	figure3C		no_issue	keep	715	738
+anolis_carolinensis	IIIb	XM_062976012.1	XP_062832082.1	873	15	738	784	0	figure3C		no_issue	keep	738	784
+anolis_carolinensis	IIIb	XM_062976012.1	XP_062832082.1	873	16	784	819	0	figure3C		no_issue	keep	784	819
+anolis_carolinensis	IIIb	XM_062976012.1	XP_062832082.1	873	17	820	874	1	figure3C	codon_boundary_rounding	minor_plus1_plus2_rounding	clamp_to_protein_length_with_minor_flag	820	873	final block end clamped 874->873 (+1 aa rounding)
+anolis_carolinensis	IIIc	XM_062976011.1	XP_062832081.1	873	1	1	7	0	figure3C		no_issue	keep	1	7
+anolis_carolinensis	IIIc	XM_062976011.1	XP_062832081.1	873	2	7	94	0	figure3C		no_issue	keep	7	94
+anolis_carolinensis	IIIc	XM_062976011.1	XP_062832081.1	873	3	94	179	0	figure3C		no_issue	keep	94	179
+anolis_carolinensis	IIIc	XM_062976011.1	XP_062832081.1	873	4	179	204	0	figure3C		no_issue	keep	179	204
+anolis_carolinensis	IIIc	XM_062976011.1	XP_062832081.1	873	5	204	260	0	figure3C		no_issue	keep	204	260
+anolis_carolinensis	IIIc	XM_062976011.1	XP_062832081.1	873	6	261	302	0	figure3C		no_issue	keep	261	302
+anolis_carolinensis	IIIc	XM_062976011.1	XP_062832081.1	873	7	302	365	0	figure3C		no_issue	keep	302	365
+anolis_carolinensis	IIIc	XM_062976011.1	XP_062832081.1	873	8	414	482	0	figure3C		no_issue	keep	414	482
+anolis_carolinensis	IIIc	XM_062976011.1	XP_062832081.1	873	9	482	532	0	figure3C		no_issue	keep	482	532
+anolis_carolinensis	IIIc	XM_062976011.1	XP_062832081.1	873	10	532	573	0	figure3C		no_issue	keep	532	573
+anolis_carolinensis	IIIc	XM_062976011.1	XP_062832081.1	873	11	573	610	0	figure3C		no_issue	keep	573	610
+anolis_carolinensis	IIIc	XM_062976011.1	XP_062832081.1	873	12	610	673	0	figure3C		no_issue	keep	610	673
+anolis_carolinensis	IIIc	XM_062976011.1	XP_062832081.1	873	13	674	714	0	figure3C		no_issue	keep	674	714
+anolis_carolinensis	IIIc	XM_062976011.1	XP_062832081.1	873	14	715	738	0	figure3C		no_issue	keep	715	738
+anolis_carolinensis	IIIc	XM_062976011.1	XP_062832081.1	873	15	738	784	0	figure3C		no_issue	keep	738	784
+anolis_carolinensis	IIIc	XM_062976011.1	XP_062832081.1	873	16	784	819	0	figure3C		no_issue	keep	784	819
+anolis_carolinensis	IIIc	XM_062976011.1	XP_062832081.1	873	17	820	874	1	figure3C	codon_boundary_rounding	minor_plus1_plus2_rounding	clamp_to_protein_length_with_minor_flag	820	873	final block end clamped 874->873 (+1 aa rounding)
+bos_taurus	IIIb	XM_059881740.1	XP_059737723.1	841	1	1	56	0	figure3C		no_issue	keep	1	56
+bos_taurus	IIIb	XM_059881740.1	XP_059737723.1	841	2	56	145	0	figure3C		no_issue	keep	56	145
+bos_taurus	IIIb	XM_059881740.1	XP_059737723.1	841	3	145	171	0	figure3C		no_issue	keep	145	171
+bos_taurus	IIIb	XM_059881740.1	XP_059737723.1	841	4	171	227	0	figure3C		no_issue	keep	171	227
+bos_taurus	IIIb	XM_059881740.1	XP_059737723.1	841	5	228	269	0	figure3C		no_issue	keep	228	269
+bos_taurus	IIIb	XM_059881740.1	XP_059737723.1	841	6	269	332	0	figure3C		no_issue	keep	269	332
+bos_taurus	IIIb	XM_059881740.1	XP_059737723.1	841	7	381	449	0	figure3C		no_issue	keep	381	449
+bos_taurus	IIIb	XM_059881740.1	XP_059737723.1	841	8	449	499	0	figure3C		no_issue	keep	449	499
+bos_taurus	IIIb	XM_059881740.1	XP_059737723.1	841	9	499	540	0	figure3C		no_issue	keep	499	540
+bos_taurus	IIIb	XM_059881740.1	XP_059737723.1	841	10	540	577	0	figure3C		no_issue	keep	540	577
+bos_taurus	IIIb	XM_059881740.1	XP_059737723.1	841	11	577	640	0	figure3C		no_issue	keep	577	640
+bos_taurus	IIIb	XM_059881740.1	XP_059737723.1	841	12	641	681	0	figure3C		no_issue	keep	641	681
+bos_taurus	IIIb	XM_059881740.1	XP_059737723.1	841	13	682	705	0	figure3C		no_issue	keep	682	705
+bos_taurus	IIIb	XM_059881740.1	XP_059737723.1	841	14	705	751	0	figure3C		no_issue	keep	705	751
+bos_taurus	IIIb	XM_059881740.1	XP_059737723.1	841	15	751	786	0	figure3C		no_issue	keep	751	786
+bos_taurus	IIIb	XM_059881740.1	XP_059737723.1	841	16	787	841	0	figure3C		no_issue	keep	787	841
+bos_taurus	IIIc	XM_059881741.1	XP_059737724.1	840	1	1	56	0	figure3C		no_issue	keep	1	56
+bos_taurus	IIIc	XM_059881741.1	XP_059737724.1	840	2	56	145	0	figure3C		no_issue	keep	56	145
+bos_taurus	IIIc	XM_059881741.1	XP_059737724.1	840	3	145	171	0	figure3C		no_issue	keep	145	171
+bos_taurus	IIIc	XM_059881741.1	XP_059737724.1	840	4	171	227	0	figure3C		no_issue	keep	171	227
+bos_taurus	IIIc	XM_059881741.1	XP_059737724.1	840	5	228	269	0	figure3C		no_issue	keep	228	269
+bos_taurus	IIIc	XM_059881741.1	XP_059737724.1	840	6	269	332	0	figure3C		no_issue	keep	269	332
+bos_taurus	IIIc	XM_059881741.1	XP_059737724.1	840	7	382	450	0	figure3C		no_issue	keep	382	450
+bos_taurus	IIIc	XM_059881741.1	XP_059737724.1	840	8	450	500	0	figure3C		no_issue	keep	450	500
+bos_taurus	IIIc	XM_059881741.1	XP_059737724.1	840	9	500	541	0	figure3C		no_issue	keep	500	541
+bos_taurus	IIIc	XM_059881741.1	XP_059737724.1	840	10	541	578	0	figure3C		no_issue	keep	541	578
+bos_taurus	IIIc	XM_059881741.1	XP_059737724.1	840	11	578	641	0	figure3C		no_issue	keep	578	641
+bos_taurus	IIIc	XM_059881741.1	XP_059737724.1	840	12	642	682	0	figure3C		no_issue	keep	642	682
+bos_taurus	IIIc	XM_059881741.1	XP_059737724.1	840	13	683	706	0	figure3C		no_issue	keep	683	706
+bos_taurus	IIIc	XM_059881741.1	XP_059737724.1	840	14	706	752	0	figure3C		no_issue	keep	706	752
+bos_taurus	IIIc	XM_059881741.1	XP_059737724.1	840	15	752	787	0	figure3C		no_issue	keep	752	787
+bos_taurus	IIIc	XM_059881741.1	XP_059737724.1	840	16	788	842	2	figure3C	codon_boundary_rounding	minor_plus1_plus2_rounding	clamp_to_protein_length_with_minor_flag	788	840	final block end clamped 842->840 (+2 aa rounding)
+callithrix_jacchus	IIIb	XM_078346634.1	XP_078202760.1	841	1	1	56	0	figure3C		no_issue	keep	1	56
+callithrix_jacchus	IIIb	XM_078346634.1	XP_078202760.1	841	2	56	145	0	figure3C		no_issue	keep	56	145
+callithrix_jacchus	IIIb	XM_078346634.1	XP_078202760.1	841	3	145	171	0	figure3C		no_issue	keep	145	171
+callithrix_jacchus	IIIb	XM_078346634.1	XP_078202760.1	841	4	171	227	0	figure3C		no_issue	keep	171	227
+callithrix_jacchus	IIIb	XM_078346634.1	XP_078202760.1	841	5	228	269	0	figure3C		no_issue	keep	228	269
+callithrix_jacchus	IIIb	XM_078346634.1	XP_078202760.1	841	6	269	332	0	figure3C		no_issue	keep	269	332
+callithrix_jacchus	IIIb	XM_078346634.1	XP_078202760.1	841	7	381	449	0	figure3C		no_issue	keep	381	449
+callithrix_jacchus	IIIb	XM_078346634.1	XP_078202760.1	841	8	449	499	0	figure3C		no_issue	keep	449	499
+callithrix_jacchus	IIIb	XM_078346634.1	XP_078202760.1	841	9	499	540	0	figure3C		no_issue	keep	499	540
+callithrix_jacchus	IIIb	XM_078346634.1	XP_078202760.1	841	10	540	577	0	figure3C		no_issue	keep	540	577
+callithrix_jacchus	IIIb	XM_078346634.1	XP_078202760.1	841	11	577	640	0	figure3C		no_issue	keep	577	640
+callithrix_jacchus	IIIb	XM_078346634.1	XP_078202760.1	841	12	641	681	0	figure3C		no_issue	keep	641	681
+callithrix_jacchus	IIIb	XM_078346634.1	XP_078202760.1	841	13	682	705	0	figure3C		no_issue	keep	682	705
+callithrix_jacchus	IIIb	XM_078346634.1	XP_078202760.1	841	14	705	751	0	figure3C		no_issue	keep	705	751
+callithrix_jacchus	IIIb	XM_078346634.1	XP_078202760.1	841	15	751	786	0	figure3C		no_issue	keep	751	786
+callithrix_jacchus	IIIb	XM_078346634.1	XP_078202760.1	841	16	787	841	0	figure3C		no_issue	keep	787	841
+callithrix_jacchus	IIIc	XM_078346639.1	XP_078202765.1	840	1	1	56	0	figure3C		no_issue	keep	1	56
+callithrix_jacchus	IIIc	XM_078346639.1	XP_078202765.1	840	2	56	145	0	figure3C		no_issue	keep	56	145
+callithrix_jacchus	IIIc	XM_078346639.1	XP_078202765.1	840	3	145	171	0	figure3C		no_issue	keep	145	171
+callithrix_jacchus	IIIc	XM_078346639.1	XP_078202765.1	840	4	171	227	0	figure3C		no_issue	keep	171	227
+callithrix_jacchus	IIIc	XM_078346639.1	XP_078202765.1	840	5	228	269	0	figure3C		no_issue	keep	228	269
+callithrix_jacchus	IIIc	XM_078346639.1	XP_078202765.1	840	6	269	332	0	figure3C		no_issue	keep	269	332
+callithrix_jacchus	IIIc	XM_078346639.1	XP_078202765.1	840	7	382	450	0	figure3C		no_issue	keep	382	450
+callithrix_jacchus	IIIc	XM_078346639.1	XP_078202765.1	840	8	450	500	0	figure3C		no_issue	keep	450	500
+callithrix_jacchus	IIIc	XM_078346639.1	XP_078202765.1	840	9	500	541	0	figure3C		no_issue	keep	500	541
+callithrix_jacchus	IIIc	XM_078346639.1	XP_078202765.1	840	10	541	578	0	figure3C		no_issue	keep	541	578
+callithrix_jacchus	IIIc	XM_078346639.1	XP_078202765.1	840	11	578	641	0	figure3C		no_issue	keep	578	641
+callithrix_jacchus	IIIc	XM_078346639.1	XP_078202765.1	840	12	642	682	0	figure3C		no_issue	keep	642	682
+callithrix_jacchus	IIIc	XM_078346639.1	XP_078202765.1	840	13	683	706	0	figure3C		no_issue	keep	683	706
+callithrix_jacchus	IIIc	XM_078346639.1	XP_078202765.1	840	14	706	752	0	figure3C		no_issue	keep	706	752
+callithrix_jacchus	IIIc	XM_078346639.1	XP_078202765.1	840	15	752	787	0	figure3C		no_issue	keep	752	787
+callithrix_jacchus	IIIc	XM_078346639.1	XP_078202765.1	840	16	788	842	2	figure3C	codon_boundary_rounding	minor_plus1_plus2_rounding	clamp_to_protein_length_with_minor_flag	788	840	final block end clamped 842->840 (+2 aa rounding)
+canis_lupus_familiaris	IIIb	NP_001003336.1	NP_001003336.1	707				0	reconstruction_override		no_issue	cassette_only_high_confidence			coding exons hidden; validated cassette shown
+chrysemys_picta_bellii	IIIb	XM_024109913.3	XP_023965681.1	838	1	1	59	0	figure3C	native_cds_rank_CDS1	moderate_overflow	reconstruct_from_native_cds	1	59	coding-exon blocks reconstructed from native local CDS features (figure3C blocks projected from a different transcript, overflow +3 aa); native max end 838 <= length 838
+chrysemys_picta_bellii	IIIb	XM_024109913.3	XP_023965681.1	838	2	59	146	0	figure3C	native_cds_rank_CDS2	moderate_overflow	reconstruct_from_native_cds	59	146	reconstructed native block
+chrysemys_picta_bellii	IIIb	XM_024109913.3	XP_023965681.1	838	3	146	171	0	figure3C	native_cds_rank_CDS3	moderate_overflow	reconstruct_from_native_cds	146	171	reconstructed native block
+chrysemys_picta_bellii	IIIb	XM_024109913.3	XP_023965681.1	838	4	171	227	0	figure3C	native_cds_rank_CDS4	moderate_overflow	reconstruct_from_native_cds	171	227	reconstructed native block
+chrysemys_picta_bellii	IIIb	XM_024109913.3	XP_023965681.1	838	5	228	269	0	figure3C	native_cds_rank_CDS5	moderate_overflow	reconstruct_from_native_cds	228	269	reconstructed native block
+chrysemys_picta_bellii	IIIb	XM_024109913.3	XP_023965681.1	838	6	269	332	0	figure3C	native_cds_rank_CDS6	moderate_overflow	reconstruct_from_native_cds	269	332	reconstructed native block
+chrysemys_picta_bellii	IIIb	XM_024109913.3	XP_023965681.1	838	7	381	448	0	figure3C	native_cds_rank_CDS7	moderate_overflow	reconstruct_from_native_cds	333	379	reconstructed native block
+chrysemys_picta_bellii	IIIb	XM_024109913.3	XP_023965681.1	838	8	449	499	0	figure3C	native_cds_rank_CDS8	moderate_overflow	reconstruct_from_native_cds	379	446	reconstructed native block
+chrysemys_picta_bellii	IIIb	XM_024109913.3	XP_023965681.1	838	9	499	540	0	figure3C	native_cds_rank_CDS9	moderate_overflow	reconstruct_from_native_cds	447	497	reconstructed native block
+chrysemys_picta_bellii	IIIb	XM_024109913.3	XP_023965681.1	838	10	540	577	0	figure3C	native_cds_rank_CDS10	moderate_overflow	reconstruct_from_native_cds	497	538	reconstructed native block
+chrysemys_picta_bellii	IIIb	XM_024109913.3	XP_023965681.1	838	11	577	640	0	figure3C	native_cds_rank_CDS11	moderate_overflow	reconstruct_from_native_cds	538	575	reconstructed native block
+chrysemys_picta_bellii	IIIb	XM_024109913.3	XP_023965681.1	838	12	641	681	0	figure3C	native_cds_rank_CDS12	moderate_overflow	reconstruct_from_native_cds	575	638	reconstructed native block
+chrysemys_picta_bellii	IIIb	XM_024109913.3	XP_023965681.1	838	13	682	705	0	figure3C	native_cds_rank_CDS13	moderate_overflow	reconstruct_from_native_cds	639	679	reconstructed native block
+chrysemys_picta_bellii	IIIb	XM_024109913.3	XP_023965681.1	838	14	705	751	0	figure3C	native_cds_rank_CDS14	moderate_overflow	reconstruct_from_native_cds	680	703	reconstructed native block
+chrysemys_picta_bellii	IIIb	XM_024109913.3	XP_023965681.1	838	15	751	786	0	figure3C	native_cds_rank_CDS15	moderate_overflow	reconstruct_from_native_cds	703	749	reconstructed native block
+chrysemys_picta_bellii	IIIb	XM_024109913.3	XP_023965681.1	838	16	787	841	3	figure3C	native_cds_rank_CDS16	moderate_overflow	reconstruct_from_native_cds	749	784	reconstructed native block
+chrysemys_picta_bellii	IIIc	XM_065552341.1	XP_065408413.1	840	1	1	59	0	figure3C		no_issue	keep	1	59
+chrysemys_picta_bellii	IIIc	XM_065552341.1	XP_065408413.1	840	2	59	146	0	figure3C		no_issue	keep	59	146
+chrysemys_picta_bellii	IIIc	XM_065552341.1	XP_065408413.1	840	3	146	171	0	figure3C		no_issue	keep	146	171
+chrysemys_picta_bellii	IIIc	XM_065552341.1	XP_065408413.1	840	4	171	227	0	figure3C		no_issue	keep	171	227
+chrysemys_picta_bellii	IIIc	XM_065552341.1	XP_065408413.1	840	5	228	269	0	figure3C		no_issue	keep	228	269
+chrysemys_picta_bellii	IIIc	XM_065552341.1	XP_065408413.1	840	6	269	332	0	figure3C		no_issue	keep	269	332
+chrysemys_picta_bellii	IIIc	XM_065552341.1	XP_065408413.1	840	7	379	446	0	figure3C		no_issue	keep	379	446
+chrysemys_picta_bellii	IIIc	XM_065552341.1	XP_065408413.1	840	8	447	497	0	figure3C		no_issue	keep	447	497
+chrysemys_picta_bellii	IIIc	XM_065552341.1	XP_065408413.1	840	9	497	538	0	figure3C		no_issue	keep	497	538
+chrysemys_picta_bellii	IIIc	XM_065552341.1	XP_065408413.1	840	10	538	575	0	figure3C		no_issue	keep	538	575
+chrysemys_picta_bellii	IIIc	XM_065552341.1	XP_065408413.1	840	11	575	638	0	figure3C		no_issue	keep	575	638
+chrysemys_picta_bellii	IIIc	XM_065552341.1	XP_065408413.1	840	12	639	679	0	figure3C		no_issue	keep	639	679
+chrysemys_picta_bellii	IIIc	XM_065552341.1	XP_065408413.1	840	13	680	703	0	figure3C		no_issue	keep	680	703
+chrysemys_picta_bellii	IIIc	XM_065552341.1	XP_065408413.1	840	14	703	749	0	figure3C		no_issue	keep	703	749
+chrysemys_picta_bellii	IIIc	XM_065552341.1	XP_065408413.1	840	15	749	784	0	figure3C		no_issue	keep	749	784
+chrysemys_picta_bellii	IIIc	XM_065552341.1	XP_065408413.1	840	16	785	839	0	figure3C		no_issue	keep	785	839
+danio_rerio	IIIb	XM_068224938.2	XP_068081039.1	838	1	1	61	0	figure3C	native_cds_rank_CDS1	moderate_overflow	reconstruct_from_native_cds	1	61	coding-exon blocks reconstructed from native local CDS features (figure3C blocks projected from a different transcript, overflow +3 aa); native max end 838 <= length 838
+danio_rerio	IIIb	XM_068224938.2	XP_068081039.1	838	2	61	150	0	figure3C	native_cds_rank_CDS2	moderate_overflow	reconstruct_from_native_cds	61	150	reconstructed native block
+danio_rerio	IIIb	XM_068224938.2	XP_068081039.1	838	3	150	175	0	figure3C	native_cds_rank_CDS3	moderate_overflow	reconstruct_from_native_cds	150	175	reconstructed native block
+danio_rerio	IIIb	XM_068224938.2	XP_068081039.1	838	4	175	231	0	figure3C	native_cds_rank_CDS4	moderate_overflow	reconstruct_from_native_cds	175	231	reconstructed native block
+danio_rerio	IIIb	XM_068224938.2	XP_068081039.1	838	5	232	273	0	figure3C	native_cds_rank_CDS5	moderate_overflow	reconstruct_from_native_cds	232	273	reconstructed native block
+danio_rerio	IIIb	XM_068224938.2	XP_068081039.1	838	6	273	336	0	figure3C	native_cds_rank_CDS6	moderate_overflow	reconstruct_from_native_cds	273	336	reconstructed native block
+danio_rerio	IIIb	XM_068224938.2	XP_068081039.1	838	7	385	453	0	figure3C	native_cds_rank_CDS7	moderate_overflow	reconstruct_from_native_cds	337	383	reconstructed native block
+danio_rerio	IIIb	XM_068224938.2	XP_068081039.1	838	8	453	499	0	figure3C	native_cds_rank_CDS8	moderate_overflow	reconstruct_from_native_cds	383	451	reconstructed native block
+danio_rerio	IIIb	XM_068224938.2	XP_068081039.1	838	9	499	540	0	figure3C	native_cds_rank_CDS9	moderate_overflow	reconstruct_from_native_cds	451	497	reconstructed native block
+danio_rerio	IIIb	XM_068224938.2	XP_068081039.1	838	10	540	577	0	figure3C	native_cds_rank_CDS10	moderate_overflow	reconstruct_from_native_cds	497	538	reconstructed native block
+danio_rerio	IIIb	XM_068224938.2	XP_068081039.1	838	11	577	640	0	figure3C	native_cds_rank_CDS11	moderate_overflow	reconstruct_from_native_cds	538	575	reconstructed native block
+danio_rerio	IIIb	XM_068224938.2	XP_068081039.1	838	12	641	681	0	figure3C	native_cds_rank_CDS12	moderate_overflow	reconstruct_from_native_cds	575	638	reconstructed native block
+danio_rerio	IIIb	XM_068224938.2	XP_068081039.1	838	13	682	705	0	figure3C	native_cds_rank_CDS13	moderate_overflow	reconstruct_from_native_cds	639	679	reconstructed native block
+danio_rerio	IIIb	XM_068224938.2	XP_068081039.1	838	14	705	751	0	figure3C	native_cds_rank_CDS14	moderate_overflow	reconstruct_from_native_cds	680	703	reconstructed native block
+danio_rerio	IIIb	XM_068224938.2	XP_068081039.1	838	15	751	786	0	figure3C	native_cds_rank_CDS15	moderate_overflow	reconstruct_from_native_cds	703	749	reconstructed native block
+danio_rerio	IIIb	XM_068224938.2	XP_068081039.1	838	16	787	841	3	figure3C	native_cds_rank_CDS16	moderate_overflow	reconstruct_from_native_cds	749	784	reconstructed native block
+danio_rerio	IIIc	XM_068224937.2	XP_068081038.1	840	1	1	61	0	figure3C		no_issue	keep	1	61
+danio_rerio	IIIc	XM_068224937.2	XP_068081038.1	840	2	61	150	0	figure3C		no_issue	keep	61	150
+danio_rerio	IIIc	XM_068224937.2	XP_068081038.1	840	3	150	175	0	figure3C		no_issue	keep	150	175
+danio_rerio	IIIc	XM_068224937.2	XP_068081038.1	840	4	175	231	0	figure3C		no_issue	keep	175	231
+danio_rerio	IIIc	XM_068224937.2	XP_068081038.1	840	5	232	273	0	figure3C		no_issue	keep	232	273
+danio_rerio	IIIc	XM_068224937.2	XP_068081038.1	840	6	273	336	0	figure3C		no_issue	keep	273	336
+danio_rerio	IIIc	XM_068224937.2	XP_068081038.1	840	7	383	451	0	figure3C		no_issue	keep	383	451
+danio_rerio	IIIc	XM_068224937.2	XP_068081038.1	840	8	451	497	0	figure3C		no_issue	keep	451	497
+danio_rerio	IIIc	XM_068224937.2	XP_068081038.1	840	9	497	538	0	figure3C		no_issue	keep	497	538
+danio_rerio	IIIc	XM_068224937.2	XP_068081038.1	840	10	538	575	0	figure3C		no_issue	keep	538	575
+danio_rerio	IIIc	XM_068224937.2	XP_068081038.1	840	11	575	638	0	figure3C		no_issue	keep	575	638
+danio_rerio	IIIc	XM_068224937.2	XP_068081038.1	840	12	639	679	0	figure3C		no_issue	keep	639	679
+danio_rerio	IIIc	XM_068224937.2	XP_068081038.1	840	13	680	703	0	figure3C		no_issue	keep	680	703
+danio_rerio	IIIc	XM_068224937.2	XP_068081038.1	840	14	703	749	0	figure3C		no_issue	keep	703	749
+danio_rerio	IIIc	XM_068224937.2	XP_068081038.1	840	15	749	784	0	figure3C		no_issue	keep	749	784
+danio_rerio	IIIc	XM_068224937.2	XP_068081038.1	840	16	785	839	0	figure3C		no_issue	keep	785	839
+equus_caballus	IIIb	XM_014732943.3	XP_014588429.1	887	1	1	9	0	figure3C		no_issue	keep	1	9
+equus_caballus	IIIb	XM_014732943.3	XP_014588429.1	887	2	9	106	0	figure3C		no_issue	keep	9	106
+equus_caballus	IIIb	XM_014732943.3	XP_014588429.1	887	3	106	195	0	figure3C		no_issue	keep	106	195
+equus_caballus	IIIb	XM_014732943.3	XP_014588429.1	887	4	195	221	0	figure3C		no_issue	keep	195	221
+equus_caballus	IIIb	XM_014732943.3	XP_014588429.1	887	5	221	277	0	figure3C		no_issue	keep	221	277
+equus_caballus	IIIb	XM_014732943.3	XP_014588429.1	887	6	278	319	0	figure3C		no_issue	keep	278	319
+equus_caballus	IIIb	XM_014732943.3	XP_014588429.1	887	7	319	382	0	figure3C		no_issue	keep	319	382
+equus_caballus	IIIb	XM_014732943.3	XP_014588429.1	887	8	431	498	0	figure3C		no_issue	keep	431	498
+equus_caballus	IIIb	XM_014732943.3	XP_014588429.1	887	9	499	549	0	figure3C		no_issue	keep	499	549
+equus_caballus	IIIb	XM_014732943.3	XP_014588429.1	887	10	549	590	0	figure3C		no_issue	keep	549	590
+equus_caballus	IIIb	XM_014732943.3	XP_014588429.1	887	11	590	627	0	figure3C		no_issue	keep	590	627
+equus_caballus	IIIb	XM_014732943.3	XP_014588429.1	887	12	627	690	0	figure3C		no_issue	keep	627	690
+equus_caballus	IIIb	XM_014732943.3	XP_014588429.1	887	13	691	731	0	figure3C		no_issue	keep	691	731
+equus_caballus	IIIb	XM_014732943.3	XP_014588429.1	887	14	732	755	0	figure3C		no_issue	keep	732	755
+equus_caballus	IIIb	XM_014732943.3	XP_014588429.1	887	15	755	801	0	figure3C		no_issue	keep	755	801
+equus_caballus	IIIb	XM_014732943.3	XP_014588429.1	887	16	801	836	0	figure3C		no_issue	keep	801	836
+equus_caballus	IIIb	XM_014732943.3	XP_014588429.1	887	17	837	887	0	figure3C		no_issue	keep	837	887
+equus_caballus	IIIc	XM_014732944.3	XP_014588430.1	886	1	1	9	0	figure3C		no_issue	keep	1	9
+equus_caballus	IIIc	XM_014732944.3	XP_014588430.1	886	2	9	106	0	figure3C		no_issue	keep	9	106
+equus_caballus	IIIc	XM_014732944.3	XP_014588430.1	886	3	106	195	0	figure3C		no_issue	keep	106	195
+equus_caballus	IIIc	XM_014732944.3	XP_014588430.1	886	4	195	221	0	figure3C		no_issue	keep	195	221
+equus_caballus	IIIc	XM_014732944.3	XP_014588430.1	886	5	221	277	0	figure3C		no_issue	keep	221	277
+equus_caballus	IIIc	XM_014732944.3	XP_014588430.1	886	6	278	319	0	figure3C		no_issue	keep	278	319
+equus_caballus	IIIc	XM_014732944.3	XP_014588430.1	886	7	319	382	0	figure3C		no_issue	keep	319	382
+equus_caballus	IIIc	XM_014732944.3	XP_014588430.1	886	8	432	499	0	figure3C		no_issue	keep	432	499
+equus_caballus	IIIc	XM_014732944.3	XP_014588430.1	886	9	500	550	0	figure3C		no_issue	keep	500	550
+equus_caballus	IIIc	XM_014732944.3	XP_014588430.1	886	10	550	591	0	figure3C		no_issue	keep	550	591
+equus_caballus	IIIc	XM_014732944.3	XP_014588430.1	886	11	591	628	0	figure3C		no_issue	keep	591	628
+equus_caballus	IIIc	XM_014732944.3	XP_014588430.1	886	12	628	691	0	figure3C		no_issue	keep	628	691
+equus_caballus	IIIc	XM_014732944.3	XP_014588430.1	886	13	692	732	0	figure3C		no_issue	keep	692	732
+equus_caballus	IIIc	XM_014732944.3	XP_014588430.1	886	14	733	756	0	figure3C		no_issue	keep	733	756
+equus_caballus	IIIc	XM_014732944.3	XP_014588430.1	886	15	756	802	0	figure3C		no_issue	keep	756	802
+equus_caballus	IIIc	XM_014732944.3	XP_014588430.1	886	16	802	837	0	figure3C		no_issue	keep	802	837
+equus_caballus	IIIc	XM_014732944.3	XP_014588430.1	886	17	838	888	2	figure3C	codon_boundary_rounding	minor_plus1_plus2_rounding	clamp_to_protein_length_with_minor_flag	838	886	final block end clamped 888->886 (+2 aa rounding)
+felis_catus	IIIb	XM_045040759.1	XP_044896694.1	841	1	1	57	0	figure3C		no_issue	keep	1	57
+felis_catus	IIIb	XM_045040759.1	XP_044896694.1	841	2	57	146	0	figure3C		no_issue	keep	57	146
+felis_catus	IIIb	XM_045040759.1	XP_044896694.1	841	3	146	171	0	figure3C		no_issue	keep	146	171
+felis_catus	IIIb	XM_045040759.1	XP_044896694.1	841	4	171	227	0	figure3C		no_issue	keep	171	227
+felis_catus	IIIb	XM_045040759.1	XP_044896694.1	841	5	228	269	0	figure3C		no_issue	keep	228	269
+felis_catus	IIIb	XM_045040759.1	XP_044896694.1	841	6	269	332	0	figure3C		no_issue	keep	269	332
+felis_catus	IIIb	XM_045040759.1	XP_044896694.1	841	7	381	448	0	figure3C		no_issue	keep	381	448
+felis_catus	IIIb	XM_045040759.1	XP_044896694.1	841	8	449	499	0	figure3C		no_issue	keep	449	499
+felis_catus	IIIb	XM_045040759.1	XP_044896694.1	841	9	499	540	0	figure3C		no_issue	keep	499	540
+felis_catus	IIIb	XM_045040759.1	XP_044896694.1	841	10	540	577	0	figure3C		no_issue	keep	540	577
+felis_catus	IIIb	XM_045040759.1	XP_044896694.1	841	11	577	640	0	figure3C		no_issue	keep	577	640
+felis_catus	IIIb	XM_045040759.1	XP_044896694.1	841	12	641	681	0	figure3C		no_issue	keep	641	681
+felis_catus	IIIb	XM_045040759.1	XP_044896694.1	841	13	682	705	0	figure3C		no_issue	keep	682	705
+felis_catus	IIIb	XM_045040759.1	XP_044896694.1	841	14	705	751	0	figure3C		no_issue	keep	705	751
+felis_catus	IIIb	XM_045040759.1	XP_044896694.1	841	15	751	786	0	figure3C		no_issue	keep	751	786
+felis_catus	IIIb	XM_045040759.1	XP_044896694.1	841	16	787	841	0	figure3C		no_issue	keep	787	841
+felis_catus	IIIc	XM_045040760.1	XP_044896695.1	840	1	1	57	0	figure3C		no_issue	keep	1	57
+felis_catus	IIIc	XM_045040760.1	XP_044896695.1	840	2	57	146	0	figure3C		no_issue	keep	57	146
+felis_catus	IIIc	XM_045040760.1	XP_044896695.1	840	3	146	171	0	figure3C		no_issue	keep	146	171
+felis_catus	IIIc	XM_045040760.1	XP_044896695.1	840	4	171	227	0	figure3C		no_issue	keep	171	227
+felis_catus	IIIc	XM_045040760.1	XP_044896695.1	840	5	228	269	0	figure3C		no_issue	keep	228	269
+felis_catus	IIIc	XM_045040760.1	XP_044896695.1	840	6	269	332	0	figure3C		no_issue	keep	269	332
+felis_catus	IIIc	XM_045040760.1	XP_044896695.1	840	7	382	449	0	figure3C		no_issue	keep	382	449
+felis_catus	IIIc	XM_045040760.1	XP_044896695.1	840	8	450	500	0	figure3C		no_issue	keep	450	500
+felis_catus	IIIc	XM_045040760.1	XP_044896695.1	840	9	500	541	0	figure3C		no_issue	keep	500	541
+felis_catus	IIIc	XM_045040760.1	XP_044896695.1	840	10	541	578	0	figure3C		no_issue	keep	541	578
+felis_catus	IIIc	XM_045040760.1	XP_044896695.1	840	11	578	641	0	figure3C		no_issue	keep	578	641
+felis_catus	IIIc	XM_045040760.1	XP_044896695.1	840	12	642	682	0	figure3C		no_issue	keep	642	682
+felis_catus	IIIc	XM_045040760.1	XP_044896695.1	840	13	683	706	0	figure3C		no_issue	keep	683	706
+felis_catus	IIIc	XM_045040760.1	XP_044896695.1	840	14	706	752	0	figure3C		no_issue	keep	706	752
+felis_catus	IIIc	XM_045040760.1	XP_044896695.1	840	15	752	787	0	figure3C		no_issue	keep	752	787
+felis_catus	IIIc	XM_045040760.1	XP_044896695.1	840	16	788	842	2	figure3C	codon_boundary_rounding	minor_plus1_plus2_rounding	clamp_to_protein_length_with_minor_flag	788	840	final block end clamped 842->840 (+2 aa rounding)
+gallus_gallus	IIIb	XM_046942740.1	XP_046798696.1	843	1	1	59	0	figure3C		no_issue	keep	1	59
+gallus_gallus	IIIb	XM_046942740.1	XP_046798696.1	843	2	59	148	0	figure3C		no_issue	keep	59	148
+gallus_gallus	IIIb	XM_046942740.1	XP_046798696.1	843	3	148	173	0	figure3C		no_issue	keep	148	173
+gallus_gallus	IIIb	XM_046942740.1	XP_046798696.1	843	4	173	229	0	figure3C		no_issue	keep	173	229
+gallus_gallus	IIIb	XM_046942740.1	XP_046798696.1	843	5	230	271	0	figure3C		no_issue	keep	230	271
+gallus_gallus	IIIb	XM_046942740.1	XP_046798696.1	843	6	271	334	0	figure3C		no_issue	keep	271	334
+gallus_gallus	IIIb	XM_046942740.1	XP_046798696.1	843	7	383	450	0	figure3C		no_issue	keep	383	450
+gallus_gallus	IIIb	XM_046942740.1	XP_046798696.1	843	8	451	501	0	figure3C		no_issue	keep	451	501
+gallus_gallus	IIIb	XM_046942740.1	XP_046798696.1	843	9	501	542	0	figure3C		no_issue	keep	501	542
+gallus_gallus	IIIb	XM_046942740.1	XP_046798696.1	843	10	542	579	0	figure3C		no_issue	keep	542	579
+gallus_gallus	IIIb	XM_046942740.1	XP_046798696.1	843	11	579	642	0	figure3C		no_issue	keep	579	642
+gallus_gallus	IIIb	XM_046942740.1	XP_046798696.1	843	12	643	683	0	figure3C		no_issue	keep	643	683
+gallus_gallus	IIIb	XM_046942740.1	XP_046798696.1	843	13	684	707	0	figure3C		no_issue	keep	684	707
+gallus_gallus	IIIb	XM_046942740.1	XP_046798696.1	843	14	707	753	0	figure3C		no_issue	keep	707	753
+gallus_gallus	IIIb	XM_046942740.1	XP_046798696.1	843	15	753	788	0	figure3C		no_issue	keep	753	788
+gallus_gallus	IIIb	XM_046942740.1	XP_046798696.1	843	16	789	843	0	figure3C		no_issue	keep	789	843
+gallus_gallus	IIIc	NM_205319.4	NP_990650.2	842	1	1	59	0	figure3C		no_issue	keep	1	59
+gallus_gallus	IIIc	NM_205319.4	NP_990650.2	842	2	59	148	0	figure3C		no_issue	keep	59	148
+gallus_gallus	IIIc	NM_205319.4	NP_990650.2	842	3	148	173	0	figure3C		no_issue	keep	148	173
+gallus_gallus	IIIc	NM_205319.4	NP_990650.2	842	4	173	229	0	figure3C		no_issue	keep	173	229
+gallus_gallus	IIIc	NM_205319.4	NP_990650.2	842	5	230	271	0	figure3C		no_issue	keep	230	271
+gallus_gallus	IIIc	NM_205319.4	NP_990650.2	842	6	271	334	0	figure3C		no_issue	keep	271	334
+gallus_gallus	IIIc	NM_205319.4	NP_990650.2	842	7	384	451	0	figure3C		no_issue	keep	384	451
+gallus_gallus	IIIc	NM_205319.4	NP_990650.2	842	8	452	502	0	figure3C		no_issue	keep	452	502
+gallus_gallus	IIIc	NM_205319.4	NP_990650.2	842	9	502	543	0	figure3C		no_issue	keep	502	543
+gallus_gallus	IIIc	NM_205319.4	NP_990650.2	842	10	543	580	0	figure3C		no_issue	keep	543	580
+gallus_gallus	IIIc	NM_205319.4	NP_990650.2	842	11	580	643	0	figure3C		no_issue	keep	580	643
+gallus_gallus	IIIc	NM_205319.4	NP_990650.2	842	12	644	684	0	figure3C		no_issue	keep	644	684
+gallus_gallus	IIIc	NM_205319.4	NP_990650.2	842	13	685	708	0	figure3C		no_issue	keep	685	708
+gallus_gallus	IIIc	NM_205319.4	NP_990650.2	842	14	708	754	0	figure3C		no_issue	keep	708	754
+gallus_gallus	IIIc	NM_205319.4	NP_990650.2	842	15	754	789	0	figure3C		no_issue	keep	754	789
+gallus_gallus	IIIc	NM_205319.4	NP_990650.2	842	16	790	844	2	figure3C	codon_boundary_rounding	minor_plus1_plus2_rounding	clamp_to_protein_length_with_minor_flag	790	842	final block end clamped 844->842 (+2 aa rounding)
+gasterosteus_aculeatus	IIIb	ENSGACT00000078064	ENSGACP00000047216	915	1	1	66	0	figure3C	native_cds_rank_CDS1	moderate_overflow	reconstruct_from_native_cds	1	66	coding-exon blocks reconstructed from native local CDS features (figure3C blocks projected from a different transcript, overflow +3 aa); native max end 915 <= length 915
+gasterosteus_aculeatus	IIIb	ENSGACT00000078064	ENSGACP00000047216	915	2	66	112	0	figure3C	native_cds_rank_CDS2	moderate_overflow	reconstruct_from_native_cds	66	112	reconstructed native block
+gasterosteus_aculeatus	IIIb	ENSGACT00000078064	ENSGACP00000047216	915	3	112	135	0	figure3C	native_cds_rank_CDS3	moderate_overflow	reconstruct_from_native_cds	112	135	reconstructed native block
+gasterosteus_aculeatus	IIIb	ENSGACT00000078064	ENSGACP00000047216	915	4	136	176	0	figure3C	native_cds_rank_CDS4	moderate_overflow	reconstruct_from_native_cds	136	176	reconstructed native block
+gasterosteus_aculeatus	IIIb	ENSGACT00000078064	ENSGACP00000047216	915	5	177	240	0	figure3C	native_cds_rank_CDS5	moderate_overflow	reconstruct_from_native_cds	177	240	reconstructed native block
+gasterosteus_aculeatus	IIIb	ENSGACT00000078064	ENSGACP00000047216	915	6	240	277	0	figure3C	native_cds_rank_CDS6	moderate_overflow	reconstruct_from_native_cds	240	277	reconstructed native block
+gasterosteus_aculeatus	IIIb	ENSGACT00000078064	ENSGACP00000047216	915	7	277	318	0	figure3C	native_cds_rank_CDS7	moderate_overflow	reconstruct_from_native_cds	277	318	reconstructed native block
+gasterosteus_aculeatus	IIIb	ENSGACT00000078064	ENSGACP00000047216	915	8	318	364	0	figure3C	native_cds_rank_CDS8	moderate_overflow	reconstruct_from_native_cds	318	364	reconstructed native block
+gasterosteus_aculeatus	IIIb	ENSGACT00000078064	ENSGACP00000047216	915	9	365	429	0	figure3C	native_cds_rank_CDS9	moderate_overflow	reconstruct_from_native_cds	365	429	reconstructed native block
+gasterosteus_aculeatus	IIIb	ENSGACT00000078064	ENSGACP00000047216	915	10	478	541	0	figure3C	native_cds_rank_CDS10	moderate_overflow	reconstruct_from_native_cds	429	475	reconstructed native block
+gasterosteus_aculeatus	IIIb	ENSGACT00000078064	ENSGACP00000047216	915	11	541	582	0	figure3C	native_cds_rank_CDS11	moderate_overflow	reconstruct_from_native_cds	476	539	reconstructed native block
+gasterosteus_aculeatus	IIIb	ENSGACT00000078064	ENSGACP00000047216	915	12	583	639	0	figure3C	native_cds_rank_CDS12	moderate_overflow	reconstruct_from_native_cds	539	580	reconstructed native block
+gasterosteus_aculeatus	IIIb	ENSGACT00000078064	ENSGACP00000047216	915	13	639	664	0	figure3C	native_cds_rank_CDS13	moderate_overflow	reconstruct_from_native_cds	581	637	reconstructed native block
+gasterosteus_aculeatus	IIIb	ENSGACT00000078064	ENSGACP00000047216	915	14	664	748	0	figure3C	native_cds_rank_CDS14	moderate_overflow	reconstruct_from_native_cds	637	662	reconstructed native block
+gasterosteus_aculeatus	IIIb	ENSGACT00000078064	ENSGACP00000047216	915	15	748	794	0	figure3C	native_cds_rank_CDS15	moderate_overflow	reconstruct_from_native_cds	662	746	reconstructed native block
+gasterosteus_aculeatus	IIIb	ENSGACT00000078064	ENSGACP00000047216	915	16	795	858	0	figure3C	native_cds_rank_CDS16	moderate_overflow	reconstruct_from_native_cds	746	792	reconstructed native block
+gasterosteus_aculeatus	IIIb	ENSGACT00000078064	ENSGACP00000047216	915	17	858	918	3	figure3C	native_cds_rank_CDS17	moderate_overflow	reconstruct_from_native_cds	793	856	reconstructed native block
+gasterosteus_aculeatus	IIIc	ENSGACT00000067656	ENSGACP00000061458	917	1	1	66	0	figure3C		no_issue	keep	1	66
+gasterosteus_aculeatus	IIIc	ENSGACT00000067656	ENSGACP00000061458	917	2	66	112	0	figure3C		no_issue	keep	66	112
+gasterosteus_aculeatus	IIIc	ENSGACT00000067656	ENSGACP00000061458	917	3	112	135	0	figure3C		no_issue	keep	112	135
+gasterosteus_aculeatus	IIIc	ENSGACT00000067656	ENSGACP00000061458	917	4	177	240	0	figure3C		no_issue	keep	177	240
+gasterosteus_aculeatus	IIIc	ENSGACT00000067656	ENSGACP00000061458	917	5	240	277	0	figure3C		no_issue	keep	240	277
+gasterosteus_aculeatus	IIIc	ENSGACT00000067656	ENSGACP00000061458	917	6	277	318	0	figure3C		no_issue	keep	277	318
+gasterosteus_aculeatus	IIIc	ENSGACT00000067656	ENSGACP00000061458	917	7	318	364	0	figure3C		no_issue	keep	318	364
+gasterosteus_aculeatus	IIIc	ENSGACT00000067656	ENSGACP00000061458	917	8	365	429	0	figure3C		no_issue	keep	365	429
+gasterosteus_aculeatus	IIIc	ENSGACT00000067656	ENSGACP00000061458	917	9	429	475	0	figure3C		no_issue	keep	429	475
+gasterosteus_aculeatus	IIIc	ENSGACT00000067656	ENSGACP00000061458	917	10	476	539	0	figure3C		no_issue	keep	476	539
+gasterosteus_aculeatus	IIIc	ENSGACT00000067656	ENSGACP00000061458	917	11	539	580	0	figure3C		no_issue	keep	539	580
+gasterosteus_aculeatus	IIIc	ENSGACT00000067656	ENSGACP00000061458	917	12	581	637	0	figure3C		no_issue	keep	581	637
+gasterosteus_aculeatus	IIIc	ENSGACT00000067656	ENSGACP00000061458	917	13	637	662	0	figure3C		no_issue	keep	637	662
+gasterosteus_aculeatus	IIIc	ENSGACT00000067656	ENSGACP00000061458	917	14	662	746	0	figure3C		no_issue	keep	662	746
+gasterosteus_aculeatus	IIIc	ENSGACT00000067656	ENSGACP00000061458	917	15	746	792	0	figure3C		no_issue	keep	746	792
+gasterosteus_aculeatus	IIIc	ENSGACT00000067656	ENSGACP00000061458	917	16	793	856	0	figure3C		no_issue	keep	793	856
+gasterosteus_aculeatus	IIIc	ENSGACT00000067656	ENSGACP00000061458	917	17	856	916	0	figure3C		no_issue	keep	856	916
+gorilla_gorilla_gorilla	IIIb	ENSGGOT00000059958	ENSGGOP00000051435	670	1	1	55	0	cds_features_native (ENSGGOT00000059958)		no_issue	keep	1	55	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+gorilla_gorilla_gorilla	IIIb	ENSGGOT00000059958	ENSGGOP00000051435	670	2	56	91	0	cds_features_native (ENSGGOT00000059958)		no_issue	keep	56	91	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+gorilla_gorilla_gorilla	IIIb	ENSGGOT00000059958	ENSGGOP00000051435	670	3	91	137	0	cds_features_native (ENSGGOT00000059958)		no_issue	keep	91	137	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+gorilla_gorilla_gorilla	IIIb	ENSGGOT00000059958	ENSGGOP00000051435	670	4	137	160	0	cds_features_native (ENSGGOT00000059958)		no_issue	keep	137	160	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+gorilla_gorilla_gorilla	IIIb	ENSGGOT00000059958	ENSGGOP00000051435	670	5	161	201	0	cds_features_native (ENSGGOT00000059958)		no_issue	keep	161	201	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+gorilla_gorilla_gorilla	IIIb	ENSGGOT00000059958	ENSGGOP00000051435	670	6	202	265	0	cds_features_native (ENSGGOT00000059958)		no_issue	keep	202	265	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+gorilla_gorilla_gorilla	IIIb	ENSGGOT00000059958	ENSGGOP00000051435	670	7	265	302	0	cds_features_native (ENSGGOT00000059958)		no_issue	keep	265	302	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+gorilla_gorilla_gorilla	IIIb	ENSGGOT00000059958	ENSGGOP00000051435	670	8	302	343	0	cds_features_native (ENSGGOT00000059958)		no_issue	keep	302	343	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+gorilla_gorilla_gorilla	IIIb	ENSGGOT00000059958	ENSGGOP00000051435	670	9	343	398	0	cds_features_native (ENSGGOT00000059958)		no_issue	keep	343	398	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+gorilla_gorilla_gorilla	IIIb	ENSGGOT00000059958	ENSGGOP00000051435	670	10	398	447	0	cds_features_native (ENSGGOT00000059958)		no_issue	keep	398	447	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+gorilla_gorilla_gorilla	IIIb	ENSGGOT00000059958	ENSGGOP00000051435	670	11	448	511	0	cds_features_native (ENSGGOT00000059958)		no_issue	keep	448	511	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+gorilla_gorilla_gorilla	IIIb	ENSGGOT00000059958	ENSGGOP00000051435	670	12	511	552	0	cds_features_native (ENSGGOT00000059958)		no_issue	keep	511	552	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+gorilla_gorilla_gorilla	IIIb	ENSGGOT00000059958	ENSGGOP00000051435	670	13	553	609	0	cds_features_native (ENSGGOT00000059958)		no_issue	keep	553	609	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+gorilla_gorilla_gorilla	IIIb	ENSGGOT00000059958	ENSGGOP00000051435	670	14	609	635	0	cds_features_native (ENSGGOT00000059958)		no_issue	keep	609	635	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+gorilla_gorilla_gorilla	IIIb	ENSGGOT00000059958	ENSGGOP00000051435	670	15	635	670	0	cds_features_native (ENSGGOT00000059958)		no_issue	keep	635	670	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+gorilla_gorilla_gorilla	IIIc	XP_004050253.1	XP_004050253.1	723	1	1	55	0	figure3C		no_issue	keep	1	55
+gorilla_gorilla_gorilla	IIIc	XP_004050253.1	XP_004050253.1	723	2	56	91	0	figure3C		no_issue	keep	56	91
+gorilla_gorilla_gorilla	IIIc	XP_004050253.1	XP_004050253.1	723	3	91	137	0	figure3C		no_issue	keep	91	137
+gorilla_gorilla_gorilla	IIIc	XP_004050253.1	XP_004050253.1	723	4	137	160	0	figure3C		no_issue	keep	137	160
+gorilla_gorilla_gorilla	IIIc	XP_004050253.1	XP_004050253.1	723	5	161	201	0	figure3C		no_issue	keep	161	201
+gorilla_gorilla_gorilla	IIIc	XP_004050253.1	XP_004050253.1	723	6	265	302	0	figure3C		no_issue	keep	265	302
+gorilla_gorilla_gorilla	IIIc	XP_004050253.1	XP_004050253.1	723	7	302	343	0	figure3C		no_issue	keep	302	343
+gorilla_gorilla_gorilla	IIIc	XP_004050253.1	XP_004050253.1	723	8	343	398	0	figure3C		no_issue	keep	343	398
+gorilla_gorilla_gorilla	IIIc	XP_004050253.1	XP_004050253.1	723	9	398	447	0	figure3C		no_issue	keep	398	447
+gorilla_gorilla_gorilla	IIIc	XP_004050253.1	XP_004050253.1	723	10	448	511	0	figure3C		no_issue	keep	448	511
+gorilla_gorilla_gorilla	IIIc	XP_004050253.1	XP_004050253.1	723	11	511	552	0	figure3C		no_issue	keep	511	552
+gorilla_gorilla_gorilla	IIIc	XP_004050253.1	XP_004050253.1	723	12	553	609	0	figure3C		no_issue	keep	553	609
+gorilla_gorilla_gorilla	IIIc	XP_004050253.1	XP_004050253.1	723	13	609	635	0	figure3C		no_issue	keep	609	635
+gorilla_gorilla_gorilla	IIIc	XP_004050253.1	XP_004050253.1	723	14	635	671	0	figure3C		no_issue	keep	635	671
+homo_sapiens	IIIb	ENST00001142305	ENSP00000813085	822	1	1	55	0	figure3C		no_issue	keep	1	55
+homo_sapiens	IIIb	ENST00001142305	ENSP00000813085	822	2	56	91	0	figure3C		no_issue	keep	56	91
+homo_sapiens	IIIb	ENST00001142305	ENSP00000813085	822	3	91	137	0	figure3C		no_issue	keep	91	137
+homo_sapiens	IIIb	ENST00001142305	ENSP00000813085	822	4	137	160	0	figure3C		no_issue	keep	137	160
+homo_sapiens	IIIb	ENST00001142305	ENSP00000813085	822	5	161	201	0	figure3C		no_issue	keep	161	201
+homo_sapiens	IIIb	ENST00001142305	ENSP00000813085	822	6	202	265	0	figure3C		no_issue	keep	202	265
+homo_sapiens	IIIb	ENST00001142305	ENSP00000813085	822	7	265	302	0	figure3C		no_issue	keep	265	302
+homo_sapiens	IIIb	ENST00001142305	ENSP00000813085	822	8	302	343	0	figure3C		no_issue	keep	302	343
+homo_sapiens	IIIb	ENST00001142305	ENSP00000813085	822	9	394	461	0	figure3C		no_issue	keep	394	461
+homo_sapiens	IIIb	ENST00001142305	ENSP00000813085	822	10	461	509	0	figure3C		no_issue	keep	461	509
+homo_sapiens	IIIb	ENST00001142305	ENSP00000813085	822	11	510	573	0	figure3C		no_issue	keep	510	573
+homo_sapiens	IIIb	ENST00001142305	ENSP00000813085	822	12	573	614	0	figure3C		no_issue	keep	573	614
+homo_sapiens	IIIb	ENST00001142305	ENSP00000813085	822	13	615	671	0	figure3C		no_issue	keep	615	671
+homo_sapiens	IIIb	ENST00001142305	ENSP00000813085	822	14	671	697	0	figure3C		no_issue	keep	671	697
+homo_sapiens	IIIb	ENST00001142305	ENSP00000813085	822	15	697	786	0	figure3C		no_issue	keep	697	786
+homo_sapiens	IIIb	ENST00001142305	ENSP00000813085	822	16	786	822	0	figure3C		no_issue	keep	786	822
+homo_sapiens	IIIc	ENST00000358487	ENSP00000351276	821	1	1	55	0	figure3C		no_issue	keep	1	55
+homo_sapiens	IIIc	ENST00000358487	ENSP00000351276	821	2	56	91	0	figure3C		no_issue	keep	56	91
+homo_sapiens	IIIc	ENST00000358487	ENSP00000351276	821	3	91	137	0	figure3C		no_issue	keep	91	137
+homo_sapiens	IIIc	ENST00000358487	ENSP00000351276	821	4	137	160	0	figure3C		no_issue	keep	137	160
+homo_sapiens	IIIc	ENST00000358487	ENSP00000351276	821	5	161	201	0	figure3C		no_issue	keep	161	201
+homo_sapiens	IIIc	ENST00000358487	ENSP00000351276	821	6	202	265	0	figure3C		no_issue	keep	202	265
+homo_sapiens	IIIc	ENST00000358487	ENSP00000351276	821	7	265	302	0	figure3C		no_issue	keep	265	302
+homo_sapiens	IIIc	ENST00000358487	ENSP00000351276	821	8	343	393	0	figure3C		no_issue	keep	343	393
+homo_sapiens	IIIc	ENST00000358487	ENSP00000351276	821	9	394	461	0	figure3C		no_issue	keep	394	461
+homo_sapiens	IIIc	ENST00000358487	ENSP00000351276	821	10	461	510	0	figure3C		no_issue	keep	461	510
+homo_sapiens	IIIc	ENST00000358487	ENSP00000351276	821	11	511	574	0	figure3C		no_issue	keep	511	574
+homo_sapiens	IIIc	ENST00000358487	ENSP00000351276	821	12	574	615	0	figure3C		no_issue	keep	574	615
+homo_sapiens	IIIc	ENST00000358487	ENSP00000351276	821	13	616	672	0	figure3C		no_issue	keep	616	672
+homo_sapiens	IIIc	ENST00000358487	ENSP00000351276	821	14	672	698	0	figure3C		no_issue	keep	672	698
+homo_sapiens	IIIc	ENST00000358487	ENSP00000351276	821	15	698	787	0	figure3C		no_issue	keep	698	787
+homo_sapiens	IIIc	ENST00000358487	ENSP00000351276	821	16	787	823	2	figure3C	codon_boundary_rounding	minor_plus1_plus2_rounding	clamp_to_protein_length_with_minor_flag	787	821	final block end clamped 823->821 (+2 aa rounding)
+macaca_mulatta	IIIb	XM_015148329.3	XP_015003815.1	839	1	1	56	0	figure3C		no_issue	keep	1	56
+macaca_mulatta	IIIb	XM_015148329.3	XP_015003815.1	839	2	56	145	0	figure3C		no_issue	keep	56	145
+macaca_mulatta	IIIb	XM_015148329.3	XP_015003815.1	839	3	145	171	0	figure3C		no_issue	keep	145	171
+macaca_mulatta	IIIb	XM_015148329.3	XP_015003815.1	839	4	171	227	0	figure3C		no_issue	keep	171	227
+macaca_mulatta	IIIb	XM_015148329.3	XP_015003815.1	839	5	228	269	0	figure3C		no_issue	keep	228	269
+macaca_mulatta	IIIb	XM_015148329.3	XP_015003815.1	839	6	269	332	0	figure3C		no_issue	keep	269	332
+macaca_mulatta	IIIb	XM_015148329.3	XP_015003815.1	839	7	381	446	0	figure3C		no_issue	keep	381	446
+macaca_mulatta	IIIb	XM_015148329.3	XP_015003815.1	839	8	447	497	0	figure3C		no_issue	keep	447	497
+macaca_mulatta	IIIb	XM_015148329.3	XP_015003815.1	839	9	497	538	0	figure3C		no_issue	keep	497	538
+macaca_mulatta	IIIb	XM_015148329.3	XP_015003815.1	839	10	538	575	0	figure3C		no_issue	keep	538	575
+macaca_mulatta	IIIb	XM_015148329.3	XP_015003815.1	839	11	575	638	0	figure3C		no_issue	keep	575	638
+macaca_mulatta	IIIb	XM_015148329.3	XP_015003815.1	839	12	639	679	0	figure3C		no_issue	keep	639	679
+macaca_mulatta	IIIb	XM_015148329.3	XP_015003815.1	839	13	680	703	0	figure3C		no_issue	keep	680	703
+macaca_mulatta	IIIb	XM_015148329.3	XP_015003815.1	839	14	703	749	0	figure3C		no_issue	keep	703	749
+macaca_mulatta	IIIb	XM_015148329.3	XP_015003815.1	839	15	749	784	0	figure3C		no_issue	keep	749	784
+macaca_mulatta	IIIb	XM_015148329.3	XP_015003815.1	839	16	785	839	0	figure3C		no_issue	keep	785	839
+macaca_mulatta	IIIc	XM_077947649.1	XP_077803775.1	838	1	1	56	0	figure3C		no_issue	keep	1	56
+macaca_mulatta	IIIc	XM_077947649.1	XP_077803775.1	838	2	56	145	0	figure3C		no_issue	keep	56	145
+macaca_mulatta	IIIc	XM_077947649.1	XP_077803775.1	838	3	145	171	0	figure3C		no_issue	keep	145	171
+macaca_mulatta	IIIc	XM_077947649.1	XP_077803775.1	838	4	171	227	0	figure3C		no_issue	keep	171	227
+macaca_mulatta	IIIc	XM_077947649.1	XP_077803775.1	838	5	228	269	0	figure3C		no_issue	keep	228	269
+macaca_mulatta	IIIc	XM_077947649.1	XP_077803775.1	838	6	269	332	0	figure3C		no_issue	keep	269	332
+macaca_mulatta	IIIc	XM_077947649.1	XP_077803775.1	838	7	382	447	0	figure3C		no_issue	keep	382	447
+macaca_mulatta	IIIc	XM_077947649.1	XP_077803775.1	838	8	448	498	0	figure3C		no_issue	keep	448	498
+macaca_mulatta	IIIc	XM_077947649.1	XP_077803775.1	838	9	498	539	0	figure3C		no_issue	keep	498	539
+macaca_mulatta	IIIc	XM_077947649.1	XP_077803775.1	838	10	539	576	0	figure3C		no_issue	keep	539	576
+macaca_mulatta	IIIc	XM_077947649.1	XP_077803775.1	838	11	576	639	0	figure3C		no_issue	keep	576	639
+macaca_mulatta	IIIc	XM_077947649.1	XP_077803775.1	838	12	640	680	0	figure3C		no_issue	keep	640	680
+macaca_mulatta	IIIc	XM_077947649.1	XP_077803775.1	838	13	681	704	0	figure3C		no_issue	keep	681	704
+macaca_mulatta	IIIc	XM_077947649.1	XP_077803775.1	838	14	704	750	0	figure3C		no_issue	keep	704	750
+macaca_mulatta	IIIc	XM_077947649.1	XP_077803775.1	838	15	750	785	0	figure3C		no_issue	keep	750	785
+macaca_mulatta	IIIc	XM_077947649.1	XP_077803775.1	838	16	786	840	2	figure3C	codon_boundary_rounding	minor_plus1_plus2_rounding	clamp_to_protein_length_with_minor_flag	786	838	final block end clamped 840->838 (+2 aa rounding)
+meleagris_gallopavo	IIIb	ENSMGAT00000037037	ENSMGAP00000031353	631	1	1	103	0	figure3C		no_issue	keep	1	103
+meleagris_gallopavo	IIIb	ENSMGAT00000037037	ENSMGAP00000031353	631	2	104	167	0	figure3C		no_issue	keep	104	167
+meleagris_gallopavo	IIIb	ENSMGAT00000037037	ENSMGAP00000031353	631	3	167	204	0	figure3C		no_issue	keep	167	204
+meleagris_gallopavo	IIIb	ENSMGAT00000037037	ENSMGAP00000031353	631	4	204	245	0	figure3C		no_issue	keep	204	245
+meleagris_gallopavo	IIIb	ENSMGAT00000037037	ENSMGAP00000031353	631	5	296	361	0	figure3C		no_issue	keep	296	361
+meleagris_gallopavo	IIIb	ENSMGAT00000037037	ENSMGAP00000031353	631	6	361	409	0	figure3C		no_issue	keep	361	409
+meleagris_gallopavo	IIIb	ENSMGAT00000037037	ENSMGAP00000031353	631	7	410	473	0	figure3C		no_issue	keep	410	473
+meleagris_gallopavo	IIIb	ENSMGAT00000037037	ENSMGAP00000031353	631	8	473	514	0	figure3C		no_issue	keep	473	514
+meleagris_gallopavo	IIIb	ENSMGAT00000037037	ENSMGAP00000031353	631	9	515	571	0	figure3C		no_issue	keep	515	571
+meleagris_gallopavo	IIIb	ENSMGAT00000037037	ENSMGAP00000031353	631	10	571	628	0	figure3C		no_issue	keep	571	628
+meleagris_gallopavo	IIIc	ENSMGAT00000021846	ENSMGAP00000031571	627	1	1	54	0	figure3C	native_cds_rank_CDS1	moderate_overflow	reconstruct_from_native_cds	1	103	coding-exon blocks reconstructed from native local CDS features (figure3C blocks projected from a different transcript, overflow +5 aa); native max end 627 <= length 627
+meleagris_gallopavo	IIIc	ENSMGAT00000021846	ENSMGAP00000031571	627	2	54	77	0	figure3C	native_cds_rank_CDS2	moderate_overflow	reconstruct_from_native_cds	104	167	reconstructed native block
+meleagris_gallopavo	IIIc	ENSMGAT00000021846	ENSMGAP00000031571	627	3	78	118	0	figure3C	native_cds_rank_CDS3	moderate_overflow	reconstruct_from_native_cds	167	204	reconstructed native block
+meleagris_gallopavo	IIIc	ENSMGAT00000021846	ENSMGAP00000031571	627	4	119	182	0	figure3C	native_cds_rank_CDS4	moderate_overflow	reconstruct_from_native_cds	204	245	reconstructed native block
+meleagris_gallopavo	IIIc	ENSMGAT00000021846	ENSMGAP00000031571	627	5	182	219	0	figure3C	native_cds_rank_CDS5	moderate_overflow	reconstruct_from_native_cds	245	295	reconstructed native block
+meleagris_gallopavo	IIIc	ENSMGAT00000021846	ENSMGAP00000031571	627	6	260	310	0	figure3C	native_cds_rank_CDS6	moderate_overflow	reconstruct_from_native_cds	296	361	reconstructed native block
+meleagris_gallopavo	IIIc	ENSMGAT00000021846	ENSMGAP00000031571	627	7	311	376	0	figure3C	native_cds_rank_CDS7	moderate_overflow	reconstruct_from_native_cds	361	409	reconstructed native block
+meleagris_gallopavo	IIIc	ENSMGAT00000021846	ENSMGAP00000031571	627	8	376	425	0	figure3C	native_cds_rank_CDS8	moderate_overflow	reconstruct_from_native_cds	410	473	reconstructed native block
+meleagris_gallopavo	IIIc	ENSMGAT00000021846	ENSMGAP00000031571	627	9	426	489	0	figure3C	native_cds_rank_CDS9	moderate_overflow	reconstruct_from_native_cds	473	514	reconstructed native block
+meleagris_gallopavo	IIIc	ENSMGAT00000021846	ENSMGAP00000031571	627	10	489	530	0	figure3C	native_cds_rank_CDS10	moderate_overflow	reconstruct_from_native_cds	515	571	reconstructed native block
+meleagris_gallopavo	IIIc	ENSMGAT00000021846	ENSMGAP00000031571	627	11	531	587	0	figure3C	native_cds_rank_CDS11	moderate_overflow	reconstruct_from_native_cds	571	627	reconstructed native block
+meleagris_gallopavo	IIIc	ENSMGAT00000021846	ENSMGAP00000031571	627	12	587	632	5	figure3C		moderate_overflow	reconstruct_from_native_cds			reconstructed native block
+monodelphis_domestica	IIIb	XM_056803261.1	XP_056659239.1	840	1	1	56	0	figure3C		no_issue	keep	1	56
+monodelphis_domestica	IIIb	XM_056803261.1	XP_056659239.1	840	2	56	145	0	figure3C		no_issue	keep	56	145
+monodelphis_domestica	IIIb	XM_056803261.1	XP_056659239.1	840	3	145	170	0	figure3C		no_issue	keep	145	170
+monodelphis_domestica	IIIb	XM_056803261.1	XP_056659239.1	840	4	170	226	0	figure3C		no_issue	keep	170	226
+monodelphis_domestica	IIIb	XM_056803261.1	XP_056659239.1	840	5	227	268	0	figure3C		no_issue	keep	227	268
+monodelphis_domestica	IIIb	XM_056803261.1	XP_056659239.1	840	6	268	331	0	figure3C		no_issue	keep	268	331
+monodelphis_domestica	IIIb	XM_056803261.1	XP_056659239.1	840	7	380	447	0	figure3C		no_issue	keep	380	447
+monodelphis_domestica	IIIb	XM_056803261.1	XP_056659239.1	840	8	448	498	0	figure3C		no_issue	keep	448	498
+monodelphis_domestica	IIIb	XM_056803261.1	XP_056659239.1	840	9	498	539	0	figure3C		no_issue	keep	498	539
+monodelphis_domestica	IIIb	XM_056803261.1	XP_056659239.1	840	10	539	576	0	figure3C		no_issue	keep	539	576
+monodelphis_domestica	IIIb	XM_056803261.1	XP_056659239.1	840	11	576	639	0	figure3C		no_issue	keep	576	639
+monodelphis_domestica	IIIb	XM_056803261.1	XP_056659239.1	840	12	640	680	0	figure3C		no_issue	keep	640	680
+monodelphis_domestica	IIIb	XM_056803261.1	XP_056659239.1	840	13	681	704	0	figure3C		no_issue	keep	681	704
+monodelphis_domestica	IIIb	XM_056803261.1	XP_056659239.1	840	14	704	750	0	figure3C		no_issue	keep	704	750
+monodelphis_domestica	IIIb	XM_056803261.1	XP_056659239.1	840	15	750	785	0	figure3C		no_issue	keep	750	785
+monodelphis_domestica	IIIb	XM_056803261.1	XP_056659239.1	840	16	786	840	0	figure3C		no_issue	keep	786	840
+monodelphis_domestica	IIIc	XM_056803264.1	XP_056659242.1	839	1	1	56	0	figure3C		no_issue	keep	1	56
+monodelphis_domestica	IIIc	XM_056803264.1	XP_056659242.1	839	2	56	145	0	figure3C		no_issue	keep	56	145
+monodelphis_domestica	IIIc	XM_056803264.1	XP_056659242.1	839	3	145	170	0	figure3C		no_issue	keep	145	170
+monodelphis_domestica	IIIc	XM_056803264.1	XP_056659242.1	839	4	170	226	0	figure3C		no_issue	keep	170	226
+monodelphis_domestica	IIIc	XM_056803264.1	XP_056659242.1	839	5	227	268	0	figure3C		no_issue	keep	227	268
+monodelphis_domestica	IIIc	XM_056803264.1	XP_056659242.1	839	6	268	331	0	figure3C		no_issue	keep	268	331
+monodelphis_domestica	IIIc	XM_056803264.1	XP_056659242.1	839	7	381	448	0	figure3C		no_issue	keep	381	448
+monodelphis_domestica	IIIc	XM_056803264.1	XP_056659242.1	839	8	449	499	0	figure3C		no_issue	keep	449	499
+monodelphis_domestica	IIIc	XM_056803264.1	XP_056659242.1	839	9	499	540	0	figure3C		no_issue	keep	499	540
+monodelphis_domestica	IIIc	XM_056803264.1	XP_056659242.1	839	10	540	577	0	figure3C		no_issue	keep	540	577
+monodelphis_domestica	IIIc	XM_056803264.1	XP_056659242.1	839	11	577	640	0	figure3C		no_issue	keep	577	640
+monodelphis_domestica	IIIc	XM_056803264.1	XP_056659242.1	839	12	641	681	0	figure3C		no_issue	keep	641	681
+monodelphis_domestica	IIIc	XM_056803264.1	XP_056659242.1	839	13	682	705	0	figure3C		no_issue	keep	682	705
+monodelphis_domestica	IIIc	XM_056803264.1	XP_056659242.1	839	14	705	751	0	figure3C		no_issue	keep	705	751
+monodelphis_domestica	IIIc	XM_056803264.1	XP_056659242.1	839	15	751	786	0	figure3C		no_issue	keep	751	786
+monodelphis_domestica	IIIc	XM_056803264.1	XP_056659242.1	839	16	787	841	2	figure3C	codon_boundary_rounding	minor_plus1_plus2_rounding	clamp_to_protein_length_with_minor_flag	787	839	final block end clamped 841->839 (+2 aa rounding)
+mus_musculus	IIIb	ENSMUST00000117691	ENSMUSP00000113180	822	1	1	55	0	figure3C	native_cds_rank_CDS1	severe_overflow	reconstruct_from_native_cds	1	55	coding-exon blocks reconstructed from native local CDS features (figure3C blocks projected from a different transcript, overflow +19 aa); native max end 822 <= length 822
+mus_musculus	IIIb	ENSMUST00000117691	ENSMUSP00000113180	822	2	56	91	0	figure3C	native_cds_rank_CDS2	severe_overflow	reconstruct_from_native_cds	56	91	reconstructed native block
+mus_musculus	IIIb	ENSMUST00000117691	ENSMUSP00000113180	822	3	91	137	0	figure3C	native_cds_rank_CDS3	severe_overflow	reconstruct_from_native_cds	91	137	reconstructed native block
+mus_musculus	IIIb	ENSMUST00000117691	ENSMUSP00000113180	822	4	137	160	0	figure3C	native_cds_rank_CDS4	severe_overflow	reconstruct_from_native_cds	137	160	reconstructed native block
+mus_musculus	IIIb	ENSMUST00000117691	ENSMUSP00000113180	822	5	161	201	0	figure3C	native_cds_rank_CDS5	severe_overflow	reconstruct_from_native_cds	161	201	reconstructed native block
+mus_musculus	IIIb	ENSMUST00000117691	ENSMUSP00000113180	822	6	202	265	0	figure3C	native_cds_rank_CDS6	severe_overflow	reconstruct_from_native_cds	202	265	reconstructed native block
+mus_musculus	IIIb	ENSMUST00000117691	ENSMUSP00000113180	822	7	265	302	0	figure3C	native_cds_rank_CDS7	severe_overflow	reconstruct_from_native_cds	265	302	reconstructed native block
+mus_musculus	IIIb	ENSMUST00000117691	ENSMUSP00000113180	822	8	302	343	0	figure3C	native_cds_rank_CDS8	severe_overflow	reconstruct_from_native_cds	302	343	reconstructed native block
+mus_musculus	IIIb	ENSMUST00000117691	ENSMUSP00000113180	822	9	394	461	0	figure3C	native_cds_rank_CDS9	severe_overflow	reconstruct_from_native_cds	343	393	reconstructed native block
+mus_musculus	IIIb	ENSMUST00000117691	ENSMUSP00000113180	822	10	461	509	0	figure3C	native_cds_rank_CDS10	severe_overflow	reconstruct_from_native_cds	394	461	reconstructed native block
+mus_musculus	IIIb	ENSMUST00000117691	ENSMUSP00000113180	822	11	510	573	0	figure3C	native_cds_rank_CDS11	severe_overflow	reconstruct_from_native_cds	461	510	reconstructed native block
+mus_musculus	IIIb	ENSMUST00000117691	ENSMUSP00000113180	822	12	573	614	0	figure3C	native_cds_rank_CDS12	severe_overflow	reconstruct_from_native_cds	511	574	reconstructed native block
+mus_musculus	IIIb	ENSMUST00000117691	ENSMUSP00000113180	822	13	615	671	0	figure3C	native_cds_rank_CDS13	severe_overflow	reconstruct_from_native_cds	574	615	reconstructed native block
+mus_musculus	IIIb	ENSMUST00000117691	ENSMUSP00000113180	822	14	671	697	0	figure3C	native_cds_rank_CDS14	severe_overflow	reconstruct_from_native_cds	616	672	reconstructed native block
+mus_musculus	IIIb	ENSMUST00000117691	ENSMUSP00000113180	822	15	697	786	0	figure3C	native_cds_rank_CDS15	severe_overflow	reconstruct_from_native_cds	672	698	reconstructed native block
+mus_musculus	IIIb	ENSMUST00000117691	ENSMUSP00000113180	822	16	786	841	19	figure3C	native_cds_rank_CDS16	severe_overflow	reconstruct_from_native_cds	698	787	reconstructed native block
+mus_musculus	IIIc	ENSMUST00000122054	ENSMUSP00000112430	840	1	1	55	0	figure3C		no_issue	keep	1	55
+mus_musculus	IIIc	ENSMUST00000122054	ENSMUSP00000112430	840	2	56	91	0	figure3C		no_issue	keep	56	91
+mus_musculus	IIIc	ENSMUST00000122054	ENSMUSP00000112430	840	3	91	137	0	figure3C		no_issue	keep	91	137
+mus_musculus	IIIc	ENSMUST00000122054	ENSMUSP00000112430	840	4	137	160	0	figure3C		no_issue	keep	137	160
+mus_musculus	IIIc	ENSMUST00000122054	ENSMUSP00000112430	840	5	161	201	0	figure3C		no_issue	keep	161	201
+mus_musculus	IIIc	ENSMUST00000122054	ENSMUSP00000112430	840	6	202	265	0	figure3C		no_issue	keep	202	265
+mus_musculus	IIIc	ENSMUST00000122054	ENSMUSP00000112430	840	7	265	302	0	figure3C		no_issue	keep	265	302
+mus_musculus	IIIc	ENSMUST00000122054	ENSMUSP00000112430	840	8	343	393	0	figure3C		no_issue	keep	343	393
+mus_musculus	IIIc	ENSMUST00000122054	ENSMUSP00000112430	840	9	394	461	0	figure3C		no_issue	keep	394	461
+mus_musculus	IIIc	ENSMUST00000122054	ENSMUSP00000112430	840	10	461	510	0	figure3C		no_issue	keep	461	510
+mus_musculus	IIIc	ENSMUST00000122054	ENSMUSP00000112430	840	11	511	574	0	figure3C		no_issue	keep	511	574
+mus_musculus	IIIc	ENSMUST00000122054	ENSMUSP00000112430	840	12	574	615	0	figure3C		no_issue	keep	574	615
+mus_musculus	IIIc	ENSMUST00000122054	ENSMUSP00000112430	840	13	616	672	0	figure3C		no_issue	keep	616	672
+mus_musculus	IIIc	ENSMUST00000122054	ENSMUSP00000112430	840	14	672	698	0	figure3C		no_issue	keep	672	698
+mus_musculus	IIIc	ENSMUST00000122054	ENSMUSP00000112430	840	15	698	787	0	figure3C		no_issue	keep	698	787
+mus_musculus	IIIc	ENSMUST00000122054	ENSMUSP00000112430	840	16	787	823	0	figure3C		no_issue	keep	787	823
+oreochromis_niloticus	IIIb	ENSONIT00000055812	ENSONIP00000060910	865	1	1	39	0	figure3C		no_issue	keep	1	39
+oreochromis_niloticus	IIIb	ENSONIT00000055812	ENSONIP00000060910	865	2	40	125	0	figure3C		no_issue	keep	40	125
+oreochromis_niloticus	IIIb	ENSONIT00000055812	ENSONIP00000060910	865	3	125	150	0	figure3C		no_issue	keep	125	150
+oreochromis_niloticus	IIIb	ENSONIT00000055812	ENSONIP00000060910	865	4	150	206	0	figure3C		no_issue	keep	150	206
+oreochromis_niloticus	IIIb	ENSONIT00000055812	ENSONIP00000060910	865	5	207	248	0	figure3C		no_issue	keep	207	248
+oreochromis_niloticus	IIIb	ENSONIT00000055812	ENSONIP00000060910	865	6	248	311	0	figure3C		no_issue	keep	248	311
+oreochromis_niloticus	IIIb	ENSONIT00000055812	ENSONIP00000060910	865	7	360	424	0	figure3C		no_issue	keep	360	424
+oreochromis_niloticus	IIIb	ENSONIT00000055812	ENSONIP00000060910	865	8	425	471	0	figure3C		no_issue	keep	425	471
+oreochromis_niloticus	IIIb	ENSONIT00000055812	ENSONIP00000060910	865	9	471	512	0	figure3C		no_issue	keep	471	512
+oreochromis_niloticus	IIIb	ENSONIT00000055812	ENSONIP00000060910	865	10	512	549	0	figure3C		no_issue	keep	512	549
+oreochromis_niloticus	IIIb	ENSONIT00000055812	ENSONIP00000060910	865	11	549	612	0	figure3C		no_issue	keep	549	612
+oreochromis_niloticus	IIIb	ENSONIT00000055812	ENSONIP00000060910	865	12	613	653	0	figure3C		no_issue	keep	613	653
+oreochromis_niloticus	IIIb	ENSONIT00000055812	ENSONIP00000060910	865	13	654	677	0	figure3C		no_issue	keep	654	677
+oreochromis_niloticus	IIIb	ENSONIT00000055812	ENSONIP00000060910	865	14	677	723	0	figure3C		no_issue	keep	677	723
+oreochromis_niloticus	IIIb	ENSONIT00000055812	ENSONIP00000060910	865	15	723	758	0	figure3C		no_issue	keep	723	758
+oreochromis_niloticus	IIIb	ENSONIT00000055812	ENSONIP00000060910	865	16	759	813	0	figure3C		no_issue	keep	759	813
+oreochromis_niloticus	IIIc	ENSONIT00000047381	ENSONIP00000063320	812	1	1	94	0	figure3C	native_cds_rank_CDS1	severe_overflow	reconstruct_from_native_cds	1	39	coding-exon blocks reconstructed from native local CDS features (figure3C blocks projected from a different transcript, overflow +54 aa); native max end 812 <= length 812
+oreochromis_niloticus	IIIc	ENSONIT00000047381	ENSONIP00000063320	812	2	95	180	0	figure3C	native_cds_rank_CDS2	severe_overflow	reconstruct_from_native_cds	40	125	reconstructed native block
+oreochromis_niloticus	IIIc	ENSONIT00000047381	ENSONIP00000063320	812	3	180	205	0	figure3C	native_cds_rank_CDS3	severe_overflow	reconstruct_from_native_cds	125	150	reconstructed native block
+oreochromis_niloticus	IIIc	ENSONIT00000047381	ENSONIP00000063320	812	4	205	261	0	figure3C	native_cds_rank_CDS4	severe_overflow	reconstruct_from_native_cds	150	206	reconstructed native block
+oreochromis_niloticus	IIIc	ENSONIT00000047381	ENSONIP00000063320	812	5	262	303	0	figure3C	native_cds_rank_CDS5	severe_overflow	reconstruct_from_native_cds	207	248	reconstructed native block
+oreochromis_niloticus	IIIc	ENSONIT00000047381	ENSONIP00000063320	812	6	303	366	0	figure3C	native_cds_rank_CDS6	severe_overflow	reconstruct_from_native_cds	248	311	reconstructed native block
+oreochromis_niloticus	IIIc	ENSONIT00000047381	ENSONIP00000063320	812	7	413	477	0	figure3C	native_cds_rank_CDS7	severe_overflow	reconstruct_from_native_cds	312	360	reconstructed native block
+oreochromis_niloticus	IIIc	ENSONIT00000047381	ENSONIP00000063320	812	8	478	524	0	figure3C	native_cds_rank_CDS8	severe_overflow	reconstruct_from_native_cds	360	424	reconstructed native block
+oreochromis_niloticus	IIIc	ENSONIT00000047381	ENSONIP00000063320	812	9	524	565	0	figure3C	native_cds_rank_CDS9	severe_overflow	reconstruct_from_native_cds	425	471	reconstructed native block
+oreochromis_niloticus	IIIc	ENSONIT00000047381	ENSONIP00000063320	812	10	565	602	0	figure3C	native_cds_rank_CDS10	severe_overflow	reconstruct_from_native_cds	471	512	reconstructed native block
+oreochromis_niloticus	IIIc	ENSONIT00000047381	ENSONIP00000063320	812	11	602	665	0	figure3C	native_cds_rank_CDS11	severe_overflow	reconstruct_from_native_cds	512	549	reconstructed native block
+oreochromis_niloticus	IIIc	ENSONIT00000047381	ENSONIP00000063320	812	12	666	706	0	figure3C	native_cds_rank_CDS12	severe_overflow	reconstruct_from_native_cds	549	612	reconstructed native block
+oreochromis_niloticus	IIIc	ENSONIT00000047381	ENSONIP00000063320	812	13	707	730	0	figure3C	native_cds_rank_CDS13	severe_overflow	reconstruct_from_native_cds	613	653	reconstructed native block
+oreochromis_niloticus	IIIc	ENSONIT00000047381	ENSONIP00000063320	812	14	730	776	0	figure3C	native_cds_rank_CDS14	severe_overflow	reconstruct_from_native_cds	654	677	reconstructed native block
+oreochromis_niloticus	IIIc	ENSONIT00000047381	ENSONIP00000063320	812	15	776	811	0	figure3C	native_cds_rank_CDS15	severe_overflow	reconstruct_from_native_cds	677	723	reconstructed native block
+oreochromis_niloticus	IIIc	ENSONIT00000047381	ENSONIP00000063320	812	16	812	866	54	figure3C	native_cds_rank_CDS16	severe_overflow	reconstruct_from_native_cds	723	758	reconstructed native block
+ornithorhynchus_anatinus	IIIb	XM_029080810.2	XP_028936643.1	840	1	1	56	0	figure3C		no_issue	keep	1	56
+ornithorhynchus_anatinus	IIIb	XM_029080810.2	XP_028936643.1	840	2	56	145	0	figure3C		no_issue	keep	56	145
+ornithorhynchus_anatinus	IIIb	XM_029080810.2	XP_028936643.1	840	3	145	170	0	figure3C		no_issue	keep	145	170
+ornithorhynchus_anatinus	IIIb	XM_029080810.2	XP_028936643.1	840	4	170	226	0	figure3C		no_issue	keep	170	226
+ornithorhynchus_anatinus	IIIb	XM_029080810.2	XP_028936643.1	840	5	227	268	0	figure3C		no_issue	keep	227	268
+ornithorhynchus_anatinus	IIIb	XM_029080810.2	XP_028936643.1	840	6	268	331	0	figure3C		no_issue	keep	268	331
+ornithorhynchus_anatinus	IIIb	XM_029080810.2	XP_028936643.1	840	7	380	447	0	figure3C		no_issue	keep	380	447
+ornithorhynchus_anatinus	IIIb	XM_029080810.2	XP_028936643.1	840	8	448	498	0	figure3C		no_issue	keep	448	498
+ornithorhynchus_anatinus	IIIb	XM_029080810.2	XP_028936643.1	840	9	498	539	0	figure3C		no_issue	keep	498	539
+ornithorhynchus_anatinus	IIIb	XM_029080810.2	XP_028936643.1	840	10	539	576	0	figure3C		no_issue	keep	539	576
+ornithorhynchus_anatinus	IIIb	XM_029080810.2	XP_028936643.1	840	11	576	639	0	figure3C		no_issue	keep	576	639
+ornithorhynchus_anatinus	IIIb	XM_029080810.2	XP_028936643.1	840	12	640	680	0	figure3C		no_issue	keep	640	680
+ornithorhynchus_anatinus	IIIb	XM_029080810.2	XP_028936643.1	840	13	681	704	0	figure3C		no_issue	keep	681	704
+ornithorhynchus_anatinus	IIIb	XM_029080810.2	XP_028936643.1	840	14	704	750	0	figure3C		no_issue	keep	704	750
+ornithorhynchus_anatinus	IIIb	XM_029080810.2	XP_028936643.1	840	15	750	785	0	figure3C		no_issue	keep	750	785
+ornithorhynchus_anatinus	IIIb	XM_029080810.2	XP_028936643.1	840	16	786	840	0	figure3C		no_issue	keep	786	840
+ornithorhynchus_anatinus	IIIc	XM_029080811.2	XP_028936644.1	839	1	1	56	0	figure3C		no_issue	keep	1	56
+ornithorhynchus_anatinus	IIIc	XM_029080811.2	XP_028936644.1	839	2	56	145	0	figure3C		no_issue	keep	56	145
+ornithorhynchus_anatinus	IIIc	XM_029080811.2	XP_028936644.1	839	3	145	170	0	figure3C		no_issue	keep	145	170
+ornithorhynchus_anatinus	IIIc	XM_029080811.2	XP_028936644.1	839	4	170	226	0	figure3C		no_issue	keep	170	226
+ornithorhynchus_anatinus	IIIc	XM_029080811.2	XP_028936644.1	839	5	227	268	0	figure3C		no_issue	keep	227	268
+ornithorhynchus_anatinus	IIIc	XM_029080811.2	XP_028936644.1	839	6	268	331	0	figure3C		no_issue	keep	268	331
+ornithorhynchus_anatinus	IIIc	XM_029080811.2	XP_028936644.1	839	7	381	448	0	figure3C		no_issue	keep	381	448
+ornithorhynchus_anatinus	IIIc	XM_029080811.2	XP_028936644.1	839	8	449	499	0	figure3C		no_issue	keep	449	499
+ornithorhynchus_anatinus	IIIc	XM_029080811.2	XP_028936644.1	839	9	499	540	0	figure3C		no_issue	keep	499	540
+ornithorhynchus_anatinus	IIIc	XM_029080811.2	XP_028936644.1	839	10	540	577	0	figure3C		no_issue	keep	540	577
+ornithorhynchus_anatinus	IIIc	XM_029080811.2	XP_028936644.1	839	11	577	640	0	figure3C		no_issue	keep	577	640
+ornithorhynchus_anatinus	IIIc	XM_029080811.2	XP_028936644.1	839	12	641	681	0	figure3C		no_issue	keep	641	681
+ornithorhynchus_anatinus	IIIc	XM_029080811.2	XP_028936644.1	839	13	682	705	0	figure3C		no_issue	keep	682	705
+ornithorhynchus_anatinus	IIIc	XM_029080811.2	XP_028936644.1	839	14	705	751	0	figure3C		no_issue	keep	705	751
+ornithorhynchus_anatinus	IIIc	XM_029080811.2	XP_028936644.1	839	15	751	786	0	figure3C		no_issue	keep	751	786
+ornithorhynchus_anatinus	IIIc	XM_029080811.2	XP_028936644.1	839	16	787	841	2	figure3C	codon_boundary_rounding	minor_plus1_plus2_rounding	clamp_to_protein_length_with_minor_flag	787	839	final block end clamped 841->839 (+2 aa rounding)
+oryctolagus_cuniculus	IIIb	XM_070056999.1	XP_069913100.1	841	1	1	56	0	figure3C		no_issue	keep	1	56
+oryctolagus_cuniculus	IIIb	XM_070056999.1	XP_069913100.1	841	2	56	145	0	figure3C		no_issue	keep	56	145
+oryctolagus_cuniculus	IIIb	XM_070056999.1	XP_069913100.1	841	3	145	171	0	figure3C		no_issue	keep	145	171
+oryctolagus_cuniculus	IIIb	XM_070056999.1	XP_069913100.1	841	4	171	227	0	figure3C		no_issue	keep	171	227
+oryctolagus_cuniculus	IIIb	XM_070056999.1	XP_069913100.1	841	5	228	269	0	figure3C		no_issue	keep	228	269
+oryctolagus_cuniculus	IIIb	XM_070056999.1	XP_069913100.1	841	6	269	332	0	figure3C		no_issue	keep	269	332
+oryctolagus_cuniculus	IIIb	XM_070056999.1	XP_069913100.1	841	7	381	448	0	figure3C		no_issue	keep	381	448
+oryctolagus_cuniculus	IIIb	XM_070056999.1	XP_069913100.1	841	8	449	499	0	figure3C		no_issue	keep	449	499
+oryctolagus_cuniculus	IIIb	XM_070056999.1	XP_069913100.1	841	9	499	540	0	figure3C		no_issue	keep	499	540
+oryctolagus_cuniculus	IIIb	XM_070056999.1	XP_069913100.1	841	10	540	577	0	figure3C		no_issue	keep	540	577
+oryctolagus_cuniculus	IIIb	XM_070056999.1	XP_069913100.1	841	11	577	640	0	figure3C		no_issue	keep	577	640
+oryctolagus_cuniculus	IIIb	XM_070056999.1	XP_069913100.1	841	12	641	681	0	figure3C		no_issue	keep	641	681
+oryctolagus_cuniculus	IIIb	XM_070056999.1	XP_069913100.1	841	13	682	705	0	figure3C		no_issue	keep	682	705
+oryctolagus_cuniculus	IIIb	XM_070056999.1	XP_069913100.1	841	14	705	751	0	figure3C		no_issue	keep	705	751
+oryctolagus_cuniculus	IIIb	XM_070056999.1	XP_069913100.1	841	15	751	786	0	figure3C		no_issue	keep	751	786
+oryctolagus_cuniculus	IIIb	XM_070056999.1	XP_069913100.1	841	16	787	841	0	figure3C		no_issue	keep	787	841
+oryctolagus_cuniculus	IIIc	XM_070056995.1	XP_069913096.1	840	1	1	56	0	figure3C		no_issue	keep	1	56
+oryctolagus_cuniculus	IIIc	XM_070056995.1	XP_069913096.1	840	2	56	145	0	figure3C		no_issue	keep	56	145
+oryctolagus_cuniculus	IIIc	XM_070056995.1	XP_069913096.1	840	3	145	171	0	figure3C		no_issue	keep	145	171
+oryctolagus_cuniculus	IIIc	XM_070056995.1	XP_069913096.1	840	4	171	227	0	figure3C		no_issue	keep	171	227
+oryctolagus_cuniculus	IIIc	XM_070056995.1	XP_069913096.1	840	5	228	269	0	figure3C		no_issue	keep	228	269
+oryctolagus_cuniculus	IIIc	XM_070056995.1	XP_069913096.1	840	6	269	332	0	figure3C		no_issue	keep	269	332
+oryctolagus_cuniculus	IIIc	XM_070056995.1	XP_069913096.1	840	7	382	449	0	figure3C		no_issue	keep	382	449
+oryctolagus_cuniculus	IIIc	XM_070056995.1	XP_069913096.1	840	8	450	500	0	figure3C		no_issue	keep	450	500
+oryctolagus_cuniculus	IIIc	XM_070056995.1	XP_069913096.1	840	9	500	541	0	figure3C		no_issue	keep	500	541
+oryctolagus_cuniculus	IIIc	XM_070056995.1	XP_069913096.1	840	10	541	578	0	figure3C		no_issue	keep	541	578
+oryctolagus_cuniculus	IIIc	XM_070056995.1	XP_069913096.1	840	11	578	641	0	figure3C		no_issue	keep	578	641
+oryctolagus_cuniculus	IIIc	XM_070056995.1	XP_069913096.1	840	12	642	682	0	figure3C		no_issue	keep	642	682
+oryctolagus_cuniculus	IIIc	XM_070056995.1	XP_069913096.1	840	13	683	706	0	figure3C		no_issue	keep	683	706
+oryctolagus_cuniculus	IIIc	XM_070056995.1	XP_069913096.1	840	14	706	752	0	figure3C		no_issue	keep	706	752
+oryctolagus_cuniculus	IIIc	XM_070056995.1	XP_069913096.1	840	15	752	787	0	figure3C		no_issue	keep	752	787
+oryctolagus_cuniculus	IIIc	XM_070056995.1	XP_069913096.1	840	16	788	842	2	figure3C	codon_boundary_rounding	minor_plus1_plus2_rounding	clamp_to_protein_length_with_minor_flag	788	840	final block end clamped 842->840 (+2 aa rounding)
+oryzias_latipes	IIIb	XM_011484753.4	XP_011483055.1	830	1	1	57	0	figure3C	native_cds_rank_CDS1	moderate_overflow	reconstruct_from_native_cds	1	57	coding-exon blocks reconstructed from native local CDS features (figure3C blocks projected from a different transcript, overflow +3 aa); native max end 830 <= length 830
+oryzias_latipes	IIIb	XM_011484753.4	XP_011483055.1	830	2	57	143	0	figure3C	native_cds_rank_CDS2	moderate_overflow	reconstruct_from_native_cds	57	143	reconstructed native block
+oryzias_latipes	IIIb	XM_011484753.4	XP_011483055.1	830	3	143	168	0	figure3C	native_cds_rank_CDS3	moderate_overflow	reconstruct_from_native_cds	143	168	reconstructed native block
+oryzias_latipes	IIIb	XM_011484753.4	XP_011483055.1	830	4	168	224	0	figure3C	native_cds_rank_CDS4	moderate_overflow	reconstruct_from_native_cds	168	224	reconstructed native block
+oryzias_latipes	IIIb	XM_011484753.4	XP_011483055.1	830	5	225	266	0	figure3C	native_cds_rank_CDS5	moderate_overflow	reconstruct_from_native_cds	225	266	reconstructed native block
+oryzias_latipes	IIIb	XM_011484753.4	XP_011483055.1	830	6	266	329	0	figure3C	native_cds_rank_CDS6	moderate_overflow	reconstruct_from_native_cds	266	329	reconstructed native block
+oryzias_latipes	IIIb	XM_011484753.4	XP_011483055.1	830	7	378	444	0	figure3C	native_cds_rank_CDS7	moderate_overflow	reconstruct_from_native_cds	330	376	reconstructed native block
+oryzias_latipes	IIIb	XM_011484753.4	XP_011483055.1	830	8	445	491	0	figure3C	native_cds_rank_CDS8	moderate_overflow	reconstruct_from_native_cds	376	442	reconstructed native block
+oryzias_latipes	IIIb	XM_011484753.4	XP_011483055.1	830	9	491	532	0	figure3C	native_cds_rank_CDS9	moderate_overflow	reconstruct_from_native_cds	443	489	reconstructed native block
+oryzias_latipes	IIIb	XM_011484753.4	XP_011483055.1	830	10	532	569	0	figure3C	native_cds_rank_CDS10	moderate_overflow	reconstruct_from_native_cds	489	530	reconstructed native block
+oryzias_latipes	IIIb	XM_011484753.4	XP_011483055.1	830	11	569	632	0	figure3C	native_cds_rank_CDS11	moderate_overflow	reconstruct_from_native_cds	530	567	reconstructed native block
+oryzias_latipes	IIIb	XM_011484753.4	XP_011483055.1	830	12	633	673	0	figure3C	native_cds_rank_CDS12	moderate_overflow	reconstruct_from_native_cds	567	630	reconstructed native block
+oryzias_latipes	IIIb	XM_011484753.4	XP_011483055.1	830	13	674	697	0	figure3C	native_cds_rank_CDS13	moderate_overflow	reconstruct_from_native_cds	631	671	reconstructed native block
+oryzias_latipes	IIIb	XM_011484753.4	XP_011483055.1	830	14	697	743	0	figure3C	native_cds_rank_CDS14	moderate_overflow	reconstruct_from_native_cds	672	695	reconstructed native block
+oryzias_latipes	IIIb	XM_011484753.4	XP_011483055.1	830	15	743	778	0	figure3C	native_cds_rank_CDS15	moderate_overflow	reconstruct_from_native_cds	695	741	reconstructed native block
+oryzias_latipes	IIIb	XM_011484753.4	XP_011483055.1	830	16	779	833	3	figure3C	native_cds_rank_CDS16	moderate_overflow	reconstruct_from_native_cds	741	776	reconstructed native block
+oryzias_latipes	IIIc	XM_078931618.1	XP_078787744.1	832	1	1	57	0	figure3C		no_issue	keep	1	57
+oryzias_latipes	IIIc	XM_078931618.1	XP_078787744.1	832	2	57	143	0	figure3C		no_issue	keep	57	143
+oryzias_latipes	IIIc	XM_078931618.1	XP_078787744.1	832	3	143	168	0	figure3C		no_issue	keep	143	168
+oryzias_latipes	IIIc	XM_078931618.1	XP_078787744.1	832	4	168	224	0	figure3C		no_issue	keep	168	224
+oryzias_latipes	IIIc	XM_078931618.1	XP_078787744.1	832	5	225	266	0	figure3C		no_issue	keep	225	266
+oryzias_latipes	IIIc	XM_078931618.1	XP_078787744.1	832	6	266	329	0	figure3C		no_issue	keep	266	329
+oryzias_latipes	IIIc	XM_078931618.1	XP_078787744.1	832	7	376	442	0	figure3C		no_issue	keep	376	442
+oryzias_latipes	IIIc	XM_078931618.1	XP_078787744.1	832	8	443	489	0	figure3C		no_issue	keep	443	489
+oryzias_latipes	IIIc	XM_078931618.1	XP_078787744.1	832	9	489	530	0	figure3C		no_issue	keep	489	530
+oryzias_latipes	IIIc	XM_078931618.1	XP_078787744.1	832	10	530	567	0	figure3C		no_issue	keep	530	567
+oryzias_latipes	IIIc	XM_078931618.1	XP_078787744.1	832	11	567	630	0	figure3C		no_issue	keep	567	630
+oryzias_latipes	IIIc	XM_078931618.1	XP_078787744.1	832	12	631	671	0	figure3C		no_issue	keep	631	671
+oryzias_latipes	IIIc	XM_078931618.1	XP_078787744.1	832	13	672	695	0	figure3C		no_issue	keep	672	695
+oryzias_latipes	IIIc	XM_078931618.1	XP_078787744.1	832	14	695	741	0	figure3C		no_issue	keep	695	741
+oryzias_latipes	IIIc	XM_078931618.1	XP_078787744.1	832	15	741	776	0	figure3C		no_issue	keep	741	776
+oryzias_latipes	IIIc	XM_078931618.1	XP_078787744.1	832	16	777	831	0	figure3C		no_issue	keep	777	831
+ovis_aries	IIIb	XM_060404505.1	XP_060260488.1	841	1	1	56	0	figure3C		no_issue	keep	1	56
+ovis_aries	IIIb	XM_060404505.1	XP_060260488.1	841	2	56	145	0	figure3C		no_issue	keep	56	145
+ovis_aries	IIIb	XM_060404505.1	XP_060260488.1	841	3	145	171	0	figure3C		no_issue	keep	145	171
+ovis_aries	IIIb	XM_060404505.1	XP_060260488.1	841	4	171	227	0	figure3C		no_issue	keep	171	227
+ovis_aries	IIIb	XM_060404505.1	XP_060260488.1	841	5	228	269	0	figure3C		no_issue	keep	228	269
+ovis_aries	IIIb	XM_060404505.1	XP_060260488.1	841	6	269	332	0	figure3C		no_issue	keep	269	332
+ovis_aries	IIIb	XM_060404505.1	XP_060260488.1	841	7	381	449	0	figure3C		no_issue	keep	381	449
+ovis_aries	IIIb	XM_060404505.1	XP_060260488.1	841	8	449	499	0	figure3C		no_issue	keep	449	499
+ovis_aries	IIIb	XM_060404505.1	XP_060260488.1	841	9	499	540	0	figure3C		no_issue	keep	499	540
+ovis_aries	IIIb	XM_060404505.1	XP_060260488.1	841	10	540	577	0	figure3C		no_issue	keep	540	577
+ovis_aries	IIIb	XM_060404505.1	XP_060260488.1	841	11	577	640	0	figure3C		no_issue	keep	577	640
+ovis_aries	IIIb	XM_060404505.1	XP_060260488.1	841	12	641	681	0	figure3C		no_issue	keep	641	681
+ovis_aries	IIIb	XM_060404505.1	XP_060260488.1	841	13	682	705	0	figure3C		no_issue	keep	682	705
+ovis_aries	IIIb	XM_060404505.1	XP_060260488.1	841	14	705	751	0	figure3C		no_issue	keep	705	751
+ovis_aries	IIIb	XM_060404505.1	XP_060260488.1	841	15	751	786	0	figure3C		no_issue	keep	751	786
+ovis_aries	IIIb	XM_060404505.1	XP_060260488.1	841	16	787	841	0	figure3C		no_issue	keep	787	841
+ovis_aries	IIIc	XM_060404507.1	XP_060260490.1	840	1	1	56	0	figure3C		no_issue	keep	1	56
+ovis_aries	IIIc	XM_060404507.1	XP_060260490.1	840	2	56	145	0	figure3C		no_issue	keep	56	145
+ovis_aries	IIIc	XM_060404507.1	XP_060260490.1	840	3	145	171	0	figure3C		no_issue	keep	145	171
+ovis_aries	IIIc	XM_060404507.1	XP_060260490.1	840	4	171	227	0	figure3C		no_issue	keep	171	227
+ovis_aries	IIIc	XM_060404507.1	XP_060260490.1	840	5	228	269	0	figure3C		no_issue	keep	228	269
+ovis_aries	IIIc	XM_060404507.1	XP_060260490.1	840	6	269	332	0	figure3C		no_issue	keep	269	332
+ovis_aries	IIIc	XM_060404507.1	XP_060260490.1	840	7	382	450	0	figure3C		no_issue	keep	382	450
+ovis_aries	IIIc	XM_060404507.1	XP_060260490.1	840	8	450	500	0	figure3C		no_issue	keep	450	500
+ovis_aries	IIIc	XM_060404507.1	XP_060260490.1	840	9	500	541	0	figure3C		no_issue	keep	500	541
+ovis_aries	IIIc	XM_060404507.1	XP_060260490.1	840	10	541	578	0	figure3C		no_issue	keep	541	578
+ovis_aries	IIIc	XM_060404507.1	XP_060260490.1	840	11	578	641	0	figure3C		no_issue	keep	578	641
+ovis_aries	IIIc	XM_060404507.1	XP_060260490.1	840	12	642	682	0	figure3C		no_issue	keep	642	682
+ovis_aries	IIIc	XM_060404507.1	XP_060260490.1	840	13	683	706	0	figure3C		no_issue	keep	683	706
+ovis_aries	IIIc	XM_060404507.1	XP_060260490.1	840	14	706	752	0	figure3C		no_issue	keep	706	752
+ovis_aries	IIIc	XM_060404507.1	XP_060260490.1	840	15	752	787	0	figure3C		no_issue	keep	752	787
+ovis_aries	IIIc	XM_060404507.1	XP_060260490.1	840	16	788	842	2	figure3C	codon_boundary_rounding	minor_plus1_plus2_rounding	clamp_to_protein_length_with_minor_flag	788	840	final block end clamped 842->840 (+2 aa rounding)
+pan_troglodytes	IIIb	XM_054660538.2	XP_054516513.1	841	1	1	56	0	figure3C		no_issue	keep	1	56
+pan_troglodytes	IIIb	XM_054660538.2	XP_054516513.1	841	2	56	145	0	figure3C		no_issue	keep	56	145
+pan_troglodytes	IIIb	XM_054660538.2	XP_054516513.1	841	3	145	171	0	figure3C		no_issue	keep	145	171
+pan_troglodytes	IIIb	XM_054660538.2	XP_054516513.1	841	4	171	227	0	figure3C		no_issue	keep	171	227
+pan_troglodytes	IIIb	XM_054660538.2	XP_054516513.1	841	5	228	269	0	figure3C		no_issue	keep	228	269
+pan_troglodytes	IIIb	XM_054660538.2	XP_054516513.1	841	6	269	332	0	figure3C		no_issue	keep	269	332
+pan_troglodytes	IIIb	XM_054660538.2	XP_054516513.1	841	7	381	449	0	figure3C		no_issue	keep	381	449
+pan_troglodytes	IIIb	XM_054660538.2	XP_054516513.1	841	8	449	499	0	figure3C		no_issue	keep	449	499
+pan_troglodytes	IIIb	XM_054660538.2	XP_054516513.1	841	9	499	540	0	figure3C		no_issue	keep	499	540
+pan_troglodytes	IIIb	XM_054660538.2	XP_054516513.1	841	10	540	577	0	figure3C		no_issue	keep	540	577
+pan_troglodytes	IIIb	XM_054660538.2	XP_054516513.1	841	11	577	640	0	figure3C		no_issue	keep	577	640
+pan_troglodytes	IIIb	XM_054660538.2	XP_054516513.1	841	12	641	681	0	figure3C		no_issue	keep	641	681
+pan_troglodytes	IIIb	XM_054660538.2	XP_054516513.1	841	13	682	705	0	figure3C		no_issue	keep	682	705
+pan_troglodytes	IIIb	XM_054660538.2	XP_054516513.1	841	14	705	751	0	figure3C		no_issue	keep	705	751
+pan_troglodytes	IIIb	XM_054660538.2	XP_054516513.1	841	15	751	786	0	figure3C		no_issue	keep	751	786
+pan_troglodytes	IIIb	XM_054660538.2	XP_054516513.1	841	16	787	841	0	figure3C		no_issue	keep	787	841
+pan_troglodytes	IIIc	XM_054660539.2	XP_054516514.1	840	1	1	56	0	figure3C		no_issue	keep	1	56
+pan_troglodytes	IIIc	XM_054660539.2	XP_054516514.1	840	2	56	145	0	figure3C		no_issue	keep	56	145
+pan_troglodytes	IIIc	XM_054660539.2	XP_054516514.1	840	3	145	171	0	figure3C		no_issue	keep	145	171
+pan_troglodytes	IIIc	XM_054660539.2	XP_054516514.1	840	4	171	227	0	figure3C		no_issue	keep	171	227
+pan_troglodytes	IIIc	XM_054660539.2	XP_054516514.1	840	5	228	269	0	figure3C		no_issue	keep	228	269
+pan_troglodytes	IIIc	XM_054660539.2	XP_054516514.1	840	6	269	332	0	figure3C		no_issue	keep	269	332
+pan_troglodytes	IIIc	XM_054660539.2	XP_054516514.1	840	7	382	450	0	figure3C		no_issue	keep	382	450
+pan_troglodytes	IIIc	XM_054660539.2	XP_054516514.1	840	8	450	500	0	figure3C		no_issue	keep	450	500
+pan_troglodytes	IIIc	XM_054660539.2	XP_054516514.1	840	9	500	541	0	figure3C		no_issue	keep	500	541
+pan_troglodytes	IIIc	XM_054660539.2	XP_054516514.1	840	10	541	578	0	figure3C		no_issue	keep	541	578
+pan_troglodytes	IIIc	XM_054660539.2	XP_054516514.1	840	11	578	641	0	figure3C		no_issue	keep	578	641
+pan_troglodytes	IIIc	XM_054660539.2	XP_054516514.1	840	12	642	682	0	figure3C		no_issue	keep	642	682
+pan_troglodytes	IIIc	XM_054660539.2	XP_054516514.1	840	13	683	706	0	figure3C		no_issue	keep	683	706
+pan_troglodytes	IIIc	XM_054660539.2	XP_054516514.1	840	14	706	752	0	figure3C		no_issue	keep	706	752
+pan_troglodytes	IIIc	XM_054660539.2	XP_054516514.1	840	15	752	787	0	figure3C		no_issue	keep	752	787
+pan_troglodytes	IIIc	XM_054660539.2	XP_054516514.1	840	16	788	842	2	figure3C	codon_boundary_rounding	minor_plus1_plus2_rounding	clamp_to_protein_length_with_minor_flag	788	840	final block end clamped 842->840 (+2 aa rounding)
+pongo_abelii	IIIc	XM_024252936	XP_024108704.1	838	1	1	56	0	figure3C	native_cds_rank_CDS1	moderate_overflow	reconstruct_from_native_cds	1	56	coding-exon blocks reconstructed from native local CDS features (figure3C blocks projected from a different transcript, overflow +3 aa); native max end 838 <= length 838
+pongo_abelii	IIIc	XM_024252936	XP_024108704.1	838	2	56	145	0	figure3C	native_cds_rank_CDS2	moderate_overflow	reconstruct_from_native_cds	56	145	reconstructed native block
+pongo_abelii	IIIc	XM_024252936	XP_024108704.1	838	3	145	171	0	figure3C	native_cds_rank_CDS3	moderate_overflow	reconstruct_from_native_cds	145	171	reconstructed native block
+pongo_abelii	IIIc	XM_024252936	XP_024108704.1	838	4	171	227	0	figure3C	native_cds_rank_CDS4	moderate_overflow	reconstruct_from_native_cds	171	227	reconstructed native block
+pongo_abelii	IIIc	XM_024252936	XP_024108704.1	838	5	228	269	0	figure3C	native_cds_rank_CDS5	moderate_overflow	reconstruct_from_native_cds	228	269	reconstructed native block
+pongo_abelii	IIIc	XM_024252936	XP_024108704.1	838	6	269	332	0	figure3C	native_cds_rank_CDS6	moderate_overflow	reconstruct_from_native_cds	269	332	reconstructed native block
+pongo_abelii	IIIc	XM_024252936	XP_024108704.1	838	7	333	381	0	figure3C	native_cds_rank_CDS7	moderate_overflow	reconstruct_from_native_cds	333	381	reconstructed native block
+pongo_abelii	IIIc	XM_024252936	XP_024108704.1	838	8	449	499	0	figure3C	native_cds_rank_CDS8	moderate_overflow	reconstruct_from_native_cds	381	446	reconstructed native block
+pongo_abelii	IIIc	XM_024252936	XP_024108704.1	838	9	499	540	0	figure3C	native_cds_rank_CDS9	moderate_overflow	reconstruct_from_native_cds	447	497	reconstructed native block
+pongo_abelii	IIIc	XM_024252936	XP_024108704.1	838	10	540	577	0	figure3C	native_cds_rank_CDS10	moderate_overflow	reconstruct_from_native_cds	497	538	reconstructed native block
+pongo_abelii	IIIc	XM_024252936	XP_024108704.1	838	11	577	640	0	figure3C	native_cds_rank_CDS11	moderate_overflow	reconstruct_from_native_cds	538	575	reconstructed native block
+pongo_abelii	IIIc	XM_024252936	XP_024108704.1	838	12	641	681	0	figure3C	native_cds_rank_CDS12	moderate_overflow	reconstruct_from_native_cds	575	638	reconstructed native block
+pongo_abelii	IIIc	XM_024252936	XP_024108704.1	838	13	682	705	0	figure3C	native_cds_rank_CDS13	moderate_overflow	reconstruct_from_native_cds	639	679	reconstructed native block
+pongo_abelii	IIIc	XM_024252936	XP_024108704.1	838	14	705	751	0	figure3C	native_cds_rank_CDS14	moderate_overflow	reconstruct_from_native_cds	680	703	reconstructed native block
+pongo_abelii	IIIc	XM_024252936	XP_024108704.1	838	15	751	786	0	figure3C	native_cds_rank_CDS15	moderate_overflow	reconstruct_from_native_cds	703	749	reconstructed native block
+pongo_abelii	IIIc	XM_024252936	XP_024108704.1	838	16	787	841	3	figure3C	native_cds_rank_CDS16	moderate_overflow	reconstruct_from_native_cds	749	784	reconstructed native block
+rattus_norvegicus	IIIb	XM_063281078.1	XP_063137148.1	841	1	1	56	0	figure3C		no_issue	keep	1	56
+rattus_norvegicus	IIIb	XM_063281078.1	XP_063137148.1	841	2	56	145	0	figure3C		no_issue	keep	56	145
+rattus_norvegicus	IIIb	XM_063281078.1	XP_063137148.1	841	3	145	171	0	figure3C		no_issue	keep	145	171
+rattus_norvegicus	IIIb	XM_063281078.1	XP_063137148.1	841	4	171	227	0	figure3C		no_issue	keep	171	227
+rattus_norvegicus	IIIb	XM_063281078.1	XP_063137148.1	841	5	228	269	0	figure3C		no_issue	keep	228	269
+rattus_norvegicus	IIIb	XM_063281078.1	XP_063137148.1	841	6	269	332	0	figure3C		no_issue	keep	269	332
+rattus_norvegicus	IIIb	XM_063281078.1	XP_063137148.1	841	7	381	449	0	figure3C		no_issue	keep	381	449
+rattus_norvegicus	IIIb	XM_063281078.1	XP_063137148.1	841	8	449	499	0	figure3C		no_issue	keep	449	499
+rattus_norvegicus	IIIb	XM_063281078.1	XP_063137148.1	841	9	499	540	0	figure3C		no_issue	keep	499	540
+rattus_norvegicus	IIIb	XM_063281078.1	XP_063137148.1	841	10	540	577	0	figure3C		no_issue	keep	540	577
+rattus_norvegicus	IIIb	XM_063281078.1	XP_063137148.1	841	11	577	640	0	figure3C		no_issue	keep	577	640
+rattus_norvegicus	IIIb	XM_063281078.1	XP_063137148.1	841	12	641	681	0	figure3C		no_issue	keep	641	681
+rattus_norvegicus	IIIb	XM_063281078.1	XP_063137148.1	841	13	682	705	0	figure3C		no_issue	keep	682	705
+rattus_norvegicus	IIIb	XM_063281078.1	XP_063137148.1	841	14	705	751	0	figure3C		no_issue	keep	705	751
+rattus_norvegicus	IIIb	XM_063281078.1	XP_063137148.1	841	15	751	786	0	figure3C		no_issue	keep	751	786
+rattus_norvegicus	IIIb	XM_063281078.1	XP_063137148.1	841	16	787	841	0	figure3C		no_issue	keep	787	841
+rattus_norvegicus	IIIc	XM_063281079.1	XP_063137149.1	840	1	1	56	0	figure3C		no_issue	keep	1	56
+rattus_norvegicus	IIIc	XM_063281079.1	XP_063137149.1	840	2	56	145	0	figure3C		no_issue	keep	56	145
+rattus_norvegicus	IIIc	XM_063281079.1	XP_063137149.1	840	3	145	171	0	figure3C		no_issue	keep	145	171
+rattus_norvegicus	IIIc	XM_063281079.1	XP_063137149.1	840	4	171	227	0	figure3C		no_issue	keep	171	227
+rattus_norvegicus	IIIc	XM_063281079.1	XP_063137149.1	840	5	228	269	0	figure3C		no_issue	keep	228	269
+rattus_norvegicus	IIIc	XM_063281079.1	XP_063137149.1	840	6	269	332	0	figure3C		no_issue	keep	269	332
+rattus_norvegicus	IIIc	XM_063281079.1	XP_063137149.1	840	7	382	450	0	figure3C		no_issue	keep	382	450
+rattus_norvegicus	IIIc	XM_063281079.1	XP_063137149.1	840	8	450	500	0	figure3C		no_issue	keep	450	500
+rattus_norvegicus	IIIc	XM_063281079.1	XP_063137149.1	840	9	500	541	0	figure3C		no_issue	keep	500	541
+rattus_norvegicus	IIIc	XM_063281079.1	XP_063137149.1	840	10	541	578	0	figure3C		no_issue	keep	541	578
+rattus_norvegicus	IIIc	XM_063281079.1	XP_063137149.1	840	11	578	641	0	figure3C		no_issue	keep	578	641
+rattus_norvegicus	IIIc	XM_063281079.1	XP_063137149.1	840	12	642	682	0	figure3C		no_issue	keep	642	682
+rattus_norvegicus	IIIc	XM_063281079.1	XP_063137149.1	840	13	683	706	0	figure3C		no_issue	keep	683	706
+rattus_norvegicus	IIIc	XM_063281079.1	XP_063137149.1	840	14	706	752	0	figure3C		no_issue	keep	706	752
+rattus_norvegicus	IIIc	XM_063281079.1	XP_063137149.1	840	15	752	787	0	figure3C		no_issue	keep	752	787
+rattus_norvegicus	IIIc	XM_063281079.1	XP_063137149.1	840	16	788	842	2	figure3C	codon_boundary_rounding	minor_plus1_plus2_rounding	clamp_to_protein_length_with_minor_flag	788	840	final block end clamped 842->840 (+2 aa rounding)
+sus_scrofa	IIIb	XM_084993068.1	XP_084849194.1	841	1	1	56	0	figure3C		no_issue	keep	1	56
+sus_scrofa	IIIb	XM_084993068.1	XP_084849194.1	841	2	56	145	0	figure3C		no_issue	keep	56	145
+sus_scrofa	IIIb	XM_084993068.1	XP_084849194.1	841	3	145	171	0	figure3C		no_issue	keep	145	171
+sus_scrofa	IIIb	XM_084993068.1	XP_084849194.1	841	4	171	227	0	figure3C		no_issue	keep	171	227
+sus_scrofa	IIIb	XM_084993068.1	XP_084849194.1	841	5	228	269	0	figure3C		no_issue	keep	228	269
+sus_scrofa	IIIb	XM_084993068.1	XP_084849194.1	841	6	269	332	0	figure3C		no_issue	keep	269	332
+sus_scrofa	IIIb	XM_084993068.1	XP_084849194.1	841	7	381	449	0	figure3C		no_issue	keep	381	449
+sus_scrofa	IIIb	XM_084993068.1	XP_084849194.1	841	8	449	499	0	figure3C		no_issue	keep	449	499
+sus_scrofa	IIIb	XM_084993068.1	XP_084849194.1	841	9	499	540	0	figure3C		no_issue	keep	499	540
+sus_scrofa	IIIb	XM_084993068.1	XP_084849194.1	841	10	540	577	0	figure3C		no_issue	keep	540	577
+sus_scrofa	IIIb	XM_084993068.1	XP_084849194.1	841	11	577	640	0	figure3C		no_issue	keep	577	640
+sus_scrofa	IIIb	XM_084993068.1	XP_084849194.1	841	12	641	681	0	figure3C		no_issue	keep	641	681
+sus_scrofa	IIIb	XM_084993068.1	XP_084849194.1	841	13	682	705	0	figure3C		no_issue	keep	682	705
+sus_scrofa	IIIb	XM_084993068.1	XP_084849194.1	841	14	705	751	0	figure3C		no_issue	keep	705	751
+sus_scrofa	IIIb	XM_084993068.1	XP_084849194.1	841	15	751	786	0	figure3C		no_issue	keep	751	786
+sus_scrofa	IIIb	XM_084993068.1	XP_084849194.1	841	16	787	841	0	figure3C		no_issue	keep	787	841
+sus_scrofa	IIIc	XM_084993071.1	XP_084849197.1	840	1	1	56	0	figure3C		no_issue	keep	1	56
+sus_scrofa	IIIc	XM_084993071.1	XP_084849197.1	840	2	56	145	0	figure3C		no_issue	keep	56	145
+sus_scrofa	IIIc	XM_084993071.1	XP_084849197.1	840	3	145	171	0	figure3C		no_issue	keep	145	171
+sus_scrofa	IIIc	XM_084993071.1	XP_084849197.1	840	4	171	227	0	figure3C		no_issue	keep	171	227
+sus_scrofa	IIIc	XM_084993071.1	XP_084849197.1	840	5	228	269	0	figure3C		no_issue	keep	228	269
+sus_scrofa	IIIc	XM_084993071.1	XP_084849197.1	840	6	269	332	0	figure3C		no_issue	keep	269	332
+sus_scrofa	IIIc	XM_084993071.1	XP_084849197.1	840	7	382	450	0	figure3C		no_issue	keep	382	450
+sus_scrofa	IIIc	XM_084993071.1	XP_084849197.1	840	8	450	500	0	figure3C		no_issue	keep	450	500
+sus_scrofa	IIIc	XM_084993071.1	XP_084849197.1	840	9	500	541	0	figure3C		no_issue	keep	500	541
+sus_scrofa	IIIc	XM_084993071.1	XP_084849197.1	840	10	541	578	0	figure3C		no_issue	keep	541	578
+sus_scrofa	IIIc	XM_084993071.1	XP_084849197.1	840	11	578	641	0	figure3C		no_issue	keep	578	641
+sus_scrofa	IIIc	XM_084993071.1	XP_084849197.1	840	12	642	682	0	figure3C		no_issue	keep	642	682
+sus_scrofa	IIIc	XM_084993071.1	XP_084849197.1	840	13	683	706	0	figure3C		no_issue	keep	683	706
+sus_scrofa	IIIc	XM_084993071.1	XP_084849197.1	840	14	706	752	0	figure3C		no_issue	keep	706	752
+sus_scrofa	IIIc	XM_084993071.1	XP_084849197.1	840	15	752	787	0	figure3C		no_issue	keep	752	787
+sus_scrofa	IIIc	XM_084993071.1	XP_084849197.1	840	16	788	842	2	figure3C	codon_boundary_rounding	minor_plus1_plus2_rounding	clamp_to_protein_length_with_minor_flag	788	840	final block end clamped 842->840 (+2 aa rounding)
+taeniopygia_guttata	IIIb	XM_072931307.1	XP_072787408.1	891	1	1	21	0	figure3C		no_issue	keep	1	21
+taeniopygia_guttata	IIIb	XM_072931307.1	XP_072787408.1	891	2	21	107	0	figure3C		no_issue	keep	21	107
+taeniopygia_guttata	IIIb	XM_072931307.1	XP_072787408.1	891	3	107	196	0	figure3C		no_issue	keep	107	196
+taeniopygia_guttata	IIIb	XM_072931307.1	XP_072787408.1	891	4	196	221	0	figure3C		no_issue	keep	196	221
+taeniopygia_guttata	IIIb	XM_072931307.1	XP_072787408.1	891	5	221	277	0	figure3C		no_issue	keep	221	277
+taeniopygia_guttata	IIIb	XM_072931307.1	XP_072787408.1	891	6	278	319	0	figure3C		no_issue	keep	278	319
+taeniopygia_guttata	IIIb	XM_072931307.1	XP_072787408.1	891	7	319	382	0	figure3C		no_issue	keep	319	382
+taeniopygia_guttata	IIIb	XM_072931307.1	XP_072787408.1	891	8	431	499	0	figure3C		no_issue	keep	431	499
+taeniopygia_guttata	IIIb	XM_072931307.1	XP_072787408.1	891	9	499	549	0	figure3C		no_issue	keep	499	549
+taeniopygia_guttata	IIIb	XM_072931307.1	XP_072787408.1	891	10	549	590	0	figure3C		no_issue	keep	549	590
+taeniopygia_guttata	IIIb	XM_072931307.1	XP_072787408.1	891	11	590	627	0	figure3C		no_issue	keep	590	627
+taeniopygia_guttata	IIIb	XM_072931307.1	XP_072787408.1	891	12	627	690	0	figure3C		no_issue	keep	627	690
+taeniopygia_guttata	IIIb	XM_072931307.1	XP_072787408.1	891	13	691	731	0	figure3C		no_issue	keep	691	731
+taeniopygia_guttata	IIIb	XM_072931307.1	XP_072787408.1	891	14	732	755	0	figure3C		no_issue	keep	732	755
+taeniopygia_guttata	IIIb	XM_072931307.1	XP_072787408.1	891	15	755	801	0	figure3C		no_issue	keep	755	801
+taeniopygia_guttata	IIIb	XM_072931307.1	XP_072787408.1	891	16	801	836	0	figure3C		no_issue	keep	801	836
+taeniopygia_guttata	IIIb	XM_072931307.1	XP_072787408.1	891	17	837	891	0	figure3C		no_issue	keep	837	891
+taeniopygia_guttata	IIIc	XM_072931308.1	XP_072787409.1	890	1	1	21	0	figure3C		no_issue	keep	1	21
+taeniopygia_guttata	IIIc	XM_072931308.1	XP_072787409.1	890	2	21	107	0	figure3C		no_issue	keep	21	107
+taeniopygia_guttata	IIIc	XM_072931308.1	XP_072787409.1	890	3	107	196	0	figure3C		no_issue	keep	107	196
+taeniopygia_guttata	IIIc	XM_072931308.1	XP_072787409.1	890	4	196	221	0	figure3C		no_issue	keep	196	221
+taeniopygia_guttata	IIIc	XM_072931308.1	XP_072787409.1	890	5	221	277	0	figure3C		no_issue	keep	221	277
+taeniopygia_guttata	IIIc	XM_072931308.1	XP_072787409.1	890	6	278	319	0	figure3C		no_issue	keep	278	319
+taeniopygia_guttata	IIIc	XM_072931308.1	XP_072787409.1	890	7	319	382	0	figure3C		no_issue	keep	319	382
+taeniopygia_guttata	IIIc	XM_072931308.1	XP_072787409.1	890	8	432	500	0	figure3C		no_issue	keep	432	500
+taeniopygia_guttata	IIIc	XM_072931308.1	XP_072787409.1	890	9	500	550	0	figure3C		no_issue	keep	500	550
+taeniopygia_guttata	IIIc	XM_072931308.1	XP_072787409.1	890	10	550	591	0	figure3C		no_issue	keep	550	591
+taeniopygia_guttata	IIIc	XM_072931308.1	XP_072787409.1	890	11	591	628	0	figure3C		no_issue	keep	591	628
+taeniopygia_guttata	IIIc	XM_072931308.1	XP_072787409.1	890	12	628	691	0	figure3C		no_issue	keep	628	691
+taeniopygia_guttata	IIIc	XM_072931308.1	XP_072787409.1	890	13	692	732	0	figure3C		no_issue	keep	692	732
+taeniopygia_guttata	IIIc	XM_072931308.1	XP_072787409.1	890	14	733	756	0	figure3C		no_issue	keep	733	756
+taeniopygia_guttata	IIIc	XM_072931308.1	XP_072787409.1	890	15	756	802	0	figure3C		no_issue	keep	756	802
+taeniopygia_guttata	IIIc	XM_072931308.1	XP_072787409.1	890	16	802	837	0	figure3C		no_issue	keep	802	837
+taeniopygia_guttata	IIIc	XM_072931308.1	XP_072787409.1	890	17	838	892	2	figure3C	codon_boundary_rounding	minor_plus1_plus2_rounding	clamp_to_protein_length_with_minor_flag	838	890	final block end clamped 892->890 (+2 aa rounding)
+takifugu_rubripes	IIIb	ENSTRUT00000045298	ENSTRUP00000045146	836	1	1	55	0	figure3C	native_cds_rank_CDS1	moderate_overflow	reconstruct_from_native_cds	1	55	coding-exon blocks reconstructed from native local CDS features (figure3C blocks projected from a different transcript, overflow +3 aa); native max end 836 <= length 836
+takifugu_rubripes	IIIb	ENSTRUT00000045298	ENSTRUP00000045146	836	2	56	91	0	figure3C	native_cds_rank_CDS2	moderate_overflow	reconstruct_from_native_cds	56	91	reconstructed native block
+takifugu_rubripes	IIIb	ENSTRUT00000045298	ENSTRUP00000045146	836	3	91	137	0	figure3C	native_cds_rank_CDS3	moderate_overflow	reconstruct_from_native_cds	91	137	reconstructed native block
+takifugu_rubripes	IIIb	ENSTRUT00000045298	ENSTRUP00000045146	836	4	137	160	0	figure3C	native_cds_rank_CDS4	moderate_overflow	reconstruct_from_native_cds	137	160	reconstructed native block
+takifugu_rubripes	IIIb	ENSTRUT00000045298	ENSTRUP00000045146	836	5	161	201	0	figure3C	native_cds_rank_CDS5	moderate_overflow	reconstruct_from_native_cds	161	201	reconstructed native block
+takifugu_rubripes	IIIb	ENSTRUT00000045298	ENSTRUP00000045146	836	6	202	265	0	figure3C	native_cds_rank_CDS6	moderate_overflow	reconstruct_from_native_cds	202	265	reconstructed native block
+takifugu_rubripes	IIIb	ENSTRUT00000045298	ENSTRUP00000045146	836	7	265	302	0	figure3C	native_cds_rank_CDS7	moderate_overflow	reconstruct_from_native_cds	265	302	reconstructed native block
+takifugu_rubripes	IIIb	ENSTRUT00000045298	ENSTRUP00000045146	836	8	343	389	0	figure3C	native_cds_rank_CDS8	moderate_overflow	reconstruct_from_native_cds	302	343	reconstructed native block
+takifugu_rubripes	IIIb	ENSTRUT00000045298	ENSTRUP00000045146	836	9	390	456	0	figure3C	native_cds_rank_CDS9	moderate_overflow	reconstruct_from_native_cds	343	389	reconstructed native block
+takifugu_rubripes	IIIb	ENSTRUT00000045298	ENSTRUP00000045146	836	10	456	504	0	figure3C	native_cds_rank_CDS10	moderate_overflow	reconstruct_from_native_cds	390	456	reconstructed native block
+takifugu_rubripes	IIIb	ENSTRUT00000045298	ENSTRUP00000045146	836	11	505	568	0	figure3C	native_cds_rank_CDS11	moderate_overflow	reconstruct_from_native_cds	456	502	reconstructed native block
+takifugu_rubripes	IIIb	ENSTRUT00000045298	ENSTRUP00000045146	836	12	568	609	0	figure3C	native_cds_rank_CDS12	moderate_overflow	reconstruct_from_native_cds	503	566	reconstructed native block
+takifugu_rubripes	IIIb	ENSTRUT00000045298	ENSTRUP00000045146	836	13	610	668	0	figure3C	native_cds_rank_CDS13	moderate_overflow	reconstruct_from_native_cds	566	607	reconstructed native block
+takifugu_rubripes	IIIb	ENSTRUT00000045298	ENSTRUP00000045146	836	14	668	693	0	figure3C	native_cds_rank_CDS14	moderate_overflow	reconstruct_from_native_cds	608	666	reconstructed native block
+takifugu_rubripes	IIIb	ENSTRUT00000045298	ENSTRUP00000045146	836	15	693	779	0	figure3C	native_cds_rank_CDS15	moderate_overflow	reconstruct_from_native_cds	666	691	reconstructed native block
+takifugu_rubripes	IIIb	ENSTRUT00000045298	ENSTRUP00000045146	836	16	779	839	3	figure3C	native_cds_rank_CDS16	moderate_overflow	reconstruct_from_native_cds	691	777	reconstructed native block
+takifugu_rubripes	IIIc	ENSTRUT00000045297	ENSTRUP00000045145	838	1	1	55	0	figure3C		no_issue	keep	1	55
+takifugu_rubripes	IIIc	ENSTRUT00000045297	ENSTRUP00000045145	838	2	56	91	0	figure3C		no_issue	keep	56	91
+takifugu_rubripes	IIIc	ENSTRUT00000045297	ENSTRUP00000045145	838	3	91	137	0	figure3C		no_issue	keep	91	137
+takifugu_rubripes	IIIc	ENSTRUT00000045297	ENSTRUP00000045145	838	4	137	160	0	figure3C		no_issue	keep	137	160
+takifugu_rubripes	IIIc	ENSTRUT00000045297	ENSTRUP00000045145	838	5	161	201	0	figure3C		no_issue	keep	161	201
+takifugu_rubripes	IIIc	ENSTRUT00000045297	ENSTRUP00000045145	838	6	202	265	0	figure3C		no_issue	keep	202	265
+takifugu_rubripes	IIIc	ENSTRUT00000045297	ENSTRUP00000045145	838	7	265	302	0	figure3C		no_issue	keep	265	302
+takifugu_rubripes	IIIc	ENSTRUT00000045297	ENSTRUP00000045145	838	8	302	343	0	figure3C		no_issue	keep	302	343
+takifugu_rubripes	IIIc	ENSTRUT00000045297	ENSTRUP00000045145	838	9	390	456	0	figure3C		no_issue	keep	390	456
+takifugu_rubripes	IIIc	ENSTRUT00000045297	ENSTRUP00000045145	838	10	456	502	0	figure3C		no_issue	keep	456	502
+takifugu_rubripes	IIIc	ENSTRUT00000045297	ENSTRUP00000045145	838	11	503	566	0	figure3C		no_issue	keep	503	566
+takifugu_rubripes	IIIc	ENSTRUT00000045297	ENSTRUP00000045145	838	12	566	607	0	figure3C		no_issue	keep	566	607
+takifugu_rubripes	IIIc	ENSTRUT00000045297	ENSTRUP00000045145	838	13	608	666	0	figure3C		no_issue	keep	608	666
+takifugu_rubripes	IIIc	ENSTRUT00000045297	ENSTRUP00000045145	838	14	666	691	0	figure3C		no_issue	keep	666	691
+takifugu_rubripes	IIIc	ENSTRUT00000045297	ENSTRUP00000045145	838	15	691	777	0	figure3C		no_issue	keep	691	777
+takifugu_rubripes	IIIc	ENSTRUT00000045297	ENSTRUP00000045145	838	16	777	837	0	figure3C		no_issue	keep	777	837
+xenopus_tropicalis	IIIb	ENSXETT00000078335	ENSXETP00000087394	832	1	1	53	0	cds_features_native (ENSXETT00000078335)		no_issue	keep	1	53	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+xenopus_tropicalis	IIIb	ENSXETT00000078335	ENSXETP00000087394	832	2	53	138	0	cds_features_native (ENSXETT00000078335)		no_issue	keep	53	138	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+xenopus_tropicalis	IIIb	ENSXETT00000078335	ENSXETP00000087394	832	3	138	163	0	cds_features_native (ENSXETT00000078335)		no_issue	keep	138	163	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+xenopus_tropicalis	IIIb	ENSXETT00000078335	ENSXETP00000087394	832	4	163	219	0	cds_features_native (ENSXETT00000078335)		no_issue	keep	163	219	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+xenopus_tropicalis	IIIb	ENSXETT00000078335	ENSXETP00000087394	832	5	220	261	0	cds_features_native (ENSXETT00000078335)		no_issue	keep	220	261	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+xenopus_tropicalis	IIIb	ENSXETT00000078335	ENSXETP00000087394	832	6	261	324	0	cds_features_native (ENSXETT00000078335)		no_issue	keep	261	324	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+xenopus_tropicalis	IIIb	ENSXETT00000078335	ENSXETP00000087394	832	7	325	373	0	cds_features_native (ENSXETT00000078335)		no_issue	keep	325	373	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+xenopus_tropicalis	IIIb	ENSXETT00000078335	ENSXETP00000087394	832	8	373	438	0	cds_features_native (ENSXETT00000078335)		no_issue	keep	373	438	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+xenopus_tropicalis	IIIb	ENSXETT00000078335	ENSXETP00000087394	832	9	439	489	0	cds_features_native (ENSXETT00000078335)		no_issue	keep	439	489	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+xenopus_tropicalis	IIIb	ENSXETT00000078335	ENSXETP00000087394	832	10	489	530	0	cds_features_native (ENSXETT00000078335)		no_issue	keep	489	530	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+xenopus_tropicalis	IIIb	ENSXETT00000078335	ENSXETP00000087394	832	11	530	567	0	cds_features_native (ENSXETT00000078335)		no_issue	keep	530	567	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+xenopus_tropicalis	IIIb	ENSXETT00000078335	ENSXETP00000087394	832	12	567	630	0	cds_features_native (ENSXETT00000078335)		no_issue	keep	567	630	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+xenopus_tropicalis	IIIb	ENSXETT00000078335	ENSXETP00000087394	832	13	631	671	0	cds_features_native (ENSXETT00000078335)		no_issue	keep	631	671	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+xenopus_tropicalis	IIIb	ENSXETT00000078335	ENSXETP00000087394	832	14	672	695	0	cds_features_native (ENSXETT00000078335)		no_issue	keep	672	695	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+xenopus_tropicalis	IIIb	ENSXETT00000078335	ENSXETP00000087394	832	15	695	741	0	cds_features_native (ENSXETT00000078335)		no_issue	keep	695	741	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+xenopus_tropicalis	IIIb	ENSXETT00000078335	ENSXETP00000087394	832	16	741	776	0	cds_features_native (ENSXETT00000078335)		no_issue	keep	741	776	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+xenopus_tropicalis	IIIb	ENSXETT00000078335	ENSXETP00000087394	832	17	777	832	0	cds_features_native (ENSXETT00000078335)		no_issue	keep	777	832	preserved earlier reconstruction (native_exon_blocks_reconstructed)
+xenopus_tropicalis	IIIc	ENSXETT00000071733	ENSXETP00000069725	910	1	1	53	0	figure3C		no_issue	keep	1	53
+xenopus_tropicalis	IIIc	ENSXETT00000071733	ENSXETP00000069725	910	2	53	138	0	figure3C		no_issue	keep	53	138
+xenopus_tropicalis	IIIc	ENSXETT00000071733	ENSXETP00000069725	910	3	138	163	0	figure3C		no_issue	keep	138	163
+xenopus_tropicalis	IIIc	ENSXETT00000071733	ENSXETP00000069725	910	4	163	219	0	figure3C		no_issue	keep	163	219
+xenopus_tropicalis	IIIc	ENSXETT00000071733	ENSXETP00000069725	910	5	220	261	0	figure3C		no_issue	keep	220	261
+xenopus_tropicalis	IIIc	ENSXETT00000071733	ENSXETP00000069725	910	6	261	324	0	figure3C		no_issue	keep	261	324
+xenopus_tropicalis	IIIc	ENSXETT00000071733	ENSXETP00000069725	910	7	373	438	0	figure3C		no_issue	keep	373	438
+xenopus_tropicalis	IIIc	ENSXETT00000071733	ENSXETP00000069725	910	8	439	489	0	figure3C		no_issue	keep	439	489
+xenopus_tropicalis	IIIc	ENSXETT00000071733	ENSXETP00000069725	910	9	489	530	0	figure3C		no_issue	keep	489	530
+xenopus_tropicalis	IIIc	ENSXETT00000071733	ENSXETP00000069725	910	10	530	567	0	figure3C		no_issue	keep	530	567
+xenopus_tropicalis	IIIc	ENSXETT00000071733	ENSXETP00000069725	910	11	567	630	0	figure3C		no_issue	keep	567	630
+xenopus_tropicalis	IIIc	ENSXETT00000071733	ENSXETP00000069725	910	12	631	671	0	figure3C		no_issue	keep	631	671
+xenopus_tropicalis	IIIc	ENSXETT00000071733	ENSXETP00000069725	910	13	672	695	0	figure3C		no_issue	keep	672	695
+xenopus_tropicalis	IIIc	ENSXETT00000071733	ENSXETP00000069725	910	14	695	741	0	figure3C		no_issue	keep	695	741
+xenopus_tropicalis	IIIc	ENSXETT00000071733	ENSXETP00000069725	910	15	741	776	0	figure3C		no_issue	keep	741	776
+xenopus_tropicalis	IIIc	ENSXETT00000071733	ENSXETP00000069725	910	16	777	833	0	figure3C		no_issue	keep	777	833

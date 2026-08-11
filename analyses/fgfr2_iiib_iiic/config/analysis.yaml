@@ -1,0 +1,22 @@
+study: FGFR2_IIIb_IIIc
+source_working_repository_parent_commit: 69738d44b58a32fe862818bed0b81e1344c1bae7
+destination_repository_parent_commit: 418a81495c249d7029393914f868fa3426c1bd5a
+snapshot_date: 2026-08-11
+cohort:
+  species: 30
+  selected_models: 60
+  complete_sequence_pairs: 28
+boundary_analysis:
+  distance_threshold_aa: 15
+  member_database_consensus: 0.80
+  member_databases: 5
+sequence_analysis:
+  permutations: 10000
+  fdr: 0.05
+structure_analysis:
+  direct_contact_A: 4.5
+  near_interface_A: 8.0
+  permutations: 10000
+loco:
+  permutations: 10000
+  training_species_bootstraps: 1000

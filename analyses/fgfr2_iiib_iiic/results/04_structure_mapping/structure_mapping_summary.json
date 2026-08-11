@@ -1,0 +1,7 @@
+{
+  "n_structures": 2,
+  "direct_distance_A": 4.5,
+  "near_distance_A": 8.0,
+  "n_permutations": 10000,
+  "matching": "receptor-alone SASA quartile plus local sequence-position window"
+}

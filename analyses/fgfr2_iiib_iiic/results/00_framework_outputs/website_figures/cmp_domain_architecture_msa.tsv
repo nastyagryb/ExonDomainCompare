@@ -1,0 +1,118 @@
+species_id	scientific_name	protein_id	domain_instance_id	interpro_accession	label	instance_number	native_start	native_end	msa_start_column	msa_end_column	msa_mapping_status	order_along_protein
+homo_sapiens	Homo sapiens	ENSP00000351276	IPR007110:45-110	IPR007110	Ig-like domain 1	1	45	110	275	340	mapped	1
+homo_sapiens	Homo sapiens	ENSP00000351276	IPR013098:171-248	IPR013098	Ig-like domain 2	1	171	248	407	484	mapped	2
+homo_sapiens	Homo sapiens	ENSP00000351276	IPR007110:266-346	IPR007110	Ig-like domain 3	2	266	346	502	582	mapped	3
+homo_sapiens	Homo sapiens	ENSP00000351276	IPR001245:437-770	IPR001245	Ser-Thr/Tyr kinase domain	1	437	770	678	1011	mapped	4
+pan_troglodytes	Pan troglodytes	XP_054516514.1	IPR007110:64-129	IPR007110	Ig-like domain 1	1	64	129	275	340	mapped	1
+pan_troglodytes	Pan troglodytes	XP_054516514.1	IPR013098:190-267	IPR013098	Ig-like domain 2	1	190	267	407	484	mapped	2
+pan_troglodytes	Pan troglodytes	XP_054516514.1	IPR007110:285-365	IPR007110	Ig-like domain 3	2	285	365	502	582	mapped	3
+pan_troglodytes	Pan troglodytes	XP_054516514.1	IPR001245:456-789	IPR001245	Ser-Thr/Tyr kinase domain	1	456	789	678	1011	mapped	4
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	XP_004050253.1	IPR013098:75-152	IPR013098	Ig-like domain 1	1	75	152	407	484	mapped	1
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	XP_004050253.1	IPR007110:170-250	IPR007110	Ig-like domain 2	1	170	250	502	582	mapped	2
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	XP_004050253.1	IPR001245:339-672	IPR001245	Ser-Thr/Tyr kinase domain	1	339	672	678	1011	mapped	3
+pongo_abelii	Pongo abelii	XP_024108704.1	IPR007110:64-129	IPR007110	Ig-like domain 1	1	64	129	275	340	mapped	1
+pongo_abelii	Pongo abelii	XP_024108704.1	IPR013098:190-267	IPR013098	Ig-like domain 2	1	190	267	407	484	mapped	2
+pongo_abelii	Pongo abelii	XP_024108704.1	IPR007110:285-365	IPR007110	Ig-like domain 3	2	285	365	502	582	mapped	3
+pongo_abelii	Pongo abelii	XP_024108704.1	IPR001245:454-787	IPR001245	Ser-Thr/Tyr kinase domain	1	454	787	678	1011	mapped	4
+macaca_mulatta	Macaca mulatta	XP_077803775.1	IPR007110:64-129	IPR007110	Ig-like domain 1	1	64	129	275	340	mapped	1
+macaca_mulatta	Macaca mulatta	XP_077803775.1	IPR013098:190-267	IPR013098	Ig-like domain 2	1	190	267	407	484	mapped	2
+macaca_mulatta	Macaca mulatta	XP_077803775.1	IPR007110:285-365	IPR007110	Ig-like domain 3	2	285	365	502	582	mapped	3
+macaca_mulatta	Macaca mulatta	XP_077803775.1	IPR001245:454-787	IPR001245	Ser-Thr/Tyr kinase domain	1	454	787	678	1011	mapped	4
+callithrix_jacchus	Callithrix jacchus	XP_078202765.1	IPR007110:64-129	IPR007110	Ig-like domain 1	1	64	129	275	340	mapped	1
+callithrix_jacchus	Callithrix jacchus	XP_078202765.1	IPR013098:190-267	IPR013098	Ig-like domain 2	1	190	267	407	484	mapped	2
+callithrix_jacchus	Callithrix jacchus	XP_078202765.1	IPR007110:285-365	IPR007110	Ig-like domain 3	2	285	365	502	582	mapped	3
+callithrix_jacchus	Callithrix jacchus	XP_078202765.1	IPR001245:456-789	IPR001245	Ser-Thr/Tyr kinase domain	1	456	789	678	1011	mapped	4
+mus_musculus	Mus musculus	ENSMUSP00000112430	IPR007110:64-128	IPR007110	Ig-like domain 1	1	64	128	275	339	mapped	1
+mus_musculus	Mus musculus	ENSMUSP00000112430	IPR013098:190-267	IPR013098	Ig-like domain 2	1	190	267	407	484	mapped	2
+mus_musculus	Mus musculus	ENSMUSP00000112430	IPR007110:285-365	IPR007110	Ig-like domain 3	2	285	365	502	582	mapped	3
+mus_musculus	Mus musculus	ENSMUSP00000112430	IPR001245:456-789	IPR001245	Ser-Thr/Tyr kinase domain	1	456	789	678	1011	mapped	4
+rattus_norvegicus	Rattus norvegicus	XP_063137149.1	IPR007110:64-128	IPR007110	Ig-like domain 1	1	64	128	275	339	mapped	1
+rattus_norvegicus	Rattus norvegicus	XP_063137149.1	IPR013098:190-267	IPR013098	Ig-like domain 2	1	190	267	407	484	mapped	2
+rattus_norvegicus	Rattus norvegicus	XP_063137149.1	IPR007110:285-365	IPR007110	Ig-like domain 3	2	285	365	502	582	mapped	3
+rattus_norvegicus	Rattus norvegicus	XP_063137149.1	IPR001245:456-789	IPR001245	Ser-Thr/Tyr kinase domain	1	456	789	678	1011	mapped	4
+oryctolagus_cuniculus	Oryctolagus cuniculus	XP_069913096.1	IPR007110:64-128	IPR007110	Ig-like domain 1	1	64	128	275	339	mapped	1
+oryctolagus_cuniculus	Oryctolagus cuniculus	XP_069913096.1	IPR013098:190-267	IPR013098	Ig-like domain 2	1	190	267	407	484	mapped	2
+oryctolagus_cuniculus	Oryctolagus cuniculus	XP_069913096.1	IPR007110:285-365	IPR007110	Ig-like domain 3	2	285	365	502	582	mapped	3
+oryctolagus_cuniculus	Oryctolagus cuniculus	XP_069913096.1	IPR001245:456-789	IPR001245	Ser-Thr/Tyr kinase domain	1	456	789	678	1011	mapped	4
+canis_lupus_familiaris	Canis lupus familiaris	NP_001003336.1	IPR013098:56-133	IPR013098	Ig-like domain 1	1	56	133	407	484	mapped	1
+canis_lupus_familiaris	Canis lupus familiaris	NP_001003336.1	IPR013098:150-242	IPR013098	Ig-like domain 2	2	150	242	501	595	mapped	2
+canis_lupus_familiaris	Canis lupus familiaris	NP_001003336.1	IPR001245:323-656	IPR001245	Ser-Thr/Tyr kinase domain	1	323	656	678	1011	mapped	3
+felis_catus	Felis catus	XP_044896695.1	IPR007110:65-129	IPR007110	Ig-like domain 1	1	65	129	275	339	mapped	1
+felis_catus	Felis catus	XP_044896695.1	IPR013098:190-267	IPR013098	Ig-like domain 2	1	190	267	407	484	mapped	2
+felis_catus	Felis catus	XP_044896695.1	IPR007110:285-365	IPR007110	Ig-like domain 3	2	285	365	502	582	mapped	3
+felis_catus	Felis catus	XP_044896695.1	IPR001245:456-789	IPR001245	Ser-Thr/Tyr kinase domain	1	456	789	678	1011	mapped	4
+bos_taurus	Bos taurus	XP_059737724.1	IPR007110:64-128	IPR007110	Ig-like domain 1	1	64	128	275	339	mapped	1
+bos_taurus	Bos taurus	XP_059737724.1	IPR013098:190-267	IPR013098	Ig-like domain 2	1	190	267	407	484	mapped	2
+bos_taurus	Bos taurus	XP_059737724.1	IPR007110:285-365	IPR007110	Ig-like domain 3	2	285	365	502	582	mapped	3
+bos_taurus	Bos taurus	XP_059737724.1	IPR001245:456-789	IPR001245	Ser-Thr/Tyr kinase domain	1	456	789	678	1011	mapped	4
+sus_scrofa	Sus scrofa	XP_084849197.1	IPR007110:64-128	IPR007110	Ig-like domain 1	1	64	128	275	339	mapped	1
+sus_scrofa	Sus scrofa	XP_084849197.1	IPR013098:190-267	IPR013098	Ig-like domain 2	1	190	267	407	484	mapped	2
+sus_scrofa	Sus scrofa	XP_084849197.1	IPR007110:285-365	IPR007110	Ig-like domain 3	2	285	365	502	582	mapped	3
+sus_scrofa	Sus scrofa	XP_084849197.1	IPR001245:456-780	IPR001245	Ser-Thr/Tyr kinase domain	1	456	780	678	1002	mapped	4
+equus_caballus	Equus caballus	XP_014588430.1	IPR007110:114-178	IPR007110	Ig-like domain 1	1	114	178	275	339	mapped	1
+equus_caballus	Equus caballus	XP_014588430.1	IPR013098:240-317	IPR013098	Ig-like domain 2	1	240	317	407	484	mapped	2
+equus_caballus	Equus caballus	XP_014588430.1	IPR007110:335-415	IPR007110	Ig-like domain 3	2	335	415	502	582	mapped	3
+equus_caballus	Equus caballus	XP_014588430.1	IPR001245:506-839	IPR001245	Ser-Thr/Tyr kinase domain	1	506	839	678	1011	mapped	4
+ovis_aries	Ovis aries	XP_060260490.1	IPR007110:64-128	IPR007110	Ig-like domain 1	1	64	128	275	339	mapped	1
+ovis_aries	Ovis aries	XP_060260490.1	IPR013098:190-267	IPR013098	Ig-like domain 2	1	190	267	407	484	mapped	2
+ovis_aries	Ovis aries	XP_060260490.1	IPR007110:285-365	IPR007110	Ig-like domain 3	2	285	365	502	582	mapped	3
+ovis_aries	Ovis aries	XP_060260490.1	IPR001245:456-789	IPR001245	Ser-Thr/Tyr kinase domain	1	456	789	678	1011	mapped	4
+monodelphis_domestica	Monodelphis domestica	XP_056659242.1	IPR013098:65-142	IPR013098	Ig-like domain 1	1	65	142	276	353	mapped	1
+monodelphis_domestica	Monodelphis domestica	XP_056659242.1	IPR013098:189-266	IPR013098	Ig-like domain 2	2	189	266	407	484	mapped	2
+monodelphis_domestica	Monodelphis domestica	XP_056659242.1	IPR007110:284-364	IPR007110	Ig-like domain 3	1	284	364	502	582	mapped	3
+monodelphis_domestica	Monodelphis domestica	XP_056659242.1	IPR001245:455-788	IPR001245	Ser-Thr/Tyr kinase domain	1	455	788	678	1011	mapped	4
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	XP_028936644.1	IPR013151:69-137	IPR013151	Ig-like domain 1	1	69	137	280	348	mapped	1
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	XP_028936644.1	IPR013098:189-266	IPR013098	Ig-like domain 2	1	189	266	407	484	mapped	2
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	XP_028936644.1	IPR007110:284-364	IPR007110	Ig-like domain 3	1	284	364	502	582	mapped	3
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	XP_028936644.1	IPR001245:455-788	IPR001245	Ser-Thr/Tyr kinase domain	1	455	788	678	1011	mapped	4
+gallus_gallus	Gallus gallus	NP_990650.2	IPR007110:67-131	IPR007110	Ig-like domain 1	1	67	131	275	339	mapped	1
+gallus_gallus	Gallus gallus	NP_990650.2	IPR013098:192-269	IPR013098	Ig-like domain 2	1	192	269	407	484	mapped	2
+gallus_gallus	Gallus gallus	NP_990650.2	IPR007110:286-367	IPR007110	Ig-like domain 3	2	286	367	501	582	mapped	3
+gallus_gallus	Gallus gallus	NP_990650.2	IPR001245:458-791	IPR001245	Ser-Thr/Tyr kinase domain	1	458	791	678	1011	mapped	4
+meleagris_gallopavo	Meleagris gallopavo	ENSMGAP00000031571	IPR013098:77-154	IPR013098	Ig-like domain 1	1	77	154	407	484	mapped	1
+meleagris_gallopavo	Meleagris gallopavo	ENSMGAP00000031571	IPR007110:171-252	IPR007110	Ig-like domain 2	1	171	252	501	582	mapped	2
+meleagris_gallopavo	Meleagris gallopavo	ENSMGAP00000031571	IPR001245:341-627	IPR001245	Ser-Thr/Tyr kinase domain	1	341	627	678	1091	mapped	3
+taeniopygia_guttata	Taeniopygia guttata	XP_072787409.1	IPR007110:115-179	IPR007110	Ig-like domain 1	1	115	179	275	339	mapped	1
+taeniopygia_guttata	Taeniopygia guttata	XP_072787409.1	IPR013098:240-317	IPR013098	Ig-like domain 2	1	240	317	407	484	mapped	2
+taeniopygia_guttata	Taeniopygia guttata	XP_072787409.1	IPR007110:334-415	IPR007110	Ig-like domain 3	2	334	415	501	582	mapped	3
+taeniopygia_guttata	Taeniopygia guttata	XP_072787409.1	IPR001245:506-839	IPR001245	Ser-Thr/Tyr kinase domain	1	506	839	678	1011	mapped	4
+anolis_carolinensis	Anolis carolinensis	XP_062832081.1	IPR007110:102-166	IPR007110	Ig-like domain 1	1	102	166	275	343	mapped	1
+anolis_carolinensis	Anolis carolinensis	XP_062832081.1	IPR013098:223-300	IPR013098	Ig-like domain 2	1	223	300	407	484	mapped	2
+anolis_carolinensis	Anolis carolinensis	XP_062832081.1	IPR013098:315-411	IPR013098	Ig-like domain 3	2	315	411	499	595	mapped	3
+anolis_carolinensis	Anolis carolinensis	XP_062832081.1	IPR001245:489-822	IPR001245	Ser-Thr/Tyr kinase domain	1	489	822	678	1011	mapped	4
+alligator_mississippiensis	Alligator mississippiensis	XP_006266188.1	IPR007110:67-131	IPR007110	Ig-like domain 1	1	67	131	275	339	mapped	1
+alligator_mississippiensis	Alligator mississippiensis	XP_006266188.1	IPR013098:192-269	IPR013098	Ig-like domain 2	1	192	269	407	484	mapped	2
+alligator_mississippiensis	Alligator mississippiensis	XP_006266188.1	IPR013098:284-380	IPR013098	Ig-like domain 3	2	284	380	499	595	mapped	3
+alligator_mississippiensis	Alligator mississippiensis	XP_006266188.1	IPR001245:458-791	IPR001245	Ser-Thr/Tyr kinase domain	1	458	791	678	1011	mapped	4
+chrysemys_picta_bellii	Chrysemys picta bellii	XP_065408413.1	IPR007110:67-129	IPR007110	Ig-like domain 1	1	67	129	275	339	mapped	1
+chrysemys_picta_bellii	Chrysemys picta bellii	XP_065408413.1	IPR013098:190-267	IPR013098	Ig-like domain 2	1	190	267	407	484	mapped	2
+chrysemys_picta_bellii	Chrysemys picta bellii	XP_065408413.1	IPR007110:284-365	IPR007110	Ig-like domain 3	2	284	365	501	582	mapped	3
+chrysemys_picta_bellii	Chrysemys picta bellii	XP_065408413.1	IPR001245:456-789	IPR001245	Ser-Thr/Tyr kinase domain	1	456	789	678	1011	mapped	4
+xenopus_tropicalis	Xenopus tropicalis	ENSXETP00000069725	IPR013151:144-205	IPR013151	Ig-like domain 1	1	144	205	282	347	mapped	1
+xenopus_tropicalis	Xenopus tropicalis	ENSXETP00000069725	IPR013098:257-335	IPR013098	Ig-like domain 2	1	257	335	406	484	mapped	2
+xenopus_tropicalis	Xenopus tropicalis	ENSXETP00000069725	IPR013098:350-446	IPR013098	Ig-like domain 3	2	350	446	499	595	mapped	3
+xenopus_tropicalis	Xenopus tropicalis	ENSXETP00000069725	IPR001245:524-857	IPR001245	Ser-Thr/Tyr kinase domain	1	524	857	678	1011	mapped	4
+ambystoma_mexicanum	Ambystoma mexicanum	XP_069468056.1	IPR007110:58-144	IPR007110	Ig-like domain 1	1	58	144	269	355	mapped	1
+ambystoma_mexicanum	Ambystoma mexicanum	XP_069468056.1	IPR013098:189-266	IPR013098	Ig-like domain 2	1	189	266	407	484	mapped	2
+ambystoma_mexicanum	Ambystoma mexicanum	XP_069468056.1	IPR013098:281-377	IPR013098	Ig-like domain 3	2	281	377	499	595	mapped	3
+ambystoma_mexicanum	Ambystoma mexicanum	XP_069468056.1	IPR001245:454-787	IPR001245	Ser-Thr/Tyr kinase domain	1	454	787	678	1011	mapped	4
+danio_rerio	Danio rerio	XP_068081038.1	IPR013098:75-137	IPR013098	Ig-like domain 1	1	75	137	281	343	mapped	1
+danio_rerio	Danio rerio	XP_068081038.1	IPR013098:193-271	IPR013098	Ig-like domain 2	2	193	271	406	484	mapped	2
+danio_rerio	Danio rerio	XP_068081038.1	IPR013098:286-382	IPR013098	Ig-like domain 3	3	286	382	499	595	mapped	3
+danio_rerio	Danio rerio	XP_068081038.1	IPR001245:460-789	IPR001245	Ser-Thr/Tyr kinase domain	1	460	789	678	1011	mapped	4
+oryzias_latipes	Oryzias latipes	XP_078787744.1	IPR007110:67-128	IPR007110	Ig-like domain 1	1	67	128	277	338	mapped	1
+oryzias_latipes	Oryzias latipes	XP_078787744.1	IPR013098:187-264	IPR013098	Ig-like domain 2	1	187	264	407	484	mapped	2
+oryzias_latipes	Oryzias latipes	XP_078787744.1	IPR013098:279-375	IPR013098	Ig-like domain 3	2	279	375	499	595	mapped	3
+oryzias_latipes	Oryzias latipes	XP_078787744.1	IPR001245:450-781	IPR001245	Ser-Thr/Tyr kinase domain	1	450	781	676	1011	mapped	4
+gasterosteus_aculeatus	Gasterosteus aculeatus	ENSGACP00000061458	IPR013098:74-168	IPR013098	Ig-like domain 1	1	74	168	172	266	mapped	1
+gasterosteus_aculeatus	Gasterosteus aculeatus	ENSGACP00000061458	IPR013098:299-376	IPR013098	Ig-like domain 2	2	299	376	407	484	mapped	2
+gasterosteus_aculeatus	Gasterosteus aculeatus	ENSGACP00000061458	IPR013098:391-487	IPR013098	Ig-like domain 3	3	391	487	499	595	mapped	3
+gasterosteus_aculeatus	Gasterosteus aculeatus	ENSGACP00000061458	IPR001245:561-882	IPR001245	Ser-Thr/Tyr kinase domain	1	561	882	677	1002	mapped	4
+takifugu_rubripes	Takifugu rubripes	ENSTRUP00000045145	IPR007110:71-132	IPR007110	Ig-like domain 1	1	71	132	277	338	mapped	1
+takifugu_rubripes	Takifugu rubripes	ENSTRUP00000045145	IPR013098:192-270	IPR013098	Ig-like domain 2	1	192	270	406	484	mapped	2
+takifugu_rubripes	Takifugu rubripes	ENSTRUP00000045145	IPR013098:285-381	IPR013098	Ig-like domain 3	2	285	381	499	595	mapped	3
+takifugu_rubripes	Takifugu rubripes	ENSTRUP00000045145	IPR001245:456-787	IPR001245	Ser-Thr/Tyr kinase domain	1	456	787	676	1011	mapped	4
+oreochromis_niloticus	Oreochromis niloticus	ENSONIP00000063320	IPR007110:49-110	IPR007110	Ig-like domain 1	1	49	110	277	338	mapped	1
+oreochromis_niloticus	Oreochromis niloticus	ENSONIP00000063320	IPR013098:168-246	IPR013098	Ig-like domain 2	1	168	246	406	484	mapped	2
+oreochromis_niloticus	Oreochromis niloticus	ENSONIP00000063320	IPR013098:261-357	IPR013098	Ig-like domain 3	2	261	357	499	595	mapped	3
+oreochromis_niloticus	Oreochromis niloticus	ENSONIP00000063320	IPR001245:431-761	IPR001245	Ser-Thr/Tyr kinase domain	1	431	761	677	1011	mapped	4

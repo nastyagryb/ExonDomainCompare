@@ -1,0 +1,202 @@
+{
+  "loco": {
+    "overall_accuracy": 1.0,
+    "correct_sequences": 56,
+    "total_sequences": 56,
+    "minimum_signed_log_likelihood_margin": 31.518023338248454,
+    "paired_label_permutation_p": 9.999000099990002e-05,
+    "permutation_null_mean": 0.4992892857142857,
+    "permutation_null_maximum": 0.8214285714285714,
+    "all_1000_training_bootstraps_perfect_in_all_folds": true,
+    "folds": [
+      {
+        "held_out_clade": "Mammals",
+        "n_training_species": 13,
+        "n_test_species": 15,
+        "n_test_sequences": 30,
+        "n_de_novo_positions": 15,
+        "canonical_positions_recovered": 12,
+        "canonical_positions_total": 17,
+        "canonical_recovery_fraction": 0.7058823529411765,
+        "additional_positions": "15,49,53",
+        "canonical_positions_missed": "1,8,11,16,51",
+        "accuracy": 1.0,
+        "minimum_signed_margin": 40.18046786610035,
+        "median_signed_margin": 41.6925134325258
+      },
+      {
+        "held_out_clade": "Birds",
+        "n_training_species": 25,
+        "n_test_species": 3,
+        "n_test_sequences": 6,
+        "n_de_novo_positions": 16,
+        "canonical_positions_recovered": 16,
+        "canonical_positions_total": 17,
+        "canonical_recovery_fraction": 0.9411764705882353,
+        "additional_positions": "",
+        "canonical_positions_missed": "1",
+        "accuracy": 1.0,
+        "minimum_signed_margin": 57.09407693917275,
+        "median_signed_margin": 58.2656878936602
+      },
+      {
+        "held_out_clade": "Reptiles",
+        "n_training_species": 25,
+        "n_test_species": 3,
+        "n_test_sequences": 6,
+        "n_de_novo_positions": 17,
+        "canonical_positions_recovered": 17,
+        "canonical_positions_total": 17,
+        "canonical_recovery_fraction": 1.0,
+        "additional_positions": "",
+        "canonical_positions_missed": "",
+        "accuracy": 1.0,
+        "minimum_signed_margin": 51.793489424090176,
+        "median_signed_margin": 60.322559268758454
+      },
+      {
+        "held_out_clade": "Amphibians",
+        "n_training_species": 26,
+        "n_test_species": 2,
+        "n_test_sequences": 4,
+        "n_de_novo_positions": 17,
+        "canonical_positions_recovered": 17,
+        "canonical_positions_total": 17,
+        "canonical_recovery_fraction": 1.0,
+        "additional_positions": "",
+        "canonical_positions_missed": "",
+        "accuracy": 1.0,
+        "minimum_signed_margin": 46.21266327460139,
+        "median_signed_margin": 51.89568018912682
+      },
+      {
+        "held_out_clade": "Teleosts",
+        "n_training_species": 23,
+        "n_test_species": 5,
+        "n_test_sequences": 10,
+        "n_de_novo_positions": 18,
+        "canonical_positions_recovered": 17,
+        "canonical_positions_total": 17,
+        "canonical_recovery_fraction": 1.0,
+        "additional_positions": "22",
+        "canonical_positions_missed": "",
+        "accuracy": 1.0,
+        "minimum_signed_margin": 31.518023338248454,
+        "median_signed_margin": 49.66605067452855
+      }
+    ]
+  },
+  "asr": {
+    "model": "LG+G4 marginal empirical Bayes on existing maximum-likelihood tree",
+    "gamma_shape_alpha": 0.996,
+    "gamma_category_mean_rates": [
+      0.1361549819168379,
+      0.4755462458790653,
+      0.9993340457660252,
+      2.3889647264380716
+    ],
+    "ancestral_IIIb_sequence_best_state": "HSGINSSDVEVLTLTNVTEEDAGEYTCKVSNYIGEAHQSGWLTVIP",
+    "ancestral_IIIc_sequence_best_state": "AAGVNTTDKEIEVLHIQNVTVEDAGEYTCLAGNSIGISFHSAWLTVLP",
+    "ancestral_IIIb_sequence_thresholded": "XSGINSSDVEVLTLTNVTEEDAGEYTCKVSNYIGEAXQSGWLTVIP",
+    "ancestral_IIIc_sequence_thresholded": "XAGVNTTDKEIEVLHIQNVTVEDAGEYTCLAGNSIGISFHSAWLTVLP",
+    "modern_barcode_sites_ancestrally_different": 15,
+    "modern_barcode_total": 17,
+    "high_confidence_all_jackknife_stable_ancestral_core": 11,
+    "all_ancestral_differences_across_48_informative_columns": 22,
+    "modern_barcode_sites_reconstructed_same_at_split": [
+      8,
+      28
+    ],
+    "jackknife_state_changes": [
+      {
+        "held_out_clade": "Reptiles",
+        "isoform": "IIIc",
+        "alignment_column": 15,
+        "best_amino_acid": "Y",
+        "posterior_probability": 0.8289817571573759,
+        "matches_full_reconstruction": false
+      },
+      {
+        "held_out_clade": "Reptiles",
+        "isoform": "IIIc",
+        "alignment_column": 17,
+        "best_amino_acid": "R",
+        "posterior_probability": 0.8323114461926527,
+        "matches_full_reconstruction": false
+      },
+      {
+        "held_out_clade": "Reptiles",
+        "isoform": "IIIc",
+        "alignment_column": 21,
+        "best_amino_acid": "F",
+        "posterior_probability": 0.7938839007644702,
+        "matches_full_reconstruction": false
+      },
+      {
+        "held_out_clade": "Teleosts",
+        "isoform": "IIIb",
+        "alignment_column": 8,
+        "best_amino_acid": "N",
+        "posterior_probability": 0.7355211593156391,
+        "matches_full_reconstruction": false
+      },
+      {
+        "held_out_clade": "Teleosts",
+        "isoform": "IIIb",
+        "alignment_column": 11,
+        "best_amino_acid": "A",
+        "posterior_probability": 0.6238583180677151,
+        "matches_full_reconstruction": false
+      },
+      {
+        "held_out_clade": "Teleosts",
+        "isoform": "IIIb",
+        "alignment_column": 15,
+        "best_amino_acid": "K",
+        "posterior_probability": 0.3700389915291181,
+        "matches_full_reconstruction": false
+      },
+      {
+        "held_out_clade": "Teleosts",
+        "isoform": "IIIb",
+        "alignment_column": 17,
+        "best_amino_acid": "Y",
+        "posterior_probability": 0.6422224645889932,
+        "matches_full_reconstruction": false
+      },
+      {
+        "held_out_clade": "Teleosts",
+        "isoform": "IIIb",
+        "alignment_column": 28,
+        "best_amino_acid": "I",
+        "posterior_probability": 0.7140046097773555,
+        "matches_full_reconstruction": false
+      },
+      {
+        "held_out_clade": "Teleosts",
+        "isoform": "IIIb",
+        "alignment_column": 51,
+        "best_amino_acid": "N",
+        "posterior_probability": 0.5187097333796443,
+        "matches_full_reconstruction": false
+      },
+      {
+        "held_out_clade": "Teleosts",
+        "isoform": "IIIb",
+        "alignment_column": 54,
+        "best_amino_acid": "A",
+        "posterior_probability": 0.9890210164288821,
+        "matches_full_reconstruction": false
+      },
+      {
+        "held_out_clade": "Teleosts",
+        "isoform": "IIIb",
+        "alignment_column": 59,
+        "best_amino_acid": "L",
+        "posterior_probability": 0.8971365679925363,
+        "matches_full_reconstruction": false
+      }
+    ],
+    "important_limitation": "Conditional reconstruction on a short 69-column cassette alignment; all-gap artifact columns were removed, gaps were treated as missing in the amino-acid likelihood, and presence/absence was assigned from clade consensus."
+  }
+}

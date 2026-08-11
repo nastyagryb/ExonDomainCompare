@@ -1,0 +1,331 @@
+species_id	scientific_name	target_gene	slot_x	is_target	neighbour_symbol	side	order	orientation	gene_id	placeholder	classification	status	orthology_confidence	distance_to_target
+homo_sapiens	Homo sapiens	FGFR2	-5	false	PLEKHA1	upstream	5	+	GeneID:59338	false	exact	ortholog_supported	high	776250
+homo_sapiens	Homo sapiens	FGFR2	-4	false	BTBD16	upstream	4	+	GeneID:118663	false	exact	ortholog_supported	high	672838
+homo_sapiens	Homo sapiens	FGFR2	-3	false	TACC2	upstream	3	+	GeneID:10579	false	exact	ortholog_supported	high	390705
+homo_sapiens	Homo sapiens	FGFR2	-2	false	NSMCE4A	upstream	2	-	GeneID:54780	false	exact	ortholog_supported	high	358633
+homo_sapiens	Homo sapiens	FGFR2	-1	false	ATE1	upstream	1	-	GeneID:11101	false	exact	ortholog_supported	high	141966
+homo_sapiens	Homo sapiens	FGFR2	0	true		target	0	-	GeneID:2263	false	target	target	target	0
+homo_sapiens	Homo sapiens	FGFR2	1	false	WDR11	downstream	1	+	GeneID:55717	false	exact	ortholog_supported	high	568806
+homo_sapiens	Homo sapiens	FGFR2	2	false	PLPP4	downstream	2	+	GeneID:196051	false	exact	ortholog_supported	high	886265
+homo_sapiens	Homo sapiens	FGFR2	3	false	SEC23IP	downstream	3	+	GeneID:11196	false	exact	ortholog_supported	high	1533673
+homo_sapiens	Homo sapiens	FGFR2	4	false	MCMBP	downstream	4	-	GeneID:79892	false	exact	ortholog_supported	high	1604749
+homo_sapiens	Homo sapiens	FGFR2	5	false	INPP5F	downstream	5	+	GeneID:22876	false	exact	ortholog_supported	high	1649183
+pan_troglodytes	Pan troglodytes	FGFR2	-5	false	PLEKHA1	upstream	5	+	GeneID:450790	false	exact	ortholog_supported	high	772218
+pan_troglodytes	Pan troglodytes	FGFR2	-4	false	BTBD16	upstream	4	+	GeneID:742437	false	exact	ortholog_supported	high	669149
+pan_troglodytes	Pan troglodytes	FGFR2	-3	false	TACC2	upstream	3	+	GeneID:742328	false	exact	ortholog_supported	high	394440
+pan_troglodytes	Pan troglodytes	FGFR2	-2	false	NSMCE4A	upstream	2	-	GeneID:742274	false	exact	ortholog_supported	high	357399
+pan_troglodytes	Pan troglodytes	FGFR2	-1	false	ATE1	upstream	1	-	GeneID:450786	false	exact	ortholog_supported	high	141227
+pan_troglodytes	Pan troglodytes	FGFR2	0	true		target	0	-	GeneID:466220	false	target	target	target	0
+pan_troglodytes	Pan troglodytes	FGFR2	1	false	WDR11	downstream	1	+	GeneID:450784	false	exact	ortholog_supported	high	562072
+pan_troglodytes	Pan troglodytes	FGFR2	2	false	PLPP4	downstream	2	+	GeneID:741827	false	exact	ortholog_supported	high	883719
+pan_troglodytes	Pan troglodytes	FGFR2	3	false	SEC23IP	downstream	3	+	GeneID:450782	false	exact	ortholog_supported	high	1543350
+pan_troglodytes	Pan troglodytes	FGFR2	4	false	MCMBP	downstream	4	-	GeneID:450781	false	exact	ortholog_supported	high	1611572
+pan_troglodytes	Pan troglodytes	FGFR2	5	false	INPP5F	downstream	5	+	GeneID:450780	false	exact	ortholog_supported	high	1656307
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	FGFR2	-5	false	PLEKHA1	upstream	5	+	GeneID:101126217	false	exact	ortholog_supported	high	764120
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	FGFR2	-4	false	BTBD16	upstream	4	+	GeneID:101125856	false	exact	ortholog_supported	high	661530
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	FGFR2	-3	false	TACC2	upstream	3	+	GeneID:101125009	false	exact	ortholog_supported	high	386488
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	FGFR2	-2	false	NSMCE4A	upstream	2	-	GeneID:101128882	false	exact	ortholog_supported	high	348483
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	FGFR2	-1	false	ATE1	upstream	1	-	GeneID:101128164	false	exact	ortholog_supported	high	138692
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	FGFR2	0	true		target	0	-	GeneID:101153046	false	target	target	target	0
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	FGFR2	1	false	RPS2	downstream	1	+	GeneID:101151121	false	rbh	broad_homology_named	medium	90583
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	FGFR2	2	false	WDR11	downstream	2	+	GeneID:101154496	false	exact	ortholog_supported	high	566406
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	FGFR2	3	false	CCDC187	downstream	3	+	GeneID:134759250	false	weak	broad_homology_named	low	880360
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	FGFR2	4	false	PLPP4	downstream	4	+	GeneID:101150028	false	exact	ortholog_supported	high	889260
+gorilla_gorilla_gorilla	Gorilla gorilla gorilla	FGFR2	5	false	SEC23IP	downstream	5	+	GeneID:101146450	false	exact	ortholog_supported	high	1541208
+pongo_abelii	Pongo abelii	FGFR2	-5	false	BTBD16	upstream	5	+	GeneID:100436678	false	exact	ortholog_supported	high	667051
+pongo_abelii	Pongo abelii	FGFR2	-4	false	TACC2	upstream	4	+	GeneID:100436049	false	exact	ortholog_supported	high	420370
+pongo_abelii	Pongo abelii	FGFR2	-3	false	NSMCE4A	upstream	3	-	GeneID:100434181	false	exact	ortholog_supported	high	355117
+pongo_abelii	Pongo abelii	FGFR2	-2	false	ATE1	upstream	2	-	GeneID:100172501	false	exact	ortholog_supported	high	142920
+pongo_abelii	Pongo abelii	FGFR2	-1	false	RPS15A	upstream	1	+	GeneID:100433801	false	rbh	broad_homology_named	medium	114912
+pongo_abelii	Pongo abelii	FGFR2	0	true		target	0	-	GeneID:100171540	false	target	target	target	0
+pongo_abelii	Pongo abelii	FGFR2	1	false	WDR11	downstream	1	+	GeneID:100433048	false	exact	ortholog_supported	high	570986
+pongo_abelii	Pongo abelii	FGFR2	2	false	PLPP4	downstream	2	+	GeneID:100431802	false	exact	ortholog_supported	high	897312
+pongo_abelii	Pongo abelii	FGFR2	3	false	EEF1A1	downstream	3	-	GeneID:100461776	false	rbh	broad_homology_named	medium	1531599
+pongo_abelii	Pongo abelii	FGFR2	4	false	SEC23IP	downstream	4	+	GeneID:100174536	false	exact	ortholog_supported	high	1564008
+pongo_abelii	Pongo abelii	FGFR2	5	false	MCMBP	downstream	5	-	GeneID:100460295	false	exact	ortholog_supported	high	1613422
+macaca_mulatta	Macaca mulatta	FGFR2	-5	false	PLEKHA1	upstream	5	+	GeneID:705731	false	exact	ortholog_supported	high	768708
+macaca_mulatta	Macaca mulatta	FGFR2	-4	false	BTBD16	upstream	4	+	GeneID:705610	false	exact	ortholog_supported	high	653826
+macaca_mulatta	Macaca mulatta	FGFR2	-3	false	TACC2	upstream	3	+	GeneID:705497	false	exact	ortholog_supported	high	383342
+macaca_mulatta	Macaca mulatta	FGFR2	-2	false	NSMCE4A	upstream	2	-	GeneID:705375	false	exact	ortholog_supported	high	350956
+macaca_mulatta	Macaca mulatta	FGFR2	-1	false	ATE1	upstream	1	-	GeneID:705248	false	exact	ortholog_supported	high	146117
+macaca_mulatta	Macaca mulatta	FGFR2	0	true		target	0	-	GeneID:715949	false	target	target	target	0
+macaca_mulatta	Macaca mulatta	FGFR2	1	false	WDR11	downstream	1	+	GeneID:714990	false	exact	ortholog_supported	high	548675
+macaca_mulatta	Macaca mulatta	FGFR2	2	false	PLPP4	downstream	2	+	GeneID:704483	false	exact	ortholog_supported	high	866034
+macaca_mulatta	Macaca mulatta	FGFR2	3	false	SEC23IP	downstream	3	+	GeneID:704155	false	exact	ortholog_supported	high	1520166
+macaca_mulatta	Macaca mulatta	FGFR2	4	false	MCMBP	downstream	4	-	GeneID:704028	false	exact	ortholog_supported	high	1591357
+macaca_mulatta	Macaca mulatta	FGFR2	5	false	INPP5F	downstream	5	+	GeneID:703808	false	exact	ortholog_supported	high	1636670
+callithrix_jacchus	Callithrix jacchus	FGFR2	-5	false	TACC2	upstream	5	+	GeneID:100393935	false	exact		high	370572
+callithrix_jacchus	Callithrix jacchus	FGFR2	-4	false	NSMCE4A	upstream	4	-	GeneID:100397321	false	exact		high	336543
+callithrix_jacchus	Callithrix jacchus	FGFR2	-3	false	LOC128929351	upstream	3	+	GeneID:128929351	true	placeholder		position_only	308198
+callithrix_jacchus	Callithrix jacchus	FGFR2	-2	false	ATE1	upstream	2	-	GeneID:100396459	false	exact		high	150553
+callithrix_jacchus	Callithrix jacchus	FGFR2	-1	false	LOC118146411	upstream	1	-	GeneID:118146411	true	placeholder		position_only	12334
+callithrix_jacchus	Callithrix jacchus	FGFR2	0	true		target	0	-	GeneID:100393573	false	target	target	target	0
+callithrix_jacchus	Callithrix jacchus	FGFR2	1	false	WDR11	downstream	1	+	GeneID:100389472	false	exact		high	561093
+callithrix_jacchus	Callithrix jacchus	FGFR2	2	false	PLPP4	downstream	2	+	GeneID:100387419	false	exact		high	844206
+callithrix_jacchus	Callithrix jacchus	FGFR2	3	false	LOC108587771	downstream	3	-	GeneID:108587771	true	placeholder		position_only	1586720
+callithrix_jacchus	Callithrix jacchus	FGFR2	4	false	LOC108587844	downstream	4	-	GeneID:108587844	true	placeholder		position_only	1589643
+callithrix_jacchus	Callithrix jacchus	FGFR2	5	false	LOC118146404	downstream	5	-	GeneID:118146404	true	placeholder		position_only	1716791
+mus_musculus	Mus musculus	FGFR2	-5	false	BTBD16	upstream	5	+	GeneID:330660	false	exact	ortholog_supported	high	507261
+mus_musculus	Mus musculus	FGFR2	-4	false	TACC2	upstream	4	+	GeneID:57752	false	exact	ortholog_supported	high	286197
+mus_musculus	Mus musculus	FGFR2	-3	false	NSMCE4A	upstream	3	-	GeneID:67872	false	exact	ortholog_supported	high	265718
+mus_musculus	Mus musculus	FGFR2	-2	false	Gm4275	upstream	2	+	GeneID:102636907	false	exact	symbol_supported_only	high	252783
+mus_musculus	Mus musculus	FGFR2	-1	false	ATE1	upstream	1	-	GeneID:11907	false	exact	ortholog_supported	high	124681
+mus_musculus	Mus musculus	FGFR2	0	true		target	0	-	GeneID:14183	false	target	target	target	0
+mus_musculus	Mus musculus	FGFR2	1	false	WDR11	downstream	1	+	GeneID:207425	false	exact	ortholog_supported	high	526719
+mus_musculus	Mus musculus	FGFR2	2	false	PLPP4	downstream	2	+	GeneID:381925	false	exact	ortholog_supported	high	771043
+mus_musculus	Mus musculus	FGFR2	3	false	SEC23IP	downstream	3	+	GeneID:207352	false	exact	ortholog_supported	high	1377621
+mus_musculus	Mus musculus	FGFR2	4	false	MCMBP	downstream	4	-	GeneID:210711	false	exact	ortholog_supported	high	1422028
+mus_musculus	Mus musculus	FGFR2	5	false	INPP5F	downstream	5	+	GeneID:101490	false	exact	ortholog_supported	high	1466020
+rattus_norvegicus	Rattus norvegicus	FGFR2	-5	false	Btbd16	upstream	5	+	GeneID:361658	false	exact		high	484327
+rattus_norvegicus	Rattus norvegicus	FGFR2	-4	false	Tacc2	upstream	4	+	GeneID:309025	false	exact		high	265514
+rattus_norvegicus	Rattus norvegicus	FGFR2	-3	false	Nsmce4a	upstream	3	-	GeneID:293528	false	exact		high	251450
+rattus_norvegicus	Rattus norvegicus	FGFR2	-2	false	RGD1563285	upstream	2	+	GeneID:499273	false	exact		high	234194
+rattus_norvegicus	Rattus norvegicus	FGFR2	-1	false	Ate1	upstream	1	-	GeneID:293526	false	exact		high	110929
+rattus_norvegicus	Rattus norvegicus	FGFR2	0	true		target	0	-	GeneID:25022	false	target	target	target	0
+rattus_norvegicus	Rattus norvegicus	FGFR2	1	false	Ska2l1	downstream	1	+	GeneID:102555739	false	exact		high	445238
+rattus_norvegicus	Rattus norvegicus	FGFR2	2	false	Wdr11	downstream	2	+	GeneID:309016	false	exact		high	534554
+rattus_norvegicus	Rattus norvegicus	FGFR2	3	false	Plpp4	downstream	3	+	GeneID:309014	false	exact		high	786044
+rattus_norvegicus	Rattus norvegicus	FGFR2	4	false	Sec23ip	downstream	4	+	GeneID:309010	false	exact		high	1381358
+rattus_norvegicus	Rattus norvegicus	FGFR2	5	false	Mcmbp	downstream	5	-	GeneID:309009	false	exact		high	1428322
+oryctolagus_cuniculus	Oryctolagus cuniculus	FGFR2	-5	false	BTBD16	upstream	5	-	GeneID:100357343	false	exact		high	544576
+oryctolagus_cuniculus	Oryctolagus cuniculus	FGFR2	-4	false	TACC2	upstream	4	-	GeneID:100357089	false	exact		high	327242
+oryctolagus_cuniculus	Oryctolagus cuniculus	FGFR2	-3	false	NSMCE4A	upstream	3	+	GeneID:100356831	false	exact		high	302448
+oryctolagus_cuniculus	Oryctolagus cuniculus	FGFR2	-2	false	LOC127484174	upstream	2	-	GeneID:127484174	true	placeholder		position_only	296179
+oryctolagus_cuniculus	Oryctolagus cuniculus	FGFR2	-1	false	ATE1	upstream	1	+	GeneID:100338175	false	exact		high	97834
+oryctolagus_cuniculus	Oryctolagus cuniculus	FGFR2	0	true		target	0	+	GeneID:100009417	false	target	target	target	0
+oryctolagus_cuniculus	Oryctolagus cuniculus	FGFR2	1	false	WDR11	downstream	1	-	GeneID:100359323	false	exact		high	466088
+oryctolagus_cuniculus	Oryctolagus cuniculus	FGFR2	2	false	PLPP4	downstream	2	-	GeneID:100356065	false	exact		high	739181
+oryctolagus_cuniculus	Oryctolagus cuniculus	FGFR2	3	false	SEC23IP	downstream	3	-	GeneID:100358551	false	exact		high	1344903
+oryctolagus_cuniculus	Oryctolagus cuniculus	FGFR2	4	false	MCMBP	downstream	4	+	GeneID:100358288	false	exact		high	1418895
+oryctolagus_cuniculus	Oryctolagus cuniculus	FGFR2	5	false	INPP5F	downstream	5	-	GeneID:100355074	false	exact		high	1477286
+canis_lupus_familiaris	Canis lupus familiaris	FGFR2	-5	false	BTBD16	upstream	5	+	GeneID:486920	false	exact	ortholog_supported	high	547509
+canis_lupus_familiaris	Canis lupus familiaris	FGFR2	-4	false	TACC2	upstream	4	+	GeneID:477850	false	exact	ortholog_supported	high	345710
+canis_lupus_familiaris	Canis lupus familiaris	FGFR2	-3	false	NSMCE4A	upstream	3	-	GeneID:119866604	false	exact	ortholog_supported	high	306421
+canis_lupus_familiaris	Canis lupus familiaris	FGFR2	-2	false	LOC119866605	upstream	2	+	GeneID:119866605	true	unresolved	raw_id_only	none	285669
+canis_lupus_familiaris	Canis lupus familiaris	FGFR2	-1	false	ATE1	upstream	1	-	GeneID:486919	false	exact	ortholog_supported	high	123944
+canis_lupus_familiaris	Canis lupus familiaris	FGFR2	0	true		target	0	-	GeneID:415125	false	target	target	target	0
+canis_lupus_familiaris	Canis lupus familiaris	FGFR2	1	false	WDR11	downstream	1	+	GeneID:477847	false	exact	ortholog_supported	high	475678
+canis_lupus_familiaris	Canis lupus familiaris	FGFR2	2	false	PLPP4	downstream	2	+	GeneID:477846	false	exact	ortholog_supported	high	719192
+canis_lupus_familiaris	Canis lupus familiaris	FGFR2	3	false	SEC23IP	downstream	3	+	GeneID:477845	false	exact	ortholog_supported	high	1249150
+canis_lupus_familiaris	Canis lupus familiaris	FGFR2	4	false	MCMBP	downstream	4	-	GeneID:612966	false	exact	ortholog_supported	high	1300260
+canis_lupus_familiaris	Canis lupus familiaris	FGFR2	5	false	INPP5F	downstream	5	+	GeneID:100856192	false	exact	ortholog_supported	high	1350784
+felis_catus	Felis catus	FGFR2	-5	false	BTBD16	upstream	5	+	GeneID:101095685	false	exact		high	551798
+felis_catus	Felis catus	FGFR2	-4	false	TACC2	upstream	4	+	GeneID:101090968	false	exact		high	330157
+felis_catus	Felis catus	FGFR2	-3	false	NSMCE4A	upstream	3	-	GeneID:101095440	false	exact		high	301251
+felis_catus	Felis catus	FGFR2	-2	false	LOC109492740	upstream	2	+	GeneID:109492740	true	placeholder		position_only	280328
+felis_catus	Felis catus	FGFR2	-1	false	ATE1	upstream	1	-	GeneID:101090722	false	exact		high	126808
+felis_catus	Felis catus	FGFR2	0	true		target	0	-	GeneID:101095198	false	target	target	target	0
+felis_catus	Felis catus	FGFR2	1	false	WDR11	downstream	1	+	GeneID:101094957	false	exact		high	479310
+felis_catus	Felis catus	FGFR2	2	false	PLPP4	downstream	2	+	GeneID:101094704	false	exact		high	745893
+felis_catus	Felis catus	FGFR2	3	false	SEC23IP	downstream	3	+	GeneID:101090215	false	exact		high	1317589
+felis_catus	Felis catus	FGFR2	4	false	MCMBP	downstream	4	-	GeneID:101089966	false	exact		high	1374810
+felis_catus	Felis catus	FGFR2	5	false	INPP5F	downstream	5	+	GeneID:101094453	false	exact		high	1424527
+bos_taurus	Bos taurus	FGFR2	-5	false	BTBD16	upstream	5	+	GeneID:518515	false	exact	ortholog_supported	high	559179
+bos_taurus	Bos taurus	FGFR2	-4	false	TACC2	upstream	4	+	GeneID:533768	false	exact	ortholog_supported	high	319893
+bos_taurus	Bos taurus	FGFR2	-3	false	NSMCE4A	upstream	3	-	GeneID:527312	false	exact	ortholog_supported	high	283941
+bos_taurus	Bos taurus	FGFR2	-2	false	ATE1OS	upstream	2	+	GeneID:101907255	false	exact	symbol_supported_only	high	268124
+bos_taurus	Bos taurus	FGFR2	-1	false	ATE1	upstream	1	-	GeneID:534601	false	exact	ortholog_supported	high	107633
+bos_taurus	Bos taurus	FGFR2	0	true		target	0	-	GeneID:404193	false	target	target	target	0
+bos_taurus	Bos taurus	FGFR2	1	false	WDR11	downstream	1	+	GeneID:525169	false	exact	ortholog_supported	high	552115
+bos_taurus	Bos taurus	FGFR2	2	false	PLPP4	downstream	2	+	GeneID:529067	false	exact	ortholog_supported	high	793892
+bos_taurus	Bos taurus	FGFR2	3	false	SEC23IP	downstream	3	+	GeneID:508557	false	exact	ortholog_supported	high	1409492
+bos_taurus	Bos taurus	FGFR2	4	false	MCMBP	downstream	4	-	GeneID:514863	false	exact	ortholog_supported	high	1464406
+bos_taurus	Bos taurus	FGFR2	5	false	INPP5F	downstream	5	+	GeneID:539889	false	exact	ortholog_supported	high	1504428
+sus_scrofa	Sus scrofa	FGFR2	-5	false	PLEKHA1	upstream	5	+	GeneID:100157647	false	exact		high	675931
+sus_scrofa	Sus scrofa	FGFR2	-4	false	BTBD16	upstream	4	+	GeneID:100737536	false	exact		high	579393
+sus_scrofa	Sus scrofa	FGFR2	-3	false	TACC2	upstream	3	+	GeneID:100152804	false	exact		high	485022
+sus_scrofa	Sus scrofa	FGFR2	-2	false	NSMCE4A	upstream	2	-	GeneID:100153999	false	exact		high	307623
+sus_scrofa	Sus scrofa	FGFR2	-1	false	ATE1	upstream	1	-	GeneID:100512816	false	exact		high	97018
+sus_scrofa	Sus scrofa	FGFR2	0	true		target	0	-	GeneID:396762	false	target	target	target	0
+sus_scrofa	Sus scrofa	FGFR2	1	false	WDR11	downstream	1	+	GeneID:100156416	false	exact		high	508559
+sus_scrofa	Sus scrofa	FGFR2	2	false	PLPP4	downstream	2	+	GeneID:100152806	false	exact		high	758463
+sus_scrofa	Sus scrofa	FGFR2	3	false	SEC23IP	downstream	3	+	GeneID:100157013	false	exact		high	1372453
+sus_scrofa	Sus scrofa	FGFR2	4	false	MCMBP	downstream	4	-	GeneID:100155791	false	exact		high	1440810
+sus_scrofa	Sus scrofa	FGFR2	5	false	INPP5F	downstream	5	+	GeneID:100144587	false	exact		high	1511554
+equus_caballus	Equus caballus	FGFR2	-5	false	BTBD16	upstream	5	-	GeneID:100064634	false	exact		high	558919
+equus_caballus	Equus caballus	FGFR2	-4	false	TACC2	upstream	4	-	GeneID:100064696	false	exact		high	340297
+equus_caballus	Equus caballus	FGFR2	-3	false	NSMCE4A	upstream	3	+	GeneID:100064829	false	exact		high	302454
+equus_caballus	Equus caballus	FGFR2	-2	false	ATE1OS	upstream	2	-	GeneID:111772923	false	exact		high	294526
+equus_caballus	Equus caballus	FGFR2	-1	false	ATE1	upstream	1	+	GeneID:100064881	false	exact		high	112348
+equus_caballus	Equus caballus	FGFR2	0	true		target	0	+	GeneID:100033956	false	target	target	target	0
+equus_caballus	Equus caballus	FGFR2	1	false	WDR11	downstream	1	-	GeneID:100065386	false	exact		high	502838
+equus_caballus	Equus caballus	FGFR2	2	false	PLPP4	downstream	2	-	GeneID:100065462	false	exact		high	755942
+equus_caballus	Equus caballus	FGFR2	3	false	SEC23IP	downstream	3	-	GeneID:100058564	false	exact		high	1313696
+equus_caballus	Equus caballus	FGFR2	4	false	MCMBP	downstream	4	+	GeneID:100065714	false	exact		high	1370634
+equus_caballus	Equus caballus	FGFR2	5	false	INPP5F	downstream	5	-	GeneID:100065762	false	exact		high	1416079
+ovis_aries	Ovis aries	FGFR2	-5	false	PLEKHA1	upstream	5	+	GeneID:101110806	false	exact		high	638870
+ovis_aries	Ovis aries	FGFR2	-4	false	BTBD16	upstream	4	+	GeneID:101110555	false	exact		high	545418
+ovis_aries	Ovis aries	FGFR2	-3	false	TACC2	upstream	3	+	GeneID:101123429	false	exact		high	313343
+ovis_aries	Ovis aries	FGFR2	-2	false	NSMCE4A	upstream	2	-	GeneID:101123169	false	exact		high	285041
+ovis_aries	Ovis aries	FGFR2	-1	false	ATE1	upstream	1	-	GeneID:101110286	false	exact		high	108421
+ovis_aries	Ovis aries	FGFR2	0	true		target	0	-	GeneID:443548	false	target	target	target	0
+ovis_aries	Ovis aries	FGFR2	1	false	WDR11	downstream	1	+	GeneID:101109577	false	exact		high	563684
+ovis_aries	Ovis aries	FGFR2	2	false	PLPP4	downstream	2	+	GeneID:101109316	false	exact		high	817768
+ovis_aries	Ovis aries	FGFR2	3	false	LOC114110247	downstream	3	-	GeneID:114110247	true	placeholder		position_only	1264298
+ovis_aries	Ovis aries	FGFR2	4	false	SEC23IP	downstream	4	+	GeneID:101109056	false	exact		high	1429578
+ovis_aries	Ovis aries	FGFR2	5	false	MCMBP	downstream	5	-	GeneID:101108791	false	exact		high	1483679
+monodelphis_domestica	Monodelphis domestica	FGFR2	-5	false	TACC2	upstream	5	-	GeneID:100025600	false	exact		high	536043
+monodelphis_domestica	Monodelphis domestica	FGFR2	-4	false	NSMCE4A	upstream	4	+	GeneID:103098792	false	exact		high	487857
+monodelphis_domestica	Monodelphis domestica	FGFR2	-3	false	LOC103101299	upstream	3	+	GeneID:103101299	true	placeholder		position_only	472708
+monodelphis_domestica	Monodelphis domestica	FGFR2	-2	false	ATE1	upstream	2	+	GeneID:100025687	false	exact		high	204667
+monodelphis_domestica	Monodelphis domestica	FGFR2	-1	false	LOC103095209	upstream	1	-	GeneID:103095209	true	placeholder		position_only	319612
+monodelphis_domestica	Monodelphis domestica	FGFR2	0	true		target	0	+	GeneID:100025727	false	target	target	target	0
+monodelphis_domestica	Monodelphis domestica	FGFR2	1	false	WDR11	downstream	1	-	GeneID:100025821	false	exact		high	763164
+monodelphis_domestica	Monodelphis domestica	FGFR2	2	false	LOC100025869	downstream	2	-	GeneID:100025869	true	placeholder		position_only	970041
+monodelphis_domestica	Monodelphis domestica	FGFR2	3	false	PLPP4	downstream	3	-	GeneID:100025930	false	exact		high	1242818
+monodelphis_domestica	Monodelphis domestica	FGFR2	4	false	SEC23IP	downstream	4	-	GeneID:100025969	false	exact		high	2174742
+monodelphis_domestica	Monodelphis domestica	FGFR2	5	false	MCMBP	downstream	5	+	GeneID:100020120	false	exact		high	2223051
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	FGFR2	-5	false	LOC103165880	upstream	5	-	GeneID:103165880	true	placeholder		position_only	1226106
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	FGFR2	-4	false	LOC100084486	upstream	4	+	GeneID:100084486	true	placeholder		position_only	1531622
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	FGFR2	-3	false	LOC100084468	upstream	3	-	GeneID:100084468	true	placeholder		position_only	461335
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	FGFR2	-2	false	NSMCE4A	upstream	2	+	GeneID:100084702	false	exact		high	418986
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	FGFR2	-1	false	ATE1	upstream	1	+	GeneID:103170315	false	exact		high	187760
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	FGFR2	0	true		target	0	+	GeneID:100084641	false	target	target	target	0
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	FGFR2	1	false	WDR11	downstream	1	-	GeneID:100084482	false	exact		high	497778
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	FGFR2	2	false	PLPP4	downstream	2	-	GeneID:100084434	false	exact		high	736926
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	FGFR2	3	false	LOC100080688	downstream	3	-	GeneID:100080688	true	placeholder		position_only	1152285
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	FGFR2	4	false	LOC100084400	downstream	4	+	GeneID:100084400	true	placeholder		position_only	1199623
+ornithorhynchus_anatinus	Ornithorhynchus anatinus	FGFR2	5	false	INPP5F	downstream	5	-	GeneID:100080657	false	exact		high	1244406
+gallus_gallus	Gallus gallus	FGFR2	-5	false	PLEKHA1	upstream	5	+	GeneID:423940	false	exact	ortholog_supported	high	267952
+gallus_gallus	Gallus gallus	FGFR2	-4	false	LYPD3	upstream	4	+	GeneID:121111178	false	weak	broad_homology_named	low	236941
+gallus_gallus	Gallus gallus	FGFR2	-3	false	TACC2	upstream	3	+	GeneID:423939	false	exact	ortholog_supported	high	120863
+gallus_gallus	Gallus gallus	FGFR2	-2	false	NSMCE4A	upstream	2	-	GeneID:423937	false	exact	ortholog_supported	high	108665
+gallus_gallus	Gallus gallus	FGFR2	-1	false	ATE1	upstream	1	-	GeneID:423936	false	exact	ortholog_supported	high	36979
+gallus_gallus	Gallus gallus	FGFR2	0	true		target	0	-	GeneID:396259	false	target	target	target	0
+gallus_gallus	Gallus gallus	FGFR2	1	false	WDR11	downstream	1	+	GeneID:423935	false	exact	ortholog_supported	high	190042
+gallus_gallus	Gallus gallus	FGFR2	2	false	PLPP4	downstream	2	+	GeneID:428987	false	exact	ortholog_supported	high	302161
+gallus_gallus	Gallus gallus	FGFR2	3	false	SEC23IP	downstream	3	+	GeneID:423934	false	exact	ortholog_supported	high	485983
+gallus_gallus	Gallus gallus	FGFR2	4	false	MCMBP	downstream	4	-	GeneID:423933	false	exact	ortholog_supported	high	505679
+gallus_gallus	Gallus gallus	FGFR2	5	false	INPP5F	downstream	5	+	GeneID:423932	false	exact	ortholog_supported	high	513355
+meleagris_gallopavo	Meleagris gallopavo	FGFR2	-5	false	SEC23IP	upstream	5	+	GeneID:100538585	false	exact		high	441219
+meleagris_gallopavo	Meleagris gallopavo	FGFR2	-4	false	PLPP4	upstream	4	+	GeneID:100540597	false	exact		high	332913
+meleagris_gallopavo	Meleagris gallopavo	FGFR2	-3	false	LOC100540753	upstream	3	+	GeneID:100540753	true	placeholder		position_only	222346
+meleagris_gallopavo	Meleagris gallopavo	FGFR2	-2	false	LOC104912087	upstream	2	+	GeneID:104912087	true	placeholder		position_only	179343
+meleagris_gallopavo	Meleagris gallopavo	FGFR2	-1	false	LOC104912075	upstream	1	-	GeneID:104912075	true	placeholder		position_only	43913
+meleagris_gallopavo	Meleagris gallopavo	FGFR2	0	true		target	0	-	GeneID:100540905	false	target	target	target	0
+meleagris_gallopavo	Meleagris gallopavo	FGFR2	1	false	LOC104912074	downstream	1	-	GeneID:104912074	true	placeholder		position_only	6631
+meleagris_gallopavo	Meleagris gallopavo	FGFR2	2	false	ATE1	downstream	2	-	GeneID:100541056	false	exact		high	105168
+meleagris_gallopavo	Meleagris gallopavo	FGFR2	3	false	NSMCE4A	downstream	3	-	GeneID:104909303	false	exact		high	149361
+meleagris_gallopavo	Meleagris gallopavo	FGFR2	4	false	LOC104912084	downstream	4	+	GeneID:104912084	true	placeholder		position_only	238372
+meleagris_gallopavo	Meleagris gallopavo	FGFR2	5	false	LOC100541207	downstream	5	+	GeneID:100541207	true	placeholder		position_only	259888
+taeniopygia_guttata	Taeniopygia guttata	FGFR2	-5	false	PLEKHA1	upstream	5	+	GeneID:100217594	false	exact		high	320013
+taeniopygia_guttata	Taeniopygia guttata	FGFR2	-4	false	LOC100231121	upstream	4	+	GeneID:100231121	true	placeholder		position_only	273234
+taeniopygia_guttata	Taeniopygia guttata	FGFR2	-3	false	TACC2	upstream	3	+	GeneID:100220486	false	exact		high	145833
+taeniopygia_guttata	Taeniopygia guttata	FGFR2	-2	false	NSMCE4A	upstream	2	-	GeneID:100224423	false	exact		high	132466
+taeniopygia_guttata	Taeniopygia guttata	FGFR2	-1	false	ATE1	upstream	1	-	GeneID:100230111	false	exact		high	63492
+taeniopygia_guttata	Taeniopygia guttata	FGFR2	0	true		target	0	-	GeneID:100223379	false	target	target	target	0
+taeniopygia_guttata	Taeniopygia guttata	FGFR2	1	false	WDR11	downstream	1	+	GeneID:100220549	false	exact		high	179321
+taeniopygia_guttata	Taeniopygia guttata	FGFR2	2	false	PLPP4	downstream	2	+	GeneID:100226377	false	exact		high	288672
+taeniopygia_guttata	Taeniopygia guttata	FGFR2	3	false	SEC23IP	downstream	3	+	GeneID:100229205	false	exact		high	474251
+taeniopygia_guttata	Taeniopygia guttata	FGFR2	4	false	MCMBP	downstream	4	-	GeneID:121470197	false	exact		high	496084
+taeniopygia_guttata	Taeniopygia guttata	FGFR2	5	false	INPP5F	downstream	5	+	GeneID:100232128	false	exact		high	511339
+anolis_carolinensis	Anolis carolinensis	FGFR2	-5	false	plekha1	upstream	5	+	GeneID:100564444	false	exact		high	636873
+anolis_carolinensis	Anolis carolinensis	FGFR2	-4	false	btbd16	upstream	4	+	GeneID:100564644	false	exact		high	538496
+anolis_carolinensis	Anolis carolinensis	FGFR2	-3	false	tacc2	upstream	3	+	GeneID:100562015	false	exact		high	283434
+anolis_carolinensis	Anolis carolinensis	FGFR2	-2	false	nsmce4a	upstream	2	-	GeneID:100565039	false	exact		high	262352
+anolis_carolinensis	Anolis carolinensis	FGFR2	-1	false	ate1	upstream	1	-	GeneID:100562215	false	exact		high	130191
+anolis_carolinensis	Anolis carolinensis	FGFR2	0	true		target	0	-	GeneID:100562611	false	target	target	target	0
+anolis_carolinensis	Anolis carolinensis	FGFR2	1	false	wdr11	downstream	1	+	GeneID:100562809	false	exact		high	422102
+anolis_carolinensis	Anolis carolinensis	FGFR2	2	false	plpp4	downstream	2	+	GeneID:100565428	false	exact		high	768164
+anolis_carolinensis	Anolis carolinensis	FGFR2	3	false	sec23ip	downstream	3	+	GeneID:100565627	false	exact		high	1373292
+anolis_carolinensis	Anolis carolinensis	FGFR2	4	false	mcmbp	downstream	4	-	GeneID:100563007	false	exact		high	1413080
+anolis_carolinensis	Anolis carolinensis	FGFR2	5	false	inpp5f	downstream	5	+	GeneID:100563460	false	exact		high	1455539
+alligator_mississippiensis	Alligator mississippiensis	FGFR2	-5	false	PLEKHA1	upstream	5	-	GeneID:102567994	false	exact		high	642109
+alligator_mississippiensis	Alligator mississippiensis	FGFR2	-4	false	BTBD16	upstream	4	-	GeneID:102568611	false	exact		high	559395
+alligator_mississippiensis	Alligator mississippiensis	FGFR2	-3	false	TACC2	upstream	3	-	GeneID:102568380	false	exact		high	312182
+alligator_mississippiensis	Alligator mississippiensis	FGFR2	-2	false	NSMCE4A	upstream	2	+	GeneID:102572022	false	exact		high	261159
+alligator_mississippiensis	Alligator mississippiensis	FGFR2	-1	false	ATE1	upstream	1	+	GeneID:102574359	false	exact		high	80727
+alligator_mississippiensis	Alligator mississippiensis	FGFR2	0	true		target	0	+	GeneID:102564591	false	target	target	target	0
+alligator_mississippiensis	Alligator mississippiensis	FGFR2	1	false	LOC132251249	downstream	1	-	GeneID:132251249	true	placeholder		position_only	36891
+alligator_mississippiensis	Alligator mississippiensis	FGFR2	2	false	WDR11	downstream	2	-	GeneID:102560532	false	exact		high	376117
+alligator_mississippiensis	Alligator mississippiensis	FGFR2	3	false	PLPP4	downstream	3	-	GeneID:102575543	false	exact		high	740129
+alligator_mississippiensis	Alligator mississippiensis	FGFR2	4	false	SEC23IP	downstream	4	-	GeneID:102558171	false	exact		high	1227802
+alligator_mississippiensis	Alligator mississippiensis	FGFR2	5	false	MCMBP	downstream	5	+	GeneID:102576842	false	exact		high	1273252
+chrysemys_picta_bellii	Chrysemys picta bellii	FGFR2	-5	false	BTBD16	upstream	5	-	GeneID:101936571	false	exact		high	521195
+chrysemys_picta_bellii	Chrysemys picta bellii	FGFR2	-4	false	TACC2	upstream	4	-	GeneID:101935409	false	exact		high	286733
+chrysemys_picta_bellii	Chrysemys picta bellii	FGFR2	-3	false	NSMCE4A	upstream	3	+	GeneID:122172122	false	exact		high	250622
+chrysemys_picta_bellii	Chrysemys picta bellii	FGFR2	-2	false	ATE1	upstream	2	+	GeneID:101934367	false	exact		high	92454
+chrysemys_picta_bellii	Chrysemys picta bellii	FGFR2	-1	false	LOC135972792	upstream	1	-	GeneID:135972792	true	placeholder		position_only	178857
+chrysemys_picta_bellii	Chrysemys picta bellii	FGFR2	0	true		target	0	+	GeneID:101933273	false	target	target	target	0
+chrysemys_picta_bellii	Chrysemys picta bellii	FGFR2	1	false	WDR11	downstream	1	-	GeneID:101932839	false	exact		high	319016
+chrysemys_picta_bellii	Chrysemys picta bellii	FGFR2	2	false	PLPP4	downstream	2	-	GeneID:101932557	false	exact		high	588394
+chrysemys_picta_bellii	Chrysemys picta bellii	FGFR2	3	false	LOC135972950	downstream	3	-	GeneID:135972950	true	placeholder		position_only	698040
+chrysemys_picta_bellii	Chrysemys picta bellii	FGFR2	4	false	SEC23IP	downstream	4	-	GeneID:101932291	false	exact		high	1026423
+chrysemys_picta_bellii	Chrysemys picta bellii	FGFR2	5	false	MCMBP	downstream	5	+	GeneID:101936041	false	exact		high	1078238
+xenopus_tropicalis	Xenopus tropicalis	FGFR2	-5	false	PLEKHA1	upstream	5	-	GeneID:549587	false	exact	ortholog_supported	high	232476
+xenopus_tropicalis	Xenopus tropicalis	FGFR2	-4	false	SLURP1	upstream	4	-	GeneID:101730888	false	weak	broad_homology_named	low	207577
+xenopus_tropicalis	Xenopus tropicalis	FGFR2	-3	false	TACC2	upstream	3	-	GeneID:100125117	false	exact	ortholog_supported	high	105838
+xenopus_tropicalis	Xenopus tropicalis	FGFR2	-2	false	NSMCE4A	upstream	2	+	GeneID:100495761	false	exact	ortholog_supported	high	93719
+xenopus_tropicalis	Xenopus tropicalis	FGFR2	-1	false	ATE1	upstream	1	+	GeneID:100495601	false	exact	ortholog_supported	high	35273
+xenopus_tropicalis	Xenopus tropicalis	FGFR2	0	true		target	0	+	GeneID:100124910	false	target	target	target	0
+xenopus_tropicalis	Xenopus tropicalis	FGFR2	1	false	WDR11	downstream	1	-	GeneID:100496077	false	exact	ortholog_supported	high	157140
+xenopus_tropicalis	Xenopus tropicalis	FGFR2	2	false	PLPP4	downstream	2	-	GeneID:100487728	false	exact	ortholog_supported	high	221306
+xenopus_tropicalis	Xenopus tropicalis	FGFR2	3	false	SGSM1	downstream	3	+	GeneID:101733728	false	weak	broad_homology_named	low	336075
+xenopus_tropicalis	Xenopus tropicalis	FGFR2	4	false	oat	downstream	4	+	GeneID:549690	false	exact	symbol_supported_only	high	398800
+xenopus_tropicalis	Xenopus tropicalis	FGFR2	5	false	PKN2	downstream	5	-	GeneID:101733213	false	rbh	broad_homology_named	medium	414624
+ambystoma_mexicanum	Ambystoma mexicanum	FGFR2	-5	false	LOC138473450	upstream	5	-	GeneID:138473450	true	placeholder		position_only	1953834
+ambystoma_mexicanum	Ambystoma mexicanum	FGFR2	-4	false	TACC2	upstream	4	+	GeneID:138473313	false	exact		high	1820970
+ambystoma_mexicanum	Ambystoma mexicanum	FGFR2	-3	false	NSMCE4A	upstream	3	-	GeneID:138473311	false	exact		high	1468279
+ambystoma_mexicanum	Ambystoma mexicanum	FGFR2	-2	false	LOC138473448	upstream	2	+	GeneID:138473448	true	placeholder		position_only	1202279
+ambystoma_mexicanum	Ambystoma mexicanum	FGFR2	-1	false	ATE1	upstream	1	-	GeneID:138473309	false	exact		high	367443
+ambystoma_mexicanum	Ambystoma mexicanum	FGFR2	0	true		target	0	-	GeneID:138473308	false	target	target	target	0
+ambystoma_mexicanum	Ambystoma mexicanum	FGFR2	1	false	LOC138473447	downstream	1	-	GeneID:138473447	true	placeholder		position_only	1540358
+ambystoma_mexicanum	Ambystoma mexicanum	FGFR2	2	false	LOC138473446	downstream	2	-	GeneID:138473446	true	placeholder		position_only	2274941
+ambystoma_mexicanum	Ambystoma mexicanum	FGFR2	3	false	WDR11	downstream	3	+	GeneID:138473306	false	exact		high	3558408
+ambystoma_mexicanum	Ambystoma mexicanum	FGFR2	4	false	PLPP4	downstream	4	+	GeneID:138473305	false	exact		high	5439338
+ambystoma_mexicanum	Ambystoma mexicanum	FGFR2	5	false	LOC138473445	downstream	5	+	GeneID:138473445	true	placeholder		position_only	8906579
+danio_rerio	Danio rerio	FGFR2	-5	false	slc29a1a	upstream	5	-	GeneID:563580	false	exact	symbol_supported_only	high	455278
+danio_rerio	Danio rerio	FGFR2	-4	false	CCDC177	upstream	4	-	GeneID:141377073	false	rbh	broad_homology_named	medium	446994
+danio_rerio	Danio rerio	FGFR2	-3	false	SLC39A9	upstream	3	+	GeneID:571446	false	rbh	broad_homology_named	medium	426815
+danio_rerio	Danio rerio	FGFR2	-2	false	tmem63ba	upstream	2	+	GeneID:100334023	false	exact	symbol_supported_only	high	342328
+danio_rerio	Danio rerio	FGFR2	-1	false	ATE1	upstream	1	-	GeneID:100037311	false	exact	ortholog_supported	high	89904
+danio_rerio	Danio rerio	FGFR2	0	true		target	0	-	GeneID:352940	false	target	target	target	0
+danio_rerio	Danio rerio	FGFR2	1	false	DNAAF2	downstream	1	+	GeneID:141377070	false	weak	broad_homology_named	low	70138
+danio_rerio	Danio rerio	FGFR2	2	false	ftr69	downstream	2	-	GeneID:793961	false	exact	symbol_supported_only	high	145969
+danio_rerio	Danio rerio	FGFR2	3	false	ftr70	downstream	3	-	GeneID:793898	false	exact	symbol_supported_only	high	158579
+danio_rerio	Danio rerio	FGFR2	4	false	marcksl1a	downstream	4	+	GeneID:406407	false	exact	symbol_supported_only	high	172142
+danio_rerio	Danio rerio	FGFR2	5	false	bsdc1	downstream	5	+	GeneID:794882	false	exact	symbol_supported_only	high	352993
+oryzias_latipes	Oryzias latipes	FGFR2	-5	false	LOC101172603	upstream	5	+	GeneID:101172603	true	placeholder		position_only	90208
+oryzias_latipes	Oryzias latipes	FGFR2	-4	false	LOC101172520	upstream	4	+	GeneID:101172520	true	placeholder		position_only	86582
+oryzias_latipes	Oryzias latipes	FGFR2	-3	false	LOC101172841	upstream	3	-	GeneID:101172841	true	placeholder		position_only	81386
+oryzias_latipes	Oryzias latipes	FGFR2	-2	false	LOC101173087	upstream	2	+	GeneID:101173087	true	placeholder		position_only	71563
+oryzias_latipes	Oryzias latipes	FGFR2	-1	false	ate1	upstream	1	+	GeneID:101172758	false	exact		high	24743
+oryzias_latipes	Oryzias latipes	FGFR2	0	true		target	0	+	GeneID:100049483	false	target	target	target	0
+oryzias_latipes	Oryzias latipes	FGFR2	1	false	wdr11	downstream	1	-	GeneID:101173331	false	exact		high	73416
+oryzias_latipes	Oryzias latipes	FGFR2	2	false	plpp4	downstream	2	-	GeneID:101173574	false	exact		high	164398
+oryzias_latipes	Oryzias latipes	FGFR2	3	false	LOC144984233	downstream	3	-	GeneID:144984233	true	placeholder		position_only	181690
+oryzias_latipes	Oryzias latipes	FGFR2	4	false	LOC101173809	downstream	4	-	GeneID:101173809	true	placeholder		position_only	181690
+oryzias_latipes	Oryzias latipes	FGFR2	5	false	cdh23	downstream	5	+	GeneID:101174529	false	exact		high	230739
+gasterosteus_aculeatus	Gasterosteus aculeatus	FGFR2	-5	false	dnajc12	upstream	5	-	GeneID:120820254	false	exact		high	86916
+gasterosteus_aculeatus	Gasterosteus aculeatus	FGFR2	-4	false	LOC120821101	upstream	4	+	GeneID:120821101	true	placeholder		position_only	74248
+gasterosteus_aculeatus	Gasterosteus aculeatus	FGFR2	-3	false	LOC120820812	upstream	3	+	GeneID:120820812	true	placeholder		position_only	69734
+gasterosteus_aculeatus	Gasterosteus aculeatus	FGFR2	-2	false	LOC120820818	upstream	2	-	GeneID:120820818	true	placeholder		position_only	62269
+gasterosteus_aculeatus	Gasterosteus aculeatus	FGFR2	-1	false	ate1	upstream	1	-	GeneID:120820720	false	exact		high	20103
+gasterosteus_aculeatus	Gasterosteus aculeatus	FGFR2	0	true		target	0	-	GeneID:120820493	false	target	target	target	0
+gasterosteus_aculeatus	Gasterosteus aculeatus	FGFR2	1	false	wdr11	downstream	1	+	GeneID:120820697	false	exact		high	46784
+gasterosteus_aculeatus	Gasterosteus aculeatus	FGFR2	2	false	plpp4	downstream	2	+	GeneID:120820760	false	exact		high	132163
+gasterosteus_aculeatus	Gasterosteus aculeatus	FGFR2	3	false	LOC120821008	downstream	3	+	GeneID:120821008	true	placeholder		position_only	273550
+gasterosteus_aculeatus	Gasterosteus aculeatus	FGFR2	4	false	vsir	downstream	4	+	GeneID:120821007	false	exact		high	282063
+gasterosteus_aculeatus	Gasterosteus aculeatus	FGFR2	5	false	cdh23	downstream	5	-	GeneID:120821003	false	exact		high	173769
+takifugu_rubripes	Takifugu rubripes	FGFR2	-5	false	ablim1a	upstream	5	-	GeneID:101072764	false	exact		high	114878
+takifugu_rubripes	Takifugu rubripes	FGFR2	-4	false	LOC115249696	upstream	4	+	GeneID:115249696	true	placeholder		position_only	106974
+takifugu_rubripes	Takifugu rubripes	FGFR2	-3	false	LOC101072985	upstream	3	-	GeneID:101072985	true	placeholder		position_only	96933
+takifugu_rubripes	Takifugu rubripes	FGFR2	-2	false	LOC101073205	upstream	2	-	GeneID:101073205	true	placeholder		position_only	89693
+takifugu_rubripes	Takifugu rubripes	FGFR2	-1	false	ate1	upstream	1	-	GeneID:101073436	false	exact		high	32388
+takifugu_rubripes	Takifugu rubripes	FGFR2	0	true		target	0	-	GeneID:101073665	false	target	target	target	0
+takifugu_rubripes	Takifugu rubripes	FGFR2	1	false	wdr11	downstream	1	+	GeneID:101073890	false	exact		high	68525
+takifugu_rubripes	Takifugu rubripes	FGFR2	2	false	plpp4	downstream	2	+	GeneID:101074109	false	exact		high	162650
+takifugu_rubripes	Takifugu rubripes	FGFR2	3	false	cdh23	downstream	3	-	GeneID:101066703	false	exact		high	211930
+takifugu_rubripes	Takifugu rubripes	FGFR2	4	false	eif3s6ip	downstream	4	+	GeneID:101066932	false	exact		high	385268
+takifugu_rubripes	Takifugu rubripes	FGFR2	5	false	smoc2	downstream	5	-	GeneID:101074557	false	exact		high	391191
+oreochromis_niloticus	Oreochromis niloticus	FGFR2	-5	false	LOC100697230	upstream	5	+	GeneID:100697230	true	placeholder		position_only	96691
+oreochromis_niloticus	Oreochromis niloticus	FGFR2	-4	false	LOC100697495	upstream	4	+	GeneID:100697495	true	placeholder		position_only	91386
+oreochromis_niloticus	Oreochromis niloticus	FGFR2	-3	false	LOC102076876	upstream	3	-	GeneID:102076876	true	placeholder		position_only	87848
+oreochromis_niloticus	Oreochromis niloticus	FGFR2	-2	false	LOC100697766	upstream	2	+	GeneID:100697766	true	placeholder		position_only	81600
+oreochromis_niloticus	Oreochromis niloticus	FGFR2	-1	false	ate1	upstream	1	+	GeneID:100698029	false	exact		high	28441
+oreochromis_niloticus	Oreochromis niloticus	FGFR2	0	true		target	0	+	GeneID:100699731	false	target	target	target	0
+oreochromis_niloticus	Oreochromis niloticus	FGFR2	1	false	wdr11	downstream	1	-	GeneID:100698296	false	exact		high	61806
+oreochromis_niloticus	Oreochromis niloticus	FGFR2	2	false	plpp4	downstream	2	-	GeneID:100698558	false	exact		high	167282
+oreochromis_niloticus	Oreochromis niloticus	FGFR2	3	false	cdh23	downstream	3	+	GeneID:100698828	false	exact		high	240324
+oreochromis_niloticus	Oreochromis niloticus	FGFR2	4	false	LOC102083045	downstream	4	-	GeneID:102083045	true	placeholder		position_only	379021
+oreochromis_niloticus	Oreochromis niloticus	FGFR2	5	false	vsir	downstream	5	-	GeneID:102083124	false	exact		high	389064

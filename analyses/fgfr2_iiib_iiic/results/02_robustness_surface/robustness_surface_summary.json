@@ -1,0 +1,6 @@
+{
+  "n_proteins": 58,
+  "n_grid_points": 1326,
+  "fraction_of_grid_with_100pct_pass": 0.5512820512820513,
+  "minimum_distance_for_100pct_at_80pct_consensus": 12.0
+}

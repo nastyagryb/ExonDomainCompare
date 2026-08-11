@@ -1,0 +1,6 @@
+member_database	n_proteins	n_species	mean_signed_offset_aa	bootstrap_ci_low_aa	bootstrap_ci_high_aa	median_signed_offset_aa	median_absolute_offset_aa	fraction_within_threshold
+Pfam	58	30	-6.683333333333334	-7.833333333333333	-5.433333333333334	-2.0	2.0	1.0
+SMART	58	30	-6.508333333333334	-6.741666666666666	-6.333333333333333	-6.5	6.5	1.0
+ProSiteProfiles	58	30	-3.283333333333333	-3.933333333333333	-2.816666666666667	-3.0	3.0	1.0
+SUPERFAMILY	58	30	-1.9166666666666667	-2.0	-1.8166666666666667	-2.0	2.0	1.0
+Gene3D	58	30	3.35	3.0	3.683333333333333	4.0	4.0	1.0

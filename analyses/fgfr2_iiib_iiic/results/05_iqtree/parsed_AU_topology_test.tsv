@@ -1,0 +1,4 @@
+tree	hypothesis	log_likelihood	delta_log_likelihood	p_AU
+1	Unconstrained ML	-583.6588558	0.0	1.0
+2	Isoform monophyly	-583.6591338	0.00027794	1.0
+3	Species-pair topology	-1497.465063	913.81	6.36e-08

@@ -1,0 +1,171 @@
+IQ-TREE 3.1.3 built Jul 26 2026
+
+Input file name: cassette_complete_pairs.safe_ids.faa
+Type of analysis: tree reconstruction
+Random seed number: 160107
+
+REFERENCES
+----------
+
+To cite IQ-TREE 3 please use:
+
+Thomas K.F. Wong, Nhan Ly-Trong, Huaiyan Ren, Piyumal Demotte, Hector Banos,
+Andrew J. Roger, Edward Susko, Chris Bielow, Nicola De Maio, Nick Goldman,
+Matthew W. Hahn, Mario dos Reis, Le Sy Vinh, Gavin Huttley, Robert Lanfear, Bui Quang Minh (2026)
+IQ-TREE 3: Phylogenomic Inference Software using Complex Evolutionary Models.
+Molecular Biology and Evolution, msag117.
+https://doi.org/10.1093/molbev/msag117
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 56 sequences with 69 amino-acid sites
+Number of constant sites: 36 (= 52.1739% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 36 (= 52.1739% of all sites)
+Number of parsimony informative sites: 26
+Number of distinct site patterns: 44
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: LG+G4
+
+State frequencies: (model)
+
+Model of rate heterogeneity: Gamma with 4 categories
+Gamma shape alpha: 0.9350
+
+ Category  Relative_rate  Proportion
+  1         0.1238         0.2500
+  2         0.4563         0.2500
+  3         0.9883         0.2500
+  4         2.4316         0.2500
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+STARTING TREE
+-------------
+
+Log-likelihood of the tree: -588.7210 (s.e. 78.8203)
+Unconstrained log-likelihood (without tree): -220.2404
+Number of free parameters (#branches + #model parameters): 58
+Akaike information criterion (AIC) score: 1293.4420
+Corrected Akaike information criterion (AICc) score: 1977.8420
+Bayesian information criterion (BIC) score: 1423.0202
+
+Total tree length (sum of branch lengths): 2.5501
+Sum of internal branch lengths: 1.4623 (57.3445% of tree length)
+
+WARNING: 14 near-zero internal branches (<0.0145) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'alligator_mississippiensis__IIIb' is drawn at root
+
++**alligator_mississippiensis__IIIb
+|
+|                                                                    +**alligator_mississippiensis__IIIc
+|                                                                 +**|
+|                                                                 |  +**chrysemys_picta_bellii__IIIc
+|                                                              +--|
+|                                                              |  |        +--danio_rerio__IIIc
+|                                                              |  |     +**|
+|                                                              |  |     |  |  +--gasterosteus_aculeatus__IIIc
+|                                                              |  |     |  +**|
+|                                                              |  |     |     +--oryzias_latipes__IIIc
+|                                                              |  |  +--|
+|                                                              |  |  |  +**oreochromis_niloticus__IIIc
+|                                                              |  +--|
+|                                                              |     +**takifugu_rubripes__IIIc
+|                                                           +**|
+|                                                           |  +--anolis_carolinensis__IIIc
+|                                                        +**|
+|                                                        |  |  +**ambystoma_mexicanum__IIIc
+|                                                        |  +--|
+|                                                        |     +----xenopus_tropicalis__IIIc
+|                                                     +**|
+|                                                     |  +**bos_taurus__IIIc
+|           +-----------------------------------------|
+|           |                                         +**callithrix_jacchus__IIIc
+|     +-----|
+|     |     |  +-----danio_rerio__IIIb
+|     |     +**|
+|     |        |        +---gasterosteus_aculeatus__IIIb
+|     |        |     +**|
+|     |        |     |  +---oreochromis_niloticus__IIIb
+|     |        |  +--|
+|     |        |  |  +**takifugu_rubripes__IIIb
+|     |        +--|
+|     |           +--oryzias_latipes__IIIb
+|  +--|
+|  |  |  +--anolis_carolinensis__IIIb
+|  |  +--|
+|  |     +--xenopus_tropicalis__IIIb
++**|
+|  +--ornithorhynchus_anatinus__IIIb
+|
+|           +--ambystoma_mexicanum__IIIb
+|        +**|
+|        |  +--monodelphis_domestica__IIIb
+|     +**|
+|     |  |  +**gallus_gallus__IIIb
+|     |  +--|
+|     |     +**meleagris_gallopavo__IIIb
+|  +**|
+|  |  |     +**bos_taurus__IIIb
+|  |  |  +**|
+|  |  |  |  |  +**mus_musculus__IIIb
+|  |  |  |  +--|
+|  |  |  |     +**rattus_norvegicus__IIIb
+|  |  +--|
+|  |     +**callithrix_jacchus__IIIb
++**|
+   +**chrysemys_picta_bellii__IIIb
+
+Tree in newick format:
+
+(alligator_mississippiensis__IIIb:0.0000010000,(((((((((alligator_mississippiensis__IIIc:0.0000010000,chrysemys_picta_bellii__IIIc:0.0000010000):0.0000010000,(((danio_rerio__IIIc:0.0256455313,(gasterosteus_aculeatus__IIIc:0.0507188737,oryzias_latipes__IIIc:0.0508467643):0.0000010000):0.0000010000,oreochromis_niloticus__IIIc:0.0000010000):0.0248847310,takifugu_rubripes__IIIc:0.0000010000):0.0511247951):0.0228798442,anolis_carolinensis__IIIc:0.0751382662):0.0000010000,(ambystoma_mexicanum__IIIc:0.0000027964,xenopus_tropicalis__IIIc:0.1322595818):0.0702189454):0.0000010000,bos_taurus__IIIc:0.0000010000):0.0000010000,callithrix_jacchus__IIIc:0.0000010000):0.9416459915,(danio_rerio__IIIb:0.1374679845,(((gasterosteus_aculeatus__IIIb:0.1002573858,oreochromis_niloticus__IIIb:0.1047862450):0.0000026264,takifugu_rubripes__IIIb:0.0134340298):0.0552903931,oryzias_latipes__IIIb:0.0448344362):0.0214782337):0.0000028133):0.1533647950,(anolis_carolinensis__IIIb:0.0739544114,xenopus_tropicalis__IIIb:0.0861526579):0.0239026242):0.0251696062,ornithorhynchus_anatinus__IIIb:0.0237202803):0.0000010000,((((ambystoma_mexicanum__IIIb:0.0759658687,monodelphis_domestica__IIIb:0.0464347143):0.0000010000,(gallus_gallus__IIIb:0.0000010000,meleagris_gallopavo__IIIb:0.0000010000):0.0230116046):0.0000010000,((bos_taurus__IIIb:0.0000010000,(mus_musculus__IIIb:0.0000010000,rattus_norvegicus__IIIb:0.0000010000):0.0231100097):0.0000010000,callithrix_jacchus__IIIb:0.0000010000):0.0723626243):0.0000010000,chrysemys_picta_bellii__IIIb:0.0000010000):0.0000010000);
+
+
+USER TREES
+----------
+
+See topology_AU_test.trees for trees with branch lengths.
+
+Tree      logL    deltaL  bp-RELL    p-KH     p-SH       c-ELW       p-AU
+-------------------------------------------------------------------------
+  1 -583.6588558       0   0.498 +  0.901 +      1 +       0.5 +        1 +
+  2 -583.6591338 0.00027794   0.502 + 0.0994 +  0.547 +       0.5 +        1 +
+  3 -1497.465063  913.81       0 -      0 -      0 - 7.63e-175 - 6.36e-08 -
+
+deltaL  : logL difference from the maximal logl in the set.
+bp-RELL : bootstrap proportion using RELL method (Kishino et al. 1990).
+p-KH    : p-value of one sided Kishino-Hasegawa test (1989).
+p-SH    : p-value of Shimodaira-Hasegawa test (2000).
+c-ELW   : Expected Likelihood Weight (Strimmer & Rambaut 2002).
+p-AU    : p-value of approximately unbiased (AU) test (Shimodaira, 2002).
+
+Plus signs denote the 95% confidence sets.
+Minus signs denote significant exclusion.
+All tests performed 10000 resamplings using the RELL method.
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t topology_AU_test.treefile -m "LG+G4{0.934992}" --length 69
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s cassette_complete_pairs.safe_ids.faa --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s cassette_complete_pairs.safe_ids.faa --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Tue Aug  4 21:01:26 2026
+Total CPU time used: 0.0584 seconds (0h:0m:0s)
+Total wall-clock time used: 0.174 seconds (0h:0m:0s)

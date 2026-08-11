@@ -1,0 +1,231 @@
+IQ-TREE 3.1.3 built Jul 26 2026
+
+Input file name: cassette_complete_pairs.safe_ids.faa
+Type of analysis: tree reconstruction
+Random seed number: 460166
+
+REFERENCES
+----------
+
+To cite IQ-TREE 3 please use:
+
+Thomas K.F. Wong, Nhan Ly-Trong, Huaiyan Ren, Piyumal Demotte, Hector Banos,
+Andrew J. Roger, Edward Susko, Chris Bielow, Nicola De Maio, Nick Goldman,
+Matthew W. Hahn, Mario dos Reis, Le Sy Vinh, Gavin Huttley, Robert Lanfear, Bui Quang Minh (2026)
+IQ-TREE 3: Phylogenomic Inference Software using Complex Evolutionary Models.
+Molecular Biology and Evolution, msag117.
+https://doi.org/10.1093/molbev/msag117
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 56 sequences with 69 amino-acid sites
+Number of constant sites: 36 (= 52.1739% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 36 (= 52.1739% of all sites)
+Number of parsimony informative sites: 26
+Number of distinct site patterns: 44
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: LG+G4
+
+State frequencies: (model)
+
+Model of rate heterogeneity: Gamma with 4 categories
+Gamma shape alpha: 0.1819
+
+ Category  Relative_rate  Proportion
+  1         0.0003         0.2500
+  2         0.0240         0.2500
+  3         0.3347         0.2500
+  4         3.6410         0.2500
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -1997.7115 (s.e. 295.3567)
+Unconstrained log-likelihood (without tree): -220.2404
+Number of free parameters (#branches + #model parameters): 110
+Akaike information criterion (AIC) score: 4215.4230
+Corrected Akaike information criterion (AICc) score: 28635.4230
+Bayesian information criterion (BIC) score: 4461.1747
+
+**************************** WARNING ****************************
+Number of parameters (K, model parameters and branch lengths): 110
+Sample size (n, alignment length): 69
+
+Given that K>=n, the parameter estimates might be inaccurate.
+Thus, phylogenetic estimates should be interpreted with caution.
+
+Ideally, it is desirable that n >> K. When selecting optimal models,
+1. use AIC or BIC if n > 40K;
+2. use AICc or BIC if 40K >= n > K;
+3. be extremely cautious if n <= K
+
+To improve the situation (3), consider the following options:
+  1. Increase the sample size (n)
+  2. Decrease the number of parameters (K) to be estimated. If
+     possible:
+     a. Remove the least important sequences from the alignment
+     b. Specify some of the parameter values for the substitution
+        model (e.g., the nucleotide or amino acid frequencies)
+     c. Specify some of the parameter values for the rates-across-
+        sites model (e.g., the shape parameter for the discrete
+        Gamma distribution, the proportion of invariable sites, or
+        the rates of change for different rate categories under
+        the FreeRate model)
+
+Reference:
+Burnham KR, Anderson DR (2002). Model Selection and Multimodel
+Inference: A Practical Information-Theoretic Approach. Springer,
+New York.
+************************ END OF WARNING ***********************
+
+Total tree length (sum of branch lengths): 110.9996
+Sum of internal branch lengths: 0.2496 (0.2248% of tree length)
+
+WARNING: 48 near-zero internal branches (<0.0145) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon 'alligator_mississippiensis__IIIb' is drawn at root
+
++----------------------------------------------alligator_mississippiensis__IIIb
+|
++**alligator_mississippiensis__IIIc
+|
+|                       +---------------------------------------------------------ambystoma_mexicanum__IIIb
+|                    +**|
+|                    |  +**ambystoma_mexicanum__IIIc
+|                 +--|
+|                 |  |  +------------------------------------------------------xenopus_tropicalis__IIIb
+|                 |  +**|
+|                 |     +--xenopus_tropicalis__IIIc
+|              +**|
+|              |  |  +------------------------------------------anolis_carolinensis__IIIb
+|              |  +--|
+|              |     +**anolis_carolinensis__IIIc
+|           +--|
+|           |  |                             +-----------------------------------------bos_taurus__IIIb
+|           |  |                          +**|
+|           |  |                          |  +**bos_taurus__IIIc
+|           |  |                       +**|
+|           |  |                       |  |  +-----------------------------------------ovis_aries__IIIb
+|           |  |                       |  +**|
+|           |  |                       |     +**ovis_aries__IIIc
+|           |  |                    +**|
+|           |  |                    |  |  +-----------------------------------------callithrix_jacchus__IIIb
+|           |  |                    |  +**|
+|           |  |                    |     +**callithrix_jacchus__IIIc
+|           |  |                 +**|
+|           |  |                 |  |  +-----------------------------------------pan_troglodytes__IIIb
+|           |  |                 |  +**|
+|           |  |                 |     +**pan_troglodytes__IIIc
+|           |  |              +**|
+|           |  |              |  |           +-----------------------------------------felis_catus__IIIb
+|           |  |              |  |        +**|
+|           |  |              |  |        |  +**felis_catus__IIIc
+|           |  |              |  |     +**|
+|           |  |              |  |     |  |  +------------------------------------------mus_musculus__IIIb
+|           |  |              |  |     |  +**|
+|           |  |              |  |     |     +**mus_musculus__IIIc
+|           |  |              |  |  +**|
+|           |  |              |  |  |  |     +-----------------------------------------gorilla_gorilla_gorilla__IIIb
+|           |  |              |  |  |  |  +**|
+|           |  |              |  |  |  |  |  +**gorilla_gorilla_gorilla__IIIc
+|           |  |              |  |  |  +**|
+|           |  |              |  |  |     |  +-----------------------------------------oryctolagus_cuniculus__IIIb
+|           |  |              |  |  |     +**|
+|           |  |              |  |  |        +**oryctolagus_cuniculus__IIIc
+|           |  |              |  +**|
+|           |  |              |     |  +-----------------------------------------sus_scrofa__IIIb
+|           |  |              |     +**|
+|           |  |              |        +**sus_scrofa__IIIc
+|           |  |           +**|
+|           |  |           |  |     +-----------------------------------------equus_caballus__IIIb
+|           |  |           |  |  +**|
+|           |  |           |  |  |  +**equus_caballus__IIIc
+|           |  |           |  +**|
+|           |  |           |     |  +-----------------------------------------macaca_mulatta__IIIb
+|           |  |           |     +**|
+|           |  |           |        +**macaca_mulatta__IIIc
+|           |  |        +**|
+|           |  |        |  |  +------------------------------------------rattus_norvegicus__IIIb
+|           |  |        |  +**|
+|           |  |        |     +**rattus_norvegicus__IIIc
+|           |  |     +**|
+|           |  |     |  |  +----------------------------------------------monodelphis_domestica__IIIb
+|           |  |     |  +**|
+|           |  |     |     +**monodelphis_domestica__IIIc
+|           |  |  +**|
+|           |  |  |  |  +-----------------------------------------------ornithorhynchus_anatinus__IIIb
+|           |  |  |  +**|
+|           |  |  |     +**ornithorhynchus_anatinus__IIIc
+|           |  +**|
+|           |     |  +-----------------------------------------homo_sapiens__IIIb
+|           |     +**|
+|           |        +**homo_sapiens__IIIc
+|        +**|
+|        |  |              +----------------------------------------------------danio_rerio__IIIb
+|        |  |           +**|
+|        |  |           |  +--danio_rerio__IIIc
+|        |  |        +**|
+|        |  |        |  |  +-------------------------------------------oreochromis_niloticus__IIIb
+|        |  |        |  +**|
+|        |  |        |     +**oreochromis_niloticus__IIIc
+|        |  |     +**|
+|        |  |     |  |  +----------------------------------------------------gasterosteus_aculeatus__IIIb
+|        |  |     |  +**|
+|        |  |     |     +--gasterosteus_aculeatus__IIIc
+|        |  |  +--|
+|        |  |  |  |  +---------------------------------------------oryzias_latipes__IIIb
+|        |  |  |  +**|
+|        |  |  |     +--oryzias_latipes__IIIc
+|        |  +--|
+|        |     |  +------------------------------------------------takifugu_rubripes__IIIb
+|        |     +**|
+|        |        +**takifugu_rubripes__IIIc
+|     +**|
+|     |  |  +---------------------------------------------------taeniopygia_guttata__IIIb
+|     |  +**|
+|     |     +**taeniopygia_guttata__IIIc
+|  +**|
+|  |  |  +---------------------------------------------------gallus_gallus__IIIb
+|  |  +**|
+|  |     +**gallus_gallus__IIIc
++**|
+   |     +------------------------------------------------chrysemys_picta_bellii__IIIb
+   |  +**|
+   |  |  +**chrysemys_picta_bellii__IIIc
+   +**|
+      |  +---------------------------------------------------meleagris_gallopavo__IIIb
+      +**|
+         +**meleagris_gallopavo__IIIc
+
+Tree in newick format:
+
+(alligator_mississippiensis__IIIb:3.9664984165,alligator_mississippiensis__IIIc:0.0000023905,((((((((ambystoma_mexicanum__IIIb:4.9695077864,ambystoma_mexicanum__IIIc:0.0000025908):0.0000010000,(xenopus_tropicalis__IIIb:4.6416181248,xenopus_tropicalis__IIIc:0.1344707968):0.0000023418):0.0686320518,(anolis_carolinensis__IIIb:3.6560581858,anolis_carolinensis__IIIc:0.0000023120):0.0807776441):0.0000020463,((((((((((bos_taurus__IIIb:3.5852878224,bos_taurus__IIIc:0.0000023905):0.0000010000,(ovis_aries__IIIb:3.5855595010,ovis_aries__IIIc:0.0000023905):0.0000010000):0.0000010000,(callithrix_jacchus__IIIb:3.5858358745,callithrix_jacchus__IIIc:0.0000023905):0.0000010000):0.0000010000,(pan_troglodytes__IIIb:3.5861170330,pan_troglodytes__IIIc:0.0000023905):0.0000010000):0.0000010000,((((felis_catus__IIIb:3.5866940827,felis_catus__IIIc:0.0000023905):0.0000010000,(mus_musculus__IIIb:3.6766809559,mus_musculus__IIIc:0.0000023905):0.0000010000):0.0000022224,((gorilla_gorilla_gorilla__IIIb:3.5873291258,gorilla_gorilla_gorilla__IIIc:0.0000023905):0.0000028299,(oryctolagus_cuniculus__IIIb:3.5876362750,oryctolagus_cuniculus__IIIc:0.0000023905):0.0000010000):0.0000010000):0.0000010000,(sus_scrofa__IIIb:3.5864030719,sus_scrofa__IIIc:0.0000023905):0.0000010000):0.0000010000):0.0000010000,((equus_caballus__IIIb:3.5879488213,equus_caballus__IIIc:0.0000023905):0.0000010000,(macaca_mulatta__IIIb:3.5882668635,macaca_mulatta__IIIc:0.0000023905):0.0000010000):0.0000010000):0.0000010000,(rattus_norvegicus__IIIb:3.6787010794,rattus_norvegicus__IIIc:0.0000023905):0.0000010000):0.0000010000,(monodelphis_domestica__IIIb:4.0445491730,monodelphis_domestica__IIIc:0.0000023905):0.0000010000):0.0000010000,(ornithorhynchus_anatinus__IIIb:4.0880639749,ornithorhynchus_anatinus__IIIc:0.0000023905):0.0000010000):0.0000010000,(homo_sapiens__IIIb:3.5897118724,homo_sapiens__IIIc:0.0000023905):0.0000010000):0.0000010000):0.0217896936,(((((danio_rerio__IIIb:4.5531497650,danio_rerio__IIIc:0.0252846825):0.0000010000,(oreochromis_niloticus__IIIb:3.7712940633,oreochromis_niloticus__IIIc:0.0000028248):0.0000021785):0.0000023048,(gasterosteus_aculeatus__IIIb:4.5147149956,gasterosteus_aculeatus__IIIc:0.0516781485):0.0000021302):0.0000023692,(oryzias_latipes__IIIb:3.9503572313,oryzias_latipes__IIIc:0.0509641689):0.0000020273):0.0251373116,(takifugu_rubripes__IIIb:4.1501288308,takifugu_rubripes__IIIc:0.0000021476):0.0000020926):0.0531473183):0.0000020017,(taeniopygia_guttata__IIIb:4.3874069883,taeniopygia_guttata__IIIc:0.0000022734):0.0000024658):0.0000020517,(gallus_gallus__IIIb:4.3878582009,gallus_gallus__IIIc:0.0000022768):0.0000023240):0.0000020193,((chrysemys_picta_bellii__IIIb:4.2050649985,chrysemys_picta_bellii__IIIc:0.0000023661):0.0000010000,(meleagris_gallopavo__IIIb:4.3891361400,meleagris_gallopavo__IIIc:0.0000024300):0.0000010000):0.0000024601):0.0000010000);
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t species_pair_constraint.treefile -m "LG+G4{0.181863}" --length 69
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s cassette_complete_pairs.safe_ids.faa --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s cassette_complete_pairs.safe_ids.faa --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Tue Aug  4 21:01:26 2026
+Total CPU time used: 74.0324 seconds (0h:1m:14s)
+Total wall-clock time used: 73.6828 seconds (0h:1m:13s)

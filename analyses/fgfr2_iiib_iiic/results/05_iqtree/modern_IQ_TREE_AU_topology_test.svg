@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1117.435313pt" height="477.081016pt" viewBox="0 0 1117.435313 477.081016" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-04T21:01:28.472686</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 477.081016
+L 1117.435313 477.081016
+L 1117.435313 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 152.352 434.88
+L 716.832 434.88
+L 716.832 113.472
+L 152.352 113.472
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 152.352 434.88
+L 152.352 113.472
+" clip-path="url(#p02f5b03678)" style="fill: none; stroke: #dce4ec; stroke-opacity: 0.9; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2">
+      <defs>
+       <path id="mc5c3df7917" d="M 0 0
+L 0 3.5
+" style="stroke: #243b53; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mc5c3df7917" x="152.352" y="434.88" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #243b53" x="152.352" y="450.237422" transform="rotate(-0 152.352 450.237422)">0.00</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 259.872 434.88
+L 259.872 113.472
+" clip-path="url(#p02f5b03678)" style="fill: none; stroke: #dce4ec; stroke-opacity: 0.9; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#mc5c3df7917" x="259.872" y="434.88" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #243b53" x="259.872" y="450.237422" transform="rotate(-0 259.872 450.237422)">0.05</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 367.392 434.88
+L 367.392 113.472
+" clip-path="url(#p02f5b03678)" style="fill: none; stroke: #dce4ec; stroke-opacity: 0.9; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#mc5c3df7917" x="367.392" y="434.88" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #243b53" x="367.392" y="450.237422" transform="rotate(-0 367.392 450.237422)">0.10</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 474.912 434.88
+L 474.912 113.472
+" clip-path="url(#p02f5b03678)" style="fill: none; stroke: #dce4ec; stroke-opacity: 0.9; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#mc5c3df7917" x="474.912" y="434.88" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #243b53" x="474.912" y="450.237422" transform="rotate(-0 474.912 450.237422)">0.15</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 582.432 434.88
+L 582.432 113.472
+" clip-path="url(#p02f5b03678)" style="fill: none; stroke: #dce4ec; stroke-opacity: 0.9; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#mc5c3df7917" x="582.432" y="434.88" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #243b53" x="582.432" y="450.237422" transform="rotate(-0 582.432 450.237422)">0.20</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_11">
+      <path d="M 689.952 434.88
+L 689.952 113.472
+" clip-path="url(#p02f5b03678)" style="fill: none; stroke: #dce4ec; stroke-opacity: 0.9; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#mc5c3df7917" x="689.952" y="434.88" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #243b53" x="689.952" y="450.237422" transform="rotate(-0 689.952 450.237422)">0.25</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #243b53" x="434.592" y="466.757969" transform="rotate(-0 434.592 466.757969)">Δ log-likelihood relative to the best topology</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_13">
+      <defs>
+       <path id="ma6d9f9eb71" d="M 0 0
+L -3.5 0
+" style="stroke: #243b53; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#ma6d9f9eb71" x="152.352" y="389.513799" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #243b53" x="145.352" y="393.69294" transform="rotate(-0 145.352 393.69294)">Unconstrained ML</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#ma6d9f9eb71" x="152.352" y="312.621933" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #243b53" x="145.352" y="316.801074" transform="rotate(-0 145.352 316.801074)">Isoform monophyly</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#ma6d9f9eb71" x="152.352" y="235.730067" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #243b53" x="145.352" y="239.909208" transform="rotate(-0 145.352 239.909208)">Species-pair topology</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#ma6d9f9eb71" x="152.352" y="158.838201" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #243b53" x="145.352" y="163.016912" transform="rotate(-0 145.352 163.016912)">Tree 4</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 152.352 420.270545
+L 689.952 420.270545
+L 689.952 358.757053
+L 152.352 358.757053
+z
+" clip-path="url(#p02f5b03678)" style="fill: #138a80; opacity: 0.82"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 152.352 343.378679
+L 689.952 343.378679
+L 689.952 281.865187
+L 152.352 281.865187
+z
+" clip-path="url(#p02f5b03678)" style="fill: #138a80; opacity: 0.82"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 152.352 266.486813
+L 689.952 266.486813
+L 689.952 204.973321
+L 152.352 204.973321
+z
+" clip-path="url(#p02f5b03678)" style="fill: #138a80; opacity: 0.82"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 152.352 189.594947
+L 689.952 189.594947
+L 689.952 128.081455
+L 152.352 128.081455
+z
+" clip-path="url(#p02f5b03678)" style="fill: #138a80; opacity: 0.82"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 152.352 434.88
+L 152.352 113.472
+" style="fill: none; stroke: #243b53; stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 152.352 434.88
+L 716.832 434.88
+" style="fill: none; stroke: #243b53; stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #102a43" x="689.952" y="392.371221" transform="rotate(-0 689.952 392.371221)">  AU p=0.25</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #102a43" x="689.952" y="315.479355" transform="rotate(-0 689.952 315.479355)">  AU p=0.25</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #102a43" x="689.952" y="238.587489" transform="rotate(-0 689.952 238.587489)">  AU p=0.25</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #102a43" x="689.952" y="161.695623" transform="rotate(-0 689.952 161.695623)">  AU p=0.25</text>
+   </g>
+  </g>
+  <g id="text_16">
+   <text style="font-weight: 700; font-size: 22px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #102a43" x="7.2" y="23.916562" transform="rotate(-0 7.2 23.916562)">The approximately unbiased test formally distinguishes competing cassette genealogies</text>
+  </g>
+  <g id="text_17">
+   <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #6b7785" x="7.2" y="47.802047" transform="rotate(-0 7.2 47.802047)">Green hypotheses are not rejected at α=0.05; red hypotheses are incompatible with the observed alignment.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p02f5b03678">
+   <rect x="152.352" y="113.472" width="564.48" height="321.408"/>
+  </clipPath>
+ </defs>
+</svg>

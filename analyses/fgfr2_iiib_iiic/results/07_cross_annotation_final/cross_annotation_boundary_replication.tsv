@@ -1,0 +1,17 @@
+species	isoform	ncbi_protein_id	ensembl_protein_id	cassette_start_delta_ncbi_minus_ensembl	cassette_end_delta_ncbi_minus_ensembl	median_d3_end_delta_ncbi_minus_ensembl	same_topology_class	ncbi_topology_pass	ensembl_topology_pass	minimum_start_consensus	minimum_end_consensus
+anolis_carolinensis	IIIb	XP_062832082.1	ENSACAP00000022870	0	0	0.0	True	True	True	1.0	1.0
+anolis_carolinensis	IIIc	XP_062832081.1	ENSACAP00000016963	0	0	0.0	True	True	True	1.0	1.0
+danio_rerio	IIIb	XP_068081039.1	ENSDARP00000123845	23	23	23.0	True	True	True	1.0	1.0
+danio_rerio	IIIc	XP_068081038.1	ENSDARP00000124761	0	0	0.0	True	True	True	1.0	1.0
+gallus_gallus	IIIb	XP_015144070.1	ENSGALP00010001717	0	0	0.0	True	True	True	1.0	1.0
+gallus_gallus	IIIc	NP_990650.2	ENSGALP00010001719	0	0	0.0	True	True	True	1.0	1.0
+gasterosteus_aculeatus	IIIb	XP_077960652.1	ENSGACP00000047216	0	0	0.0	True	True	True	0.8	0.8
+gasterosteus_aculeatus	IIIc	XP_077960645.1	ENSGACP00000042484	137	137	137.0	True	True	True	1.0	1.0
+homo_sapiens	IIIb	NP_075259.4	ENSP00000410294	0	0	0.0	True	True	True	1.0	1.0
+homo_sapiens	IIIc	NP_000132.3	ENSP00000351276	0	0	0.0	True	True	True	1.0	1.0
+mus_musculus	IIIb	NP_963895.2	ENSMUSP00000113180	-96	-96	-96.0	True	True	True	1.0	1.0
+mus_musculus	IIIc	NP_034337.2	ENSMUSP00000112430	0	0	0.0	True	True	True	1.0	1.0
+takifugu_rubripes	IIIb	XP_011601191.1	ENSTRUP00000045146	0	0	0.0	True	True	True	1.0	1.0
+takifugu_rubripes	IIIc	XP_011601188.1	ENSTRUP00000045145	0	0	0.0	True	True	True	1.0	1.0
+xenopus_tropicalis	IIIb	XP_012821352.1	ENSXETP00000087394	0	0	0.0	True	True	True	1.0	1.0
+xenopus_tropicalis	IIIc	XP_012821350.1	ENSXETP00000069725	-76	-76	-76.0	True	True	True	1.0	1.0

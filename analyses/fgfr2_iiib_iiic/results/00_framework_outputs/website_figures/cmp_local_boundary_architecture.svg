@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="756" height="223" viewBox="0 0 756 223">
+<rect x="0" y="0" width="756" height="223" fill="#ffffff" stroke="none" />
+<text x="14" y="24" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="12" fill="#1c2433" text-anchor="start" font-weight="bold">FGFR2</text>
+<text x="14" y="37" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="9" fill="#6B7280" text-anchor="start" font-weight="normal">Comparative local architecture around CBG3</text>
+<text x="14" y="49" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal" font-style="italic">Does the same comparable boundary sit in the same local domain context in every species?</text>
+<text x="14" y="70.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal" font-style="italic">Mapping is tentative: the tracks are aligned on each species' own boundary, which does not establish that they are the same junction.</text>
+<text x="84" y="93.07" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">H. sapiens</text>
+<rect x="92" y="89" width="650" height="2.4" fill="#e3e8f0" stroke="none" stroke-width="0.6" />
+<rect x="92" y="82.2" width="199.64" height="16" rx="1.5" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" opacity="0.85" />
+<text x="191.82" y="92.51" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<rect x="574.86" y="82.2" width="167.14" height="16" rx="1.5" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" opacity="0.85" />
+<text x="658.43" y="92.51" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="417" y1="79.2" x2="417" y2="101.2" stroke="#D55E00" stroke-width="0.8" />
+<line x1="291.64" y1="81.2" x2="291.64" y2="99.2" stroke="#1c2433" stroke-width="0.6" stroke-dasharray="2,2" />
+<text x="92" y="108.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">E3 → E4 · native aa 137 · column 371 · +27 aa to end edge of Ig1</text>
+<text x="84" y="131.67" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">T. rubripes</text>
+<rect x="92" y="127.6" width="650" height="2.4" fill="#e3e8f0" stroke="none" stroke-width="0.6" />
+<rect x="92" y="120.8" width="195" height="16" rx="1.5" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" opacity="0.85" />
+<text x="189.5" y="131.11" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<rect x="565.57" y="120.8" width="176.43" height="16" rx="1.5" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" opacity="0.85" />
+<text x="653.79" y="131.11" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="417" y1="117.8" x2="417" y2="139.8" stroke="#D55E00" stroke-width="0.8" />
+<line x1="287" y1="119.8" x2="287" y2="137.8" stroke="#1c2433" stroke-width="0.6" stroke-dasharray="2,2" />
+<text x="92" y="147.4" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">E4 → E5 · native aa 160 · column 373 · +28 aa to end edge of Ig1</text>
+<line x1="92" y1="163.4" x2="742" y2="163.4" stroke="#9aa4b2" stroke-width="0.8" />
+<line x1="138.43" y1="163.4" x2="138.43" y2="166.9" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="138.43" y="174.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">-60</text>
+<line x1="231.29" y1="163.4" x2="231.29" y2="166.9" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="231.29" y="174.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">-40</text>
+<line x1="324.14" y1="163.4" x2="324.14" y2="166.9" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="324.14" y="174.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">-20</text>
+<line x1="417" y1="163.4" x2="417" y2="166.9" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="417" y="174.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">0</text>
+<line x1="509.86" y1="163.4" x2="509.86" y2="166.9" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="509.86" y="174.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">+20</text>
+<line x1="602.71" y1="163.4" x2="602.71" y2="166.9" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="602.71" y="174.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">+40</text>
+<line x1="695.57" y1="163.4" x2="695.57" y2="166.9" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="695.57" y="174.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">+60</text>
+<text x="417" y="186.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="middle" font-weight="normal">Amino-acid offset from the comparable boundary (aa) · 0 = boundary in each species</text>
+<text x="92" y="200.4" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">Blue blocks: representative domains · coloured vertical line: the exon boundary · dashed line: the domain edge the distance was measured to</text>
+</svg>

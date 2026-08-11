@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="756" height="679" viewBox="0 0 756 679">
+<rect x="0" y="0" width="756" height="679" fill="#ffffff" stroke="none" />
+<text x="14" y="24" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="12" fill="#1c2433" text-anchor="start" font-weight="bold">FGFR2 · neighbour conservation</text>
+<text x="14" y="37" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="9" fill="#6B7280" text-anchor="start" font-weight="normal">Flanking symbols recovered per species, canonical species order</text>
+<text x="14" y="49" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal" font-style="italic">Which flanking loci recur across the analysed species, and where is the neighbourhood incomplete?</text>
+<text x="139.35" y="74.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">ATE1</text>
+<text x="173.35" y="83.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">PLPP4</text>
+<line x1="173.35" y1="85.8" x2="173.35" y2="90.8" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="207.35" y="74.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">WDR11</text>
+<text x="241.35" y="83.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">NSMCE4A</text>
+<line x1="241.35" y1="85.8" x2="241.35" y2="90.8" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="275.35" y="74.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">TACC2</text>
+<text x="309.35" y="83.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">SEC23IP</text>
+<line x1="309.35" y1="85.8" x2="309.35" y2="90.8" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="343.35" y="74.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">MCMBP</text>
+<text x="377.35" y="83.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">BTBD16</text>
+<line x1="377.35" y1="85.8" x2="377.35" y2="90.8" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="411.35" y="74.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">INPP5F</text>
+<text x="445.35" y="83.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">PLEKHA1</text>
+<line x1="445.35" y1="85.8" x2="445.35" y2="90.8" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="479.35" y="74.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">cdh23</text>
+<text x="513.35" y="83.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">ATE1OS</text>
+<line x1="513.35" y1="85.8" x2="513.35" y2="90.8" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="547.35" y="74.2" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">vsir</text>
+<text x="114.35" y="105.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Homo sapiens</text>
+<rect x="123.35" y="93.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="93.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="93.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="93.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="93.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="93.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="93.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="361.35" y="93.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="395.35" y="93.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="429.35" y="93.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="463.35" y="93.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="93.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="93.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="123.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Pan troglodytes</text>
+<rect x="123.35" y="111.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="111.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="111.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="111.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="111.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="111.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="111.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="361.35" y="111.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="395.35" y="111.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="429.35" y="111.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="463.35" y="111.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="111.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="111.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="141.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Gorilla gorilla gorilla</text>
+<rect x="123.35" y="129.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="129.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="129.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="129.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="129.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="129.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="129.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="361.35" y="129.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="395.35" y="129.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="429.35" y="129.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="463.35" y="129.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="129.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="129.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="159.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Pongo abelii</text>
+<rect x="123.35" y="147.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="147.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="147.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="147.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="147.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="147.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="147.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="361.35" y="147.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="395.35" y="147.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="429.35" y="147.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="463.35" y="147.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="147.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="147.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="177.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Macaca mulatta</text>
+<rect x="123.35" y="165.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="165.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="165.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="165.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="165.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="165.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="165.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="361.35" y="165.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="395.35" y="165.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="429.35" y="165.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="463.35" y="165.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="165.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="165.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="195.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Callithrix jacchus</text>
+<rect x="123.35" y="183.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="183.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="183.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="183.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="183.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="183.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="327.35" y="183.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="361.35" y="183.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="395.35" y="183.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="429.35" y="183.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="463.35" y="183.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="183.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="183.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="213.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Mus musculus</text>
+<rect x="123.35" y="201.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="201.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="201.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="201.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="201.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="201.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="201.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="361.35" y="201.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="395.35" y="201.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="429.35" y="201.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="463.35" y="201.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="201.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="201.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="231.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Rattus norvegicus</text>
+<rect x="123.35" y="219.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="219.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="219.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="219.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="219.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="219.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="219.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="361.35" y="219.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="395.35" y="219.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="429.35" y="219.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="463.35" y="219.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="219.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="219.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="249.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Oryctolagus cuniculus</text>
+<rect x="123.35" y="237.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="237.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="237.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="237.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="237.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="237.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="237.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="361.35" y="237.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="395.35" y="237.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="429.35" y="237.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="463.35" y="237.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="237.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="237.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="267.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Canis lupus familiaris</text>
+<rect x="123.35" y="255.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="255.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="255.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="255.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="255.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="255.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="255.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="361.35" y="255.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="395.35" y="255.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="429.35" y="255.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="463.35" y="255.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="255.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="255.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="285.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Felis catus</text>
+<rect x="123.35" y="273.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="273.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="273.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="273.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="273.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="273.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="273.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="361.35" y="273.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="395.35" y="273.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="429.35" y="273.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="463.35" y="273.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="273.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="273.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="303.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Bos taurus</text>
+<rect x="123.35" y="291.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="291.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="291.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="291.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="291.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="291.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="291.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="361.35" y="291.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="395.35" y="291.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="429.35" y="291.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="463.35" y="291.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="291.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="531.35" y="291.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="321.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Sus scrofa</text>
+<rect x="123.35" y="309.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="309.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="309.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="309.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="309.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="309.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="309.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="361.35" y="309.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="395.35" y="309.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="429.35" y="309.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="463.35" y="309.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="309.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="309.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="339.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Equus caballus</text>
+<rect x="123.35" y="327.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="327.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="327.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="327.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="327.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="327.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="327.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="361.35" y="327.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="395.35" y="327.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="429.35" y="327.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="463.35" y="327.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="327.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="531.35" y="327.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="357.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Ovis aries</text>
+<rect x="123.35" y="345.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="345.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="345.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="345.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="345.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="345.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="345.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="361.35" y="345.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="395.35" y="345.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="429.35" y="345.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="463.35" y="345.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="345.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="345.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="375.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Monodelphis domestica</text>
+<rect x="123.35" y="363.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="363.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="363.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="363.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="363.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="363.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="363.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="361.35" y="363.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="395.35" y="363.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="429.35" y="363.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="463.35" y="363.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="363.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="363.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="393.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Ornithorhynchus anatinus</text>
+<rect x="123.35" y="381.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="381.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="381.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="381.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="381.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="293.35" y="381.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="327.35" y="381.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="361.35" y="381.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="395.35" y="381.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="429.35" y="381.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="463.35" y="381.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="381.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="381.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="411.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Gallus gallus</text>
+<rect x="123.35" y="399.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="399.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="399.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="399.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="399.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="399.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="399.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="361.35" y="399.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="395.35" y="399.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="429.35" y="399.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="463.35" y="399.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="399.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="399.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="429.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Meleagris gallopavo</text>
+<rect x="123.35" y="417.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="417.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="417.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="225.35" y="417.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="417.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="293.35" y="417.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="417.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="361.35" y="417.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="395.35" y="417.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="429.35" y="417.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="463.35" y="417.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="417.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="417.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="447.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Taeniopygia guttata</text>
+<rect x="123.35" y="435.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="435.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="435.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="435.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="435.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="435.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="435.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="361.35" y="435.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="395.35" y="435.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="429.35" y="435.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="463.35" y="435.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="435.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="435.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="465.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Anolis carolinensis</text>
+<rect x="123.35" y="453.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="453.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="453.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="453.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="453.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="453.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="453.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="361.35" y="453.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="395.35" y="453.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="429.35" y="453.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="463.35" y="453.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="453.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="453.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="483.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Alligator mississippiensis</text>
+<rect x="123.35" y="471.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="471.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="471.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="471.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="471.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="471.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="471.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="361.35" y="471.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="395.35" y="471.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="429.35" y="471.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="463.35" y="471.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="471.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="471.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="501.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Chrysemys picta bellii</text>
+<rect x="123.35" y="489.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="489.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="489.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="489.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="489.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="489.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="327.35" y="489.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="361.35" y="489.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="395.35" y="489.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="429.35" y="489.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="463.35" y="489.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="489.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="489.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="519.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Xenopus tropicalis</text>
+<rect x="123.35" y="507.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="507.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="507.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="507.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="507.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="507.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="327.35" y="507.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="361.35" y="507.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="395.35" y="507.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="429.35" y="507.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="463.35" y="507.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="507.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="507.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="537.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Ambystoma mexicanum</text>
+<rect x="123.35" y="525.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="525.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="525.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="525.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="259.35" y="525.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="293.35" y="525.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="327.35" y="525.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="361.35" y="525.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="395.35" y="525.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="429.35" y="525.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="463.35" y="525.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="525.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="525.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="555.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Danio rerio</text>
+<rect x="123.35" y="543.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="543.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="191.35" y="543.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="225.35" y="543.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="259.35" y="543.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="293.35" y="543.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="327.35" y="543.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="361.35" y="543.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="395.35" y="543.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="429.35" y="543.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="463.35" y="543.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="497.35" y="543.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="543.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="573.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Oryzias latipes</text>
+<rect x="123.35" y="561.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="561.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="561.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="561.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="259.35" y="561.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="293.35" y="561.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="327.35" y="561.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="361.35" y="561.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="395.35" y="561.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="429.35" y="561.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="463.35" y="561.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="497.35" y="561.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="561.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="591.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Gasterosteus aculeatus</text>
+<rect x="123.35" y="579.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="579.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="579.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="579.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="259.35" y="579.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="293.35" y="579.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="327.35" y="579.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="361.35" y="579.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="395.35" y="579.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="429.35" y="579.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="463.35" y="579.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="497.35" y="579.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="579.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<text x="114.35" y="609.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Takifugu rubripes</text>
+<rect x="123.35" y="597.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="597.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="597.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="597.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="259.35" y="597.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="293.35" y="597.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="327.35" y="597.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="361.35" y="597.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="395.35" y="597.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="429.35" y="597.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="463.35" y="597.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="497.35" y="597.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="597.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<text x="114.35" y="627.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Oreochromis niloticus</text>
+<rect x="123.35" y="615.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="157.35" y="615.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="191.35" y="615.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="225.35" y="615.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="259.35" y="615.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="293.35" y="615.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="327.35" y="615.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="361.35" y="615.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="395.35" y="615.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="429.35" y="615.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="463.35" y="615.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="497.35" y="615.8" width="32" height="16" fill="#ffffff" stroke="#e3e8f0" stroke-width="0.6" />
+<rect x="531.35" y="615.8" width="32" height="16" fill="#E3F0E8" stroke="#2F9E6F" stroke-width="0.6" />
+<rect x="14" y="636.8" width="7" height="7" fill="#E3F0E8" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="25" y="642.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Resolved ortholog</text>
+<rect x="96.94" y="636.8" width="7" height="7" fill="#ffffff" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="107.94" y="642.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Symbol not recovered in this species</text>
+<text x="14" y="661" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">A filled cell means the annotation of that species carries the same gene symbol somewhere in the flanking window. A shared symbol is a nomenclature match supporting locus context, not an orthology assignment.</text>
+</svg>

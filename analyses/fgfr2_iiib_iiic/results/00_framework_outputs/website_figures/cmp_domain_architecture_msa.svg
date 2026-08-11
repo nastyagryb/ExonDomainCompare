@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="756" height="900" viewBox="0 0 756 900">
+<rect x="0" y="0" width="756" height="900" fill="#ffffff" stroke="none" />
+<text x="14" y="24" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="12" fill="#1c2433" text-anchor="start" font-weight="bold">FGFR2</text>
+<text x="14" y="37" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="9" fill="#6B7280" text-anchor="start" font-weight="normal">Comparative domain architecture · MSA-aligned coordinates</text>
+<text x="14" y="49" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal" font-style="italic">Which representative domain instances and membrane segments does each primary protein carry, and do they occupy comparable positions?</text>
+<text x="112.35" y="80.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Homo sapiens</text>
+<text x="112.35" y="89.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">ENSP00000351276</text>
+<rect x="120.35" y="79.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="266.96" y="72.44" width="34.65" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="72.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.98" y="72.44" width="42.65" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="72.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.29" y1="90.44" x2="284.29" y2="93.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.29" y="100.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="90.44" x2="357.86" y2="93.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="100.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="409.31" y1="90.44" x2="409.31" y2="93.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.31" y="100.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="83.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="272.29" y1="69.44" x2="272.29" y2="71.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="291.49" y1="69.44" x2="291.49" y2="71.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="318.14" y1="69.44" x2="318.14" y2="71.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="331.47" y1="69.44" x2="331.47" y2="71.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="353.33" y1="69.44" x2="353.33" y2="71.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="387.45" y1="69.44" x2="387.45" y2="71.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="407.18" y1="69.44" x2="407.18" y2="71.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="429.04" y1="69.44" x2="429.04" y2="71.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="458.36" y1="69.44" x2="458.36" y2="71.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="494.61" y1="69.44" x2="494.61" y2="71.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="520.73" y1="69.44" x2="520.73" y2="71.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="554.85" y1="69.44" x2="554.85" y2="71.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="576.71" y1="69.44" x2="576.71" y2="71.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="607.1" y1="69.44" x2="607.1" y2="71.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="620.96" y1="69.44" x2="620.96" y2="71.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="669.48" y1="69.44" x2="669.48" y2="71.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="69.44" x2="702" y2="71.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="124.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Pan troglodytes</text>
+<text x="112.35" y="133.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_054516514.1</text>
+<rect x="120.35" y="123.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="266.96" y="116.44" width="34.65" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="116.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.98" y="116.44" width="42.65" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="116.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.29" y1="134.44" x2="284.29" y2="137.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.29" y="144.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="134.44" x2="357.86" y2="137.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="144.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="409.31" y1="134.44" x2="409.31" y2="137.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.31" y="144.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="127.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="205.12" y1="113.44" x2="205.12" y2="115.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="113.44" x2="310.15" y2="115.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="113.44" x2="327.21" y2="115.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="113.44" x2="357.06" y2="115.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="113.44" x2="379.45" y2="115.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="113.44" x2="413.04" y2="115.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="442.36" y1="113.44" x2="442.36" y2="115.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="478.62" y1="113.44" x2="478.62" y2="115.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="505.27" y1="113.44" x2="505.27" y2="115.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="527.13" y1="113.44" x2="527.13" y2="115.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="546.86" y1="113.44" x2="546.86" y2="115.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="580.45" y1="113.44" x2="580.45" y2="115.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="602.3" y1="113.44" x2="602.3" y2="115.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="615.1" y1="113.44" x2="615.1" y2="115.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.62" y1="113.44" x2="639.62" y2="115.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="658.28" y1="113.44" x2="658.28" y2="115.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="113.44" x2="702" y2="115.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="168.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Gorilla gorilla gorilla</text>
+<text x="112.35" y="177.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_004050253.1</text>
+<rect x="120.35" y="167.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="337.34" y="160.44" width="41.05" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.98" y="160.44" width="42.65" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="160.44" width="177.53" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<line x1="357.86" y1="178.44" x2="357.86" y2="181.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="188.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="409.31" y1="178.44" x2="409.31" y2="181.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.31" y="188.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<text x="570.58" y="171.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="204.59" y1="157.44" x2="204.59" y2="159.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="345.87" y1="157.44" x2="345.87" y2="159.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="370.39" y1="157.44" x2="370.39" y2="159.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="382.65" y1="157.44" x2="382.65" y2="159.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="404.51" y1="157.44" x2="404.51" y2="159.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="439.7" y1="157.44" x2="439.7" y2="159.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="461.02" y1="157.44" x2="461.02" y2="159.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="483.95" y1="157.44" x2="483.95" y2="159.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="513.27" y1="157.44" x2="513.27" y2="159.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="539.39" y1="157.44" x2="539.39" y2="159.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="573.51" y1="157.44" x2="573.51" y2="159.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="595.37" y1="157.44" x2="595.37" y2="159.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="625.76" y1="157.44" x2="625.76" y2="159.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.62" y1="157.44" x2="639.62" y2="159.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="658.82" y1="157.44" x2="658.82" y2="159.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="212.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Pongo abelii</text>
+<text x="112.35" y="221.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_024108704.1</text>
+<rect x="120.35" y="211.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="266.96" y="204.44" width="34.65" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="204.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.98" y="204.44" width="42.65" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="204.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.29" y1="222.44" x2="284.29" y2="225.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.29" y="232.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="222.44" x2="357.86" y2="225.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="232.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="409.31" y1="222.44" x2="409.31" y2="225.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.31" y="232.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="215.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="205.12" y1="201.44" x2="205.12" y2="203.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="201.44" x2="310.15" y2="203.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="201.44" x2="327.21" y2="203.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="201.44" x2="357.06" y2="203.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="201.44" x2="379.45" y2="203.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="201.44" x2="413.04" y2="203.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="441.83" y1="201.44" x2="441.83" y2="203.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="476.48" y1="201.44" x2="476.48" y2="203.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="504.74" y1="201.44" x2="504.74" y2="203.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="526.6" y1="201.44" x2="526.6" y2="203.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="546.32" y1="201.44" x2="546.32" y2="203.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="579.91" y1="201.44" x2="579.91" y2="203.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="601.77" y1="201.44" x2="601.77" y2="203.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="614.57" y1="201.44" x2="614.57" y2="203.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.09" y1="201.44" x2="639.09" y2="203.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="657.75" y1="201.44" x2="657.75" y2="203.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="201.44" x2="702" y2="203.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="256.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Macaca mulatta</text>
+<text x="112.35" y="265.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_077803775.1</text>
+<rect x="120.35" y="255.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="266.96" y="248.44" width="34.65" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="248.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.98" y="248.44" width="42.65" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="248.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.29" y1="266.44" x2="284.29" y2="269.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.29" y="276.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="266.44" x2="357.86" y2="269.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="276.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="409.31" y1="266.44" x2="409.31" y2="269.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.31" y="276.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="259.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="205.12" y1="245.44" x2="205.12" y2="247.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="245.44" x2="310.15" y2="247.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="245.44" x2="327.21" y2="247.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="245.44" x2="357.06" y2="247.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="245.44" x2="379.45" y2="247.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="245.44" x2="413.04" y2="247.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="442.36" y1="245.44" x2="442.36" y2="247.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="478.08" y1="245.44" x2="478.08" y2="247.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="505.27" y1="245.44" x2="505.27" y2="247.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="527.13" y1="245.44" x2="527.13" y2="247.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="546.86" y1="245.44" x2="546.86" y2="247.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="580.45" y1="245.44" x2="580.45" y2="247.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="602.3" y1="245.44" x2="602.3" y2="247.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="615.1" y1="245.44" x2="615.1" y2="247.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.62" y1="245.44" x2="639.62" y2="247.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="658.28" y1="245.44" x2="658.28" y2="247.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="245.44" x2="702" y2="247.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="300.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Callithrix jacchus</text>
+<text x="112.35" y="309.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_078202765.1</text>
+<rect x="120.35" y="299.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="266.96" y="292.44" width="34.65" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="292.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.98" y="292.44" width="42.65" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="292.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.29" y1="310.44" x2="284.29" y2="313.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.29" y="320.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="310.44" x2="357.86" y2="313.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="320.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="409.31" y1="310.44" x2="409.31" y2="313.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.31" y="320.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="303.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="205.12" y1="289.44" x2="205.12" y2="291.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="289.44" x2="310.15" y2="291.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="289.44" x2="327.21" y2="291.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="289.44" x2="357.06" y2="291.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="289.44" x2="379.45" y2="291.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="289.44" x2="413.04" y2="291.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="442.36" y1="289.44" x2="442.36" y2="291.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="478.62" y1="289.44" x2="478.62" y2="291.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="505.27" y1="289.44" x2="505.27" y2="291.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="527.13" y1="289.44" x2="527.13" y2="291.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="546.86" y1="289.44" x2="546.86" y2="291.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="580.45" y1="289.44" x2="580.45" y2="291.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="602.3" y1="289.44" x2="602.3" y2="291.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="615.1" y1="289.44" x2="615.1" y2="291.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.62" y1="289.44" x2="639.62" y2="291.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="658.28" y1="289.44" x2="658.28" y2="291.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="289.44" x2="702" y2="291.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="344.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Mus musculus</text>
+<text x="112.35" y="353.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">ENSMUSP00000112430</text>
+<rect x="120.35" y="343.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="266.96" y="336.44" width="34.12" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="336.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.98" y="336.44" width="42.65" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="336.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.02" y1="354.44" x2="284.02" y2="357.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.02" y="364.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="354.44" x2="357.86" y2="357.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="364.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="409.31" y1="354.44" x2="409.31" y2="357.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.31" y="364.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="347.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="204.59" y1="333.44" x2="204.59" y2="335.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="281.36" y1="333.44" x2="281.36" y2="335.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="305.88" y1="333.44" x2="305.88" y2="335.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="320.28" y1="333.44" x2="320.28" y2="335.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="343.2" y1="333.44" x2="343.2" y2="335.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="377.32" y1="333.44" x2="377.32" y2="335.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="397.05" y1="333.44" x2="397.05" y2="335.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="418.91" y1="333.44" x2="418.91" y2="335.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="448.23" y1="333.44" x2="448.23" y2="335.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="484.48" y1="333.44" x2="484.48" y2="335.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="510.6" y1="333.44" x2="510.6" y2="335.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="544.73" y1="333.44" x2="544.73" y2="335.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="566.58" y1="333.44" x2="566.58" y2="335.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="596.97" y1="333.44" x2="596.97" y2="335.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="610.83" y1="333.44" x2="610.83" y2="335.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="658.28" y1="333.44" x2="658.28" y2="335.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="678.54" y1="333.44" x2="678.54" y2="335.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="388.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Rattus norvegicus</text>
+<text x="112.35" y="397.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_063137149.1</text>
+<rect x="120.35" y="387.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="266.96" y="380.44" width="34.12" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="380.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.98" y="380.44" width="42.65" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="380.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.02" y1="398.44" x2="284.02" y2="401.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.02" y="408.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="398.44" x2="357.86" y2="401.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="408.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="409.31" y1="398.44" x2="409.31" y2="401.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.31" y="408.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="391.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="205.12" y1="377.44" x2="205.12" y2="379.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="377.44" x2="310.15" y2="379.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="377.44" x2="327.21" y2="379.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="377.44" x2="357.06" y2="379.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="377.44" x2="379.45" y2="379.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="377.44" x2="413.04" y2="379.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="442.36" y1="377.44" x2="442.36" y2="379.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="478.62" y1="377.44" x2="478.62" y2="379.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="505.27" y1="377.44" x2="505.27" y2="379.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="527.13" y1="377.44" x2="527.13" y2="379.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="546.86" y1="377.44" x2="546.86" y2="379.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="580.45" y1="377.44" x2="580.45" y2="379.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="602.3" y1="377.44" x2="602.3" y2="379.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="615.1" y1="377.44" x2="615.1" y2="379.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.62" y1="377.44" x2="639.62" y2="379.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="658.28" y1="377.44" x2="658.28" y2="379.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="377.44" x2="702" y2="379.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="432.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Oryctolagus cuniculus</text>
+<text x="112.35" y="441.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_069913096.1</text>
+<rect x="120.35" y="431.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="266.96" y="424.44" width="34.12" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="424.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.98" y="424.44" width="42.65" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="424.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.02" y1="442.44" x2="284.02" y2="445.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.02" y="452.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="442.44" x2="357.86" y2="445.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="452.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="409.31" y1="442.44" x2="409.31" y2="445.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.31" y="452.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="435.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="205.12" y1="421.44" x2="205.12" y2="423.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="421.44" x2="310.15" y2="423.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="421.44" x2="327.21" y2="423.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="421.44" x2="357.06" y2="423.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="421.44" x2="379.45" y2="423.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="421.44" x2="413.04" y2="423.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="442.36" y1="421.44" x2="442.36" y2="423.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="478.08" y1="421.44" x2="478.08" y2="423.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="505.27" y1="421.44" x2="505.27" y2="423.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="527.13" y1="421.44" x2="527.13" y2="423.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="546.86" y1="421.44" x2="546.86" y2="423.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="580.45" y1="421.44" x2="580.45" y2="423.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="602.3" y1="421.44" x2="602.3" y2="423.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="615.1" y1="421.44" x2="615.1" y2="423.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.62" y1="421.44" x2="639.62" y2="423.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="658.28" y1="421.44" x2="658.28" y2="423.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="421.44" x2="702" y2="423.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="476.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Canis lupus familiaris</text>
+<text x="112.35" y="485.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">NP_001003336.1</text>
+<rect x="120.35" y="475.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="337.34" y="468.44" width="41.05" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.45" y="468.44" width="50.11" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="468.44" width="177.53" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<line x1="357.86" y1="486.44" x2="357.86" y2="489.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="496.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="412.51" y1="486.44" x2="412.51" y2="489.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="412.51" y="496.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<text x="570.58" y="479.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="439.7" y1="465.44" x2="439.7" y2="467.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="520.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Felis catus</text>
+<text x="112.35" y="529.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_044896695.1</text>
+<rect x="120.35" y="519.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="266.96" y="512.44" width="34.12" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="512.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.98" y="512.44" width="42.65" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="512.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.02" y1="530.44" x2="284.02" y2="533.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.02" y="540.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="530.44" x2="357.86" y2="533.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="540.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="409.31" y1="530.44" x2="409.31" y2="533.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.31" y="540.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="523.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="205.12" y1="509.44" x2="205.12" y2="511.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="509.44" x2="310.15" y2="511.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="509.44" x2="327.21" y2="511.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="509.44" x2="357.06" y2="511.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="509.44" x2="379.45" y2="511.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="509.44" x2="413.04" y2="511.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="442.36" y1="509.44" x2="442.36" y2="511.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="478.08" y1="509.44" x2="478.08" y2="511.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="505.27" y1="509.44" x2="505.27" y2="511.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="527.13" y1="509.44" x2="527.13" y2="511.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="546.86" y1="509.44" x2="546.86" y2="511.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="580.45" y1="509.44" x2="580.45" y2="511.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="602.3" y1="509.44" x2="602.3" y2="511.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="615.1" y1="509.44" x2="615.1" y2="511.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.62" y1="509.44" x2="639.62" y2="511.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="658.28" y1="509.44" x2="658.28" y2="511.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="509.44" x2="702" y2="511.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="564.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Bos taurus</text>
+<text x="112.35" y="573.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_059737724.1</text>
+<rect x="120.35" y="563.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="266.96" y="556.44" width="34.12" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="556.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.98" y="556.44" width="42.65" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="556.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.02" y1="574.44" x2="284.02" y2="577.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.02" y="584.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="574.44" x2="357.86" y2="577.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="584.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="409.31" y1="574.44" x2="409.31" y2="577.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.31" y="584.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="567.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="205.12" y1="553.44" x2="205.12" y2="555.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="553.44" x2="310.15" y2="555.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="553.44" x2="327.21" y2="555.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="553.44" x2="357.06" y2="555.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="553.44" x2="379.45" y2="555.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="553.44" x2="413.04" y2="555.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="442.36" y1="553.44" x2="442.36" y2="555.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="478.62" y1="553.44" x2="478.62" y2="555.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="505.27" y1="553.44" x2="505.27" y2="555.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="527.13" y1="553.44" x2="527.13" y2="555.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="546.86" y1="553.44" x2="546.86" y2="555.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="580.45" y1="553.44" x2="580.45" y2="555.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="602.3" y1="553.44" x2="602.3" y2="555.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="615.1" y1="553.44" x2="615.1" y2="555.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.62" y1="553.44" x2="639.62" y2="555.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="658.28" y1="553.44" x2="658.28" y2="555.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="553.44" x2="702" y2="555.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="608.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Sus scrofa</text>
+<text x="112.35" y="617.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_084849197.1</text>
+<rect x="120.35" y="607.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="266.96" y="600.44" width="34.12" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="600.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.98" y="600.44" width="42.65" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="600.44" width="172.74" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.02" y1="618.44" x2="284.02" y2="621.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.02" y="628.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="618.44" x2="357.86" y2="621.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="628.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="409.31" y1="618.44" x2="409.31" y2="621.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.31" y="628.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="568.18" y="611.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="205.12" y1="597.44" x2="205.12" y2="599.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="597.44" x2="310.15" y2="599.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="597.44" x2="327.21" y2="599.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="597.44" x2="357.06" y2="599.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="597.44" x2="379.45" y2="599.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="597.44" x2="413.04" y2="599.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="442.36" y1="597.44" x2="442.36" y2="599.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="478.62" y1="597.44" x2="478.62" y2="599.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="505.27" y1="597.44" x2="505.27" y2="599.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="527.13" y1="597.44" x2="527.13" y2="599.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="546.86" y1="597.44" x2="546.86" y2="599.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="580.45" y1="597.44" x2="580.45" y2="599.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="602.3" y1="597.44" x2="602.3" y2="599.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="615.1" y1="597.44" x2="615.1" y2="599.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.62" y1="597.44" x2="639.62" y2="599.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="658.28" y1="597.44" x2="658.28" y2="599.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="597.44" x2="702" y2="599.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="652.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Equus caballus</text>
+<text x="112.35" y="661.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_014588430.1</text>
+<rect x="120.35" y="651.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="266.96" y="644.44" width="34.12" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="644.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.98" y="644.44" width="42.65" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="644.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.02" y1="662.44" x2="284.02" y2="665.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.02" y="672.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="662.44" x2="357.86" y2="665.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="672.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="409.31" y1="662.44" x2="409.31" y2="665.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.31" y="672.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="655.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="127.81" y1="641.44" x2="127.81" y2="643.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="205.12" y1="641.44" x2="205.12" y2="643.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="641.44" x2="310.15" y2="643.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="641.44" x2="327.21" y2="643.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="641.44" x2="357.06" y2="643.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="641.44" x2="379.45" y2="643.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="641.44" x2="413.04" y2="643.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="442.36" y1="641.44" x2="442.36" y2="643.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="478.08" y1="641.44" x2="478.08" y2="643.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="505.27" y1="641.44" x2="505.27" y2="643.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="527.13" y1="641.44" x2="527.13" y2="643.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="546.86" y1="641.44" x2="546.86" y2="643.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="580.45" y1="641.44" x2="580.45" y2="643.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="602.3" y1="641.44" x2="602.3" y2="643.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="615.1" y1="641.44" x2="615.1" y2="643.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.62" y1="641.44" x2="639.62" y2="643.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="658.28" y1="641.44" x2="658.28" y2="643.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="641.44" x2="702" y2="643.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="696.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Ovis aries</text>
+<text x="112.35" y="705.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_060260490.1</text>
+<rect x="120.35" y="695.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="266.96" y="688.44" width="34.12" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="688.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.98" y="688.44" width="42.65" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="688.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.02" y1="706.44" x2="284.02" y2="709.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.02" y="716.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="706.44" x2="357.86" y2="709.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="716.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="409.31" y1="706.44" x2="409.31" y2="709.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.31" y="716.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="699.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="205.12" y1="685.44" x2="205.12" y2="687.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="685.44" x2="310.15" y2="687.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="685.44" x2="327.21" y2="687.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="685.44" x2="357.06" y2="687.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="685.44" x2="379.45" y2="687.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="685.44" x2="413.04" y2="687.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="442.36" y1="685.44" x2="442.36" y2="687.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="478.62" y1="685.44" x2="478.62" y2="687.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="505.27" y1="685.44" x2="505.27" y2="687.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="527.13" y1="685.44" x2="527.13" y2="687.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="546.86" y1="685.44" x2="546.86" y2="687.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="580.45" y1="685.44" x2="580.45" y2="687.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="602.3" y1="685.44" x2="602.3" y2="687.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="615.1" y1="685.44" x2="615.1" y2="687.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.62" y1="685.44" x2="639.62" y2="687.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="658.28" y1="685.44" x2="658.28" y2="687.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="685.44" x2="702" y2="687.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="740.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Monodelphis domestica</text>
+<text x="112.35" y="749.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_056659242.1</text>
+<rect x="120.35" y="739.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="267.5" y="732.44" width="41.05" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="732.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.98" y="732.44" width="42.65" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="732.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="288.02" y1="750.44" x2="288.02" y2="753.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="288.02" y="760.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="750.44" x2="357.86" y2="753.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="760.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="409.31" y1="750.44" x2="409.31" y2="753.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.31" y="760.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="743.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="205.12" y1="729.44" x2="205.12" y2="731.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="729.44" x2="310.15" y2="731.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="729.44" x2="327.21" y2="731.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="729.44" x2="357.06" y2="731.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="729.44" x2="379.45" y2="731.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="729.44" x2="413.04" y2="731.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="442.36" y1="729.44" x2="442.36" y2="731.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="478.08" y1="729.44" x2="478.08" y2="731.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="505.27" y1="729.44" x2="505.27" y2="731.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="527.13" y1="729.44" x2="527.13" y2="731.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="546.86" y1="729.44" x2="546.86" y2="731.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="580.45" y1="729.44" x2="580.45" y2="731.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="602.3" y1="729.44" x2="602.3" y2="731.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="615.1" y1="729.44" x2="615.1" y2="731.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.62" y1="729.44" x2="639.62" y2="731.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="658.28" y1="729.44" x2="658.28" y2="731.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="729.44" x2="702" y2="731.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="784.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Ornithorhynchus anatinus</text>
+<text x="112.35" y="793.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_028936644.1</text>
+<rect x="120.35" y="783.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="269.63" y="776.44" width="36.25" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="776.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.98" y="776.44" width="42.65" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="776.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="287.75" y1="794.44" x2="287.75" y2="797.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="287.75" y="804.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="794.44" x2="357.86" y2="797.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="804.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="409.31" y1="794.44" x2="409.31" y2="797.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.31" y="804.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="787.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="205.12" y1="773.44" x2="205.12" y2="775.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="773.44" x2="310.15" y2="775.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="773.44" x2="327.21" y2="775.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="773.44" x2="357.06" y2="775.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="773.44" x2="379.45" y2="775.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="773.44" x2="413.04" y2="775.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="442.36" y1="773.44" x2="442.36" y2="775.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="478.08" y1="773.44" x2="478.08" y2="775.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="505.27" y1="773.44" x2="505.27" y2="775.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="527.13" y1="773.44" x2="527.13" y2="775.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="546.86" y1="773.44" x2="546.86" y2="775.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="580.45" y1="773.44" x2="580.45" y2="775.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="602.3" y1="773.44" x2="602.3" y2="775.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="615.1" y1="773.44" x2="615.1" y2="775.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.62" y1="773.44" x2="639.62" y2="775.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="658.28" y1="773.44" x2="658.28" y2="775.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="773.44" x2="702" y2="775.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="828.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Gallus gallus</text>
+<text x="112.35" y="837.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">NP_990650.2</text>
+<rect x="120.35" y="827.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="266.96" y="820.44" width="34.12" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="820.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.45" y="820.44" width="43.18" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="820.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.02" y1="838.44" x2="284.02" y2="841.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.02" y="848.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="838.44" x2="357.86" y2="841.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="848.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="409.04" y1="838.44" x2="409.04" y2="841.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.04" y="848.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="831.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="205.12" y1="817.44" x2="205.12" y2="819.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="817.44" x2="310.15" y2="819.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="817.44" x2="327.21" y2="819.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="817.44" x2="357.06" y2="819.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="817.44" x2="379.45" y2="819.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="817.44" x2="413.04" y2="819.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="442.36" y1="817.44" x2="442.36" y2="819.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="478.08" y1="817.44" x2="478.08" y2="819.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="505.27" y1="817.44" x2="505.27" y2="819.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="527.13" y1="817.44" x2="527.13" y2="819.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="546.86" y1="817.44" x2="546.86" y2="819.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="580.45" y1="817.44" x2="580.45" y2="819.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="602.3" y1="817.44" x2="602.3" y2="819.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="615.1" y1="817.44" x2="615.1" y2="819.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.62" y1="817.44" x2="639.62" y2="819.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="658.28" y1="817.44" x2="658.28" y2="819.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="817.44" x2="702" y2="819.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="872.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Meleagris gallopavo</text>
+<text x="112.35" y="881.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">ENSMGAP00000031571</text>
+<rect x="120.35" y="871.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="337.34" y="864.44" width="41.05" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.45" y="864.44" width="43.18" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="864.44" width="220.18" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<line x1="357.86" y1="882.44" x2="357.86" y2="885.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="892.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="409.04" y1="882.44" x2="409.04" y2="885.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.04" y="892.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<text x="591.91" y="875.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="351.2" y1="861.44" x2="351.2" y2="863.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="385.32" y1="861.44" x2="385.32" y2="863.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="405.04" y1="861.44" x2="405.04" y2="863.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="426.9" y1="861.44" x2="426.9" y2="863.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="456.22" y1="861.44" x2="456.22" y2="863.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="492.48" y1="861.44" x2="492.48" y2="863.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="518.07" y1="861.44" x2="518.07" y2="863.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="552.19" y1="861.44" x2="552.19" y2="863.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="574.05" y1="861.44" x2="574.05" y2="863.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="604.44" y1="861.44" x2="604.44" y2="863.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="861.44" x2="702" y2="863.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="916.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Taeniopygia guttata</text>
+<text x="112.35" y="925.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_072787409.1</text>
+<rect x="120.35" y="915.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="266.96" y="908.44" width="34.12" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="908.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.45" y="908.44" width="43.18" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="908.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.02" y1="926.44" x2="284.02" y2="929.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.02" y="936.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="926.44" x2="357.86" y2="929.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="936.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="409.04" y1="926.44" x2="409.04" y2="929.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.04" y="936.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="919.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="131.55" y1="905.44" x2="131.55" y2="907.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="205.12" y1="905.44" x2="205.12" y2="907.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="905.44" x2="310.15" y2="907.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="905.44" x2="327.21" y2="907.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="905.44" x2="357.06" y2="907.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="905.44" x2="379.45" y2="907.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="905.44" x2="413.04" y2="907.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="442.36" y1="905.44" x2="442.36" y2="907.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="478.62" y1="905.44" x2="478.62" y2="907.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="505.27" y1="905.44" x2="505.27" y2="907.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="527.13" y1="905.44" x2="527.13" y2="907.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="546.86" y1="905.44" x2="546.86" y2="907.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="580.45" y1="905.44" x2="580.45" y2="907.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="602.3" y1="905.44" x2="602.3" y2="907.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="615.1" y1="905.44" x2="615.1" y2="907.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.62" y1="905.44" x2="639.62" y2="907.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="658.28" y1="905.44" x2="658.28" y2="907.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="905.44" x2="702" y2="907.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="960.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Anolis carolinensis</text>
+<text x="112.35" y="969.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_062832081.1</text>
+<rect x="120.35" y="959.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="266.96" y="952.44" width="36.25" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="952.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="386.38" y="952.44" width="51.18" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="952.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="285.09" y1="970.44" x2="285.09" y2="973.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="285.09" y="980.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="970.44" x2="357.86" y2="973.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="980.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="411.97" y1="970.44" x2="411.97" y2="973.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="411.97" y="980.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="963.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="132.08" y1="949.44" x2="132.08" y2="951.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="205.12" y1="949.44" x2="205.12" y2="951.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="949.44" x2="310.15" y2="951.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="949.44" x2="327.21" y2="951.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="949.44" x2="357.06" y2="951.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="949.44" x2="379.45" y2="951.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="949.44" x2="413.04" y2="951.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="441.83" y1="949.44" x2="441.83" y2="951.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="478.08" y1="949.44" x2="478.08" y2="951.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="504.74" y1="949.44" x2="504.74" y2="951.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="526.6" y1="949.44" x2="526.6" y2="951.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="546.32" y1="949.44" x2="546.32" y2="951.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="579.91" y1="949.44" x2="579.91" y2="951.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="601.77" y1="949.44" x2="601.77" y2="951.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="614.57" y1="949.44" x2="614.57" y2="951.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.09" y1="949.44" x2="639.09" y2="951.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="657.75" y1="949.44" x2="657.75" y2="951.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="949.44" x2="702" y2="951.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="1004.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Alligator mississippiensis</text>
+<text x="112.35" y="1013.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_006266188.1</text>
+<rect x="120.35" y="1003.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="266.96" y="996.44" width="34.12" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="996.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="386.38" y="996.44" width="51.18" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="996.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.02" y1="1014.44" x2="284.02" y2="1017.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.02" y="1024.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="1014.44" x2="357.86" y2="1017.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="1024.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="411.97" y1="1014.44" x2="411.97" y2="1017.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="411.97" y="1024.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="1007.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="205.12" y1="993.44" x2="205.12" y2="995.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="993.44" x2="310.15" y2="995.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="993.44" x2="327.21" y2="995.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="993.44" x2="357.06" y2="995.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="993.44" x2="379.45" y2="995.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="993.44" x2="413.04" y2="995.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="442.36" y1="993.44" x2="442.36" y2="995.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="478.08" y1="993.44" x2="478.08" y2="995.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="505.27" y1="993.44" x2="505.27" y2="995.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="527.13" y1="993.44" x2="527.13" y2="995.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="546.86" y1="993.44" x2="546.86" y2="995.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="580.45" y1="993.44" x2="580.45" y2="995.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="602.3" y1="993.44" x2="602.3" y2="995.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="615.1" y1="993.44" x2="615.1" y2="995.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.62" y1="993.44" x2="639.62" y2="995.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="658.28" y1="993.44" x2="658.28" y2="995.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="673.21" y1="993.44" x2="673.21" y2="995.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="993.44" x2="702" y2="995.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="1048.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Chrysemys picta bellii</text>
+<text x="112.35" y="1057.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_065408413.1</text>
+<rect x="120.35" y="1047.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="266.96" y="1040.44" width="34.12" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="1040.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="387.45" y="1040.44" width="43.18" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="1040.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.02" y1="1058.44" x2="284.02" y2="1061.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.02" y="1068.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="1058.44" x2="357.86" y2="1061.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="1068.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="409.04" y1="1058.44" x2="409.04" y2="1061.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="409.04" y="1068.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="1051.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="205.12" y1="1037.44" x2="205.12" y2="1039.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="1037.44" x2="310.15" y2="1039.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="1037.44" x2="327.21" y2="1039.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="1037.44" x2="357.06" y2="1039.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="1037.44" x2="379.45" y2="1039.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="1037.44" x2="413.04" y2="1039.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="439.16" y1="1037.44" x2="439.16" y2="1039.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="476.48" y1="1037.44" x2="476.48" y2="1039.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="503.67" y1="1037.44" x2="503.67" y2="1039.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="525.53" y1="1037.44" x2="525.53" y2="1039.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="545.26" y1="1037.44" x2="545.26" y2="1039.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="578.85" y1="1037.44" x2="578.85" y2="1039.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="600.7" y1="1037.44" x2="600.7" y2="1039.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="613.5" y1="1037.44" x2="613.5" y2="1039.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="638.02" y1="1037.44" x2="638.02" y2="1039.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="656.68" y1="1037.44" x2="656.68" y2="1039.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="701.47" y1="1037.44" x2="701.47" y2="1039.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="1092.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Xenopus tropicalis</text>
+<text x="112.35" y="1101.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">ENSXETP00000069725</text>
+<rect x="120.35" y="1091.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="270.69" y="1084.44" width="34.65" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="336.8" y="1084.44" width="41.58" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="386.38" y="1084.44" width="51.18" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="1084.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="288.02" y1="1102.44" x2="288.02" y2="1105.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="288.02" y="1112.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.59" y1="1102.44" x2="357.59" y2="1105.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.59" y="1112.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="411.97" y1="1102.44" x2="411.97" y2="1105.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="411.97" y="1112.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="1095.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="156.6" y1="1081.44" x2="156.6" y2="1083.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="267.5" y1="1081.44" x2="267.5" y2="1083.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="280.82" y1="1081.44" x2="280.82" y2="1083.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="312.81" y1="1081.44" x2="312.81" y2="1083.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="338.94" y1="1081.44" x2="338.94" y2="1083.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="372.52" y1="1081.44" x2="372.52" y2="1083.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="398.65" y1="1081.44" x2="398.65" y2="1083.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="433.3" y1="1081.44" x2="433.3" y2="1083.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="463.16" y1="1081.44" x2="463.16" y2="1083.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="485.01" y1="1081.44" x2="485.01" y2="1083.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="504.74" y1="1081.44" x2="504.74" y2="1083.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="538.33" y1="1081.44" x2="538.33" y2="1083.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="560.19" y1="1081.44" x2="560.19" y2="1083.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="572.98" y1="1081.44" x2="572.98" y2="1083.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="597.51" y1="1081.44" x2="597.51" y2="1083.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="616.17" y1="1081.44" x2="616.17" y2="1083.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="646.55" y1="1081.44" x2="646.55" y2="1083.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="1136.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Ambystoma mexicanum</text>
+<text x="112.35" y="1145.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_069468056.1</text>
+<rect x="120.35" y="1135.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="263.76" y="1128.44" width="45.85" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="1128.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="386.38" y="1128.44" width="51.18" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="1128.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="286.69" y1="1146.44" x2="286.69" y2="1149.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="286.69" y="1156.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="1146.44" x2="357.86" y2="1149.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="1156.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="411.97" y1="1146.44" x2="411.97" y2="1149.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="411.97" y="1156.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="1139.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="205.12" y1="1125.44" x2="205.12" y2="1127.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="1125.44" x2="310.15" y2="1127.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="1125.44" x2="327.21" y2="1127.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="1125.44" x2="357.06" y2="1127.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="1125.44" x2="379.45" y2="1127.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="1125.44" x2="413.04" y2="1127.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="442.36" y1="1125.44" x2="442.36" y2="1127.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="478.08" y1="1125.44" x2="478.08" y2="1127.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="504.74" y1="1125.44" x2="504.74" y2="1127.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="526.6" y1="1125.44" x2="526.6" y2="1127.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="546.32" y1="1125.44" x2="546.32" y2="1127.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="579.91" y1="1125.44" x2="579.91" y2="1127.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="601.77" y1="1125.44" x2="601.77" y2="1127.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="614.57" y1="1125.44" x2="614.57" y2="1127.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.09" y1="1125.44" x2="639.09" y2="1127.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="657.75" y1="1125.44" x2="657.75" y2="1127.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="1125.44" x2="702" y2="1127.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="1180.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Danio rerio</text>
+<text x="112.35" y="1189.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_068081038.1</text>
+<rect x="120.35" y="1179.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="270.16" y="1172.44" width="33.05" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="336.8" y="1172.44" width="41.58" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="386.38" y="1172.44" width="51.18" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.82" y="1172.44" width="177.53" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="286.69" y1="1190.44" x2="286.69" y2="1193.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="286.69" y="1200.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.59" y1="1190.44" x2="357.59" y2="1193.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.59" y="1200.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="411.97" y1="1190.44" x2="411.97" y2="1193.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="411.97" y="1200.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.58" y="1183.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="205.12" y1="1169.44" x2="205.12" y2="1171.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="1169.44" x2="310.15" y2="1171.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="1169.44" x2="327.21" y2="1171.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="1169.44" x2="357.06" y2="1171.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="1169.44" x2="379.45" y2="1171.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="1169.44" x2="413.04" y2="1171.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="439.16" y1="1169.44" x2="439.16" y2="1171.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="477.02" y1="1169.44" x2="477.02" y2="1171.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="503.67" y1="1169.44" x2="503.67" y2="1171.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="525.53" y1="1169.44" x2="525.53" y2="1171.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="545.26" y1="1169.44" x2="545.26" y2="1171.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="578.85" y1="1169.44" x2="578.85" y2="1171.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="600.7" y1="1169.44" x2="600.7" y2="1171.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="613.5" y1="1169.44" x2="613.5" y2="1171.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="638.02" y1="1169.44" x2="638.02" y2="1171.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="656.68" y1="1169.44" x2="656.68" y2="1171.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="701.47" y1="1169.44" x2="701.47" y2="1171.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="1224.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Oryzias latipes</text>
+<text x="112.35" y="1233.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">XP_078787744.1</text>
+<rect x="120.35" y="1223.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="268.03" y="1216.44" width="32.52" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="1216.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="386.38" y="1216.44" width="51.18" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="480.75" y="1216.44" width="178.6" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.29" y1="1234.44" x2="284.29" y2="1237.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.29" y="1244.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="1234.44" x2="357.86" y2="1237.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="1244.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="411.97" y1="1234.44" x2="411.97" y2="1237.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="411.97" y="1244.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.05" y="1227.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="205.12" y1="1213.44" x2="205.12" y2="1215.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="1213.44" x2="310.15" y2="1215.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="1213.44" x2="327.21" y2="1215.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="1213.44" x2="357.06" y2="1215.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="1213.44" x2="379.45" y2="1215.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="1213.44" x2="413.04" y2="1215.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="439.16" y1="1213.44" x2="439.16" y2="1215.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="476.48" y1="1213.44" x2="476.48" y2="1215.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="503.67" y1="1213.44" x2="503.67" y2="1215.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="525.53" y1="1213.44" x2="525.53" y2="1215.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="545.26" y1="1213.44" x2="545.26" y2="1215.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="578.85" y1="1213.44" x2="578.85" y2="1215.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="600.7" y1="1213.44" x2="600.7" y2="1215.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="613.5" y1="1213.44" x2="613.5" y2="1215.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="638.02" y1="1213.44" x2="638.02" y2="1215.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="656.68" y1="1213.44" x2="656.68" y2="1215.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="701.47" y1="1213.44" x2="701.47" y2="1215.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="1268.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Gasterosteus aculeatus</text>
+<text x="112.35" y="1277.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">ENSGACP00000061458</text>
+<rect x="120.35" y="1267.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="212.05" y="1260.44" width="50.11" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="337.34" y="1260.44" width="41.05" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="386.38" y="1260.44" width="51.18" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.28" y="1260.44" width="173.27" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="237.11" y1="1278.44" x2="237.11" y2="1281.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="237.11" y="1288.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.86" y1="1278.44" x2="357.86" y2="1281.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.86" y="1288.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="411.97" y1="1278.44" x2="411.97" y2="1281.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="411.97" y="1288.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="567.92" y="1271.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="207.78" y1="1257.44" x2="207.78" y2="1259.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="232.31" y1="1257.44" x2="232.31" y2="1259.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="244.57" y1="1257.44" x2="244.57" y2="1259.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="266.43" y1="1257.44" x2="266.43" y2="1259.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="300.55" y1="1257.44" x2="300.55" y2="1259.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="324.54" y1="1257.44" x2="324.54" y2="1259.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="347.47" y1="1257.44" x2="347.47" y2="1259.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="371.99" y1="1257.44" x2="371.99" y2="1259.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="406.64" y1="1257.44" x2="406.64" y2="1259.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="431.17" y1="1257.44" x2="431.17" y2="1259.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="468.49" y1="1257.44" x2="468.49" y2="1259.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="491.41" y1="1257.44" x2="491.41" y2="1259.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="523.93" y1="1257.44" x2="523.93" y2="1259.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="537.26" y1="1257.44" x2="537.26" y2="1259.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="582.04" y1="1257.44" x2="582.04" y2="1259.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="606.57" y1="1257.44" x2="606.57" y2="1259.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="640.69" y1="1257.44" x2="640.69" y2="1259.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="701.47" y1="1257.44" x2="701.47" y2="1259.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="1312.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Takifugu rubripes</text>
+<text x="112.35" y="1321.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">ENSTRUP00000045145</text>
+<rect x="120.35" y="1311.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="268.03" y="1304.44" width="32.52" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="336.8" y="1304.44" width="41.58" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="386.38" y="1304.44" width="51.18" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="480.75" y="1304.44" width="178.6" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.29" y1="1322.44" x2="284.29" y2="1325.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.29" y="1332.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.59" y1="1322.44" x2="357.59" y2="1325.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.59" y="1332.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="411.97" y1="1322.44" x2="411.97" y2="1325.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="411.97" y="1332.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.05" y="1315.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="201.92" y1="1301.44" x2="201.92" y2="1303.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="278.69" y1="1301.44" x2="278.69" y2="1303.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="304.81" y1="1301.44" x2="304.81" y2="1303.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="319.21" y1="1301.44" x2="319.21" y2="1303.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="341.6" y1="1301.44" x2="341.6" y2="1303.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="375.72" y1="1301.44" x2="375.72" y2="1303.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="395.45" y1="1301.44" x2="395.45" y2="1303.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="417.31" y1="1301.44" x2="417.31" y2="1303.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="444.5" y1="1301.44" x2="444.5" y2="1303.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="480.75" y1="1301.44" x2="480.75" y2="1303.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="507.41" y1="1301.44" x2="507.41" y2="1303.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="541.53" y1="1301.44" x2="541.53" y2="1303.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="563.38" y1="1301.44" x2="563.38" y2="1303.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="594.84" y1="1301.44" x2="594.84" y2="1303.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="608.17" y1="1301.44" x2="608.17" y2="1303.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="654.02" y1="1301.44" x2="654.02" y2="1303.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="701.47" y1="1301.44" x2="701.47" y2="1303.94" stroke="#6B7A8C" stroke-width="0.6" />
+<text x="112.35" y="1356.44" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="end" font-weight="normal" font-style="italic">Oreochromis niloticus</text>
+<text x="112.35" y="1365.04" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="end" font-weight="normal">ENSONIP00000063320</text>
+<rect x="120.35" y="1355.44" width="581.65" height="4" fill="#526476" stroke="none" stroke-width="0.6" opacity="0.55" />
+<rect x="268.03" y="1348.44" width="32.52" height="18" fill="#0072B2" stroke="#1c2433" stroke-width="0.6" />
+<rect x="336.8" y="1348.44" width="41.58" height="18" fill="#56B4E9" stroke="#1c2433" stroke-width="0.6" />
+<rect x="386.38" y="1348.44" width="51.18" height="18" fill="#3B7EA1" stroke="#1c2433" stroke-width="0.6" />
+<rect x="481.28" y="1348.44" width="178.07" height="18" fill="#7570B3" stroke="#1c2433" stroke-width="0.6" />
+<line x1="284.29" y1="1366.44" x2="284.29" y2="1369.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="284.29" y="1376.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 1</text>
+<line x1="357.59" y1="1366.44" x2="357.59" y2="1369.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="357.59" y="1376.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 2</text>
+<line x1="411.97" y1="1366.44" x2="411.97" y2="1369.94" stroke="#9aa4b2" stroke-width="0.6" opacity="0.8" />
+<text x="411.97" y="1376.54" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#1c2433" text-anchor="middle" font-weight="normal">Ig-like domain 3</text>
+<text x="570.32" y="1359.75" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#ffffff" text-anchor="middle" font-weight="bold">Ser-Thr/Tyr kinase domain</text>
+<line x1="205.12" y1="1345.44" x2="205.12" y2="1347.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="310.15" y1="1345.44" x2="310.15" y2="1347.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="327.21" y1="1345.44" x2="327.21" y2="1347.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="357.06" y1="1345.44" x2="357.06" y2="1347.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="379.45" y1="1345.44" x2="379.45" y2="1347.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="413.04" y1="1345.44" x2="413.04" y2="1347.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="441.83" y1="1345.44" x2="441.83" y2="1347.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="476.48" y1="1345.44" x2="476.48" y2="1347.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="504.74" y1="1345.44" x2="504.74" y2="1347.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="526.6" y1="1345.44" x2="526.6" y2="1347.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="546.32" y1="1345.44" x2="546.32" y2="1347.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="579.91" y1="1345.44" x2="579.91" y2="1347.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="601.77" y1="1345.44" x2="601.77" y2="1347.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="614.57" y1="1345.44" x2="614.57" y2="1347.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="639.09" y1="1345.44" x2="639.09" y2="1347.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="657.75" y1="1345.44" x2="657.75" y2="1347.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="702" y1="1345.44" x2="702" y2="1347.94" stroke="#6B7A8C" stroke-width="0.6" />
+<line x1="120.35" y1="1389.6" x2="702" y2="1389.6" stroke="#9aa4b2" stroke-width="0.8" />
+<line x1="120.35" y1="1389.6" x2="120.35" y2="1393.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="120.35" y="1401" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">0</text>
+<line x1="226.98" y1="1389.6" x2="226.98" y2="1393.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="226.98" y="1401" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">200</text>
+<line x1="333.6" y1="1389.6" x2="333.6" y2="1393.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="333.6" y="1401" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">400</text>
+<line x1="440.23" y1="1389.6" x2="440.23" y2="1393.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="440.23" y="1401" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">600</text>
+<line x1="546.86" y1="1389.6" x2="546.86" y2="1393.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="546.86" y="1401" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">800</text>
+<line x1="653.48" y1="1389.6" x2="653.48" y2="1393.1" stroke="#9aa4b2" stroke-width="0.8" />
+<text x="653.48" y="1401" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.4" fill="#6B7280" text-anchor="middle" font-weight="normal">1000</text>
+<text x="411.17" y="1414.4" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="8.2" fill="#1c2433" text-anchor="middle" font-weight="normal">MSA column of the cross-species primary-protein alignment</text>
+<rect x="14" y="1424.6" width="7" height="7" fill="#0072B2" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="25" y="1430.6" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Ig-like domain 1</text>
+<rect x="90.68" y="1424.6" width="7" height="7" fill="#56B4E9" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="101.68" y="1430.6" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Ig-like domain 2</text>
+<rect x="167.36" y="1424.6" width="7" height="7" fill="#3B7EA1" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="178.36" y="1430.6" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Ig-like domain 3</text>
+<rect x="244.03" y="1424.6" width="7" height="7" fill="#7570B3" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="255.03" y="1430.6" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Ser-Thr/Tyr kinase domain</text>
+<rect x="358.82" y="1424.6" width="7" height="7" fill="#6B7A8C" stroke="#9aa4b2" stroke-width="0.6" />
+<text x="369.82" y="1430.6" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="7.6" fill="#1c2433" text-anchor="start" font-weight="normal">Exon boundary</text>
+<text x="14" y="1448.8" font-family="Helvetica, Arial, 'Nimbus Sans', 'DejaVu Sans', sans-serif" font-size="6.6" fill="#6B7280" text-anchor="start" font-weight="normal">Repeated domains of one accession stay separate instances, identified by instance number and aligned interval.</text>
+</svg>
