@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[2]
 ALLOWED_TOP_LEVEL = {
     ".gitattributes", ".github", ".gitignore", "CHANGELOG.md", "CITATION.cff",
     "LICENSE", "Makefile", "README.md", "SECURITY.md", "config", "configs",
-    "datasets", "docs", "pyproject.toml", "reference", "references",
+    "analyses", "datasets", "docs", "pyproject.toml", "reference", "references",
     "requirements", "run_fgfr2_pipeline_current_final_pre_interpro.sh",
     "run_fgfr2_pipeline_current_v3.sh", "scripts",
     "src", "tests", "webapp",
