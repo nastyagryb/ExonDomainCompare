@@ -30,7 +30,7 @@ All 17 barcode positions could be mapped in both structural complexes. Thirteen 
 
 The cross-annotation analysis compared 16 matched NCBI–Ensembl isoform pairs. All 16 retained the same topology class, although several absolute cassette and D3-end coordinates shifted. This replication supports a relative cassette–D3 relationship for the tested FGFR2 models. It does not establish that every annotation source or every gene will behave in the same way.
 
-## Thesis-level conclusion
+## Conclusion
 
 For FGFR2 IIIb/IIIc, exact domain endpoints vary with the caller and some absolute protein coordinates vary with the selected annotation model. The relation between the alternative cassette and its D3 context is nevertheless stable across the tested callers, parameter ranges and matched annotations. The cassette also carries a clade-generalizing, largely ancestral sequence signature concentrated at the ligand-facing surface.
 
