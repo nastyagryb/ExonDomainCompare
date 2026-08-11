@@ -26,6 +26,18 @@ cd ExonDomainCompare
 ./scripts/start_local.sh
 ```
 
+`./scripts/setup_local.sh` is the one-time dependency installation command. It
+creates an isolated `.venv`, installs all Python packages declared by the
+project (including Matplotlib, pandas, NumPy, Biopython, FastAPI and the
+rendering and synteny extras), installs the frontend packages with `npm ci`,
+creates the local application folders and checks the installation. Python
+packages do not need to be installed one by one.
+
+The tested package versions are recorded in
+[`requirements/constraints-py313-tested.txt`](requirements/constraints-py313-tested.txt),
+and the direct Python dependencies are declared in
+[`pyproject.toml`](pyproject.toml).
+
 Open <http://127.0.0.1:5173>. The bundled FGFR2 and PTPN11 datasets work without
 an LRZ account.
 

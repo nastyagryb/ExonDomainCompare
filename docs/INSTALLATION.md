@@ -43,8 +43,13 @@ cd ExonDomainCompare
 ./scripts/setup_local.sh
 ```
 
-Setup creates `.venv`, installs the tested Python and frontend dependencies,
-creates private user-data folders and runs a local capability check.
+This is the complete dependency installation command. Setup creates `.venv`,
+installs all Python dependencies and optional features used by the application,
+installs the frontend packages with `npm ci`, creates private user-data folders
+and runs a local capability check. Packages such as Matplotlib, pandas, NumPy,
+Biopython and FastAPI do not need to be installed separately. Python package
+versions are constrained by `requirements/constraints-py313-tested.txt` so that
+a fresh installation uses the environment tested for this release.
 
 ## 4. Start the application
 
