@@ -68,6 +68,7 @@ into the same local run folder after the round trip finishes.
 
 ## Documentation
 
+- [Architecture diagrams and framework overview](docs/architecture/README.md)
 - [Installation](docs/INSTALLATION.md)
 - [Windows setup](docs/WINDOWS.md)
 - [LRZ setup](docs/LRZ.md)

@@ -1,0 +1,85 @@
+# 05 - Detailed C4 Container and Deployment View  (Appendix)
+# Rendered with: d2 --layout dagre
+...@_theme
+
+direction: down
+grid-columns: 3
+grid-gap: 55
+
+title: "Detailed C4 Container and Deployment View" {
+  shape: text
+  near: top-center
+  style: { font-size: 28; font-color: "#0F172A"; bold: true }
+}
+
+person: "Researcher\n[Person]\nconfigures runs, supervises the cluster hand-off,\ninspects evidence and exports results" { class: person }
+
+web: "Local web application" {
+  class: band_user
+  grid-columns: 1
+  browser: "Web frontend\n[React / Vite SPA]\nlinked scientific exploration" { class: user }
+  api: "Backend API\n[Python / FastAPI]\ndataset scoping, run control, JSON and guarded files" { class: user }
+  browser -> api: "HTTP / JSON + files" { class: flow }
+}
+
+compute: "Local scientific computation" {
+  class: band_local
+  grid-columns: 1
+  cli: "CLI and run orchestrator\n[Python package]\nsetup, routing, pre-cluster and post-cluster stages" { class: local }
+  models: "Scientific analysis layer\n[Python modules]\nmodels, coordinates, MSA, synteny, candidates" { class: local }
+  annotation: "Annotation, boundary and audit layer\n[Python modules]\nroles, representative domains, distances, coordinate evidence QC" { class: annot }
+  renderer: "Presentation and package layer\n[Python + React renderers]\nfigures, tables and downloadable packages" { class: output }
+  cli -> models -> annotation -> renderer: { class: flow }
+}
+
+storage: "Portable local storage" {
+  class: band_data
+  grid-columns: 1
+  config: "User configuration\n[filesystem]\nportable local and LRZ profiles" { class: filedata }
+  registry: "Run registry\n[JSON]\nmanaged roots, bindings and hidden runs" { class: filedata }
+  runs: "Run directories\n[filesystem]\ncanonical-2.0 + legacy read adapter\nrun-local evidence_register TSV + provenance JSON" { class: store }
+  packages: "Package store\n[filesystem outside runs]\nvalidated downloadable ZIP packages" { class: store }
+  config -> registry -> runs: { class: flow }
+}
+
+cluster: "LRZ execution environment" {
+  class: band_cluster
+  grid-columns: 1
+  ssh: "SSH / SCP control\n[OpenSSH]\nexplicit transfer and remote commands" { class: cluster }
+  slurm: "Slurm scheduler\n[sbatch / squeue / sacct]\njob lifecycle and logs" { class: cluster }
+  tools: "Parallel annotation tools" {
+    class: band_cluster
+    grid-columns: 2
+    interpro: "InterProScan\n[cluster tool]\nprotein signatures and integrated entries" { class: cluster }
+    tm: "pyTMHMM\n[cluster tool]\ntransmembrane topology" { class: cluster }
+  }
+  remote: "Remote job directory\n[filesystem]\ninput FASTA, outputs and logs" { class: store }
+  ssh -> slurm: { class: flow }
+  slurm -> tools.interpro: { class: flow }
+  slurm -> tools.tm: { class: flow }
+  tools.interpro -> remote: { class: flow }
+  tools.tm -> remote: { class: flow }
+}
+
+external: "External scientific resources" {
+  class: band_neutral
+  grid-columns: 1
+  ncbi: "NCBI Datasets\nGFF / genomic records / proteins" { class: external }
+  ensembl: "Ensembl\nFGFR2 dual-source reference support" { class: external }
+  mafft: "MAFFT\nlocal sequence alignment executable" { class: external }
+}
+
+person -> web.browser: { class: flow }
+web.api -> compute.cli: { class: flow }
+web.api -> storage.runs: { class: flow }
+compute -> storage: { class: flow }
+compute.cli -> cluster.ssh: { class: flow }
+cluster.remote -> storage.runs: { class: flow }
+external.ncbi -> compute.models: { class: ref }
+external.ensembl -> compute.models: { class: spec }
+external.mafft -> compute.models: { class: ref }
+
+note: "Deployment boundary: the web application and scientific orchestration run locally; only primary-protein annotation runs on LRZ.\nThe researcher can inspect every transfer command and the application never treats the cluster as an implicit web service." {
+  near: bottom-center
+  class: note
+}

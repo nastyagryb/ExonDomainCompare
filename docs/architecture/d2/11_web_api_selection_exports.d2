@@ -1,0 +1,106 @@
+# 11 - Detailed Web, API, Selection and Export Integration  (Appendix)
+# Rendered with: d2 --layout dagre
+...@_theme
+
+direction: down
+grid-columns: 4
+grid-gap: 55
+
+title: "Detailed Web, API, Selection and Export Integration" {
+  shape: text
+  near: top-center
+  style: { font-size: 28; font-color: "#0F172A"; bold: true }
+}
+
+shell: "A - Application shell and dataset loading" {
+  class: band_user
+  grid-columns: 1
+  app: "App.jsx\nHome - Overview - Gene Explorer - Boundary - Gallery - My Runs" { class: user }
+  switch: "DatasetSwitcher\nexample + registered runs + active dataset" { class: user }
+  epoch: "Dataset load epoch + AbortController\nlate replies cannot overwrite a newer selection" { class: user }
+  poll: "Status polling\nrefresh model when step, status or index version changes" { class: user }
+  gate: "available_views navigation gate\npending view is calm; not applicable is resolved" { class: pending }
+  app -> switch -> epoch -> poll -> gate: { class: flow }
+}
+
+client: "B - Dataset-scoped API client" {
+  class: band_user
+  grid-columns: 1
+  base: "api.js\nAPI_BASE + active dataset + dataset query binding" { class: user }
+  bound: "forDataset(datasetId, signal)\nexplicit dataset and cancellation per request" { class: user }
+  run: "Run-control methods\ncreate - start - stop - retry - refresh - logs - diagnostics" { class: user }
+  science: "Scientific data methods\ndataset model - species - coordinates - MSA - synteny\ndomains - boundaries - evidence - provenance catalogue - figures" { class: user }
+  package: "Package methods\ncapabilities - catalogue - create - job status" { class: user }
+  identity: "Payload identity checks\ndataset_id and run_id must match active scope" { class: pending }
+  base -> bound -> run -> science -> package -> identity: { class: flow }
+}
+
+backend: "C - FastAPI endpoint families" {
+  class: band_user
+  grid-columns: 1
+  setup: "/api/health - presets - species/parse - analysis-router\nconfiguration and routing" { class: user }
+  runs: "/api/local-runs/*\ncreate, processes, commands, status, logs, retries, deletion" { class: user }
+  datasets: "/api/datasets* + /api/runs/current/dataset-model\ndataset discovery, status and canonical model" { class: user }
+  views: "/api/runs/current/*\nsummary, species, coordinates, MSA, synteny, domains, boundaries" { class: user }
+  shared: "/api/runs/current/shared/{name}\nmodern shared-pipeline index contract" { class: user }
+  legacy: "/api/runs/current/core/*\nbackward-compatible tooling endpoints" { class: pending }
+  files: "/api/download - /api/file-preview - /api/runs/{id}/files\npath-guarded file access" { class: user }
+  setup -> runs -> datasets -> views -> shared -> legacy -> files: { class: flow }
+}
+
+model: "D - Canonical application model" {
+  class: band_data
+  grid-columns: 1
+  identity: "Dataset identity\ndataset_id - run_id - gene - species inventory" { class: data }
+  production: "Production identity\nanalysis_family + explorer / gallery / renderer versions" { class: data }
+  objects: "Scientific objects\ntranscripts - proteins - exons - candidates - domains\nboundaries - alignments - synteny" { class: data }
+  availability: "Analysis availability + available_views\nstatus, reason code, message and badge" { class: data }
+  provenance: "Evidence and provenance\nsources, methods, QC, downloads and figure catalogue\ncoordinate register TSV + provenance JSON catalogue entries" { class: data }
+  identity -> production -> objects -> availability -> provenance: { class: flow }
+}
+
+selection: "E - Authoritative scientific selection" {
+  class: band_data
+  grid-columns: 2
+  species: "species + comparative species\nfigure scope" { class: data }
+  model_ids: "transcript + protein + exon" { class: data }
+  evidence: "candidate + feature + signature\ndomain + boundary" { class: data }
+  comparative: "comparable boundary group\nMSA column" { class: data }
+  coordinates: "native / MSA coordinate mode\nrange + visible tracks" { class: data }
+  persistence: "sessionStorage per run + species\nrefresh-surviving selection" { class: data }
+  actions: "Relationship-preserving actions\ncandidate -> protein / range; exon -> transcript / protein\nboundary -> domain / range; matrix cell -> group / species / MSA" { class: data }
+  navigation: "Cross-view navigation\nopen species view while retaining scientific context" { class: data }
+}
+
+views: "F - Linked scientific consumers" {
+  class: band_user
+  grid-columns: 2
+  overview: "Overview + quality\nrun and dataset evidence" { class: user }
+  exon: "Isoforms + Exon Map\nCoordinateTrack + ProteinArchitecture" { class: user }
+  alignment: "MsaExplorer\nisoform alignment + cross-species MSA" { class: user }
+  domain: "DomainArchitecture\nrole-separated annotations" { class: user }
+  boundary: "BoundaryExplorer + comparative dashboard\nheatmap, matrix, paired plot, outliers, detail track" { class: user }
+  synteny: "SyntenyViewer / SyntenyNeighbourhood\nstrand-aware genomic context" { class: user }
+  cassette: "CassetteExplorer + SpeciesStory\nFGFR2-only validated evidence" { class: fgfr2 }
+  downloads: "DataDownloads + FigureGallery\nscope-aware packages and figures" { class: output }
+}
+
+exports: "G - Reproducible rendering and exports" {
+  class: band_output
+  grid-columns: 1
+  spec: "Semantic figure specification\nidentities - labels - order - coordinates - style roles" { class: output }
+  interactive: "Interactive React / SVG rendering\nselection and inspection controls" { class: output }
+  static: "Static renderers\nSVG / PDF / PNG with the same scientific semantics" { class: output }
+  data: "Data exports\nTSV / JSON / FASTA and validated ZIP packages\nrun-local coordinate audit remains traceable to source rows" { class: output }
+  manifest: "Output / package manifests\nproducer + schema + scope + checksums" { class: filedata }
+  spec -> interactive: { class: flow }
+  spec -> static: { class: flow }
+  static -> data -> manifest: { class: flow }
+}
+
+shell -> client -> backend -> model -> selection -> views -> exports: { class: flow }
+
+note: "The canonical provenance catalogue exposes the coordinate-register files as downloads; the frontend still relies on explicit availability contracts rather than filenames.\nThe audit files document existing evidence and QC. They do not independently authorize a scientific view or alter linked selection semantics." {
+  near: bottom-center
+  class: note
+}

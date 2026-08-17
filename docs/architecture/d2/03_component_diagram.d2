@@ -1,0 +1,108 @@
+# 03 - Detailed Source-Code Component and Dependency Map  (Appendix)
+# Rendered with: d2 --layout dagre
+...@_theme
+
+direction: down
+grid-columns: 3
+grid-gap: 55
+
+title: "Detailed Source-Code Component and Dependency Map" {
+  shape: text
+  near: top-center
+  style: { font-size: 28; font-color: "#0F172A"; bold: true }
+}
+
+foundation: "Configuration and entry points" {
+  class: band_neutral
+  grid-columns: 1
+  cfg: "config.py\nRuntimeConfig - AppPaths - local / LRZ profiles" { class: local }
+  contracts: "contracts.py\nshared typed data contracts" { class: local }
+  cli: "cli.py + config_cli.py\nsetup - doctor - serve - runs - migration - cluster" { class: local }
+  setup: "cluster_setup.py + cluster/ssh_common.py\nremote profile and SSH / Slurm integration" { class: cluster }
+  cfg -> cli: { class: ref }
+  cfg -> setup: { class: ref }
+  contracts -> cli: { class: ref }
+}
+
+runs: "Run persistence package" {
+  class: band_data
+  grid-columns: 1
+  layout: "runs/layout.py\ncanonical-2.0 paths + lazy initialization" { class: data }
+  registry: "runs/registry.py\nmanaged roots + bindings + collision detection" { class: data }
+  legacy: "runs/legacy.py + migration.py\nread adapter + explicit migration" { class: data }
+  manifest: "runs/outputs.py\ncanonical output identity + SHA-256 verification" { class: data }
+  registry -> layout: { class: flow }
+  legacy -> layout: { class: ref }
+  layout -> manifest: { class: flow }
+}
+
+routing: "Routing and framework orchestration" {
+  class: band_local
+  grid-columns: 1
+  geneconfig: "framework/gene_config.py\nconfig-driven analysis discovery" { class: local }
+  analysis: "framework/analysis_router.py\ngene -> scientific workflow" { class: local }
+  production: "framework/production_contract.py\ngene -> analysis family + view / renderer versions" { class: local }
+  runner: "framework/run_core_gene_analysis.py\nmodel collection + pre / post-cluster orchestration" { class: local }
+  milestones: "framework/core_run_milestones.py\non-disk milestone inference" { class: local }
+  geneconfig -> analysis -> runner: { class: flow }
+  production -> runner: { class: ref }
+  runner -> milestones: { class: ref }
+}
+
+science: "Scientific analysis modules" {
+  class: band_annot
+  grid-columns: 2
+  primary: "framework/primary_selection.py\nprimary_resolution.py" { class: annot }
+  interpro: "framework/interpro_annotations.py\nannotation ingestion and roles" { class: annot }
+  candidates: "scan_isoform_event_candidates.py\nbuild / cluster event evidence" { class: generic }
+  boundary: "shared_gene_analysis/boundary_*\nobservations + dashboard + classes" { class: annot }
+  coordinate: "protein_coordinate_model.py\nmsa_coordinates.py + strand.py" { class: annot }
+  audit: "framework/coordinate_evidence_register.py\nrun-local coordinate records + QC + source provenance" { class: data }
+  comparative: "comparative_dataset.py\nspecies_order.py + synteny_contract.py" { class: annot }
+  availability: "analysis_availability.py\nrun_availability.py + freshness" { class: annot }
+  indices: "shared_gene_analysis/indices/*\ncoordinate track + MSA + synteny" { class: annot }
+  packages: "package_builder.py + public_paths.py\nscientific download packages" { class: output }
+  primary -> coordinate -> boundary: { class: flow }
+  interpro -> boundary: { class: flow }
+  coordinate -> audit: { class: flow }
+  boundary -> audit: { class: flow }
+  boundary -> comparative -> indices: { class: flow }
+  audit -> packages: { class: ref }
+  availability -> packages: { class: ref }
+}
+
+specialized: "FGFR2 validated adapters" {
+  class: band_fgfr2
+  grid-columns: 1
+  core: "adapters/fgfr2_core_analysis_adapter.py\nvalidated core-output adapter" { class: fgfr2 }
+  detector: "adapters/fgfr2_event_detector_adapter.py\nIIIb / IIIc event detector adapter" { class: fgfr2 }
+  generic: "adapters/fgfr2_to_generic_indices.py\ncanonical cross-family index representation" { class: fgfr2 }
+  scientific: "scientific/fgfr2_msa_common.py\nprotein lookup and FGFR2-specific sequence support" { class: fgfr2 }
+  core -> detector -> generic: { class: spec }
+}
+
+presentation: "Application and presentation" {
+  class: band_user
+  grid-columns: 2
+  backend: "webapp/backend/main.py\nFastAPI routes + run control + file guards" { class: user }
+  canonical: "webapp/backend/canonical_dataset.py\nversioned application model" { class: data }
+  app: "frontend/App.jsx + api.js\ndataset epochs + navigation + dataset-scoped client" { class: user }
+  selection: "ScientificSelectionContext.jsx\none linked scientific selection" { class: user }
+  pages: "pages/*\nRuns - Overview - Explorer - Boundaries - Gallery" { class: user }
+  viewers: "pages/viewers/*\ntracks - MSA - synteny - boundary - comparative views" { class: user }
+  figures: "presentation/* + viewer figureSpec / figureExport\nsemantic styles + captions + export rendering" { class: output }
+  backend -> canonical -> app: { class: flow }
+  app -> selection -> pages -> viewers: { class: flow }
+  viewers -> figures: { class: flow }
+}
+
+foundation -> runs -> routing -> science -> presentation: { class: flow }
+routing.runner -> science.audit: { class: ref }
+science.audit -> presentation.canonical: { class: ref }
+routing -> specialized: { class: spec }
+specialized -> presentation: { class: spec }
+
+note: "Verification layer includes test_coordinate_evidence_register.py: pre-cluster domain evidence remains pending; post-cluster records retain model links, QC and source-file checksums.\nThe register is an audit projection of existing result tables, not an alternative scientific computation." {
+  near: bottom-center
+  class: note
+}

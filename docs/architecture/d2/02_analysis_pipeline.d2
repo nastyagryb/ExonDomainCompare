@@ -1,0 +1,101 @@
+# 02 - Detailed End-to-End Analysis Pipeline  (Appendix)
+# Rendered with: d2 --layout dagre
+...@_theme
+
+direction: down
+grid-columns: 3
+grid-gap: 55
+
+title: "Detailed End-to-End Analysis Pipeline" {
+  shape: text
+  near: top-center
+  style: { font-size: 28; font-color: "#0F172A"; bold: true }
+}
+
+A: "A - Run creation and contracts" {
+  class: band_neutral
+  grid-columns: 1
+  a1: "1  Resolve user input\ngene symbol - species - mode" { class: user }
+  a2: "2  Parse and validate species\ntaxon and assembly identifiers" { class: local }
+  a3: "3  Resolve scientific workflow\nvalidated_event_analysis | shared_exploratory" { class: local }
+  a4: "4  Resolve production contract\nanalysis_family + schema / renderer versions" { class: local }
+  a5: "5  Register run identity\nrun_id + dataset_id + managed root" { class: data }
+  a6: "6  Initialize canonical-2.0 run\nrun.json - status.json - gene.json - species.tsv" { class: filedata }
+  a1 -> a2 -> a3 -> a4 -> a5 -> a6: { class: flow }
+}
+
+B: "B - Scientific workflow and sources" {
+  class: band_local
+  grid-columns: 1
+  b1: "7  Instantiate selected workflow\nFGFR2 validated | generic exploratory" { class: local }
+  b2: "8  Resolve source records\nNCBI Datasets; Ensembl support for FGFR2" { class: local }
+  b3: "9  Resolve gene locus and assembly\ngene identification + strand + taxon" { class: local }
+  b4: "10  Parse transcript / exon / CDS models\nrecover incomplete models where possible" { class: local }
+  b5: "11  Select primary transcript and protein\nrecord selection evidence and model roles" { class: local }
+  b6: "12  Project CDS and exon junctions\nto protein coordinates with phase handling" { class: annot }
+  b1 -> b2 -> b3 -> b4 -> b5 -> b6: { class: flow }
+}
+
+C: "C - Local pre-cluster products" {
+  class: band_local
+  grid-columns: 1
+  c1: "13  Write per-species model tables\ntranscripts - proteins - exons - coordinate map" { class: filedata }
+  c1b: "14  Build pre-cluster coordinate evidence register\nexon-protein intervals + source rows; domain evidence pending_cluster" { class: filedata }
+  c2: "15  Build within-species isoform comparison\nand exploratory candidate evidence" { class: generic }
+  c3: "16  Build sequence comparisons\nisoform alignment + cross-species primary MSA" { class: local }
+  c4: "17  Build genomic context\nstrand-aware synteny neighbourhood" { class: local }
+  c5: "18  Evaluate prerequisites and QC\nscientific availability per analysis" { class: annot }
+  c6: "19  Freeze cluster input\nprimary proteins only + transfer contract" { class: filedata }
+  c1 -> c1b -> c2 -> c3 -> c4 -> c5 -> c6: { class: flow }
+}
+
+D: "D - Explicit LRZ cluster round trip" {
+  class: band_cluster
+  grid-columns: 1
+  d1: "20  Generate inspectable commands\nSSH / SCP + Slurm submission" { class: cluster }
+  tools: "Parallel primary-protein annotation jobs" {
+    class: band_cluster
+    grid-columns: 2
+    interpro: "21  Run InterProScan\nprimary FASTA -> TSV + GFF3 + JSON" { class: cluster }
+    tm: "22  Run pyTMHMM\nprimary FASTA -> topology summary" { class: cluster }
+  }
+  d4: "23  Poll and fetch\nsqueue / sacct + checksum-aware transfer" { class: cluster }
+  d5: "24  Validate fetched outputs\nidentity - ownership - freshness" { class: cluster }
+  d1 -> tools.interpro: { class: flow }
+  d1 -> tools.tm: { class: flow }
+  tools.interpro -> d4: { class: flow }
+  tools.tm -> d4: { class: flow }
+  d4 -> d5: { class: flow }
+}
+
+E: "E - Local post-cluster evidence" {
+  class: band_annot
+  grid-columns: 1
+  e1: "25  Parse and normalize annotations\nprotein IDs + coordinates + source metadata" { class: annot }
+  e2: "26  Assign annotation roles\nrepresentative domain | family | feature | raw | topology" { class: annot }
+  e3: "27  Measure exon-domain relation\nnearest edge + signed / absolute distance" { class: annot }
+  e4: "28  Classify and retain uncertainty\ngeneric vocabulary or FGFR2 validated contract" { class: annot }
+  e4b: "29  Regenerate coordinate evidence register\nexon + domain + TM + boundary-relation records\nmodel links, QC states, source rows and SHA-256 provenance" { class: filedata }
+  e5: "30  Build comparative evidence\ncomparable groups + species order + MSA mapping" { class: annot }
+  e6: "31  Recompute availability and freshness\nnot applicable is distinct from missing" { class: annot }
+  e1 -> e2 -> e3 -> e4 -> e4b -> e5 -> e6: { class: flow }
+}
+
+F: "F - Canonical publication products" {
+  class: band_output
+  grid-columns: 1
+  f1: "32  Build website indices\nper-species + comparative scientific objects" { class: filedata }
+  f2: "33  Adapt canonical dataset model\nversioned, read-only API representation + provenance catalogue" { class: data }
+  f3: "34  Serve linked web views\nOverview - Explorer - Boundaries - Gallery" { class: user }
+  f4: "35  Render figures from semantic specifications\ninteractive SVG + SVG / PDF / PNG exports" { class: output }
+  f5: "36  Build data packages\nTSV / JSON / FASTA with package manifest" { class: output }
+  f6: "37  Register canonical outputs\nresult type + schema + producer + size + SHA-256" { class: filedata }
+  f1 -> f2 -> f3 -> f4 -> f5 -> f6: { class: flow }
+}
+
+A -> B -> C -> D -> E -> F: { class: flow }
+
+note: "Routing guardrail: the generic and FGFR2 branches share infrastructure and audit contracts but remain distinct scientific workflows.\nThe coordinate evidence register is additive: it copies existing scientific values and provenance; it does not recompute biological results." {
+  near: bottom-center
+  class: note
+}

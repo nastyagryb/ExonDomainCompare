@@ -1,0 +1,112 @@
+# 08 - Detailed Post-InterPro Evidence and Boundary Pipeline  (Appendix)
+# Rendered with: d2 --layout dagre
+...@_theme
+
+direction: down
+grid-columns: 3
+grid-gap: 55
+
+title: "Detailed Post-InterPro Evidence and Boundary Pipeline" {
+  shape: text
+  near: top-center
+  style: { font-size: 28; font-color: "#0F172A"; bold: true }
+}
+
+inputs: "A - Cluster and coordinate inputs" {
+  class: band_data
+  grid-columns: 1
+  fasta: "Frozen primary-protein FASTA\nprotein identity and submitted sequence" { class: filedata }
+  cluster_outputs: "Parallel cluster outputs" {
+    class: band_data
+    grid-columns: 2
+    ipr: "InterProScan raw outputs\nTSV + GFF3 + JSON" { class: file }
+    tm: "pyTMHMM output\ntopology summary" { class: file }
+  }
+  exon: "Projected coding-exon junctions\ntranscript / protein identity + amino-acid position" { class: filedata }
+  fasta -> cluster_outputs.ipr: { class: flow }
+  fasta -> cluster_outputs.tm: { class: flow }
+}
+
+ingest: "B - Ingestion and ownership" {
+  class: band_annot
+  grid-columns: 1
+  parse: "Parse InterProScan records\nsource database + accession + entry type + interval" { class: annot }
+  normalize: "Normalize protein identifiers\nversion handling and accession reconciliation" { class: annot }
+  ownership: "Assign species / transcript / protein ownership\nreject unresolved cross-species assignments" { class: annot }
+  coords: "Normalize coordinate convention\nvalidate positive, ordered protein intervals" { class: annot }
+  freshness: "Validate input identity and freshness\nsubmitted FASTA vs fetched annotation" { class: annot }
+  parse -> normalize -> ownership -> coords -> freshness: { class: flow }
+}
+
+roles: "C - Annotation role separation" {
+  class: band_annot
+  grid-columns: 2
+  rep: "Representative domain\nDOMAIN / REPEAT\ncollapsed structural interval" { class: annot }
+  family: "Family / superfamily\nclassification, not a domain edge" { class: annot }
+  feature: "Feature / site / motif / disorder\noptional overlay, not a domain edge" { class: annot }
+  raw: "Raw member-database signature\npreserved for provenance" { class: annot }
+  topology: "Topology\npyTMHMM helices in a separate lane" { class: annot }
+  id: "Stable domain_instance_id\naccession + start + end" { class: data }
+}
+
+boundary: "D - Boundary observation engine" {
+  class: band_annot
+  grid-columns: 1
+  eligible: "Select eligible internal coding-exon junctions\nand representative domain instances" { class: annot }
+  nearest: "Find nearest domain edge\nretain native position and matched interval" { class: annot }
+  distance: "Compute signed and absolute distance\ninside / outside direction retained" { class: annot }
+  policies: "Mode-specific decision contract" {
+    class: band_neutral
+    grid-columns: 2
+    generic: "Generic classification\nexact | near <= 5 aa | inside | outside | unavailable" { class: generic }
+    fgfr2: "FGFR2 validated classification\naligned | near | within | between | review / missing" { class: fgfr2 }
+  }
+  record: "Write inspectable observation\nidentity + distance + class + policy + QC reason" { class: filedata }
+  eligible -> nearest -> distance: { class: flow }
+  distance -> policies.generic: { class: flow }
+  distance -> policies.fgfr2: { class: spec }
+  policies.generic -> record: { class: flow }
+  policies.fgfr2 -> record: { class: spec }
+}
+
+audit: "E - Regenerated coordinate evidence register" {
+  class: band_data
+  grid-columns: 2
+  types: "Normalized record types\nexon_protein_interval | domain_interval\ntransmembrane_interval | exon_domain_boundary_relation" { class: filedata }
+  context: "Coordinate and model context\nprotein_aa_1_based_inclusive\nspecies + transcript + protein + source + confidence" { class: data }
+  qc: "Explicit QC state\navailable | pending_cluster | incomplete_coordinate\nmissing_model_link | no_domain_call | not_applicable" { class: annot }
+  provenance: "Record and run provenance\nsource file + source row; run reports + post-cluster QC\nSHA-256 for every available source artifact" { class: filedata }
+  types -> context -> qc -> provenance: { class: flow }
+}
+
+comparative: "F - Comparative and availability layer" {
+  class: band_data
+  grid-columns: 1
+  groups: "Comparable boundary groups\nmap observations across species and MSA columns" { class: data }
+  order: "Canonical species order\nreference species + deterministic display order" { class: data }
+  available: "Analysis availability\navailable | not applicable | scientifically unavailable\npending | technically missing | stale | failed" { class: data }
+  qc: "Dashboard summaries and outliers\ncounts, matrices, paired values and review cases" { class: data }
+  groups -> order -> available -> qc: { class: flow }
+}
+
+outputs: "G - Canonical consumers" {
+  class: band_output
+  grid-columns: 1
+  architecture: "Domain Architecture\nrole-separated tracks and evidence table" { class: output }
+  explorer: "Boundary Explorer\nsummary, distance plots and detail track" { class: output }
+  dashboard: "Comparative Boundary Dashboard\nmatrix, paired plot, outliers and inspection cases" { class: output }
+  figures: "Publication figures\nshared semantic specification -> SVG / PDF / PNG" { class: output }
+  tables: "Download tables and packages\nTSV / JSON with provenance" { class: output }
+  manifest: "Canonical output manifest\nschema + producer + size + SHA-256" { class: filedata }
+  architecture -> figures: { class: flow }
+  explorer -> figures: { class: flow }
+  dashboard -> figures: { class: flow }
+  figures -> tables -> manifest: { class: flow }
+}
+
+inputs -> ingest -> roles -> boundary -> audit -> comparative -> outputs: { class: flow }
+
+note: "Scientific guardrail: the register copies intervals, relations and classifications from the core source tables; it does not recompute them. Before cluster annotation,\nthe same run-local register contains exon-protein intervals and marks domain-dependent evidence pending_cluster; post-cluster execution replaces that phase view." {
+  near: bottom-center
+  class: note
+}

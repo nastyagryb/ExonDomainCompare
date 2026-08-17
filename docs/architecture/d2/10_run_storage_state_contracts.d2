@@ -1,0 +1,116 @@
+# 10 - Detailed Run, Storage and State Contracts  (Appendix)
+# Rendered with: d2 --layout dagre
+...@_theme
+
+direction: down
+grid-columns: 4
+grid-gap: 55
+
+title: "Detailed Run, Storage and State Contracts" {
+  shape: text
+  near: top-center
+  style: { font-size: 28; font-color: "#0F172A"; bold: true }
+}
+
+config: "A - Portable runtime configuration" {
+  class: band_neutral
+  grid-columns: 1
+  runtime: "RuntimeConfig\nmerged defaults + user configuration + environment" { class: local }
+  paths: "AppPaths\nrepository - data - runs - packages - cache - logs" { class: local }
+  profiles: "Execution profiles\nlocal Python runtime + LRZ SSH / Slurm profile" { class: cluster }
+  guard: "Portability guardrails\nno embedded machine-local absolute paths in runs" { class: pending }
+  runtime -> paths -> profiles -> guard: { class: flow }
+}
+
+registry: "B - Run discovery and identity" {
+  class: band_data
+  grid-columns: 1
+  file: "local_registry.json\nregistry schema 2.0" { class: filedata }
+  roots: "Managed roots\ncanonical runs + examples + registered external roots" { class: data }
+  bindings: "Explicit run bindings\nrun_id -> root and path identity" { class: data }
+  discovery: "Discovery and collision detection\nambiguous run IDs fail instead of guessing" { class: data }
+  hidden: "Unregister / hide discovered run\nregistry change without deleting scientific data" { class: data }
+  file -> roots -> bindings -> discovery -> hidden: { class: flow }
+}
+
+initial: "C - Canonical lazy initialization" {
+  class: band_data
+  grid-columns: 1
+  run: "run.json\nrun_id - dataset_id - layout / schema - path references" { class: filedata }
+  status: "status.json\nrun state - current step - production identity" { class: filedata }
+  gene: "config/gene.json\ngene symbol + analysis configuration" { class: filedata }
+  species: "config/species.tsv\none normalized species_id column" { class: filedata }
+  atomic: "Atomic writes and safe identifiers\nvalidated run_id + parent-only directory creation" { class: pending }
+}
+
+tree: "D - Lazy scientific directory tree" {
+  class: band_data
+  grid-columns: 1
+  inputs: "inputs/sources + inputs/cluster/primary.faa\nsource records and frozen cluster input" { class: store }
+  per_species: "scientific/species/<species_id>/\nmodels, projections and species-specific results" { class: store }
+  comp: "scientific/comparative/\nMSA, comparable groups and cross-species results" { class: store }
+  annotations: "scientific/annotations/interpro/\nfetched and normalized cluster annotations" { class: store }
+  evidence: "results/core_gene_analysis/evidence_register/\ncoordinate_evidence_register.tsv + .json" { class: store }
+  website: "website/indices + website/dataset\ncanonical application-facing data" { class: store }
+  outputs: "outputs/canonical_outputs.json\nchecksum-backed canonical output catalogue" { class: store }
+  logs: "logs/\nprocess and diagnostic logs" { class: store }
+}
+
+legacy: "E - Legacy compatibility boundary" {
+  class: band_neutral
+  grid-columns: 1
+  detect: "LegacyRunAdapter\ndescribe historical paths without rewriting them" { class: local }
+  read: "Read compatibility\nrun_config.json - website_indices - staged results" { class: local }
+  migrate: "Explicit migration\ncopy / preserve / record migration metadata" { class: local }
+  preserve: "legacy_preserved/\nrecoverable historical material" { class: store }
+  detect -> read -> migrate -> preserve: { class: flow }
+}
+
+lifecycle: "F - Run lifecycle state machine" {
+  class: band_output
+  grid-columns: 1
+  active: "Active states\ncreated - precluster running - cluster input ready\ncluster required / processing / running\npostcluster running - website indices building - running" { class: output }
+  terminal: "Terminal states\nresults ready - results partial - partial - failed\ncancelled - deleted - scientifically unavailable" { class: output }
+  infer: "Milestone inference\nderive honest status from on-disk artifacts and logs" { class: output }
+  retry: "Same-run recovery\nrefresh, retry preparation / precluster, start post-InterPro" { class: output }
+  active -> terminal: { class: flow }
+  infer -> retry: { class: ref }
+}
+
+availability: "G - Scientific availability contract" {
+  class: band_annot
+  grid-columns: 1
+  prereq: "Prerequisites\ncoding exons - internal junctions - unique proteins\nspecies count - cluster outputs" { class: annot }
+  states: "Per-analysis states\navailable - not applicable - scientifically unavailable\npending - technically missing - stale - failed" { class: annot }
+  reasons: "Machine-readable reason codes\nsingle exon - single protein - single species\npending annotation - missing / stale output" { class: annot }
+  gating: "Consumer behavior\nUI gate + figure catalogue + package capabilities" { class: annot }
+  prereq -> states -> reasons -> gating: { class: flow }
+}
+
+audit: "H - Coordinate evidence audit contract" {
+  class: band_data
+  grid-columns: 1
+  phase: "Two generation phases\npre_cluster: exon intervals + pending domain evidence\npost_cluster: refreshed domain, TM and boundary relations" { class: data }
+  records: "Record contract\nrun / analysis / dataset + species / transcript / protein\n1-based inclusive protein coordinates + declared source" { class: filedata }
+  qc: "Evidence QC\navailable - pending_cluster - incomplete_coordinate\nmissing_model_link - no_domain_call - not_applicable" { class: annot }
+  provenance: "Auditability\nsource file + source row + run reports + post-cluster QC\nSHA-256 of available source artifacts" { class: filedata }
+  phase -> records -> qc -> provenance: { class: flow }
+}
+
+publication: "I - Output and package identity" {
+  class: band_output
+  grid-columns: 1
+  entry: "Manifest entry\nresult_type - run:path - schema_version - producer\nsize_bytes - SHA-256" { class: filedata }
+  verify: "Verification\nunique result types + safe paths + size / checksum match" { class: pending }
+  packages: "AppPaths.packages/<run_id>/\ncanonical packages live outside the run directory" { class: store }
+  package_manifest: "Package manifest and validation\nselection + included items + checksums" { class: filedata }
+  entry -> verify -> packages -> package_manifest: { class: flow }
+}
+
+config -> registry -> initial -> tree -> lifecycle -> availability -> audit -> publication: { class: flow }
+legacy -> tree: { class: ref }
+
+note: "State separation is deliberate: run lifecycle describes execution progress; analysis availability governs whether a result can be used; coordinate-record QC describes audit completeness.\nThe evidence register is additive and run-local. It does not replace source tables or convert a missing domain call into a biological negative result." {
+  near: bottom-center
+  class: note
+}

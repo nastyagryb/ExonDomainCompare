@@ -1,0 +1,56 @@
+# 06 - Generic Exploratory and FGFR2-Validated Analysis Modes
+# Rendered with: d2 --layout dagre
+...@_theme
+
+direction: down
+grid-columns: 2
+
+title: "Shared Infrastructure, Distinct Scientific Workflows" {
+  shape: text
+  near: top-center
+  style: { font-size: 27; font-color: "#0F172A"; bold: true }
+}
+routing: "Gene-aware routing" {
+  class: band_neutral
+  grid-columns: 1
+  input: "Run configuration\ngene symbol + species collection" { class: filedata }
+  router: "Scientific analysis router" { class: local }
+  input -> router: { class: flow }
+}
+
+workflows: "Scientific workflow layer" {
+  class: band_neutral
+  grid-columns: 2
+  generic: "Generic exploratory workflow\narbitrary supported genes\ncore transcript / protein runner\nisoform-difference candidates\ngeneric five-state boundary classes\nno IIIb / IIIc claims" { class: generic }
+  fgfr2: "FGFR2-validated workflow\nFGFR2 identity required\nannotation-aware model selection\nvalidated IIIb / IIIc cassette evidence\nFGFR2 boundary contract + overlays\nexplicit review states" { class: fgfr2 }
+}
+
+shared: "Shared infrastructure and contracts" {
+  class: band_local
+  grid-columns: 2
+  run: "Configuration + run registry\ncanonical layout" { class: local }
+  coordinates: "Coordinate conventions\nbiological identities" { class: local }
+  annotation: "Primary FASTA contract\nInterProScan + pyTMHMM" { class: annot }
+  feature_layers: "Annotation layers\nrepresentative domains" { class: annot }
+  audit: "Coordinate evidence register\nshared run-local audit of models, coordinates, QC and provenance" { class: data }
+  dataset: "Canonical dataset\nversioned adapter" { class: data }
+  output: "Linked views + exports\nmanifest + checksums" { class: output }
+}
+
+contract: "Production contract" {
+  class: band_output
+  grid-columns: 1
+  family: "analysis_family\ngeneric | fgfr2" { class: output }
+  versions: "Versioned explorer / gallery / renderer" { class: output }
+  availability: "Mode-aware availability\nnot applicable is not missing" { class: output }
+}
+
+routing.router -> workflows.generic: { class: flow }
+routing.router -> workflows.fgfr2: { class: spec }
+workflows -> shared: { class: flow }
+shared -> contract: { class: flow }
+
+note: "The coordinate register audits both workflows without merging their decision contracts: generic candidate evidence is never relabelled as validated IIIb / IIIc evidence.\nIt records existing coordinate-bearing results and explicit QC states; it does not create or validate an event." {
+  near: bottom-center
+  class: note
+}

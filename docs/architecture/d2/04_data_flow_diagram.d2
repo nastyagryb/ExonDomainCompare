@@ -1,0 +1,57 @@
+# 04 - Evidence Model, Provenance and Decision States  (ExonDomainCompare)
+# Rendered with: d2 --layout dagre
+...@_theme
+
+direction: down
+grid-columns: 2
+
+title: "Evidence Model, Provenance and Decision States" {
+  shape: text
+  near: top-center
+  style: { font-size: 27; font-color: "#0F172A"; bold: true }
+}
+objects: "Scientific objects" {
+  class: band_data
+  grid-columns: 1
+  source: "Species + assembly\nsource record identifiers" { class: data }
+  model: "Gene -> transcript -> exon / CDS\nstrand + CDS phase" { class: data }
+  protein: "Translated protein\ntranscript-protein identity" { class: data }
+  source -> model -> protein: { class: flow }
+}
+
+activities: "Evidence-producing activities" {
+  class: band_annot
+  grid-columns: 1
+  project: "Genome-to-protein projection\nordered CDS + strand + phase" { class: annot }
+  normalize: "Annotation normalization\nownership + coordinate conversion + layer" { class: annot }
+  measure: "Nearest-edge measurement\nsigned + absolute amino-acid distance" { class: annot }
+  project -> normalize -> measure: { class: flow }
+}
+
+evidence: "Inspectable evidence record" {
+  class: band_data
+  grid-columns: 1
+  identity: "Biological identity\nspecies - transcript - protein - exon / junction" { class: filedata }
+  observation: "Boundary observation\ndomain_instance_id - interval - source\nnearest edge - distance - class - threshold policy" { class: filedata }
+  qc: "Context and QC\ncomparable group - analysis scope\nprojection / annotation status - review reason" { class: filedata }
+  register: "Coordinate evidence register\nexon-protein | domain | transmembrane | boundary relation\nprotein_aa_1_based_inclusive" { class: filedata }
+  identity -> observation -> qc -> register: { class: flow }
+}
+
+trace: "Provenance and decisions" {
+  class: band_neutral
+  grid-columns: 1
+  provenance: "Source-row and run provenance\nsource table + row - model link - run reports\nsource-file SHA-256 + generation metadata" { class: data }
+  lifecycle: "Run lifecycle\ncreated - processing - results ready / partial - failed" { class: output }
+  availability: "Analysis availability\navailable - not applicable - pending - scientifically unavailable\ntechnically missing - stale - failed" { class: output }
+  status: "Scientific evidence state\nexploratory or validated | primary result or review / missing" { class: output }
+}
+
+objects -> activities: { class: flow }
+activities -> evidence: { class: flow }
+evidence -> trace: { class: flow }
+
+note: "The additive register is generated before and after cluster annotation: domain-dependent evidence is pending_cluster before annotation and refreshed afterward.\nScientific values are copied from their source tables; unavailable metadata is marked explicitly and is not inferred silently." {
+  near: bottom-center
+  class: note
+}

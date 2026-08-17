@@ -1,0 +1,60 @@
+# 01 - System Architecture and Execution Model  (ExonDomainCompare)
+# Rendered with: d2 --layout dagre
+...@_theme
+
+direction: down
+grid-columns: 2
+
+title: "ExonDomainCompare - System Architecture and Execution Model" {
+  shape: text
+  near: top-center
+  style: { font-size: 27; font-color: "#0F172A"; bold: true }
+}
+access: "Research interface" {
+  class: band_user
+  grid-columns: 1
+  actor: "Researcher" { class: person }
+  ui: "React / Vite web interface\nrun workflow - explorer - figures - downloads" { class: user }
+  api: "FastAPI application\nrun control - dataset API - file serving" { class: user }
+  actor -> ui -> api: { class: flow }
+}
+
+control: "Runtime and routing contracts" {
+  class: band_neutral
+  grid-columns: 1
+  config: "Portable configuration\nRuntimeConfig + AppPaths" { class: local }
+  registry: "Run registry\ncanonical-2.0 layout + legacy read adapter" { class: data }
+  routing: "Gene-aware scientific router\nFGFR2 validated | other genes exploratory" { class: local }
+  production: "Versioned production contract\nanalysis family - views - renderer" { class: local }
+}
+
+execution: "Scientific execution" {
+  class: band_local
+  grid-columns: 2
+  pre: "Local pre-cluster\nsource acquisition + transcript/CDS models\nprimary selection + coordinate projection\nalignment + synteny + candidate evidence\ncoordinate audit: exon intervals + pending_cluster" { class: local }
+  freeze: "Frozen transfer contract\nprimary-protein FASTA" { class: filedata }
+  cluster: "LRZ Slurm\nInterProScan + pyTMHMM\nprimary proteins only" { class: cluster }
+  post: "Local post-cluster\nnormalization + feature layers\nrepresentative domains + boundary observations\ncoordinate audit refreshed with domain / topology / relation records" { class: annot }
+  pre -> freeze -> cluster -> post: { class: flow }
+}
+
+products: "Canonical products" {
+  class: band_data
+  grid-columns: 2
+  dataset: "Canonical scientific dataset\nversioned adapter + website indices" { class: store }
+  audit: "Run-local coordinate evidence register\nTSV records + provenance JSON\nsource rows - QC states - source-file SHA-256" { class: filedata }
+  manifest: "Output manifest\nresult type - schema - producer\nrelative path - size - SHA-256" { class: filedata }
+  output: "Linked web views + reproducible exports\nTSV / JSON / FASTA | SVG / PDF / PNG" { class: output }
+  dataset -> output: { class: flow }
+  audit -> output: { class: ref }
+  manifest -> output: "describes" { class: ref }
+}
+
+access -> control: { class: flow }
+control -> execution: { class: flow }
+execution -> products: { class: flow }
+
+note: "Execution lifecycle: created -> pre-cluster -> cluster required / processing -> post-cluster -> results ready (or partial / failed).\nExternal resources and tools: NCBI Datasets + Ensembl | MAFFT | LRZ Slurm | InterProScan + pyTMHMM." {
+  near: bottom-center
+  class: note
+}
