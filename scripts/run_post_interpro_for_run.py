@@ -180,6 +180,8 @@ def step_commands(rp: RunPaths, py: str) -> Dict[str, List[List[str]]]:
         "indices": [
             [py, str(SCRIPTS / "build_website_indices.py"),
              "--run-dir", rel(rp.closure), "--outdir", rel(rp.website_indices)],
+            [py, "-m", "exondomaincompare.adapters.fgfr2_core_analysis_adapter",
+             "--run-id", rp.run_id],
         ],
     }
 

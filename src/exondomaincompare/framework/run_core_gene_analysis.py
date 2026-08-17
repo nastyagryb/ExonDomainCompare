@@ -28,6 +28,9 @@ from exondomaincompare.framework.gene_config import GeneConfig, GeneConfigError,
 from exondomaincompare.framework.build_core_gene_indices import CoreSource, build_core_indices  # noqa: E402
 from exondomaincompare.framework import production_contract  # noqa: E402
 from exondomaincompare.framework import run_labels  # noqa: E402
+from exondomaincompare.framework.coordinate_evidence_register import (  # noqa: E402
+    build_coordinate_evidence_register,
+)
 from exondomaincompare.contracts import (  # noqa: E402
     portable_path_reference, portable_runtime_record, stamp_payload,
 )
@@ -774,7 +777,9 @@ def build_core_contract(run_dir: Path, cfg: GeneConfig, per_species: List[Dict[s
         "outputs": ["gene_model_index.tsv", "protein_isoform_index.tsv", "exon_protein_map.tsv",
                     "domain_features.tsv", "tm_features.tsv", "synteny_neighbors.tsv",
                     "synteny_target.tsv",
-                    "exon_domain_boundary_distances.tsv", "core_gene_report.json"],
+                    "exon_domain_boundary_distances.tsv", "core_gene_report.json",
+                    "evidence_register/coordinate_evidence_register.tsv",
+                    "evidence_register/coordinate_evidence_register.json"],
         "synteny_reason": synteny_reason,
         "exon_map_reason": exon_map_reason,
         "fasta_reason": fasta_reason,
@@ -1015,6 +1020,10 @@ def phase_create(args: argparse.Namespace) -> int:
 
     # Build the shared coordinate model after the generic layer refreshes its indices.
     _build_coordinate_model_and_figures(run_dir, logline)
+
+    evidence = build_coordinate_evidence_register(run_dir)
+    logline(f"Coordinate evidence register: "
+            f"{evidence['counts']['total_records']} records ({evidence['register_phase']}).")
 
     # An isolated test root lives outside the project, so report the path as-is there.
     shown = (run_dir.relative_to(PROJECT_ROOT)
@@ -1760,6 +1769,9 @@ def phase_post(args: argparse.Namespace) -> int:
         st["species_status"] = species_status
         st["run_status"] = final_status
     write_json(run_dir / "status.json", st)
+    evidence = build_coordinate_evidence_register(run_dir)
+    print(f"OK  coordinate evidence register: "
+          f"{evidence['counts']['total_records']} records ({evidence['register_phase']})")
     print(f"OK  core post-analysis: domains={len(domain_rows)} tm={len(tm_rows)} "
           f"boundaries={len(boundary_rows)}")
     return 0

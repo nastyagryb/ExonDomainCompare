@@ -727,6 +727,20 @@ def refresh_derived_layer(run_dir: Path, run_id: str) -> Dict[str, Any]:
             proc = subprocess.run(cmd, cwd=str(REPO), stdout=handle,
                                   stderr=subprocess.STDOUT, check=False)
         info["exit_code"] = proc.returncode
+        if proc.returncode == 0 and not info["cluster_outputs_reused"]:
+            adapter_cmd = [
+                py, "-m", "exondomaincompare.adapters.fgfr2_core_analysis_adapter",
+                "--run-id", run_id,
+            ]
+            with log.open("a", encoding="utf-8") as handle:
+                handle.write(f"[{now_iso()}] $ {' '.join(adapter_cmd)}\n")
+                handle.flush()
+                adapter_proc = subprocess.run(
+                    adapter_cmd, cwd=str(REPO), stdout=handle,
+                    stderr=subprocess.STDOUT, check=False)
+            info["adapter_exit_code"] = adapter_proc.returncode
+            if adapter_proc.returncode != 0:
+                info["exit_code"] = adapter_proc.returncode
     except Exception as exc:  # pragma: no cover - launch failure
         info["error"] = f"{type(exc).__name__}: {exc}"
         update_status(run_dir, website_indices_status="failed")

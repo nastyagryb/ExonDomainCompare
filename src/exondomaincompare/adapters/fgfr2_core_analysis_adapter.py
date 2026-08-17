@@ -13,6 +13,9 @@ from exondomaincompare.adapters.fgfr2_to_generic_indices import (  # noqa: E402
 from exondomaincompare.framework.gene_config import (  # noqa: E402
     GeneConfig, load_core_analysis_contract,
 )
+from exondomaincompare.framework.coordinate_evidence_register import (  # noqa: E402
+    build_coordinate_evidence_register,
+)
 
 SOURCE_LABEL = "fgfr2_core_adapter"
 DEFAULT_NEAR_THRESHOLD_AA = 5
@@ -264,6 +267,8 @@ def build_core_outputs(src: DatasetSource, cfg: GeneConfig, out_dir: Path) -> Di
             "gene_model_index.tsv", "protein_isoform_index.tsv", "exon_protein_map.tsv",
             "domain_features.tsv", "tm_features.tsv", "synteny_neighbors.tsv",
             "exon_domain_boundary_distances.tsv", "core_gene_report.json",
+            "evidence_register/coordinate_evidence_register.tsv",
+            "evidence_register/coordinate_evidence_register.json",
         ],
         "warnings": sorted(set(warnings)),
         "failures": [],
@@ -306,8 +311,16 @@ def main(argv: Optional[List[str]] = None) -> int:
     out_dir = _resolve_out_dir(src, args.out)
     report = build_core_outputs(src, cfg, out_dir)
 
+    register = None
+    if src.kind == "run":
+        register = build_coordinate_evidence_register(src.run_root)
+
     s = report["summary"]
     print(f"OK  core adapter  dataset={src.dataset_id}  analysis={cfg.analysis_id}")
+    if register is not None:
+        print(f"OK  coordinate evidence register  "
+              f"records={register['counts']['total_records']}  "
+              f"phase={register['register_phase']}")
     print(f"    species={s['n_species']} proteins={s['n_proteins']} domains={s['n_domain_features']} "
           f"tm={s['n_tm_features']} exon_boundaries={s['n_exon_boundaries']} "
           f"synteny={s['n_resolved_synteny_neighbors']}/{s['n_synteny_neighbors']}")

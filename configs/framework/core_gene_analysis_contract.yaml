@@ -122,6 +122,39 @@ outputs:
       - {name: category, required: false}   # exactly_aligned | near_boundary | inside_domain | outside_annotated_domain
       - {name: source, required: true}
 
+  coordinate_evidence_register:
+    file: evidence_register/coordinate_evidence_register.tsv
+    format: tsv
+    description: >
+      Additive coordinate-level audit register linking every available derived
+      protein-space coordinate to its transcript/protein model, source, domain
+      evidence, explicit QC state and source-row provenance. Values unavailable
+      before cluster annotation are marked pending rather than inferred.
+    columns:
+      - {name: schema_version, required: true}
+      - {name: run_id, required: true}
+      - {name: analysis_id, required: false}
+      - {name: record_type, required: true}
+      - {name: record_id, required: true}
+      - {name: species_id, required: true}
+      - {name: transcript_id, required: false}
+      - {name: protein_id, required: true}
+      - {name: coordinate_system, required: true}
+      - {name: coordinate_source, required: false}
+      - {name: mapping_confidence, required: false}
+      - {name: domain_id, required: false}
+      - {name: domain_source, required: false}
+      - {name: qc_state, required: true}
+      - {name: provenance_source_file, required: true}
+      - {name: provenance_source_row, required: true}
+
+  coordinate_evidence_register_provenance:
+    file: evidence_register/coordinate_evidence_register.json
+    format: json
+    description: >
+      Coordinate records plus source-file checksums, run-level reports and
+      generation metadata for audit and reproducibility.
+
   core_gene_report:
     file: core_gene_report.json
     format: json

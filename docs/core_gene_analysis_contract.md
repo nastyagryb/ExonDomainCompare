@@ -96,6 +96,21 @@ exactly why (e.g. `exon_map_unavailable`, `synteny_unavailable`,
 sequence and feeds the optional exploratory event-candidate scan (it is **not**
 sent to the cluster).
 
+## Automatically generated coordinate audit output
+
+New runs also write the additive register
+`evidence_register/coordinate_evidence_register.tsv` and its provenance-rich
+JSON companion. The register normalises exon/CDS-derived protein intervals,
+domain and transmembrane intervals, and exon–domain boundary relations. Each
+record retains its transcript/protein-model link where available, coordinate
+source, mapping confidence, domain-call context, explicit evidence/QC state,
+and the source file and row from which it was derived. The JSON additionally
+stores run reports and SHA-256 checksums of all source artefacts.
+
+Before cluster annotation, domain-dependent evidence is marked
+`pending_cluster`; after InterProScan/pyTMHMM, the same register is regenerated
+from the completed tables. Missing metadata is never inferred silently.
+
 ## Real live runner (experimental)
 
 `src/exondomaincompare/framework/run_core_gene_analysis.py` is a real, gene-agnostic core
