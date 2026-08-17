@@ -1,24 +1,3 @@
-"""Build a run-local, coordinate-level evidence and provenance register.
-
-The register is an additive audit artefact.  It does not replace or modify any
-scientific result table.  Instead, it normalises the coordinate-bearing core
-tables into one record stream and preserves an explicit pointer to the source
-file and source row from which every record was derived.
-
-Two files are written below ``results/core_gene_analysis/evidence_register``:
-
-``coordinate_evidence_register.tsv``
-    Flat, human-readable coordinate records.
-
-``coordinate_evidence_register.json``
-    The same records plus run-level provenance, source-file checksums and
-    generation metadata.
-
-The builder is deliberately safe before and after cluster annotation.  A
-pre-cluster run records exon coordinates and marks unavailable domain evidence
-as ``pending_cluster``.  Re-running the builder after InterProScan/pyTMHMM
-refreshes the files from the completed core tables.
-"""
 from __future__ import annotations
 
 import argparse
@@ -215,7 +194,6 @@ def _attach_domain(record: Dict[str, str], row: Mapping[str, Any]) -> None:
 
 
 def build_coordinate_evidence_register(run_dir: Path) -> Dict[str, Any]:
-    """Build and write the evidence register for one run directory."""
     run_dir = Path(run_dir).resolve()
     core = run_dir / "results" / "core_gene_analysis"
     if not core.is_dir():
@@ -252,8 +230,6 @@ def build_coordinate_evidence_register(run_dir: Path) -> Dict[str, Any]:
     records: List[Dict[str, str]] = []
     boundary_lookup = _boundary_index(boundaries)
 
-    # Exon/CDS-derived protein intervals.  A matching post-cluster boundary row is
-    # attached to the exon end where available; before cluster it is explicitly pending.
     for source_row, row in enumerate(tables["exon_protein_map.tsv"], start=2):
         species, protein, transcript = (_first(row, "species_id"), _first(row, "protein_id"),
                                         _first(row, "transcript_id"))
@@ -283,8 +259,6 @@ def build_coordinate_evidence_register(run_dir: Path) -> Dict[str, Any]:
             record.update({"qc_state": qc_state, "qc_detail": qc_detail})
             records.append(record)
 
-    # Curated protein-domain intervals.  Domain calls are associated back to all
-    # transcript models carrying that protein accession; no arbitrary model is guessed.
     for source_row, row in enumerate(domains, start=2):
         species, protein = _first(row, "species_id"), _first(row, "protein_id")
         linked = _models_for(models, species, protein)
@@ -306,8 +280,6 @@ def build_coordinate_evidence_register(run_dir: Path) -> Dict[str, Any]:
             record.update({"qc_state": qc_state, "qc_detail": qc_detail})
             records.append(record)
 
-    # Transmembrane intervals are coordinate evidence but have no domain call by
-    # definition.  The register marks that distinction rather than leaving it ambiguous.
     for source_row, row in enumerate(tables["tm_features.tsv"], start=2):
         species, protein = _first(row, "species_id"), _first(row, "protein_id")
         for model in _models_for(models, species, protein):
@@ -327,8 +299,6 @@ def build_coordinate_evidence_register(run_dir: Path) -> Dict[str, Any]:
             record.update({"qc_state": qc_state, "qc_detail": qc_detail})
             records.append(record)
 
-    # Explicit exon-boundary/domain-edge relations.  These rows preserve the
-    # scientific classification and distance without recomputing either value.
     for source_row, row in enumerate(boundaries, start=2):
         species, protein, transcript = (_first(row, "species_id"), _first(row, "protein_id"),
                                         _first(row, "transcript_id"))
