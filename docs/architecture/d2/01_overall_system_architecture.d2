@@ -43,11 +43,11 @@ products: "Canonical products" {
   grid-columns: 2
   dataset: "Canonical scientific dataset\nversioned adapter + website indices" { class: store }
   audit: "Run-local coordinate evidence register\nTSV records + provenance JSON\nsource rows - QC states - source-file SHA-256" { class: filedata }
-  manifest: "Output manifest\nresult type - schema - producer\nrelative path - size - SHA-256" { class: filedata }
+  manifest: "Validated package provenance\nselection - included / omitted items\nsource path - size - SHA-256" { class: filedata }
   output: "Linked web views + reproducible exports\nTSV / JSON / FASTA | SVG / PDF / PNG" { class: output }
   dataset -> output: { class: flow }
   audit -> output: { class: ref }
-  manifest -> output: "describes" { class: ref }
+  manifest -> output: "documents" { class: ref }
 }
 
 access -> control: { class: flow }

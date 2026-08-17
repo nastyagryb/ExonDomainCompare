@@ -77,7 +77,7 @@ specialized: "FGFR2 validated adapters" {
   core: "adapters/fgfr2_core_analysis_adapter.py\nvalidated core-output adapter" { class: fgfr2 }
   detector: "adapters/fgfr2_event_detector_adapter.py\nIIIb / IIIc event detector adapter" { class: fgfr2 }
   generic: "adapters/fgfr2_to_generic_indices.py\ncanonical cross-family index representation" { class: fgfr2 }
-  scientific: "scientific/fgfr2_msa_common.py\nprotein lookup and FGFR2-specific sequence support" { class: fgfr2 }
+  scientific: "scientific/fgfr2_msa_common.py + protein_lookup.py\nFGFR2-specific sequence support + protein lookup" { class: fgfr2 }
   core -> detector -> generic: { class: spec }
 }
 

@@ -89,7 +89,7 @@ F: "F - Canonical publication products" {
   f3: "34  Serve linked web views\nOverview - Explorer - Boundaries - Gallery" { class: user }
   f4: "35  Render figures from semantic specifications\ninteractive SVG + SVG / PDF / PNG exports" { class: output }
   f5: "36  Build data packages\nTSV / JSON / FASTA with package manifest" { class: output }
-  f6: "37  Register canonical outputs\nresult type + schema + producer + size + SHA-256" { class: filedata }
+  f6: "37  Validate package provenance\nselection + included / omitted items + per-file SHA-256" { class: filedata }
   f1 -> f2 -> f3 -> f4 -> f5 -> f6: { class: flow }
 }
 

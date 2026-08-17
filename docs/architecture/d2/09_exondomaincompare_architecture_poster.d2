@@ -16,7 +16,7 @@ title: "ExonDomainCompare - Architecture Overview\nOne generic annotation-aware 
 # =========================== ZONE 1 (TL) - scientific question ===========================
 zoneQ: "1 - Scientific question" {
   class: band_neutral
-  q: "Are protein-domain edges encoded at exon boundaries,\nand is that relationship conserved across species?\n\nExonDomainCompare collects transcripts and proteins across one or more\nvertebrate species, selects primary models, maps coding exons to protein\ncoordinates, annotates domains and topology, and measures each relation\nbetween coding-exon boundaries and representative domain edges." { class: data }
+  q: "How consistently do coding-exon boundaries align with annotated\nprotein-domain edges across species and methods?\n\nExonDomainCompare collects transcripts and proteins across one or more\nvertebrate species, selects primary models, maps coding exons to protein\ncoordinates, annotates domains and topology, and measures each relation\nbetween coding-exon boundaries and representative domain edges." { class: data }
   inputs: "Inputs: gene symbol + species list (>= 1 species)" { class: local }
   scope: "Single-species and multi-species use the same pipeline" { class: note }
   q -> inputs: { class: ref }
@@ -51,7 +51,7 @@ zoneOut: "4 - Interactive outputs" {
   class: band_neutral
   grid-columns: 2
   o1: "Domain Architecture\nrepresentative domains + families + topology" { class: output }
-  o2: "Exon-Domain Boundaries\nexact / near / inside / outside / unknown" { class: output }
+  o2: "Exon-Domain Boundaries\nexact / near / inside / outside / unavailable" { class: output }
   o3: "Isoform Alignment + cross-species MSA" { class: output }
   o4: "Synteny neighbourhood" { class: output }
   o5: "Figure Gallery (SVG / PDF / PNG)" { class: output }

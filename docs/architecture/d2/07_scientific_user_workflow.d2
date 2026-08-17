@@ -48,9 +48,9 @@ outputs: "Reproducible output contracts" {
   grid-columns: 1
   gallery: "Figure Gallery\ninteractive preview + export scope" { class: output }
   files: "Figures: SVG / PDF / PNG\nData: TSV / JSON / FASTA\nincluding coordinate register + provenance JSON" { class: output }
-  manifest: "Canonical output manifest\nresult type - schema - producer\nrelative path - size - SHA-256" { class: filedata }
+  manifest: "Validated package manifest\nselection - included / omitted items\nsource path - size - SHA-256" { class: filedata }
   gallery -> files: "render / package" { class: flow }
-  manifest -> files: "describes" { class: ref }
+  manifest -> files: "documents" { class: ref }
 }
 
 control -> dataset: { class: flow }

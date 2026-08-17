@@ -29,28 +29,28 @@ and the corresponding implementation traceability are provided in Appendix A."
 | Source models and coordinate projection | `framework/run_core_gene_analysis.py`; `shared_gene_analysis/gene_locus_resolution.py`; `model_recovery.py`; `protein_coordinate_model.py`; `strand.py` | `test_gene_locus_resolution.py`; `test_protein_coordinate_model.py`; `test_species_taxon_and_model_recovery.py` |
 | Pre-/post-cluster coordinate audit | `framework/coordinate_evidence_register.py`; `framework/run_core_gene_analysis.py`; `adapters/fgfr2_core_analysis_adapter.py` | `test_coordinate_evidence_register.py` |
 | Pre-cluster comparative analysis | `framework/scan_isoform_event_candidates.py`; `shared_gene_analysis/comparative_dataset.py`; `indices/msa.py`; `synteny_contract.py` | `test_multispecies_pipeline_repair.py`; `test_shared_synteny_contract.py`; `test_isoform_alignment_figures.py` |
-| Cluster round trip | `src/exondomaincompare/cluster/ssh_common.py`; `src/exondomaincompare/cli.py`; compatibility scripts under `scripts/interpro_cluster/` | `test_multispecies_roundtrip_integration.py`; `test_phase_b_portability_foundation.py` |
-| Post-cluster and canonical products | `framework/interpro_annotations.py`; `build_core_gene_indices.py`; `shared_gene_analysis/boundary_observations.py`; `comparative_dataset.py`; `runs/outputs.py` | `test_post_interpro_generic.py`; `test_interpro_annotation_layers.py`; `test_comparative_boundary_mapping.py` |
+| Cluster round trip | `src/exondomaincompare/cluster/ssh_common.py`; `src/exondomaincompare/cli.py`; compatibility scripts under `scripts/interpro_cluster/` | `test_multispecies_roundtrip_integration.py`; `test_no_machine_local_paths.py` |
+| Post-cluster products and publication utilities | `framework/interpro_annotations.py`; `build_core_gene_indices.py`; `shared_gene_analysis/boundary_observations.py`; `comparative_dataset.py`; `shared_gene_analysis/package_builder.py`; `runs/outputs.py` | `test_post_interpro_generic.py`; `test_interpro_annotation_layers.py`; `test_comparative_boundary_mapping.py`; `test_comparative_gallery_and_packages.py` |
 
 ## Figure 03 - Source-code components
 
 | Component group | Primary implementation evidence | Representative tests |
 | --- | --- | --- |
-| Configuration and entry points | `src/exondomaincompare/config.py`; `config_cli.py`; `cli.py`; `cluster_setup.py` | `test_no_machine_local_paths.py`; `test_release_e3_setup.py`; `test_phase_d_interpreter_selection.py` |
-| Run persistence | `src/exondomaincompare/runs/layout.py`; `registry.py`; `legacy.py`; `migration.py`; `outputs.py` | `test_run_management.py`; `test_phase_c_safe_migration.py`; `test_phase_a_future_run_portability.py` |
+| Configuration and entry points | `src/exondomaincompare/config.py`; `config_cli.py`; `cli.py`; `cluster_setup.py` | `test_no_machine_local_paths.py`; `test_release_e3_setup.py` |
+| Run persistence | `src/exondomaincompare/runs/layout.py`; `registry.py`; `legacy.py`; `migration.py`; `outputs.py` | `test_run_management.py`; `test_cross_pipeline_release_repair.py`; `test_no_machine_local_paths.py` |
 | Framework and scientific modules | `src/exondomaincompare/framework/`; `shared_gene_analysis/`; `generic_gene/`; `scientific/`; `framework/coordinate_evidence_register.py` | `test_analysis_availability_semantics.py`; `test_boundary_dashboard.py`; `test_single_species_scientific_validation.py`; `test_coordinate_evidence_register.py` |
 | FGFR2 adapters | `src/exondomaincompare/adapters/`; FGFR2 validation scripts under `scripts/` | `test_classify_fgfr2_IIIb_IIIc_by_exon_structure_v2.py`; `test_select_fgfr2_transcripts_annotation_aware_v2.py`; `test_fgfr2_boundary_catalogue_correction.py` |
-| Application and presentation | `webapp/backend/`; `webapp/frontend/src/`; `src/exondomaincompare/presentation/` | `test_backend_api_v1.py`; `test_ui_cleanup_and_functional_repair.py`; `test_publication_plot_system.py` |
+| Application and presentation | `webapp/backend/`; `webapp/frontend/src/`; `src/exondomaincompare/presentation/` | `test_backend_api_v1.py`; `test_final_ui_cleanup.py`; `test_publication_plot_system.py` |
 
 ## Figure 05 - Containers and deployment
 
 | Container or boundary | Primary implementation evidence | Representative tests |
 | --- | --- | --- |
-| React frontend and FastAPI backend | `webapp/frontend/src/App.jsx`; `api.js`; `webapp/backend/main.py` | `test_backend_api_v1.py`; `test_ui_cleanup_and_functional_repair.py` |
+| React frontend and FastAPI backend | `webapp/frontend/src/App.jsx`; `api.js`; `webapp/backend/main.py` | `test_backend_api_v1.py`; `test_final_ui_cleanup.py` |
 | Local scientific computation | `src/exondomaincompare/framework/`; `shared_gene_analysis/`; `presentation/` | `test_post_interpro_generic.py`; `test_plotting_api.py` |
 | Run-local coordinate audit artifacts | `framework/coordinate_evidence_register.py`; `results/core_gene_analysis/evidence_register/` | `test_coordinate_evidence_register.py` |
 | Portable storage and configuration | `src/exondomaincompare/config.py`; `runs/` | `test_no_machine_local_paths.py`; `test_run_management.py` |
-| LRZ cluster boundary | `src/exondomaincompare/cluster/ssh_common.py`; `cluster_setup.py`; `scripts/interpro_cluster/` | `test_multispecies_roundtrip_integration.py`; `test_phase_b_portability_foundation.py` |
+| LRZ cluster boundary | `src/exondomaincompare/cluster/ssh_common.py`; `cluster_setup.py`; `scripts/interpro_cluster/` | `test_multispecies_roundtrip_integration.py`; `test_no_machine_local_paths.py` |
 
 ## Figure 08 - Post-InterPro evidence
 
@@ -67,9 +67,9 @@ and the corresponding implementation traceability are provided in Appendix A."
 
 | Contract | Primary implementation evidence | Representative tests |
 | --- | --- | --- |
-| Runtime configuration and application paths | `src/exondomaincompare/config.py` | `test_no_machine_local_paths.py`; `test_phase_a_future_run_portability.py` |
+| Runtime configuration and application paths | `src/exondomaincompare/config.py` | `test_no_machine_local_paths.py`; `test_release_e3_setup.py` |
 | Registry and collision handling | `src/exondomaincompare/runs/registry.py` | `test_run_management.py`; `test_external_run_status_regression.py` |
-| Canonical layout and legacy adapter | `src/exondomaincompare/runs/layout.py`; `legacy.py`; `migration.py` | `test_phase_c_recovery.py`; `test_phase_c_safe_migration.py`; `test_cross_pipeline_release_repair.py` |
+| Canonical layout and legacy adapter | `src/exondomaincompare/runs/layout.py`; `legacy.py`; `migration.py` | `test_run_management.py`; `test_cross_pipeline_release_repair.py`; `test_no_machine_local_paths.py` |
 | Lifecycle inference | `framework/core_run_milestones.py`; `webapp/frontend/src/runStates.js`; `pages/runworkflow/runStatus.js` | `test_external_run_status_regression.py`; `test_run_management.py` |
 | Analysis availability | `shared_gene_analysis/analysis_availability.py`; `run_availability.py` | `test_analysis_availability_semantics.py`; `test_run_availability_and_dependency_invalidation.py` |
 | Coordinate-record QC and provenance | `framework/coordinate_evidence_register.py`; `configs/framework/core_gene_analysis_contract.yaml` | `test_coordinate_evidence_register.py` |
@@ -79,23 +79,25 @@ and the corresponding implementation traceability are provided in Appendix A."
 
 | Integration area | Primary implementation evidence | Representative tests |
 | --- | --- | --- |
-| Dataset loading and navigation | `webapp/frontend/src/App.jsx`; `datasetStatus.js`; `runStates.js` | `test_ui_cleanup_and_functional_repair.py`; `test_external_run_status_regression.py` |
-| Dataset-scoped API client | `webapp/frontend/src/api.js` | `test_backend_api_v1.py`; `test_ui_cleanup_and_functional_repair.py` |
-| FastAPI endpoint families | `webapp/backend/main.py`; `canonical_dataset.py` | `test_backend_api_v1.py`; `test_canonical_dataset.py` |
-| Coordinate-register provenance catalogue | `webapp/backend/canonical_dataset.py`; `framework/coordinate_evidence_register.py` | `test_coordinate_evidence_register.py`; `test_canonical_dataset.py` |
+| Dataset loading and navigation | `webapp/frontend/src/App.jsx`; `datasetStatus.js`; `runStates.js` | `test_final_ui_cleanup.py`; `test_external_run_status_regression.py` |
+| Dataset-scoped API client | `webapp/frontend/src/api.js` | `test_backend_api_v1.py`; `test_final_ui_cleanup.py` |
+| FastAPI endpoint families | `webapp/backend/main.py`; `canonical_dataset.py` | `test_backend_api_v1.py`; `test_dataset_model_loading.py` |
+| Coordinate-register provenance catalogue | `webapp/backend/canonical_dataset.py`; `framework/coordinate_evidence_register.py` | `test_coordinate_evidence_register.py`; `test_dataset_model_loading.py` |
 | Linked scientific selection | `webapp/frontend/src/components/ScientificSelectionContext.jsx` | `test_comparative_boundary_explorer.py`; `test_comparative_exon_domain_architecture.py` |
 | Scientific viewers | `webapp/frontend/src/pages/`; `pages/viewers/` | `test_comparative_boundary_explorer.py`; `test_gallery_figure_redesign.py`; `test_isoform_alignment_figures.py` |
 | Rendering, downloads and manifests | `pages/viewers/figureSpec.js`; `figureExport.js`; `plotExport.js`; `src/exondomaincompare/runs/outputs.py`; `shared_gene_analysis/package_builder.py` | `test_figure_parity_contract.py`; `test_figure_format_parity.py`; `test_comparative_gallery_and_packages.py` |
 
 ## Reproducibility note
 
-The D2 source files under `docs/architecture/sources/` are the editable source of
-truth for the diagrams. SVG and PDF files are generated from those sources by
-`scripts/docs/build_architecture_atlas.py`. When the implementation changes, the
-traceability tables and the corresponding D2 source must be reviewed together.
+The D2 source files under `docs/architecture/d2/` are the editable source of
+truth for the diagrams. SVG and PDF files are rebuilt with the D2 and
+`rsvg-convert` commands documented in `docs/architecture/README.md`. When the
+implementation changes, the traceability tables and the corresponding D2 source
+must be reviewed together.
 
-The coordinate-evidence additions in these figures correspond to ExonDomainCompare
-`main` commit `afda7ae` (`Add run-level coordinate evidence register`). The register
+The atlas was audited against ExonDomainCompare `main` at commit `62a29a9`; the
+coordinate-evidence additions originate from commit `afda7ae` (`Add run-level
+coordinate evidence register`). The register
 is an additive audit projection: source-table values and classifications remain
 authoritative, while the register supplies model linkage, explicit record-level QC,
 source-row pointers, run reports and checksums.

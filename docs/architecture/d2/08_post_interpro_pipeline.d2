@@ -97,7 +97,7 @@ outputs: "G - Canonical consumers" {
   dashboard: "Comparative Boundary Dashboard\nmatrix, paired plot, outliers and inspection cases" { class: output }
   figures: "Publication figures\nshared semantic specification -> SVG / PDF / PNG" { class: output }
   tables: "Download tables and packages\nTSV / JSON with provenance" { class: output }
-  manifest: "Canonical output manifest\nschema + producer + size + SHA-256" { class: filedata }
+  manifest: "Validated package manifest\nselection + included / omitted items + per-file SHA-256" { class: filedata }
   architecture -> figures: { class: flow }
   explorer -> figures: { class: flow }
   dashboard -> figures: { class: flow }

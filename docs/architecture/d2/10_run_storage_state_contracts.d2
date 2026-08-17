@@ -52,7 +52,7 @@ tree: "D - Lazy scientific directory tree" {
   annotations: "scientific/annotations/interpro/\nfetched and normalized cluster annotations" { class: store }
   evidence: "results/core_gene_analysis/evidence_register/\ncoordinate_evidence_register.tsv + .json" { class: store }
   website: "website/indices + website/dataset\ncanonical application-facing data" { class: store }
-  outputs: "outputs/canonical_outputs.json\nchecksum-backed canonical output catalogue" { class: store }
+  outputs: "outputs/canonical_outputs.json\noptional checksum-backed canonical output catalogue" { class: store }
   logs: "logs/\nprocess and diagnostic logs" { class: store }
 }
 
@@ -97,14 +97,15 @@ audit: "H - Coordinate evidence audit contract" {
   phase -> records -> qc -> provenance: { class: flow }
 }
 
-publication: "I - Output and package identity" {
+publication: "I - Output and package identity utilities" {
   class: band_output
   grid-columns: 1
-  entry: "Manifest entry\nresult_type - run:path - schema_version - producer\nsize_bytes - SHA-256" { class: filedata }
-  verify: "Verification\nunique result types + safe paths + size / checksum match" { class: pending }
+  entry: "Optional canonical-output entry\nresult_type - run:path - schema_version - producer\nsize_bytes - SHA-256" { class: filedata }
+  verify: "Canonical-output utility verification\nunique result types + safe paths + size / checksum match" { class: pending }
   packages: "AppPaths.packages/<run_id>/\ncanonical packages live outside the run directory" { class: store }
-  package_manifest: "Package manifest and validation\nselection + included items + checksums" { class: filedata }
-  entry -> verify -> packages -> package_manifest: { class: flow }
+  package_manifest: "Validated package manifest\nselection + included / omitted items + per-file checksums" { class: filedata }
+  entry -> verify: { class: flow }
+  packages -> package_manifest: { class: flow }
 }
 
 config -> registry -> initial -> tree -> lifecycle -> availability -> audit -> publication: { class: flow }

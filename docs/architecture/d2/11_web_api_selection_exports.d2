@@ -92,7 +92,7 @@ exports: "G - Reproducible rendering and exports" {
   interactive: "Interactive React / SVG rendering\nselection and inspection controls" { class: output }
   static: "Static renderers\nSVG / PDF / PNG with the same scientific semantics" { class: output }
   data: "Data exports\nTSV / JSON / FASTA and validated ZIP packages\nrun-local coordinate audit remains traceable to source rows" { class: output }
-  manifest: "Output / package manifests\nproducer + schema + scope + checksums" { class: filedata }
+  manifest: "Validated package manifest\nselection + scope + included / omitted items + checksums" { class: filedata }
   spec -> interactive: { class: flow }
   spec -> static: { class: flow }
   static -> data -> manifest: { class: flow }
