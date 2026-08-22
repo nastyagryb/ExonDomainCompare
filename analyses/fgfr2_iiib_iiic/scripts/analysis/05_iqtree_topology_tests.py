@@ -25,6 +25,10 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--threads", default="AUTO")
     p.add_argument("--rell-replicates", type=int, default=10000)
     p.add_argument("--bootstrap", type=int, default=1000)
+    p.add_argument("--seed-unconstrained", type=int, default=107252)
+    p.add_argument("--seed-isoform-constraint", type=int, default=995853)
+    p.add_argument("--seed-species-pair-constraint", type=int, default=460166)
+    p.add_argument("--seed-au-test", type=int, default=160107)
     p.add_argument("--run", action="store_true")
     p.add_argument("--redo", action="store_true")
     p.add_argument("--verbose", action="store_true")
@@ -94,11 +98,12 @@ def main() -> None:
     (out / "constraint_species_pairs.nwk").write_text(pair_constraint)
 
     commands = [
-        f"{args.iqtree} -s {fasta.name} -st AA -m MFP -B {args.bootstrap} --alrt {args.bootstrap} -T {args.threads} --prefix unconstrained",
-        f"{args.iqtree} -s {fasta.name} -st AA -m <BEST_MODEL> -g constraint_isoform_monophyly.nwk -T {args.threads} --prefix isoform_constraint",
-        f"{args.iqtree} -s {fasta.name} -st AA -m <BEST_MODEL> -g constraint_species_pairs.nwk -T {args.threads} --prefix species_pair_constraint",
+        f"{args.iqtree} -s {fasta.name} -st AA -m MFP -B {args.bootstrap} --alrt {args.bootstrap} -T {args.threads} -seed {args.seed_unconstrained} --prefix unconstrained",
+        "BEST_MODEL=$(awk '/Best-fit model according to BIC:/ {print $NF}' unconstrained.iqtree)",
+        f'{args.iqtree} -s {fasta.name} -st AA -m "$BEST_MODEL" -g constraint_isoform_monophyly.nwk -T {args.threads} -seed {args.seed_isoform_constraint} --prefix isoform_constraint',
+        f'{args.iqtree} -s {fasta.name} -st AA -m "$BEST_MODEL" -g constraint_species_pairs.nwk -T {args.threads} -seed {args.seed_species_pair_constraint} --prefix species_pair_constraint',
         "cat unconstrained.treefile isoform_constraint.treefile species_pair_constraint.treefile > candidate_topologies.trees",
-        f"{args.iqtree} -s {fasta.name} -st AA -m <BEST_MODEL> -n 0 -z candidate_topologies.trees -zb {args.rell_replicates} -au --prefix topology_AU_test",
+        f'{args.iqtree} -s {fasta.name} -st AA -m "$BEST_MODEL" -n 0 -z candidate_topologies.trees -zb {args.rell_replicates} -au -seed {args.seed_au_test} --prefix topology_AU_test',
     ]
     (out / "run_commands.sh").write_text("#!/usr/bin/env bash\nset -euo pipefail\n" + "\n".join(commands) + "\n")
     (out / "run_commands.sh").chmod(0o755)
@@ -109,26 +114,27 @@ def main() -> None:
             raise FileNotFoundError(f"IQ-TREE executable not found: {args.iqtree}")
         redo = ["-redo"] if args.redo else []
         run_command(
-            [executable, "-s", fasta.name, "-st", "AA", "-m", "MFP", "-B", str(args.bootstrap), "--alrt", str(args.bootstrap), "-T", args.threads, "--prefix", "unconstrained", *redo],
+            [executable, "-s", fasta.name, "-st", "AA", "-m", "MFP", "-B", str(args.bootstrap), "--alrt", str(args.bootstrap), "-T", args.threads, "-seed", str(args.seed_unconstrained), "--prefix", "unconstrained", *redo],
             out,
         )
         model = parse_best_model(out / "unconstrained.iqtree")
-        for prefix, constraint in [
-            ("isoform_constraint", "constraint_isoform_monophyly.nwk"),
-            ("species_pair_constraint", "constraint_species_pairs.nwk"),
+        for prefix, constraint, seed in [
+            ("isoform_constraint", "constraint_isoform_monophyly.nwk", args.seed_isoform_constraint),
+            ("species_pair_constraint", "constraint_species_pairs.nwk", args.seed_species_pair_constraint),
         ]:
             run_command(
-                [executable, "-s", fasta.name, "-st", "AA", "-m", model, "-g", constraint, "-T", args.threads, "--prefix", prefix, *redo],
+                [executable, "-s", fasta.name, "-st", "AA", "-m", model, "-g", constraint, "-T", args.threads, "-seed", str(seed), "--prefix", prefix, *redo],
                 out,
             )
         trees = "".join((out / f).read_text().strip() + "\n" for f in ["unconstrained.treefile", "isoform_constraint.treefile", "species_pair_constraint.treefile"])
         (out / "candidate_topologies.trees").write_text(trees)
         run_command(
-            [executable, "-s", fasta.name, "-st", "AA", "-m", model, "-n", "0", "-z", "candidate_topologies.trees", "-zb", str(args.rell_replicates), "-au", "--prefix", "topology_AU_test", *redo],
+            [executable, "-s", fasta.name, "-st", "AA", "-m", model, "-n", "0", "-z", "candidate_topologies.trees", "-zb", str(args.rell_replicates), "-au", "-seed", str(args.seed_au_test), "--prefix", "topology_AU_test", *redo],
             out,
         )
     else:
-        model = None
+        existing_report = out / "unconstrained.iqtree"
+        model = parse_best_model(existing_report) if existing_report.exists() else None
 
     write_json(
         {
@@ -136,7 +142,14 @@ def main() -> None:
             "n_sequences": len(entries),
             "alignment_length": aln.get_alignment_length(),
             "run_executed": args.run,
+            "existing_results_detected": (out / "topology_AU_test.iqtree").exists(),
             "best_model": model,
+            "random_seeds": {
+                "unconstrained": args.seed_unconstrained,
+                "isoform_constraint": args.seed_isoform_constraint,
+                "species_pair_constraint": args.seed_species_pair_constraint,
+                "topology_AU_test": args.seed_au_test,
+            },
             "hypotheses": ["unconstrained", "isoform_monophyly", "species_pairs"],
         },
         out / "iqtree_topology_test_manifest.json",

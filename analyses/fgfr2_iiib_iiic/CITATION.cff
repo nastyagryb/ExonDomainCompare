@@ -4,6 +4,7 @@ title: "FGFR2 IIIb/IIIc exon-domain boundary case study"
 type: dataset
 authors:
   - family-names: Gryb
-    given-names: Anastasija
-version: 1.0.0
-date-released: 2026-08-11
+    given-names: Anastasiya
+version: 1.0.1
+date-released: 2026-08-22
+repository-code: https://github.com/nastyagryb/ExonDomainCompare

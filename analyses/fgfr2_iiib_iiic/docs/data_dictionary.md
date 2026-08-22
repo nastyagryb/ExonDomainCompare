@@ -10,7 +10,7 @@ Tables that connect transcript/CDS annotation to amino-acid coordinates. The coo
 
 ## `data/framework_snapshot/alignments`
 
-The combined cassette MSA is the input used for JSD, topology, leave-one-clade-out and ancestral analyses. The full-length MSA and its QC tables check the selected primary proteins in a wider sequence context. Separate IIIb and IIIc alignments are retained for inspection.
+The combined cassette MSA is the input used for JSD, topology and leave-one-clade-out analyses. The full-length MSA and its QC tables check the selected primary proteins in a wider sequence context. Separate IIIb and IIIc alignments are retained for inspection. No active ancestral reconstruction is derived from this alignment.
 
 ## `data/framework_snapshot/protein_annotations`
 

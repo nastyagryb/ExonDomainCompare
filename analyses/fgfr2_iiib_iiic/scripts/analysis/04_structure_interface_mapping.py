@@ -94,35 +94,44 @@ def matched_permutation(
     n_perm: int,
     position_window: int,
     seed: int,
-) -> tuple[float, float]:
+    bin_reference: str = "controls",
+) -> tuple[float, float, list[float]]:
     rng = np.random.default_rng(seed)
     universe = universe[np.isfinite(universe[statistic_col]) & np.isfinite(universe["sasa_free"])].copy()
     targets = targets[np.isfinite(targets[statistic_col]) & np.isfinite(targets["sasa_free"])].copy()
     observed = float(targets[statistic_col].sum())
     controls = universe[~universe["is_discriminating"]].copy()
     if controls.empty or targets.empty:
-        return observed, np.nan
+        return observed, np.nan, []
 
-    controls["sasa_bin"] = pd.qcut(controls["sasa_free"], q=4, labels=False, duplicates="drop")
+    if bin_reference not in {"controls", "universe"}:
+        raise ValueError(f"Unsupported SASA-bin reference: {bin_reference}")
+    reference = controls if bin_reference == "controls" else universe
+    internal_edges = np.unique(
+        np.quantile(reference["sasa_free"].dropna().to_numpy(float), [0.25, 0.5, 0.75])
+    )
+    edges = np.concatenate(([-np.inf], internal_edges, [np.inf]))
+    controls["sasa_bin"] = pd.cut(
+        controls["sasa_free"], bins=edges, labels=False, include_lowest=True
+    )
     targets = targets.copy()
-    bins = np.quantile(universe["sasa_free"].dropna(), [0.25, 0.5, 0.75])
-    targets["sasa_bin"] = np.digitize(targets["sasa_free"], bins, right=True)
+    targets["sasa_bin"] = pd.cut(
+        targets["sasa_free"], bins=edges, labels=False, include_lowest=True
+    )
     null = np.zeros(n_perm, dtype=float)
-    for b in range(n_perm):
-        selected = []
-        for _, target in targets.iterrows():
-            pool = controls[
-                (controls["sasa_bin"] == target["sasa_bin"])
-                & ((controls["resi"] - target["resi"]).abs() <= position_window)
-            ]
-            if pool.empty:
-                pool = controls[controls["sasa_bin"] == target["sasa_bin"]]
-            if pool.empty:
-                pool = controls
-            selected.append(pool.iloc[rng.integers(0, len(pool))][statistic_col])
-        null[b] = np.sum(selected)
+    for _, target in targets.iterrows():
+        pool = controls[
+            (controls["sasa_bin"] == target["sasa_bin"])
+            & ((controls["resi"] - target["resi"]).abs() <= position_window)
+        ]
+        if pool.empty:
+            pool = controls[controls["sasa_bin"] == target["sasa_bin"]]
+        if pool.empty:
+            pool = controls
+        values = pool[statistic_col].to_numpy(float)
+        null += values[rng.integers(0, len(values), size=n_perm)]
     p = (1 + np.sum(null >= observed - 1e-12)) / (n_perm + 1)
-    return observed, float(p)
+    return observed, float(p), [float(x) for x in internal_edges]
 
 
 def main() -> None:
@@ -204,21 +213,41 @@ def main() -> None:
             raise ValueError(f"No cassette residues found for {pdb_id} chain {receptor_chain}")
         table["direct_contact_numeric"] = table["direct_contact"].astype(int)
         targets = table[table["is_discriminating"]].copy()
-        observed_contacts, contact_p = matched_permutation(
+        observed_contacts, contact_p, control_edges = matched_permutation(
             table,
             targets,
             "direct_contact_numeric",
             args.permutations,
             args.position_window,
             args.seed,
+            bin_reference="controls",
         )
-        observed_dsasa, dsasa_p = matched_permutation(
+        observed_dsasa, dsasa_p, _ = matched_permutation(
             table,
             targets,
             "delta_sasa_A2",
             args.permutations,
             args.position_window,
             args.seed + 1,
+            bin_reference="controls",
+        )
+        _, contact_p_universe, universe_edges = matched_permutation(
+            table,
+            targets,
+            "direct_contact_numeric",
+            args.permutations,
+            args.position_window,
+            args.seed,
+            bin_reference="universe",
+        )
+        _, dsasa_p_universe, _ = matched_permutation(
+            table,
+            targets,
+            "delta_sasa_A2",
+            args.permutations,
+            args.position_window,
+            args.seed + 1,
+            bin_reference="universe",
         )
         table.to_csv(out / f"{pdb_id}_residue_interface_metrics.tsv", sep="\t", index=False)
         all_rows.append(table)
@@ -233,6 +262,10 @@ def main() -> None:
                 "sum_discriminating_delta_sasa_A2": targets["delta_sasa_A2"].sum(),
                 "matched_permutation_p_direct_contacts": contact_p,
                 "matched_permutation_p_sum_delta_sasa": dsasa_p,
+                "sensitivity_p_direct_contacts_universe_quartiles": contact_p_universe,
+                "sensitivity_p_sum_delta_sasa_universe_quartiles": dsasa_p_universe,
+                "control_quartile_internal_edges_A2": ",".join(f"{x:.6g}" for x in control_edges),
+                "universe_quartile_internal_edges_A2": ",".join(f"{x:.6g}" for x in universe_edges),
                 "direct_distance_A": args.direct_distance,
                 "near_distance_A": args.near_distance,
             }
@@ -264,7 +297,9 @@ def main() -> None:
             "direct_distance_A": args.direct_distance,
             "near_distance_A": args.near_distance,
             "n_permutations": args.permutations,
-            "matching": "receptor-alone SASA quartile plus local sequence-position window",
+            "primary_matching": "shared control-derived receptor-alone SASA quartiles plus local sequence-position window",
+            "sensitivity_matching": "shared full-universe receptor-alone SASA quartiles plus local sequence-position window",
+            "binning_contract": "Within each structure, identical SASA-bin edges are applied to target and control residues.",
         },
         out / "structure_mapping_summary.json",
     )

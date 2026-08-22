@@ -1,0 +1,16 @@
+{
+  "analysis": "leave-one-clade-out portability of the sequence-calibrated IIIb/IIIc partition",
+  "interpretive_limit": "The labels and feature definition originate within the analysed FGFR2 cohort; the result is cross-clade portability, not independent validation of isoform truth.",
+  "n_species_pairs": 28,
+  "n_held_out_proteins": 56,
+  "n_correct": 56,
+  "observed_accuracy": 1.0,
+  "paired_label_permutations": 10000,
+  "paired_label_permutation_p": 9.999000099990002e-05,
+  "training_bootstraps_per_fold": 1000,
+  "all_bootstraps_perfect_in_every_fold": true,
+  "seed": 20260804,
+  "bootstrap_seed": 20260805,
+  "alignment_sha256": "60faedde39e6fc462bd5c61e7370c2f3df61f73249c3a6f31d239d6c9dcf3cc2",
+  "ancestral_reconstruction_performed": false
+}

@@ -24,6 +24,12 @@ def p_text(value):
         return "not estimable"
     return f"{value:.2e}" if value < 0.001 else f"{value:.3f}"
 
+def sensitivity_text(primary, sensitivity):
+    return (
+        f"control-quartile p = {p_text(primary)}; "
+        f"universe-quartile p = {p_text(sensitivity)}"
+    )
+
 def main():
     args = parse_args()
     apply_publication_style()
@@ -40,7 +46,7 @@ def main():
 
 
         fig, ax = plt.subplots(figsize=(12.4, 7.4))
-        fig.subplots_adjust(top=0.79, left=0.11, right=0.95, bottom=0.15)
+        fig.subplots_adjust(top=0.79, left=0.11, right=0.95, bottom=0.25)
         ax.plot(table["resi"], table["min_ligand_distance_A"],
                 color=COLORS["blue"], linewidth=2.0, alpha=0.75)
         ax.scatter(table.loc[~target, "resi"],
@@ -73,13 +79,15 @@ def main():
             f'{int(srow["n_discriminating_direct_contacts"])} direct contacts and '
             f'{int(srow["n_discriminating_near_interface"])} near-interface residues among '
             f'{int(srow["n_discriminating_residues_mapped"])} mapped barcode positions.\n'
-            f'Contact-enrichment permutation p = {p_text(srow["matched_permutation_p_direct_contacts"])}.'
+            "Contact enrichment is retained under both common-bin specifications: "
+            f'{sensitivity_text(srow["matched_permutation_p_direct_contacts"], srow["sensitivity_p_direct_contacts_universe_quartiles"])}.',
+            loc=(0.98, -0.28),
         )
         save_figure(fig, out, f"modern_{pdb_id}_ligand_distance_profile")
 
 
         fig, ax = plt.subplots(figsize=(12.4, 7.4))
-        fig.subplots_adjust(top=0.79, left=0.11, right=0.95, bottom=0.15)
+        fig.subplots_adjust(top=0.79, left=0.11, right=0.95, bottom=0.25)
         positive = table["delta_sasa_A2"].clip(lower=0)
         ax.bar(table["resi"], positive, width=0.85,
                color=np.where(target, COLORS["gold"], "#BFD0DF"),
@@ -99,7 +107,10 @@ def main():
         takehome(
             ax,
             f'Summed barcode ΔSASA = {srow["sum_discriminating_delta_sasa_A2"]:.1f} Å².\n'
-            f'Exposure-matched permutation p = {p_text(srow["matched_permutation_p_sum_delta_sasa"])}.'
+            "Exposure-matched result: "
+            f'{sensitivity_text(srow["matched_permutation_p_sum_delta_sasa"], srow["sensitivity_p_sum_delta_sasa_universe_quartiles"])}; '
+            "interpret specification-sensitive results cautiously.",
+            loc=(0.98, -0.28),
         )
         save_figure(fig, out, f"modern_{pdb_id}_delta_SASA_profile")
 
@@ -122,7 +133,7 @@ def main():
     title_block(
         fig,
         "Structure complexes independently test whether the molecular barcode localizes to ligand-contacting surfaces",
-        "Direct-contact and near-interface fractions are calculated only for barcode positions resolved in each structure."
+        "Direct-contact enrichment persists under both shared-bin matching schemes; ΔSASA sensitivity is reported separately."
     )
     save_figure(fig, out, "modern_structure_interface_summary")
 

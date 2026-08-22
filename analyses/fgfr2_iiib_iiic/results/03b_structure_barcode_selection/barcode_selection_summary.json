@@ -1,0 +1,44 @@
+{
+  "selection_contract": {
+    "starting_set": "positions significant after Benjamini-Hochberg FDR correction",
+    "different_major_residues": true,
+    "minimum_discriminating_score": 0.7,
+    "discriminating_score_definition": "min(IIIb major-residue fraction, IIIc major-residue fraction) * (1 - max(IIIb gap fraction, IIIc gap fraction))",
+    "informative_alignment_column": true,
+    "gap_rich_columns_excluded": true,
+    "structural_outcomes_used_for_selection": false
+  },
+  "counts": {
+    "alignment_positions": 69,
+    "fdr_significant_positions": 25,
+    "selected_structure_barcode_positions": 17
+  },
+  "selected_alignment_columns_1based": [
+    1,
+    2,
+    4,
+    6,
+    7,
+    8,
+    11,
+    16,
+    21,
+    28,
+    30,
+    31,
+    32,
+    46,
+    50,
+    51,
+    52
+  ],
+  "required_structure_mappings": [
+    "IIIb_PDB_1NUN_resi",
+    "IIIc_PDB_2FDB_resi_P"
+  ],
+  "input_sha256": {
+    "weighted_jsd_positions": "6033a19cf8c233d5c206618dbd34ed2017d2c39c3ae54e48fa320322c0026b43",
+    "alignment_evidence": "ac3d3d5fdc70ed6f954e1aed6453a88e96a75a571274a4f77eeb010665892869",
+    "structure_map": "ca76ea6b12f1853671a000784030234abba4a53d3a1e2a4698aa601533b90a3a"
+  }
+}

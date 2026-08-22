@@ -434,6 +434,12 @@ def main() -> None:
             "n_candidates_classified": int(len(classified)),
             "n_selected_candidates": int(len(selected)),
             "n_ncbi_ensembl_pairs": int(len(comparison)),
+            "candidate_selection": {
+                "grouping": ["species", "source", "predicted_isoform"],
+                "ranking": ["reference_coverage", "score_margin", "best_local_alignment_score", "protein_length"],
+                "direction": "descending for every ranking field",
+                "identity_times_coverage_used": False,
+            },
             "next_step": "Run InterProScan on selected_cross_annotation_proteins_for_interpro.faa, then compare D3 topology using the same annotation-aware boundary rules.",
         },
         out / "cross_annotation_manifest.json",

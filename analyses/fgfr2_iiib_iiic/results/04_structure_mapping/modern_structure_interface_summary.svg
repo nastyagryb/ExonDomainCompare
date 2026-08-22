@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-04T20:56:57.276465</dc:date>
+    <dc:date>2026-08-22T17:52:57.320441</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -21,37 +21,37 @@
  </defs>
  <g id="figure_1">
   <g id="patch_1">
-   <path d="M 0 465.201016
-L 1397.708438 465.201016
-L 1397.708438 0
-L 0 0
+   <path d="M 0 465.201016 
+L 1397.708438 465.201016 
+L 1397.708438 0 
+L 0 0 
 z
 " style="fill: #ffffff"/>
   </g>
   <g id="axes_1">
    <g id="patch_2">
-    <path d="M 84.96 423
-L 699.264 423
-L 699.264 105.48
-L 84.96 105.48
+    <path d="M 84.96 423 
+L 699.264 423 
+L 699.264 105.48 
+L 84.96 105.48 
 z
 " style="fill: #ffffff"/>
    </g>
    <g id="matplotlib.axis_1">
     <g id="xtick_1">
      <g id="line2d_1">
-      <path d="M 84.96 423
-L 84.96 105.48
-" clip-path="url(#pa75224feb7)" style="fill: none; stroke: #dce4ec; stroke-opacity: 0.9; stroke-width: 0.8; stroke-linecap: square"/>
+      <path d="M 84.96 423 
+L 84.96 105.48 
+" clip-path="url(#p670c806c80)" style="fill: none; stroke: #dce4ec; stroke-opacity: 0.9; stroke-width: 0.8; stroke-linecap: square"/>
      </g>
      <g id="line2d_2">
       <defs>
-       <path id="m7e3cdd8b80" d="M 0 0
-L 0 3.5
+       <path id="m7972f135e9" d="M 0 0 
+L 0 3.5 
 " style="stroke: #243b53; stroke-width: 0.8"/>
       </defs>
       <g>
-       <use xlink:href="#m7e3cdd8b80" x="84.96" y="423" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
+       <use xlink:href="#m7972f135e9" x="84.96" y="423" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_1">
@@ -60,13 +60,13 @@ L 0 3.5
     </g>
     <g id="xtick_2">
      <g id="line2d_3">
-      <path d="M 201.970286 423
-L 201.970286 105.48
-" clip-path="url(#pa75224feb7)" style="fill: none; stroke: #dce4ec; stroke-opacity: 0.9; stroke-width: 0.8; stroke-linecap: square"/>
+      <path d="M 201.970286 423 
+L 201.970286 105.48 
+" clip-path="url(#p670c806c80)" style="fill: none; stroke: #dce4ec; stroke-opacity: 0.9; stroke-width: 0.8; stroke-linecap: square"/>
      </g>
      <g id="line2d_4">
       <g>
-       <use xlink:href="#m7e3cdd8b80" x="201.970286" y="423" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
+       <use xlink:href="#m7972f135e9" x="201.970286" y="423" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_2">
@@ -75,13 +75,13 @@ L 201.970286 105.48
     </g>
     <g id="xtick_3">
      <g id="line2d_5">
-      <path d="M 318.980571 423
-L 318.980571 105.48
-" clip-path="url(#pa75224feb7)" style="fill: none; stroke: #dce4ec; stroke-opacity: 0.9; stroke-width: 0.8; stroke-linecap: square"/>
+      <path d="M 318.980571 423 
+L 318.980571 105.48 
+" clip-path="url(#p670c806c80)" style="fill: none; stroke: #dce4ec; stroke-opacity: 0.9; stroke-width: 0.8; stroke-linecap: square"/>
      </g>
      <g id="line2d_6">
       <g>
-       <use xlink:href="#m7e3cdd8b80" x="318.980571" y="423" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
+       <use xlink:href="#m7972f135e9" x="318.980571" y="423" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_3">
@@ -90,13 +90,13 @@ L 318.980571 105.48
     </g>
     <g id="xtick_4">
      <g id="line2d_7">
-      <path d="M 435.990857 423
-L 435.990857 105.48
-" clip-path="url(#pa75224feb7)" style="fill: none; stroke: #dce4ec; stroke-opacity: 0.9; stroke-width: 0.8; stroke-linecap: square"/>
+      <path d="M 435.990857 423 
+L 435.990857 105.48 
+" clip-path="url(#p670c806c80)" style="fill: none; stroke: #dce4ec; stroke-opacity: 0.9; stroke-width: 0.8; stroke-linecap: square"/>
      </g>
      <g id="line2d_8">
       <g>
-       <use xlink:href="#m7e3cdd8b80" x="435.990857" y="423" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
+       <use xlink:href="#m7972f135e9" x="435.990857" y="423" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_4">
@@ -105,13 +105,13 @@ L 435.990857 105.48
     </g>
     <g id="xtick_5">
      <g id="line2d_9">
-      <path d="M 553.001143 423
-L 553.001143 105.48
-" clip-path="url(#pa75224feb7)" style="fill: none; stroke: #dce4ec; stroke-opacity: 0.9; stroke-width: 0.8; stroke-linecap: square"/>
+      <path d="M 553.001143 423 
+L 553.001143 105.48 
+" clip-path="url(#p670c806c80)" style="fill: none; stroke: #dce4ec; stroke-opacity: 0.9; stroke-width: 0.8; stroke-linecap: square"/>
      </g>
      <g id="line2d_10">
       <g>
-       <use xlink:href="#m7e3cdd8b80" x="553.001143" y="423" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
+       <use xlink:href="#m7972f135e9" x="553.001143" y="423" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_5">
@@ -120,13 +120,13 @@ L 553.001143 105.48
     </g>
     <g id="xtick_6">
      <g id="line2d_11">
-      <path d="M 670.011429 423
-L 670.011429 105.48
-" clip-path="url(#pa75224feb7)" style="fill: none; stroke: #dce4ec; stroke-opacity: 0.9; stroke-width: 0.8; stroke-linecap: square"/>
+      <path d="M 670.011429 423 
+L 670.011429 105.48 
+" clip-path="url(#p670c806c80)" style="fill: none; stroke: #dce4ec; stroke-opacity: 0.9; stroke-width: 0.8; stroke-linecap: square"/>
      </g>
      <g id="line2d_12">
       <g>
-       <use xlink:href="#m7e3cdd8b80" x="670.011429" y="423" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
+       <use xlink:href="#m7972f135e9" x="670.011429" y="423" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_6">
@@ -141,12 +141,12 @@ L 670.011429 105.48
     <g id="ytick_1">
      <g id="line2d_13">
       <defs>
-       <path id="m51803fcc88" d="M 0 0
-L -3.5 0
+       <path id="md5459c2136" d="M 0 0 
+L -3.5 0 
 " style="stroke: #243b53; stroke-width: 0.8"/>
       </defs>
       <g>
-       <use xlink:href="#m51803fcc88" x="84.96" y="344.421818" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
+       <use xlink:href="#md5459c2136" x="84.96" y="344.421818" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_8">
@@ -156,7 +156,7 @@ L -3.5 0
     <g id="ytick_2">
      <g id="line2d_14">
       <g>
-       <use xlink:href="#m51803fcc88" x="84.96" y="184.058182" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
+       <use xlink:href="#md5459c2136" x="84.96" y="184.058182" style="fill: #243b53; stroke: #243b53; stroke-width: 0.8"/>
       </g>
      </g>
      <g id="text_9">
@@ -165,53 +165,53 @@ L -3.5 0
     </g>
    </g>
    <g id="patch_3">
-    <path d="M 84.96 408.567273
-L 463.522689 408.567273
-L 463.522689 280.276364
-L 84.96 280.276364
+    <path d="M 84.96 408.567273 
+L 463.522689 408.567273 
+L 463.522689 280.276364 
+L 84.96 280.276364 
 z
-" clip-path="url(#pa75224feb7)" style="fill: #d59b22; opacity: 0.55"/>
+" clip-path="url(#p670c806c80)" style="fill: #d59b22; opacity: 0.55"/>
    </g>
    <g id="patch_4">
-    <path d="M 84.96 248.203636
-L 601.181849 248.203636
-L 601.181849 119.912727
-L 84.96 119.912727
+    <path d="M 84.96 248.203636 
+L 601.181849 248.203636 
+L 601.181849 119.912727 
+L 84.96 119.912727 
 z
-" clip-path="url(#pa75224feb7)" style="fill: #d59b22; opacity: 0.55"/>
+" clip-path="url(#p670c806c80)" style="fill: #d59b22; opacity: 0.55"/>
    </g>
    <g id="patch_5">
-    <path d="M 84.96 408.567273
-L 360.278319 408.567273
-L 360.278319 280.276364
-L 84.96 280.276364
+    <path d="M 84.96 408.567273 
+L 360.278319 408.567273 
+L 360.278319 280.276364 
+L 84.96 280.276364 
 z
-" clip-path="url(#pa75224feb7)" style="fill: #138a80; opacity: 0.95"/>
+" clip-path="url(#p670c806c80)" style="fill: #138a80; opacity: 0.95"/>
    </g>
    <g id="patch_6">
-    <path d="M 84.96 248.203636
-L 429.107899 248.203636
-L 429.107899 119.912727
-L 84.96 119.912727
+    <path d="M 84.96 248.203636 
+L 429.107899 248.203636 
+L 429.107899 119.912727 
+L 84.96 119.912727 
 z
-" clip-path="url(#pa75224feb7)" style="fill: #138a80; opacity: 0.95"/>
+" clip-path="url(#p670c806c80)" style="fill: #138a80; opacity: 0.95"/>
    </g>
    <g id="patch_7">
-    <path d="M 84.96 423
-L 84.96 105.48
+    <path d="M 84.96 423 
+L 84.96 105.48 
 " style="fill: none; stroke: #243b53; stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="patch_8">
-    <path d="M 84.96 423
-L 699.264 423
+    <path d="M 84.96 423 
+L 699.264 423 
 " style="fill: none; stroke: #243b53; stroke-width: 0.9; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="legend_1">
     <g id="patch_9">
-     <path d="M 585.179859 395.276719
-L 606.179859 395.276719
-L 606.179859 387.926719
-L 585.179859 387.926719
+     <path d="M 585.179859 395.276719 
+L 606.179859 395.276719 
+L 606.179859 387.926719 
+L 585.179859 387.926719 
 z
 " style="fill: #d59b22; opacity: 0.55"/>
     </g>
@@ -219,10 +219,10 @@ z
      <text style="font-size: 10.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #243b53" x="614.579859" y="395.276719" transform="rotate(-0 614.579859 395.276719)">Near interface</text>
     </g>
     <g id="patch_10">
-     <path d="M 585.179859 411.027539
-L 606.179859 411.027539
-L 606.179859 403.677539
-L 585.179859 403.677539
+     <path d="M 585.179859 411.027539 
+L 606.179859 411.027539 
+L 606.179859 403.677539 
+L 585.179859 403.677539 
 z
 " style="fill: #138a80; opacity: 0.95"/>
     </g>
@@ -235,11 +235,11 @@ z
    <text style="font-weight: 700; font-size: 22px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #102a43" x="7.2" y="23.916562" transform="rotate(-0 7.2 23.916562)">Structure complexes independently test whether the molecular barcode localizes to ligand-contacting surfaces</text>
   </g>
   <g id="text_13">
-   <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #6b7785" x="7.2" y="46.938047" transform="rotate(-0 7.2 46.938047)">Direct-contact and near-interface fractions are calculated only for barcode positions resolved in each structure.</text>
+   <text style="font-size: 12.5px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #6b7785" x="7.2" y="46.938047" transform="rotate(-0 7.2 46.938047)">Direct-contact enrichment persists under both shared-bin matching schemes; ΔSASA sensitivity is reported separately.</text>
   </g>
  </g>
  <defs>
-  <clipPath id="pa75224feb7">
+  <clipPath id="p670c806c80">
    <rect x="84.96" y="105.48" width="614.304" height="317.52"/>
   </clipPath>
  </defs>

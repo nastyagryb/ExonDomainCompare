@@ -2,7 +2,7 @@
 
 This directory contains the material used for the FGFR2 case study in the bachelor’s thesis *An Annotation-Aware Framework for Assessing the Consistency and Robustness of Exon–Domain Boundary Identification Across Vertebrate Orthologs: FGFR2 IIIb/IIIc as a Case Study*.
 
-It starts with the evidence produced by ExonDomainCompare and then follows the analyses used to test boundary consistency, sequence-level isoform identity, evolutionary depth and structural placement. The website exports are included together with their source tables. They are not screenshots and they are not treated as statistical tests.
+It starts with the evidence produced by ExonDomainCompare and then follows the analyses used to test boundary consistency, sequence-level isoform association, cross-clade portability and structural placement. The website exports are included together with their source tables. They are not screenshots and they are not treated as statistical tests.
 
 ## Analysis path
 
@@ -23,7 +23,7 @@ frozen FGFR2 framework snapshot
         |
         +-- domain-caller and threshold sensitivity
         +-- sequence divergence and phylogenetic tests
-        +-- leave-one-clade-out validation and ancestral reconstruction
+        +-- leave-one-clade-out portability analysis
         +-- structural interface mapping
         +-- cross-annotation replication
 ```
@@ -84,6 +84,9 @@ The website views were rendered by the main application from the comparative dat
 - [docs/website_view_to_file_map.tsv](docs/website_view_to_file_map.tsv) links each website view to its scientific question and exported table.
 - [docs/data_dictionary.md](docs/data_dictionary.md) explains the role of each data group.
 - [docs/provenance.md](docs/provenance.md) records where the frozen files came from.
+- [docs/software_versions.md](docs/software_versions.md) distinguishes recorded historical versions from current reproducible pins.
 - [checks/release_manifest.tsv](checks/release_manifest.tsv) records SHA-256 checksums for the published files.
 
 The release distinguishes exploratory views from confirmatory tests. A website plot can reveal a pattern or a case worth inspecting; the statistical claim belongs to the corresponding downstream analysis.
+
+An earlier ancestral reconstruction is retained only under `quarantined/invalid_ancestral_reconstruction`. Its target ancestral split was not identifiable from the unrooted topology, so those outputs are excluded from active results and release verification.

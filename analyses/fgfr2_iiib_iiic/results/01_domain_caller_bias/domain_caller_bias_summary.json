@@ -6,5 +6,8 @@
   "database_partial_r2_controlling_species_and_isoform": 0.6221791428557758,
   "reduced_model_r2": 0.06836226654904298,
   "full_model_r2": 0.6480078329996571,
-  "all_leave_one_out_scenarios_pass_all_proteins": true
+  "all_leave_one_out_scenarios_pass_all_proteins": true,
+  "all_leave_one_out_scenarios_pass_all_species": true,
+  "success_fractions_are_descriptive": true,
+  "protein_level_binomial_interval_reported": false
 }

@@ -33,7 +33,9 @@ def main() -> None:
         "results/00_framework_outputs/website_figures/cmp_primary_msa_overview.svg",
         "results/00_framework_outputs/website_figures/cmp_boundary_matrix.tsv",
         "results/05_iqtree/parsed_AU_topology_test.tsv",
-        "results/08_loco_asr_synthesis/analysis_summary.json",
+        "results/03b_structure_barcode_selection/barcode_selection_summary.json",
+        "results/04_structure_mapping/structure_mapping_summary.json",
+        "results/08_loco_validation/analysis_summary.json",
     ]
     missing = [path for path in required if not (ROOT / path).is_file()]
     if missing:
@@ -49,12 +51,19 @@ def main() -> None:
     robust = read_json("results/02_robustness_surface/robustness_surface_summary.json")
     jsd = read_json("results/03_weighted_jsd/weighted_jsd_summary.json")
     cross = read_json("results/07_cross_annotation_final/cross_annotation_boundary_summary.json")
-    final = read_json("results/08_loco_asr_synthesis/analysis_summary.json")
+    cross_manifest = read_json("results/06_cross_annotation/cross_annotation_manifest.json")
+    barcode = read_json("results/03b_structure_barcode_selection/barcode_selection_summary.json")
+    structure = read_json("results/04_structure_mapping/structure_mapping_summary.json")
+    loco = read_json("results/08_loco_validation/analysis_summary.json")
+    structure_rows = read_tsv("results/04_structure_mapping/structure_interface_enrichment_summary.tsv")
+    iqtree = read_json("results/05_iqtree/iqtree_topology_test_manifest.json")
 
     assertions = [
         caller["n_proteins"] == 58,
         caller["n_member_databases"] == 5,
         close(caller["database_partial_r2_controlling_species_and_isoform"], 0.6221791428557758),
+        caller["all_leave_one_out_scenarios_pass_all_species"] is True,
+        caller["protein_level_binomial_interval_reported"] is False,
         robust["n_grid_points"] == 1326,
         close(robust["minimum_distance_for_100pct_at_80pct_consensus"], 12.0),
         jsd["n_species_pairs"] == 28,
@@ -62,10 +71,31 @@ def main() -> None:
         close(jsd["global_paired_permutation_p"], 9.999000099990002e-05),
         cross["n_ncbi_ensembl_pairs"] == 16,
         cross["n_pairs_same_topology_class"] == 16,
-        final["loco"]["correct_sequences"] == 56,
-        final["loco"]["total_sequences"] == 56,
-        final["asr"]["modern_barcode_sites_ancestrally_different"] == 15,
-        final["asr"]["high_confidence_all_jackknife_stable_ancestral_core"] == 11,
+        cross_manifest["candidate_selection"]["ranking"] == [
+            "reference_coverage",
+            "score_margin",
+            "best_local_alignment_score",
+            "protein_length",
+        ],
+        cross_manifest["candidate_selection"]["identity_times_coverage_used"] is False,
+        barcode["counts"]["fdr_significant_positions"] == 25,
+        barcode["counts"]["selected_structure_barcode_positions"] == 17,
+        structure["binning_contract"] == "Within each structure, identical SASA-bin edges are applied to target and control residues.",
+        close(float(structure_rows[0]["matched_permutation_p_direct_contacts"]), 9.999000099990002e-05),
+        close(float(structure_rows[0]["sensitivity_p_direct_contacts_universe_quartiles"]), 9.999000099990002e-05),
+        close(float(structure_rows[1]["matched_permutation_p_direct_contacts"]), 9.999000099990002e-05),
+        close(float(structure_rows[1]["sensitivity_p_direct_contacts_universe_quartiles"]), 0.005599440055994401),
+        close(float(structure_rows[1]["matched_permutation_p_sum_delta_sasa"]), 0.045995400459954004),
+        close(float(structure_rows[1]["sensitivity_p_sum_delta_sasa_universe_quartiles"]), 0.24747525247475252),
+        iqtree["random_seeds"] == {
+            "unconstrained": 107252,
+            "isoform_constraint": 995853,
+            "species_pair_constraint": 460166,
+            "topology_AU_test": 160107,
+        },
+        loco["n_correct"] == 56,
+        loco["n_held_out_proteins"] == 56,
+        loco["ancestral_reconstruction_performed"] is False,
     ]
     if not all(assertions):
         raise SystemExit("One or more frozen result values failed validation")

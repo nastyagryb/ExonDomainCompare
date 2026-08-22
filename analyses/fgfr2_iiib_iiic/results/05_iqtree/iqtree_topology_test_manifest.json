@@ -2,8 +2,15 @@
   "n_complete_species_pairs": 28,
   "n_sequences": 56,
   "alignment_length": 69,
-  "run_executed": true,
+  "run_executed": false,
+  "existing_results_detected": true,
   "best_model": "LG+G4",
+  "random_seeds": {
+    "unconstrained": 107252,
+    "isoform_constraint": 995853,
+    "species_pair_constraint": 460166,
+    "topology_AU_test": 160107
+  },
   "hypotheses": [
     "unconstrained",
     "isoform_monophyly",

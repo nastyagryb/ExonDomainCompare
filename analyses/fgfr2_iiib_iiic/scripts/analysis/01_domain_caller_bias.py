@@ -8,7 +8,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import statsmodels.formula.api as smf
-from scipy.stats import binomtest
 
 from common import (
     aggregate_member_calls,
@@ -101,15 +100,21 @@ def main() -> None:
         per_protein["pass"] = per_protein["support_fraction"] >= args.consensus
         n = len(per_protein)
         k = int(per_protein["pass"].sum())
-        ci = binomtest(k, n).proportion_ci(confidence_level=0.95, method="exact") if n else None
+        per_species = per_protein.groupby("species", as_index=False).agg(
+            n_models=("isoform", "size"),
+            all_observed_models_pass=("pass", "all"),
+        )
+        n_species = len(per_species)
+        k_species = int(per_species["all_observed_models_pass"].sum())
         loo_rows.append(
             {
                 "excluded_database": label,
                 "n_proteins": n,
                 "n_pass": k,
                 "pass_fraction": k / n if n else np.nan,
-                "exact_ci_low": ci.low if ci else np.nan,
-                "exact_ci_high": ci.high if ci else np.nan,
+                "n_species": n_species,
+                "n_species_all_observed_models_pass": k_species,
+                "species_complete_pass_fraction": k_species / n_species if n_species else np.nan,
                 "distance_threshold_aa": args.distance_threshold,
                 "consensus_threshold": args.consensus,
                 "min_remaining_databases": per_protein["n_databases"].min() if n else np.nan,
@@ -177,6 +182,9 @@ def main() -> None:
             "reduced_model_r2": reduced_r2,
             "full_model_r2": full_r2,
             "all_leave_one_out_scenarios_pass_all_proteins": bool((loo["pass_fraction"] == 1).all()),
+            "all_leave_one_out_scenarios_pass_all_species": bool((loo["species_complete_pass_fraction"] == 1).all()),
+            "success_fractions_are_descriptive": True,
+            "protein_level_binomial_interval_reported": False,
         },
         out / "domain_caller_bias_summary.json",
     )

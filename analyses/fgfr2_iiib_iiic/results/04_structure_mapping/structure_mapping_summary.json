@@ -3,5 +3,7 @@
   "direct_distance_A": 4.5,
   "near_distance_A": 8.0,
   "n_permutations": 10000,
-  "matching": "receptor-alone SASA quartile plus local sequence-position window"
+  "primary_matching": "shared control-derived receptor-alone SASA quartiles plus local sequence-position window",
+  "sensitivity_matching": "shared full-universe receptor-alone SASA quartiles plus local sequence-position window",
+  "binning_contract": "Within each structure, identical SASA-bin edges are applied to target and control residues."
 }
